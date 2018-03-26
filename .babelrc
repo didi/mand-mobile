@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["iOS >= 8", "Android >= 4"]
+      }
+    }]
+  ],
+  "plugins": ["transform-object-rest-spread"],
+  "env": {
+    "test": {
+      "presets": [["env", {
+        "modules": false
+      }], "stage-2"],
+      "plugins": ["istanbul"]
+    }
+  }
+}

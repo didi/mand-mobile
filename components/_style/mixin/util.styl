@@ -1,0 +1,105 @@
+absolute-pos(t = 0, r = 0, b = 0, l = 0)
+  top t
+  right r
+  bottom b
+  left l
+fixed-pos(t = 0, r = 0, b = 0, l = 0)
+  absolute-pos(t, r, b, l)
+
+clearfix()
+  &:after
+    content ""
+    display table
+    clear both
+// normalize()
+//   margin 0
+//   padding 0
+//   list-style none
+
+word-break()
+  word-break break-all
+  word-wrap break-word
+word-ellipsis()
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+hairline-common(direction, color)
+  content ''
+  position absolute
+  z-index 2
+  background-color color
+  transform-origin 100% 50%
+  if direction == top
+    transform scaleY(0.5) translateY(-100%)
+    @media (min-resolution: 3dppx)
+      transform scaleY(0.33) translateY(-100%)
+  else if direction == bottom
+    transform scaleY(0.5) translateY(100%)
+    @media (min-resolution: 3dppx)
+      transform scaleY(0.33) translateY(100%)
+  else if direction == left
+    transform scaleX(0.5) translateX(-100%)
+    @media (min-resolution: 3dppx)
+      transform scaleX(0.33) translateX(-100%)
+  else if direction == right
+    transform scaleX(0.5) translateX(100%)
+    @media (min-resolution: 3dppx)
+      transform scaleX(0.33) translateX(100%)
+
+hairline(direction = all, color = color-line-1, radius = false)
+  position relative
+  if direction == top
+    &::after
+      hairline-common(direction, color)
+      top 0
+      left 0
+      width 100%
+      height border-width-base
+
+  else if direction == bottom
+    &::before
+      hairline-common(direction, color)
+      bottom 0
+      left 0
+      width 100%
+      height border-width-base
+    
+  else if direction == left
+    &::after
+      hairline-common(direction, color)
+      top 0
+      left 0
+      width border-width-base
+      height 100%
+
+  else if direction == right
+    &::before
+      hairline-common(direction, color)
+      top 0
+      right 0
+      width border-width-base
+      height 100%
+
+  else
+    &::after
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 200%
+      height 200%
+      border solid border-width-base color
+      box-sizing border-box
+      transform-origin 0 0
+      transform scale(0.5)
+      z-index 2
+      if radius
+        border-radius radius-normal * 2
+
+svg-background(svg)
+  background-image url(svg)
+
+vertical-height(height)
+  height height
+  line-height height
