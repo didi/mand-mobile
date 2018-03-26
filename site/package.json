@@ -54,7 +54,7 @@
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.3",
     "inject-loader": "^3.0.0",
-    "mand-mobile": "^0.4.21",
+    "mand-mobile": "0.0.1",
     "marked": "^0.3.6",
     "nightwatch": "^0.9.12",
     "nodemon": "^1.12.1",
