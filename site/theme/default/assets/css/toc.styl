@@ -1,0 +1,46 @@
+  .default-doc-toc
+    position absolute
+    top 0
+    right 0
+    width 150px
+    border-left solid 1px #f0f1f2
+    &.is-stricky
+      position fixed
+      top 32px
+      right 0
+    .mfe-blog-toc-item
+      position relative
+      block()
+      padding 5px 15px
+      box-sizing border-box
+      text-decoration none
+      color #333
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      &.mfe-blog-toc-item-h1
+        font-size 18px
+      &.mfe-blog-toc-item-h2
+        font-size 16px
+      &.mfe-blog-toc-item-h3
+        // color #333
+        font-size 14px
+      &.mfe-blog-toc-item-h4
+        // color #999
+        font-size 12px
+      &.mfe-blog-toc-item-h5
+        // color #ccc
+        font-size 12px
+        font-weight 300
+      &.active::before
+        content ""
+        position absolute
+        left 0
+        top 0
+        width 2px
+        height 100%
+        background-color #fc9153
+
+@media (max-width: 750px)
+  .mfe-blog-theme-default-doc .default-doc-toc
+      display none

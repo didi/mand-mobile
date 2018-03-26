@@ -1,0 +1,30 @@
+<template>
+  <div class="md-example-child md-example-child-captcha-1">
+    <md-captcha
+      :maxlength="4"
+      :isView="true"
+    >
+      验证码已发送至186****5407
+    </md-captcha>
+  </div>
+</template>
+
+<script>import {Captcha} from 'mand-mobile'
+
+export default {
+  name: 'captcha-demo',
+  title: '内联',
+  height: 650,
+  components: {
+    [Captcha.name]: Captcha,
+  },
+}
+</script>
+
+<style lang="stylus">
+.md-example-child-captcha-1
+  height 650px
+  padding 30px 0
+  .md-number-keyboard
+    margin-top 30px
+</style>

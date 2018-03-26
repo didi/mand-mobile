@@ -1,0 +1,1 @@
+import '../../components/*/test/*.spec.js'

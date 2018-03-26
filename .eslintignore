@@ -1,0 +1,11 @@
+build/*.js
+config/*.js
+lib/*
+output/*
+examples/*
+site/*
+**/*.spec.*
+**/demo/data/**
+scroller.js
+animate.js
+gulpfile.js

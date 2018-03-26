@@ -1,0 +1,40 @@
+#!/usr/bin/expect  
+  
+set timeout 30
+set chinese_name [lindex $argv 0]
+set component_name [lindex $argv 1]
+set component_type [lindex $argv 2]
+set component_desc [lindex $argv 3]
+set author [lindex $argv 4]
+set create_time [lindex $argv 5]
+set component_path [lindex $argv 6]
+spawn mfe init mfe-template-mfd-mobile "$component_path/${component_name}"
+
+expect "组件中文名称，如：轻提示"
+
+send "${chinese_name}\r"
+
+expect "组件类型, 选项: basic feedback form business"
+
+send "${component_type}\r"
+
+expect "组件描述"
+
+send "${component_desc}\r"
+
+expect "Author"
+
+send "${author}\r"
+
+expect "name"
+
+send "${component_name}\r"
+
+expect "time"
+
+send "${create_time}\r"
+
+expect eof
+
+exit
+
