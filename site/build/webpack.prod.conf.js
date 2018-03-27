@@ -21,6 +21,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: false,
   output: {
     path: config.build.assetsRoot,
+    publicPath: '/mand-mobile',
     filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js'),
   },
