@@ -139,7 +139,7 @@ const rollupPlugin = [
   ...(conditionHelper(isExample, [
     fillHtmlPlugin({
       template: resolve('examples/index.html'),
-      publicPath: '/',
+      publicPath: '/mand-mobile/example/',
       destFile: path.resolve(EXAMPLE_OUTPUT_DIR, 'index.html')
     })
   ])),
