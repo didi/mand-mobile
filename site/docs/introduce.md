@@ -18,11 +18,11 @@
 
 ### 快速上手
 
-请参考<a href="/mfe/mand-mobile/docs/started" targe="_blank">快速上手</a>
+请参考<a href="/mand-mobile/docs/started" targe="_blank">快速上手</a>
 
 ### 如何贡献
 
-在以任何形式的参与前，请先阅读<a href="/mfe/mand-mobile/docs/development" targe="_blank">开发指南</a>。如有任何的意见或建议，欢迎您通过创建<a href="" targe="_blank">issue</a>的方式告知我们。
+在以任何形式的参与前，请先阅读<a href="/mand-mobile/docs/development" targe="_blank">开发指南</a>。如有任何的意见或建议，欢迎您通过创建<a href="" targe="_blank">issue</a>的方式告知我们。
 
 
 

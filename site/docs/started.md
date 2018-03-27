@@ -123,7 +123,7 @@ module.exports = {
 
 #### 使用
 
-这是一个使用`Mand Mobile`组件开发而成的表单页面，更多的组件使用方法可在[组件概览](/mfe/mand-mobile/docs/preview)中找到。
+这是一个使用`Mand Mobile`组件开发而成的表单页面，更多的组件使用方法可在[组件概览](/mand-mobile/docs/preview)中找到。
 
 ```vue
 <template>
