@@ -25,7 +25,6 @@ const babelrc = require('babelrc-rollup').default
 const isProduction = process.env.NODE_ENV === 'production'
 const isTest = process.env.NODE_ENV === 'testing'
 const isDev = !(isProduction || isTest)
-const isExample = process.env.BUILD_TYPE === 'example'
 
 function resolve(dir) {
   return path.resolve(__dirname, '../..', dir)
@@ -35,7 +34,6 @@ const PROJECT_DIR = resolve('.')
 
 const tmpDir = os.tmpdir()
 const DEV_OUTPUT_DIR = fs.mkdtempSync(`${tmpDir}${path.sep}`)
-const EXAMPLE_OUTPUT_DIR = resolve('docs/example')
 
 const tmpTestDir = os.tmpdir()
 const TEST_OUTPUT_DIR = fs.mkdtempSync(`${tmpTestDir}${path.sep}`)
@@ -45,9 +43,6 @@ function vueWarpper() {
   if (isDev) {
     distDir = DEV_OUTPUT_DIR
     fileName = 'mand-mobile-dev.css'
-  } else if (isExample) {
-    distDir = EXAMPLE_OUTPUT_DIR
-    fileName = 'mand-mobile-example.css'
   } else if (isProduction) {
     distDir = LIB_DIR
     fileName = 'mand-mobile.css'
@@ -136,13 +131,6 @@ const rollupPlugin = [
       destFile: path.resolve(DEV_OUTPUT_DIR, 'index.html')
     })
   ])),
-  ...(conditionHelper(isExample, [
-    fillHtmlPlugin({
-      template: resolve('examples/index.html'),
-      publicPath: '/mand-mobile/example/',
-      destFile: path.resolve(EXAMPLE_OUTPUT_DIR, 'index.html')
-    })
-  ])),
   // cli
   progress(),
   ...(conditionHelper(isProduction, [
@@ -153,7 +141,6 @@ const rollupPlugin = [
 module.exports = {
   LIB_DIR,
   PROJECT_DIR,
-  EXAMPLE_OUTPUT_DIR,
   DEV_OUTPUT_DIR,
   rollupPlugin,
 }
