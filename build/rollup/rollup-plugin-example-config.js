@@ -32,6 +32,9 @@ function vueWarpper() {
     stylus: {
       use: [stylusMixin],
     },
+    postcss: [
+      px2rem({ rootValue: 100, propWhiteList: [] })
+    ]
   })
 }
 
@@ -62,10 +65,8 @@ const rollupPlugin = [
     limit: 10 * 1024,
   }),
   jsonPlugin(),
+  postcss(),
   vue,
-  postcss({
-    plugins: [px2rem({ rootValue: 100, propWhiteList: [] })]
-  }),
   babel(babelrc({
     addModuleOptions: false,
     findRollupPresets: true,
