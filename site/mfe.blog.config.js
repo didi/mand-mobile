@@ -148,6 +148,6 @@ module.exports = {
     },
   ],
   copyRight: '2012-2018 Didi Chuxing. All Rights Reserved',
-  routePrefix: '/mfe/mand-mobile',
+  routePrefix: '/mand-mobile',
   // staticPrefix: '//manhattan.didistatic.com/static/manhattan/mand-mobile',
 }
