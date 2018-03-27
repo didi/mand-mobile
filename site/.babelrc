@@ -13,7 +13,7 @@
     "stage-2"
   ],
   "plugins": [
-    ["import", { "libraryName": "mand-mobile", "style": true }]
+    ["import", { "libraryName": "mand-mobile" }]
   ],
   "env": {
     "test": {

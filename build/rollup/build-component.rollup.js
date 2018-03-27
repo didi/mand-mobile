@@ -44,6 +44,14 @@ function computedCompilerConfig(filePath) {
   return {
     extractCSS: true,
     babel: {
+      presets: [
+        ['env', {
+          'modules': 'umd',
+          'targets': {
+            'browsers': ['iOS >= 8', 'Android >= 4']
+          }
+        }],
+      ],
       plugins: [
         [babelPluginInsertCssImportForVue, {
           filePath,
