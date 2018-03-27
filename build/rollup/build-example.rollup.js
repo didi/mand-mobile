@@ -1,4 +1,4 @@
-const { rollupPlugin, EXAMPLE_OUTPUT_DIR, PROJECT_DIR } = require('./rollup-plugin-config')
+const { rollupPlugin, EXAMPLE_OUTPUT_DIR, PROJECT_DIR } = require('./rollup-plugin-example-config')
 const rollup = require('rollup')
 const path = require('path')
 
