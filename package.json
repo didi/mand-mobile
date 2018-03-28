@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "0.5.0-alpha.1",
+  "version": "0.5.1",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "main": "lib/mand-mobile.cjs.js",
   "style": "lib/mand-mobile.css",
@@ -10,7 +10,8 @@
   "files": [
     "lib",
     "components",
-    "types"
+    "types",
+    "assets"
   ],
   "scripts": {
     "dev:webpack": "webpack-dashboard -m -- node build/webpack/dev-server",
@@ -201,8 +202,8 @@
     "word-wrap": "^1.2.3"
   },
   "engines": {
-    "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 8.0.0",
+    "npm": ">= 5.0.0"
   },
   "browserslist": [
     "> 1%",
