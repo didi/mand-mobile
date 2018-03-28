@@ -19,7 +19,7 @@ Vue.use(VueRouter)
 const isProd = process.env.NODE_ENV === 'production'
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: isProd ? '/mand-mobile/examples' : '',
   routes,
 })
