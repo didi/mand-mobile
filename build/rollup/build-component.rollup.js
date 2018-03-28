@@ -25,8 +25,10 @@ function babelPluginInsertCssImportForVue ({ types: t }) {
   }
 }
 
-function compileVueStylus (content, cb) {
+function compileVueStylus (content, cb, compiler, filePath) {
   stylus(content)
+    .set('filename', filePath)
+    .define('url', stylus.url())
     // .include(path.join(__dirname, 'src/*'))
     .import(path.join(__dirname, '../../components/_style/mixin/*.styl'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/vendor'))
