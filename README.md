@@ -17,12 +17,9 @@
 
 # mand-mobile
 
-[![](https://img.shields.io/travis/didi/mand-mobile.svg?style=flat-square)](https://travis-ci.org/adidi/mand-mobile)
 [![Codecov](https://img.shields.io/codecov/c/github/didi/mand-mobile/master.svg?style=flat-square)](https://codecov.io/gh/didi/mand-mobile/branch/master)
 [![npm package](https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](https://www.npmjs.org/package/mand-mobile)
 [![NPM downloads](http://img.shields.io/npm/dm/mand-mobile.svg?style=flat-square)](http://npmtrends.com/mand-mobile)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/didi/mand-mobile.svg)](http://isitmaintained.com/project/didi/mand-mobile "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/didi/mand-mobile.svg)](http://isitmaintained.com/project/didi/mand-mobile "Percentage of issues still open")
 
 A mobile UI toolkit, based on `Vue.js 2`, designed for financial scenes.
 
