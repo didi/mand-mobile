@@ -20,7 +20,7 @@ const routes = [
 ]
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   base: window.mbConfig.routePrefix,
   routes
 })
