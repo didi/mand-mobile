@@ -48,7 +48,7 @@ const rollupPlugin = [
     resolve: ['.js', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
     'mand-mobile/components': resolve('components'),
     'mand-mobile/lib': resolve('lib'),
-    'mand-mobile': resolve('lib/mand-mobile.esm.js'),
+    'mand-mobile': resolve('components'),
     '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg')
   }),
   nodeResolvePlugin({
