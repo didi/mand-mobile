@@ -79,10 +79,7 @@
 	</div>
 </template>
 
-<script>/* import from compiled code */
-// import { SingleComponent } from '@didi/mand-mobile'
-
-/*  import from source code */
+<script>/*  import from source code */
 import Button from '../../button'
 import TabPicker from '../index'
 import cascadeData from './data/cascade'
