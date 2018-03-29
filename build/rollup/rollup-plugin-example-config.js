@@ -22,7 +22,7 @@ function resolve(dir) {
 }
 const LIB_DIR = resolve('lib')
 const PROJECT_DIR = resolve('.')
-const EXAMPLE_OUTPUT_DIR = resolve('docs/example')
+const EXAMPLE_OUTPUT_DIR = resolve('docs/examples')
 
 function vueWarpper() {
   const distDir = EXAMPLE_OUTPUT_DIR
@@ -79,7 +79,7 @@ const rollupPlugin = [
   }),
   fillHtmlPlugin({
     template: resolve('examples/index.html'),
-    publicPath: '/mand-mobile/example/',
+    publicPath: '/mand-mobile/examples/',
     destFile: path.resolve(EXAMPLE_OUTPUT_DIR, 'index.html')
   }),
   // cli

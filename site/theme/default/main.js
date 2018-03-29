@@ -11,6 +11,16 @@ if ($(window).width() > 750) {
   setScale(0.5)
 }
 
+window.jumpAnchor = (anchor) => {
+  if (!anchor || !document.getElementById(decodeURIComponent(anchor))) {
+    return
+  }
+  console.info(document.getElementById(decodeURIComponent(anchor)))
+  window.document.getElementById(decodeURIComponent(anchor)).scrollIntoView()
+  let hash = window.location.hash.replace(/\?.*/, '')
+  window.location.hash = `${hash}?anchor=${anchor}`
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
