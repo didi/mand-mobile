@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img width="80" src="./assets/logo.png" alt="LOGO">
+    <img width="80" src="https://manhattan.didistatic.com/static/manhattan/do1_Q6ZZrH5vSfbKb95xVHgA" alt="LOGO">
   </a>
 </div>
 <div align="center">
@@ -28,9 +28,10 @@ A mobile UI toolkit, based on `Vue.js 2`, designed for financial scenes.
 * [Developer Instruction](site/docs/development.md)
 * [Theme Customization](site/docs/theme.md)
 * [Change Log](CHANGELOG.md)
-* [Examples](https://didi.github.io/mand-mobile/example/)
+* [Examples](https://didi.github.io/mand-mobile/examples/)
 
-![Examples Link](./assets/examples-qrcode.png)
+![Examples Link](
+https://manhattan.didistatic.com/static/manhattan/do1_iS8AFSslfdrU8nXl1gur)
 
 ## Install & Usage
 

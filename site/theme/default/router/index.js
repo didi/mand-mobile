@@ -32,6 +32,14 @@ router.beforeEach((to, from, next) => {
   next()
 })
 
+router.afterEach((to, from) => {
+  if (to.query.anchor) {
+    setTimeout(() => {
+      window.jumpAnchor(to.query.anchor)
+    }, 500)
+  }
+})
+
 window.$routes = Routes
 
 export default router
