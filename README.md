@@ -55,7 +55,6 @@ import { Button } from 'mand-mobile'
 
 ```javascript
 import Button from 'mand-mobile/lib/button'
-import 'mand-mobile/lib/button/style'
 ```
 
 * Totally import
@@ -155,5 +154,5 @@ Open your browser and visit http://127.0.0.1:4000. Find more details in [develop
 ## Contributing
 Welcome to contribute by creating issues or sending pull requests. See [Contributing Guide](CONTRIBUTING.md) for guidelines.
 
-# License
+## License
 Mand Mobile is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
