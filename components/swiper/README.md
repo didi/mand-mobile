@@ -1,6 +1,6 @@
 ---
 title: Swiper 轮播
-preview: https://didi.github.io/mand-mobile/examples/swiper
+preview: https://didi.github.io/mand-mobile/examples/#/swiper
 ---
 
 走马灯，用于一组图片或卡片轮播

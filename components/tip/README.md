@@ -1,6 +1,6 @@
 ---
 title: Tip 气泡提示
-preview: https://didi.github.io/mand-mobile/examples/tip
+preview: https://didi.github.io/mand-mobile/examples/#/tip
 ---
 
 ### 引入

@@ -1,6 +1,6 @@
 ---
 title: ResultPage 结果页
-preview: https://didi.github.io/mand-mobile/examples/result-page
+preview: https://didi.github.io/mand-mobile/examples/#/result-page
 ---
 
 用于展示流程结束页面的控件
