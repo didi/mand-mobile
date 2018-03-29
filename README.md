@@ -70,7 +70,7 @@ Vue.use(mandMobile)
 
 ### Usage
 
-Select the components that you need to build your webapp. Find more details in [component preview](/mfe/mand-mobile/docs/preview).
+Select the components that you need to build your webapp. Find more details in [component preview](https://didi.github.io/mand-mobile/#/docs/preview).
 
 ```vue
 <template>
@@ -130,9 +130,30 @@ export default {
       actionBarData: [{
         text: 'confirm'
       }],
-      pickerData: [[{text:'male'},{text:'female'}]]
+      pickerData: [
+        [
+          { text: 'male' },
+          { text: 'female' }
+        ]
+      ]
     }
   }
 }
 </script>
 ```
+
+## Development
+
+```shell
+git clone git@github.com:didi/mand-mobile.git
+cd mand-mobile
+npm install
+npm run dev
+```
+Open your browser and visit http://127.0.0.1:4000. Find more details in [development guide](https://didi.github.io/mand-mobile/#/docs/development).
+
+## Contributing
+Welcome to contribute by creating issues or sending pull requests. See [Contributing Guide](CONTRIBUTING.md) for guidelines.
+
+# License
+Mand Mobile is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
