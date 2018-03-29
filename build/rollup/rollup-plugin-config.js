@@ -126,7 +126,7 @@ const rollupPlugin = [
   ])),
   ...(conditionHelper(isDev, [
     fillHtmlPlugin({
-      template: resolve('examples/index.html'),
+      template: resolve('examples/index.livereload.html'),
       publicPath: '/',
       destFile: path.resolve(DEV_OUTPUT_DIR, 'index.html')
     })
