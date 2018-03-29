@@ -40,8 +40,7 @@ npm install mand-mobile --save
 	     getCustomTransformers: () => ({
 	       before: [
             require('ts-import-plugin')({
-              "libraryName": "mand-mobile",
-              "style": true
+              "libraryName": "mand-mobile"
             })
 	       ]
 	     })
