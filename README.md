@@ -1,8 +1,9 @@
 <div align="center">
   <a href="#">
-    <img width="80" src="https://manhattan.didistatic.com/static/manhattan/do1_Q6ZZrH5vSfbKb95xVHgA" alt="LOGO">
+    <img width="80" src="https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="LOGO">
   </a>
 </div>
+<br>
 <div align="center">
     <a href="http://forthebadge.com">
         <img src="http://forthebadge.com/images/badges/made-with-vue.svg">
@@ -28,10 +29,9 @@ A mobile UI toolkit, based on `Vue.js 2`, designed for financial scenes.
 * [Developer Instruction](site/docs/development.md)
 * [Theme Customization](site/docs/theme.md)
 * [Change Log](CHANGELOG.md)
-* [Examples](https://didi.github.io/mand-mobile/examples/)
+* [Examples](https://didi.github.io/mand-mobile/example/)
 
-![Examples Link](
-https://manhattan.didistatic.com/static/manhattan/do1_iS8AFSslfdrU8nXl1gur)
+![Examples Link](https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png)
 
 ## Install & Usage
 
