@@ -1,6 +1,6 @@
 ---
 title: Tag 标签
-preview: https://didi.github.io/mand-mobile/examples/tag
+preview: https://didi.github.io/mand-mobile/examples/#/tag
 ---
 
 用于表示区域的状态的标签

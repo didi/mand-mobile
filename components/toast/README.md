@@ -1,6 +1,6 @@
 ---
 title: Toast 轻提示
-preview: https://didi.github.io/mand-mobile/examples/toast
+preview: https://didi.github.io/mand-mobile/examples/#/toast
 ---
 
 弹出式消息提示

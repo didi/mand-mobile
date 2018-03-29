@@ -1,6 +1,6 @@
 ---
 title: Chart 折线图表
-preview: https://didi.github.io/mand-mobile/examples/chart
+preview: https://didi.github.io/mand-mobile/examples/#/chart
 ---
 
 SVG折线图表, 可绘制多条折线并配置不同的显示规则。
