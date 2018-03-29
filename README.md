@@ -29,7 +29,7 @@ A mobile UI toolkit, based on `Vue.js 2`, designed for financial scenes.
 * [Developer Instruction](site/docs/development.md)
 * [Theme Customization](site/docs/theme.md)
 * [Change Log](CHANGELOG.md)
-* [Examples](https://didi.github.io/mand-mobile/example/)
+* [Examples](https://didi.github.io/mand-mobile/examples/)
 
 ![Examples Link](https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png)
 
