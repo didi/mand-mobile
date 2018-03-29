@@ -121,7 +121,7 @@ module.exports = {
         },
         {
           text: '更新日志',
-          src: '//didi.github.io/mand-mobile/docs/changelog',
+          src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
         },
         {
           text: '贡献指南',
