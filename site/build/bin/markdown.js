@@ -13,7 +13,7 @@ let toc = [] // toc html fragment
  */
 renderer.heading = function(text, level) {
   const link = (isShowText = true) => {
-    return `<a href="#${text}" class="mfe-blog-toc-item mfe-blog-toc-item-h${level}">${isShowText ? text : '#'}</a>`
+    return `<a href="javascript:jumpAnchor('${text}')" class="mfe-blog-toc-item mfe-blog-toc-item-h${level}">${isShowText ? text : '#'}</a>`
   }
   toc.push(link())
   return `<h${level} id="${text}">${text}${link(false)}</h${level}>`
