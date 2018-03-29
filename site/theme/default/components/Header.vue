@@ -2,7 +2,7 @@
   <div class="mfe-blog-theme-default-header" :class="{active: isActive}">
     <div class="default-header-container">
       <div class="default-header-aside">
-        <a class="default-header-logo" href="/">
+        <a class="default-header-logo" href="/mand-mobile">
           <img :src="logo" alt="logo">
           <span v-html="title"></span>
         </a>
