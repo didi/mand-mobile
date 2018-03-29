@@ -95,7 +95,11 @@ const rollupPlugin = [
     }),
     glob(),
   ])),
-
+  ...(conditionHelper(isDev, [
+    common({
+      include: 'node_modules/fastclick/**',
+    }),
+  ])),
   // inject
   replacePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`

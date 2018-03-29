@@ -13,6 +13,8 @@ const progress = require('rollup-plugin-progress')
 const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
+const common = require('rollup-plugin-commonjs')
+
 // const postcssUrl = require('postcss-url')
 const px2rem = require('postcss-pxtorem')
 
@@ -53,6 +55,10 @@ const rollupPlugin = [
   }),
   nodeResolvePlugin({
     extensions: [ '.js', '.json', '.vue' ],
+  }),
+
+  common({
+    include: 'node_modules/fastclick/**',
   }),
 
   // inject
