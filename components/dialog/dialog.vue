@@ -22,10 +22,14 @@
           >
             <md-icon name="cross" />
           </a>
-          <md-icon v-if="icon" class="md-dialog-icon" :name="icon" />
+          <div v-if="icon" class="md-dialog-icon">
+            <md-icon :name="icon" />
+          </div>
           <h2 class="md-dialog-title" v-if="title" v-text="title"></h2>
-          <div v-if="content" v-html="content"></div>
-          <slot></slot>
+          <div class="md-dialog-text" v-if="content" v-html="content"></div>
+          <div class="md-dialog-text" v-else-if="$slots.default">
+            <slot></slot>
+          </div>
         </div>
         <footer class="md-dialog-actions">
           <a
@@ -153,13 +157,18 @@ export default {
     position relative
     color color-text-minor
     font-size dialog-text-font-size
+    text-align center
     padding 50px 30px 40px 30px
-  .md-dialog-icon.md-icon
+  .md-dialog-icon
+    position relative
     display block
     width dialog-icon-size
     height dialog-icon-size
-    fill dialog-icon-fill
     margin 0 auto 20px auto
+    .md-icon
+      width dialog-icon-size
+      height dialog-icon-size
+      fill dialog-icon-fill
   .md-dialog-close
     position absolute
     color color-text-caption
@@ -169,8 +178,10 @@ export default {
   .md-dialog-title
     color color-text-base
     font-size dialog-title-font-size
-    text-align center
     margin-bottom 15px
+  .md-dialog-text
+    display inline-block
+    text-align left
   .md-dialog-actions
     display flex
     hairline(top, color-border-base)
