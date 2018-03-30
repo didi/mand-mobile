@@ -124,13 +124,17 @@ clearfix()
 @media (max-width: 750px)
   .mfe-blog-theme-default-footer
     display block
-    padding .32rem 5%
-    .default-footer-container, .default-footer-copyright-container
+    height auto !important
+    padding .32rem 5% .32rem
+    background #007CFA
+    .default-footer-container
       width 100% !important
-      padding-left .32rem
-      padding-right .32rem
+      padding .32rem
+    .default-footer-bg
+      display none
     .default-footer-category
       display block
+      width 50%
       margin 0 0 .2rem
       h1
         margin-bottom .2rem
@@ -138,4 +142,8 @@ clearfix()
       li
         margin-bottom .12rem
         font-size .2rem
+      &:first-child
+        display none
+    .default-footer-copyright
+      display none
 </style>

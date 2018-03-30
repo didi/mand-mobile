@@ -356,7 +356,7 @@ export default {
     .default-header-aside, .default-header-content
       float left
       width 100% !important
-      height .64rem
+      // height .64rem
       display flex
       justify-content center
       padding 0
@@ -365,10 +365,10 @@ export default {
       &.router-link-active:after
         height .04rem
     .default-header-aside .default-header-logo
-      height .34rem
-      line-height .34rem !important
+      height .64rem
+      line-height .64rem !important
       img
-        height .32rem !important
+        height .6rem !important
         margin 0
     .default-header-logo
       margin-top 10px

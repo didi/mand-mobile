@@ -373,12 +373,14 @@ export default {
         left 50% !important
         width 50%
         margin-left -25%
-        margin-top .32rem
+        margin-top .6rem
         img
           width 100% !important
           height auto !important
       .home-animation-bg
         display none
+      .home-animation-list
+        margin-top .6rem !important
       .home-animation-item
         height 3.4rem !important
         padding .2rem !important
