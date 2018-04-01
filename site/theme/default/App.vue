@@ -83,5 +83,8 @@ export default {
       margin-top 50px
       .default-doc-content
         padding 0 42px 87px !important
+@media (max-width: 750px)
+  .default-container
+    overflow-x hidden !important
 </style>
 

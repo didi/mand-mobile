@@ -23,7 +23,7 @@
         </div>
         <div class="default-header-version">
           <div class="current-version" @click.stop="versionTableShow = true">
-            <span>1.0</span>
+            <span>0.x</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
         </div>
@@ -77,8 +77,8 @@ export default {
       searchData: [],
       versionTableShow: false,
       versionData: [{
-        text: '1.0',
-        src: location.href
+        text: '0.x',
+        path: '/home'
       }],
       searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
       searchHandler: null
@@ -356,7 +356,7 @@ export default {
     .default-header-aside, .default-header-content
       float left
       width 100% !important
-      height .64rem
+      // height .64rem
       display flex
       justify-content center
       padding 0
@@ -365,10 +365,10 @@ export default {
       &.router-link-active:after
         height .04rem
     .default-header-aside .default-header-logo
-      height .34rem
-      line-height .34rem !important
+      height .64rem
+      line-height .64rem !important
       img
-        height .32rem !important
+        height .6rem !important
         margin 0
     .default-header-logo
       margin-top 10px

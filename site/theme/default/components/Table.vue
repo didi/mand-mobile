@@ -75,7 +75,7 @@ export default {
     },
     jump (item) {
       this.$router.push({
-        path: `${item.path}?anchor=${item.hash}`,
+        path: `${item.path}?anchor=${item.hash || ''}`,
       })
     }
   }
