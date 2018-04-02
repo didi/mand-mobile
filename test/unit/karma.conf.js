@@ -5,7 +5,7 @@
 const webpackConfig = require('../../build/webpack/webpack.test.conf')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
-const scope = process.argv[4] || ''
+const scope = process.argv[5] || ''
 module.exports = function(config) {
   config.set({
     // to run in additional browsers:
