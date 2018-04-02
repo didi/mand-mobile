@@ -33,7 +33,8 @@
     "build:webpack": "rm -rf ./lib && npm run build:webpack:mand-mobile && npm run build:webpack:components",
     "build:webpack:example": "cross-env NODE_ENV=production node build/webpack/build-example",
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
-    "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry"
+    "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
+    "codecov": "codecov"
   },
   "license": "Apache",
   "config": {
@@ -78,6 +79,7 @@
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
     "chromedriver": "^2.27.2",
+    "codecov": "^3.0.0",
     "commander": "^2.12.2",
     "commitizen": "^2.9.6",
     "connect-history-api-fallback": "^1.3.0",

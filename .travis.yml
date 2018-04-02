@@ -11,3 +11,4 @@ branches:
     - dev
 script:
   - npm test
+  - npm run codecov
