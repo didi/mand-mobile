@@ -66,7 +66,7 @@ block()
   float left
   width 100%
 .md-cg
-  padding 20px
+  padding 20px 20px 50px
   clearfix()
   .md-cg-title
     block()
