@@ -9,6 +9,11 @@
         title="插槽内容"
         v-model="content"
       ></md-input-item>
+      <md-input-item
+        title="短信验证码"
+        value="1234"
+        readonly
+      ></md-input-item>
     </md-field>
 
     <md-field title="配置">
@@ -79,10 +84,10 @@ export default {
     return {
       show: false,
       appendTo: document.querySelector('.doc-demo-box-priview') || document.body,
-      title: '手机验证码',
-      content: '哎哟，不错哟~',
+      title: '输入验证码',
+      content: '验证码已发送至 186****5407',
       limit: true,
-      maxlength: '6',
+      maxlength: '4',
       mask: false,
       system: false,
     }
@@ -93,11 +98,15 @@ export default {
     },
     submit(val) {
       const max = parseFloat(this.maxlength)
-      if (max < 0 || val.length === max) {
-        this.show = false
-        Toast({
-          content: `你输入了${val}`,
-        })
+      if (!this.limit || max < 0 || val.length === max) {
+        if (val !== '1234') {
+          this.$refs.captcha.setError('验证码错误，请重新输入')
+        } else {
+          this.show = false
+          Toast({
+            content: `你输入了${val}`,
+          })
+        }
       }
     },
     onSend() {
