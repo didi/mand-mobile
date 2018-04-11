@@ -179,9 +179,6 @@ export default {
     color color-text-base
     font-size dialog-title-font-size
     margin-bottom 15px
-  .md-dialog-text
-    display inline-block
-    text-align left
   .md-dialog-actions
     display flex
     hairline(top, color-border-base)
