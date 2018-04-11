@@ -23,7 +23,7 @@
         </div>
         <div class="default-header-version">
           <div class="current-version" @click.stop="versionTableShow = true">
-            <span>0.x</span>
+            <span>1.x</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
         </div>
@@ -77,7 +77,7 @@ export default {
       searchData: [],
       versionTableShow: false,
       versionData: [{
-        text: '0.x',
+        text: '1.x',
         path: '/home'
       }],
       searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
