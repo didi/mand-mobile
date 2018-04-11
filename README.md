@@ -18,8 +18,8 @@
 
 # mand-mobile
 
-[![](https://img.shields.io/travis/didi/mand-mobile.svg?style=flat-square)](https://travis-ci.org/didi/mand-mobile)
-[![Codecov](https://img.shields.io/codecov/c/github/didi/mand-mobile/master.svg?style=flat-square)](https://codecov.io/gh/didi/mand-mobile/branch/master)
+[![Build Status](https://travis-ci.org/didi/cube-ui.svg?branch=master)](https://travis-ci.org/didi/mand-mobile)
+[![codecov](https://codecov.io/gh/didi/mand-mobile/branch/master/graph/badge.svg)](https://codecov.io/gh/didi/mand-mobile)
 [![npm package](https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](https://www.npmjs.org/package/mand-mobile)
 [![NPM downloads](http://img.shields.io/npm/dm/mand-mobile.svg?style=flat-square)](http://npmtrends.com/mand-mobile)
 
