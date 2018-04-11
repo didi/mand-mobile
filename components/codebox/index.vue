@@ -145,6 +145,9 @@ export default {
     if (this.closable) {
       document.addEventListener('click', this.$_handleOutClick)
     }
+    if (this.focused) {
+      this.blur()
+    }
   },
   methods: {
     // MARK: private methods
@@ -161,7 +164,6 @@ export default {
       }
 
       if (this.code.length === this.maxlength) {
-        this.blur()
         this.$emit('submit', this.code)
       }
 
@@ -169,7 +171,6 @@ export default {
     },
     $_onSubmit(e) {
       e.preventDefault()
-      this.blur()
       this.$emit('submit', this.code)
     },
     $_onEnter(val) {
@@ -178,7 +179,6 @@ export default {
       }
 
       if (this.code.length === this.maxlength) {
-        this.blur()
         this.$nextTick(function() {
           this.$emit('submit', this.code)
         })
@@ -191,7 +191,6 @@ export default {
       this.$emit('input', this.code)
     },
     $_onConfirm() {
-      this.blur()
       this.$emit('submit', this.code)
     },
     // MARK: public methods
@@ -202,6 +201,7 @@ export default {
       }
     },
     focus() {
+      console.log('ok')
       this.focused = true
       if (this.system) {
         this.$refs.input.focus()
@@ -255,6 +255,7 @@ export default {
       border-radius 5px
       background-color codebox-dot-color
     .md-codebox-holder
+      pointer-events none
       height codebox-input-height
       padding codebox-input-padding
       width 100%
