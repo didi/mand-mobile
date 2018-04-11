@@ -34,13 +34,25 @@ Vue.component(Dialog.name, Dialog)
 | prevent-scroll | 是否禁止滚动穿透 | Boolean | false |-|
 | prevent-scroll-exclude | 禁止滚动排除元素  | String | -|-|
 
-### Dialog Slots
+#### Dialog Slots
 组件子元素会被当做默认插槽内容使用，适合于不需要标题的自定义窗口内容的场景。
 
-#### Dialog.close()
+#### Dialog Instance Methods
+
+##### close()
 隐藏弹窗
 
-#### Dialog.confirm(props)
+#### Dialog Instance Events
+
+##### @show()
+模态窗口显示后触发的事件
+
+##### @hide()
+模态窗口隐藏后触发的事件
+
+#### Dialog Static Methods
+
+##### confirm(props)
 静态方法创建确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
@@ -52,7 +64,7 @@ Vue.component(Dialog.name, Dialog)
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 
-#### Dialog.alert(props)
+##### Dialog.alert(props)
 静态方法创建警告模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
@@ -63,7 +75,7 @@ Vue.component(Dialog.name, Dialog)
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 
-#### Dialog.succeed(props)
+##### Dialog.succeed(props)
 静态方法创建成功确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
@@ -73,7 +85,7 @@ Vue.component(Dialog.name, Dialog)
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 
-#### Dialog.failed(props)
+##### Dialog.failed(props)
 静态方法创建失败确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
@@ -82,12 +94,3 @@ Vue.component(Dialog.name, Dialog)
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
-
-
-#### Dialog Events
-
-##### @show()
-模态窗口显示后触发的事件
-
-##### @hide()
-模态窗口隐藏后触发的事件
