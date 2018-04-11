@@ -3,7 +3,8 @@
     <template v-if="isView">
       <div class="md-captcha-content">
         <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
-        <div>
+        <div class="md-captcha-error" v-text="errorMsg"></div>
+        <div class="md-captcha-message">
           <slot></slot>
         </div>
         <md-button
@@ -39,7 +40,8 @@
       >
         <div class="md-captcha-content">
           <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
-          <div>
+          <div class="md-captcha-error" v-text="errorMsg"></div>
+          <div class="md-captcha-message">
             <slot></slot>
           </div>
           <md-button
@@ -117,6 +119,7 @@ export default {
       code: '',
       visible: false,
       counterText: '发送验证码',
+      errorMsg: '',
       isCounting: false,
       firstShown: false,
     }
@@ -130,6 +133,11 @@ export default {
           this.firstShown = true
           this.$emit('send', this.countdown)
         }
+      }
+    },
+    code(val) {
+      if (val && this.errorMsg) {
+        this.errorMsg = ''
       }
     },
   },
@@ -186,6 +194,12 @@ export default {
       this.counterText = '发送验证码'
       clearInterval(this.__counter__)
     },
+    setError(msg) {
+      this.$nextTick(() => {
+        this.errorMsg = msg
+        this.code = ''
+      })
+    },
   },
 }
 </script>
@@ -201,7 +215,13 @@ export default {
       .md-captcha-title
         color color-text-base
         font-size 32px
-        margin-bottom 15px
+        margin 0
+      .md-captcha-error
+        color #FF525D
+        font-size 24px
+        line-height 32px
+        height 32px
+        margin-bottom 12px
       .md-button
-        margin 0.34rem auto
+        margin 0.32rem auto
 </style>

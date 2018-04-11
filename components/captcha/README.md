@@ -36,6 +36,9 @@ Vue.component(Captcha.name, Captcha)
 #### countdown()
 开始倒计时
 
+#### setError(message)
+设置报错信息并显示
+
 #### Captcha Events
 
 ##### @show()
