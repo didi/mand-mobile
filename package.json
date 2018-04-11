@@ -2,11 +2,19 @@
   "name": "mand-mobile",
   "version": "1.0.0",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
+  "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.cjs.js",
   "style": "lib/mand-mobile.css",
   "module": "lib/mand-mobile.esm.js",
   "unpkg": "lib/index.js",
   "typings": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/didi/mand-mobile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/didi/mand-mobile/issues"
+  },
   "files": [
     "lib",
     "components",
