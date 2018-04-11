@@ -54,8 +54,7 @@
   </div>
 </template>
 
-mand-mobile
-import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
+<script>import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
 
 export default {
   name: 'popup-demo',
@@ -82,8 +81,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-popup-1
