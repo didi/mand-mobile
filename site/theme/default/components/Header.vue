@@ -342,6 +342,14 @@ export default {
         padding 0
       .default-header-search
         display none
+@media (max-width: 1400px)
+  .default-header-container
+    width 1080px !important
+    .default-header-aside
+      width 20% !important
+    .default-header-content
+      width 79% !important
+      padding 0 !important
 @media (max-width: 1200px)
   .default-header-container
     width 100% !important

@@ -33,47 +33,51 @@
             v-html="homeBlock.describe"
           ></p>
           <!-- 模块按钮 -->
-          <template
+          <div
+            class="home-box-operators"
             v-if="homeBlock.buttons"
-            v-for="(homeBlockButton, homeBlockButtonIndex) in homeBlock.buttons"
+            v-show="blockShow[homeBlockIndex]"
+            :key="`home-box-block-${homeBlockIndex}-2`"
           >
-            <router-link
-              v-if="homeBlockButton.type === 'link'"
-              class="home-button"
-              :class="homeBlockButton.theme"
-              :to="homeBlockButton.src"
-              :data-index="3 + homeBlockButtonIndex"
-              :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
-              v-show="blockShow[homeBlockIndex]"
+            <template
+              v-for="(homeBlockButton, homeBlockButtonIndex) in homeBlock.buttons"
             >
-              {{ homeBlockButton.text }}
-              <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-link-slots-${homeBlockIndex}`"></component>
-              <div v-else-if="homeBlockButton.htmls" v-html="homeBlockButton.htmls"></div>
-            </router-link>
-            <a
-              v-else-if="homeBlockButton.type === 'handler'"
-              href="javascript:void(0)"
-              class="home-button"
-              :class="homeBlockButton.theme"
-              :data-index="3 + homeBlockButtonIndex"
-              :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
-              v-show="blockShow[homeBlockIndex]"
-              @click="handlerButtonClick(homeBlockButton.click, `block-button-handler-slots-${homeBlockIndex}`)"
-            >
-              {{ homeBlockButton.text }}
-              <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>
-              <div v-else-if="homeBlockButton.htmls" v-html="homeBlockButton.htmls"></div>
-            </a>
-            <div
-              v-else
-              class="home-button-other"
-              :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
-              :data-index="3 + homeBlockButtonIndex"
-              v-show="blockShow[homeBlockIndex]"
-              v-html="homeBlockButton.htmls || ''"
-              style="display:inline-block"
-            ></div>
-          </template>
+              <router-link
+                v-if="homeBlockButton.type === 'link'"
+                class="home-button"
+                :class="homeBlockButton.theme"
+                :to="homeBlockButton.src"
+                :data-index="3 + homeBlockButtonIndex"
+                :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
+              >
+                {{ homeBlockButton.text }}
+                <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-link-slots-${homeBlockIndex}`"></component>
+                <div v-else-if="homeBlockButton.htmls" v-html="homeBlockButton.htmls"></div>
+              </router-link>
+              <a
+                v-else-if="homeBlockButton.type === 'handler'"
+                href="javascript:void(0)"
+                class="home-button"
+                :class="homeBlockButton.theme"
+                :data-index="3 + homeBlockButtonIndex"
+                :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
+                @click="handlerButtonClick(homeBlockButton.click, `block-button-handler-slots-${homeBlockIndex}`)"
+              >
+                {{ homeBlockButton.text }}
+                <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>
+                <div v-else-if="homeBlockButton.htmls" v-html="homeBlockButton.htmls"></div>
+              </a>
+              <div
+                v-else
+                class="home-button-other"
+                :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
+                :data-index="3 + homeBlockButtonIndex"
+                v-html="homeBlockButton.htmls || ''"
+                style="display:none"
+                v-dynamic-show
+              ></div>
+            </template>
+          </div>
         </transition-group>
         <!-- 模块配图 -->
         <div class="home-animation" v-if="homeBlock.animations">
@@ -121,6 +125,7 @@
 <script>
 import MfeTable from './components/Table'
 import homeConfig from './assets/js/home.config'
+import { setTimeout } from 'timers';
 
 export default {
   name: 'mfe-blog-theme-default-home',
@@ -134,6 +139,16 @@ export default {
       homeConfig,
       qrcodeTableShow: false,
       blockShow: []
+    }
+  },
+
+  directives: {
+    dynamicShow: {
+      bind (el) {
+        setTimeout(() => {
+          el.style.display = 'block'
+        }, 800)
+      },
     }
   },
 
@@ -202,6 +217,7 @@ export default {
       .home-text, .home-animation, .home-animation-content, .home-decorate
         position absolute
       .home-text
+        z-index 3
         width 440px
         h2.home-title
           position relative
@@ -227,33 +243,40 @@ export default {
           color #666
           line-height 32px
           // transition transform .3s
-        a.home-button
+        div.home-box-operators
           position relative
-          display inline-block
-          width 140px
-          height 45px
           margin-top 64px
-          margin-right 20px
-          line-height 45px
-          text-align center
-          border-radius 28px
-          text-decoration none
-          font-size 18px
-          box-shadow 0 0 10px #eee
-          transition opacity .3s
-          &:hover
-            opacity .8
-          &.start
-            background-image linear-gradient(-90deg, #FFD653 0%, #FF8B48 100%)
-            color #FFF
-          &.demo
-            background-color #ECF6FF
-            color #048EFA
-            box-shadow none
-            img
-              width 120px
-              height 120px
-              margin 20px 0
+          a.home-button
+            position relative
+            display inline-block
+            width 140px
+            height 45px
+            margin-right 20px
+            line-height 45px
+            text-align center
+            border-radius 28px
+            text-decoration none
+            font-size 18px
+            box-shadow 0 0 10px #eee
+            transition opacity .3s
+            &:hover
+              opacity .8
+            &.start
+              background-image linear-gradient(-90deg, #FFD653 0%, #FF8B48 100%)
+              color #FFF
+            &.demo
+              background-color #ECF6FF
+              color #048EFA
+              box-shadow none
+              img
+                width 120px
+                height 120px
+                margin 20px 0
+          div.home-button-other
+            position absolute
+            right 0
+            top 50%
+            transform translateY(-50%)
       .home-animation-list
         margin-top 72px
         .home-animation-item
@@ -351,14 +374,15 @@ export default {
           top 0
           left -300px
 
-// @media (max-width: 1200px)
-
+@media (max-width: 1400px)
+  .home-box
+    width 1080px !important
 @media (max-width: 1000px)
   .default-content
     .default-content-wrapper
       margin-top 0px
       .home-box
-        width 100%
+        width 100% !important
         padding 0 .32rem
         box-sizing border-box
 @media (max-width: 750px)
@@ -403,9 +427,10 @@ export default {
         font-size .32rem !important
       .home-describe
         font-size .24rem !important
-      .home-button
+      .home-box-operators
         margin-top .32rem !important
-        font-size .28rem !important
+        .home-button
+          font-size .28rem !important
       .home-button-other
         display none !important
 </style>
