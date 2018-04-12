@@ -7,11 +7,11 @@ import App from './App'
 
 import '../components/_style/global.styl'
 import './theme.custom.styl'
-import fastClick from 'fastclick'
+import {FastClick} from 'fastclick'
 
 
 if ('ontouchstart' in window) {
-  fastClick(document.body)
+  FastClick.attach(document.body)
 }
 
 
