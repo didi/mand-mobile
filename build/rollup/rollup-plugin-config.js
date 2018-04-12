@@ -18,6 +18,8 @@ const progress = require('rollup-plugin-progress')
 const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
+const package = require('../../package.json')
+
 // const postcssUrl = require('postcss-url')
 
 const babelrc = require('babelrc-rollup').default
@@ -102,7 +104,8 @@ const rollupPlugin = [
   ])),
   // inject
   replacePlugin({
-    'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`
+    'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`,
+    'MAN_VERSION': `"${package.version}"`
   }),
   ...(conditionHelper(isTest, [
     builtins(),
