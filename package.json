@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
-  "main": "lib/mand-mobile.cjs.js",
+  "main": "lib/mand-mobile.umd.js",
   "style": "lib/mand-mobile.css",
   "module": "lib/mand-mobile.esm.js",
   "unpkg": "lib/index.js",
