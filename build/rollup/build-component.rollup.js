@@ -72,6 +72,9 @@ function move(destDir) {
       if (/demo|test/.test(item)) {
         return false
       }
+      if (/^index.js$/.test(item)) {
+        return false
+      }
       return true
     }}, function (err, result) {
       if (err) {
@@ -119,7 +122,17 @@ function compileVueAndReplace(filePath) {
 }
 
 function compileJsAndReplace(filePath){
-   babel.transformFileAsync(filePath)
+   babel.transformFileAsync(filePath, {
+      babelrc: false,
+      presets: [
+        ['env', {
+          'modules': 'umd',
+          'targets': {
+            'browsers': ['iOS >= 8', 'Android >= 4']
+          }
+        }]
+      ]
+   })
     .then(({code}) => {
       return fs.writeFileAsync(filePath, code)
     })
