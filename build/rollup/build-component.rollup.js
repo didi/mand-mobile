@@ -69,7 +69,6 @@ function computedCompilerConfig(filePath) {
 function move(destDir) {
   return new Promise((resolve, reject) => {
     copy(SRC_BASE, destDir, {filter: function(item) {
-      console.info('item', item)
       if (/demo|test/.test(item)) {
         return false
       }
