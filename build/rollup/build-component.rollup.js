@@ -164,9 +164,6 @@ function compileAndReplaceAllVueFile() {
 function main() {
   return move('lib')
     .then(() => Promise.all([compileAndReplaceAllJsFile(), compileAndReplaceAllVueFile()]))
-    .then(() => {
-
-    })
     .catch(e => console.info(e))
 }
 
