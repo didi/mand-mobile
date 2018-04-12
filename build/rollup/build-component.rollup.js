@@ -69,7 +69,11 @@ function computedCompilerConfig(filePath) {
 function move(destDir) {
   return new Promise((resolve, reject) => {
     copy(SRC_BASE, destDir, {filter: function(item) {
+      console.info('item', item)
       if (/demo|test/.test(item)) {
+        return false
+      }
+      if (/^index.js$/.test(item)) {
         return false
       }
       return true
@@ -119,7 +123,17 @@ function compileVueAndReplace(filePath) {
 }
 
 function compileJsAndReplace(filePath){
-   babel.transformFileAsync(filePath)
+   babel.transformFileAsync(filePath, {
+      babelrc: false,
+      presets: [
+        ['env', {
+          'modules': 'umd',
+          'targets': {
+            'browsers': ['iOS >= 8', 'Android >= 4']
+          }
+        }]
+      ]
+   })
     .then(({code}) => {
       return fs.writeFileAsync(filePath, code)
     })
@@ -150,6 +164,9 @@ function compileAndReplaceAllVueFile() {
 function main() {
   return move('lib')
     .then(() => Promise.all([compileAndReplaceAllJsFile(), compileAndReplaceAllVueFile()]))
+    .then(() => {
+
+    })
     .catch(e => console.info(e))
 }
 
