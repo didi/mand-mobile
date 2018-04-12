@@ -18,7 +18,7 @@ const progress = require('rollup-plugin-progress')
 const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
-const package = require('../../package.json')
+const pkg = require('../../package.json')
 
 // const postcssUrl = require('postcss-url')
 
@@ -105,7 +105,7 @@ const rollupPlugin = [
   // inject
   replacePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`,
-    'MAN_VERSION': `"${package.version}"`
+    'MAN_VERSION': `"${pkg.version}"`
   }),
   ...(conditionHelper(isTest, [
     builtins(),
