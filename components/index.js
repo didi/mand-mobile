@@ -98,8 +98,9 @@ const install = function(Vue) {
   if (!Vue || install.installed) {
     return
   }
-
-  components.forEach(component => {
+  const componentsNames = Object.keys(components)
+  componentsNames.forEach(name => {
+    const component = components[name]
     component.name && Vue.component(component.name, component)
   })
 }
