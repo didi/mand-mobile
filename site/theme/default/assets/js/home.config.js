@@ -31,7 +31,7 @@ export default [
       theme: 'demo',
       slots: qrcodeTableView
     }, {
-      htmls: '<div style="position:relative;top:8px;margin-left:15px;"><a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a></div>'
+      htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
     }],
     animations: {
       bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',

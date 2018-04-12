@@ -120,7 +120,11 @@ clearfix()
         text-decoration none
       span
         opacity .8
-
+@media (max-width: 1400px)
+  .default-footer-container
+    width 1080px !important
+  .default-footer-copyright-container
+    width 1080px !important
 @media (max-width: 750px)
   .mfe-blog-theme-default-footer
     display block
