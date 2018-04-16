@@ -418,7 +418,7 @@ export default {
         .describe
           font-size .2rem !important
     .home-text
-      position static !important
+      position relative !important
       width 100% !important
       text-align center
       top 0 !important
