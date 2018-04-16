@@ -49,7 +49,7 @@ export default {
 
   data() {
     return {
-      activeIndex: 0,
+      activeIndex: this.defaultIndex,
     }
   },
 
