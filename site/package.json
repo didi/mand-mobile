@@ -13,7 +13,7 @@
     "indices": "node ./build/bin/gen-indices --log"
   },
   "dependencies": {
-    "mand-mobile": "^0.5.1",
+    "mand-mobile": "^1.0.4",
     "vue": "^2.5.2",
     "vue-qrcode-component": "^2.1.1",
     "vue-router": "^3.0.1"
