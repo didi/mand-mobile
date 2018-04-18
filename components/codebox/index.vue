@@ -143,10 +143,13 @@ export default {
   },
   beforeDestroy() {
     if (this.closable) {
-      document.addEventListener('click', this.$_handleOutClick)
+      document.removeEventListener('click', this.$_handleOutClick)
     }
     if (this.focused) {
       this.blur()
+    }
+    if (!this.system && !this.isView) {
+      document.body.removeChild(this.$refs.keyboard.$el)
     }
   },
   methods: {
