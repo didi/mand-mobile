@@ -116,6 +116,12 @@ export default {
     }
   },
 
+  beforeDestroy() {
+    if (this.appendTo) {
+      this.appendTo.removeChild(this.$el)
+    }
+  },
+
   methods: {
     // MARK: private methods
 
