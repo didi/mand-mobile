@@ -152,6 +152,12 @@ export default {
     }
   },
 
+  beforeDestroy() {
+    if (this.appendTo && !this.isView) {
+      this.appendTo.removeChild(this.$el)
+    }
+  },
+
   methods: {
     // MARK: events handler, 如 $_onButtonClick
     $_onInput(val) {

@@ -23,7 +23,6 @@ const generate = function({title = '', icon = '', content = '', closable = false
   })
   vm.$on('hide', () => {
     vm.$destroy()
-    document.body.removeChild(vm.$el)
   })
 
   return vm

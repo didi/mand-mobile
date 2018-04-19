@@ -10,7 +10,7 @@ const qrcodeTableView = {
       qrcodeTableShow: false
     }
   },
-  template: '<mfe-table v-model="qrcodeTableShow" style="width:160px;height:160px;top:65px;left:-10px;"><img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png" alt=""></mfe-table>'
+  template: '<mfe-table v-model="qrcodeTableShow" style="width:160px;height:160px;top:65px;left:-10px;overflow:hidden;"><img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png" alt=""></mfe-table>'
 }
 
 export default [

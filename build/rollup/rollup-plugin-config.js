@@ -99,7 +99,8 @@ const rollupPlugin = [
   ])),
   ...(conditionHelper(isDev, [
     common({
-      namedExports: { 'fastclick': ['FastClick'] },
+      include: 'node_modules/**',
+      // namedExports: { 'fastclick': ['FastClick'] },
     }),
   ])),
   // inject
