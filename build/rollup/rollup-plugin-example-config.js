@@ -58,7 +58,7 @@ const rollupPlugin = [
   }),
 
   common({
-    namedExports: { 'fastclick': ['FastClick'] },
+    include: 'node_modules/**',
   }),
 
   // inject
