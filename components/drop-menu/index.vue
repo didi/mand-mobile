@@ -1,7 +1,7 @@
 <template>
   <div class="md-drop-menu">
     <div class="md-drop-menu-bar">
-      <template v-for="(item, index) in data">  
+      <template v-for="(item, index) in data">
         <div
           class="bar-item"
           :class="{
@@ -12,7 +12,7 @@
           :key="index"
           @click="$_onBarItemClick(item, index)"
         >
-          <span 
+          <span
             v-text="$_getBarItemText(item, index)"
           ></span>
         </div>
@@ -136,7 +136,7 @@ export default {
     },
     $_setScroller() {
       const boxer = this.$el ? this.$el.querySelector('.md-popup-box') : null
-      if (boxer && boxer.clientHeight >= document.documentElement.clientHeight) {
+      if (boxer && boxer.clientHeight >= this.$el.clientHeight) {
         this.scroller = '.md-field-content'
       } else {
         return ''
