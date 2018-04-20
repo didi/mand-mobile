@@ -21,6 +21,8 @@
     <md-popup
       v-model="isPopupShow"
       position="top"
+      prevent-scroll
+      :prevent-scroll-exclude="scroller"
       @show="$_onListShow"
       @hide="$_onListHide"
     >
@@ -80,6 +82,7 @@ export default {
       selectedMenuListIndex: [],
       activeMenuBarIndex: -1,
       activeMenuListData: [],
+      scroller: '',
     }
   },
 
@@ -131,6 +134,14 @@ export default {
     $_getBarItemText(item, index) {
       return this.selectedMenuListItem[index] !== undefined ? this.selectedMenuListItem[index].text : item.text
     },
+    $_setScroller() {
+      const boxer = this.$el ? this.$el.querySelector('.md-popup-box') : null
+      if (boxer && boxer.clientHeight >= document.documentElement.clientHeight) {
+        this.scroller = '.md-field-content'
+      } else {
+        return ''
+      }
+    },
 
     // MARK: events handler
     $_onBarItemClick(barItem, index) {
@@ -156,6 +167,7 @@ export default {
     },
     $_onListShow() {
       /* istanbul ignore next  */
+      this.$_setScroller()
       this.$emit('show')
     },
     $_onListHide() {

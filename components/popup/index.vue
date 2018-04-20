@@ -112,6 +112,11 @@
         this.$_hidePopupBox()
       }
     },
+    preventScrollExclude(val, oldVal) {
+      // remove old listener before add
+      this.$_preventScrollExclude(false, oldVal)
+      this.$_preventScrollExclude(true, val)
+    },
   },
 
   mounted() {
@@ -130,6 +135,7 @@
           this.$_onPopupTransitionEnd()
         }
       })
+
       this.preventScroll && this.$_preventScroll(true)
     },
     $_hidePopupBox() {
@@ -143,13 +149,20 @@
     },
     $_preventScroll(isBind) {
       const handler = isBind ? 'addEventListener' : 'removeEventListener'
-      const preventScrollExclude = this.preventScrollExclude
+      const masker = this.$el.querySelector('.md-popup-mask')
+      const boxer = this.$el.querySelector('.md-popup-box')
+
+      masker && masker[handler]('touchmove', this.$_preventDefault, false)
+      boxer && boxer[handler]('touchmove', this.$_preventDefault, false)
+      this.$_preventScrollExclude(isBind)
+    },
+    $_preventScrollExclude(isBind, preventScrollExclude) {
+      const handler = isBind ? 'addEventListener' : 'removeEventListener'
+      preventScrollExclude = preventScrollExclude || this.preventScrollExclude
       const excluder =
         preventScrollExclude && typeof preventScrollExclude === 'string'
           ? this.$el.querySelector(preventScrollExclude)
           : preventScrollExclude
-
-      document[handler]('touchmove', this.$_preventDefault, false)
       excluder && excluder[handler]('touchmove', this.$_stopImmediatePropagation, false)
     },
     $_preventDefault(event) {
