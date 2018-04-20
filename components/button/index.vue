@@ -59,8 +59,9 @@ export default {
   border-radius radius-normal
   box-sizing border-box
   overflow visible
-  // &.disabled
-  //   pointer-events none
+  &.disabled
+    &:active::before
+      display none
   &::before
     absolute-pos()
     display none
