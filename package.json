@@ -1,7 +1,7 @@
 {
   "name": "mand-mobile",
   "version": "1.0.5",
-  "description": "A Vue.js 2.0 Mobile UI Toolkit",
+  "description": "A mobile UI toolkit, based on Vue.js 2, designed for financial scenes",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
   "style": "lib/mand-mobile.css",
