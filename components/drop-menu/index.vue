@@ -136,7 +136,7 @@ export default {
     },
     $_setScroller() {
       const boxer = this.$el ? this.$el.querySelector('.md-popup-box') : null
-      if (boxer && boxer.clientHeight >= document.documentElement.clientHeight) {
+      if (boxer && boxer.clientHeight >= this.$el.clientHeight) {
         this.scroller = '.md-field-content'
       } else {
         return ''
