@@ -68,6 +68,7 @@
 
   methods: {
     $_preventScroll(e) {
+      /* istanbul ignore next */
       e.preventDefault()
     },
   },
@@ -94,7 +95,7 @@
     color color-text-base
   .title-bar-left, .title-bar-right
     width 20%
-    // padding 0 h-gap-lg 
+    // padding 0 h-gap-lg
     font-size popup-title-bar-font-size-button
     box-sizing border-box
   .title-bar-title

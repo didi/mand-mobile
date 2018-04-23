@@ -186,6 +186,7 @@ export default {
       let i = this.count - 1
       this.isCounting = true
       this.counterText = `${i}s后重发`
+      /* istanbul ignore next */
       this.__counter__ = setInterval(() => {
         if (i === 0) {
           this.resetcount()

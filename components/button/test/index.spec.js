@@ -1,4 +1,5 @@
 import Button from '../index'
+import sinon from 'sinon'
 import {mount} from 'avoriaz'
 
 describe('Button', () => {
@@ -62,6 +63,34 @@ describe('Button', () => {
     })
 
     expect(wrapper.hasClass('disabled')).to.equal(true)
+  })
+
+  it('click button', () => {
+    wrapper = mount(Button, {
+      propsData: {
+        disabled: false,
+      },
+    })
+    const spy = sinon.spy(wrapper.vm, '$_onBtnClick')
+    wrapper.setMethods({
+      $_onBtnClick: spy,
+    })
+    wrapper.trigger('click')
+    expect(spy.called).to.be.true
+  })
+
+  it('click disabled button', () => {
+    wrapper = mount(Button, {
+      propsData: {
+        disabled: true,
+      },
+    })
+    const spy = sinon.spy(wrapper.vm, '$_onBtnClick')
+    wrapper.setMethods({
+      $_onBtnClick: spy,
+    })
+    wrapper.trigger('click')
+    expect(spy.called).to.be.true
   })
 
   it('create icon button', () => {

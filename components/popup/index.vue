@@ -114,7 +114,9 @@
     },
     preventScrollExclude(val, oldVal) {
       // remove old listener before add
+      /* istanbul ignore next */
       this.$_preventScrollExclude(false, oldVal)
+      /* istanbul ignore next */
       this.$_preventScrollExclude(true, val)
     },
   },
@@ -131,6 +133,7 @@
       // popup box enter the animation after popup show
       this.$nextTick(() => {
         this.isPopupBoxShow = true
+        /* istanbul ignore if */
         if (process.env.NODE_ENV === 'testing') {
           this.$_onPopupTransitionEnd()
         }
@@ -143,6 +146,7 @@
       this.isPopupBoxShow = false
       this.preventScroll && this.$_preventScroll(false)
       this.$emit('input', false)
+      /* istanbul ignore if */
       if (process.env.NODE_ENV === 'testing') {
         this.$_onPopupTransitionEnd()
       }
@@ -169,6 +173,7 @@
       event.preventDefault()
     },
     $_stopImmediatePropagation(event) {
+      /* istanbul ignore next */
       event.stopImmediatePropagation()
     },
 

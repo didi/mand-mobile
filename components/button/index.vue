@@ -59,8 +59,9 @@ export default {
   border-radius radius-normal
   box-sizing border-box
   overflow visible
-  // &.disabled
-  //   pointer-events none
+  &.disabled
+    &:active::before
+      display none
   &::before
     absolute-pos()
     display none
@@ -115,7 +116,7 @@ export default {
       height button-ghost-height-sm
       line-height button-ghost-height-sm
       font-size button-ghost-font-size
-  
+
   &.link
     background-color button-link-fill
     color button-link-color
@@ -133,7 +134,7 @@ export default {
       width button-link-width
       height button-link-height
       font-size font-heading-normal
-    &.with-icon  
+    &.with-icon
       .md-icon
         display flex
         align-items center
