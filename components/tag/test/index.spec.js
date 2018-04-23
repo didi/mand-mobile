@@ -30,6 +30,7 @@ describe('Tag', () => {
     wrapper.setProps({
       type: 'fill',
       fontColor: '#fff',
+      fillColor: '#000',
     })
     expect(wrapper.contains('.type-fill')).to.be.true
   })

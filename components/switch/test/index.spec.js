@@ -49,4 +49,16 @@ describe('Switch', () => {
     })
     expect(wrapper.hasClass('disabled')).to.be.true
   })
+
+  it('click disabled switch', () => {
+    wrapper = mount(Switch, {
+      propsData: {
+        disabled: true,
+      },
+    })
+
+    const spy = sinon.spy(wrapper.vm, '$_onChange')
+    wrapper.find('.md-switch')[0].trigger('click')
+    expect(spy.called).to.be.true
+  })
 })
