@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-1">
-    <md-button @click.native="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</md-button>
+    <md-button @click="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</md-button>
     <md-number-keyboard
       v-model="isKeyBoardShow"
       ok-text="支付"

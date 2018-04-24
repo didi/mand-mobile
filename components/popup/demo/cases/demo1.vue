@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-popup md-example-child-popup-1" style="height: 1000px;">
-    <md-button @click.native="showPopUp('top')">无遮罩层</md-button>
+    <md-button @click="showPopUp('top')">无遮罩层</md-button>
     <md-popup
       v-model="isPopupShow.top"
       :hasMask="false"
@@ -15,7 +15,7 @@
       </div>
     </md-popup>
 
-    <md-button @click.native="showPopUp('scroll')">防止滚动穿透</md-button>
+    <md-button @click="showPopUp('scroll')">防止滚动穿透</md-button>
     <md-popup
       v-model="isPopupShow.scroll"
       position="bottom"
@@ -34,7 +34,7 @@
       </div>
     </md-popup>
 
-    <md-button @click.native="showPopUp('mask')">禁用遮罩层点击</md-button>
+    <md-button @click="showPopUp('mask')">禁用遮罩层点击</md-button>
     <md-popup
       v-model="isPopupShow.mask"
       position="bottom"

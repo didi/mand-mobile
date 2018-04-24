@@ -1,9 +1,9 @@
 <template>
   <div class="md-example-child md-example-child-dialog md-example-child-dialog-1">
-    <md-button @click.native="alert">警告弹窗</md-button>
-    <md-button @click.native="confirm">确认弹窗</md-button>
-    <md-button @click.native="succeedConfirm">成功弹窗</md-button>
-    <md-button @click.native="failedConfirm">失败弹窗</md-button>
+    <md-button @click="alert">警告弹窗</md-button>
+    <md-button @click="confirm">确认弹窗</md-button>
+    <md-button @click="succeedConfirm">成功弹窗</md-button>
+    <md-button @click="failedConfirm">失败弹窗</md-button>
   </div>
 </template>
 

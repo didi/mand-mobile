@@ -44,6 +44,8 @@ export default {
     $_onBtnClick(event) {
       if (this.disabled) {
         event.stopImmediatePropagation()
+      } else {
+        this.$emit('click', event)
       }
     },
   },

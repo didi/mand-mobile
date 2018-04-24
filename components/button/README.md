@@ -25,3 +25,8 @@ Vue.component(Button.name, Button)
 |size|按钮大小|String|`large`|`large`, `small`。仅在`type`为`ghost/ghost-primary`时生效|
 |icon|按钮图标|String|-|可选值请参考组件`Icon`|
 |disabled|是否禁用|Boolean|`false`|-|
+
+#### Button Events
+
+##### @click(event)
+按钮点击事件

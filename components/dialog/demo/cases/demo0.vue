@@ -1,8 +1,8 @@
 <template>
   <div class="md-example-child md-example-child-dialog md-example-child-dialog-0">
-    <md-button @click.native="basicDialog.open = true">基本</md-button>
-    <md-button @click.native="iconDialog.open = true">带图标</md-button>
-    <md-button @click.native="actDialog.open = true">多操作</md-button>
+    <md-button @click="basicDialog.open = true">基本</md-button>
+    <md-button @click="iconDialog.open = true">带图标</md-button>
+    <md-button @click="actDialog.open = true">多操作</md-button>
 
     <md-dialog
       title="窗口标题"

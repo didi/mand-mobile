@@ -3,7 +3,7 @@
     <section class="md-example-section">
       <div class="md-example-title">基本</div>
       <div class="md-example-content">
-        <md-button @click.native="$_showTabPicker(1)">普通多频道</md-button>
+        <md-button @click="$_showTabPicker(1)">普通多频道</md-button>
         <md-tab-picker
           v-model="isTabPickerShow[1]"
           :title="title"
@@ -40,7 +40,7 @@
           </li>
         </md-tab-picker>
 
-        <md-button @click.native="$_showTabPicker(0)">级联多频道</md-button>
+        <md-button @click="$_showTabPicker(0)">级联多频道</md-button>
         <md-tab-picker
           v-model="isTabPickerShow[0]"
           :title="title"
@@ -56,7 +56,7 @@
           @hide="$_hide"
         ></md-tab-picker>
 
-        <md-button @click.native="$_showTabPicker(2)">异步级联多频道</md-button>
+        <md-button @click="$_showTabPicker(2)">异步级联多频道</md-button>
         <md-tab-picker
           v-model="isTabPickerShow[2]"
           :title="title"

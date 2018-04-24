@@ -1,16 +1,16 @@
 <template>
   <div class="md-example-child md-example-child-landscape">
-    <md-button @click.native="showPic=true">图片广告</md-button>
+    <md-button @click="showPic=true">图片广告</md-button>
       <md-landscape v-model="showPic">
         <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
       </md-landscape>
 
-      <md-button @click.native="showNoMask=true">无蒙层</md-button>
+      <md-button @click="showNoMask=true">无蒙层</md-button>
       <md-landscape v-model="showNoMask" :has-mask="false">
         <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
       </md-landscape>
 
-      <md-button @click.native="showScroll=true">滚动区域</md-button>
+      <md-button @click="showScroll=true">滚动区域</md-button>
       <md-landscape v-model="showScroll" :scroll="true">
         <div class="scroll-area">
           <h1>滚动区域</h1>
@@ -18,7 +18,7 @@
         </div>
       </md-landscape>
 
-      <md-button @click.native="showListen=true">监听事件</md-button>
+      <md-button @click="showListen=true">监听事件</md-button>
       <md-landscape v-model="showListen" @show="alert('已弹出')" @hide="alert('已隐藏')">
         <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
       </md-landscape>

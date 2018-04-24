@@ -13,7 +13,7 @@
         :title="title"
         @cancel="$_onPopupCancel"
       >
-        <md-icon name="cross" size="lg" slot="cancel"></md-icon> 
+        <md-icon name="cross" size="lg" slot="cancel"></md-icon>
       </md-popup-title-bar>
       <div
         class="md-cashier-container"
@@ -61,7 +61,7 @@
             >更多支付方式</div>
           </div>
           <div class="md-cashier-block-btn">
-            <md-button class="md-cashier-pay-button" @click.native="$_onChannelBtnClick">确定支付</md-button>
+            <md-button class="md-cashier-pay-button" @click="$_onChannelBtnClick">确定支付</md-button>
           </div>
         </div>
 
@@ -96,7 +96,7 @@
           </div>
           <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
           <div class="md-cashier-block-btn" v-if="scene === 'success'">
-            <md-button @click.native="isCashierShow = false">我知道了</md-button>
+            <md-button @click="isCashierShow = false">我知道了</md-button>
           </div>
         </div>
 
@@ -110,7 +110,7 @@
           </div>
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <div class="md-cashier-block-btn">
-            <md-button @click.native="isCashierShow = false">我知道了</md-button>
+            <md-button @click="isCashierShow = false">我知道了</md-button>
           </div>
         </div>
       </div>
@@ -365,7 +365,7 @@ block()
                 float left
                 margin-left h-gap-sm
               .item-check
-                position absolute 
+                position absolute
                 top 50%
                 right 0
                 transform translateY(-50%)
