@@ -3,8 +3,9 @@ title: 更新日志
 ---
 
 <!-- CUTOFF -->
-### 1.0.7
+### 1.0.8
 `2018-04-24`
+- Button组件点击事件无需`.native`修饰符
 - 为Landscape组件增加`mask-closable`选项
 
 ### 1.0.6
