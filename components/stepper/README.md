@@ -30,5 +30,5 @@ read-only|只读| Boolean|`false`
 
 #### Stepper Events
 
-##### @change()
+##### @change(currentValue)
 值发生变化事件
