@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-tab-picker md-example-child-tab-picker-0">
-    <md-button @click.native="showTabPicker">普通多频道</md-button>
+    <md-button @click="showTabPicker">普通多频道</md-button>
     <md-tab-picker
       v-model="isTabPickerShow"
       :title="title"

@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-tab-picker md-example-child-tab-picker-2">
-    <md-button @click.native="showTabPicker">异步级联多频道</md-button>
+    <md-button @click="showTabPicker">异步级联多频道</md-button>
     <md-tab-picker
       v-model="isTabPickerShow"
       data-struct="async"

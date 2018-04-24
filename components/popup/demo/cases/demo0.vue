@@ -1,13 +1,13 @@
 <template>
   <div class="md-example-child md-example-child-popup md-example-child-popup-0">
-    <md-button @click.native="showPopUp('center')">屏幕中弹出</md-button>
+    <md-button @click="showPopUp('center')">屏幕中弹出</md-button>
     <md-popup v-model="isPopupShow.center">
       <div class="md-example-popup md-example-popup-center">
         Popup Center
       </div>
     </md-popup>
 
-    <md-button @click.native="showPopUp('bottom')">底部弹出</md-button>
+    <md-button @click="showPopUp('bottom')">底部弹出</md-button>
     <md-popup
       v-model="isPopupShow.bottom"
       position="bottom"
@@ -24,7 +24,7 @@
       </div>
     </md-popup>
 
-    <md-button @click.native="showPopUp('top')">顶部弹出</md-button>
+    <md-button @click="showPopUp('top')">顶部弹出</md-button>
     <md-popup
       v-model="isPopupShow.top"
       :hasMask="false"
@@ -39,7 +39,7 @@
       </div>
     </md-popup>
 
-    <md-button @click.native="showPopUp('left')">左侧弹出</md-button>
+    <md-button @click="showPopUp('left')">左侧弹出</md-button>
     <md-popup
       v-model="isPopupShow.left"
       position="left"
@@ -49,7 +49,7 @@
       </div>
     </md-popup>
 
-    <md-button @click.native="showPopUp('right')">右侧弹出</md-button>
+    <md-button @click="showPopUp('right')">右侧弹出</md-button>
     <md-popup
       v-model="isPopupShow.right"
       position="right"

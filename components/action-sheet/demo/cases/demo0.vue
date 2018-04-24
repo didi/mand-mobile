@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-action-sheet">
-    <md-button @click.native="$_showActionSheet">唤起动作面板</md-button>
+    <md-button @click="$_showActionSheet">唤起动作面板</md-button>
     <md-action-sheet
       v-model="value"
       :title="title"

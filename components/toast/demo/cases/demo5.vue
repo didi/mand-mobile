@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-toast md-example-child-toast-1">
-    <md-button @click.native="showToast">长文字</md-button>
+    <md-button @click="showToast">长文字</md-button>
   </div>
 </template>
 

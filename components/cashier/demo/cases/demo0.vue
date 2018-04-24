@@ -25,7 +25,7 @@
         <md-switch v-model="isCashierCaptcha"></md-switch>
       </md-field-item>
     </md-field>
-    <md-button @click.native="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</md-button>
+    <md-button @click="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</md-button>
     <md-cashier
       ref="cashier"
       v-model="isCashierhow"

@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-toast md-example-child-toast-3">
-    <md-button @click.native="start">连续调用</md-button>
+    <md-button @click="start">连续调用</md-button>
   </div>
 </template>
 

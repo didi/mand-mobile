@@ -8,7 +8,7 @@
         :type="button.type || 'ghost'"
         v-for="(button, index) of buttons"
         :key="index"
-        @click.native="button.handler">
+        @click="button.handler">
         {{button.text}}
       </md-button>
     </div>

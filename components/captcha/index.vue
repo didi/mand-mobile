@@ -13,7 +13,7 @@
           size="small"
           v-text="counterText"
           :disabled="this.isCounting"
-          @click.native="$_onClickResend"
+          @click="$_onClickResend"
         ></md-button>
       </div>
       <md-codebox
@@ -50,7 +50,7 @@
             size="small"
             v-text="counterText"
             :disabled="this.isCounting"
-            @click.native="$_onClickResend"
+            @click="$_onClickResend"
           ></md-button>
         </div>
         <md-codebox
@@ -131,7 +131,7 @@ export default {
         this.code = ''
         if (!this.firstShown) {
           this.firstShown = true
-          this.$emit('send', this.countdown)
+          this.countdown()
         }
       }
     },
@@ -148,7 +148,7 @@ export default {
     }
     if (this.value) {
       this.firstShown = true
-      this.$emit('send', this.countdown)
+      this.countdown()
     }
   },
 
@@ -178,10 +178,14 @@ export default {
       this.resetcount()
     },
     $_onClickResend() {
-      this.$emit('send', this.countdown)
+      this.countdown()
+      this.$emit('send')
     },
     // MARK: public methods
     countdown() {
+      if (!this.count) {
+        return
+      }
       clearInterval(this.__counter__)
       let i = this.count - 1
       this.isCounting = true

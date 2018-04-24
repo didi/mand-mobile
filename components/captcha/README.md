@@ -34,7 +34,7 @@ Vue.component(Captcha.name, Captcha)
 #### Captcha Methods
 
 #### countdown()
-开始倒计时
+手动重置倒计时
 
 #### setError(message)
 设置报错信息并显示
@@ -47,8 +47,8 @@ Vue.component(Captcha.name, Captcha)
 #### @hide()
 验证码组件隐藏事件
 
-#### @send(countdown)
-触发发送验证码事件, 会在第一次显示的时候触发, 其余情况则会在点击重发按钮后出发
+#### @send()
+发送验证码事件, 点击重发按钮后触发及开始倒计时
 
 #### @submit(code)
 用户提交输入内容事件
