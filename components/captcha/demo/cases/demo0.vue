@@ -46,7 +46,7 @@
       </md-field-item>
 
     </md-field>
-    <md-button @click.native="next">确定</md-button>
+    <md-button @click="next">确定</md-button>
 
     <md-captcha
       ref="captcha"
@@ -110,7 +110,7 @@ export default {
       }
     },
     onSend() {
-      this.$refs.captcha.countdown()
+      console.log('click resend button.')
     },
     onShow() {},
     onHide() {},
