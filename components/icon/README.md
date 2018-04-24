@@ -38,7 +38,7 @@ module.exports = {
         loader: 'svg-sprite-loader',
         include: [
           // 将某个路径下所有svg交给 svg-sprite-loader 插件处理
-          path.resovle(__dirname, 'src/my-project-svg-folder')
+          path.resolve(__dirname, 'src/my-project-svg-folder')
         ],
       }
     ]
