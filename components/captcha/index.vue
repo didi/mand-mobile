@@ -175,7 +175,6 @@ export default {
     },
     $_onSubmit(code) {
       this.$emit('submit', code)
-      this.resetcount()
     },
     $_onClickResend() {
       this.countdown()
