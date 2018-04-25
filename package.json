@@ -22,8 +22,8 @@
     "assets"
   ],
   "scripts": {
-    "dev:webpack": "webpack-dashboard -m -- node build/webpack/dev-server",
-    "dev": "node build/rollup/dev-server.rollup",
+    "dev": "webpack-dashboard -m -- node build/webpack/dev-server",
+    "dev:rollup": "node build/rollup/dev-server.rollup",
     "dev:site": "cd site && npm start",
     "create": "node build/component-init.js",
     "cz": "git-cz",
