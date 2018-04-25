@@ -156,6 +156,7 @@ export default {
         this.activeMenuListData = barItem.options
       } else {
         this.isPopupShow = false
+        this.activeMenuBarIndex = -1
       }
     },
     $_onListItemClick(listItem) {
@@ -164,6 +165,7 @@ export default {
       this.isPopupShow = false
       this.$set(this.selectedMenuListItem, activeMenuBarIndex, listItem)
       this.$emit('change', barItem, listItem)
+      this.activeMenuBarIndex = -1
     },
     $_onListShow() {
       /* istanbul ignore next  */
@@ -171,8 +173,6 @@ export default {
       this.$emit('show')
     },
     $_onListHide() {
-      /* istanbul ignore next  */
-      this.activeMenuBarIndex = -1
       /* istanbul ignore next  */
       this.$emit('hide')
     },
