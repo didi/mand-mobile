@@ -9,17 +9,18 @@ const babel = bluebird.promisifyAll(require('babel-core'))
 const TARGET_LIB_BASE = 'lib'
 const SRC_BASE = 'components'
 
-
 function babelPluginInsertCssImportForVue ({ types: t }) {
   function computedSameDirCssPosition(filePath) {
     const filePathParse = path.parse(filePath)
     return `./style/${filePathParse.name}.css`
   }
+  const globalCssLiteral = '../_style/global.css'
   return {
     visitor: {
       Program(path, state) {
         const importLiteral = computedSameDirCssPosition(state.opts.filePath)
         path.unshiftContainer('body', t.ImportDeclaration([],t.StringLiteral(importLiteral)))
+        path.unshiftContainer('body', t.ImportDeclaration([],t.StringLiteral(globalCssLiteral)))
       }
     }
   }
@@ -141,6 +142,18 @@ function compileJsAndReplace(filePath){
     })
 }
 
+function compileGlobalStylus() {
+  const filePath = path.resolve(TARGET_LIB_BASE, '_style/global.styl')
+  const targetPath = path.resolve(TARGET_LIB_BASE, '_style/global.css')
+  const fileContent = fs.readFileSync(filePath, {
+    encoding: 'utf8',
+  })
+  return compileVueStylus(fileContent, (err, cssContent) => {
+    fs.writeFileAsync(targetPath, cssContent)
+  })
+
+}
+
 function compileAndReplaceAllJsFile() {
   const fileGlob = `${TARGET_LIB_BASE}/**/*.js`
   const jsFiles = glob.sync(fileGlob)
@@ -162,7 +175,7 @@ function compileAndReplaceAllVueFile() {
 
 function main() {
   return move('lib')
-    .then(() => Promise.all([compileAndReplaceAllJsFile(), compileAndReplaceAllVueFile()]))
+    .then(() => Promise.all([compileAndReplaceAllJsFile(), compileAndReplaceAllVueFile(), compileGlobalStylus()]))
     .catch(e => console.info(e))
 }
 
