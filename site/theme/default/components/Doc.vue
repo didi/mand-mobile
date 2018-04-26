@@ -47,6 +47,8 @@
                   </div>
                 </div>
                 <div class="doc-demo-box-code">
+                  <button type="copy" class="copy"
+                    v-clipboard:copy="decodeURI(demo.raw)">复制代码</button>
                   <pre>
                     <code class="lang-vue" v-html="demo.code"></code>
                   </pre>
@@ -86,6 +88,8 @@
                   </div>
                 </div>
                 <div class="doc-demo-box-code">
+                  <button type="copy" class="copy"
+                    v-clipboard:copy="decodeURI(demo.raw)">复制代码</button>
                   <pre>
                     <code class="lang-vue" v-html="demo.code"></code>
                   </pre>
@@ -312,13 +316,13 @@ export default {
           font-size 12px
           color #999
           font-style normal
-          
+
     .doc-content-describe
       font-size 16px
       font-weight 400
       color #666
       margin-top 20px
-  
+
   .doc-content-bottom
     block()
     position absolute
@@ -347,7 +351,7 @@ export default {
     position relative
     min-height 1500px
     padding 0 64px 87px
-  
+
   .default-doc-demo-container
     block()
   .default-doc-demo-list
@@ -424,6 +428,7 @@ export default {
       ul>li
         list-style none !important
   .doc-demo-box-code
+    position relative
     display none
     width 100%
     overflow hidden
@@ -468,6 +473,23 @@ export default {
       position fixed
       bottom 0
 
+button.copy
+  position absolute
+  top 0
+  right 0
+  z-index 100
+  color #999
+  background #fff
+  border none
+  height 30px
+  line-height 30px
+  box-shadow none
+  &:hover
+    color #256fa3
+  &:active, &:visited, &:focus
+    box-shadow none
+    outline none
+
 @media (max-width: 1500px)
   .doc-demo-box-preview-box
     max-width 400px !important
@@ -492,7 +514,7 @@ export default {
   .mfe-blog-theme-default-doc
     padding-right 0 !important
   .default-doc-toc
-    display none 
+    display none
 @media (max-width: 750px)
   .mfe-blog-theme-default-doc
     padding 0

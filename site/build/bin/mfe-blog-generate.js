@@ -51,7 +51,7 @@ function generateDemoVue(outputPath, demoPath = []) {
 
     const demoContent = fs.readFileSync(demo).toString()
     imports[demoName] = `./${demoFileName}`
-    exports[index] = `{ component: ${demoName}, code: ${JSON.stringify(highlight(demoContent))} }`
+    exports[index] = `{ component: ${demoName}, code: ${JSON.stringify(highlight(demoContent))}, raw: "${encodeURI(demoContent)}" }`
 
     fs.writeFileSync(`${outputPath}/${demoFileName}`, demoContent)
   }

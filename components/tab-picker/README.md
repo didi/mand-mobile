@@ -49,7 +49,7 @@ tab切换的title支持自定义渲染（通过slot-scope）
 |default-index|初始选中项索引|Array|`[]`|-|
 |option-render|返回各选项渲染内容|Array<Function({text, disabled, ...}):String>|`[]`|`vue 2.1.0+`可使用`slot-scope`，见附录|
 |async-func|异步获取数据函数|Function(value, callBack)|-|-|
-|title|弹窗标题|Boolean|-|-|
+|title|弹窗标题|String|-|-|
 |ok-text|确认按钮文案|String|`确认`|-|
 |cancel-text|取消按钮文案|String|`取消`|-|
 

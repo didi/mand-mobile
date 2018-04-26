@@ -73,6 +73,8 @@ Vue.use(mandMobile)
 
 #### 使用前准备
 
+> 为避免因[浏览器兼容性](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)引起的点击问题，建议引入[FastClick](https://github.com/ftlabs/fastclick)
+
 ##### `px` to `rem`
 
 组件样式以`px`为单位，并且以`iPhone6`屏幕 “物理像素” 宽度`750`为基准 (即普通 “逻辑像素” 值的`2`倍大小)。在实际项目中，可根据具体情况使用`postcss-pxtorem`把`px`单位转成`rem`，从而实现不同设备下等比缩放的效果。

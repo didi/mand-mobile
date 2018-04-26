@@ -19,7 +19,7 @@ Vue.component(Tip.name, Tip)
 #### Tips Props
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
-|content|提示文本内容|String|-|-|
+|content|提示文本内容|String, Number|-|-|
 |placement|位置|String|`top`|`top`, `left`, `bottom`, `right`|
 
 #### Tip@show()
