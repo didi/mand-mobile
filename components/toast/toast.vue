@@ -31,7 +31,7 @@ export default {
       default: '',
     },
     content: {
-      type: String,
+      type: [String, Number],
       default: '',
     },
     duration: {
