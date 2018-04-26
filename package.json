@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -22,8 +22,8 @@
     "assets"
   ],
   "scripts": {
-    "dev:webpack": "webpack-dashboard -m -- node build/webpack/dev-server",
-    "dev": "node build/rollup/dev-server.rollup",
+    "dev": "webpack-dashboard -m -- node build/webpack/dev-server",
+    "dev:rollup": "node build/rollup/dev-server.rollup",
     "dev:site": "cd site && npm start",
     "create": "node build/component-init.js",
     "cz": "git-cz",
