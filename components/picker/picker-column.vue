@@ -123,7 +123,7 @@ export default {
       handler(val, oldVal) {
         /* istanbul ignore if */
         if (!compareObjects(val, oldVal)) {
-          this.columnValues = val
+          this.columnValues = [...val]
         }
       },
       deep: true,
@@ -131,7 +131,7 @@ export default {
   },
 
   created() {
-    this.columnValues = this.data
+    this.columnValues = [...this.data]
   },
 
   methods: {
