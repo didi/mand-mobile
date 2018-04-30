@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "mand-mobile": "^1.0.9",
+    "v-tooltip": "^2.0.0-rc.31",
     "vue": "^2.5.2",
     "vue-clipboard2": "^0.1.0",
     "vue-qrcode-component": "^2.1.1",

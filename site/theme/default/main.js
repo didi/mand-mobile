@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueClipboard from 'vue-clipboard2'
+import VTooltip from 'v-tooltip'
 import { setScale } from './assets/js/util'
 
 Vue.config.productionTip = false
 Vue.use(VueClipboard)
+Vue.use(VTooltip)
 
 if ($(window).width() > 750) {
   setScale(0.5)
