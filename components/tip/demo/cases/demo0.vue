@@ -10,7 +10,9 @@
 
 export default {
   name: 'tips-demo',
+  /* DELETE */
   title: '上方',
+  /* DELETE */
   components: {
     [Tip.name]: Tip,
     [Button.name]: Button,

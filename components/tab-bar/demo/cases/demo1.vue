@@ -11,7 +11,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '不带下划线',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },

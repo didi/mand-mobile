@@ -13,7 +13,9 @@
 
 export default {
   name: 'button-demo',
+  /* DELETE */
   title: '文字链接按钮',
+  /* DELETE */
   components: {
     [Button.name]: Button,
   },

@@ -65,8 +65,10 @@
 
 export default {
   name: 'popup-demo',
+  /* DELETE */
   title: '不同位置弹出',
   height: 500,
+  /* DELETE */
   components: {
     [Popup.name]: Popup,
     [PopupTitleBar.name]: PopupTitleBar,

@@ -21,7 +21,9 @@
 
 export default {
   name: 'stepper-demo',
+  /* DELETE */
   title: '最小值-12，最大值18',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

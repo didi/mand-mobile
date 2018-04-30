@@ -11,7 +11,9 @@
 
 export default {
   name: 'tag-demo',
+  /* DELETE */
   title: '半圆',
+  /* DELETE */
   components: {
     Tag,
   },

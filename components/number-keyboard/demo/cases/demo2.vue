@@ -16,7 +16,9 @@
 
 export default {
   name: 'number-keyboard-demo',
+  /* DELETE */
   title: '数字键乱序',
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [NumberKeyboard.name]: NumberKeyboard,

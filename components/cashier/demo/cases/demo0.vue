@@ -43,7 +43,9 @@
 
 export default {
   name: 'cashier-demo',
+  /* DELETE */
   height: 700,
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [Radio.name]: Radio,

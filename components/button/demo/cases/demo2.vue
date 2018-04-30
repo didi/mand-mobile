@@ -11,7 +11,9 @@
 
 export default {
   name: 'button-demo',
+  /* DELETE */
   title: '线性按钮小尺寸',
+  /* DELETE */
   components: {
     [Button.name]: Button,
   },

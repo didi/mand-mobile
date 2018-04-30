@@ -23,7 +23,9 @@
 
 export default {
   name: 'icon-demo',
+  /* DELETE */
   title: '颜色',
+  /* DELETE */
   components: {
     [Icon.name]: Icon,
   },

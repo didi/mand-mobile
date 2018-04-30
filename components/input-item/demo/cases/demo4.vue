@@ -24,7 +24,9 @@
 
 export default {
   name: 'input-item-demo',
+  /* DELETE */
   title: '错误提示',
+  /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,

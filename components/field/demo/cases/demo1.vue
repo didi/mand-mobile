@@ -39,7 +39,9 @@
 
 export default {
   name: 'field-demo',
+  /* DELETE */
   title: '多个条目',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

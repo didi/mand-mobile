@@ -13,8 +13,10 @@
 
 export default {
   name: 'captcha-demo',
+  /* DELETE */
   title: '内联',
   height: 650,
+  /* DELETE */
   components: {
     [Captcha.name]: Captcha,
   },

@@ -13,8 +13,10 @@
 
 export default {
   name: 'drop-menu-demo',
+  /* DELETE */
   title: '禁用下拉菜单',
   height: 500,
+  /* DELETE */
   components: {
     [DropMenu.name]: DropMenu,
   },

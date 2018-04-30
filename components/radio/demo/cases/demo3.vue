@@ -12,8 +12,10 @@
 
 export default {
   name: 'radio-demo',
+  /* DELETE */
   title: '自定义选项内容2',
   describe: '使用option-render',
+  /* DELETE */
   components: {
     [Radio.name]: Radio,
   },

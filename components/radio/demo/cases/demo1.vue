@@ -17,8 +17,10 @@
 
 export default {
   name: 'radio-demo',
+  /* DELETE */
   title: '可编辑选项单选框 <a href="javascript:window.RadioTrigger2()">selectByIndex(2)</a>',
   describe: '通过value初始值默认选中',
+  /* DELETE */
   components: {
     [Radio.name]: Radio,
   },

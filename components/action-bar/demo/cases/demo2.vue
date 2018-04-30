@@ -9,9 +9,11 @@
 <script>import {ActionBar, Dialog} from 'mand-mobile'
 
 export default {
-  title: '通栏带文案',
   name: 'action-bar-demo',
+  /* DELETE */
+  title: '通栏带文案',
   height: 150,
+  /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,
   },

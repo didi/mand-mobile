@@ -11,7 +11,9 @@
 
 export default {
   name: 'result-page-demo',
+  /* DELETE */
   title: '网络异常',
+  /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,
   },

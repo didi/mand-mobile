@@ -13,7 +13,9 @@
 
 export default {
   name: 'notice-bar-demo',
+  /* DELETE */
   title: '设置图标',
+  /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
   },

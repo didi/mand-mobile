@@ -10,12 +10,13 @@
   </div>
 </template>
 
-mand-mobile
-import {Tabs} from 'mand-mobile'
+<script>import {Tabs} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '设置标题栏边距',
+  /* DELETE */
   components: {
     [Tabs.name]: Tabs,
   },
@@ -25,8 +26,7 @@ export default {
     }
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-tabs-11

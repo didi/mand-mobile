@@ -20,7 +20,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: 'scope-slot',
+  /* DELETE */
   components: {
     [Tabs.name]: Tabs,
     [Icon.name]: Icon,

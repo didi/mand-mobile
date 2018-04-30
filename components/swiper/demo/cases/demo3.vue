@@ -20,10 +20,12 @@ import mulit from 'mand-mobile/components/swiper/demo/data/mulit-item'
 
 export default {
   name: 'swiper-demo',
+  /* DELETE */
   title: '每屏多内容 <a href="javascript:window.triggerSwiper4()">Goto 2</a>',
   describe: '复杂结构，每屏显示一组多条内容',
   message:
     '@before-change: from: <span id="valueSwiper15">0</span>, to: <span id="valueSwiper16">0</span><br/>@after-change: from: <span id="valueSwiper17">0</span>, to: <span id="valueSwiper18">0</span>',
+  /* DELETE */
   components: {
     [Swiper.name]: Swiper,
     [SwiperItem.name]: SwiperItem,

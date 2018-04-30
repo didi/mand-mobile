@@ -13,7 +13,9 @@
 
 export default {
   name: 'result-page-demo',
+  /* DELETE */
   title: '自定义图案',
+  /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,
   },

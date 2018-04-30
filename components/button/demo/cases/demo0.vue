@@ -9,7 +9,9 @@
 
 export default {
   name: 'button-demo',
+  /* DELETE */
   title: '主按钮',
+  /* DELETE */
   components: {
     [Button.name]: Button,
   },

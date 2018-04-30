@@ -24,8 +24,10 @@
 
 export default {
   name: 'chart-demo',
+  /* DELETE */
   title: '区域填充',
   describe: '',
+  /* DELETE */
   components: {
     [Chart.name]: Chart,
   },

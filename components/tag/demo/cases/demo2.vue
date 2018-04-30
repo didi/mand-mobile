@@ -9,7 +9,9 @@
 
 export default {
   name: 'tag-demo',
+  /* DELETE */
   title: '线框',
+  /* DELETE */
   components: {
     Tag,
   },

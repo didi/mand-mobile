@@ -11,8 +11,10 @@
 
 export default {
   name: 'steps-demo',
+  /* DELETE */
   title: '完成全部步骤',
   height: 150,
+  /* DELETE */
   components: {
     [Steps.name]: Steps,
   },

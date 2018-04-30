@@ -16,7 +16,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '监听点击事件',
+  /* DELETE */
   components: {
     [Tabs.name]: Tabs,
   },

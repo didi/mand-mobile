@@ -8,7 +8,9 @@
 
 export default {
   name: 'notice-bar-demo',
+  /* DELETE */
   title: '基本',
+  /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
   },

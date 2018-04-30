@@ -27,8 +27,10 @@
 
 export default {
   name: 'selector-demo',
+  /* DELETE */
   title: 'Check模式',
   height: 500,
+  /* DELETE */
   components: {
     [Selector.name]: Selector,
     [Field.name]: Field,

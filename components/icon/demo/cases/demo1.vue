@@ -23,7 +23,9 @@
 
 export default {
   name: 'icon-demo',
+  /* DELETE */
   title: '大小',
+  /* DELETE */
   components: {
     [Icon.name]: Icon,
   },

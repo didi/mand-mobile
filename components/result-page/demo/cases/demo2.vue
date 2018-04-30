@@ -10,7 +10,9 @@
 
 export default {
   name: 'result-page-demo',
+  /* DELETE */
   title: '按钮',
+  /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,
   },

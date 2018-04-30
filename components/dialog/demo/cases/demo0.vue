@@ -38,7 +38,9 @@
 
 export default {
   name: 'dialog-demo',
+  /* DELETE */
   title: '基本',
+  /* DELETE */
   components: {
     [Dialog.name]: Dialog,
     [Button.name]: Button,

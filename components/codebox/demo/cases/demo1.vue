@@ -12,7 +12,9 @@
 
 export default {
   name: 'codebox-demo',
+  /* DELETE */
   title: '掩码遮蔽',
+  /* DELETE */
   components: {
     [Codebox.name]: Codebox,
   },

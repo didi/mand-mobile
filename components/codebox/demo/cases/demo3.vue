@@ -12,7 +12,9 @@
 
 export default {
   name: 'codebox-demo',
+  /* DELETE */
   title: '系统键盘',
+  /* DELETE */
   components: {
     [Codebox.name]: Codebox,
   },

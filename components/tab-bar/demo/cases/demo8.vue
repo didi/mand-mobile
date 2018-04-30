@@ -16,7 +16,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: 'scope-slot',
+  /* DELETE */
   data() {
     return {
       titles: [

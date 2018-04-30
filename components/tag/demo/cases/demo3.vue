@@ -9,7 +9,9 @@
 
 export default {
   name: 'tag-demo',
+  /* DELETE */
   title: '阳文',
+  /* DELETE */
   components: {
     Tag,
   },

@@ -20,9 +20,11 @@ import simple from 'mand-mobile/components/swiper/demo/data/simple'
 
 export default {
   name: 'swiper-demo',
+  /* DELETE */
   title: '渐隐轮播 <a href="javascript:window.triggerSwiper3()">Goto 2</a>',
   message:
     '@before-change: from: <span id="valueSwiper10">0</span>, to: <span id="valueSwiper11">0</span><br/>@after-change: from: <span id="valueSwiper12">0</span>, to: <span id="valueSwiper13">0</span>',
+  /* DELETE */
   components: {
     [Swiper.name]: Swiper,
     [SwiperItem.name]: SwiperItem,

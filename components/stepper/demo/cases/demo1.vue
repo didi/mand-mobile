@@ -20,7 +20,9 @@
 
 export default {
   name: 'stepper-demo',
+  /* DELETE */
   title: '只读',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

@@ -12,7 +12,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '通过公共方法切换 <a href="javascript:window.triggerTabBar()">selectTab(2)</a>',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },

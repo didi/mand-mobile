@@ -26,8 +26,10 @@
 
 export default {
   name: 'selector-demo',
+  /* DELETE */
   title: '无需确认',
   height: 500,
+  /* DELETE */
   components: {
     [Selector.name]: Selector,
     [Field.name]: Field,

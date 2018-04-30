@@ -10,8 +10,10 @@
 
 export default {
   name: 'steps-demo',
+  /* DELETE */
   title: '三个步骤',
   height: 150,
+  /* DELETE */
   components: {
     [Steps.name]: Steps,
   },

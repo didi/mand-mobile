@@ -70,8 +70,10 @@
 
 export default {
   name: 'captcha-demo',
+  /* DELETE */
   title: '自定义',
   height: 650,
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [Captcha.name]: Captcha,

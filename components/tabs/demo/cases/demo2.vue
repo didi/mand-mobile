@@ -16,8 +16,10 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '指定默认标签',
   describe: '默认标签2',
+  /* DELETE */
   components: {
     [Tabs.name]: Tabs,
   },

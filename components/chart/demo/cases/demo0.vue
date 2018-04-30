@@ -27,8 +27,10 @@
 
 export default {
   name: 'chart-demo',
+  /* DELETE */
   title: '多折线',
   describe: '',
+  /* DELETE */
   components: {
     [Chart.name]: Chart,
   },

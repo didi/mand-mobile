@@ -24,8 +24,10 @@
 
 export default {
   name: 'chart-demo',
+  /* DELETE */
   title: '渐变折线',
   describe: '',
+  /* DELETE */
   components: {
     [Chart.name]: Chart,
   },

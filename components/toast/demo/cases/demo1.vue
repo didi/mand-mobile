@@ -8,7 +8,9 @@
 
 export default {
   name: 'toast-demo',
+  /* DELETE */
   title: '成功',
+  /* DELETE */
   components: {
     [Button.name]: Button,
   },

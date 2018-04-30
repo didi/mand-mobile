@@ -34,7 +34,9 @@
 
 export default {
   name: 'field-demo',
+  /* DELETE */
   title: '包含内容',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

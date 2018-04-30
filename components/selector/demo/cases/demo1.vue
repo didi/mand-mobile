@@ -30,8 +30,10 @@
 
 export default {
   name: 'selector-demo',
+  /* DELETE */
   title: '自定义选项',
   height: 500,
+  /* DELETE */
   components: {
     [Selector.name]: Selector,
     [Field.name]: Field,

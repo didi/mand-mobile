@@ -11,7 +11,9 @@
 
 export default {
   name: 'dialog-demo',
+  /* DELETE */
   title: '静态方法',
+  /* DELETE */
   components: {
     [Dialog.name]: Dialog,
     [Button.name]: Button,

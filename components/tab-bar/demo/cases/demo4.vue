@@ -12,7 +12,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '禁用下划线动画',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },

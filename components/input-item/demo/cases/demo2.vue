@@ -33,7 +33,9 @@
 
 export default {
   name: 'input-item-demo',
+  /* DELETE */
   title: '业务场景输入框',
+  /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,

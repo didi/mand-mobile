@@ -37,7 +37,9 @@
 
 export default {
   name: 'image-reader-demo',
+  /* DELETE */
   title: '图片选择',
+  /* DELETE */
   components: {
     [Icon.name]: Icon,
     [ImageReader.name]: ImageReader,

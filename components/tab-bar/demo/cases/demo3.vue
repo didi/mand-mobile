@@ -12,7 +12,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '指定下划线长度',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },

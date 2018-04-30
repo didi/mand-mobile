@@ -16,9 +16,11 @@ import simple from 'mand-mobile/components/picker/demo/data/simple'
 
 export default {
   name: 'picker-demo',
+  /* DELETE */
   title:
     '单列数据 <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a>',
   describe: '禁用2-4项',
+  /* DELETE */
   components: {
     [Picker.name]: Picker,
   },

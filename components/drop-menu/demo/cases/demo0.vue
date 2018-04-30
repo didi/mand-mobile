@@ -12,8 +12,10 @@
 
 export default {
   name: 'drop-menu-demo',
+  /* DELETE */
   title: '基础下拉菜单 <a href="javascript:DropMenuTrigger()">getSelectedValue(0)</a>',
   height: 250,
+  /* DELETE */
   components: {
     [DropMenu.name]: DropMenu,
   },

@@ -22,7 +22,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '自定制按钮内容',
+  /* DELETE */
   components: {
     [Icon.name]: Icon,
     [TabBar.name]: TabBar,

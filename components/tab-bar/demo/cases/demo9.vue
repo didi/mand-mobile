@@ -10,7 +10,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '设置边距',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },

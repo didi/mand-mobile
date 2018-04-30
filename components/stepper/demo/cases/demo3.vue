@@ -21,7 +21,9 @@
 
 export default {
   name: 'stepper-demo',
+  /* DELETE */
   title: '步进2',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

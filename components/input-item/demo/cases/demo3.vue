@@ -33,7 +33,9 @@ import '@examples/assets/images/bank-zs.svg'
 
 export default {
   name: 'input-item-demo',
+  /* DELETE */
   title: '表单控件',
+  /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,

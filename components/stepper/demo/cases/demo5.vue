@@ -20,7 +20,9 @@
 
 export default {
   name: 'stepper-demo',
+  /* DELETE */
   title: 'step为小数1.3',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

@@ -23,7 +23,9 @@
 
 export default {
   name: 'input-item-demo',
+  /* DELETE */
   title: '标题隐藏输入框',
+  /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,

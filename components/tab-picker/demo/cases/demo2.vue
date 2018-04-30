@@ -21,8 +21,10 @@ const NOOP = () => {}
 
 export default {
   name: 'tab-picker-demo',
+  /* DELETE */
   title: '异步级联多频道',
   height: 500,
+  /* DELETE */
   components: {
     [TabPicker.name]: TabPicker,
     [Button.name]: Button,
