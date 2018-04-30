@@ -4,14 +4,18 @@
   </div>
 </template>
 
-<script>import {NoticeBar} from 'mand-mobile'
+<script>
+import {NoticeBar} from 'mand-mobile'
 
 export default {
   name: 'notice-bar-demo',
+  /* DELETE */
   title: '设置时间',
   describe: '5s后隐藏',
+  /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
   },
 }
-</script>
+
+</script>

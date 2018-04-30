@@ -4,12 +4,15 @@
   </div>
 </template>
 
-<script>import {ActionBar, Toast} from 'mand-mobile'
+<script>
+import {ActionBar, Toast} from 'mand-mobile'
 
 export default {
-  title: '通栏多按钮',
   name: 'action-bar-demo',
+  /* DELETE */
+  title: '通栏多按钮',
   height: 150,
+  /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,
   },
@@ -33,4 +36,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

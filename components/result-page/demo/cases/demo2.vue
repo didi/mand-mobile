@@ -6,11 +6,14 @@
   </div>
 </template>
 
-<script>import {ResultPage, Toast} from 'mand-mobile'
+<script>
+import {ResultPage, Toast} from 'mand-mobile'
 
 export default {
   name: 'result-page-demo',
+  /* DELETE */
   title: '按钮',
+  /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,
   },
@@ -34,7 +37,8 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-result-page.customized

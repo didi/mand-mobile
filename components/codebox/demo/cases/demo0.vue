@@ -8,11 +8,14 @@
   </div>
 </template>
 
-<script>import {Codebox} from 'mand-mobile'
+<script>
+import {Codebox} from 'mand-mobile'
 
 export default {
   name: 'codebox-demo',
+  /* DELETE */
   title: '默认',
+  /* DELETE */
   components: {
     [Codebox.name]: Codebox,
   },
@@ -22,4 +25,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

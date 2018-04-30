@@ -28,12 +28,15 @@
   </div>
 </template>
 
-<script>import {InputItem, Field, Icon, Toast} from 'mand-mobile'
+<script>
+import {InputItem, Field, Icon, Toast} from 'mand-mobile'
 import '@examples/assets/images/bank-zs.svg'
 
 export default {
   name: 'input-item-demo',
+  /* DELETE */
   title: '表单控件',
+  /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,
@@ -93,7 +96,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-input-item-2

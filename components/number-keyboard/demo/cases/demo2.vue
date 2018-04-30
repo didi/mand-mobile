@@ -12,11 +12,14 @@
   </div>
 </template>
 
-<script>import {NumberKeyboard, Button} from 'mand-mobile'
+<script>
+import {NumberKeyboard, Button} from 'mand-mobile'
 
 export default {
   name: 'number-keyboard-demo',
+  /* DELETE */
   title: '数字键乱序',
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [NumberKeyboard.name]: NumberKeyboard,
@@ -39,7 +42,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-example-display

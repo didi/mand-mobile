@@ -13,14 +13,17 @@
   </div>
 </template>
 
-<script>import {Picker, Dialog} from 'mand-mobile'
+<script>
+import {Picker, Dialog} from 'mand-mobile'
 import district from 'mand-mobile/components/picker/demo/data/district'
 
 export default {
   name: 'picker-demo',
+  /* DELETE */
   title:
     '联动数据 <a href="javascript:window.PickerTrigger2()">getColumnValue(0)</a><a href="javascript:window.PickerTrigger3()">getColumnIndex(0)</a>',
   describe: '默认选中3, 2, 1项',
+  /* DELETE */
   components: {
     [Picker.name]: Picker,
   },
@@ -71,4 +74,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

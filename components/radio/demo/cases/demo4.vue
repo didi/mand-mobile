@@ -12,11 +12,14 @@
   </div>
 </template>
 
-<script>import {Radio} from 'mand-mobile'
+<script>
+import {Radio} from 'mand-mobile'
 
 export default {
   name: 'radio-demo',
+  /* DELETE */
   title: 'Icon设置',
+  /* DELETE */
   components: {
     [Radio.name]: Radio,
   },
@@ -26,4 +29,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

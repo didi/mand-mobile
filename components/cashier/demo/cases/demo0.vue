@@ -39,11 +39,14 @@
 	</div>
 </template>
 
-<script>import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier} from 'mand-mobile'
+<script>
+import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier} from 'mand-mobile'
 
 export default {
   name: 'cashier-demo',
+  /* DELETE */
   height: 700,
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [Radio.name]: Radio,
@@ -169,7 +172,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-cashier

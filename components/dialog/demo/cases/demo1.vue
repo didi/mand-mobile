@@ -7,11 +7,14 @@
   </div>
 </template>
 
-<script>import {Dialog, Button} from 'mand-mobile'
+<script>
+import {Dialog, Button} from 'mand-mobile'
 
 export default {
   name: 'dialog-demo',
+  /* DELETE */
   title: '静态方法',
+  /* DELETE */
   components: {
     [Dialog.name]: Dialog,
     [Button.name]: Button,
@@ -52,4 +55,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

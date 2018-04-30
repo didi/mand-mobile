@@ -7,12 +7,15 @@
   </div>
 </template>
 
-<script>import {Steps} from 'mand-mobile'
+<script>
+import {Steps} from 'mand-mobile'
 
 export default {
   name: 'steps-demo',
+  /* DELETE */
   title: '完成全部步骤',
   height: 150,
+  /* DELETE */
   components: {
     [Steps.name]: Steps,
   },
@@ -36,7 +39,8 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-steps-5

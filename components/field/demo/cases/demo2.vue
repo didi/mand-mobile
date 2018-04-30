@@ -30,11 +30,14 @@
   </div>
 </template>
 
-<script>import {Field, FieldItem, InputItem, Dialog} from 'mand-mobile'
+<script>
+import {Field, FieldItem, InputItem, Dialog} from 'mand-mobile'
 
 export default {
   name: 'field-demo',
+  /* DELETE */
   title: '包含内容',
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
@@ -48,7 +51,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-field-2

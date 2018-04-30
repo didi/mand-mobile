@@ -20,13 +20,16 @@
   </div>
 </template>
 
-<script>import {Picker, Field, FieldItem} from 'mand-mobile'
+<script>
+import {Picker, Field, FieldItem} from 'mand-mobile'
 import simple from 'mand-mobile/components/picker/demo/data/simple'
 
 export default {
   name: 'picker-demo',
+  /* DELETE */
   title: '弹出展示',
   height: 350,
+  /* DELETE */
   components: {
     [Picker.name]: Picker,
     [Field.name]: Field,
@@ -51,4 +54,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

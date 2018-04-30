@@ -29,11 +29,14 @@
   </div>
 </template>
 
-<script>import {InputItem, Field} from 'mand-mobile'
+<script>
+import {InputItem, Field} from 'mand-mobile'
 
 export default {
   name: 'input-item-demo',
+  /* DELETE */
   title: '业务场景输入框',
+  /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,
@@ -53,4 +56,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

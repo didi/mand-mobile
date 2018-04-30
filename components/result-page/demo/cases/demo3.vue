@@ -9,16 +9,20 @@
   </div>
 </template>
 
-<script>import {ResultPage} from 'mand-mobile'
+<script>
+import {ResultPage} from 'mand-mobile'
 
 export default {
   name: 'result-page-demo',
+  /* DELETE */
   title: '自定义图案',
+  /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-result-page.customized

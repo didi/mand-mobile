@@ -138,7 +138,7 @@ function parseBoundarySymbolic(content) {
 }
 
 /**
- * Parse boundary symbolic in marddown content
+ * Remove development code of demo divided by '\/\* DELETE \*\/'
  * @param {string} content
  * @return {string} content
  */

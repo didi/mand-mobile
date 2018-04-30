@@ -5,13 +5,17 @@
   </div>
 </template>
 
-<script>import {Tag} from 'mand-mobile'
+<script>
+import {Tag} from 'mand-mobile'
 
 export default {
   name: 'tag-demo',
+  /* DELETE */
   title: '线框',
+  /* DELETE */
   components: {
     Tag,
   },
 }
-</script>
+
+</script>

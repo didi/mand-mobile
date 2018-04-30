@@ -33,11 +33,14 @@
   </div>
 </template>
 
-<script>import {Icon, ImageReader, Toast} from 'mand-mobile'
+<script>
+import {Icon, ImageReader, Toast} from 'mand-mobile'
 
 export default {
   name: 'image-reader-demo',
+  /* DELETE */
   title: '图片选择',
+  /* DELETE */
   components: {
     [Icon.name]: Icon,
     [ImageReader.name]: ImageReader,
@@ -75,7 +78,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-reader

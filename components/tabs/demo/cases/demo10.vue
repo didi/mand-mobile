@@ -16,11 +16,14 @@
   </div>
 </template>
 
-<script>import {Tabs, Icon} from 'mand-mobile'
+<script>
+import {Tabs, Icon} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: 'scope-slot',
+  /* DELETE */
   components: {
     [Tabs.name]: Tabs,
     [Icon.name]: Icon,
@@ -44,4 +47,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

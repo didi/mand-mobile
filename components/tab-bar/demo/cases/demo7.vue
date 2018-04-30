@@ -8,11 +8,14 @@
   </div>
 </template>
 
-<script>import {TabBar, Toast} from 'mand-mobile'
+<script>
+import {TabBar, Toast} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '通过公共方法切换 <a href="javascript:window.triggerTabBar()">selectTab(2)</a>',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },
@@ -32,4 +35,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

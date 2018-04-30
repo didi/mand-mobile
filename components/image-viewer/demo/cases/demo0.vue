@@ -20,13 +20,16 @@
   </div>
 </template>
 
-<script>import {ImageViewer} from 'mand-mobile'
+<script>
+import {ImageViewer} from 'mand-mobile'
 
 export default {
   name: 'image-viewer-demo',
+  /* DELETE */
   title: '基本',
   message: '请在移动设备中扫码预览',
   height: 500,
+  /* DELETE */
   components: {
     [ImageViewer.name]: ImageViewer,
   },
@@ -49,7 +52,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-image-reader

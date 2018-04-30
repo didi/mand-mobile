@@ -15,15 +15,18 @@
   </div>
 </template>
 
-<script>import {Button, TabPicker} from 'mand-mobile'
+<script>
+import {Button, TabPicker} from 'mand-mobile'
 import pickerData from 'mand-mobile/components/tab-picker/demo/data/cascade'
 
 const NOOP = () => {}
 
 export default {
   name: 'tab-picker-demo',
+  /* DELETE */
   title: '级联多频道',
   height: 500,
+  /* DELETE */
   components: {
     [TabPicker.name]: TabPicker,
     [Button.name]: Button,
@@ -60,4 +63,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>
