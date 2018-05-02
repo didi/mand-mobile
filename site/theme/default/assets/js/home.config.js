@@ -1,4 +1,5 @@
 import MfeTable from '../../components/Table'
+import MfeGitStar from '../../components/GitStar'
 
 const qrcodeTableView = {
   name: 'qrcodeTable',
@@ -31,7 +32,9 @@ export default [
       theme: 'demo',
       slots: qrcodeTableView
     }, {
-      htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
+      // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
+      type: 'other',
+      slots: MfeGitStar
     }],
     animations: {
       bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
