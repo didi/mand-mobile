@@ -2,14 +2,19 @@
   <transition name="slide-fade">
     <div class="default-table" v-show="tableShow">
       <template v-if="data.length">
-        <div class="table-item" v-for="(item, index) in list" :key="index">
-          <template>
-            <a @click="jump(item)">
-              <h2 v-html="item.title"></h2>
-              <p v-html="item.name" ></p>
-            </a>
-          </template>
+        <div class="table-list">
+          <div class="table-item" v-for="(item, index) in list" :key="index">
+            <template>
+              <a @click="jump(item)">
+                <h2 v-html="item.title"></h2>
+                <p v-html="item.name" ></p>
+              </a>
+            </template>
+          </div>
         </div>
+        <template v-if="$slots.footer">
+          <slot name="footer"></slot>
+        </template>
       </template>
       <template v-else-if="$slots.default">
         <slot></slot>
@@ -19,6 +24,7 @@
           <img src="//manhattan.didistatic.com/static/manhattan/mfd/result-page/empty" alt="">
           <p>无匹配结果</p>
         </div>
+        <slot name="footer"></slot>
       </template>
     </div>
   </transition>
@@ -89,7 +95,6 @@ export default {
   left 0
   top 0
   width 500px
-  max-height 320px
   padding 0 15px
   box-shadow 0 2px 10px rgba(0, 0, 0, .08)
   box-sizing border-box
@@ -112,30 +117,33 @@ export default {
     p
       float right
       line-height 70px
-  .table-item
-    a
-      display block
-      padding 5px 0
-      border-bottom solid 1px #f0f0f0
-      text-decoration none
-      cursor pointer
-      h2
-        margin-top 5px
-        font-size 12px
-        font-weight 500
-        color #314659
-        span
-          color #999
+  .table-list
+    max-height 320px
+    overflow auto
+    .table-item
+      a
+        display block
+        padding 5px 0
+        border-bottom solid 1px #f0f0f0
+        text-decoration none
+        cursor pointer
+        h2
+          margin-top 5px
           font-size 12px
-      p
-        margin-top 5px
-        font-size 14px
-        color #999
-        overflow hidden
-        text-overflow ellipsis
-        white-space nowrap
-    &:last-of-type a
-      border none
+          font-weight 500
+          color #314659
+          span
+            color #999
+            font-size 12px
+        p
+          margin-top 5px
+          font-size 14px
+          color #999
+          overflow hidden
+          text-overflow ellipsis
+          white-space nowrap
+      &:last-of-type a
+        border none
 
 .slide-fade-enter-active
   transition all .3s ease

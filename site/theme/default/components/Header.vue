@@ -10,15 +10,25 @@
       <div class="default-header-content">
         <div class="default-header-search">
           <div class="default-header-search-input">
-            <i class="icon-magnifier"></i>
+            <i class="icon-magnifier" :class="{active: searchFocus}"></i>
             <input
               type="text"
               placeholder="搜索"
               autocomplete="off"
+              v-model="searchValue"
               @click.stop
               @focus="onInputFocus($event)"
+              @blur="onInputBlur"
               @keyup="onInputKeyup($event)">
-            <mfe-table v-model="searchTableShow" :data="searchData" style="top:45px;"></mfe-table>
+            <mfe-table v-model="searchTableShow" :data="searchData" style="top:45px;">
+              <a
+                target="_blank"
+                href="https://www.algolia.com/docsearch"
+                class="algolia-search-link"
+                slot="footer"
+              >
+                Search By&nbsp;&nbsp;<img src="../assets/images/algolia.png" alt="algolia-logo" class="algolia-search-logo"></a>
+            </mfe-table>
           </div>
         </div>
         <div class="default-header-version">
@@ -73,6 +83,8 @@ export default {
       nav: window.mbConfig.source,
       title: window.mbConfig.title,
       logo: window.mbConfig.logo,
+      searchValue: '',
+      searchFocus: false,
       searchTableShow: false,
       searchData: [],
       versionTableShow: false,
@@ -89,8 +101,14 @@ export default {
     onInputFocus(event) {
       const word = event.target.value.trim()
       if (word) {
-        this.searchTableShow = true
+        setTimeout(() => {
+          this.searchTableShow = true
+        }, 300)
       }
+      this.searchFocus = true
+    },
+    onInputBlur() {
+      this.searchFocus = false
     },
     onInputKeyup(event) {
       const word = event.target.value.trim()
@@ -257,6 +275,8 @@ export default {
       // border-left 1px solid #ebedee
       i
         color #ccc
+        &.active
+          color #048efa
       input
         margin 0 10px
         width 200px
@@ -264,6 +284,23 @@ export default {
         border none
         color #666
         font-size 14px
+      .default-table
+        padding-bottom 50px
+        .algolia-search-link
+          position absolute
+          bottom 0
+          left 0
+          width 100%
+          padding 10px 15px
+          box-sizing border-box
+          background #f0f0f0
+          display flex
+          align-items center
+          justify-content flex-end
+          text-decoration none
+          color #333
+          img
+            height 18px
 
     .default-header-nav
       float right
