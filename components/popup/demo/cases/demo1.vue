@@ -54,13 +54,16 @@
   </div>
 </template>
 
-<script>import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
+<script>
+import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
 
 export default {
   name: 'popup-demo',
+  /* DELETE */
   title: '其他配置',
   message: '防止滚动击穿请在移动设备中扫码预览',
   height: 750,
+  /* DELETE */
   components: {
     [Popup.name]: Popup,
     [PopupTitleBar.name]: PopupTitleBar,
@@ -81,7 +84,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-popup-1

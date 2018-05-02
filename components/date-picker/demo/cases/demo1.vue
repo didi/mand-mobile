@@ -11,13 +11,17 @@
   </div>
 </template>
 
-<script>import {DatePicker} from 'mand-mobile'
+<script>
+import {DatePicker} from 'mand-mobile'
 
 export default {
   name: 'date-picker-demo',
+  /* DELETE */
   title: '时间选择',
+  /* DELETE */
   components: {
     [DatePicker.name]: DatePicker,
   },
 }
-</script>
+
+</script>

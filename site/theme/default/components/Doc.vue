@@ -47,8 +47,20 @@
                   </div>
                 </div>
                 <div class="doc-demo-box-code">
-                  <button type="copy" class="copy"
-                    v-clipboard:copy="decodeURI(demo.raw)">复制代码</button>
+                  <div class="doc-demo-box-code-operate">
+                    <i class="icon-hollowError"
+                      v-tooltip="{content: '收起代码', offset: 5}"
+                      @click="toggleDemoBox(index)"
+                    ></i>
+                    <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
+                      v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
+                      v-clipboard:copy="decodeURI(demo.raw)"
+                      v-clipboard:success="onCopySuccess"></i>
+                    <i class="icon-edit"
+                      v-tooltip="{content: '在Github上编辑此页', offset: 5}"
+                      @click="goToDemo(index)"
+                    ></i>
+                  </div>
                   <pre>
                     <code class="lang-vue" v-html="demo.code"></code>
                   </pre>
@@ -88,8 +100,20 @@
                   </div>
                 </div>
                 <div class="doc-demo-box-code">
-                  <button type="copy" class="copy"
-                    v-clipboard:copy="decodeURI(demo.raw)">复制代码</button>
+                  <div class="doc-demo-box-code-operate">
+                    <i class="icon-hollowError"
+                      v-tooltip="{content: '收起代码', offset: 5}"
+                      @click="toggleDemoBox(index)"
+                    ></i>
+                    <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
+                      v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
+                      v-clipboard:copy="decodeURI(demo.raw)"
+                      v-clipboard:success="onCopySuccess"></i>
+                    <i class="icon-edit"
+                      v-tooltip="{content: '在Github上编辑此页', offset: 5}"
+                      @click="goToDemo(index)"
+                    ></i>
+                  </div>
                   <pre>
                     <code class="lang-vue" v-html="demo.code"></code>
                   </pre>
@@ -141,6 +165,7 @@
 import VueQRCodeComponent from 'vue-qrcode-component'
 import {info, body, toc} from './index.data'
 import {demos} from './index.demo'
+import { setTimeout } from 'timers';
 
 export default {
   components: {
@@ -156,7 +181,8 @@ export default {
       demoBoxShowStat: [],
       activeDemoBoxZoonPos: {},
       isTocStricky: false,
-      isQrcodeShow: false
+      isQrcodeShow: false,
+      isCopySuccess: false,
     }
   },
 
@@ -262,6 +288,19 @@ export default {
           $(item).removeClass('is-stricky')
         }
       })
+    },
+    goToDemo (index) {
+      const component = this.info.preview.split('#')[1]
+      if (component) {
+        window.open(`https://github.com/didi/mand-mobile/edit/master/components/${component}/demo/cases/demo${index}.vue`)
+      }
+      console.log(this.info.preview, index)
+    },
+    onCopySuccess (e) {
+      this.isCopySuccess = true
+      setTimeout(() => {
+        this.isCopySuccess = false
+      }, 1000)
     }
   },
 }
@@ -473,22 +512,24 @@ export default {
       position fixed
       bottom 0
 
-button.copy
-  position absolute
-  top 0
-  right 0
-  z-index 100
-  color #999
-  background #fff
-  border none
-  height 30px
-  line-height 30px
-  box-shadow none
-  &:hover
-    color #256fa3
-  &:active, &:visited, &:focus
-    box-shadow none
-    outline none
+  .doc-demo-box-code-operate
+    position absolute
+    top 0
+    right 0
+    z-index 100
+    padding 10px 0
+    cursor pointer
+    i
+      float right
+      margin-right 10px
+      font-size 16px
+      color #ccc
+      transition all .3s
+      &:hover
+        transform scale(1.2)
+      &:active, &:visited, &:focus
+        box-shadow none
+        outline none
 
 @media (max-width: 1500px)
   .doc-demo-box-preview-box

@@ -35,8 +35,10 @@ import { Landscape, Toast, Button } from "mand-mobile";
 
 export default {
   name: "landscape-demo",
+  /* DELETE */
   title: "示例",
   height: 700,
+  /* DELETE */
   components: {
     [Landscape.name]: Landscape,
     [Button.name]: Button

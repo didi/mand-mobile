@@ -13,12 +13,15 @@
   </div>
 </template>
 
-<script>import {DropMenu, Dialog} from 'mand-mobile'
+<script>
+import {DropMenu, Dialog} from 'mand-mobile'
 
 export default {
   name: 'drop-menu-demo',
+  /* DELETE */
   title: '自定义菜单项',
   height: 250,
+  /* DELETE */
   components: {
     [DropMenu.name]: DropMenu,
   },
@@ -49,7 +52,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-drop-menu-3

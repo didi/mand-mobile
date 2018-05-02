@@ -7,11 +7,14 @@
   </div>
 </template>
 
-<script>import {Switch} from 'mand-mobile'
+<script>
+import {Switch} from 'mand-mobile'
 
 export default {
   name: 'switch-demo',
+  /* DELETE */
   title: '关闭状态',
+  /* DELETE */
   components: {
     [Switch.name]: Switch,
   },
@@ -26,4 +29,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>

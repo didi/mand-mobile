@@ -9,16 +9,20 @@
   </div>
 </template>
 
-<script>import {Button} from 'mand-mobile'
+<script>
+import {Button} from 'mand-mobile'
 
 export default {
   name: 'button-demo',
+  /* DELETE */
   title: '文字链接按钮',
+  /* DELETE */
   components: {
     [Button.name]: Button,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-button-3

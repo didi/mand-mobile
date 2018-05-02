@@ -50,8 +50,9 @@ function generateDemoVue(outputPath, demoPath = []) {
     }
 
     const demoContent = fs.readFileSync(demo).toString()
+    const demoContentRaw = deleteDevCodeOfDemo(demoContent)
     imports[demoName] = `./${demoFileName}`
-    exports[index] = `{ component: ${demoName}, code: ${JSON.stringify(highlight(demoContent))}, raw: "${encodeURI(demoContent)}" }`
+    exports[index] = `{ component: ${demoName}, code: ${JSON.stringify(highlight(demoContentRaw))}, raw: "${encodeURI(demoContent)}" }`
 
     fs.writeFileSync(`${outputPath}/${demoFileName}`, demoContent)
   }
@@ -134,6 +135,23 @@ function parseBoundarySymbolic(content) {
     }
   }
   return content
+}
+
+/**
+ * Remove development code of demo divided by '\/\* DELETE \*\/'
+ * @param {string} content
+ * @return {string} content
+ */
+function deleteDevCodeOfDemo(content) {
+  const parts = content.split(/\/\* DELETE \*\/\n\s\s/)
+  let newContent = ''
+  for (let i = 0, len = parts.length; i < len; i++) {
+    if (i % 2 === 0) {
+      newContent += parts[i] || ''
+    }
+  }
+  
+  return newContent || content
 }
 
 /**

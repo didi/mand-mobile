@@ -8,12 +8,15 @@
   </div>
 </template>
 
-<script>import {TabBar} from 'mand-mobile'
+<script>
+import {TabBar} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
   title: '指定默认标签',
   describe: '默认标签2',
+  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },
@@ -23,4 +26,5 @@ export default {
     }
   },
 }
-</script>
+
+</script>

@@ -61,12 +61,15 @@
   </div>
 </template>
 
-<script>import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
+<script>
+import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
 
 export default {
   name: 'popup-demo',
+  /* DELETE */
   title: '不同位置弹出',
   height: 500,
+  /* DELETE */
   components: {
     [Popup.name]: Popup,
     [PopupTitleBar.name]: PopupTitleBar,
@@ -87,7 +90,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-popup-0

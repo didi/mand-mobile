@@ -12,12 +12,15 @@
   </div>
 </template>
 
-<script>import {NumberKeyboard, Button} from 'mand-mobile'
+<script>
+import {NumberKeyboard, Button} from 'mand-mobile'
 
 export default {
   name: 'number-keyboard-demo',
+  /* DELETE */
   title: '简单类型',
   describe: '无确认键和小数点，一般用于密码或验证码输入',
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [NumberKeyboard.name]: NumberKeyboard,
@@ -40,7 +43,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-example-display

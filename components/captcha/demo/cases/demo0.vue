@@ -66,12 +66,15 @@
 	</div>
 </template>
 
-<script>import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch} from 'mand-mobile'
+<script>
+import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch} from 'mand-mobile'
 
 export default {
   name: 'captcha-demo',
+  /* DELETE */
   title: '自定义',
   height: 650,
+  /* DELETE */
   components: {
     [Button.name]: Button,
     [Captcha.name]: Captcha,
@@ -116,7 +119,8 @@ export default {
     onHide() {},
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-captcha

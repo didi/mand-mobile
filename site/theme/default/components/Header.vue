@@ -226,11 +226,13 @@ export default {
         vertical-align middle
         transition all .3s
       span
+        position relative
+        top 2px
         height 100%
         color #333
         font-size 16px
         line-height 64px
-        font-family AvenirNext-Medium,"Microsoft Yahei","Lato","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif  !important
+        font-family DINAlternate-Bold, AvenirNext-Medium,"Microsoft Yahei","Lato","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif  !important
         transition all .3s
         i
           color #048EFA
@@ -325,8 +327,9 @@ export default {
         img
           height 48px
         span
+          top 4px
           line-height 100px
-          font-size 20px
+          font-size 24px
       .default-header-nav
         li.nav-item a
           color #FFF !important

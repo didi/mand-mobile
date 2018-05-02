@@ -12,12 +12,15 @@
   </div>
 </template>
 
-<script>import {Radio} from 'mand-mobile'
+<script>
+import {Radio} from 'mand-mobile'
 
 export default {
   name: 'radio-demo',
+  /* DELETE */
   title: '自定义选项内容1',
   describe: '使用slot-scope',
+  /* DELETE */
   components: {
     [Radio.name]: Radio,
   },
@@ -27,7 +30,8 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-radio-2
