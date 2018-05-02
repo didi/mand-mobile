@@ -42,6 +42,7 @@
             <template
               v-for="(homeBlockButton, homeBlockButtonIndex) in homeBlock.buttons"
             >
+              <!-- 跳转按钮 -->
               <router-link
                 v-if="homeBlockButton.type === 'link'"
                 class="home-button"
@@ -54,6 +55,7 @@
                 <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-link-slots-${homeBlockIndex}`"></component>
                 <div v-else-if="homeBlockButton.htmls" v-html="homeBlockButton.htmls"></div>
               </router-link>
+              <!-- 动作按钮 -->
               <a
                 v-else-if="homeBlockButton.type === 'handler'"
                 href="javascript:void(0)"
@@ -67,15 +69,26 @@
                 <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>
                 <div v-else-if="homeBlockButton.htmls" v-html="homeBlockButton.htmls"></div>
               </a>
-              <div
-                v-else
-                class="home-button-other"
-                :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
-                :data-index="3 + homeBlockButtonIndex"
-                v-html="homeBlockButton.htmls || ''"
-                style="display:none"
-                v-dynamic-show
-              ></div>
+              <!-- 自定义按钮 -->
+              <template v-else>
+                <template v-if="homeBlockButton.htmls">
+                  <div
+                    class="home-button-other"
+                    :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
+                    :data-index="3 + homeBlockButtonIndex"
+                    v-html="homeBlockButton.htmls"
+                  ></div>
+                  </template>
+                <template>
+                  <div
+                    class="home-button-other"
+                    :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
+                    :data-index="3 + homeBlockButtonIndex"
+                  >
+                    <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>  
+                  </div>
+                </template>
+              </template>
             </template>
           </div>
         </transition-group>
@@ -142,15 +155,15 @@ export default {
     }
   },
 
-  directives: {
-    dynamicShow: {
-      bind (el) {
-        setTimeout(() => {
-          el.style.display = 'block'
-        }, 800)
-      },
-    }
-  },
+  // directives: {
+  //   dynamicShow: {
+  //     bind (el) {
+  //       setTimeout(() => {
+  //         el.style.display = 'block'
+  //       }, 800)
+  //     },
+  //   }
+  // },
 
   mounted() {
     if ($(window).width() < 750) {
@@ -244,11 +257,12 @@ export default {
           line-height 32px
           // transition transform .3s
         div.home-box-operators
+          clearfix()
           position relative
           margin-top 64px
           a.home-button
             position relative
-            display inline-block
+            float left
             width 140px
             height 45px
             margin-right 20px
@@ -273,10 +287,11 @@ export default {
                 height 120px
                 margin 20px 0
           div.home-button-other
-            position absolute
-            right 0
-            top 50%
-            transform translateY(-50%)
+            float left
+          //   position absolute
+          //   right 0
+          //   top 50%
+          //   transform translateY(-50%)
       .home-animation-list
         margin-top 72px
         .home-animation-item
