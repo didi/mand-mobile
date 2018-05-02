@@ -332,7 +332,7 @@ export default {
           font-size 24px
       .default-header-nav
         li.nav-item a
-          color #FFF !important
+          color #FFF
           line-height 100px
           &:after
             background-color #FFF
@@ -362,27 +362,44 @@ export default {
     width 80% !important
 @media (max-width: 750px)
   .mfe-blog-theme-default-header
-    display block
+    position fixed
+    top 0
+    z-index 9998
+    width 100%
     height auto !important
+    padding 10px 10px 0 !important
+    line-height 1 !important
+    background #FFF
+    // border-bottom solid 1px #f0f1f2 !important
+    box-shadow 0 2px 8px #f0f1f2 !important
+    box-sizing border-box
     .default-header-aside, .default-header-content
       float left
       width 100% !important
-      // height .64rem
+      height auto !important
       display flex
       justify-content center
       padding 0
     .default-header-nav li.nav-item a
-      line-height .64rem !important
+      line-height 32px !important
+      font-size 12px !important
+      &:after
+        bottom 0 !important
       &.router-link-active:after
-        height .04rem
+        height 2px
+        background #048efa !important
     .default-header-aside .default-header-logo
-      height .64rem
-      line-height .64rem !important
+      height 28px
+      line-height 28px !important
       img
-        height .6rem !important
+        height 24px !important
         margin 0
-    .default-header-logo
-      margin-top 10px
+    // .default-header-logo
+    //   margin-top 10px
+    &.active .default-header-nav li.nav-item a
+      color #666 !important
+      &.router-link-active
+        color #048efa !important
     .default-header-version
       display none
 </style>

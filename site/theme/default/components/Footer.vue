@@ -142,10 +142,12 @@ clearfix()
       margin 0 0 .2rem
       h1
         margin-bottom .2rem
-        font-size .24rem
+        font-size 16px
+        a
+          display none
       li
         margin-bottom .12rem
-        font-size .2rem
+        font-size 13px
       &:first-child
         display none
     .default-footer-copyright

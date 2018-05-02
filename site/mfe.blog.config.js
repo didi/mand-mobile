@@ -134,7 +134,7 @@ module.exports = {
       ],
     },
     {
-      title: '更多产品',
+      title: '更多产品 <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="20" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
       link: [
         {
           text: 'cube-ui <span>- Vue.js组件库</span>',

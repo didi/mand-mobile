@@ -562,5 +562,11 @@ export default {
   .mfe-blog-theme-default-doc
     padding 0
     .default-doc-content
-      padding .32rem
+      padding 15px 15px 100px 15px !important
+      .doc-content-title
+        font-size 22px !important
+      .doc-content-qrcode i.icon-qr-code
+        font-size 16px !important
+      .doc-content-bottom
+        padding 20px 15px !important
 </style>

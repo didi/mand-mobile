@@ -450,3 +450,43 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 750px) {
+  .doc-content-paragraph, .doc-demo-box-code {
+    font-size 12px !important;
+    p, ul, ol {
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+    h5 {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    h1, h2, h3, h4, h5, p , dl{
+      margin-bottom: 12px;
+    }
+    pre > code, code * {
+      font-size: 12px;
+    }
+    table {
+      table-layout: fixed;
+    }
+    table td, table th {
+      font-size: 12px;
+    }
+    table tr th:nth-child(5), table tr td:nth-child(5){
+      display: none;
+    }
+  }
+}

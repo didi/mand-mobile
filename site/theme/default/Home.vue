@@ -7,6 +7,46 @@
         :class="`home-box-block-${homeBlockIndex}`"
         :key="homeBlockIndex"
       >
+        <!-- 模块配图 -->
+        <div class="home-animation" v-if="homeBlock.animations">
+          <template v-if="!Array.isArray(homeBlock.animations)">
+            <div class="home-animation-bg">
+              <img :src="homeBlock.animations.bg" alt="">
+            </div>
+            <div class="home-animation-content">
+              <img :src="homeBlock.animations.content" alt="">
+            </div>
+          </template>
+          <template v-else>
+            <transition-group
+              tag="ul"
+              class="home-animation-list"
+              @before-enter="beforeEnter"
+              @enter="enter"
+              @leave="leave"
+            >
+              <li
+                v-for="(homeBlockAnimationItem, homeBlockAnimationItemIndex) in homeBlock.animations"
+                class="home-animation-item"
+                :data-index="3 + homeBlockAnimationItemIndex"
+                :key="`home-box-block-${homeBlockIndex}-animationItem-${homeBlockAnimationItemIndex}`"
+                v-show="blockShow[homeBlockIndex]"
+              >
+                <em class="icon">
+                  <img :src="homeBlockAnimationItem.icon" alt="">
+                </em>
+                <div class="text">
+                  <h2 class="title" v-html="homeBlockAnimationItem.title"></h2>
+                  <p class="describe" v-html="homeBlockAnimationItem.describe"></p>
+                </div>
+              </li>
+            </transition-group>
+          </template>
+        </div>
+        <!-- 模块装饰元素 -->
+        <div class="home-decorate" v-if="homeBlock.decorate">
+          <img :src="homeBlock.decorate" alt="">
+        </div>
         <!-- 模块文案 -->
         <transition-group
           tag="div"
@@ -92,44 +132,6 @@
             </template>
           </div>
         </transition-group>
-        <!-- 模块配图 -->
-        <div class="home-animation" v-if="homeBlock.animations">
-          <template v-if="!Array.isArray(homeBlock.animations)">
-            <div class="home-animation-bg">
-              <img :src="homeBlock.animations.bg" alt="">
-            </div>
-            <div class="home-animation-content">
-              <img :src="homeBlock.animations.content" alt="">
-            </div>
-          </template>
-          <template v-else>
-            <transition-group
-              tag="ul"
-              class="home-animation-list"
-              @before-enter="beforeEnter"
-              @enter="enter"
-              @leave="leave"
-            >
-              <li
-                v-for="(homeBlockAnimationItem, homeBlockAnimationItemIndex) in homeBlock.animations"
-                class="home-animation-item"
-                :data-index="3 + homeBlockAnimationItemIndex"
-                :key="`home-box-block-${homeBlockIndex}-animationItem-${homeBlockAnimationItemIndex}`"
-                v-show="blockShow[homeBlockIndex]"
-              >
-                <em class="icon">
-                  <img :src="homeBlockAnimationItem.icon" alt="">
-                </em>
-                <h2 class="title" v-html="homeBlockAnimationItem.title"></h2>
-                <p class="describe" v-html="homeBlockAnimationItem.describe"></p>
-              </li>
-            </transition-group>
-          </template>
-        </div>
-        <!-- 模块装饰元素 -->
-        <div class="home-decorate" v-if="homeBlock.decorate">
-          <img :src="homeBlock.decorate" alt="">
-        </div>
       </section>
     </div>
   </div>
@@ -401,51 +403,80 @@ export default {
         padding 0 .32rem
         box-sizing border-box
 @media (max-width: 750px)
-  .home-box-block
-    height auto !important
-    margin-bottom 1rem
-    .home-animation
-      position static !important
-      .home-animation-content
-        position relative !important
-        top 0 !important
-        left 50% !important
-        width 50%
-        margin-left -25%
-        margin-top .6rem
-        img
+  .mfe-blog-theme-default-home
+  .home-box
+    .home-box-block
+      height auto !important
+      margin-bottom 1rem
+      .home-decorate
+        display none 
+      .home-animation
+        position static !important
+        .home-animation-content
+          position relative !important
+          top 0 !important
+          left 50% !important
+          width 50%
+          margin-left -25%
+          img
+            width 100% !important
+            height auto !important
+        .home-animation-bg
+          display none
+        .home-animation-list
+          margin-top 0 !important
+        .home-animation-item
           width 100% !important
           height auto !important
-      .home-animation-bg
-        display none
-      .home-animation-list
-        margin-top .6rem !important
-      .home-animation-item
-        height 3.4rem !important
-        padding .2rem !important
-        .icon
-          height .64rem !important
-          img
-            height 100%
-        .title
-          margin-top .2rem !important
-          font-size .24rem !important
-        .describe
-          font-size .2rem !important
-    .home-text
-      position relative !important
-      width 100% !important
-      text-align center
-      top 0 !important
-      left 0 !important
-      .home-title
-        font-size .32rem !important
-      .home-describe
-        font-size .24rem !important
-      .home-box-operators
-        margin-top .32rem !important
-        .home-button
-          font-size .28rem !important
-      .home-button-other
-        display none !important
+          margin-bottom 12px !important
+          padding 20px !important
+          box-shadow none !important
+          border-radius 8px !important
+          background #f0f0f0
+          clearfix()
+          .icon
+            float left
+            width 64px !important
+            height auto !important
+            img
+              width 100%
+          .text
+            padding-left 20px
+            overflow hidden
+          .title
+            margin-top 0 !important
+            font-size 16px !important
+            text-align left !important
+          .describe
+            margin-top 10px !important
+            font-size 14px !important
+            text-align left !important
+      .home-text
+        position relative !important
+        top 0 !important
+        left 0 !important
+        width 100% !important
+        margin-top 20px
+        text-align center
+        .home-title
+          margin-bottom 18px !important
+          font-size 18px !important
+        .home-describe
+          font-size 14px !important
+          line-height 28px !important
+          text-align left
+          text-indent 28px
+        .home-box-operators
+          display flex
+          justify-content center
+          margin-top 20px !important
+          .home-button
+            height 42px !important
+            line-height 42px !important
+            font-size 14px !important
+            box-shadow none !important
+            &:last-of-type
+              margin 0 !important
+  .home-button-other, .mfe-git-star-number
+    display none !important
 </style>
