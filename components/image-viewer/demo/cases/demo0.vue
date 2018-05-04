@@ -11,9 +11,9 @@
         </template>
       </ul>
     </div>
-    <md-image-viewer 
-      :show.sync="isViewerShow" 
-      :list="imgs"  
+    <md-image-viewer
+      v-model="isViewerShow"
+      :list="imgs"
       :has-dots="true"
       :initial-index="viewerIndex">
     </md-image-viewer>
