@@ -5,7 +5,7 @@
         <h1>
           <img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-white.svg" alt="">
           <br>
-          Mand Mobile
+          <span>Mand Mobile</span>
         </h1>
       </ul>
       <ul
@@ -94,21 +94,23 @@ clearfix()
 
   .default-footer-category
     float left
-    width 25%
+    width 18%
     color #FFF
     box-sizing border-box
     h1
       float left
       width 100%
       margin-bottom 20px
-      font-size 20px
+      font-size 18px
       font-family AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif !important
-      font-weight 500
+      font-weight 600
+      span
+        font-family DINAlternate-Bold
     li
       float left
       width 100%
       margin-bottom 10px
-      font-size 16px
+      font-size 14px
       p
         float left
       i
@@ -142,10 +144,12 @@ clearfix()
       margin 0 0 .2rem
       h1
         margin-bottom .2rem
-        font-size .24rem
+        font-size 16px
+        a
+          display none
       li
         margin-bottom .12rem
-        font-size .2rem
+        font-size 13px
       &:first-child
         display none
     .default-footer-copyright

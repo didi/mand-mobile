@@ -10,15 +10,25 @@
       <div class="default-header-content">
         <div class="default-header-search">
           <div class="default-header-search-input">
-            <i class="icon-magnifier"></i>
+            <i class="icon-magnifier" :class="{active: searchFocus}"></i>
             <input
               type="text"
               placeholder="搜索"
               autocomplete="off"
+              v-model="searchValue"
               @click.stop
               @focus="onInputFocus($event)"
+              @blur="onInputBlur"
               @keyup="onInputKeyup($event)">
-            <mfe-table v-model="searchTableShow" :data="searchData" style="top:45px;"></mfe-table>
+            <mfe-table v-model="searchTableShow" :data="searchData" style="top:45px;">
+              <a
+                target="_blank"
+                href="https://www.algolia.com/docsearch"
+                class="algolia-search-link"
+                slot="footer"
+              >
+                <img src="../assets/images/algolia.png" alt="algolia-logo" class="algolia-search-logo"></a>
+            </mfe-table>
           </div>
         </div>
         <div class="default-header-version">
@@ -73,6 +83,8 @@ export default {
       nav: window.mbConfig.source,
       title: window.mbConfig.title,
       logo: window.mbConfig.logo,
+      searchValue: '',
+      searchFocus: false,
       searchTableShow: false,
       searchData: [],
       versionTableShow: false,
@@ -89,8 +101,14 @@ export default {
     onInputFocus(event) {
       const word = event.target.value.trim()
       if (word) {
-        this.searchTableShow = true
+        setTimeout(() => {
+          this.searchTableShow = true
+        }, 300)
       }
+      this.searchFocus = true
+    },
+    onInputBlur() {
+      this.searchFocus = false
     },
     onInputKeyup(event) {
       const word = event.target.value.trim()
@@ -257,6 +275,8 @@ export default {
       // border-left 1px solid #ebedee
       i
         color #ccc
+        &.active
+          color #048efa
       input
         margin 0 10px
         width 200px
@@ -264,6 +284,23 @@ export default {
         border none
         color #666
         font-size 14px
+      .default-table
+        padding-bottom 38px
+        .algolia-search-link
+          position absolute
+          bottom 0
+          left 0
+          width 100%
+          padding 10px 15px
+          box-sizing border-box
+          background #f0f0f0
+          display flex
+          align-items center
+          justify-content flex-end
+          text-decoration none
+          color #333
+          img
+            height 18px
 
     .default-header-nav
       float right
@@ -332,7 +369,7 @@ export default {
           font-size 24px
       .default-header-nav
         li.nav-item a
-          color #FFF !important
+          color #FFF
           line-height 100px
           &:after
             background-color #FFF
@@ -362,27 +399,44 @@ export default {
     width 80% !important
 @media (max-width: 750px)
   .mfe-blog-theme-default-header
-    display block
+    position fixed
+    top 0
+    z-index 9998
+    width 100%
     height auto !important
+    padding 10px 10px 0 !important
+    line-height 1 !important
+    background #FFF
+    // border-bottom solid 1px #f0f1f2 !important
+    box-shadow 0 2px 8px #f0f1f2 !important
+    box-sizing border-box
     .default-header-aside, .default-header-content
       float left
       width 100% !important
-      // height .64rem
+      height auto !important
       display flex
       justify-content center
       padding 0
     .default-header-nav li.nav-item a
-      line-height .64rem !important
+      line-height 32px !important
+      font-size 12px !important
+      &:after
+        bottom 0 !important
       &.router-link-active:after
-        height .04rem
+        height 2px
+        background #048efa !important
     .default-header-aside .default-header-logo
-      height .64rem
-      line-height .64rem !important
+      height 28px
+      line-height 28px !important
       img
-        height .6rem !important
+        height 24px !important
         margin 0
-    .default-header-logo
-      margin-top 10px
+    // .default-header-logo
+    //   margin-top 10px
+    &.active .default-header-nav li.nav-item a
+      color #666 !important
+      &.router-link-active
+        color #048efa !important
     .default-header-version
       display none
 </style>

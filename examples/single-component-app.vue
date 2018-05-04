@@ -14,7 +14,7 @@ import demo from '../components/radio/demo/'
 export default {
   name: 'app',
   components: {
-    demo,
+    demo: () => import(`../components/${COMPONENT_NAME}/demo`),
   },
 }
 

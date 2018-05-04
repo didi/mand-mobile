@@ -2,10 +2,13 @@
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
     <mb-header :is-active="isHome"/>
     <div class="default-content">
-      <mb-menu v-if="!noMenu"/>
+      <mb-menu v-if="!noMenu" v-model="isMenuShow"/>
       <div class="default-content-wrapper">
         <router-view></router-view>
       </div>
+    </div>
+    <div class="default-menu-trigger" v-if="!noMenu" @click="isMenuShow = !isMenuShow">
+      <i class="icon-catalog"></i>
     </div>
     <mb-footer/>
   </div>
@@ -25,17 +28,24 @@ import Menu from './components/Menu'
 
 export default {
   name: 'mfe-blog-theme-default',
-
   components: {
     MbHeader: Header,
     MbMenu: Menu,
     MbFooter: Footer,
   },
-
   data() {
-    return {}
+    return {
+      isMenuShow: false,
+    }
   },
-
+  watch: {
+    '$route': {
+      handler () {
+        this.isMenuShow = false
+      },
+      deep: true
+    },
+  },
   computed: {
     noMenu() {
       return this.$route.meta.noMenu
@@ -44,7 +54,6 @@ export default {
       return this.$route.path === '/home'
     }
   },
-
   mouted () {
     document.documentElement.style.fontSize = 540 * 0.13333333333333333 + 'px';
   }
@@ -74,18 +83,40 @@ export default {
       position relative
       left -1px
       overflow hidden
+  .default-menu-trigger
+    position fixed
+    bottom 20px
+    right 20px
+    z-index 99999
+    display none
+    align-items center
+    justify-content center
+    width 50px
+    height 50px
+    text-align center
+    border-radius 50%
+    background #FFF
+    box-shadow 0 0 10px #f0f0f0
+    border solid 1px #f0f0f0
+    i
+      color #048efa
+      font-size 24px
 
 @media (max-width: 1000px)
   .default-content
     min-height auto !important
+    padding 0 !important
     .default-content-wrapper
       float left
       width 100%
-      margin-top 50px
       .default-doc-content
         padding 0 42px 87px !important
 @media (max-width: 750px)
   .default-container
     overflow-x hidden !important
+    .default-content
+      padding-top 100px !important
+    .default-menu-trigger
+      display flex
 </style>
 

@@ -49,7 +49,6 @@
                 <div class="doc-demo-box-code">
                   <div class="doc-demo-box-code-operate">
                     <i class="icon-hollowError"
-                      v-tooltip="{content: '收起代码', offset: 5}"
                       @click="toggleDemoBox(index)"
                     ></i>
                     <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
@@ -102,7 +101,6 @@
                 <div class="doc-demo-box-code">
                   <div class="doc-demo-box-code-operate">
                     <i class="icon-hollowError"
-                      v-tooltip="{content: '收起代码', offset: 5}"
                       @click="toggleDemoBox(index)"
                     ></i>
                     <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
@@ -321,7 +319,7 @@ export default {
     margin-bottom 20px
     .doc-content-title
       font-size 28px
-      font-weight 400
+      font-weight 500
       color #1f2f3d
     .doc-content-title, .doc-content-qrcode
       float left
@@ -560,5 +558,11 @@ export default {
   .mfe-blog-theme-default-doc
     padding 0
     .default-doc-content
-      padding .32rem
+      padding 15px 15px 100px 15px !important
+      .doc-content-title
+        font-size 22px !important
+      .doc-content-qrcode i.icon-qr-code
+        font-size 16px !important
+      .doc-content-bottom
+        padding 20px 15px !important
 </style>

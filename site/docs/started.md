@@ -2,10 +2,37 @@
 title: 快速上手
 ---
 
+#### 脚手架
+
+**新项目**可通过[vue-cli](https://github.com/vuejs/vue-cli)初始化集成`mand-mobile`，**现有项目**集成请参考[安装](#docs/started?anchor=安装)
+
+* vue cli 2.0([模板](https://github.com/mand-mobile/mand-mobile-template))
+
+```shell
+npm install -g vue-cli
+vue init mand-mobile/mand-mobile-template my-mand-mobile-project
+```
+
+* vue cli 3.0(参考[示例](https://github.com/mand-mobile/mand-mobile-vue-cli3-example))
+
+```shell
+npm install -g @vue/cli
+vue create my-mand-mobile-project
+```
+
 #### 安装
+
+##### NPM
 
 ```shell
 npm install mand-mobile --save
+```
+
+##### CDN
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
+<script src="https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js"></script>
 ```
 
 #### 引入
@@ -81,18 +108,31 @@ Vue.use(mandMobile)
 
 如转换基准为`1rem = 100px`：
 
+* `.postcssrc.js`配置
+
+```javascript
+module.exports = {
+  'plugins': [
+    require('postcss-pxtorem')({
+      rootValue: 100,
+      propWhiteList: []
+    })
+  ]
+}
+```
+
 * `webpack`配置
 
 ```javascript
 const pxtorem = require('postcss-pxtorem');
 
-// postcss
+// Postcss
 webpackConfig.postcss.push(pxtorem({
   rootValue: 100,
   propWhiteList: []
 }))
 
-// poststylus
+// Poststylus（使用源码时）
 const poststylus = require('poststylus')
 
 webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
@@ -107,19 +147,6 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
     }
   }
 }))
-```
-
-* 或`.postcssrc.js`配置
-
-```javascript
-module.exports = {
-  'plugins': [
-    require('postcss-pxtorem')({
-      rootValue: 100,
-      propWhiteList: []
-    })
-  ]
-}
 ```
 
 #### 使用

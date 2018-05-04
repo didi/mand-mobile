@@ -1,5 +1,5 @@
 <template>
-  <div class="mfe-blog-theme-default-menu">
+  <div class="mfe-blog-theme-default-menu" :class="{active: value}">
     <ul class="menu-list-0">
       <li class="menu-item-0" v-for="(item0, index0) in menu" :key="index0">
         <router-link 
@@ -35,6 +35,19 @@ import {findMenu} from '../assets/js/util'
 
 export default {
   name: 'mfe-blog-theme-default-menu',
+  props: {
+    value: {
+      type: Boolean,
+      default: false,
+    }
+  },
+  watch: {
+    value (val) {
+      if (val) {
+        this.$emit('input', val)
+      }
+    },
+  },
   computed: {
     nav() {
       return this.$route.path.split('/')[1] || ''
@@ -58,6 +71,11 @@ export default {
   box-sizing border-box
   border-right solid 1px #e8e8e8
   -webkit-font-smoothing antialiased
+  background #FFF
+  overflow hidden
+  .menu-list-0
+    position relative
+    top -10px
   ul, li, a
     float left
     width 100%
@@ -106,11 +124,22 @@ export default {
 
 @media (max-width: 1000px)
   .mfe-blog-theme-default-menu
-    width 100%
+    position fixed
+    z-index 9999
+    top 0
+    bottom 0
+    left 0
+    right 0
+    width 70%
     min-height auto !important
     margin-bottom .32rem
+    transform translateX(-100%)
+    overflow scroll
+    transition transform .3s
     li.menu-item-0 a
       padding .1rem 10%
       &:after
         display none
+    &.active
+      transform translateX(0)
 </style>

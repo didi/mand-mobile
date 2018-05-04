@@ -5,7 +5,7 @@
   h1, h2, h3, h4 {
     color: #333;
     font-weight: 500;
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
 
   h1, h2, h3, h4, h5, p , dl{
@@ -89,8 +89,8 @@
   }
 
   code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-    // -webkit-font-smoothing: antialiased;
+    font-family: "Roboto Mono", Monaco, courier, monospace !important;
+    -webkit-font-smoothing: initial;
     margin: 0 2px;
     padding: 0 5px;
     border: solid 1px #f0f0f0;
@@ -98,8 +98,9 @@
   }
 
   code * {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
-    font-size: 14px;
+    font-family: "Roboto Mono", Monaco, courier, monospace !important;
+    font-size: 13px;
+    -webkit-font-smoothing: initial;
   }
 
   pre {
@@ -107,7 +108,7 @@
     margin-bottom: 1em;
     line-height: 1.7em;
     overflow: auto;
-    padding: 15px 30px;
+    padding: 20px 20px 15px;
     box-sizing: border-box;
     background-color:#f2f4f5;
   }
@@ -126,7 +127,7 @@
   }
 
   code {
-    color: #666555;
+    color: #314659;
   }
   code:after{
     content: '';
@@ -448,5 +449,45 @@
   img {
     vertical-align: middle;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .doc-content-paragraph, .doc-demo-box-code {
+    font-size 12px !important;
+    p, ul, ol {
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+    h5 {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    h1, h2, h3, h4, h5, p , dl{
+      margin-bottom: 12px;
+    }
+    pre > code, code * {
+      font-size: 12px;
+    }
+    table {
+      table-layout: fixed;
+    }
+    table td, table th {
+      font-size: 12px;
+    }
+    table tr th:nth-child(5), table tr td:nth-child(5){
+      display: none;
+    }
   }
 }
