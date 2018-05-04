@@ -8,6 +8,8 @@ const stylus = require('stylus')
 const babel = bluebird.promisifyAll(require('babel-core'))
 const TARGET_LIB_BASE = 'lib'
 const SRC_BASE = 'components'
+const postcss = require('postcss')
+const autoprefixer = require('autoprefixer')
 
 function babelPluginInsertCssImportForVue ({ types: t }) {
   function computedSameDirCssPosition(filePath) {
@@ -30,16 +32,18 @@ function compileVueStylus (content, cb, compiler, filePath) {
   stylus(content)
     .set('filename', filePath)
     .define('url', stylus.url())
-    // .include(path.join(__dirname, 'src/*'))
     .import(path.join(__dirname, '../../components/_style/mixin/*.styl'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/vendor'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/gradients'))
-    .import(path.join(__dirname, '../../node_modules/nib/lib/nib/flex'))
     .render((err, css) => {
       if (err) {
         throw err
       }
-      cb(null, css)
+      postcss([autoprefixer])
+        .process(css)
+        .then(result => {
+          cb(null, result.css)
+        })
     })
 }
 

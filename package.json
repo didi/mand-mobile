@@ -66,7 +66,7 @@
     "@types/prettier": "^1.8.0",
     "@types/vue": "^2.0.0",
     "aesir-cli": "^0.0.5",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^8.4.1",
     "avoriaz": "^6.0.1",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -218,8 +218,7 @@
     "npm": ">= 5.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "iOS >= 8",
+    "Android > 4.0"
   ]
 }
