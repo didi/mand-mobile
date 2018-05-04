@@ -43,7 +43,6 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 // 建议安装并引入css拓展nib
 @import '~nib/lib/nib/vendor'
 @import '~nib/lib/nib/gradients'
-@import '~nib/lib/nib/flex'
 
 // 覆盖样式变量
 color-primary = #1AAD19
