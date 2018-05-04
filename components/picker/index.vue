@@ -192,9 +192,12 @@ export default {
           values: this.data[0] ? this.data[0][defaultIndexOfFirstColumn] || [] : [],
           defaultIndex: this.defaultIndex,
         })
-        this.$nextTick(() => {
-          this.column.refresh()
-        })
+        // this.$nextTick(() => {
+        //   this.column.refresh(() => {
+        //     // column should be refreshed when first time popup show
+        //     this.column.isScrollInitialed = false
+        //   })
+        // })
       })
     },
     $_resetPickerColumn(val, oldVal) {
