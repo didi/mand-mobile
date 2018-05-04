@@ -72,6 +72,10 @@ export default {
   border-right solid 1px #e8e8e8
   -webkit-font-smoothing antialiased
   background #FFF
+  overflow hidden
+  .menu-list-0
+    position relative
+    top -10px
   ul, li, a
     float left
     width 100%

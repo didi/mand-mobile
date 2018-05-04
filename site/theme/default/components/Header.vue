@@ -27,7 +27,7 @@
                 class="algolia-search-link"
                 slot="footer"
               >
-                Search By&nbsp;&nbsp;<img src="../assets/images/algolia.png" alt="algolia-logo" class="algolia-search-logo"></a>
+                <img src="../assets/images/algolia.png" alt="algolia-logo" class="algolia-search-logo"></a>
             </mfe-table>
           </div>
         </div>
@@ -285,7 +285,7 @@ export default {
         color #666
         font-size 14px
       .default-table
-        padding-bottom 50px
+        padding-bottom 38px
         .algolia-search-link
           position absolute
           bottom 0

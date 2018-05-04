@@ -17,7 +17,7 @@ const qrcodeTableView = {
 export default [
   {
     title: 'Mand Mobile',
-    describe: '一个基于Vue的移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。',
+    describe: '面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。',
     buttons: [{
       type: 'link',
       text: '开始使用',

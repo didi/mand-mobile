@@ -130,19 +130,27 @@ module.exports = {
         {
           text: '问题反馈',
           src: 'https://github.com/didi/mand-mobile/issues',
+        },
+        {
+          text: '加入我们',
+          src: 'http://job.didichuxing.com/',
         }
       ],
     },
     {
-      title: '更多产品 <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="20" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+      title: '更多产品 <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
       link: [
         {
-          text: 'cube-ui <span>- Vue.js组件库</span>',
+          text: 'Cube UI <span>- Vue.js组件库</span>',
           src: 'https://didi.github.io/cube-ui',
         },
         {
-          text: 'VirtualAPK <span>- Android 插件化框架</span>',
+          text: 'VirtualAPK <span>- Android插件化框架</span>',
           src: 'https://didi.github.io/virtual-apk.html',
+        },
+        {
+          text: 'Gendry <span>- Go数据库操作工具集</span>',
+          src: 'https://github.com/didi/gendry/',
         }
       ],
     },

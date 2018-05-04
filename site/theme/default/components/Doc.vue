@@ -321,7 +321,7 @@ export default {
     margin-bottom 20px
     .doc-content-title
       font-size 28px
-      font-weight 400
+      font-weight 500
       color #1f2f3d
     .doc-content-title, .doc-content-qrcode
       float left
