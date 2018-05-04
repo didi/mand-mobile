@@ -49,7 +49,6 @@
                 <div class="doc-demo-box-code">
                   <div class="doc-demo-box-code-operate">
                     <i class="icon-hollowError"
-                      v-tooltip="{content: '收起代码', offset: 5}"
                       @click="toggleDemoBox(index)"
                     ></i>
                     <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
@@ -102,7 +101,6 @@
                 <div class="doc-demo-box-code">
                   <div class="doc-demo-box-code-operate">
                     <i class="icon-hollowError"
-                      v-tooltip="{content: '收起代码', offset: 5}"
                       @click="toggleDemoBox(index)"
                     ></i>
                     <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
@@ -467,6 +465,7 @@ export default {
       ul>li
         list-style none !important
   .doc-demo-box-code
+    position relative
     display none
     width 100%
     overflow hidden
@@ -511,8 +510,6 @@ export default {
       position fixed
       bottom 0
 
-<<<<<<< HEAD
-=======
   .doc-demo-box-code-operate
     position absolute
     top 0
@@ -532,7 +529,6 @@ export default {
         box-shadow none
         outline none
 
->>>>>>> 1efc6f2... site:add code operator & update doc builder
 @media (max-width: 1500px)
   .doc-demo-box-preview-box
     max-width 400px !important
