@@ -52,7 +52,7 @@
 
 <script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
-import {noop, getDpr, traverse, inArray, compareObjects, warn} from '../_util'
+import {noop, getDpr, traverse, inArray, warn} from '../_util'
 
 const dpr = getDpr()
 const API_LIST = [
@@ -120,11 +120,8 @@ export default {
 
   watch: {
     data: {
-      handler(val, oldVal) {
-        /* istanbul ignore if */
-        if (!compareObjects(val, oldVal)) {
-          this.columnValues = [...val]
-        }
+      handler(val) {
+        this.columnValues = [...val]
       },
       deep: true,
     },
