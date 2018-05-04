@@ -241,13 +241,38 @@ export default {
       this.scroller.scrollTo(x, y, animate)
     },
 
-    $_opacity(animate = true) {
+    $_opacity(animate = true, opacity) {
+      if (typeof opacity !== 'undefined') {
+        let toIndex = 0
+        let fromIndex = this.toIndex
+        const itemCount = this.rItemCount
+
+        if (opacity > 0) {
+          if (fromIndex > 0) {
+            toIndex = fromIndex - 1
+          } else if (fromIndex === 0) {
+            toIndex = itemCount - 1
+          }
+        } else {
+          if (fromIndex < itemCount - 1) {
+            toIndex = fromIndex + 1
+          } else if (fromIndex === itemCount - 1) {
+            toIndex = 0
+          }
+        }
+        const from = this.$children[fromIndex].$el
+        const to = this.$children[toIndex].$el
+        from.style.opacity = 1 - Math.abs(opacity)
+        from.style.transition = animate ? 'opacity 300ms ease' : ''
+        to.style.opacity = Math.abs(opacity)
+        return
+      }
+
       const from = this.$children[this.fromIndex].$el
       const to = this.$children[this.toIndex].$el
       from.style.opacity = 0
       from.style.transition = animate ? 'opacity 500ms ease' : ''
       to.style.opacity = 1
-      // to.style.transition = ''
       if (animate) {
         setTimeout(() => {
           this.$emit('after-change', this.fromIndex, this.toIndex)
@@ -308,9 +333,9 @@ export default {
         }, 300)
       })
 
-      if (!this.isSlide) {
-        return
-      }
+      // if (!this.isSlide) {
+      //   return
+      // }
 
       const element = this.$el
 
@@ -489,13 +514,18 @@ export default {
         event.preventDefault()
       }
 
-      offsetLeft = Math.min(Math.max(-dragState.itemWidth + 1, offsetLeft), dragState.itemWidth - 1)
-      offsetTop = Math.min(Math.max(-dragState.itemHeight + 1, offsetTop), dragState.itemHeight - 1)
+      let _offsetLeft = Math.min(Math.max(-dragState.itemWidth + 1, offsetLeft), dragState.itemWidth - 1)
+      let _offsetTop = Math.min(Math.max(-dragState.itemHeight + 1, offsetTop), dragState.itemHeight - 1)
 
       const offset = this.isVertical
-        ? offsetTop - dragState.itemHeight * this.index
-        : offsetLeft - dragState.itemWidth * this.index
-      this.$_translate(this.$swiper, offset)
+        ? _offsetTop - dragState.itemHeight * this.index
+        : _offsetLeft - dragState.itemWidth * this.index
+
+      if (this.isSlide) {
+        this.$_translate(this.$swiper, offset)
+      } else {
+        this.$_opacity(false, offsetLeft / dragState.itemWidth)
+      }
     },
 
     $_doOnTouchEnd() {
@@ -529,7 +559,11 @@ export default {
         if (Math.abs(offsetLeft) > itemWidth / 6) {
           towards = offsetLeft < 0 ? 'next' : 'prev'
         } else {
-          this.$_translate(this.$swiper, -this.dimension * index, true)
+          if (this.isSlide) {
+            this.$_translate(this.$swiper, -this.dimension * index, true)
+          } else {
+            this.$_opacity(true, 0)
+          }
         }
       }
 
