@@ -1,10 +1,10 @@
 <template>
   <div class="md-image-viewer" v-show="isViewerShow" @click="$_viewerClick">
     <div class="viewer-container">
-      <swiper 
+      <swiper
         ref="swiper"
-        :autoplay = "0" 
-        :default-index="currentImgIndex" 
+        :autoplay = "0"
+        :default-index="currentImgIndex"
         :has-dots="false"
         :is-prevent="false"
         @after-change="$_afterChange"
@@ -32,6 +32,11 @@ export default {
   },
 
   props: {
+    value: {
+      type: Boolean,
+      default: false,
+    },
+    // will be deprecated in the future
     show: {
       type: Boolean,
       default: false,
@@ -64,6 +69,7 @@ export default {
   computed: {},
 
   watch: {
+    // will be deprecated in the future
     show(val) {
       this.currentImgIndex = this.initialIndex
       this.isViewerShow = val
@@ -71,13 +77,22 @@ export default {
         this.$_imgsInit()
       })
     },
+    value(val) {
+      this.currentImgIndex = this.initialIndex
+      this.isViewerShow = val
+      this.$nextTick(() => {
+        this.$_imgsInit()
+      })
+    },
     isViewerShow(val) {
+      this.$emit('input', val)
+      // will be deprecated in the future
       !val && this.$emit('update:show', val)
     },
   },
 
   mounted() {
-    this.isViewerShow = this.show
+    this.isViewerShow = this.value || this.show
   },
   // LiftCircle Hook
   /*
