@@ -14,11 +14,21 @@ const pkg = require('../../package.json')
 //   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 // })
 const pxtoremConfig = pxtorem({ rootValue: 100, propWhiteList: [] })
+const argv = require('yargs').argv
+
+let entry = {
+  'index': ['./build/webpack/dev-client', './examples/main.js']
+}
+
+if (argv.component) {
+  entry = {
+    'index': ['./build/webpack/dev-client', './examples/single-component-main.js']
+  }
+}
+
 
 module.exports = merge(baseWebpackConfig, {
-  entry: {
-    'index': ['./build/webpack/dev-client', './examples/main.js']
-  },
+  entry,
   output: {
     path: config.dev.assetsRoot,
     filename: '[name].js',
@@ -34,6 +44,7 @@ module.exports = merge(baseWebpackConfig, {
     new DashBoardPlugin(),
     new webpack.DefinePlugin({
       'process.env': config.dev.env,
+      'COMPONENT_NAME': `'${argv.component}'`,
       'MAN_VERSION': `'${pkg.version}'`
     }),
     // https://github.com/seaneking/poststylus#webpack
