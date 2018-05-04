@@ -18,7 +18,7 @@
 
 # mand-mobile
 
-[![Build Status](https://travis-ci.org/didi/cube-ui.svg?branch=master)](https://travis-ci.org/didi/mand-mobile)
+[![Build Status](https://travis-ci.org/didi/mand-mobile.svg?branch=master)](https://travis-ci.org/didi/mand-mobile)
 [![codecov](https://codecov.io/gh/didi/mand-mobile/branch/master/graph/badge.svg)](https://codecov.io/gh/didi/mand-mobile)
 [![npm package](https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](https://www.npmjs.org/package/mand-mobile)
 [![NPM downloads](http://img.shields.io/npm/dm/mand-mobile.svg?style=flat-square)](http://npmtrends.com/mand-mobile)
@@ -33,7 +33,7 @@ A mobile UI toolkit, based on `Vue.js 2`, designed for financial scenes.
 * [Change Log](CHANGELOG.md)
 * [Examples](https://didi.github.io/mand-mobile/examples/)
 
-![Examples Link](https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png)
+![Examples Link](https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png?v=2)
 
 ## Install & Usage
 
