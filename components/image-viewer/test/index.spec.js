@@ -12,7 +12,7 @@ describe('ImageViewer', () => {
     wrapper = mount(ImageViewer)
 
     expect(wrapper.hasClass('md-image-viewer')).to.be.true
-    expect(wrapper.vm.show).to.equal(false)
+    expect(wrapper.vm.value).to.equal(false)
     expect(wrapper.vm.initialIndex).to.equal(0)
     expect(wrapper.vm.hasDots).to.equal(true)
   })
