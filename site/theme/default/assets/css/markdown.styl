@@ -1,11 +1,11 @@
 .doc-content-paragraph, .doc-demo-box-code{
-  * {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
-  }
   h1, h2, h3, h4 {
     color: #333;
     font-weight: 500;
-    margin-top: 1em;
+    margin-top: 2em;
+    &:first-child {
+      margin-top: 1em;
+    }
   }
 
   h1, h2, h3, h4, h5, p , dl{
@@ -89,7 +89,7 @@
   }
 
   code {
-    font-family: "Roboto Mono", Monaco, courier, monospace !important;
+    // font-family: "Roboto Mono", Monaco, courier, monospace !important;
     -webkit-font-smoothing: initial;
     margin: 0 2px;
     padding: 0 5px;
@@ -124,6 +124,7 @@
     font-size: 14px;
     white-space: pre;
     background: 0 0;
+    font-family: "Roboto Mono", Monaco, courier, monospace !important;
   }
 
   code {
