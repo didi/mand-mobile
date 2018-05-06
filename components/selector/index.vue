@@ -46,7 +46,8 @@
   </div>
 </template>
 
-<script>import Popup from '../popup'
+<script>
+import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import Radio from '../radio'
 import {noop} from '../_util'
@@ -91,7 +92,7 @@ export default {
     },
     cancelText: {
       type: String,
-      default: '',
+      default: '取消',
     },
     isCheck: {
       type: Boolean,
@@ -187,7 +188,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-selector
