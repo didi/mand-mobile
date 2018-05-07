@@ -52,14 +52,10 @@ export default {
       const typeFormat = args[0] // 类型
       const column0Value = args[1] // 第1列选中值
       const column1Value = args[2] // 第2列选中值
-      const column2Value = args[3] // 第2列选中值
+      const column2Value = args[3] // 第3列选中值
 
       if (typeFormat === 'dd') {
-        return `${new Date().getMonth() + 1}月${column0Value}日`
-      } else if (typeFormat === 'hh') {
-        return `${column0Value}日${column1Value}时`
-      } else if (typeFormat === 'mm') {
-        return `${column0Value}日${column1Value}时${column2Value}分`
+        return `${column0Value}/${column1Value}/${column2Value}`
       }
     },
     onDatePickerChange(columnIndex, itemIndex, value) {
