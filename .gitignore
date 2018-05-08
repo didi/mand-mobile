@@ -14,7 +14,7 @@ selenium-debug.log
 site/public
 site/dist
 site/build/bin/algolia-key.js
-lib-vw-alpha
+lib-vw
 # Editor directories and files
 .idea
 .vscode
