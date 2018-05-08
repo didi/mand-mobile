@@ -25,7 +25,7 @@ Toast.succeed('操作成功')
 |----|-----|------|------|------|
 | icon | Icon组件图标名称 | String | - |如需自定义图标, 请查看`Icon`组件 |
 | content | 提示内容文本 | String | - |- |
-| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `1000` | - |
+| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` | - |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` | - |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|- |
 
@@ -35,7 +35,7 @@ Toast.succeed('操作成功')
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 | content | 提示内容文本 | String | - |
-| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `1000` |
+| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body` |
 
@@ -45,7 +45,7 @@ Toast.succeed('操作成功')
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 | content | 提示内容文本 | String | - |
-| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `1000` |
+| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body` |
 
@@ -55,7 +55,7 @@ Toast.succeed('操作成功')
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 | content | 提示内容文本 | String | - |
-| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `1000` |
+| duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|
 
