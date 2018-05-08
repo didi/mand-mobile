@@ -150,6 +150,7 @@ export default {
         this.$_resetPickerColumn(val, oldVal)
       },
       deep: true,
+      immediate: true,
     },
     defaultIndex: {
       handler(val, oldVal) {
