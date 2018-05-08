@@ -32,6 +32,8 @@ npm install mand-mobile --save
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
+
+<!-- window['mand-mobile'] -->
 <script src="https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js"></script>
 ```
 
@@ -48,7 +50,8 @@ npm install mand-mobile --save
 {
   plugins: [
     [import, {
-      libraryName: "mand-mobile"
+      libraryName: "mand-mobile",
+      libraryDirectory: "lib" // 默认为lib，其他目录参考 #产出包目录
     }]
   ]
 }
@@ -94,17 +97,28 @@ import Button from 'mand-mobile/lib/button'
 ```javascript
 import Vue from 'vue'
 import mandMobile from 'mand-mobile'
+import 'mand-mobile/lib/mand-mobile.css'
 
 Vue.use(mandMobile)
 ```
 
 #### 使用前准备
 
-> 为避免因[浏览器兼容性](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)引起的点击问题，建议引入[FastClick](https://github.com/ftlabs/fastclick)
+##### 产出包目录
 
-##### `px` to `rem`
+[产出包](https://unpkg.com/mand-mobile/)中包含以下几种不同目录，分别适用于不同场景的代码，可根据实际需要选择一个目录加载：
 
-组件样式以`px`为单位，并且以`iPhone6`屏幕 “物理像素” 宽度`750`为基准 (即普通 “逻辑像素” 值的`2`倍大小)。在实际项目中，可根据具体情况使用`postcss-pxtorem`把`px`单位转成`rem`，从而实现不同设备下等比缩放的效果。
+```
+├── mand-mobile
+    ├── components  # 源码，一般自定义主题等
+    ├── lib         # 编译后，样式单位px，一般用于自定义适配方案等（默认）
+    ├── lib-vw      # 编译后，样式单位vh/vw，一般用于非兼容场景，无需额外配置
+    ├── ...
+```
+
+##### `Px` to `Rem`
+
+产出包`lib`目录中的组件样式以`px`为单位，并且以`iPhone6`屏幕 “物理像素” 宽度`750`为基准 (即普通 “逻辑像素” 值的`2`倍大小)。在实际项目中，可根据具体情况使用`postcss-pxtorem`把`px`单位转成`rem`，从而实现不同设备下等比缩放的效果。
 
 如转换基准为`1rem = 100px`：
 
