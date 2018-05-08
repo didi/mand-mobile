@@ -5,7 +5,7 @@ const px2vw = require('postcss-pixel-to-viewport')
 const fs = require('fs')
 const path = require('path')
 const TARGET_LIB_BASE = 'lib'
-const TARGET_VW_LIB_BASE = 'lib-vw-alpha'
+const TARGET_VW_LIB_BASE = 'lib-vw'
 
 
 
@@ -19,7 +19,7 @@ function copyLib() {
     })
   })
     .then(() => {
-      copy(TARGET_LIB_BASE, TARGET_VW_LIB_BASE)
+      return copy(TARGET_LIB_BASE, TARGET_VW_LIB_BASE)
     })
 }
 
