@@ -116,4 +116,6 @@ export default {
 .md-number-keyboard
   .md-popup, .md-popup-box
     z-index number-keyboard-zindex !important
+  .md-popup-box
+    background-color color-bg-base
 </style>

@@ -292,6 +292,8 @@ block()
   .md-popup-title-bar
     .md-icon-cross
       color color-text-base
+  .md-popup-box
+    background-color color-bg-base
   .md-cashier-container
     block()
     background color-bg-base

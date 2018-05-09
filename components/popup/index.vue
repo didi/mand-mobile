@@ -228,7 +228,6 @@
     max-height 100%
     overflow auto
     will-change auto
-    background-color #FFF
     &.slide-up
       padding-bottom env(safe-area-inset-bottom)
   .md-popup-mask

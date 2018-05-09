@@ -285,5 +285,7 @@ export default {
 .md-picker
   width 100%
   &.with-popup .md-popup
-    z-index picker-zindex !important   
+    z-index picker-zindex !important  
+  .md-popup-box
+    background-color color-bg-base 
 </style>
