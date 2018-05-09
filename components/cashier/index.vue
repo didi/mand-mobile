@@ -394,7 +394,7 @@ block()
             .choose-channel-list .choose-channel-item
               display block
             .choose-channel-list
-              max-height 10rem !important
+              max-height 1000px !important
       &.md-cashier-captcha
         .md-captcha
           block()

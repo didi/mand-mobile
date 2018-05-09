@@ -233,5 +233,5 @@ export default {
         height 32px
         margin-bottom 12px
       .md-button
-        margin 0.32rem auto
+        margin 32px auto
 </style>
