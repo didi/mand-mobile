@@ -59,11 +59,11 @@ Vue.component(Chart.name, Chart)
   .md-chart-axis-y
     text
       fill #666
-      font-size 0.2rem
+      font-size 20px
       text-anchor end
   .md-chart-axis-x
     text
       fill #666
-      font-size 0.22rem
+      font-size 20px
       text-anchor middle
 ```

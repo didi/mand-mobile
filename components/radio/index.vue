@@ -267,7 +267,7 @@ export default {
     padding 0
     .md-field-item
       position relative
-      padding .22rem .32rem
+      padding 22px 32px
       .md-icon
         position absolute
         right h-gap-lg
@@ -285,7 +285,7 @@ export default {
       .md-field-item-content.left
         margin-left 0
   .md-input-item
-    padding 0 .32rem
+    padding 0 32px
     &.selected
       .md-input-item-title
         color radio-fill
