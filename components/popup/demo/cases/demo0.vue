@@ -127,4 +127,6 @@ export default {
     padding 0 150px
     display flex
     align-items center
+  .md-popup-box
+    background-color #FFF
 </style>

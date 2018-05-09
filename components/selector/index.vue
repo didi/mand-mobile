@@ -193,6 +193,8 @@ export default {
 .md-selector
   .md-popup
     z-index selector-zindex !important
+    .md-popup-box
+      background-color color-bg-base
     .md-selector-container
       background color-bg-base
       .md-selector-item
