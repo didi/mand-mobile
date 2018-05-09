@@ -2,11 +2,12 @@
 title: 更新日志
 ---
 
-### 1.2.1
-`2018-05-08`
+### 1.2.2
+`2018-05-09`
 - Fix
   - 修复issue#67
   - 修复issue#69
+  - 修复issue#72
 - Feature
   - 新增`vw`适配方案
   - Popup适配iPhone X
