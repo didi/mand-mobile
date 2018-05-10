@@ -234,6 +234,7 @@ export default {
       .home-text
         z-index 3
         width 440px
+        -webkit-font-smoothing initial
         h2.home-title
           position relative
           margin-bottom 26px
@@ -390,6 +391,9 @@ export default {
         .home-decorate
           top 0
           left -300px
+.mfe-git-star-number
+  font-family DINAlternate-Bold
+  font-weight 400
 
 @media (max-width: 1400px)
   .home-box
