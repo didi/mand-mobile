@@ -13,6 +13,7 @@ export default {
   name: 'button-demo',
   /* DELETE */
   title: '线性按钮小尺寸',
+  codeSandBox: 'https://codesandbox.io/s/jlv69qoq8v',
   /* DELETE */
   components: {
     [Button.name]: Button,

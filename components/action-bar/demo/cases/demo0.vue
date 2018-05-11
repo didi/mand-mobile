@@ -11,6 +11,7 @@ export default {
   /* DELETE */
   title: '通栏多按钮',
   height: 150,
+  codeSandBox: 'https://codesandbox.io/s/qvk465q29j',
   /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,
