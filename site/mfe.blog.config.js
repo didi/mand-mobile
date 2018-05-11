@@ -50,18 +50,6 @@ module.exports = {
   favicon: '//static.galileo.xiaojukeji.com/static/tms/other/mand-mobile-logo.png',
   source: [
     {
-      name: 'design',
-      text: '设计',
-      src: '/design/resource',
-      menu: [
-        {
-          name: 'resource',
-          text: '设计资源',
-          markdown: resolve('site/docs/resource.md'),
-        }
-      ]
-    },
-    {
       name: 'docs',
       text: '组件',
       src: '/docs/introduce',
@@ -104,6 +92,18 @@ module.exports = {
         },
       ],
     },
+    {
+      name: 'design',
+      text: '设计',
+      src: '/design/resource',
+      menu: [
+        {
+          name: 'resource',
+          text: '设计资源',
+          markdown: resolve('site/docs/resource.md'),
+        }
+      ]
+    },
   ],
   components: generateSource(),
   markdownBoundary: {
@@ -143,6 +143,10 @@ module.exports = {
         {
           text: 'Cube UI <span>- Vue.js组件库</span>',
           src: 'https://didi.github.io/cube-ui',
+        },
+        {
+          text: 'Pile.js <span>- React组件库</span>',
+          src: 'https://github.com/didi/pile.js',
         },
         {
           text: 'VirtualAPK <span>- Android插件化框架</span>',

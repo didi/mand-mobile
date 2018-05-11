@@ -14,6 +14,7 @@ export default {
   /* DELETE */
   title: '通栏带文案',
   height: 150,
+  codeSandBox: 'https://codesandbox.io/s/48kj4x289x',
   /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,

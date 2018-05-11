@@ -491,11 +491,11 @@ export default {
     },
 
     getFormatDate (format = 'yyyy-MM-dd hh:mm') {
-      const columnValues = this.getColumnValues()
+      const columnValues = this.picker.getColumnValues()
       let hourTo24 = false
 
       if (this.isTwelveHours) {
-        const halfHour = columnValues.splice(columnValues.length - 1, 1)[0]
+        const halfHour = [...columnValues].splice(columnValues.length - 1, 1)[0]
         halfHour.value && (hourTo24 = true)
       }
 

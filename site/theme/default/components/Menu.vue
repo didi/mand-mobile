@@ -88,6 +88,9 @@ export default {
     color #314659
     text-decoration none
     transition all .3s
+    -webkit-font-smoothing initial
+    &:hover
+      color #048EFA
     &.disabled
       color #999
       pointer-events none
@@ -106,13 +109,15 @@ export default {
       background #048EFA
     &.router-link-active
       color #048EFA
+      font-weight 500
       span
         color #048EFA
       // background RGBA(252, 145, 83, .05)
       &:after
         display block
     span
-      color #666
+      // color #666
+      opacity .7
       font-size 12px
 
   li.menu-item-0 a
