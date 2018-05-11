@@ -18,7 +18,7 @@
       title="选择出险时间"
       is-twelve-hours
       :text-render="textRender"
-      :custom-types="['yyyy', 'MM','dd', 'hh']"
+      :custom-types="['yyyy', 'MM','dd', 'hh', 'mm']"
       :default-date="currentDate"
       @change="onDatePickerChange"
       @confirm="onDatePickerConfirm"
@@ -67,7 +67,7 @@ export default {
     },
     onDatePickerConfirm(columnsValue) {
       console.log(`[Mand Mobile] DatePicker Confirm\nvalue: ${JSON.stringify(columnsValue)}`)
-      this.datePickerValue = this.$refs.datePicker.getFormatDate('dd日hh时mm分')
+      this.datePickerValue = this.$refs.datePicker.getFormatDate('yyyy/MM/dd hh:mm')
     },
   },
 }
