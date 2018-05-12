@@ -134,6 +134,10 @@ module.exports = {
         {
           text: '加入我们',
           src: 'http://job.didichuxing.com/',
+        },
+        {
+          text: '国内镜像 🇨🇳',
+          src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
         }
       ],
     },
