@@ -10,6 +10,14 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+const htmlPluginOption = {
+  template: `index.html`,
+  title: mbConfig.title,
+  subtitle: mbConfig.subtitle,
+  logo: mbConfig.favicon,
+  chunksSortMode: 'dependency'
+}
+
 module.exports = {
   entry: {
     app: [`${mbConfig.output}/config.js`, `./theme/${mbConfig.theme}/main.js`]
@@ -18,11 +26,11 @@ module.exports = {
     path: config.build.assetsRoot,
     filename: '[name].js',
     chunkFilename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : process.env.NODE_ENV === 'testing'
-        ? '/mand-mobile/'
-        : config.dev.assetsPublicPath
+    // publicPath: process.env.NODE_ENV === 'production'
+    //   ? config.build.assetsPublicPath
+    //   : process.env.NODE_ENV === 'testing'
+    //     ? '/mand-mobile/'
+    //     : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -59,13 +67,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
       filename: 'index.html',
-      template: `index.html`,
-      title: mbConfig.title,
-      subtitle: mbConfig.subtitle,
-      logo: mbConfig.favicon,
-      chunksSortMode: 'dependency'
-    })
+      publicPath: '/mand-mobile/',
+    })),
+    new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
+      filename: 'index.gitee.html',
+      publicPath: '/docs/',
+    })),
   ]
 }
