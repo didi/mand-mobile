@@ -9,10 +9,11 @@
     <md-popup
       v-model="isSelectorShow"
       position="bottom"
-      :mask-closable="false"
+      :mask-closable="maskClosable"
       :prevent-scroll="true"
       @show="$emit('show')"
       @hide="$emit('hide')"
+      @maskClick="$_onSelectorCancel"
     >
       <md-popup-title-bar
         :title="title"
@@ -92,6 +93,10 @@ export default {
     cancelText: {
       type: String,
       default: '',
+    },
+    maskClosable: {
+      type: Boolean,
+      default: true,
     },
     isCheck: {
       type: Boolean,

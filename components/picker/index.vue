@@ -19,6 +19,7 @@
       <md-popup
         v-model="isPickerShow"
         position="bottom"
+        :mask-closable="maskClosable"
         @beforeShow="$_onPickerBeforeShow"
         @show="$_onPickerShow"
         @hide="$_onPickerHide"
@@ -118,6 +119,10 @@ export default {
     cancelText: {
       type: String,
       default: '取消',
+    },
+    maskClosable: {
+      type: Boolean,
+      default: true,
     },
   },
 

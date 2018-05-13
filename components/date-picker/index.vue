@@ -10,6 +10,7 @@
       :ok-text="okText"
       :cancel-text="cancelText"
       :is-view="isView"
+      :mask-closable="maskClosable"
       @initialed="$emit('initialed')"
       @change="$_onPickerChange"
       @confirm="$_onPickerConfirm"
@@ -134,6 +135,10 @@ export default {
     isView: {
       type: Boolean,
       default: false
+    },
+    maskClosable: {
+      type: Boolean,
+      default: true,
     }
   },
 
