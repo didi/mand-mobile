@@ -13,6 +13,7 @@
       @initialed="$emit('initialed')"
       @change="$_onPickerChange"
       @confirm="$_onPickerConfirm"
+      @cancel="$_onPickerCancel"
       @show="$_onPickerShow"
       @hide="$_onPickerHide"
     ></md-picker>
@@ -141,6 +142,7 @@ export default {
       isPickerShow: false,
       currentDateIns: new Date(),
       columnData: [],
+      oldColumnData: null,
       columnDataDefault: [],
       columnDataGenerator: [],
       disabledCascadeComlumnIndex: [] // columns do not need cascading 
@@ -469,6 +471,7 @@ export default {
 
     // MARK: events handler
     $_onPickerShow () {
+      this.oldColumnData = [...this.columnData]
       this.$emit('show')
     },
     $_onPickerHide () {
@@ -488,6 +491,10 @@ export default {
     },
     $_onPickerConfirm (columnsValue) {
       this.$emit('confirm', columnsValue)
+    },
+    $_onPickerCancel () {
+      this.$emit('cancel')
+      this.columnData = [...this.oldColumnData]
     },
 
     getFormatDate (format = 'yyyy-MM-dd hh:mm') {
