@@ -30,18 +30,17 @@
   </div>
 </template>
 
-<script>
-import { Landscape, Toast, Button } from "mand-mobile";
+<script>import {Landscape, Toast, Button} from 'mand-mobile'
 
 export default {
-  name: "landscape-demo",
+  name: 'landscape-demo',
   /* DELETE */
-  title: "示例",
+  title: '示例',
   height: 700,
   /* DELETE */
   components: {
     [Landscape.name]: Landscape,
-    [Button.name]: Button
+    [Button.name]: Button,
   },
   data() {
     return {
@@ -49,16 +48,16 @@ export default {
       showNoMask: false,
       showScroll: false,
       showListen: false,
-      showMaskClosable: false
-    };
+      showMaskClosable: false,
+    }
   },
   methods: {
     alert(msg) {
-      Toast.succeed(msg);
-    }
-  }
-};
-</script>
+      Toast.succeed(msg)
+    },
+  },
+}
+</script>
 
 <style lang="stylus">
 .md-example-child-landscape {
