@@ -56,7 +56,7 @@ Dynamically create interaction dialog.
 ##### confirm(props)
 Dynamically create a confirm dialog.
 
-|属性 | 说明 | 类型 | 默认值|
+| Props | Description | Type | Default |
 |----|-----|------|------|
 | icon | The icon of message type | String | - |
 | title | The title of dialog | String | - | - |
@@ -68,7 +68,7 @@ Dynamically create a confirm dialog.
 ##### Dialog.alert(props)
 Dynamically create a alert dialog.
 
-|属性 | 说明 | 类型 | 默认值|
+| Props | Description | Type | Default |
 |----|-----|------|------|
 | icon | The icon of message type | String | - |
 | title | The title of dialog | String | - | - |
@@ -79,7 +79,7 @@ Dynamically create a alert dialog.
 ##### Dialog.succeed(props)
 Dynamically create a succeed dialog.
 
-|属性 | 说明 | 类型 | 默认值|
+| Props | Description | Type | Default |
 |----|-----|------|------|
 | title | The title of dialog | String | - | - |
 | content | The message content of dialog | String | -|
@@ -89,7 +89,7 @@ Dynamically create a succeed dialog.
 ##### Dialog.failed(props)
 Dynamically create a failed dialog.
 
-|属性 | 说明 | 类型 | 默认值|
+| Props | Description | Type | Default |
 |----|-----|------|------|
 | title | The title of dialog | String | - | - |
 | content | The message content of dialog | String | -|
