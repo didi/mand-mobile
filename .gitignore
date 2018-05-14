@@ -2,7 +2,6 @@
 node_modules/
 dist/
 lib/
-lib-vw/
 output/
 package-lock.json
 yarn.lock
