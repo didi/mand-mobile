@@ -32,12 +32,14 @@ npm install mand-mobile --save
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
+
+<!-- window['mand-mobile'] -->
 <script src="https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js"></script>
 ```
 
 #### Import
 
-##### On-demand loading(Recommended)
+##### On-demand Loading(Recommended)
 
 > Use <a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a>
   or
@@ -48,7 +50,8 @@ npm install mand-mobile --save
 {
   plugins: [
     [import, {
-      libraryName: "mand-mobile"
+      libraryName: "mand-mobile",
+      libraryDirectory: "lib" // default is 'lib', other directory reference #Release Package Directory, no need configuration for style
     }]
   ]
 }
@@ -81,26 +84,43 @@ and then
 
 ```javascript
 import { Button } from 'mand-mobile'
+
+// [Note] If there is no configuration above, it will be imported in full amount, all styles need to be manually imported, and reference #Totally Import.
 ```
 
-##### Manually import
+##### Manually Import
 
 ```javascript
 import Button from 'mand-mobile/lib/button'
 ```
 
-##### Totally import
+##### Totally Import
 
 ```javascript
 import Vue from 'vue'
 import mandMobile from 'mand-mobile'
+import 'mand-mobile/lib/mand-mobile.css'
 
 Vue.use(mandMobile)
 ```
 
-#### Prepare before use
+#### Prepare Before Use
 
-> To avoid click problems caused by [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile), it is recommended to introduce [FastClick](https://github.com/ftlabs/fastclick)
+##### FastClick
+
+To avoid click problems caused by [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile), it is recommended to introduce [FastClick](https://github.com/ftlabs/fastclick)
+
+##### Release Package Directory
+
+[Release Package](https://unpkg.com/mand-mobile/) includes the following different directories, which are applicable to the code of different scenarios. You can select a directory to load according to actual needs：
+
+```
+├── mand-mobile
+    ├── components  # Source code, custom theme, etc
+    ├── lib         # After compilation, style unit 'px', generally used for custom fit programs, etc (default)
+    ├── lib-vw      # After compilation, style unit 'vh/vw', generally used in non-compatible scenarios, without additional configuration
+    ├── ...
+```
 
 ##### `Px` to `Rem`
 

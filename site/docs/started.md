@@ -169,7 +169,7 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
 
 #### 使用
 
-这是一个使用`Mand Mobile`组件开发而成的表单页面，更多的组件使用方法可在<a href="#/docs/preview">组件概览</a>中找到。
+这是一个使用`Mand Mobile`组件开发而成的表单页面，更多的组件使用方法可在[组件概览](/mand-mobile/docs/preview)中找到。
 
 ```vue
 <template>
@@ -277,4 +277,3 @@ body{
 }
 </style>
 ```
-
