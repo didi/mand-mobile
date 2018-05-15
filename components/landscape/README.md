@@ -8,7 +8,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/landscape
 ### 引入
 
 ```javascript
-import { Landscape } from 'mand-landscape'
+import { Landscape } from 'mand-mobile'
 
 Vue.component(Landscape.name, Landscape)
 ```
