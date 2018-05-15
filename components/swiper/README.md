@@ -70,7 +70,7 @@ vm.$refs.swiper.next()
 
 |参数|说明|类型|默认值|可选值|
 |---|---|---|---|---|
-|index|第一屏面板索引值|Number|`0`|`[0, length - 1]`|
+|index|面板索引值|Number|`0`|`[0, length - 1]`|
 ```js
 vm.$refs.swiper.goto(2)
 ```
