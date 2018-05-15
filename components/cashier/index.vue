@@ -292,6 +292,8 @@ block()
   .md-popup-title-bar
     .md-icon-cross
       color color-text-base
+  .md-popup-box
+    background-color color-bg-base
   .md-cashier-container
     block()
     background color-bg-base
@@ -392,7 +394,7 @@ block()
             .choose-channel-list .choose-channel-item
               display block
             .choose-channel-list
-              max-height 10rem !important
+              max-height 1000px !important
       &.md-cashier-captcha
         .md-captcha
           block()

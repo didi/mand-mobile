@@ -150,6 +150,7 @@ export default {
         this.$_resetPickerColumn(val, oldVal)
       },
       deep: true,
+      immediate: true,
     },
     defaultIndex: {
       handler(val, oldVal) {
@@ -284,5 +285,7 @@ export default {
 .md-picker
   width 100%
   &.with-popup .md-popup
-    z-index picker-zindex !important   
+    z-index picker-zindex !important  
+  .md-popup-box
+    background-color color-bg-base 
 </style>

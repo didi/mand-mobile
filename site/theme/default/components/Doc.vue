@@ -55,6 +55,11 @@
                       v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
                       v-clipboard:copy="decodeURI(demo.raw)"
                       v-clipboard:success="onCopySuccess"></i>
+                    <i class="demo-codesandbox"
+                      v-if="demo.component.codeSandBox"
+                      v-tooltip="{content: '在CodeSandBox打开', offset: 5}">
+                      <a :href="demo.component.codeSandBox" target="_blank"></a>
+                    </i>
                     <i class="icon-edit"
                       v-tooltip="{content: '在Github上编辑此页', offset: 5}"
                       @click="goToDemo(index)"
@@ -107,6 +112,11 @@
                       v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
                       v-clipboard:copy="decodeURI(demo.raw)"
                       v-clipboard:success="onCopySuccess"></i>
+                    <i class="demo-codesandbox"
+                      v-if="demo.component.codeSandBox"
+                      v-tooltip="{content: '在CodeSandBox打开', offset: 5}">
+                      <a :href="demo.component.codeSandBox" target="_blank"></a>
+                    </i>
                     <i class="icon-edit"
                       v-tooltip="{content: '在Github上编辑此页', offset: 5}"
                       @click="goToDemo(index)"
@@ -406,16 +416,6 @@ export default {
       .doc-demo-title
         font-size 16px
         font-weight 500
-        a
-          margin-right 5px
-          background color-primary-tap
-          color #fff
-          padding 5px 10px
-          border-radius radius-normal
-          font-size font-minor-large
-          font-weight 300
-          line-height 28px
-          text-decoration none
       .doc-demo-describe
         margin-top 10px
         color #999
@@ -446,6 +446,16 @@ export default {
     &.active
       .doc-demo-box-code, .doc-demo-box-toggle
         display block
+  .demo-codesandbox
+    width 16px
+    height 16px
+    background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAsCAYAAAAXb/p7AAADCUlEQVR4Ac3ZA4wkWxSA4fNs27Zt27Zt235r27Zt27Ztm2f/ZAeVk1u9NTe3e2aSb1ydv1V1IcOHDw/lZHRBH5wNCSHEjRyO4tgCzbIDFXBMfgbui4+wFBpjLb7FgZkOfARToQnNxcuZCLwVA6CeRuGhdASehfrQQNrikhCBh6AYNE1q4ETfwK+xChoxBy/gb4+YKfgAQ6ERG1EIByQNfB7ToBEb8K95N16CNlArwbHfYAU0YhE+TBV4B0ZBjSo4GhLjuhRvnEopjj0IhbHFHDMNT0UDz0MLqNEZl0MSegYzIsdeBkngbDSEGn1xrTiezoE4Hb6Xu3uwv8exh6KzaZkpfFppf4m3IBm0D95ynPyXCJ8WQB3m4FVImr2GOXEN0cCe+BFbHaeH+yCB3YvJ0Ijt+BYdXYGdIDgz5k3TC1cHCLsCPaFGC5wFQXNXYG9IxC0xp48GONMj7IyYy+UA3AaJ6Jgq0HoAEx1PRSkclyDsWJTANmjEZDNw8AwE9sMHWAyNWI1vcBDEOACfOc4Sy/AR9oX4B7odjH+xYQ/jvWcx03HN/Q+HQoBwgdaxqImdJqJdzBusjhm1pC3QOg/doDF64yKI4RXYDeLpZoyGZhmD2yCe2rkCh2E/iKf3oVmegvhCJ0cgdn/cCPHwcYDAk9HEeakz2uACSB58Cs3yLCQPDkNxe3awgdZ2lMBx6Qy059ckgdZmfIt9AwfeZ86VvoEAXgsYuDcGQkMGvhEwcC/0Cx34WuDAPkkDFxfgwAVmTlLgApcLn57D3AIYOA/PRSfRf2IdNMazAQMRO8hYhz9xEMS1WloeW6HGnwEDn3E8GFtRAUcmWTw6E22gRh9cA9/Aq9ADarTH2T7Lb9ejN9RohbMgEZ+lCDwdTaBGP9wYYgHzQYxxPCXVcTQE70CzPAbBYajoWCAah0fSsQT8keO8uQbP4qNoYJbldikDn6d7Ef0Q/Ghe5DuxEYrtWIYdZsL0Gw7L5DbESSiN7dAYO1EJp+bnRs45aAU1OpgJU+YDjWswFpNxMySEXecmBgFGjc4zAAAAAElFTkSuQmCC') no-repeat
+    background-size contain
+    a
+      float left
+      width 100%
+      height 100%
+      margin 0
   .doc-demo-box-preview
     position relative
     float left

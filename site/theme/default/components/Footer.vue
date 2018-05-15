@@ -120,8 +120,15 @@ clearfix()
       a
         color #FFF
         text-decoration none
+        transition color .3s
+        -webkit-font-smoothing initial
+        &:hover
+          color #DDD
       span
-        opacity .8
+        opacity .6
+        color #FFF
+        font-size 12px
+
 @media (max-width: 1400px)
   .default-footer-container
     width 1080px !important

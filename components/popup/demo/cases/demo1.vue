@@ -54,8 +54,7 @@
   </div>
 </template>
 
-<script>
-import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
+<script>import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
 
 export default {
   name: 'popup-demo',
@@ -84,8 +83,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-popup-1
@@ -123,4 +121,6 @@ export default {
     padding 0 150px
     display flex
     align-items center
+  .md-popup-box
+    background-color #FFF
 </style>

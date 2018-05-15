@@ -110,7 +110,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .md-action-sheet
   color color-text-base
   -webkit-font-smoothing antialiased
@@ -143,4 +143,6 @@ export default {
             content ''
             height 12px
             background color-primary-background
+  .md-popup-box
+    background-color color-bg-base
 </style>

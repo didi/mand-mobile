@@ -7,6 +7,15 @@ import VueClipboard from 'vue-clipboard2'
 import VueTooltip from 'v-tooltip'
 import { setScale } from './assets/js/util'
 
+if (process.env.NODE_ENV === 'production') {
+  const hostname = location.hostname
+  if (hostname === 'didi.github.io') {
+    __webpack_public_path__ = '/mand-mobile/'
+  } else if (hostname === 'mand-mobile.gitee.io') {
+    __webpack_public_path__ = '/docs/'
+  }
+}
+
 Vue.config.productionTip = false
 Vue.use(VueClipboard)
 Vue.use(VueTooltip)
@@ -19,7 +28,6 @@ window.jumpAnchor = (anchor) => {
   if (!anchor || !document.getElementById(decodeURIComponent(anchor))) {
     return
   }
-  console.info(document.getElementById(decodeURIComponent(anchor)))
   window.document.getElementById(decodeURIComponent(anchor)).scrollIntoView()
   let hash = window.location.hash.replace(/\?.*/, '')
   window.location.hash = `${hash}?anchor=${anchor}`

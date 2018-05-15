@@ -142,18 +142,18 @@ export default {
   left 0
   bottom 0
   right 0
-  z-index 999
+  z-index image-viewer-zindex
   transform translate3d(0,0,0)
   overflow hidden
 
   .viewer-index
     position absolute
-    bottom 1rem
+    bottom image-viewer-index-bottom
     left 0
     width 100%
     text-align center
     color #FFF
-    font-size .32rem
+    font-size image-viewer-index-font-size
     text-shadow 0 1px 1px #333
     z-index 101
   .viewer-container

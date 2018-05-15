@@ -204,7 +204,6 @@ export default {
       }
     },
     focus() {
-      console.log('ok')
       this.focused = true
       if (this.system) {
         this.$refs.input.focus()
