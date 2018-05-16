@@ -242,7 +242,7 @@ export default {
       isSetColumn && this.picker.refresh(null, columnIndex)
     },
     $_initColumnDataGenerator () { 
-      const defaultDate = this.defaultDate     
+      const defaultDate = this.$_getDefaultDate()     
       switch (this.type) {
         case 'date':
           this.$_initColumnDataGeneratorForDate(defaultDate)
@@ -325,6 +325,25 @@ export default {
         this.columnDataGenerator.push(this.$_generateAPData)
         this.columnDataDefault.push(hourInfo.ap)
       }
+    },
+    $_getDefaultDate () {
+      const defaultDate = this.defaultDate
+      const minDate = this.minDate
+      const maxDate = this.maxDate
+
+      if (!defaultDate) {
+        return defaultDate
+      }
+
+      if (minDate && defaultDate.getTime() < minDate.getTime()) {
+        return minDate
+      }
+
+      if (maxDate && defaultDate.getTime() > maxDate.getTime()) {
+        return maxDate
+      }
+
+      return defaultDate
     },
     $_generateYearData () {
       const start = this.minDate ? this.minDate.getFullYear() : this.currentYear - 20
