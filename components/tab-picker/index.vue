@@ -3,7 +3,7 @@
     <md-popup
       v-model="isTabPickerShow"
       position="bottom"
-      :mask-closable="false"
+      :mask-closable="maskClosable"
       @show="$_onShow"
       @hide="$_onHide"
     >
@@ -21,6 +21,7 @@
           :default-index="defaultTabIndex"
           :force-use-array="hasTitleSlotScope"
           @indexChanged="$_onIndexChange"
+          :key="refreshTabPicker"
         >
           <template
             slot="title"
@@ -89,6 +90,10 @@ export default {
       type: String,
       default: '取消',
     },
+    maskClosable: {
+      type: Boolean,
+      default: true,
+    },
     data: {
       type: Array,
       default() {
@@ -138,6 +143,8 @@ export default {
       isLoading: true,
       isDataError: false,
       currentColumnLock: false,
+      lastSelectIndex: null,
+      refreshTabPicker: 0,
     }
   },
 
@@ -180,6 +187,17 @@ export default {
 
   methods: {
     // MARK: private methods
+    $_initLocalVariable() {
+      this.subTitles = []
+      this.renderData = []
+      this.defaultTabIndex = 0
+      this.currentIndex = 0
+      this.isTabPickerShow = false
+      this.isLoading = true
+      this.isDataError = false
+      this.currentColumnLock = false
+      this.refreshTabPicker = Math.random()
+    },
     $_initTabPicker() {
       switch (this.dataStruct) {
         case 'normal':
@@ -200,11 +218,14 @@ export default {
         return
       }
       this.isLoading = false
-      if (this.defaultIndex && this.defaultIndex.length > 0) {
+
+      const initialIndex = this.lastSelectIndex || this.defaultIndex
+
+      if (initialIndex && initialIndex.length > 0) {
         let i = 0
         const func = array => {
-          if (i < this.defaultIndex.length) {
-            const temp = this.defaultIndex[i]
+          if (i < initialIndex.length) {
+            const temp = initialIndex[i]
             array.forEach((item, eq) => {
               if (eq === temp) {
                 this.subTitles.push(item.label)
@@ -231,15 +252,18 @@ export default {
         return
       }
       this.isLoading = false
+
+      const initialIndex = this.lastSelectIndex || this.defaultIndex
+
       this.data.forEach((item, index) => {
         const temp = {
           index: index,
-          clickedKey: this.defaultIndex.length > 0 && ~this.defaultIndex[index] ? this.defaultIndex[index] : -1,
+          clickedKey: initialIndex.length > 0 && ~initialIndex[index] ? initialIndex[index] : -1,
           data: item.children,
         }
         this.renderData.push(temp)
         const currentColumn = this.renderData[index]
-        if (this.defaultIndex && this.defaultIndex.length > 0) {
+        if (initialIndex && initialIndex.length > 0) {
           this.subTitles.push(currentColumn.data[currentColumn.clickedKey].label)
         } else {
           this.subTitles.push(item.label)
@@ -279,15 +303,31 @@ export default {
     },
     $_onHide() {
       this.$emit('hide')
+      // revoke this opration
+      this.$_reInitTabPicker()
     },
     $_onConfirm() {
       this.isTabPickerShow = false
       const selectedItem = this.getSelectedItem()
+      const isSelectPart = selectedItem.some(option => {
+        return !option
+      })
+      if (!isSelectPart) {
+        this.lastSelectIndex = selectedItem.map(option => {
+          return option.item.eq
+        })
+      }
       this.$emit('confirm', selectedItem)
     },
     $_onCancel() {
       this.isTabPickerShow = false
       this.$emit('cancel')
+    },
+    $_reInitTabPicker() {
+      this.$_initLocalVariable()
+      this.$nextTick(() => {
+        this.$_initTabPicker()
+      })
     },
     $_onRadioChange(value, index) {
       if (this.dataStruct === 'cascade' && this.currentColumnLock) {
@@ -344,6 +384,7 @@ export default {
             item: {
               label: selected.label,
               value: selected.value,
+              eq: item.clickedKey,
             },
           }
         } else {
