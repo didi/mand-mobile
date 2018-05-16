@@ -21,13 +21,13 @@ Vue.component(Picker.name, Picker)
 #### Picker Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-modelwhether picker is visible|Boolean|`false`|-|
+|v-model|picker display|Boolean|`false`|-|
 |data|data source|Array<{value, lable, ...}>[]|`[]`|-|
 |cols|number of columns|Number|`1`|-|
 |default-index|initial selected option index of each column|Array|`[]`|-|
 |invalid-index|disabled option index of each column|Array|`[]`|array for multiple disabled options, such as `[[1,2], 2]`|
 |is-view|inline display in page, otherwise it is in `Popup`|Boolean|`false`|-|
-|is-cascade|whether each column of data is cascaded|Boolean|`false`|cascade data format see #Appendix|
+|is-cascade|each column of data is cascaded|Boolean|`false`|cascade data format see #Appendix|
 |title|title of picker|String|-|-|
 |ok-text|text of confirmation|String|`确认`|-|
 |cancel-text|text of cancellation|String|`取消`|-|
@@ -43,7 +43,7 @@ Reinitialize picker, such as update `data`, `default-index` or `invalid-index`
 |startColumnIndex|index of the column to start resetting, default is 0|Function|
 
 ##### getColumnValue(index): activeItemValue
-Get the value of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
+Get data of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
 
 |Parameters | Description | Type|
 |----|-----|------|
@@ -53,16 +53,16 @@ Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|activeItemValue|value of selected option|Object: {value, lable, ...}|
+|activeItemValue|data of selected option|Object: {value, lable, ...}|
 
 ##### getColumnValues(): columnsValue
-Get values of all column selections, need to be called after the `initialed` event is fired or asynchronously
+Get dataset of all column selections, need to be called after the `initialed` event is fired or asynchronously
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsValue|values of all column selections|Array<{value, lable, ...}>|
+|columnsValue|dataset of all column selections|Array<{value, lable, ...}>|
 
 ##### getColumnIndex(index): activeItemIndex
 Get index of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
@@ -98,32 +98,32 @@ Set data for a column
 #### Picker Events
 
 ##### @initialed()
-Picker data initialization completion event, callable `getColumnIndex`, `getColumnIndexs`, `getColumnValue`, `getColumnValues`
+Picker data initialization completion, callable `getColumnIndex`, `getColumnIndexs`, `getColumnValue`, `getColumnValues`
 
 ##### @change(columnIndex, itemIndex, value)
-Picker selections change event
+Picker selections change
 
 |Parameters | Description | Type|
 |----|-----|------|
 |columnIndex|index of changing column|Number|
 |itemIndex|index of changing option|Number|
-|value|value of changing column selection|Object: {value, lable, ...}|
+|value|data of changing column selection|Object: {value, lable, ...}|
 
 ##### @confirm(columnsValue)
-Picker confirm selection event (only when `is-view` is `false`）
+Picker confirm selection (only when `is-view` is `false`）
 
 |Parameters | Description | Type|
 |----|-----|------|
-|columnsValue|values of all column selections|Array<{value, lable, ...}>|
+|columnsValue|dataset of all column selections|Array<{value, lable, ...}>|
 
 ##### @cancel()
-Picker cancel selection event (only when `is-view` is `false`）
+Picker cancel selection (only when `is-view` is `false`）
 
 ##### @show()
-Picker display event (only when `is-view` is `false`）
+Picker has been displayed (only when `is-view` is `false`）
 
 ##### @hide()
-Picker hidden event (only when `is-view` is `false`）
+Picker has been hidden (only when `is-view` is `false`）
 
 ### Appendix
 

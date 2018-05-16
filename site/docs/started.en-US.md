@@ -51,7 +51,11 @@ npm install mand-mobile --save
   plugins: [
     [import, {
       libraryName: "mand-mobile",
-      libraryDirectory: "lib" // default is 'lib', other directory reference #Release Package Directory, no need configuration for style
+      /**
+       * default is 'lib', other directory reference #Release Package Directory, 
+       * no need configuration for style
+       */
+      libraryDirectory: "lib" 
     }]
   ]
 }
@@ -85,7 +89,10 @@ and then
 ```javascript
 import { Button } from 'mand-mobile'
 
-// [Note] If there is no configuration above, it will be imported in full amount, all styles need to be manually imported, and reference #Totally Import.
+/**
+ * [Note] If there is no configuration above, it will be imported in full amount, 
+ * all styles need to be manually imported, and reference #Totally Import.
+ */
 ```
 
 ##### Manually Import
@@ -117,8 +124,11 @@ To avoid click problems caused by [browser compatibility](https://developer.mozi
 ```
 ├── mand-mobile
     ├── components  # Source code, custom theme, etc
-    ├── lib         # After compilation, style unit 'px', generally used for custom fit programs, etc (default)
-    ├── lib-vw      # After compilation, style unit 'vh/vw', generally used in non-compatible scenarios, without additional configuration
+    |
+    ├── lib         # After compilation, style unit 'px', generally used 
+    |                 for custom fit programs, etc (default)
+    ├── lib-vw      # After compilation, style unit 'vh/vw', generally used 
+    |                 in non-compatible scenarios, without additional configuration
     ├── ...
 ```
 

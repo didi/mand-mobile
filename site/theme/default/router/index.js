@@ -14,8 +14,9 @@ Routes.map((item, index) => {
 
 const routes = [
   ...Routes,
-  {path: '/home', component: Home, meta: {noMenu: true}},
-  {path: '/', redirect: '/home'},
+  {path: '/en-US/home', component: Home, meta: {noMenu: true}},
+  {path: '/zh-CN/home', component: Home, meta: {noMenu: true}},
+  {path: '/', redirect: '/en-US/home'},
   {path: '*', component: Error, meta: {noMenu: true}},
 ]
 

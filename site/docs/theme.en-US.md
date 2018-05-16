@@ -1,30 +1,30 @@
 ---
-title: 主题定制
+title: Custom theme
 ---
 
-`Mand Mobile`默认提供了一套基于`滴滴的金融业务设计规范`的UI主题，同时还支持主题定制。用户可以对颜色、字体、元素尺寸等样式进行自由调整，从而满足在不同业务场景下的视觉需求。
+`Mand Mobile` provides a set of UI themes based on `DiDi financial business design specifications` by default. It also supports theme customization. You can freely adjust the colors, fonts, and element sizes to meet the visual requirements in different business scenarios.
 
 <p>
   <img src="http://static.galileo.xiaojukeji.com/static/tms/other/mand-theme.jpg" width="800">
 </p>
 
 
-### 样式变量
+### Style Variables
 
-`Mand Mobile`样式基于<a href="http://stylus-lang.com/" target="_blank">Stylus</a>开发，可通过全局和组件的样式变量对主题样式进行调整
+`Mand Mobile` style is based on <a href="http://stylus-lang.com/" target="_blank">Stylus</a> and can adjust theme styles through global and component style variables
 
-完整的变量列表可以查看<a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.styl" target="_blank">默认样式变量</a>
+A complete list of variables can see the <a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.styl" target="_blank">Default Style Variables</a>
 
-### 变量覆盖
+### Variable Coverage
 
-可以通过引入组件源码，覆盖样式变量的方式来实现主题定制
+You can achieve theme customization by importing component source code and overriding style variables.
 
-* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`
+* First, install dependencies，`babel-plugin-import stylus stylus-loader css-loader`
 
 ```shell
 npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 ```
-* 配置`babel-plugin-import`， 确保引入组件源码
+* Configure `babel-plugin-import` to ensure that component source code is imported
 
 ```javascript
 // .babelrc or babel-loader/ts-loader option
@@ -34,21 +34,21 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
     ]
 }
 ```
-* 创建自定义主题文件，如`theme.custom.styl`
+* Create a custom theme file, such as `theme.custom.styl`
 
 ```stylus
 @import '~mand-mobile/components/_style/mixin/util'
 @import '~mand-mobile/components/_style/mixin/theme'
 
-// 安装并引入css拓展nib(可选)
+// Import nib (Optional)
 @import '~nib/lib/nib/vendor'
 @import '~nib/lib/nib/gradients'
 
-// 覆盖样式变量
+// Override style variables
 color-primary = #1AAD19
 ```
 
-* 配置`webpack`，引入主题文件
+* Configure `webpack` and import custom theme file
 
 ```javascript
 const poststylus = require('poststylus')
@@ -90,7 +90,7 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         stylus: {
-          // pxtorem (配置可根据项目需要而定)
+          // pxtorem (According to needs of your project)
           use: [poststylus(pxtorem({ rootValue: 100, propWhiteList: [] }))]
         }
       }

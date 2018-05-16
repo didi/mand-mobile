@@ -3,9 +3,9 @@ title: Tip
 preview: https://didi.github.io/mand-mobile/examples/#/tip
 ---
 
-Tooltip.
+Tooltip
 
-### How to Use
+### Import
 
 ```javascript
 import { Tip } from 'mand-mobile'
@@ -19,15 +19,15 @@ Vue.component(Tip.name, Tip)
 ### API
 
 #### Tip Props
-| Props | Description | Type | Default |
-|----|-----|------|------|------|
-| content | Message content | String | Number | - |
-| placement | Position of tip | String | `top`, `left`, `bottom`, `right` | `top` |
+| Props | Description | Type | Default | Note |
+|----|-----|------|------|------|------|
+| content | message content | String | Number | - |
+| placement | position of tip | String | `top` | `top`, `left`, `bottom`, `right`|
 
 #### Tip Instance Events
 
 ##### @show()
-Emit after dialog is shown.
+Emit after dialog is shown
 
 ##### @hide()
-Emit after dialog is hidden.
+Emit after dialog is hidden

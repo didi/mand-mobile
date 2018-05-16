@@ -2,7 +2,7 @@
   <div class="mfe-blog-theme-default-home" style="max-width:100%;">
     <div class="home-box">
       <section
-        v-for="(homeBlock, homeBlockIndex) in homeConfig"
+        v-for="(homeBlock, homeBlockIndex) in homeData"
         class="home-box-block"
         :class="`home-box-block-${homeBlockIndex}`"
         :key="homeBlockIndex"
@@ -151,7 +151,6 @@ export default {
 
   data () {
     return {
-      homeConfig,
       qrcodeTableShow: false,
       blockShow: []
     }
@@ -169,13 +168,22 @@ export default {
 
   mounted() {
     if ($(window).width() < 750) {
-      homeConfig.forEach((item, index) => {
+      this.homeData.forEach((item, index) => {
         this.$set(this.blockShow, index, true)
       })
     } else {
       this.scrollBlockView()
       $(window).bind('scroll', this.scrollBlockView)
     }
+  },
+
+  computed: {
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
+    homeData() {
+      return homeConfig[this.lang]
+    },
   },
 
   methods: {
@@ -255,6 +263,8 @@ export default {
               background #ECF6FF
         p.home-describe
           position relative
+          max-width 750px
+          margin 0 auto
           font-size 18px
           color #666
           line-height 32px

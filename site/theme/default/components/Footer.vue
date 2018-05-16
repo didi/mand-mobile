@@ -10,7 +10,7 @@
       </ul>
       <ul
         class="default-footer-category"
-        v-for="(items, i) in links"
+        v-for="(items, i) in list"
         :key="i">
         <h1 v-html="items.title"></h1>
         <li
@@ -44,6 +44,15 @@ export default {
       produceBy: window.mbConfig.produceBy,
     }
   },
+
+  computed: {
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
+    list() {
+      return this.links[this.lang]
+    }
+  }
 }
 
 </script>

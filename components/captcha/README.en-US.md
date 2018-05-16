@@ -4,7 +4,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/captcha
 ---
 SMS code confirm dialog
 
-### How to Use
+### Import
 
 ```javascript
 import { Captcha } from 'mand-mobile'
@@ -20,14 +20,14 @@ Vue.component(Captcha.name, Captcha)
 #### Captcha Props
 | Props | Description | Type | Default |
 |----|-----|------|------|
-| v-model | Whether show captcha or not | Boolean | `false` |
-| is-view | Whether show as inline element or append to body | Boolean |`false`|
+| v-model | whether show captcha or not | Boolean | `false` |
+| is-view | whether show as inline element or append to body | Boolean |`false`|
 | maxlength | maxlength, set to `-1` as no restriction | Number | 4 |
-| mask | Whether mask code or not | Boolean | `false` |
-| system | Whether use system keyboard or use simulated keyboard | Boolean | `false` |
-|title| The title of captcha | String | - |
-| append-to | The portal node of dialog | HTMLElement | `document.body` | - |
-| count | Counter duration, set as `0` to hide resend button | Number | `60` |
+| mask | whether mask code or not | Boolean | `false` |
+| system | whether use system keyboard or use simulated keyboard | Boolean | `false` |
+| title| title of captcha | String | - |
+| append-to | portal node of dialog | HTMLElement | `document.body` |
+| count | counter duration, set as `0` to hide resend button | Number | `60` |
 
 
 #### Captcha Methods

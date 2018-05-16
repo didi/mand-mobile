@@ -13,7 +13,7 @@
             <i class="icon-magnifier" :class="{active: searchFocus}"></i>
             <input
               type="text"
-              placeholder="搜索"
+              :placeholder="lang === 'en-US' ? 'Search' : '搜索'"
               autocomplete="off"
               v-model="searchValue"
               @click.stop
@@ -31,24 +31,37 @@
             </mfe-table>
           </div>
         </div>
-        <div class="default-header-version">
-          <div class="current-version" @click.stop="versionTableShow = true">
+        <div class="default-header-lang default-header-operater">
+          <div class="operater-select" @click="changeLang">
+            <span v-if="lang === 'en-US'">中文</span>
+            <span v-else>English</span>
+          </div>
+        </div>
+        <div class="default-header-version default-header-operater">
+          <div class="operater-select" @click.stop="versionTableShow = true">
             <span>1.x</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
         </div>
         <div class="default-header-nav">
           <ul>
-            <li class="nav-item">
-              <router-link :to="{path:'/home'}">首页</router-link>
-            </li>
-            <li class="nav-item" v-for="(item, index) in nav" :key="index">
+            <template v-if="lang === 'en-US'">
+              <li class="nav-item">
+                <router-link :to="{path:'/en-US/home'}">Home</router-link>
+              </li>
+            </template>
+            <template v-else>
+              <li class="nav-item">
+                <router-link :to="{path:'/zh-CN/home'}">首页</router-link>
+              </li>
+            </template>
+            <li class="nav-item" v-for="(item, index) in menu" :key="index">
               <template v-if="item.src && ~item.src.indexOf('//')">
                 <a :href="item.src" v-html="item.text" target="_blank"></a>
               </template>
               <template v-else>
                 <router-link
-                  :to="`/${item.name}`"
+                  :to="`/${lang}/${item.name}`"
                   v-html="item.text">
                 </router-link>
               </template>
@@ -80,7 +93,6 @@ export default {
 
   data() {
     return {
-      nav: window.mbConfig.source,
       title: window.mbConfig.title,
       logo: window.mbConfig.logo,
       searchValue: '',
@@ -95,6 +107,16 @@ export default {
       searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
       searchHandler: null
     }
+  },
+
+  computed: {
+    menu () {
+      const list = window.mbConfig.source[this.lang === 'zh-CN' ? 0 : 1] || {}
+      return list.menu || []
+    },
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
   },
 
   methods: {
@@ -204,6 +226,10 @@ export default {
       }
     },
 
+    changeLang () {
+      location.href = location.href.replace(this.lang, this.lang === 'zh-CN' ? 'en-US' : 'zh-CN')
+      // location.reload()
+    },
   },
 }
 
@@ -305,6 +331,7 @@ export default {
     .default-header-nav
       float right
       height 100%
+      margin-right 20px
       ul, li
         float left
         height 100%
@@ -334,12 +361,12 @@ export default {
             color #048EFA
             &:after
               display block
-    .default-header-version
+    .default-header-operater
       position relative
       float right
       width 80px
       height 30px
-      margin-left 20px
+      margin-left 10px
       margin-top 17px
       line-height 30px
       text-align center
@@ -349,7 +376,7 @@ export default {
       transition border .3s
       &:hover
         border-color #048EFA
-      .current-version
+      .operater-select
         i
           font-size 12px
           color #048EFA
@@ -374,7 +401,7 @@ export default {
           &:after
             background-color #FFF
             bottom 20px
-      .default-header-version
+      .default-header-operater
         margin-top 35px
         border-color #FFF
         color #FFF

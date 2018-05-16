@@ -15,14 +15,14 @@ Vue.component(Swiper.name, Swiper)
 Vue.component(SwiperItem.name, SwiperItem)
 ```
 
-### Demo
+### Code Examples
 <!-- DEMO -->
 
 ### API
 
 #### Swiper Props
 
-| Props | Description | Type | Default | Options |
+| Props | Description | Type | Default | Note |
 |---|---|---|---|---|
 |autoplay|interval for autoplay iteration, set `0` to disabled autoplay|Number|`3000`|`0`, `[500, +Int.Max)`|
 |transition|animation effects|String|`slide`|`slide`, `slideY`, `fade`, `fade`|
@@ -37,7 +37,7 @@ Vue.component(SwiperItem.name, SwiperItem)
 ##### play(autoplay)
 enable autoplay
 
-| Args | Description | Type | Default | Options |
+| Args | Description | Type | Default | Note |
 |---|---|---|---|---|
 |autoplay|interval for autoplay iteration|Number|`3000`|`[500, +Int.Max)`|
 
@@ -69,7 +69,7 @@ vm.$refs.swiper.next()
 ##### goto(index)
 switch to the `index`
 
-| Args | Description | Type | Default | Options |
+| Args | Description | Type | Default | Note |
 |---|---|---|---|---|
 |index|the index to be showed|Number|`0`|`[0, length - 1]`|
 ```js
