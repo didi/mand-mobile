@@ -56,7 +56,10 @@ describe('TabPicker', () => {
         expect(wrapper.vm.renderData.length).to.equal(2)
         expect(wrapper.find('.md-tab-title').length).to.equal(2)
         wrapper.find('.md-popup-confirm')[0].trigger('click')
-        done()
+        setTimeout(() => {
+          expect(eventStub.calledWith('confirm')).to.be.true
+          done()
+        }, 200)
       }, 500)
     })
   })
