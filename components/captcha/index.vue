@@ -11,7 +11,7 @@
           v-if="count"
           type="ghost"
           size="small"
-          v-text="counterText"
+          v-text="countBtnText"
           :disabled="this.isCounting"
           @click="$_onClickResend"
         ></md-button>
@@ -45,10 +45,11 @@
             <slot></slot>
           </div>
           <md-button
+            class="md-captcha-countbtn"
             v-if="count"
             type="ghost"
             size="small"
-            v-text="counterText"
+            v-text="countBtnText"
             :disabled="this.isCounting"
             @click="$_onClickResend"
           ></md-button>
@@ -108,6 +109,14 @@ export default {
       type: Number,
       default: 60,
     },
+    countNormalText: {
+      type: String,
+      default: '发送验证码',
+    },
+    countActiveText: {
+      type: String,
+      default: '{$1}秒后重发',
+    },
     isView: {
       type: Boolean,
       default: false,
@@ -118,10 +127,10 @@ export default {
     return {
       code: '',
       visible: false,
-      counterText: '发送验证码',
       errorMsg: '',
       isCounting: false,
       firstShown: false,
+      countBtnText: this.countNormalText,
     }
   },
 
@@ -188,20 +197,20 @@ export default {
       clearInterval(this.__counter__)
       let i = this.count - 1
       this.isCounting = true
-      this.counterText = `${i}s后重发`
+      this.countBtnText = this.countActiveText.replace('{$1}', i)
       /* istanbul ignore next */
       this.__counter__ = setInterval(() => {
         if (i === 0) {
           this.resetcount()
         } else {
           i--
-          this.counterText = `${i}s后重发`
+          this.countBtnText = this.countActiveText.replace('{$1}', i)
         }
       }, 1000)
     },
     resetcount() {
       this.isCounting = false
-      this.counterText = '发送验证码'
+      this.countBtnText = this.countNormalText
       clearInterval(this.__counter__)
     },
     setError(msg) {
@@ -232,6 +241,11 @@ export default {
         line-height 32px
         height 32px
         margin-bottom 12px
-      .md-button
+      .md-captcha-countbtn
+        display inline-block
+        padding-left 16px
+        padding-right 16px
         margin 32px auto
+        width auto
+        min-width 130px
 </style>
