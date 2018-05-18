@@ -4,10 +4,11 @@
       v-model="isActionSheetShow"
       position="bottom"
       prevent-scroll
+      :prevent-scroll-exclude="scroller"
       @show="$_onShow"
       @hide="$_onHide"
     >
-      <div class="md-action-sheet-content">
+      <div class="md-action-sheet-content" :style="{maxHeight: `${maxHeight}px`}">
         <header v-if="title">{{ title }}</header>
         <ul>
           <template v-for="(item, index) in options">
@@ -66,12 +67,17 @@ export default {
       type: String,
       default: '取消',
     },
+    maxHeight: {
+      type: Number,
+      default: 400,
+    },
   },
 
   data() {
     return {
       isActionSheetShow: this.value,
       clickIndex: -1,
+      scroller: '',
     }
   },
 
@@ -86,8 +92,17 @@ export default {
   },
 
   methods: {
+    $_setScroller() {
+      const boxer = this.$el ? this.$el.querySelector('.md-action-sheet-content') : null
+      if (boxer && boxer.clientHeight >= this.maxHeight) {
+        this.scroller = '.md-action-sheet-content'
+      } else {
+        this.scroller = ''
+      }
+    },
     // MARK: events handler, 如 $_onButtonClick
     $_onShow() {
+      this.$_setScroller()
       this.$emit('show')
     },
     $_onHide() {
@@ -115,12 +130,12 @@ export default {
   color color-text-base
   -webkit-font-smoothing antialiased
   .md-action-sheet-content
-    overflow hidden
     position relative
     width 100%
     font-size action-sheet-font-size
     background color-bg-base
     text-align center
+    overflow auto
     header
       vertical-height(action-sheet-height)
       padding 0 30px
