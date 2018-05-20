@@ -9,11 +9,12 @@
         </div>
         <md-button
           v-if="count"
+          class="md-captcha-countbtn"
           type="ghost"
           size="small"
           v-text="countBtnText"
           :disabled="this.isCounting"
-          @click="$_onClickResend"
+          @click="$_onResend"
         ></md-button>
       </div>
       <md-codebox
@@ -45,13 +46,13 @@
             <slot></slot>
           </div>
           <md-button
-            class="md-captcha-countbtn"
             v-if="count"
+            class="md-captcha-countbtn"
             type="ghost"
             size="small"
             v-text="countBtnText"
             :disabled="this.isCounting"
-            @click="$_onClickResend"
+            @click="$_onResend"
           ></md-button>
         </div>
         <md-codebox
@@ -102,6 +103,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    autoCountdown: {
+      type: Boolean,
+      default: true,
+    },
     appendTo: {
       default: () => document.body,
     },
@@ -140,7 +145,7 @@ export default {
         this.code = ''
         if (!this.firstShown) {
           this.firstShown = true
-          this.countdown()
+          this.$_onResend()
         }
       }
     },
@@ -155,9 +160,9 @@ export default {
     if (this.appendTo && !this.isView) {
       this.appendTo.appendChild(this.$el)
     }
-    if (this.value) {
+    if (this.value || this.isView) {
       this.firstShown = true
-      this.countdown()
+      this.$_onResend()
     }
   },
 
@@ -185,9 +190,11 @@ export default {
     $_onSubmit(code) {
       this.$emit('submit', code)
     },
-    $_onClickResend() {
-      this.countdown()
-      this.$emit('send')
+    $_onResend() {
+      if (this.autoCountdown) {
+        this.countdown()
+      }
+      this.$emit('send', this.countdown)
     },
     // MARK: public methods
     countdown() {
@@ -200,7 +207,7 @@ export default {
       this.countBtnText = this.countActiveText.replace('{$1}', i)
       /* istanbul ignore next */
       this.__counter__ = setInterval(() => {
-        if (i === 0) {
+        if (i === 1) {
           this.resetcount()
         } else {
           i--

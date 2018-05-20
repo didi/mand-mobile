@@ -74,6 +74,9 @@
             ref="captcha"
             :maxlength="sceneOption.captcha.maxlength"
             :count="sceneOption.captcha.count"
+            :countNormalText="sceneOption.captcha.countNormalText"
+            :countActiveText="sceneOption.captcha.countActiveText"
+            :auto-countdown="sceneOption.captcha.autoCountdown"
             is-view
             @send="sceneOption.captcha.onSend"
             @submit="sceneOption.captcha.onSubmit"
@@ -199,6 +202,7 @@ export default {
           text: '',
           maxlength: 4,
           count: 60,
+          autoCountdown: true,
           onSend: noop,
           onSubmit: noop,
         },
