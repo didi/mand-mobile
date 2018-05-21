@@ -51,7 +51,7 @@ npm install mand-mobile --save
   plugins: [
     [import, {
       libraryName: "mand-mobile",
-      libraryDirectory: "lib" // 默认为lib，其他目录参考 #产出包目录
+      libraryDirectory: "lib" // 默认为lib，其他目录参考 #产出包目录，无需配置style
     }]
   ]
 }
@@ -83,7 +83,7 @@ npm install mand-mobile --save
 组件使用：
 
 ```javascript
-import { Button } from 'mand-mobile'
+import { Button } from 'mand-mobile' // 【注意】如果没有以上配置，会全量引入，需手动引入全部样式， 参考#全量引入
 ```
 
 ##### 按需引入
@@ -103,6 +103,10 @@ Vue.use(mandMobile)
 ```
 
 #### 使用前准备
+
+##### FastClick
+
+为避免[浏览器兼容问题](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)引起的点击问题, 推荐引入[FastClick](https://github.com/ftlabs/fastclick)
 
 ##### 产出包目录
 
