@@ -25,8 +25,8 @@
 export default {
   name: 'image-viewer-demo',
   /* DELETE */
-  title: '基本',
   message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
   height: 500,
   /* DELETE */
   components: {

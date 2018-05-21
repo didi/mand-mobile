@@ -13,6 +13,7 @@ export default {
   name: 'button-demo',
   /* DELETE */
   title: '线性按钮',
+  titleEnUS: 'Ghost buttons',
   codeSandBox: 'https://codesandbox.io/s/m398mjvx89',
   /* DELETE */
   components: {

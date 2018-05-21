@@ -23,13 +23,13 @@
   </div>
 </template>
 
-<script>
-import {Selector, Field, FieldItem} from 'mand-mobile'
+<script>import {Selector, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'selector-demo',
   /* DELETE */
   title: 'Check模式',
+  titleEnUS: 'Check mode',
   height: 500,
   /* DELETE */
   components: {
@@ -68,5 +68,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

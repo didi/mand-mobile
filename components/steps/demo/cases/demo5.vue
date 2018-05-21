@@ -7,13 +7,13 @@
   </div>
 </template>
 
-<script>
-import {Steps} from 'mand-mobile'
+<script>import {Steps} from 'mand-mobile'
 
 export default {
   name: 'steps-demo',
   /* DELETE */
   title: '利用current类增加自定义样式',
+  titleEnUS: 'Add custom styles through by class named "current"',
   height: 150,
   /* DELETE */
   components: {
@@ -39,8 +39,7 @@ export default {
     }
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-steps-5

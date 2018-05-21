@@ -13,14 +13,14 @@
   </div>
 </template>
 
-<script>
-import {Button, TabPicker} from 'mand-mobile'
+<script>import {Button, TabPicker} from 'mand-mobile'
 import pickerData from 'mand-mobile/components/tab-picker/demo/data/no-cascade'
 
 export default {
   name: 'tab-picker-demo',
   /* DELETE */
   title: '普通多频道',
+  titleEnUS: 'Normal multi-channel',
   height: 500,
   /* DELETE */
   components: {
@@ -55,5 +55,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

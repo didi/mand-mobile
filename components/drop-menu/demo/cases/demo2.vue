@@ -9,13 +9,13 @@
   </div>
 </template>
 
-<script>
-import {DropMenu} from 'mand-mobile'
+<script>import {DropMenu} from 'mand-mobile'
 
 export default {
   name: 'drop-menu-demo',
   /* DELETE */
   title: '禁用下拉菜单',
+  titleEnUS: 'Drop-down menu with disabled item',
   height: 500,
   /* DELETE */
   components: {
@@ -57,5 +57,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

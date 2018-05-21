@@ -13,13 +13,13 @@
   </div>
 </template>
 
-<script>
-import {Steps, Icon} from 'mand-mobile'
+<script>import {Steps, Icon} from 'mand-mobile'
 
 export default {
   name: 'steps-demo',
   /* DELETE */
-  title: '自定义步骤图样',
+  title: '自定义步骤图标',
+  titleEnUS: 'Custom step icon',
   height: 150,
   /* DELETE */
   components: {
@@ -42,5 +42,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

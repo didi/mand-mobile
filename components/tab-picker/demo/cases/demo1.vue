@@ -15,8 +15,7 @@
   </div>
 </template>
 
-<script>
-import {Button, TabPicker} from 'mand-mobile'
+<script>import {Button, TabPicker} from 'mand-mobile'
 import pickerData from 'mand-mobile/components/tab-picker/demo/data/cascade'
 
 const NOOP = () => {}
@@ -25,6 +24,7 @@ export default {
   name: 'tab-picker-demo',
   /* DELETE */
   title: '级联多频道',
+  titleEnUS: 'Cascading multi-channel',
   height: 500,
   /* DELETE */
   components: {
@@ -63,5 +63,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

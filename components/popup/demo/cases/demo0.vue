@@ -67,6 +67,7 @@ export default {
   name: 'popup-demo',
   /* DELETE */
   title: '不同位置弹出',
+  titleEnUS: 'Pop up from different positions',
   height: 500,
   /* DELETE */
   components: {

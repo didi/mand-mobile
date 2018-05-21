@@ -35,13 +35,13 @@
   </div>
 </template>
 
-<script>
-import {Field, FieldItem, Dialog, InputItem, Switch} from 'mand-mobile'
+<script>import {Field, FieldItem, Dialog, InputItem, Switch} from 'mand-mobile'
 
 export default {
   name: 'field-demo',
   /* DELETE */
   title: '多个条目',
+  titleEnUS: 'Multiple items',
   /* DELETE */
   components: {
     [Field.name]: Field,
@@ -62,8 +62,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-field-1

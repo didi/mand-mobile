@@ -20,13 +20,13 @@
 	</div>
 </template>
 
-<script>
-import {Chart} from 'mand-mobile'
+<script>import {Chart} from 'mand-mobile'
 
 export default {
   name: 'chart-demo',
   /* DELETE */
   title: '渐变折线',
+  titleEnUS: 'Gradient fold line',
   describe: '',
   /* DELETE */
   components: {
@@ -38,8 +38,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
   svg

@@ -17,13 +17,13 @@
   </div>
 </template>
 
-<script>
-import {Stepper, Field, FieldItem} from 'mand-mobile'
+<script>import {Stepper, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'stepper-demo',
   /* DELETE */
   title: '最小值-12，最大值18',
+  titleEnUS: 'Minimum is -12 and maximum is 18',
   /* DELETE */
   components: {
     [Field.name]: Field,
@@ -31,5 +31,4 @@ export default {
     [Stepper.name]: Stepper,
   },
 }
-
-</script>
+</script>

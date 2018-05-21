@@ -17,15 +17,17 @@
   </div>
 </template>
 
-<script>
-import {Swiper, SwiperItem} from 'mand-mobile'
+<script>import {Swiper, SwiperItem} from 'mand-mobile'
 import simple from 'mand-mobile/components/swiper/demo/data/simple'
 
 export default {
   name: 'swiper-demo',
   /* DELETE */
   title: '纵向轮播',
+  titleEnUS: 'Vertical rotation',
   describe: '纵向，默认显示第2屏（index 1），不显示导航点，不可拖动，滚动间隔为5秒',
+  describeEnUS:
+    'Vertically, the second screen (index 1) is displayed by default, navigation points are not displayed, and dragging is not possible. The scroll interval is 5 seconds',
   message:
     '@before-change: from: <span id="valueSwiper5">0</span>, to: <span id="valueSwiper6">0</span><br/>@after-change: from: <span id="valueSwiper7">0</span>, to: <span id="valueSwiper8">0</span>',
   /* DELETE */
@@ -52,8 +54,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child

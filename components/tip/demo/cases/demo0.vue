@@ -6,18 +6,17 @@
   </div>
 </template>
 
-<script>
-import {Tip, Button} from 'mand-mobile'
+<script>import {Tip, Button} from 'mand-mobile'
 
 export default {
   name: 'tips-demo',
   /* DELETE */
   title: '上方',
+  titleEnUS: 'Top',
   /* DELETE */
   components: {
     [Tip.name]: Tip,
     [Button.name]: Button,
   },
 }
-
-</script>
+</script>

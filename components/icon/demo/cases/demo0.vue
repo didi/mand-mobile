@@ -47,17 +47,12 @@
   </div>
 </template>
 
-<script>
-import {Icon} from 'mand-mobile'
+<script>import {Icon} from 'mand-mobile'
 
 export default {
   name: 'icon-demo',
-  /* DELETE */
-  title: '图标',
-  /* DELETE */
   components: {
     [Icon.name]: Icon,
   },
 }
-
-</script>
+</script>

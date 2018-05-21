@@ -27,8 +27,8 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |mask-closable|click on the mask to close the popup|Boolean|`true`|-|
 |position|popup position|String|`center`|`center`, `top`, `bottom`, `left`, `right`|
 |transition|popup over animation|String|`fade, slide-up/down/left/right`|-|
-|prevent-scroll|prevent rolling through|Boolean|`false`|-|
-|prevent-scroll-exclude|exclusions of preventing rolling through|String/HTMLElement|-|-|
+|prevent-scroll|prevent rolling breakdown|Boolean|`false`|-|
+|prevent-scroll-exclude|exclusions of preventing rolling breakdown|String/HTMLElement|-|-|
 
 #### PopupTitleBar Props
 |Props | Description | Type | Default | Note|

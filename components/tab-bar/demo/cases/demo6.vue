@@ -7,13 +7,13 @@
   </div>
 </template>
 
-<script>
-import {TabBar, Toast} from 'mand-mobile'
+<script>import {TabBar, Toast} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '监听点击事件',
+  titleEnUS: 'Listen click event',
   /* DELETE */
   components: {
     [TabBar.name]: TabBar,
@@ -29,5 +29,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

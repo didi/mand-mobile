@@ -31,8 +31,8 @@ Vue.component(Dialog.name, Dialog)
 | mask-closable | whether to close the dialog when click mask or not | Boolean | `false` | - |
 | position | position of dialog when it is shown, `center/top/bottom/left/right` | String | `center`| - |
 | transition | dialog animation css class name, `fade, slide-up/down/left/right`  | String | `fade` | - |
-| prevent-scroll | prevent rolling through | Boolean | false | - |
-| prevent-scroll-exclude | exclusions of preventing rolling through | String | - | - |
+| prevent-scroll | prevent rolling breakdown | Boolean | false | - |
+| prevent-scroll-exclude | exclusions of preventing rolling breakdown | String | - | - |
 
 #### Dialog Slots
 Default slots is treated as content of dialog

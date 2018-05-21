@@ -4,17 +4,12 @@
   </div>
 </template>
 
-<script>
-import {NoticeBar} from 'mand-mobile'
+<script>import {NoticeBar} from 'mand-mobile'
 
 export default {
   name: 'notice-bar-demo',
-  /* DELETE */
-  title: '基本',
-  /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
   },
 }
-
-</script>
+</script>

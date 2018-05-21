@@ -34,14 +34,10 @@
   </div>
 </template>
 
-<script>
-import {Dialog, Button, Toast} from 'mand-mobile'
+<script>import {Dialog, Button, Toast} from 'mand-mobile'
 
 export default {
   name: 'dialog-demo',
-  /* DELETE */
-  title: '基本',
-  /* DELETE */
   components: {
     [Dialog.name]: Dialog,
     [Button.name]: Button,
@@ -108,5 +104,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

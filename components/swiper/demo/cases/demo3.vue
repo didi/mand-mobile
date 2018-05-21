@@ -15,15 +15,16 @@
   </div>
 </template>
 
-<script>
-import {Swiper, SwiperItem} from 'mand-mobile'
+<script>import {Swiper, SwiperItem} from 'mand-mobile'
 import mulit from 'mand-mobile/components/swiper/demo/data/mulit-item'
 
 export default {
   name: 'swiper-demo',
   /* DELETE */
   title: '每屏多内容 <a href="javascript:window.triggerSwiper4()">Goto 2</a>',
+  titleEnUS: 'Multiple content per screen <a href="javascript:window.triggerSwiper3()">Goto 2</a>',
   describe: '复杂结构，每屏显示一组多条内容',
+  describeEnUS: 'Complex structure, displaying a group of multiple items per screen',
   message:
     '@before-change: from: <span id="valueSwiper15">0</span>, to: <span id="valueSwiper16">0</span><br/>@after-change: from: <span id="valueSwiper17">0</span>, to: <span id="valueSwiper18">0</span>',
   /* DELETE */
@@ -58,8 +59,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child

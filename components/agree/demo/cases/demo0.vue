@@ -11,13 +11,13 @@
   </div>
 </template>
 
-<script>
-import {Agree} from 'mand-mobile'
+<script>import {Agree} from 'mand-mobile'
 
 export default {
   name: 'agree-demo',
   /* DELETE */
   title: '选中状态',
+  titleEnUS: 'Selected state',
   height: 120,
   /* DELETE */
   components: {
@@ -40,5 +40,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

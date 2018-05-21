@@ -19,17 +19,16 @@
   </div>
 </template>
 
-<script>
-import {Icon} from 'mand-mobile'
+<script>import {Icon} from 'mand-mobile'
 
 export default {
   name: 'icon-demo',
   /* DELETE */
   title: '颜色',
+  titleEnUS: 'Icon color',
   /* DELETE */
   components: {
     [Icon.name]: Icon,
   },
 }
-
-</script>
+</script>

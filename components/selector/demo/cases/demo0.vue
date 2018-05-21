@@ -22,13 +22,13 @@
   </div>
 </template>
 
-<script>
-import {Selector, Field, FieldItem} from 'mand-mobile'
+<script>import {Selector, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'selector-demo',
   /* DELETE */
   title: '无需确认',
+  titleEnUS: 'No need to confirm',
   height: 500,
   /* DELETE */
   components: {
@@ -67,5 +67,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>
