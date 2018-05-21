@@ -13,7 +13,7 @@ import { Chart } from 'mand-mobile'
 Vue.component(Chart.name, Chart)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

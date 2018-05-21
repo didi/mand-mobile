@@ -5,7 +5,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/agree
 
 Toggle check state
 
-### How to Use
+### Import
 
 ```javascript
 import { Agree } from 'mand-mobile'
@@ -13,7 +13,7 @@ import { Agree } from 'mand-mobile'
 Vue.component(Agree.name, Agree)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

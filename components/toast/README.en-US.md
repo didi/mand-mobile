@@ -11,7 +11,7 @@ import { Toast } from 'mand-mobile'
 Toast.succeed('Good Job!')
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

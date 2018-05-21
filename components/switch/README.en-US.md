@@ -5,15 +5,15 @@ preview: https://didi.github.io/mand-mobile/examples/#/switch
 
 Switch between two status
 
-### How to Use
+### Import
 
 ```javascript
-import { Switch } from 'md-mobile'
+import { Switch } from 'mand-mobile'
 
 Vue.component(Switch.name, Switch)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

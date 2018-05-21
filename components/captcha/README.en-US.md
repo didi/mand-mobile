@@ -12,7 +12,7 @@ import { Captcha } from 'mand-mobile'
 Vue.component(Captcha.name, Captcha)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

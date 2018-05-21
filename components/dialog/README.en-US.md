@@ -13,7 +13,7 @@ import { Dialog } from 'mand-mobile'
 Vue.component(Dialog.name, Dialog)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

@@ -13,7 +13,7 @@ import { Tip } from 'mand-mobile'
 Vue.component(Tip.name, Tip)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API

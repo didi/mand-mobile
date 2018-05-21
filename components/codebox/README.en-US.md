@@ -11,7 +11,7 @@ import { Codebox } from 'mand-mobile'
 Vue.component(Codebox.name, Codebox)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API
