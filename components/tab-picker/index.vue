@@ -145,8 +145,8 @@ export default {
       isDataError: false,
       currentColumnLock: false,
       lastSelectIndex: null,
-      isWalking: false,
       refreshTabPicker: 0,
+      walkTimes: 0,
     }
   },
 
@@ -211,6 +211,7 @@ export default {
       this.isLoading = false
 
       const initialIndex = this.lastSelectIndex || this.defaultIndex
+      this.$_initTabContent()
 
       this.data.forEach((item, index) => {
         const temp = {
@@ -247,24 +248,23 @@ export default {
     },
     $_walk(initialIndex, data, isAsync) {
       // recursion cascade or async data with initialIndex
-      let i = 0
       const func = () => {
         if (initialIndex && initialIndex.length > 0) {
-          this.isWalking = true
           const walk = (err, data) => {
             if (err) {
               this.isLoading = false
               this.isDataError = err
               return
             }
-            if (i < initialIndex.length) {
-              const temp = initialIndex[i]
+            if (this.walkTimes < initialIndex.length) {
+              const temp = initialIndex[this.walkTimes]
               let rawData = isAsync ? data.options : data
               rawData.forEach((item, eq, array) => {
                 if (eq === temp) {
-                  this.subTitles.push(item.label)
+                  this.currentIndex = this.walkTimes
+                  this.subTitles.splice(this.currentIndex, this.subTitles.length - 1, item.label)
                   let renderContent = {
-                    index: i,
+                    index: this.walkTimes,
                     clickedKey: temp,
                     data: array,
                   }
@@ -274,14 +274,15 @@ export default {
                       asyncFunc: data.asyncFunc,
                     }
                   }
-                  this.renderData.push(renderContent)
-                  i++
+                  this.renderData.splice(this.currentIndex, this.renderData.length - 1, renderContent)
+                  this.$refs.tabs && this.$refs.tabs.selectTab(this.currentIndex)
+                  this.walkTimes++
                   if (item && item.children && Array.isArray(item.children)) {
                     walk(null, item.children)
                   } else if (isAsync && data && data.asyncFunc && typeof data.asyncFunc === 'function') {
                     data.asyncFunc(
                       {
-                        index: i,
+                        index: this.walkTimes,
                         item,
                         eq,
                       },
@@ -294,13 +295,14 @@ export default {
               })
             } else {
               this.isLoading = false
-              this.defaultTabIndex = i - 1
-              this.isWalking = false
+              this.defaultTabIndex = this.walkTimes - 1
+              this.walkTimes = 0
               return false
             }
           }
           walk(null, data)
         } else {
+          this.$_initTabContent()
           this.subTitles.push('请选择')
           if (isAsync) {
             this.renderData.push({
@@ -319,53 +321,60 @@ export default {
           this.isLoading = false
         }
       }
-      const timer = setInterval(() => {
-        if (!this.isWalking) {
-          i = 0
-          this.subTitles = []
-          this.renderData = []
-          func()
-          timer && clearInterval(timer)
-        }
-      }, 100)
+      func()
     },
-    $_renderNextTabContent(err, data) {
-      this.isLoading = false
-      if (err) {
-        this.isDataError = err
-        return
-      }
-      try {
-        this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
-        this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
-          index: this.currentIndex,
-          clickedKey: -1,
-          data: data.options,
-          asyncFunc: data.asyncFunc,
-        })
-        if (this.renderData.length > 1) {
-          this.$nextTick(() => {
-            this.$refs.tabs.selectTab(++this.currentIndex)
-          })
-        }
-      } catch (error) {
-        this.isDataError = true
-      }
-    },
-    $_initLocalVariable() {
+    $_initTabContent() {
       this.subTitles = []
       this.renderData = []
-      this.defaultTabIndex = 0
       this.currentIndex = 0
+    },
+    $_renderNextTabContent(orignData) {
+      return (err, asyncData) => {
+        this.isLoading = false
+        if (err) {
+          this.isDataError = err
+          return
+        }
+        try {
+          let data,
+            asyncFunc = null
+          if (orignData) {
+            data = orignData
+          } else if (asyncData && asyncData.options) {
+            data = asyncData.options
+            if (asyncData.asyncFunc) {
+              asyncFunc = asyncData.asyncFunc
+            }
+          } else {
+            data = []
+          }
+          this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
+          this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
+            index: this.currentIndex,
+            clickedKey: -1,
+            data,
+            asyncFunc,
+          })
+          if (this.renderData.length > 1) {
+            this.$nextTick(() => {
+              this.$refs.tabs.selectTab(++this.currentIndex)
+              setTimeout(() => {
+                this.currentColumnLock = false
+              }, 500)
+            })
+          }
+        } catch (error) {
+          this.isDataError = true
+        }
+      }
+    },
+    $_refreshTabPicker() {
+      // revoke this opration
       this.isTabPickerShow = false
       this.isLoading = true
       this.isDataError = false
       this.currentColumnLock = false
       this.refreshTabPicker = Math.random()
-    },
-    $_refreshTabPicker() {
-      // revoke this opration
-      this.$_initLocalVariable()
       this.$nextTick(() => {
         this.$_initTabPicker()
       })
@@ -392,7 +401,6 @@ export default {
       this.$emit('confirm', selectedItem)
     },
     $_onCancel() {
-      this.isTabPickerShow = false
       this.$emit('cancel')
       this.$_refreshTabPicker()
     },
@@ -414,18 +422,7 @@ export default {
       })
       if (this.dataStruct === 'cascade') {
         if (value && value.children && Array.isArray(value.children) && value.children.length > 0) {
-          this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
-          this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
-            index: ++this.currentIndex,
-            clickedKey: -1,
-            data: value.children,
-          })
-          this.$nextTick(() => {
-            this.$refs.tabs.selectTab(this.currentIndex)
-            setTimeout(() => {
-              this.currentColumnLock = false
-            }, 500)
-          })
+          this.$_renderNextTabContent(value.children)()
           return
         }
         this.currentColumnLock = false
@@ -437,7 +434,7 @@ export default {
         }
         // Object.assign(value, {index})
         this.isLoading = true
-        typeof currentColumn.asyncFunc === 'function' && currentColumn.asyncFunc(value, this.$_renderNextTabContent)
+        typeof currentColumn.asyncFunc === 'function' && currentColumn.asyncFunc(value, this.$_renderNextTabContent())
       }
     },
     $_onIndexChange(index) {
