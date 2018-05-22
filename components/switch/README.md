@@ -8,7 +8,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/switch
 ### 引入
 
 ```javascript
-import { Switch } from 'md-mobile'
+import { Switch } from 'mand-mobile'
 
 Vue.component(Switch.name, Switch)
 ```

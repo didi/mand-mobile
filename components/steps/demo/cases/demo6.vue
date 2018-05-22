@@ -13,6 +13,7 @@ export default {
   name: 'steps-demo',
   /* DELETE */
   title: '完成全部步骤',
+  codeSandBox: 'https://codesandbox.io/s/xl9mykwp3w',
   height: 150,
   /* DELETE */
   components: {

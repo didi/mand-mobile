@@ -19,6 +19,7 @@ export default {
   name: 'drop-menu-demo',
   /* DELETE */
   title: '自定义菜单项',
+  codeSandBox: 'https://codesandbox.io/s/w72k6o7l48',
   height: 250,
   /* DELETE */
   components: {

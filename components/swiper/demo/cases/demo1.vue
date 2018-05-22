@@ -27,6 +27,7 @@ export default {
   describe: '纵向，默认显示第2屏（index 1），不显示导航点，不可拖动，滚动间隔为5秒',
   message:
     '@before-change: from: <span id="valueSwiper5">0</span>, to: <span id="valueSwiper6">0</span><br/>@after-change: from: <span id="valueSwiper7">0</span>, to: <span id="valueSwiper8">0</span>',
+  codeSandBox: 'https://codesandbox.io/s/ojxkvq2mk6',
   /* DELETE */
   components: {
     [Swiper.name]: Swiper,

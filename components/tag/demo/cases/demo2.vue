@@ -11,6 +11,7 @@ export default {
   name: 'tag-demo',
   /* DELETE */
   title: '线框',
+  codeSandBox: 'https://codesandbox.io/s/r73ovo5zmp',
   /* DELETE */
   components: {
     Tag,

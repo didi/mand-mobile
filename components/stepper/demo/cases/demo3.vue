@@ -23,6 +23,7 @@ export default {
   name: 'stepper-demo',
   /* DELETE */
   title: '步进2',
+  codeSandBox: 'https://codesandbox.io/s/vy5xymyvv0',
   /* DELETE */
   components: {
     [Field.name]: Field,

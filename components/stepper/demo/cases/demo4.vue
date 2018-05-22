@@ -22,6 +22,7 @@ export default {
   name: 'stepper-demo',
   /* DELETE */
   title: '最小值4大于默认值',
+  codeSandBox: 'https://codesandbox.io/s/jp85vkvly',
   /* DELETE */
   components: {
     [Field.name]: Field,

@@ -2,7 +2,11 @@
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
     <mb-header :is-active="isHome"/>
     <div class="default-content">
-      <mb-menu v-if="!noMenu" v-model="isMenuShow"/>
+      <mb-menu
+        v-if="!noMenu"
+        v-model="isMenuShow"
+        menua-ads="menuAds"
+      />
       <div class="default-content-wrapper">
         <router-view></router-view>
       </div>
@@ -11,6 +15,15 @@
       <i class="icon-catalog"></i>
     </div>
     <mb-footer/>
+    <div class="hover-ggs" v-if="hoverAds && hoverAds.length" >
+      <a
+        v-for="(gg, index) in hoverAds"
+        :href="gg.link"
+        :key="`hover-gg-${index}`"
+        class="hover-ggs-item">
+        <img :src="gg.image" alt="">
+      </a>
+    </div>
   </div>
 </template>
 
@@ -36,6 +49,8 @@ export default {
   data() {
     return {
       isMenuShow: false,
+      hoverAds: [],
+      menuAds: [],
     }
   },
   watch: {
@@ -54,8 +69,16 @@ export default {
       return this.$route.path === '/home'
     }
   },
-  mouted () {
-    document.documentElement.style.fontSize = 540 * 0.13333333333333333 + 'px';
+  mounted () {
+    this.getConfig()
+  },
+  methods: {
+    getConfig () {
+      $.get(`//static.galileo.xiaojukeji.com/static/tms/api/mand_mobile_config.json?${Date.now()}`).then(data => {
+        this.hoverAds = data.hoverAds
+        this.menuAds = data.menuAds
+      })
+    }
   }
 }
 
@@ -101,6 +124,18 @@ export default {
     i
       color #048efa
       font-size 24px
+  .hover-ggs
+    position fixed
+    z-index 9999
+    width 100px
+    right 20px
+    bottom 100px
+    .hover-ggs-item
+      display inline-block
+      width 100%
+      margin-top 10px
+      img
+        width 100%
 
 @media (max-width: 1000px)
   .default-content
@@ -118,5 +153,10 @@ export default {
       padding-top 100px !important
     .default-menu-trigger
       display flex
+    .hover-ggs
+      width 60px
+      right 10px
+      .hover-ggs-item
+        margin-top 10px
 </style>
 

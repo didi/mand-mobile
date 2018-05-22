@@ -35,10 +35,10 @@ Vue.component(Captcha.name, Captcha)
 
 #### Captcha Methods
 
-#### countdown()
+##### countdown()
 手动重置倒计时
 
-#### setError(message)
+##### setError(message)
 设置报错信息并显示
 
 #### Captcha Events
@@ -46,11 +46,11 @@ Vue.component(Captcha.name, Captcha)
 ##### @show()
 验证码组件显示事件
 
-#### @hide()
+##### @hide()
 验证码组件隐藏事件
 
-#### @send(countdown)
+##### @send(countdown)
 发送验证码事件, 第一次打开时或点击重发按钮后触发并开始倒计时，如果`auto-countdown`需手动调用`countdown`开始倒计时
 
-#### @submit(code)
+##### @submit(code)
 用户提交输入内容事件

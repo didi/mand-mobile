@@ -27,6 +27,7 @@ export default {
   /* DELETE */
   title: '基本',
   message: '请在移动设备中扫码预览',
+  codeSandBox: 'https://codesandbox.io/s/0v1630294n',
   height: 500,
   /* DELETE */
   components: {

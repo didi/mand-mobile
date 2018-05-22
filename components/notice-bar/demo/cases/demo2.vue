@@ -11,6 +11,7 @@ export default {
   /* DELETE */
   title: '设置时间',
   describe: '5s后隐藏',
+  codeSandBox: 'https://codesandbox.io/s/w3opvyq97',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
