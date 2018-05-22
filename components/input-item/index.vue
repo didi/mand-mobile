@@ -149,7 +149,7 @@ export default {
 
   props: {
     type: {
-      // text, bankCard, password, phone, money
+      // text, bankCard, password, phone, money, digit
       type: String,
       default: 'text',
     },
@@ -218,7 +218,8 @@ export default {
     isFormative: {
       type: Boolean,
       default() {
-        return this.type === 'bankCard' || this.type === 'phone' || this.type === 'money'
+        const type = this.type
+        return type === 'bankCard' || type === 'phone' || type === 'money' || type === 'digit'
       },
     },
     isHighlight: {
@@ -252,11 +253,9 @@ export default {
       }
     },
     inputType() {
-      let inputType = 'text'
-      if (this.type === 'bankCard' || this.type === 'phone') {
+      let inputType = this.type || 'text'
+      if (inputType === 'bankCard' || inputType === 'phone' || inputType === 'digit') {
         inputType = 'tel'
-      } else if (this.type === 'password') {
-        inputType = 'password'
       }
       return inputType
     },
@@ -360,6 +359,10 @@ export default {
             oldValue.split('.')[0],
           )
           formateValue.value += moneyCurDecimal
+          break
+        case 'digit':
+          curValue = this.$_subValue(trimValue(curValue.replace(/\D/g, '')))
+          formateValue.value = curValue
           break
         default:
           break

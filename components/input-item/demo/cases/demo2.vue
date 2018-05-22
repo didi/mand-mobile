@@ -21,9 +21,20 @@
         placeholder="money xx, xxx.xxxx"
       ></md-input-item>
       <md-input-item
+        title="数字"
+        type="digit"
+        v-model="digit"
+        placeholder="digit 0123456789"
+      ></md-input-item>
+      <md-input-item
         title="密码"
         type="password"
         placeholder="password *********"
+      ></md-input-item>
+      <md-input-item
+        title="邮箱"
+        type="email"
+        placeholder="其他标准 html input 类型"
       ></md-input-item>
     </md-field>
   </div>
@@ -44,6 +55,7 @@ export default {
     return {
       phone: '13321234431',
       money: '',
+      digit: '',
     }
   },
   methods: {
