@@ -7,13 +7,13 @@
   </div>
 </template>
 
-<script>
-import {Steps} from 'mand-mobile'
+<script>import {Steps} from 'mand-mobile'
 
 export default {
   name: 'steps-demo',
   /* DELETE */
   title: '动态修改当前所处步骤 <a href="javascript:window.triggerSteps0()">current = 2</a>',
+  codeSandBox: 'https://codesandbox.io/s/wmz776wq5',
   height: 150,
   /* DELETE */
   components: {
@@ -44,5 +44,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

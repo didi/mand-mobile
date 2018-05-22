@@ -19,17 +19,16 @@
   </div>
 </template>
 
-<script>
-import {Icon} from 'mand-mobile'
+<script>import {Icon} from 'mand-mobile'
 
 export default {
   name: 'icon-demo',
   /* DELETE */
   title: '颜色',
+  codeSandBox: 'https://codesandbox.io/s/1y5n8k17q3',
   /* DELETE */
   components: {
     [Icon.name]: Icon,
   },
 }
-
-</script>
+</script>

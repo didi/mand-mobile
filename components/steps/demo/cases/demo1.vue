@@ -6,13 +6,13 @@
   </div>
 </template>
 
-<script>
-import {Steps} from 'mand-mobile'
+<script>import {Steps} from 'mand-mobile'
 
 export default {
   name: 'steps-demo',
   /* DELETE */
   title: '四个步骤',
+  codeSandBox: 'https://codesandbox.io/s/3vok030m5q',
   height: 150,
   /* DELETE */
   components: {
@@ -37,5 +37,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

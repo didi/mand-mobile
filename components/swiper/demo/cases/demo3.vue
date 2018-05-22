@@ -15,8 +15,7 @@
   </div>
 </template>
 
-<script>
-import {Swiper, SwiperItem} from 'mand-mobile'
+<script>import {Swiper, SwiperItem} from 'mand-mobile'
 import mulit from 'mand-mobile/components/swiper/demo/data/mulit-item'
 
 export default {
@@ -26,6 +25,7 @@ export default {
   describe: '复杂结构，每屏显示一组多条内容',
   message:
     '@before-change: from: <span id="valueSwiper15">0</span>, to: <span id="valueSwiper16">0</span><br/>@after-change: from: <span id="valueSwiper17">0</span>, to: <span id="valueSwiper18">0</span>',
+  codeSandBox: 'https://codesandbox.io/s/rw9kkkjmpo',
   /* DELETE */
   components: {
     [Swiper.name]: Swiper,
@@ -58,8 +58,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child

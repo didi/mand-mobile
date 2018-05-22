@@ -1,5 +1,14 @@
 <template>
   <div class="mfe-blog-theme-default-menu" :class="{active: value}">
+    <div class="menu-ggs" v-if="menuAds && menuAds.length">
+      <a
+        v-for="(gg, index) in menuAds"
+        :href="gg.link"
+        :key="`menu-gg-${index}`"
+        class="menu-ggs-item">
+        <img :src="gg.image" alt="">
+      </a>
+    </div>
     <ul class="menu-list-0">
       <li class="menu-item-0" v-for="(item0, index0) in menu" :key="index0">
         <router-link 
@@ -39,6 +48,12 @@ export default {
     value: {
       type: Boolean,
       default: false,
+    },
+    menuAds: {
+      type: Array,
+      default () {
+        return []
+      }
     }
   },
   watch: {
@@ -73,6 +88,14 @@ export default {
   -webkit-font-smoothing antialiased
   background #FFF
   overflow hidden
+  .menu-ggs
+    padding 0 40px 10px 40px
+    .menu-ggs-item
+      display inline-block
+      width 100%
+      margin-bottom 10px
+      img
+        width 100%
   .menu-list-0
     position relative
     top -10px
@@ -141,6 +164,8 @@ export default {
     transform translateX(-100%)
     overflow scroll
     transition transform .3s
+    .menu-list-0
+      top 10px
     li.menu-item-0 a
       padding .1rem 10%
       &:after

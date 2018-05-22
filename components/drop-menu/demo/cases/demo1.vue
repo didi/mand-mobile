@@ -9,13 +9,13 @@
   </div>
 </template>
 
-<script>
-import {DropMenu} from 'mand-mobile'
+<script>import {DropMenu} from 'mand-mobile'
 
 export default {
   name: 'drop-menu-demo',
   /* DELETE */
   title: '初始下拉菜单',
+  codeSandBox: 'https://codesandbox.io/s/m3llp95x7x',
   height: 500,
   /* DELETE */
   components: {
@@ -66,5 +66,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

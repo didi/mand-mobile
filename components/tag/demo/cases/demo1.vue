@@ -6,17 +6,16 @@
   </div>
 </template>
 
-<script>
-import {Tag} from 'mand-mobile'
+<script>import {Tag} from 'mand-mobile'
 
 export default {
   name: 'tag-demo',
   /* DELETE */
   title: '圆角',
+  codeSandBox: 'https://codesandbox.io/s/m5vn1rpmny',
   /* DELETE */
   components: {
     Tag,
   },
 }
-
-</script>
+</script>

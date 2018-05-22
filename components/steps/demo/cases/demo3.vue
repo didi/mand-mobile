@@ -7,13 +7,13 @@
   </div>
 </template>
 
-<script>
-import {Steps} from 'mand-mobile'
+<script>import {Steps} from 'mand-mobile'
 
 export default {
   name: 'steps-demo',
   /* DELETE */
   title: '指定当前步骤',
+  codeSandBox: 'https://codesandbox.io/s/zwvk8l3053',
   height: 150,
   /* DELETE */
   components: {
@@ -38,5 +38,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

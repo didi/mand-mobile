@@ -33,8 +33,7 @@
   </div>
 </template>
 
-<script>
-import {Icon, ImageReader, Toast} from 'mand-mobile'
+<script>import {Icon, ImageReader, Toast} from 'mand-mobile'
 import imageProcessor from 'mand-mobile/components/image-reader/image-processor'
 
 export default {
@@ -42,6 +41,7 @@ export default {
   /* DELETE */
   title: '图片选择并轴向修正，压缩处理',
   describe: 'width: 200&nbsp;&nbsp;height: 200&nbsp;&nbsp;quality: 0.1',
+  codeSandBox: 'https://codesandbox.io/s/xjq2ylrzyq',
   /* DELETE */
   components: {
     [Icon.name]: Icon,
@@ -87,8 +87,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-reader

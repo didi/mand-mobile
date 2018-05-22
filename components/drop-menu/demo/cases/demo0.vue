@@ -8,13 +8,13 @@
   </div>
 </template>
 
-<script>
-import {DropMenu, Dialog} from 'mand-mobile'
+<script>import {DropMenu, Dialog} from 'mand-mobile'
 
 export default {
   name: 'drop-menu-demo',
   /* DELETE */
   title: '基础下拉菜单 <a href="javascript:DropMenuTrigger()">getSelectedValue(0)</a>',
+  codeSandBox: 'https://codesandbox.io/s/231x45w8mj',
   height: 250,
   /* DELETE */
   components: {
@@ -52,5 +52,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

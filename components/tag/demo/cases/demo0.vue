@@ -7,17 +7,16 @@
   </div>
 </template>
 
-<script>
-import {Tag} from 'mand-mobile'
+<script>import {Tag} from 'mand-mobile'
 
 export default {
   name: 'tag-demo',
   /* DELETE */
   title: '半圆',
+  codeSandBox: 'https://codesandbox.io/s/721xmvrx11',
   /* DELETE */
   components: {
     Tag,
   },
 }
-
-</script>
+</script>
