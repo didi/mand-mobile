@@ -5,7 +5,7 @@ preview: https://didi.github.io/mand-mobile/examples/#/tag
 
 Use it as label
 
-### How to Use
+### Import
 
 ```javascript
 import { Tag } from 'mand-mobile'
@@ -13,13 +13,13 @@ import { Tag } from 'mand-mobile'
 Vue.component(Tag.name, Tag)
 ```
 
-### Code Example
+### Code Examples
 <!-- DEMO -->
 
 ### API
 
 #### Tag Props
-| Props | Description | Type | Default | Options |
+| Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
 |size| The size of tag  |String|`large`|`tiny`, `small`, `large`|
 |shape| The shape of tag |String|`square`|`square`, `circle`, `fillet`|
