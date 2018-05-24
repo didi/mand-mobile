@@ -51,7 +51,7 @@
             <li class="nav-item">
               <router-link :to="{path:'/home'}">首页</router-link>
             </li>
-            <li class="nav-item" v-for="(item, index) in nav" :key="index">
+            <li class="nav-item" v-for="(item, index) in nav" :key="index" v-if="!item.hidden">
               <template v-if="item.src && ~item.src.indexOf('//')">
                 <a :href="item.src" v-html="item.text" target="_blank"></a>
               </template>
