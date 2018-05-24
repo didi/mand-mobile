@@ -46,6 +46,9 @@ Vue.component(Cashier.name, Cashier)
 |text|发送验证码说明 | String |-|支持`html fragment`|
 |maxlength|验证码位数 | Number  |`4`|若为`-1`则不限制输入长度|
 |count|验证码重新发送倒计时 | Number  |`60`|若为`0`则不显示重新发送|
+|auto-countdown|是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|-|
+|countNormalText|发送验证码正常状态文字|String| `'发送验证码'` |-|
+|countActiveText|发送验证码及倒计时按钮文案配置项|String| `'{$1}秒后重发'` |-|
 |onSend|验证码发送回调 | Function(countdown: Function) |-|`countdown`为开始倒计时方法|
 |onSubmit|验证码提交回调 | Function(code: String) |-|`code`为输入的验证码|
 

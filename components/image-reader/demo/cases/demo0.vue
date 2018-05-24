@@ -40,6 +40,7 @@ export default {
   /* DELETE */
   title: '图片选择',
   titleEnUS: 'Picture selection',
+  codeSandBox: 'https://codesandbox.io/s/nwln4xppk0',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

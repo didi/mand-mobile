@@ -42,7 +42,7 @@ Please refer to<a href="#/docs/started">Quickstart</a>
 
 #### Contributing
 
-Please read our <a href="#/docs/development">Development guid</a> first. If you'd like to help us improve Mand Mobile, just create a<a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a>or<a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>.
+Please read our <a href="#/docs/development">Development Guide</a> first. If you'd like to help us improve Mand Mobile, just create a<a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a>or<a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>.
 
 
 

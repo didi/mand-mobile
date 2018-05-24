@@ -8,6 +8,10 @@
 
 export default {
   name: 'notice-bar-demo',
+  /* DELETE */
+  title: '基本',
+  codeSandBox: 'https://codesandbox.io/s/xl4wrl0194',
+  /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
   },

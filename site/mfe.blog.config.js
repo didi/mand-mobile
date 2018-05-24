@@ -132,7 +132,7 @@ module.exports = {
         },
         {
           name: 'development',
-          text: 'Development Guid',
+          text: 'Development Guide',
           markdown: resolve('site/docs/development.en-US.md'),
         },
         {

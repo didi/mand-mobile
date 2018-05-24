@@ -12,6 +12,7 @@ export default {
   /* DELETE */
   title: '阳文',
   titleEnUS: 'Characters cut in relief',
+  codeSandBox: 'https://codesandbox.io/s/n3o1w6vx2m',
   /* DELETE */
   components: {
     Tag,
