@@ -306,8 +306,7 @@ export default {
 
   methods: {
     findRoute(start, direction = 1) {
-      const routes = window.$routes
-
+      const routes = window.$routes[this.lang]
       while (start >= 0 && start <= routes.length - 1 &&
             ((!routes[start].meta.src && !routes[start].meta.markdown) || routes[start].redirect)) {
         start += direction

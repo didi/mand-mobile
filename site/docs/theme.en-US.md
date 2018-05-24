@@ -1,5 +1,5 @@
 ---
-title: Custom theme
+title: Custom Theme
 ---
 
 `Mand Mobile` provides a set of UI themes based on `DiDi financial business design specifications` by default. It also supports theme customization. You can freely adjust the colors, fonts, and element sizes to meet the visual requirements in different business scenarios.

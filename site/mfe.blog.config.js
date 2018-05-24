@@ -142,7 +142,7 @@ module.exports = {
         },
         {
           name: 'theme',
-          text: 'Custom theme',
+          text: 'Custom Theme',
           markdown: resolve('site/docs/theme.en-US.md'),
         },
         {
