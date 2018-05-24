@@ -43,6 +43,15 @@ Vue.component(ImageReader.name, ImageReader)
 |dataUrl|图片Base64|String|
 |blob|图片Blob对象，可用于`formData`|Blob|
 
+##### @error(name, { code, msg })
+图片选择读取失败事件
+
+|属性 | 说明 | 类型|
+|----|-----|------|
+|name|选择器标识|String|
+|code|错误标识，见附录|String|
+|msg|错误信息，见附录|String|
+
 ### imageProcessor
 
 用于图片轴向修正，图片质量压缩，宽高控制
@@ -69,3 +78,13 @@ imageProcessor(options[, fn])
 |width|图片宽度|Number|单位`px`, 宽度超出时等比缩放|
 |height|图片高度|Number|单位`px`, 高度超出时等比缩放|
 |quality|图片质量|Number|取值范围`0-1`|
+
+### 附录
+图片读取失败错误码和错误信息
+
+```
+'100': 'browser does not support'
+'101': 'picture size is beyond the preset'
+'102': 'picture read failure'
+'103': 'the number of pictures exceeds the limit'
+```
