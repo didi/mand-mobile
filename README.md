@@ -24,7 +24,7 @@
 [![npm package](https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](https://www.npmjs.org/package/mand-mobile)
 [![NPM downloads](http://img.shields.io/npm/dm/mand-mobile.svg?style=flat-square)](http://npmtrends.com/mand-mobile)
 
-A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios. 
+A mobile UI toolkit, based on Vue.js 2, is designed for financial scenarios. 
 
 ## Links
 
@@ -43,7 +43,7 @@ You can scan the following QR code to access the examples:
 
 ### Template for new project
 
-New project can be initialized and integrate mand-mobile by [vue-cli](https://github.com/vuejs/vue-cli/tree/master) with [mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template).
+New project can be initialized and integrated with  mand-mobile by [vue-cli](https://github.com/vuejs/vue-cli/tree/master) with [mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template).
 
 ```bash
 vue init mand-mobile/mand-mobile-template my-project
@@ -90,7 +90,7 @@ Vue.use(mandMobile)
 
 ### Usage
 
-Select the components that you need to build your webapp. Find more details in [Component Preview](https://didi.github.io/mand-mobile/#/docs/preview) and [Quick Start](https://didi.github.io/mand-mobile/#/docs/started).
+Select the components you need to build your webapp. Find more details in [Component Preview](https://didi.github.io/mand-mobile/#/docs/preview) and [Quick Start](https://didi.github.io/mand-mobile/#/docs/started).
 
 ## Development
 
