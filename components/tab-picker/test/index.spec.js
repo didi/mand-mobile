@@ -56,8 +56,10 @@ describe('TabPicker', () => {
         expect(wrapper.vm.renderData.length).to.equal(2)
         expect(wrapper.find('.md-tab-title').length).to.equal(2)
         wrapper.find('.md-popup-confirm')[0].trigger('click')
-        expect(eventStub.calledWith('confirm')).to.be.true
-        done()
+        setTimeout(() => {
+          expect(eventStub.calledWith('confirm')).to.be.true
+          done()
+        }, 200)
       }, 500)
     })
   })
@@ -152,8 +154,10 @@ describe('TabPicker', () => {
       expect(wrapper.find('.md-tab-title').length).to.equal(3)
       const confirmBtn = wrapper.find('.md-popup-confirm')[0]
       confirmBtn.trigger('click')
-      expect(eventStub.calledWith('confirm')).to.be.true
-      done()
+      setTimeout(() => {
+        expect(eventStub.calledWith('confirm')).to.be.true
+        done()
+      }, 200)
     })
   })
 })

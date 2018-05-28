@@ -40,8 +40,18 @@
                   <md-icon :name="item.icon"></md-icon>
                 </i>
                 <span class="item-label" v-html="item.text || item.label"></span>
-                <md-icon name="circle-right" class="item-check" v-if="index === activeChannelIndex"></md-icon>
-                <md-icon name="circle" class="item-check" v-else></md-icon>
+                <template v-if="!isSingle">
+                  <md-icon
+                    v-if="index === activeChannelIndex"
+                    name="circle-right"
+                    class="item-check"
+                  ></md-icon>
+                  <md-icon
+                    v-else
+                    name="circle"
+                    class="item-check"
+                  ></md-icon>
+                </template>
               </li>
             </ul>
             <ul class="choose-channel-list" v-else-if="channels[defaultIndex]">
@@ -50,11 +60,15 @@
                   <md-icon :name="channels[defaultIndex].icon"></md-icon>
                 </i>
                 <span class="item-label" v-html="channels[defaultIndex].text || channels[defaultIndex].label"></span>
-                <md-icon name="circle-right" class="item-check"></md-icon>
+                <md-icon
+                  v-if="!isSingle"
+                  name="circle-right"
+                  class="item-check"
+                ></md-icon>
               </li>
             </ul>
             <div
-              v-if="channels.length"
+              v-if="!isSingle"
               class="choose-channel-more"
               :class="{disabled: isChannelActive}"
               @click="$_onChannelMore"
@@ -210,6 +224,12 @@ export default {
     }
   },
 
+  computed: {
+    isSingle() {
+      return !(this.channels.length > 1)
+    },
+  },
+
   watch: {
     value(val) {
       this.isCashierShow = val
@@ -224,6 +244,11 @@ export default {
 
   created() {
     this.$_initialCashier()
+
+    if (this.channels.length < 3) {
+      this.isChannelShow = true
+      this.isChannelActive = true
+    }
   },
 
   methods: {

@@ -29,8 +29,10 @@ Vue.component(Selector.name, Selector)
 |title|选择器标题|String|-|-|
 |ok-text|选择器确认文案|String|-|若为空则为`确认模式`，即点击选项直接选择|
 |cancel-text|选择器取消文案|String|`取消`|-|
+|mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 |is-check|是否有`check`图标|Boolean|`false`|仅`确认模式`|
 |option-render|返回各选项渲染内容|Function({value, text ,...}):String|-|`vue 2.1.0+`可使用`slot-scope`，参考`Radio`|
+|max-height|选择器内容区域最高高度, 超出后可滚动|Number|400|单位`px`|
 
 
 #### Selector Events

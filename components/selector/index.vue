@@ -9,10 +9,12 @@
     <md-popup
       v-model="isSelectorShow"
       position="bottom"
-      :mask-closable="false"
-      :prevent-scroll="true"
-      @show="$emit('show')"
-      @hide="$emit('hide')"
+      :mask-closable="maskClosable"
+      prevent-scroll
+      :prevent-scroll-exclude="scroller"
+      @show="$_onSelectorShow"
+      @hide="$_onSelectorHide"
+      @maskClick="$_onSelectorCancel"
     >
       <md-popup-title-bar
         :title="title"
@@ -21,7 +23,7 @@
         @confirm="$_onSelectorConfirm"
         @cancel="$_onSelectorCancel"
       ></md-popup-title-bar>
-      <div class="md-selector-container">
+      <div class="md-selector-container" :style="{maxHeight: `${maxHeight}px`}">
         <div class="md-selector-list">
           <md-radio
             ref="radio"
@@ -93,6 +95,10 @@ export default {
       type: String,
       default: '',
     },
+    maskClosable: {
+      type: Boolean,
+      default: true,
+    },
     isCheck: {
       type: Boolean,
       default: false,
@@ -100,6 +106,10 @@ export default {
     optionRender: {
       type: Function,
       default: noop,
+    },
+    maxHeight: {
+      type: Number,
+      default: 400,
     },
   },
 
@@ -109,6 +119,7 @@ export default {
       radioKey: Date.now(),
       activeIndex: -1,
       tmpActiveIndex: -1,
+      scroller: '',
     }
   },
 
@@ -154,6 +165,14 @@ export default {
       const invalidIndex = this.invalidIndex
       return Array.isArray(invalidIndex) ? !!~invalidIndex.indexOf(index) : index === invalidIndex
     },
+    $_setScroller() {
+      const boxer = this.$el ? this.$el.querySelector('.md-selector-list') : null
+      if (boxer && boxer.clientHeight >= this.maxHeight) {
+        this.scroller = '.md-selector-container'
+      } else {
+        this.scroller = ''
+      }
+    },
 
     // MARK: events handler
     $_onSelectorConfirm() {
@@ -185,6 +204,15 @@ export default {
 
       this.$emit('choose', item)
     },
+    $_onSelectorShow() {
+      /* istanbul ignore next  */
+      this.$_setScroller()
+      this.$emit('show')
+    },
+    $_onSelectorHide() {
+      /* istanbul ignore next  */
+      this.$emit('hide')
+    },
   },
 }
 </script>
@@ -197,6 +225,7 @@ export default {
       background-color color-bg-base
     .md-selector-container
       background color-bg-base
+      overflow auto
       .md-selector-item
         position relative
         height selector-height

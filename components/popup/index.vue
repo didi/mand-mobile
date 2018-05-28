@@ -206,7 +206,10 @@
       this.isAnimation = false
     },
     $_onPopupMaskClick() {
-      this.maskClosable && this.$_hidePopupBox()
+      if (this.maskClosable) {
+        this.$_hidePopupBox()
+        this.$emit('maskClick')
+      }
     },
   },
 }

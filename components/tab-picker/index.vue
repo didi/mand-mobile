@@ -3,9 +3,10 @@
     <md-popup
       v-model="isTabPickerShow"
       position="bottom"
-      :mask-closable="false"
+      :mask-closable="maskClosable"
       @show="$_onShow"
       @hide="$_onHide"
+      @maskClick="$_onMaskClose"
     >
       <md-popup-title-bar
         :title="title"
@@ -21,6 +22,7 @@
           :default-index="defaultTabIndex"
           :force-use-array="hasTitleSlotScope"
           @indexChanged="$_onIndexChange"
+          :key="refreshTabPicker"
         >
           <template
             slot="title"
@@ -89,6 +91,10 @@ export default {
       type: String,
       default: '取消',
     },
+    maskClosable: {
+      type: Boolean,
+      default: true,
+    },
     data: {
       type: Array,
       default() {
@@ -138,6 +144,9 @@ export default {
       isLoading: true,
       isDataError: false,
       currentColumnLock: false,
+      lastSelectIndex: null,
+      refreshTabPicker: 0,
+      walkTimes: 0,
     }
   },
 
@@ -195,82 +204,180 @@ export default {
           break
       }
     },
-    $_initCascadeData() {
-      if (this.data.length === 0) {
-        return
-      }
-      this.isLoading = false
-      if (this.defaultIndex && this.defaultIndex.length > 0) {
-        let i = 0
-        const func = array => {
-          if (i < this.defaultIndex.length) {
-            const temp = this.defaultIndex[i]
-            array.forEach((item, eq) => {
-              if (eq === temp) {
-                this.subTitles.push(item.label)
-                this.renderData.push({index: i, clickedKey: temp, data: array})
-                if (item && item.children && Array.isArray(item.children)) {
-                  i++
-                  func(item.children)
-                }
-              }
-            })
-          } else {
-            this.defaultTabIndex = i
-            return false
-          }
-        }
-        func(this.data)
-      } else {
-        this.subTitles.push('请选择')
-        this.renderData.push({index: 0, clickedKey: -1, data: this.data})
-      }
-    },
     $_initNoCascadeData() {
       if (this.data.length === 0) {
         return
       }
       this.isLoading = false
+
+      const initialIndex = this.lastSelectIndex || this.defaultIndex
+      this.$_initTabContent()
+
       this.data.forEach((item, index) => {
         const temp = {
           index: index,
-          clickedKey: this.defaultIndex.length > 0 && ~this.defaultIndex[index] ? this.defaultIndex[index] : -1,
+          clickedKey: initialIndex.length > 0 && ~initialIndex[index] ? initialIndex[index] : -1,
           data: item.children,
         }
         this.renderData.push(temp)
         const currentColumn = this.renderData[index]
-        if (this.defaultIndex && this.defaultIndex.length > 0) {
+        if (initialIndex && initialIndex.length > 0) {
           this.subTitles.push(currentColumn.data[currentColumn.clickedKey].label)
         } else {
           this.subTitles.push(item.label)
         }
       })
     },
-    $_initAsyncCascadeData() {
-      this.asyncFunc(null, this.$_renderNextTabContent)
+    $_initCascadeData() {
+      if (this.data.length === 0) {
+        return
+      }
+      const initialIndex = this.lastSelectIndex || this.defaultIndex
+      this.$_walk(initialIndex, this.data)
     },
-    $_renderNextTabContent(err, data) {
-      this.isLoading = false
+    $_initAsyncCascadeData() {
+      this.asyncFunc(null, this.$_renderInitalAsync)
+    },
+    $_renderInitalAsync(err, data) {
       if (err) {
         this.isDataError = err
         return
       }
-      try {
-        this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
-        this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
-          index: this.currentIndex,
-          clickedKey: -1,
-          data: data.options,
-          asyncFunc: data.asyncFunc,
-        })
-        if (this.renderData.length > 1) {
-          this.$nextTick(() => {
-            this.$refs.tabs.selectTab(++this.currentIndex)
-          })
+      const initialIndex = this.lastSelectIndex || this.defaultIndex
+      this.$_walk(initialIndex, data, true)
+    },
+    $_walk(initialIndex, data, isAsync) {
+      // recursion cascade or async data with initialIndex
+      const func = () => {
+        if (initialIndex && initialIndex.length > 0) {
+          const walk = (err, data) => {
+            if (err) {
+              this.isLoading = false
+              this.isDataError = err
+              return
+            }
+            if (this.walkTimes < initialIndex.length) {
+              const temp = initialIndex[this.walkTimes]
+              let rawData = isAsync ? data.options : data
+              rawData.forEach((item, eq, array) => {
+                if (eq === temp) {
+                  this.currentIndex = this.walkTimes
+                  this.subTitles.splice(this.currentIndex, this.subTitles.length - 1, item.label)
+                  let renderContent = {
+                    index: this.walkTimes,
+                    clickedKey: temp,
+                    data: array,
+                  }
+                  if (isAsync) {
+                    renderContent = {
+                      ...renderContent,
+                      asyncFunc: data.asyncFunc,
+                    }
+                  }
+                  this.renderData.splice(this.currentIndex, this.renderData.length - 1, renderContent)
+                  this.$refs.tabs && this.$refs.tabs.selectTab(this.currentIndex)
+                  this.walkTimes++
+                  if (item && item.children && Array.isArray(item.children)) {
+                    walk(null, item.children)
+                  } else if (isAsync && data && data.asyncFunc && typeof data.asyncFunc === 'function') {
+                    data.asyncFunc(
+                      {
+                        index: this.walkTimes,
+                        item,
+                        eq,
+                      },
+                      walk,
+                    )
+                  } else {
+                    walk()
+                  }
+                }
+              })
+            } else {
+              this.isLoading = false
+              this.defaultTabIndex = this.walkTimes - 1
+              this.walkTimes = 0
+              return false
+            }
+          }
+          walk(null, data)
+        } else {
+          this.$_initTabContent()
+          this.subTitles.push('请选择')
+          if (isAsync) {
+            this.renderData.push({
+              index: 0,
+              clickedKey: -1,
+              data: data.options,
+              asyncFunc: data.asyncFunc,
+            })
+          } else {
+            this.renderData.push({
+              index: 0,
+              clickedKey: -1,
+              data: data,
+            })
+          }
+          this.isLoading = false
         }
-      } catch (error) {
-        this.isDataError = true
       }
+      func()
+    },
+    $_initTabContent() {
+      this.subTitles = []
+      this.renderData = []
+      this.currentIndex = 0
+    },
+    $_renderNextTabContent(orignData) {
+      return (err, asyncData) => {
+        this.isLoading = false
+        if (err) {
+          this.isDataError = err
+          return
+        }
+        try {
+          let data,
+            asyncFunc = null
+          if (orignData) {
+            data = orignData
+          } else if (asyncData && asyncData.options) {
+            data = asyncData.options
+            if (asyncData.asyncFunc) {
+              asyncFunc = asyncData.asyncFunc
+            }
+          } else {
+            data = []
+          }
+          this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
+          this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
+            index: this.currentIndex,
+            clickedKey: -1,
+            data,
+            asyncFunc,
+          })
+          if (this.renderData.length > 1) {
+            this.$nextTick(() => {
+              this.$refs.tabs.selectTab(++this.currentIndex)
+              setTimeout(() => {
+                this.currentColumnLock = false
+              }, 500)
+            })
+          }
+        } catch (error) {
+          this.isDataError = true
+        }
+      }
+    },
+    $_refreshTabPicker() {
+      // revoke this opration
+      this.isTabPickerShow = false
+      this.isLoading = true
+      this.isDataError = false
+      this.currentColumnLock = false
+      this.refreshTabPicker = Math.random()
+      this.$nextTick(() => {
+        this.$_initTabPicker()
+      })
     },
 
     // MARK: events handler, 如 $_onButtonClick
@@ -283,11 +390,22 @@ export default {
     $_onConfirm() {
       this.isTabPickerShow = false
       const selectedItem = this.getSelectedItem()
+      const isSelectPart = selectedItem.some(option => {
+        return !option
+      })
+      if (!isSelectPart) {
+        this.lastSelectIndex = selectedItem.map(option => {
+          return option.item.eq
+        })
+      }
       this.$emit('confirm', selectedItem)
     },
     $_onCancel() {
-      this.isTabPickerShow = false
       this.$emit('cancel')
+      this.$_refreshTabPicker()
+    },
+    $_onMaskClose() {
+      this.$_refreshTabPicker()
     },
     $_onRadioChange(value, index) {
       if (this.dataStruct === 'cascade' && this.currentColumnLock) {
@@ -304,18 +422,7 @@ export default {
       })
       if (this.dataStruct === 'cascade') {
         if (value && value.children && Array.isArray(value.children) && value.children.length > 0) {
-          this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
-          this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
-            index: ++this.currentIndex,
-            clickedKey: -1,
-            data: value.children,
-          })
-          this.$nextTick(() => {
-            this.$refs.tabs.selectTab(this.currentIndex)
-            setTimeout(() => {
-              this.currentColumnLock = false
-            }, 500)
-          })
+          this.$_renderNextTabContent(value.children)()
           return
         }
         this.currentColumnLock = false
@@ -327,7 +434,7 @@ export default {
         }
         // Object.assign(value, {index})
         this.isLoading = true
-        typeof currentColumn.asyncFunc === 'function' && currentColumn.asyncFunc(value, this.$_renderNextTabContent)
+        typeof currentColumn.asyncFunc === 'function' && currentColumn.asyncFunc(value, this.$_renderNextTabContent())
       }
     },
     $_onIndexChange(index) {
@@ -344,6 +451,7 @@ export default {
             item: {
               label: selected.label,
               value: selected.value,
+              eq: item.clickedKey,
             },
           }
         } else {
