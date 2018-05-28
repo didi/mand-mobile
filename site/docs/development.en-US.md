@@ -12,7 +12,7 @@ npm = 3+
 #### Create Component
 
 ```shell
-$ npm install # Installation dependencies
+$ npm install # Install dependencies
 
 $ npm run create # Create a new component, fill in information according to the prompts
 ```
@@ -31,7 +31,7 @@ $ npm test # All tests
 $ npm run test [component name] # Test a single component
 ```
 #### feature/bugfix
-New major version development will be carried out in the unified development branch. Other individual components add new functions or problem repair process as follows.
+New major version development will be carried out in the unified development branch. Other individual components will follow the following process to add new functionalities or repair problems.
 
 ```shell
 $ git checkout -b [feature_xxx/fix_xxx]
@@ -76,17 +76,17 @@ $ git pull
 #### Component Specification
 
 ##### Component Naming
-* Lower case letters for component name(kebab-case), which is splited with `-`, such as `image-reader`.
-* Accurately express component functionality and avoid over-simplification.
+* Lower-case letters for component name(kebab-case), which is splited with `-`, such as `image-reader`.
+* Accurately express the component functionality and avoid over-simplification.
 
 ##### Component Implementation
 * Dependencies
 
-  New external dependencies need to be decided after discussions with the core developers, try to choose relatively well-known open source components, and avoid excessive size.
+  New external dependencies need to be decided after discussions with the core developers. Try to choose relatively well-known open-source components, and avoid excessively large size.
 
 * Imports
 
-  Use a relative path reference inside the component, avoid using `alias`, such as `import { extand } from '../util'`.
+  Use a relative path inside the component, avoid using `alias`, such as `import { extand } from '../util'`.
 
 * Utilities
 
@@ -94,11 +94,11 @@ $ git pull
 
 * Styles
 
-  Use `stylus`; unit to use `px` and all icons use built-in svg icons, see component `Icon` for details.
+  Use `stylus`; choose `px` as unit; and all icons use built-in svg icons, see component `Icon` for details.
 
 ##### Component Core Code
 
-In principle, the official [vue-sytle-guide](https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended) is the standard, and the common parts are as follows:
+In principle, the official standard is [vue-sytle-guide](https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended), and the common parts are as follows:
 
 ```html
 <template>
@@ -211,14 +211,14 @@ Reference Documents:
 
 #### Commit Specification
 
-Ccommit information should conform to the following rules. It is recommended to use the tool `comitzen`(`git cz`) instead of `git commit`:
+Commit should conform to the following rules. It is recommended to use the tool `comitzen`(`git cz`) instead of `git commit`:
 
 ```shell
 [TYPE](SCOPE):DESCRIPTION#[ISSUE]  # such as feat(button):add type 'ghost' for form usage #1234
 ```
 
-* [Required] TYPE: Type description, include `feat`，`fix`，`doc`，`build`，`example`
-* [Optional] SCOPE: Affected components, such as `button`, used for 'feat,fix' generally
+* [Required] TYPE: Type description, includes `feat`，`fix`，`doc`，`build`，`example`
+* [Optional] SCOPE: Affected components, such as `button`, generally used for 'feat,fix' 
 * [Required] DESCRIPTION: A brief description of the content, try to use English
-* [Optional] ISSUE: Associated Issue ID, used for 'feat,fix' generally
+* [Optional] ISSUE: Associated Issue ID, generally used for 'feat,fix' 
 
