@@ -1,5 +1,5 @@
 ---
-title: Custom Theme
+title: Theme Customization
 ---
 
 `Mand Mobile` provides a set of UI themes based on `DiDi financial business design specifications` by default. It also supports theme customization. You can freely adjust the colors, fonts, and element sizes to meet the visual requirements in different business scenarios.
@@ -11,9 +11,9 @@ title: Custom Theme
 
 ### Style Variables
 
-`Mand Mobile` style is based on <a href="http://stylus-lang.com/" target="_blank">Stylus</a> and can adjust theme styles through global and component style variables
+`Mand Mobile` style is based on <a href="http://stylus-lang.com/" target="_blank">Stylus</a> and can adjust theme styles through global and component style variables.
 
-A complete list of variables can see the <a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.styl" target="_blank">Default Style Variables</a>
+A complete list of variables can be found in <a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.styl" target="_blank">Default Style Variables</a>
 
 ### Variable Coverage
 
@@ -34,7 +34,7 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
     ]
 }
 ```
-* Create a custom theme file, such as `theme.custom.styl`
+* Create a customized theme file, such as `theme.custom.styl`
 
 ```stylus
 @import '~mand-mobile/components/_style/mixin/util'
@@ -48,7 +48,7 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 color-primary = #1AAD19
 ```
 
-* Configure `webpack` and import custom theme file
+* Configure `webpack` and import customized theme file
 
 ```javascript
 const poststylus = require('poststylus')
