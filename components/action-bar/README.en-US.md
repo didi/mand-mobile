@@ -3,7 +3,7 @@ title: ActionBar
 preview: https://didi.github.io/mand-mobile/examples/#/action-bar
 ---
 
-Bottom sidebar with a number of text or action buttons that can be used to present form information and submit buttons
+Bottom sidebar with a number of texts or action buttons that can be used to present form information and submit buttons
 
 ### Import
 
@@ -22,8 +22,8 @@ Vue.component(ActionBar.name, ActionBar)
 #### ActionBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|actions|button group|Array<{text, disabled, onClick}>|-|`text` is button text<br/>`disabled`is whether to disable the change button,<br/>`onClick`is click event callback function with the same parameters as the `click` event|
-|has-text|whether to show text|Boolean|whether it contain `slot`|text can be passed in `slot`|
+|actions|button group|Array<{text, disabled, onClick}>|-|`text` is button text,<br/>`disabled`is whether to disable the button or not,<br/>`onClick`is click event callback function with the same parameters as the `click` event|
+|has-text|whether to show text|Boolean|whether it containss `slot`|text can be passed in `slot`|
 
 
 #### ActionBar Events
