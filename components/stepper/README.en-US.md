@@ -22,13 +22,13 @@ Vue.component(Stepper.name, Stepper)
 |Props | Description | Type | Default |
 |---------|------|--------|----|
 |default-value |stepper initial value| Number|-|
-|step|each time you change the number of steps, it can be a decimal|Number|`1`|
-|min|-|Number|`-Infinity`|
-|max|-|Number|`Infinity`|
+|step|the number of steps can be changed and be a decimal|Number|`1`|
+|min|minimum|Number|`-Infinity`|
+|max|maximum|Number|`Infinity`|
 |disabled|-| Boolean|`false`|
 |read-only|-| Boolean|`false`|
 
 #### Stepper Events
 
 ##### @change(currentValue)
-Value change
+Change value
