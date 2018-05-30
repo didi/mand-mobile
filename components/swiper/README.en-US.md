@@ -3,7 +3,7 @@ title: Swiper
 preview: https://didi.github.io/mand-mobile/examples/#/swiper
 ---
 
-Carousel, used to cycle through a set of pictures or cards.
+Carousel, used to cycle through a set of pictures or cards
 
 
 ### Import
@@ -24,7 +24,7 @@ Vue.component(SwiperItem.name, SwiperItem)
 
 | Props | Description | Type | Default | Note |
 |---|---|---|---|---|
-|autoplay|interval for autoplay iteration, set `0` to disabled autoplay|Number|`3000`|`0`, `[500, +Int.Max)`|
+|autoplay|the interval (ms) of autoplay; set `0` to disable autoplay|Number|`3000`|`0`, `[500, +Int.Max)`|
 |transition|animation effects|String|`slide`|`slide`, `slideY`, `fade`, `fade`|
 |default-index|default selected index|Number|`0`|`[0, length - 1]`|
 |has-dots|whether to display the indication dots|Boolean|`true`|`true`, `false`|
@@ -39,21 +39,21 @@ enable autoplay
 
 | Args | Description | Type | Default | Note |
 |---|---|---|---|---|
-|autoplay|interval for autoplay iteration|Number|`3000`|`[500, +Int.Max)`|
+|autoplay|the interval of autoplay|Number|`3000`|`[500, +Int.Max)`|
 
 ```js
 vm.$refs.swiper.play(5000)
 ```
 
 ##### stop()
-disable autopaly
+stop autoplay
 
 ```js
 vm.$refs.swiper.stop()
 ```
 
 ##### pre()
-switch to the pre item
+switch to the previous item
 
 ```js
 vm.$refs.swiper.pre()
@@ -67,21 +67,21 @@ vm.$refs.swiper.next()
 ```
 
 ##### goto(index)
-switch to the `index`
+switch to `index`
 
 | Args | Description | Type | Default | Note |
 |---|---|---|---|---|
-|index|the index to be showed|Number|`0`|`[0, length - 1]`|
+|index|the index to be shown|Number|`0`|`[0, length - 1]`|
 ```js
 vm.$refs.swiper.goto(2)
 ```
 
 ##### getIndex()
-get the index on displayed
+get the index on display
 
 | Args | Description | Type |
 |---|---|---|
-|index|the index on displayed|Number|
+|index|the index on display|Number|
 
 ```js
 var index = vm.$refs.swiper.getIndex()
@@ -89,7 +89,7 @@ var index = vm.$refs.swiper.getIndex()
 
 #### Swiper Events
 ##### @beforeChange(from, to)
-event to be triggered before a slide is changed
+event to be triggered before the slide is changed
 
 | Args | Description | Type |
 |----|-----|------|
@@ -97,7 +97,7 @@ event to be triggered before a slide is changed
 | to     | the next index | Number          |
 
 ##### @afterChange(from, to)
-event to be triggered afterChange a slide is changed
+event to be triggered after the slide is changed
 
 | Args | Description | Type |
 |----|-----|------|
