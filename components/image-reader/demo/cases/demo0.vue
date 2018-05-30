@@ -69,7 +69,7 @@ export default {
 
       Toast.hide()
     },
-    onReaderError({msg}) {
+    onReaderError(name, {msg}) {
       Toast.failed(msg)
     },
     onDeleteImage(name, index) {
