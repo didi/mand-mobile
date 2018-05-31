@@ -3,7 +3,7 @@ title: Landscape
 preview: https://didi.github.io/mand-mobile/examples/#/landscape
 ---
 
-Used to display ads or descriptions in a floating layer
+To display ads or descriptions in a floating layer
 
 ### Import
 
@@ -21,15 +21,15 @@ Vue.component(Landscape.name, Landscape)
 #### Landscape Props
 |Props | Description | Type | Default |
 |----|-----|------|------|
-|v-model|display popup layer|Boolean|`false`|
-|has-mask|masked layer|Boolean|`true`|
-|scroll|content area can be scrolled|Boolean|`false`|
-|mask-closable|click on the mask to close popup layer|Boolean|`false`|
+|v-model|display popup layer or not|Boolean|`false`|
+|has-mask|has mask or not|Boolean|`true`|
+|scroll|content area can be scrolled or not|Boolean|`false`|
+|mask-closable|if popup layer can be closed through clicking on the mask|Boolean|`false`|
 
 #### Landscape Events
 
 ##### @show()
-Popup has been displayed
+Display popup
 
 ##### @hide()
-Popup has been hidden
+Hide popup
