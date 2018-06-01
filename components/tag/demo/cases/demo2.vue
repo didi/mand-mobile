@@ -12,6 +12,7 @@ export default {
   /* DELETE */
   title: '线框',
   titleEnUS: 'Square',
+  codeSandBox: 'https://codesandbox.io/s/r73ovo5zmp',
   /* DELETE */
   components: {
     Tag,

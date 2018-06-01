@@ -13,6 +13,7 @@ export default {
   /* DELETE */
   title: '四个步骤',
   titleEnUS: 'Four steps',
+  codeSandBox: 'https://codesandbox.io/s/3vok030m5q',
   height: 150,
   /* DELETE */
   components: {

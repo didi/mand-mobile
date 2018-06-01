@@ -16,6 +16,7 @@ export default {
   /* DELETE */
   title: '设置图标',
   titleEnUS: 'With icon',
+  codeSandBox: 'https://codesandbox.io/s/53zlz1nj24',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

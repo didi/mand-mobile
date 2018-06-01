@@ -20,6 +20,7 @@ export default {
   /* DELETE */
   title: '自定义菜单项',
   titleEnUS: 'Custom menu options',
+  codeSandBox: 'https://codesandbox.io/s/w72k6o7l48',
   height: 250,
   /* DELETE */
   components: {

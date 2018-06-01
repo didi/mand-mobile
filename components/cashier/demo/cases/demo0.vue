@@ -39,8 +39,7 @@
 	</div>
 </template>
 
-<script>
-import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier} from 'mand-mobile'
+<script>import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier} from 'mand-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -110,7 +109,10 @@ export default {
     doPay() {
       if (this.isCashierCaptcha) {
         this.cashier.next('captcha', {
-          text: '验证码发送至 156 **** 8965',
+          text: 'Verification code sent to 156 **** 8965',
+          autoCountdown: false,
+          countNormalText: 'Send Verification code',
+          countActiveText: 'Retransmission after {$1}s',
           onSend: countdown => {
             console.log('[Mand Mobile] Send Captcha')
             this.sendCaptcha().then(() => {
@@ -172,8 +174,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-cashier

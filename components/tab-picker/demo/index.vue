@@ -49,6 +49,7 @@
           cancel-text="取消"
           data-struct= "cascade"
           :option-render="[()=>{}, ()=>{}, $_optionRender]"
+          :default-index="[0,0,0]"
           @confirm="$_confirm"
           @cancel="$_cancel"
           @change="$_change"

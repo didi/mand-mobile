@@ -49,7 +49,7 @@ Popup has been displayed
 Popup will hide
 
 #### @hide()
-Popup Popup has been hidden
+Popup has been hidden
 
 #### PopupTitleBar Events
 

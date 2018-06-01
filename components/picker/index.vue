@@ -19,9 +19,11 @@
       <md-popup
         v-model="isPickerShow"
         position="bottom"
+        :mask-closable="maskClosable"
         @beforeShow="$_onPickerBeforeShow"
         @show="$_onPickerShow"
         @hide="$_onPickerHide"
+        @maskClick="$_onPickerCancel"
         prevent-scroll
       >
         <md-popup-title-bar
@@ -34,11 +36,11 @@
         <md-picker-column
           ref="pickerColumn"
           :data="data"
-          :default-value="defaultValue"
-          :default-index="defaultIndex"
+          :default-value="$_getDefaultValue()"
+          :default-index="$_getDefaultIndex()"
           :invalid-index="invalidIndex"
           :cols="cols"
-          @initialed="$emit('initialed')"
+          @initialed="$_onPickerInitialed"
           @change="$_onPickerChange"
         ></md-picker-column>
       </md-popup>
@@ -118,11 +120,17 @@ export default {
       type: String,
       default: '取消',
     },
+    maskClosable: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
     return {
       isPickerShow: false,
+      isPickerFirstPopup: true,
+      oldActivedIndexs: null,
     }
   },
 
@@ -147,14 +155,18 @@ export default {
     },
     data: {
       handler(val, oldVal) {
-        this.$_resetPickerColumn(val, oldVal)
+        if (!compareObjects(val, oldVal)) {
+          this.$_initPickerColumn()
+        }
       },
       deep: true,
       immediate: true,
     },
     defaultIndex: {
       handler(val, oldVal) {
-        this.$_resetPickerColumn(val, oldVal)
+        if (!compareObjects(val, oldVal)) {
+          this.$_initPickerColumn()
+        }
       },
       deep: true,
     },
@@ -178,6 +190,15 @@ export default {
       }
 
       this.column.inheritPickerApi(this, ['refresh'])
+
+      if (this.isPickerFirstPopup) {
+        this.isPickerFirstPopup = false
+      } else {
+        // mark initial activedIndexs as snapshoot
+        setTimeout(() => {
+          this.oldActivedIndexs = [...this.column.activedIndexs]
+        }, 100)
+      }
     },
     $_initPickerColumn() {
       /* istanbul ignore if */
@@ -185,26 +206,25 @@ export default {
         return
       }
 
-      const defaultIndexOfFirstColumn = this.defaultIndex[0] || 0
+      const defaultIndex = this.$_getDefaultIndex()
+      const defaultIndexOfFirstColumn = defaultIndex[0] || 0
       this.$nextTick(() => {
         cascadePicker(this.column, {
           currentLevel: 0,
           maxLevel: this.cols,
           values: this.data[0] ? this.data[0][defaultIndexOfFirstColumn] || [] : [],
-          defaultIndex: this.defaultIndex,
+          defaultIndex,
         })
-        // this.$nextTick(() => {
-        //   this.column.refresh(() => {
-        //     // column should be refreshed when first time popup show
-        //     this.column.isScrollInitialed = false
-        //   })
-        // })
       })
     },
-    $_resetPickerColumn(val, oldVal) {
-      if (!compareObjects(val, oldVal)) {
-        this.$_initPickerColumn()
-      }
+    $_resetPickerColumn() {
+      this.$_initPickerColumn()
+    },
+    $_getDefaultIndex() {
+      return this.oldActivedIndexs || this.defaultIndex
+    },
+    $_getDefaultValue() {
+      return this.oldActivedIndexs ? [] : this.defaultValue
     },
     $_onPickerConfirm() {
       const column = this.column
@@ -228,9 +248,18 @@ export default {
         this.$emit('confirm', columnValues)
       }
     },
+    $_onPickerInitialed() {
+      this.$emit('initialed')
+    },
     $_onPickerCancel() {
       this.isPickerShow = false
       this.$emit('cancel')
+
+      // reset picker by snapshot
+      this.$nextTick(() => {
+        this.$_resetPickerColumn()
+        this.refresh()
+      })
     },
     $_onPickerChange(columnIndex, itemIndex, values) {
       /* istanbul ignore next */
@@ -268,7 +297,6 @@ export default {
 
     refresh() {
       this.column.isScrollInitialed = false
-
       /** 
        * Manual call 'column.refresh' only when picker is in-view or popup is show,
        * otherwise 'column.refresh' will be called at popup's 'onBerforeShow' automatically

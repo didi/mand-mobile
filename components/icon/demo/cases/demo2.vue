@@ -26,6 +26,7 @@ export default {
   /* DELETE */
   title: '颜色',
   titleEnUS: 'Icon color',
+  codeSandBox: 'https://codesandbox.io/s/1y5n8k17q3',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

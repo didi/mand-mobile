@@ -23,6 +23,7 @@ export default {
   /* DELETE */
   title: '只读',
   titleEnUS: 'Readonly',
+  codeSandBox: 'https://codesandbox.io/s/m3l7nnk6y9',
   /* DELETE */
   components: {
     [Field.name]: Field,

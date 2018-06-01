@@ -31,6 +31,9 @@
             </mfe-table>
           </div>
         </div>
+        <div class="default-header-github default-header-operater">
+          <a href="https://github.com/didi/mand-mobile" target="_blank"></a>
+        </div>
         <div class="default-header-lang default-header-operater">
           <div class="operater-select" @click="changeLang">
             <span v-if="lang === 'en-US'">中文</span>
@@ -284,7 +287,6 @@ export default {
           font-style normal
           font-weight 500
           font-family "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace  !important
-
   .default-header-content
     display inline-block
     width 83%
@@ -327,7 +329,6 @@ export default {
           color #333
           img
             height 18px
-
     .default-header-nav
       float right
       height 100%
@@ -373,13 +374,29 @@ export default {
       border-radius 30px
       border solid 1px #ddd
       cursor pointer
-      transition border .3s
+      transition all .3s
       &:hover
-        border-color #048EFA
+        opacity .5
       .operater-select
         i
           font-size 12px
           color #048EFA
+      &.default-header-github
+        width 30px
+        border none
+        border-radius 0
+        opacity .8
+        a
+          display inline-block
+          width 100%
+          height 100%
+          background url('../assets/images/github.png') no-repeat
+          background-size contain
+          -webkit-filter invert(70%)
+          filter invert(70%)
+        &:hover
+          opacity .5
+
   &.active
     height 100px
     box-shadow none
@@ -405,6 +422,10 @@ export default {
         margin-top 35px
         border-color #FFF
         color #FFF
+        opacity .8
+        &.default-header-github a
+          -webkit-filter invert(100%)
+          filter invert(100%)
       .default-header-aside
         padding 0
       .default-header-search
@@ -464,6 +485,6 @@ export default {
       color #666 !important
       &.router-link-active
         color #048efa !important
-    .default-header-version
+    .default-header-operater
       display none
 </style>

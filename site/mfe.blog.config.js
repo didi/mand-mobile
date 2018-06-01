@@ -132,7 +132,7 @@ module.exports = {
         },
         {
           name: 'development',
-          text: 'Development Guid',
+          text: 'Development Guide',
           markdown: resolve('site/docs/development.en-US.md'),
         },
         {
@@ -142,7 +142,7 @@ module.exports = {
         },
         {
           name: 'theme',
-          text: 'Custom theme',
+          text: 'Custom Theme',
           markdown: resolve('site/docs/theme.en-US.md'),
         },
         {
