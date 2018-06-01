@@ -2,18 +2,31 @@
 title: 更新日志
 ---
 
+### 1.3.0
+`2018-06-01`
+- Feature
+  - `Selector`, `TabPicker`增加`mask-closable`，支持蒙层点击关闭 #64
+  - `Cashier`更改渠道展示方式，当支付渠道为两个直接展示 #77
+  - `Capatcha`支持自定义按钮文案，支持通过`auto-countdown`控制验证码是否自动发送 #84
+  - `ActionSheet`增加`maxHeight`控制展示区域最大高度 #86
+  - `InputItem`增加类型`Number`, 支持其他Html Input标准类型 #95
+  - `Picker`，`DatePicker`，`TabPicker`点击取消或蒙层将会撤销选择更改
+- Fix
+  - 修复`DatePicker`默认时间不在可选范围内的异常，将默认值教正至临近边界值 #75
+  - 修复部分文档错误信息
+
 ### 1.2.3
 `2018-05-11`
 - Fix
-  - 修复issue#78
+  - 修复issue #78
   - 站点更新
 
 ### 1.2.2
 `2018-05-09`
 - Fix
-  - 修复issue#67
-  - 修复issue#69
-  - 修复issue#72
+  - 修复issue #67
+  - 修复issue #69
+  - 修复issue #72
 - Feature
   - 新增`vw`适配方案
   - Popup适配iPhone X
@@ -22,8 +35,8 @@ title: 更新日志
 ### 1.1.1
 `2018-05-06`
 - Fix
-  - 修复issue#62
-  - 修复issue#63
+  - 修复issue #62
+  - 修复issue #63
 
 ### 1.1.0
 `2018-05-04`
@@ -39,7 +52,7 @@ title: 更新日志
 <!-- CUTOFF -->
 ### 1.0.9
 `2018-04-26`
-- 修复issue#47
+- 修复issue #47
 
 ### 1.0.8
 `2018-04-24`
@@ -48,12 +61,12 @@ title: 更新日志
 
 ### 1.0.6
 `2018-04-20`
-- 修复issue#29
+- 修复issue #29
 
 <!-- CUTOFF -->
 ### 1.0.5
 `2018-04-18`
-- 修复issue#24
+- 修复issue #24
 
 ### 1.0.4
 `2018-04-12`
