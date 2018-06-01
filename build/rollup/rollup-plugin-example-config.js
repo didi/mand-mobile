@@ -14,6 +14,7 @@ const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
 const common = require('rollup-plugin-commonjs')
+const svgSpritePlugin = require('./rollup-plugin-svg-sprite')
 const pkg = require('../../package.json')
 // const postcssUrl = require('postcss-url')
 const px2rem = require('postcss-pxtorem')
@@ -66,7 +67,7 @@ const rollupPlugin = [
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`,
     'MAN_VERSION': `"${pkg.version}"`
   }),
-
+  svgSpritePlugin(),
   // resource
   urlPlugin({
     limit: 10 * 1024,
