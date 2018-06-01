@@ -43,15 +43,14 @@ npm install mand-mobile --save
 
 > 使用 <a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a>
   或
-  <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>
+  <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>, 无需配置style，默认加载目录为lib，其他目录参考 #产出包目录
 
 ```javascript
-// .babelrc
 {
-  plugins: [
-    [import, {
-      libraryName: "mand-mobile",
-      libraryDirectory: "lib" // 默认为lib，其他目录参考 #产出包目录，无需配置style
+  "plugins": [
+    ["import", {
+      "libraryName": "mand-mobile",
+      "libraryDirectory": "lib"
     }]
   ]
 }
@@ -130,7 +129,7 @@ Vue.use(mandMobile)
 
 ```javascript
 module.exports = {
-  'plugins': [
+  plugins: [
     require('postcss-pxtorem')({
       rootValue: 100,
       propWhiteList: []

@@ -45,10 +45,10 @@ describe('Cashier', () => {
     wrapper.vm.channels = channels
     wrapper.vm.defaultIndex = 1
     wrapper.vm.value = true
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(
         wrapper
-          .find('.choose-channel-item')[0]
+          .find('.choose-channel-item.default')[0]
           .text()
           .trim(),
       ).to.equal(channels[1].text)
@@ -71,7 +71,7 @@ describe('Cashier', () => {
         wrapper.vm.value = false
         done()
       })
-    })
+    }, 500)
   })
 
   it('cashier captcha', done => {

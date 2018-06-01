@@ -10,9 +10,11 @@
       :ok-text="okText"
       :cancel-text="cancelText"
       :is-view="isView"
+      :mask-closable="maskClosable"
       @initialed="$emit('initialed')"
       @change="$_onPickerChange"
       @confirm="$_onPickerConfirm"
+      @cancel="$_onPickerCancel"
       @show="$_onPickerShow"
       @hide="$_onPickerHide"
     ></md-picker>
@@ -133,6 +135,10 @@ export default {
     isView: {
       type: Boolean,
       default: false
+    },
+    maskClosable: {
+      type: Boolean,
+      default: true,
     }
   },
 
@@ -141,6 +147,7 @@ export default {
       isPickerShow: false,
       currentDateIns: new Date(),
       columnData: [],
+      oldColumnData: null,
       columnDataDefault: [],
       columnDataGenerator: [],
       disabledCascadeComlumnIndex: [] // columns do not need cascading 
@@ -235,7 +242,7 @@ export default {
       isSetColumn && this.picker.refresh(null, columnIndex)
     },
     $_initColumnDataGenerator () { 
-      const defaultDate = this.defaultDate     
+      const defaultDate = this.$_getDefaultDate()     
       switch (this.type) {
         case 'date':
           this.$_initColumnDataGeneratorForDate(defaultDate)
@@ -318,6 +325,25 @@ export default {
         this.columnDataGenerator.push(this.$_generateAPData)
         this.columnDataDefault.push(hourInfo.ap)
       }
+    },
+    $_getDefaultDate () {
+      const defaultDate = this.defaultDate
+      const minDate = this.minDate
+      const maxDate = this.maxDate
+
+      if (!defaultDate) {
+        return defaultDate
+      }
+
+      if (minDate && defaultDate.getTime() < minDate.getTime()) {
+        return minDate
+      }
+
+      if (maxDate && defaultDate.getTime() > maxDate.getTime()) {
+        return maxDate
+      }
+
+      return defaultDate
     },
     $_generateYearData () {
       const start = this.minDate ? this.minDate.getFullYear() : this.currentYear - 20
@@ -469,6 +495,7 @@ export default {
 
     // MARK: events handler
     $_onPickerShow () {
+      this.oldColumnData = [...this.columnData]
       this.$emit('show')
     },
     $_onPickerHide () {
@@ -488,6 +515,10 @@ export default {
     },
     $_onPickerConfirm (columnsValue) {
       this.$emit('confirm', columnsValue)
+    },
+    $_onPickerCancel () {
+      this.$emit('cancel')
+      this.columnData = [...this.oldColumnData]
     },
 
     getFormatDate (format = 'yyyy-MM-dd hh:mm') {

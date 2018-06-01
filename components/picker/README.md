@@ -31,6 +31,7 @@ Vue.component(Picker.name, Picker)
 |title|选择器标题|String|-|-|
 |ok-text|选择器确认文案|String|`确认`|-|
 |cancel-text|选择器取消文案|String|`取消`|-|
+|mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 
 #### Picker Methods
 

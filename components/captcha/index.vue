@@ -9,11 +9,12 @@
         </div>
         <md-button
           v-if="count"
+          class="md-captcha-countbtn"
           type="ghost"
           size="small"
-          v-text="counterText"
+          v-text="countBtnText"
           :disabled="this.isCounting"
-          @click="$_onClickResend"
+          @click="$_onResend"
         ></md-button>
       </div>
       <md-codebox
@@ -46,11 +47,12 @@
           </div>
           <md-button
             v-if="count"
+            class="md-captcha-countbtn"
             type="ghost"
             size="small"
-            v-text="counterText"
+            v-text="countBtnText"
             :disabled="this.isCounting"
-            @click="$_onClickResend"
+            @click="$_onResend"
           ></md-button>
         </div>
         <md-codebox
@@ -101,12 +103,24 @@ export default {
       type: Boolean,
       default: false,
     },
+    autoCountdown: {
+      type: Boolean,
+      default: true,
+    },
     appendTo: {
       default: () => document.body,
     },
     count: {
       type: Number,
       default: 60,
+    },
+    countNormalText: {
+      type: String,
+      default: '发送验证码',
+    },
+    countActiveText: {
+      type: String,
+      default: '{$1}秒后重发',
     },
     isView: {
       type: Boolean,
@@ -118,10 +132,10 @@ export default {
     return {
       code: '',
       visible: false,
-      counterText: '发送验证码',
       errorMsg: '',
       isCounting: false,
       firstShown: false,
+      countBtnText: this.countNormalText,
     }
   },
 
@@ -131,7 +145,7 @@ export default {
         this.code = ''
         if (!this.firstShown) {
           this.firstShown = true
-          this.countdown()
+          this.$_onResend()
         }
       }
     },
@@ -146,9 +160,9 @@ export default {
     if (this.appendTo && !this.isView) {
       this.appendTo.appendChild(this.$el)
     }
-    if (this.value) {
+    if (this.value || this.isView) {
       this.firstShown = true
-      this.countdown()
+      this.$_onResend()
     }
   },
 
@@ -176,9 +190,11 @@ export default {
     $_onSubmit(code) {
       this.$emit('submit', code)
     },
-    $_onClickResend() {
-      this.countdown()
-      this.$emit('send')
+    $_onResend() {
+      if (this.autoCountdown) {
+        this.countdown()
+      }
+      this.$emit('send', this.countdown)
     },
     // MARK: public methods
     countdown() {
@@ -188,20 +204,20 @@ export default {
       clearInterval(this.__counter__)
       let i = this.count - 1
       this.isCounting = true
-      this.counterText = `${i}s后重发`
+      this.countBtnText = this.countActiveText.replace('{$1}', i)
       /* istanbul ignore next */
       this.__counter__ = setInterval(() => {
-        if (i === 0) {
+        if (i === 1) {
           this.resetcount()
         } else {
           i--
-          this.counterText = `${i}s后重发`
+          this.countBtnText = this.countActiveText.replace('{$1}', i)
         }
       }, 1000)
     },
     resetcount() {
       this.isCounting = false
-      this.counterText = '发送验证码'
+      this.countBtnText = this.countNormalText
       clearInterval(this.__counter__)
     },
     setError(msg) {
@@ -232,6 +248,11 @@ export default {
         line-height 32px
         height 32px
         margin-bottom 12px
-      .md-button
+      .md-captcha-countbtn
+        display inline-block
+        padding-left 16px
+        padding-right 16px
         margin 32px auto
+        width auto
+        min-width 130px
 </style>

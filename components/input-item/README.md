@@ -21,7 +21,7 @@ Vue.component(InputItem.name, InputItem)
 #### InputItem Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|type|表单类型，特殊类型自带文本格式化|String|`text`|`text`,`bankCard`,`phone`,<br/>`money`,`password`|
+|type|表单类型，特殊类型自带文本格式化|String|`text`|`text(文本)`,`bankCard(银行卡号)`,`phone(手机号)`,<br/>`money(金额)`,`digit(数字)`,`password(密码)`,<br/>以及其他的标准`Html Input`类型|
 |name|表单名称|String|-|事件入参之一，可用于区分表单组件|
 |v-model|表单值|String|-|-|
 |title|表单左侧标题|String|-|可以传入`HtmlFragment`，也可直接使用`slot left`代替|

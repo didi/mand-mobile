@@ -73,6 +73,9 @@ export default {
   &:active::before
     display block
   .md-button-inner
+    display flex
+    align-items center
+    justify-content center
     width 100%
     height 100%
     overflow hidden
@@ -125,9 +128,6 @@ export default {
     .md-button-inner
       hairline(top, color-border-base)
       hairline(bottom, color-border-base)
-      display flex
-      align-items center
-      justify-content center
     &:active::before
       background-color button-link-fill-tap
     &.disabled
@@ -136,11 +136,11 @@ export default {
       width button-link-width
       height button-link-height
       font-size font-heading-normal
-    &.with-icon
-      .md-icon
-        display flex
-        align-items center
-        justify-content center
-        margin-right h-gap-sm
+  &.with-icon
+    .md-icon
+      display flex
+      align-items center
+      justify-content center
+      margin-right h-gap-sm
 
 </style>

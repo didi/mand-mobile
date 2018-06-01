@@ -79,7 +79,7 @@
     doSuccess() {
       const st = this.startTmp
       const et = Date.now()
-      const delay = Math.ceil((et - st) / 2000) * 2000 - (et - st)
+      const delay = Math.ceil((et - st) / 1500) * 1500 - (et - st)
       setTimeout(() => {
         this.successFlag = true
       }, delay)

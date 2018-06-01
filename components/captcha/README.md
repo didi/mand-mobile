@@ -26,10 +26,12 @@ Vue.component(Captcha.name, Captcha)
 |maxlength|字符最大输入长度, 若为`-1`则不限制输入长度|Number|`4`|
 |mask|是否掩码|Boolean|`false`|
 |system|是否使用系统默认键盘|Boolean|`false`|
+|auto-countdown|是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|
 |title|窗口标题|String|-|
 |appendTo|挂载节点|HTMLElement|`document.body`|
 |count|倒计时时长, 设置为0的时候不显示倒计时按钮|Number|`60`|
-
+|countNormalText|发送验证码正常状态文字|String| `'发送验证码'` |
+|countActiveText|发送验证码及倒计时按钮文案配置项|String| `'{$1}秒后重发'` |
 
 #### Captcha Methods
 
@@ -47,8 +49,8 @@ Vue.component(Captcha.name, Captcha)
 ##### @hide()
 验证码组件隐藏事件
 
-#### @send()
-发送验证码事件, 点击重发按钮后触发及开始倒计时
+##### @send(countdown)
+发送验证码事件, 第一次打开时或点击重发按钮后触发并开始倒计时，如果`auto-countdown`需手动调用`countdown`开始倒计时
 
 ##### @submit(code)
 用户提交输入内容事件

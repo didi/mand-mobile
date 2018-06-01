@@ -1,7 +1,7 @@
 <template>
   <div class="md-cg">
     <h1 class="md-cg-title">Mand Mobile</h1>
-    <h1 class="md-cg-subtitle">滴滴的金融业务移动端Vue组件库</h1>
+    <h1 class="md-cg-subtitle">面向金融场景的移动端Vue组件库</h1>
     <section
       v-for="(category, i) in components" :key="i"
       class="cg-category"
@@ -30,7 +30,7 @@
         </div>
       </transition>
     </section>
-    <h1 class="md-cg-copyright">Produced By FDC &times; MFE</h1>
+    <h1 class="md-cg-copyright">Produced By DiDi - FDC &times; MFE</h1>
   </div>
 </template>
 
