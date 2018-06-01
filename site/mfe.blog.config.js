@@ -100,7 +100,22 @@ module.exports = {
         {
           name: 'resource',
           text: '设计资源',
-          markdown: resolve('site/docs/resource.md'),
+          markdown: resolve('site/docs/design/resource.md'),
+        },
+        {
+          name: 'color',
+          text: '颜色',
+          markdown: resolve('site/docs/design/color.md'),
+        },
+        {
+          name: 'font',
+          text: '字体',
+          markdown: resolve('site/docs/design/font.md'),
+        },
+        {
+          name: 'other',
+          text: '其他',
+          markdown: resolve('site/docs/design/other.md'),
         }
       ]
     },
