@@ -3,9 +3,9 @@ title: 开发指南
 ---
 
 ### 环境
-node = 6+
 
-npm = 3+
+* node = 6+
+* npm = 3+
 
 ### 开发流程
 
@@ -89,9 +89,12 @@ $ git pull
 * 通用方法
 
   通用逻辑和样式使用`_style/*`, `_util/*`, 避免组件代码内部通用逻辑或样式冗余【新增需讨论】
+
 * 样式
 
-使用`stylus`; 单位统一使用`px`; 所有图标使用内置svg图标, 详情见组件`Icon`。
+  使用`stylus`; 单位统一使用`px`; 所有图标使用内置svg图标, 详情见组件`Icon`。
+
+注意：通用样式，工具方法的详细使用文档参考Wiki，[Style](https://github.com/didi/mand-mobile/wiki/Style)，[Utils](https://github.com/didi/mand-mobile/wiki/Utils)，[Scroll](https://github.com/didi/mand-mobile/wiki/Scroll)，[FormatValue](https://github.com/didi/mand-mobile/wiki/FormatValue)
 
 ##### 组件核心代码
 

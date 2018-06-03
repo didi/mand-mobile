@@ -45,7 +45,7 @@ function generateSource () {
 
 module.exports = {
   title: 'Mand Mobile',
-  subtitle: 'Manhattan Design Mobile',
+  subtitle: '面向金融场景的Vue移动端UI组件库',
   logo: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg',
   favicon: '//static.galileo.xiaojukeji.com/static/tms/other/mand-mobile-logo.png',
   source: [
@@ -128,7 +128,7 @@ module.exports = {
   },
   links: [
     {
-      title: '链接',
+      title: '相关资源',
       link: [
         {
           text: 'GitHub',
@@ -138,6 +138,23 @@ module.exports = {
           text: '更新日志',
           src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
         },
+        {
+          text: '常见问题',
+          src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+        },
+        {
+          text: '脚手架模板',
+          src: 'https://github.com/mand-mobile/mand-mobile-template',
+        },
+        {
+          text: '国内镜像 🇨🇳',
+          src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
+        }
+      ],
+    },
+    {
+      title: '社区',
+      link: [
         {
           text: '贡献指南',
           src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
@@ -149,12 +166,8 @@ module.exports = {
         {
           text: '加入我们',
           src: 'http://job.didichuxing.com/',
-        },
-        {
-          text: '国内镜像 🇨🇳',
-          src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
         }
-      ],
+      ]
     },
     {
       title: '更多产品 <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
