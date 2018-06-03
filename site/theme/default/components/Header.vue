@@ -231,7 +231,10 @@ export default {
 
     changeLang () {
       location.href = location.href.replace(this.lang, this.lang === 'zh-CN' ? 'en-US' : 'zh-CN')
-      // location.reload()
+
+      if (~location.href.indexOf('home')) {
+       location.reload()
+      }
     },
   },
 }

@@ -49,7 +49,8 @@ function generateSource (lang = 'zh-CN') {
 
 module.exports = {
   title: 'Mand Mobile',
-  subtitle: 'Manhattan Design Mobile',
+  subtitle: '面向金融场景的Vue移动端UI组件库',
+  subtitleEnUs: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios',
   logo: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg',
   favicon: '//static.galileo.xiaojukeji.com/static/tms/other/mand-mobile-logo.png',
   source: [{
@@ -107,7 +108,22 @@ module.exports = {
         {
           name: 'resource',
           text: '设计资源',
-          markdown: resolve('site/docs/resource.md'),
+          markdown: resolve('site/docs/design/resource.md'),
+        },
+        {
+          name: 'color',
+          text: '颜色',
+          markdown: resolve('site/docs/design/color.md'),
+        },
+        {
+          name: 'font',
+          text: '字体',
+          markdown: resolve('site/docs/design/font.md'),
+        },
+        {
+          name: 'other',
+          text: '其他',
+          markdown: resolve('site/docs/design/other.md'),
         }
       ]
     }]
@@ -166,7 +182,22 @@ module.exports = {
         {
           name: 'resource',
           text: 'Resource',
-          markdown: resolve('site/docs/resource.en-US.md'),
+          markdown: resolve('site/docs/design/resource.en-US.md'),
+        },
+        {
+          name: 'color',
+          text: 'Color',
+          markdown: resolve('site/docs/design/color.md'),
+        },
+        {
+          name: 'font',
+          text: 'Font',
+          markdown: resolve('site/docs/design/font.md'),
+        },
+        {
+          name: 'other',
+          text: 'Other',
+          markdown: resolve('site/docs/design/other.md'),
         }
       ]
     }]
@@ -180,7 +211,7 @@ module.exports = {
   links: {
     'zh-CN': [
       {
-        title: '链接',
+        title: '相关资源',
         link: [
           {
             text: 'GitHub',
@@ -190,6 +221,23 @@ module.exports = {
             text: '更新日志',
             src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
           },
+          {
+            text: '常见问题',
+            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+          },
+          {
+            text: '脚手架模板',
+            src: 'https://github.com/mand-mobile/mand-mobile-template',
+          },
+          {
+            text: '国内镜像 🇨🇳',
+            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
+          }
+        ],
+      },
+      {
+        title: '社区',
+        link: [
           {
             text: '贡献指南',
             src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
@@ -201,12 +249,8 @@ module.exports = {
           {
             text: '加入我们',
             src: 'http://job.didichuxing.com/',
-          },
-          {
-            text: '国内镜像 🇨🇳',
-            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
           }
-        ],
+        ]
       },
       {
         title: '更多产品 <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
@@ -232,7 +276,7 @@ module.exports = {
     ],
     'en-US': [
       {
-        title: 'Links',
+        title: 'Resources',
         link: [
           {
             text: 'GitHub',
@@ -242,6 +286,23 @@ module.exports = {
             text: 'Change Log',
             src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
           },
+          {
+            text: 'FAQ',
+            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+          },
+          {
+            text: 'Template',
+            src: 'https://github.com/mand-mobile/mand-mobile-template',
+          },
+          {
+            text: 'China Mirror 🇨🇳',
+            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
+          }
+        ],
+      },
+      {
+        title: 'Community',
+        link: [
           {
             text: 'Contribute Guide',
             src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
@@ -253,12 +314,8 @@ module.exports = {
           {
             text: 'Join Us',
             src: 'http://job.didichuxing.com/',
-          },
-          {
-            text: 'China Mirror 🇨🇳',
-            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
           }
-        ],
+        ]
       },
       {
         title: 'More Products <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',

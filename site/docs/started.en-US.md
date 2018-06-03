@@ -43,19 +43,14 @@ npm install mand-mobile --save
 
 > Use <a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a>
   or
-  <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>
+  <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>. No need to configure style path and default directory is 'lib', other directory reference #Release Package Directory
 
 ```javascript
-// .babelrc
 {
-  plugins: [
-    [import, {
-      libraryName: "mand-mobile",
-      /**
-       * default is 'lib', other directory reference #Release Package Directory, 
-       * no need configuration for style
-       */
-      libraryDirectory: "lib" 
+  "plugins": [
+    ["import", {
+      "libraryName": "mand-mobile",
+      "libraryDirectory": "lib"
     }]
   ]
 }
@@ -126,9 +121,9 @@ To avoid click problems caused by [browser compatibility](https://developer.mozi
     ├── components  # Source code, custom theme, etc
     |
     ├── lib         # After compilation, style unit 'px', generally used 
-    |                 for custom fit programs, etc (default)
+    |               # for custom fit programs, etc (default)
     ├── lib-vw      # After compilation, style unit 'vh/vw', generally used 
-    |                 in non-compatible scenarios, without additional configuration
+    |               # in non-compatible scenarios, without additional configuration
     ├── ...
 ```
 

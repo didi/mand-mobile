@@ -46,6 +46,9 @@ Enter Cashier next
 |text|send verification code instructions | String |-|support `html fragment`|
 |maxlength|length of verification code | Number  |`4`|if `-1` does not limit the input length|
 |count|verification code re-send countdown | Number  |`60`|if '0' is not displayed again|
+|auto-countdown|start the countdown automatically, otherwise need to manually call `countdown`|Boolean|`true`|-|
+|countNormalText|text of send verification code button |String| `发送验证码` |-|
+|countActiveText|text of send verification code button in countdown state|String| `{$1}秒后重发`|-|
 |onSend|verification code send Callback | Function(countdown: Function) |-|`countdown` starts counting down|
 |onSubmit|verification code submission callback | Function(code: String) |-|`code` is the input verification code|
 

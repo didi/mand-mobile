@@ -38,7 +38,7 @@ Please refer to<a href="#/docs/started">Quickstart</a>
 
 #### Users
 
-> If your company or product uses Mand Mobile，let us know [here](https://github.com/didi/mand-mobile/issues/59).
+> If your company or product uses Mand Mobile, let us know [here](https://github.com/didi/mand-mobile/issues/59).
 
 #### Contributing
 

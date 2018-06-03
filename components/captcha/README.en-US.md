@@ -20,14 +20,18 @@ Vue.component(Captcha.name, Captcha)
 #### Captcha Props
 | Props | Description | Type | Default |
 |----|-----|------|------|
-| v-model | whether show captcha or not | Boolean | `false` |
-| is-view | whether show as inline element or append to body | Boolean |`false`|
+| v-model |show captcha or not | Boolean | `false` |
+| is-view |show as inline element or append to body | Boolean |`false`|
 | maxlength | maxlength, set to `-1` as no restriction | Number | 4 |
-| mask | whether mask code or not | Boolean | `false` |
-| system | whether use system keyboard or use simulated keyboard | Boolean | `false` |
+| mask |mask code or not | Boolean | `false` |
+| system |use system keyboard or use simulated keyboard | Boolean | `false` |
+|auto-countdown|start the countdown automatically, otherwise need to manually call `countdown`|Boolean|`true`|
 | title| title of captcha | String | - |
 | append-to | portal node of dialog | HTMLElement | `document.body` |
 | count | counter duration, set as `0` to hide resend button | Number | `60` |
+|countNormalText|text of send verification code button |String| `发送验证码` |
+|countActiveText|text of send verification code button in countdown state|String| `{$1}秒后重发` |
+
 
 
 #### Captcha Methods
@@ -46,8 +50,8 @@ Emit when captcha is shown
 #### @hide()
 Emit when captcha is hidden
 
-#### @send()
-Emit when user click resend button
+#### @send(countdown)
+Emit when user click resend button. The first time you open or click the reissue button triggers and starts the countdown. If `auto-countdown` is false, you need to manually call `countdown`.
 
 #### @submit(code)
 Emit when user submit

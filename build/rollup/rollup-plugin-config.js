@@ -18,6 +18,7 @@ const progress = require('rollup-plugin-progress')
 const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
+const svgSpritePlugin = require('./rollup-plugin-svg-sprite')
 const pkg = require('../../package.json')
 
 // const postcssUrl = require('postcss-url')
@@ -112,7 +113,9 @@ const rollupPlugin = [
     builtins(),
     nodeGlobals(),
   ])),
-
+  ...(conditionHelper(isDev, [
+    svgSpritePlugin(),
+  ])),
   // resource
   urlPlugin({
     limit: 10 * 1024,

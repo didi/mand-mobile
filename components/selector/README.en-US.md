@@ -29,8 +29,10 @@ Vue.component(Selector.name, Selector)
 |title|title of selector|String|-|-|
 |ok-text|text of confirmation|String|-|if it is empty, it will be `confirmed mode`, that is, click option to select directly|
 |cancel-text|text of cancellation|String|`取消`|-|
+|mask-closable|click on the mask to close the popup|Boolean|`true`|-|
 |is-check|has a `check` icon|Boolean|`false`|only for `confirmed mode`|
 |option-render|return rendering content of each option|Function({value, text ,...}):String|-|`vue 2.1.0+` can use `slot-scope`, refer to `Radio`|
+|max-height|selector content area maximum height, beyond scrolling|Number|400|unit `px`|
 
 
 #### Selector Events

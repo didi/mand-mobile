@@ -96,6 +96,8 @@ $ git pull
 
   Use `stylus`; unit to use `px` and all icons use built-in svg icons, see component `Icon` for details.
 
+Note: Detailed usage of utility styles and methods please refer to Wiki，[Style](https://github.com/didi/mand-mobile/wiki/Style)，[Utils](https://github.com/didi/mand-mobile/wiki/Utils)，[Scroll](https://github.com/didi/mand-mobile/wiki/Scroll)，[FormatValue](https://github.com/didi/mand-mobile/wiki/FormatValue)
+
 ##### Component Core Code
 
 In principle, the official [vue-sytle-guide](https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended) is the standard, and the common parts are as follows:

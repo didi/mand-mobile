@@ -45,6 +45,15 @@ Picture read completion
 |dataUrl|base64|String|
 |blob|Image Blob object for `formData`|Blob|
 
+##### @error(name, { code, msg })
+Picture read failed
+
+|Parameters | Description | Type|
+|----|-----|------|
+|name|identifier|String|
+|code|error code, see appendix|String|
+|msg|error message, see appendix|String|
+
 ### imageProcessor
 
 Used for image axial correction, picture quality compression, height control
@@ -71,3 +80,13 @@ imageProcessor(options[, fn])
 |width|picture width|Number|unit `px`, scaled when width exceeds|
 |height|picture height|Number|unit `px`, scaled when height exceeds|
 |quality|picture quality|Number|value range `0-1`|
+
+### Appendix
+Picture read failed error code and error message
+
+```
+'100': 'browser does not support'
+'101': 'picture size is beyond the preset'
+'102': 'picture read failure'
+'103': 'the number of pictures exceeds the limit'
+```
