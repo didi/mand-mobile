@@ -28,7 +28,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   document.title = (to.meta.text
     ? `${to.meta.text}-${window.mbConfig.title}`
-    : window.mbConfig.title).replace(/<[^>]+>/g, '')
+    : `${window.mbConfig.title}-${window.mbConfig.subtitle}`).replace(/<[^>]+>/g, '')
   next()
 })
 
