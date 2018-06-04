@@ -3,7 +3,7 @@ title: Dialog
 preview: https://didi.github.io/mand-mobile/examples/#/dialog
 ---
 
-A floating layer to get user feedback or display information.
+A floating layer to get users' feedback or display information.
 
 ### Import
 
@@ -21,21 +21,21 @@ Vue.component(Dialog.name, Dialog)
 #### Dialog Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| v-model | whether show dialog or not | Boolean | `false` | - |
+| v-model | whether to show a dialog or not | Boolean | `false` | - |
 | title | title of dialog | String | - | - |
-| icon | icon of message type | String | - |Refer to `Icon` component |
-| closable | whether a close button is visible or not | Boolean | `true` | - |
-| btns | action buttons in footer area | Array {text, handler} | `[]` | - |
+| icon | name of icon | String | - |Refer to `Icon` component for customized icon|
+| closable | whether the close button is visible or not | Boolean | `true` | - |
+| btns | action buttons in the footer| Array {text, handler} | `[]` | - |
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
-| has-mask | whether show mask or not | Boolean | `true` | - |
-| mask-closable | whether to close the dialog when click mask or not | Boolean | `false` | - |
-| position | position of dialog when it is shown, `center/top/bottom/left/right` | String | `center`| - |
-| transition | dialog animation css class name, `fade, slide-up/down/left/right`  | String | `fade` | - |
-| prevent-scroll | prevent rolling breakdown | Boolean | false | - |
-| prevent-scroll-exclude | exclusions of preventing rolling breakdown | String | - | - |
+| has-mask | has mask or not | Boolean | `true` | - |
+| mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
+| position | the position of popup, `center/top/bottom/left/right` | String | `center`| - |
+| transition | the animation effect of popup, `fade, slide-up/down/left/right`  | String | `fade` | - |
+| prevent-scroll | whether to prevent scrolling or not| Boolean | false | - |
+| prevent-scroll-exclude | excluded elements of preventing scrolling| String | - | - |
 
 #### Dialog Slots
-Default slots is treated as content of dialog
+Default slots is used as the content of dialog
 
 #### Dialog Instance Methods
 
@@ -45,53 +45,53 @@ Hide dialog
 #### Dialog Instance Events
 
 ##### @show()
-Emit after dialog is shown
+Invoked after dialog is shown
 
 ##### @hide()
-Emit after dialog is hidden
+Invoked after dialog is hidden
 
 #### Dialog Static Methods
-Dynamically create interaction dialog
+Dynamically create interactive dialogs
 
 ##### confirm(props)
-Dynamically create a confirm dialog
+Dynamically create a confirmation dialog
 
 | Props | Description | Type | Default |
 |----|-----|------|------|
 | icon | icon of message type | String | - |
 | title | title of dialog | String | - |
-| content | message content of dialog | String | -|
-| cancelText | text of cancel button | String | `Cancel` |
-| confirmText | text of confirm button | String | `Confirm` |
-| onConfirm | callback when user click confirm button | Function | -|
+| content | content of dialog | String | -|
+| cancelText | cancelation button | String | `Cancel` |
+| confirmText | confirmation button | String | `Confirm` |
+| onConfirm | callback function is invoked when user clicks confirmation button | Function | -|
 
 ##### Dialog.alert(props)
-Dynamically create a alert dialog
+Dynamically create an alert dialog
 
 | Props | Description | Type | Default |
 |----|-----|------|------|
 | icon | icon of message type | String | - |
 | title | title of dialog | String | - |
-| content | message content of dialog | String | -|
-| confirmText | text of confirm button | String | `Confirm` |
-| onConfirm | callback when user click confirm button | Function | -|
+| content | content of dialog | String | -|
+| confirmText | confirmation button | String | `Confirm` |
+| onConfirm | callback function is invoked when user clicks confirmation button | Function | -|
 
 ##### Dialog.succeed(props)
-Dynamically create a succeed dialog
+Dynamically create a success dialog
 
 | Props | Description | Type | Default |
 |----|-----|------|------|
 | title | title of dialog | String | - |
-| content | message content of dialog | String | -|
-| confirmText | text of confirm button | String | `Confirm` |
-| onConfirm | callback when user click confirm button | Function | -|
+| content | content of dialog | String | -|
+| confirmText | confirmation button | String | `Confirm` |
+| onConfirm | callback function is invoked when user clicks confirmation button| Function | -|
 
 ##### Dialog.failed(props)
-Dynamically create a failed dialog
+Dynamically create a fail dialog
 
 | Props | Description | Type | Default |
 |----|-----|------|------|
 | title | title of dialog | String | - |
-| content | message content of dialog | String | -|
-| confirmText | text of confirm button | String | `Confirm` |
-| onConfirm | callback when user click confirm button | Function | -|
+| content | content of dialog | String | -|
+| confirmText | confirmation button | String | `Confirm` |
+| onConfirm | callback function is invoked when user clicks confirmation button| Function | -|
