@@ -68,7 +68,7 @@ export default {
 .md-agree
   display flex
   &.disabled
-    opacity opacity-disabled
+    opacity agree-disabled-opacity
   .agree-icon
     margin-right 10px
     color agree-fill-inverse

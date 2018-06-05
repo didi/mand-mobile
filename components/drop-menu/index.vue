@@ -204,15 +204,15 @@ export default {
     z-index drop-menu-zindex
     display flex
     height 100%
-    background color-bg-base
-    hairline(bottom, color-border-base)
+    background drop-menu-bar-bg
+    hairline(bottom, drop-menu-bar-border-color)
     .bar-item
       display flex
       flex 1
       margin 2% 0
       align-items center
       justify-content center
-      border-right dotted 2px color-border-base
+      border-right dotted 2px drop-menu-bar-border-color
       span
         position relative
         padding-right 30px
@@ -237,12 +237,12 @@ export default {
         span:after
           border-top-color drop-menu-color
       &.disabled
-        opacity opacity-disabled
+        opacity drop-menu-disabled-opacity
       &:last-of-type
         border none
   .md-drop-menu-list
     width 100%
     padding-top drop-menu-height
-    background color-bg-base
+    background drop-menu-list-bg
     box-sizing border-box
 </style>

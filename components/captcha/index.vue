@@ -232,18 +232,20 @@ export default {
 
 <style lang="stylus">
   .md-captcha
-    .md-dialog .md-dialog-content
-      margin-bottom number-keyboard-height
+    .md-dialog
+      z-index captcha-zindex
+      .md-dialog-content
+        margin-bottom number-keyboard-height
     .md-captcha-content
       text-align center
       margin-bottom 20px
       font-size 24px
       .md-captcha-title
-        color color-text-base
-        font-size 32px
+        color captcha-title-color
+        font-size captcha-title-font-size
         margin 0
       .md-captcha-error
-        color #FF525D
+        color captcha-error-color
         font-size 24px
         line-height 32px
         height 32px
@@ -252,7 +254,7 @@ export default {
         display inline-block
         padding-left 16px
         padding-right 16px
-        margin 32px auto
+        margin captcha-countbtn-gap auto
         width auto
         min-width 130px
 </style>

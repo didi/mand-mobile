@@ -237,8 +237,7 @@
     absolute-pos()
     position absolute
     z-index 1
-    background #000
-    opacity opacity-disabled
+    background-color popup-mask-bg
   &.center .md-popup-box
     absolute-pos(50%, auto, auto, 50%)
     transform translate(-50%, -50%)

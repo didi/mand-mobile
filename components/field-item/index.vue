@@ -136,7 +136,7 @@ export default {
       content ''
       position absolute
       box-sizing border-box
-      background-color color-bg-tap
+      background-color field-item-bg-tap-color
     &:active::after
       display block
   .md-field-item-inner
@@ -146,15 +146,15 @@ export default {
     &.solid
       width input-item-title-width
     .md-field-item-title
-      font-size field-item-font-size
+      font-size field-title-font-size
       line-height 54px
     .md-field-item-brief
-      font-size font-minor-large
-      color color-text-caption
+      font-size field-item-brief-font-size
+      color field-item-brief-color
   .md-field-item-content
     display flex
     flex-grow 1
-    font-size 28px
+    font-size field-item-font-size
     &.left
       margin-left 22px
     &.right

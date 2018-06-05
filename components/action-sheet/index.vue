@@ -127,13 +127,13 @@ export default {
 
 <style lang="stylus">
 .md-action-sheet
-  color color-text-base
+  color action-sheet-color
   -webkit-font-smoothing antialiased
   .md-action-sheet-content
     position relative
     width 100%
     font-size action-sheet-font-size
-    background color-bg-base
+    background action-sheet-bg
     text-align center
     overflow auto
     header
@@ -145,19 +145,20 @@ export default {
         vertical-height(action-sheet-height)
         hairline(top, color-border-base)
         box-sizing border-box
-        font-size font-body-normal
+        font-size action-sheet-font-size
         &.active
-          color button-primary-fill
+          color action-sheet-color-highlight
         &.disabled
-          opacity field-item-color-disabled
+          opacity action-sheet-disabled-opacity
         &.cancel-btn
           height 132px
           line-height 120px
+          color action-sheet-color-cancel
           &::before
             display block
             content ''
             height 12px
-            background color-primary-background
+            background action-sheet-cancel-gap-bg
   .md-popup-box
     background-color color-bg-base
 </style>

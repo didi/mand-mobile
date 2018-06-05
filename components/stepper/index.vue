@@ -173,18 +173,18 @@ export default {
 
 <style lang="stylus">
 .md-stepper
-  color color-text-base
+  color stepper-color
   -webkit-font-smoothing antialiased
-  font-size font-body-large
-  height 50px
+  font-size stepper-font-size
+  height stepper-height
   display flex
   &.disabled
     opacity opacity-disabled
   .md-stepper-button
     position relative
-    width 54px
-    height 50px
-    background-color color-primary-background
+    width stepper-width-button
+    height stepper-height
+    background-color stepper-fill
     border-radius 2px
     &:after
       center()
@@ -194,7 +194,7 @@ export default {
       height 2px
       top 50%
       left 50%
-      background color-text-base
+      background stepper-color
       transform translate(-50%, -50%)
     &.md-stepper-button-add
       &:before
@@ -205,27 +205,27 @@ export default {
         height 24px
         top 50%
         left 50%
-        background color-text-base
+        background stepper-color
         transform translate(-50%, -50%)
     &.disabled
-      opacity opacity-disabled
+      opacity stepper-disabled-opacity
   .md-stepper-number
     margin 0 4px
     min-width 68px
-    height 50px
+    height stepper-height
     padding 0 4px
     text-align center
     border-radius 2px
     input
-      width 68px
-      height 50px
+      width stepper-width-input
+      height stepper-height
       border none
       outline none
-      font-size font-body-normal
-      line-height 50px
+      font-size stepper-input-font-size
+      line-height stepper-height
       box-sizing border-box
-      background-color color-primary-background
+      background-color stepper-fill
       text-align center
-      color color-text-base
+      color stepper-color
       border-radius unset
 </style>

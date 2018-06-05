@@ -49,8 +49,8 @@ export default {
     max-width 400px
     color tip-color
     font-size tip-font-size
-    padding 20px 50px 20px 30px
-    border-radius 4px
+    padding tip-gap
+    border-radius tip-radius
     background-color tip-fill
     z-index tip-zindex
     &::after
@@ -87,10 +87,11 @@ export default {
       margin-top -11px
       border-width 11px 10px 11px 0
       border-color transparent tip-fill transparent transparent
-    svg
+    .md-icon
       position absolute
       right 16px
-      top 20px
-      width 16px
-      height 16px
+      top 50%
+      width tip-close-size
+      height tip-close-size
+      transform translateY(-50%)
 </style>

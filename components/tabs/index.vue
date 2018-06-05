@@ -172,10 +172,10 @@ export default {
 
   .md-tab-bar
     flex-shrink 0
-    hairline(bottom, color-border-minor)
+    hairline(bottom, tab-border-color)
     &.on-bottom
       border-bottom none
-      hairline(top, color-border-minor)
+      hairline(top, tab-border-color)
 
   .md-tab-content-wrapper
     position relative
@@ -183,8 +183,6 @@ export default {
     display flex
     flex 1
     transition transform .5s
-
-
     .md-tab-content
       width 100%
       height 100%
