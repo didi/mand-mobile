@@ -21,113 +21,113 @@ Vue.component(Picker.name, Picker)
 #### Picker Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|picker display|Boolean|`false`|-|
+|v-model|display picker or not|Boolean|`false`|-|
 |data|data source|Array<{value, lable, ...}>[]|`[]`|-|
 |cols|number of columns|Number|`1`|-|
-|default-index|initial selected option index of each column|Array|`[]`|-|
-|invalid-index|disabled option index of each column|Array|`[]`|array for multiple disabled options, such as `[[1,2], 2]`|
-|is-view|inline display in page, otherwise it is in `Popup`|Boolean|`false`|-|
-|is-cascade|each column of data is cascaded|Boolean|`false`|cascade data format see #Appendix|
+|default-index|indexes of initially selected items in each column|Array|`[]`|-|
+|invalid-index|indexes of disabled items in each column|Array|`[]`|array of multiple disabled items, such as `[[1,2], 2]`|
+|is-view|inline display in page, otherwise it shows as `Popup`|Boolean|`false`|-|
+|is-cascade|data in each column is cascaded or not|Boolean|`false`|see #Appendix for the format of cascaded data|
 |title|title of picker|String|-|-|
-|ok-text|text of confirmation|String|`确认`|-|
-|cancel-text|text of cancellation|String|`取消`|-|
+|ok-text|confirmation text|String|`confirm`|-|
+|cancel-text|cancellation text|String|`cancel`|-|
 
 #### Picker Methods
 
 ##### refresh(callback, startColumnIndex)
-Reinitialize picker, such as update `data`, `default-index` or `invalid-index`
+Reinitialized picker, like updating `data`, `default-index` or `invalid-index`
 
 |Parameters | Description | Type|
 |----|-----|------|
-|callback|initialization complete callback|Function|
-|startColumnIndex|index of the column to start resetting, default is 0|Function|
+|callback|initialization completes callback|Function|
+|startColumnIndex|the starting index of the column to reset, default value is 0|Function|
 
 ##### getColumnValue(index): activeItemValue
-Get data of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
+Get the data of the currently selected item in a column, need to be called after the `initialed` event is invoked or asynchronously called
 
 |Parameters | Description | Type|
 |----|-----|------|
-|index|index of column|Number|
+|index|the index of each column|Number|
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|activeItemValue|data of selected option|Object: {value, lable, ...}|
+|activeItemValue|value of selected item|Object: {value, lable, ...}|
 
 ##### getColumnValues(): columnsValue
-Get dataset of all column selections, need to be called after the `initialed` event is fired or asynchronously
+Get values of all selected columns, need to be called after the `initialed` event is invoked or asynchronously called
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsValue|dataset of all column selections|Array<{value, lable, ...}>|
+|columnsValue|values of all selected columns|Array<{value, lable, ...}>|
 
 ##### getColumnIndex(index): activeItemIndex
-Get index of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
+Get the index of the currently selected item in the column, need to be called after the `initialed` event is invoked or asynchronously called
 
 |Parameters | Description | Type|
 |----|-----|------|
-|index|index of column|Number|
+|index|the index of column|Number|
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|activeItemIndex|index of selected option|Number|
+|activeItemIndex|the index of selected item|Number|
 
 ##### getColumnIndexs(): columnsIndex
-Get indexes of all column selections, need to be called after the `initialed` event is fired or asynchronously
+Get indexes of all selected columns, need to be called after the `initialed` event is invoked or asynchronously called
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsIndex|indexes of all column selections|Array|
+|columnsIndex|indexes of all selected columns|Array|
 
 ##### setColumnValues(index, values, callback)
-Set data for a column
+Set column data
 
 |Parameters | Description | Type|
 |----|-----|------|
-|index|index of column|Number|
-|values|data of column|Array<{value, lable, ...}>|
-|callback|setting complete callback|Function|
+|index|the index of each column|Number|
+|values|data of each column|Array<{value, lable, ...}>|
+|callback|callback is completed after setting `values`|Function|
 
 #### Picker Events
 
 ##### @initialed()
-Picker data initialization completion, callable `getColumnIndex`, `getColumnIndexs`, `getColumnValue`, `getColumnValues`
+Initialize picker, callable functions are `getColumnIndex`, `getColumnIndexs`, `getColumnValue`, `getColumnValues`
 
 ##### @change(columnIndex, itemIndex, value)
-Picker selections change
+Change pickers' selections
 
 |Parameters | Description | Type|
 |----|-----|------|
-|columnIndex|index of changing column|Number|
-|itemIndex|index of changing option|Number|
-|value|data of changing column selection|Object: {value, lable, ...}|
+|columnIndex|the index of changed column|Number|
+|itemIndex|the index of changed item in the column|Number|
+|value|the value of changed item in the column|Object: {value, lable, ...}|
 
 ##### @confirm(columnsValue)
-Picker confirm selection (only when `is-view` is `false`）
+Confirm picker's selection (only when `is-view` is `false`）
 
 |Parameters | Description | Type|
 |----|-----|------|
-|columnsValue|dataset of all column selections|Array<{value, lable, ...}>|
+|columnsValue|values of all selected columns|Array<{value, lable, ...}>|
 
 ##### @cancel()
-Picker cancel selection (only when `is-view` is `false`）
+Cancel picker's selection (only when `is-view` is `false`）
 
 ##### @show()
-Picker has been displayed (only when `is-view` is `false`）
+Show picker (only when `is-view` is `false`）
 
 ##### @hide()
-Picker has been hidden (only when `is-view` is `false`）
+Hide picker (only when `is-view` is `false`）
 
 ### Appendix
 
-* Non-cascade data source data format
+* The format of non-cascade data source
 
 ```javascript
 [
@@ -144,7 +144,7 @@ Picker has been hidden (only when `is-view` is `false`）
 ]
 ```
 
-* Cascade data source data format
+* The format of cascaded data source
 
 ```javascript
 [

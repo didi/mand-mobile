@@ -3,7 +3,7 @@ title: NoticeBar
 preview: https://didi.github.io/mand-mobile/examples/#/notice-bar
 ---
 
-Usually used for system alerts, event reminders, etc
+Mostly for system alerts, event reminders, etc
 
 ### Import
 
@@ -22,7 +22,7 @@ Vue.component(NoticeBar.name, NoticeBar)
 #### NoticeBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|closable|notice bar is closable|Boolean|`true`|-|
-|time|notice bar retention time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
+|closable|whether the notice bar is closable or not|Boolean|`true`|-|
+|time|display time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
 |icon|notice bar icon|String|`circle-alert`|-|
 

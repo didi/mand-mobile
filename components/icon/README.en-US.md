@@ -13,11 +13,11 @@ import { Icon } from 'mand-mobile'
 Vue.component(Icon.name, Icon)
 ```
 
-### Usage Guide
+### Instruction
 
 Built-in icons can be used directly, `arrow-up/down/left/right`, `circle-alert/cross/right`, `hollo-plus`, `cross`, `spinner`
 
-Other custom icons need to use<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>, svg file name is the icon name
+As for other customized icons, you need to use <a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>, svg file name is the icon name.
 
 1. Install Dependencies
 
@@ -79,4 +79,4 @@ export default {
 |----|-----|------|------|------|
 |name|icon name|String|-|-|
 |size|icon size|String|`md`|`xs`, `sm`, `md`, `lg`|
-|color|icon color|String|`currentColor`|the color value is set as the value of `fill` on the `svg` icon|
+|color|icon color|String|`currentColor`|this color value is set as the value of `fill` on the `svg` icon|

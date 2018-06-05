@@ -3,7 +3,7 @@ title: ImageViewer
 preview: https://didi.github.io/mand-mobile/examples/#/image-viewer
 ---
 
-Used to browse multiple pictures and swipe to switch pictures
+For	 browsing multiple pictures and swiping to switch pictures
 
 ### Import
 
@@ -23,7 +23,7 @@ Vue.component(ImageViewer.name, ImageViewer)
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
 | v-model | viewer display | Boolean | `false` |
-| list |picture list | Array<String> | `[]` | -|
-| initial-index | index of the initial displayed image | Number | `0` | - |
-| has-dots | display the picture index value | Boolean | `true` | - |
+| list |show picture list | Array<String> | `[]` | -|
+| initial-index | initialize the index of displayed image | Number | `0` | - |
+| has-dots | display the index of picture| Boolean | `true` | - |
 

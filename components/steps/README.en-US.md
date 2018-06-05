@@ -3,7 +3,7 @@ title: Steps
 preview: https://didi.github.io/mand-mobile/examples/#/steps
 ---
 
-A navigation bar that guides the user through the process to complete the task and displays the current step
+A navigation bar helps users complete tasks through the process and displays the current step
 
 ### Import
 
@@ -21,5 +21,5 @@ Vue.component(Steps.name, Steps)
 #### Tabs Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|steps | step information data source | Array | - | each element in the array must contain the `name` attribute as a step name|
-|current | current step | Number | `0` | dynamically change current step by modifying the value|
+|steps | array of step information | Array | - | each element in the array must contain the `name` attribute as a step name|
+|current | current step | Number | `0` | dynamically change the current step by modifying this value|

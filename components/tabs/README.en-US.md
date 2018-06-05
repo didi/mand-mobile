@@ -3,7 +3,7 @@ title: Tabs
 preview: https://didi.github.io/mand-mobile/examples/#/tabs
 ---
 
-Used to create a tab page with a content area
+To create a tab page with a content area
 
 ### Import
 
@@ -21,9 +21,9 @@ Vue.component(Tabs.name, Tabs)
 #### Tabs Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|titles|tab bar data source|Array|-|Passing in the array will render the component directly based on the contents of the array, or you can insert a custom title button directly into the control without using this property. This value is an array of strings when `scope-slot` is not used; it is an array of objects when `scope-slot` is used, and each object is used as a parent for props |
+|titles|array of titles of tab bar|Array|-|Passing in the array will render the component directly based on the contents of the array, or you can insert a customized title button directly into the control without using this property. This value is an array of strings while not using `scope-slot`; or an array of objects when using `scope-slot`, and each object is used as props for parent component|
 | show-ink-bar | display underline | Boolean | true | - |
-| ink-bar-length | underline width | Number | 70 | percentage of the width of the label button underlined, must be between `0-100` |
+| ink-bar-length | the width of underline | Number | 70 | the percentage of the width of underline that in the label button, between `0-100` |
 | ink-bar-animate | enable underline animation | Boolean | true | - |
 | default-index | default activated label index | Number | 0 | - |
 | noslide|disable animation transitions|Boolean|`false`|-|
@@ -33,9 +33,9 @@ Vue.component(Tabs.name, Tabs)
 ##### selectTab(index)
 select a tab
 
-|Parameters | Description | Type|
+|Parameters | Description | Type| Default
 |----|-----|------|------|
-| index | index of tab | Number |
+| index | index of tab | Number |-
 
 #### Tabs Events
 

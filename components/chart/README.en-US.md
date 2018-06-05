@@ -3,7 +3,7 @@ title: Chart
 preview: https://didi.github.io/mand-mobile/examples/#/chart
 ---
 
-Chart made with SVG.
+Chart made with SVG, supports polylines printing and display specification setting.
 
 ### Import
 
@@ -21,29 +21,30 @@ Vue.component(Chart.name, Chart)
 #### Chart Props
 | Props | Description | Type | Default | Required |
 |----|-----|------|------|------|
-| size | width and height of chart | Array | `[480, 320]` | - |
-| max | max value in y axis | Number | Leave it blank to use max value in dataset | - |
-| min | min value in y axis | number | Leave it blank to use min value in dataset | - |
-| lines | number of horizontal lines | Number | `5` | - |
-| step | delta value in y axis | Number | Leave it blank to auto compute | - |
-| format | format value in y axis | Function | `val => val` | - |
-| labels | category labels in x axis | Array | - | required |
-| datasets | point datasets | Array | - | - |
-| shift | Y axis label shift value | Number | 0.6 | - |
+| size | size of chart, the value can be a string or number with unit (px)| Array | `[480, 320]` | - |
+| max | maximum in Y-axis | Number | Leave it as blank to automatically calculate the maximum in the dataset | - |
+| min | minimum in Y-axis | number | Leave it as blank to automatically calculate the minimum in the dataset | - |
+| lines | the number of lines in y-axis| Number | `5` | - |
+| step | decreasing step in Y-axis | Number | Leave it as blank to automatically compute the avarage based on `lines`,`max` and `min`| - |
+| format | labels formatting function in Y-axis | Function | `val => val` | - |
+| labels | labels of X-axis | Array | - | required |
+| datasets | data, the format is shown as follows | Array | - | required|
+| shift | shift in Y-axis| Number | 0.6 | - |
 
 #### `datasets`
+Array of objects, each object defines a set of polyline-relevant attributes.
 
 ```javascript
 {
-  color: '#ff5858', // storke color
-  theme: 'heat',    // 'heat', 'region', default is empty
-  width: 1,         // stroke width
-  values: [15, 20]  // points
+  color: '#ff5858', // storke color, optional, default color is orange
+  theme: 'heat',    // theme, the value can be 'heat' or 'region', default value is empty
+  width: 1,         // width, optional, default value is 1
+  values: [15, 20]  // array
 }
 ```
 
-#### Customize Style
-The default chart style as below
+#### Override Style
+The default chart style is shown as below
 
 ```stylus
 .md-chart

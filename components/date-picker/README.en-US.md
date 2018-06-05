@@ -3,7 +3,7 @@ title: DatePicker
 preview: https://didi.github.io/mand-mobile/examples/#/date-picker
 ---
 
-Select date or time, support year/month/day/hour/minute and select by range
+Date or time selecting, supports year/month/day/hour/minute and range selecting
 
 ### Import
 
@@ -21,26 +21,27 @@ Vue.component(DatePicker.name, DatePicker)
 #### DatePicker Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|type|selection type|String|`date`|`date`, `time`, `datetime`, `custom`|
-|custom-types|custom element type contains `date element`, `[yyyy, MM, dd, hh, mm]`|Array|-|only for type 'custom'|
-|minDate|minimum selectable date|Date|-|-|
-|maxDate|maximum selectable date|Date|-|-|
-|default-date|initial selection date|Date|-|-|
-|minute-step|minutes increments|Number|`1`|-|
-|unit-text|elemental unit display text|Array|`['年', '月', '日', '时', '分']`|complex logic use `text-render`|
-|text-render|custom option display content method|Function(typeFormat, column0Value, column1Value, ...): String|-|If `text-render` is used then `unit-text` is invalid, refer to `Appendix`|              
-|today-text|display text of today|String|`今天`|use `&` to take placeholder date numbers like `&(today)`|           
-|half-day-text|display text of morning and afternoon|Array|`['上午', '下午']`|-|            
-|is-twelve-hours|12 hours system|Boolean|`false`|-|            
-|is-view|inline display in page, otherwise it is in `Popup`|Boolean|`false`|-| 
-|title|title of picker|String|-|-| 
-|ok-text|text of confirmation|String|`确认`|-| 
-|cancel-text|text of cancellation|String|`取消`|-| 
+|type|type of selection|String|`date`|`date`, `time`, `datetime`, `custom`|
+|custom-types|customized type contains `date element`, `[yyyy, MM, dd, hh, mm]`|Array|-|valid when the value of type is `custom`|
+|minDate|selectable min date|Date|-|-|
+|maxDate|selectable max date|Date|-|-|
+|default-date|initial selected date|Date|-|-|
+|minute-step|increasing steps of minutes|Number|`1`|-|
+|unit-text|element unit for text displaying|Array|`['y', 'M', 'd', 'h', 'm']`|`text-render` for complex logic|
+|text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|              
+|today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`|           
+|half-day-text|displaying text of morning and afternoon|Array|`['AM', 'PM']`|-|            
+|is-twelve-hours|12-hour time|Boolean|`false`|-|            
+|is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-| 
+|title|title of date-picker|String|-|-| 
+|ok-text|confirmation text|String|`confirm`|-| 
+|cancel-text|cancellation text|String|`cancel`|-| 
+|mask-closable|if popup can be closed through clicking mask|String|`true`|-|
 
 #### DatePicker Methods
 
 ##### getFormatDate(format): dateStr
-Get a datetime string in a specific format (the `date element` in `format` needs to exist in the column data) to be called after the `initialed` event fires or asynchronously
+Get a date string in a specific format (the `date element` of `format` exists in the column data), which is called after `initialed` event is invoked or asynchronously called
 
 |Parameters | Description | Type | Default |
 |----|-----|------|------|
@@ -50,12 +51,12 @@ Returns
 
 |Props | Description | Type |
 |----|-----|------|
-|dateStr|date time string|String|
+|dateStr|date string|String|
 
-> List item value attributes see #Appendix
+> Refer to #Appendix for attributes of list items
 
 ##### getColumnValue(index): activeItemValue
-Get data of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
+Get value of the currently selected item in the column, which is called after `initialed` event is invoked or asynchronously called
 
 |Parameters | Description | Type|
 |----|-----|------|
@@ -65,19 +66,19 @@ Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|activeItemValue|data of selected option|Object: {value, lable, ...}|
+|activeItemValue|value of selected item|Object: {value, lable, ...}|
 
 ##### getColumnValues(): columnsValue
-Get dataset of all column selections, need to be called after the `initialed` event is fired or asynchronously
+Get all values of currently seleted items, which is called after `initialed` event is invoked or asynchronously called
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsValue|dataset of all column selections|Array<{value, lable, ...}>|
+|columnsValue|values of all selected items in the column|Array<{value, lable, ...}>|
 
 ##### getColumnIndex(index): activeItemIndex
-Get index of the currently selected option in a column, need to be called after the `initialed` event is fired or asynchronously
+Get the index of the currently selected item in the column, which is called after `initialed` event is invoked or asynchronously called
 
 |Parameters | Description | Type|
 |----|-----|------|
@@ -87,37 +88,37 @@ Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|activeItemIndex|index of selected option|Number|
+|activeItemIndex|index of selected item|Number|
 
 ##### getColumnIndexs(): columnsIndex
-Get indexes of all column selections, need to be called after the `initialed` event is fired or asynchronously
+Get all indexes in the column, which is called after `initialed` event is invoked or asynchronously called
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsIndex|indexes of all column selections|Array|
+|columnsIndex|indexes of seletced items in the column|Array|
 
 #### DatePicker Events
 
 ##### @initialed()
-Picker data initialization completion, callable `getColumnIndex`, `getColumnIndexs`, `getColumnValue`, `getColumnValues`
+Initialize date picker, callable functions are `getColumnIndex`, `getColumnIndexs`, `getColumnValue`, `getColumnValues`
 
 ##### @change(columnIndex, itemIndex, value)
-Picker selections change
+Change selections of date picker
 
 |Parameters | Description | Type|
 |----|-----|------|
-|columnIndex|index of changing column|Number|
-|itemIndex|index of changing option|Number|
-|value|data of changing column selection|Object: {value, lable, ...}|
+|columnIndex|change the index of column|Number|
+|itemIndex|change the index of selected item|Number|
+|value|change the value of selected item|Object: {value, lable, ...}|
 
 ##### @confirm(columnsValue)
-Picker confirm selection (only when `is-view` is `false`）
+Confirm the selection of date picker(only when `is-view` is `false`）
 
 |Parameters | Description | Type|
 |----|-----|------|
-|columnsValue|dataset of all column selections|Array<{value, lable, ...}>|
+|columnsValue|values of selected items in the column|Array<{value, lable, ...}>|
 
 #### Appendix
 
@@ -129,16 +130,16 @@ const columnData = [
   // year
   [
     {
-      text: '2017年', // display text
+      text: 'Year 2017', // display date
       value: 2017, // display value
-      typeFormat: 'yyyy' // element type yyyy, MM, dd, hh, mm, HalfDay
+      typeFormat: 'yyyy' // the type of date: yyyy, MM, dd, hh, mm, HalfDay
     }
   ],
   // month, day, hour, minute
   [
     //..,
   ],
-  // morning/afternoon
+  // AM/PM
   [
     {
       text: 'am',
@@ -163,9 +164,9 @@ const columnData = [
       textRender() {
         const args = Array.prototype.slice.call(arguments)
         const typeFormat = args[0] // type
-        const column0Value = args[1] // selection of 1st column
-        const column1Value = args[2] // selection of 2nd column
-        const column2Value = args[3] // selection of 3rd column
+        const column0Value = args[1] // selected items in the first column
+        const column1Value = args[2] // selected items in the second column
+        const column2Value = args[3] // selected items in the third column
         // ...
       },
     }

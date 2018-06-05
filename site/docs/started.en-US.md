@@ -4,7 +4,7 @@ title: Quickstart
 
 #### Scaffold
 
-**New project** can be initialized and integrate `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to [Installation](#docs/started?anchor=Installation) for **existing project**.
+**New project** can be initialized and integrated with `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to [Installation](#docs/started?anchor=Installation) for **existing projects**.
 
 * vue cli 2.0([Template](https://github.com/mand-mobile/mand-mobile-template))
 
@@ -110,11 +110,11 @@ Vue.use(mandMobile)
 
 ##### FastClick
 
-To avoid click problems caused by [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile), it is recommended to introduce [FastClick](https://github.com/ftlabs/fastclick)
+To avoid click problems caused by [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile), [FastClick](https://github.com/ftlabs/fastclick) is recommended to import.
 
 ##### Release Package Directory
 
-[Release Package](https://unpkg.com/mand-mobile/) includes the following different directories, which are applicable to the code of different scenarios. You can select a directory to load according to actual needs：
+[Release Package](https://unpkg.com/mand-mobile/) includes the following different directories, which are applicable in different scenarios. You can select one directory to load according to actual needs：
 
 ```
 ├── mand-mobile
@@ -129,7 +129,7 @@ To avoid click problems caused by [browser compatibility](https://developer.mozi
 
 ##### `Px` to `Rem`
 
-Component style is in `px` units and is referenced to the `iPhone 6` screen "physical pixel" width `750` (that is, `2` times the size of the normal "logical pixel"). In actual projects, you can use `postcss-pxtorem` to convert `px` units to `rem` depending on the situation, so as to achieve the effect of equal scaling under different devices.
+Component style is in `px` units and referenced to the `iPhone 6` screen, whose "physical pixel" width is `750` (that is, `2` times the size of the normal "logical pixel"). In actual projects, you can use `postcss-pxtorem` to convert `px` to `rem` depending on the exact situation, so as to achieve the effect of equal scaling in different devices.
 
 For example `1rem = 100px`:
 
@@ -176,7 +176,7 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
 
 #### Usage
 
-This is a form page developed using `Mand Mobile`. More components can be found in <a href="#/docs/preview">Component Preview</a>.
+This is a form page developed by `Mand Mobile`. More components can be found in <a href="#/docs/preview">Component Preview</a>.
 
 ```vue
 <template>

@@ -3,8 +3,7 @@ title: Popup
 preview: https://didi.github.io/mand-mobile/examples/#/popup
 ---
 
-Triggered by other controls, the screen slides out or pops up a custom content area
-
+A customized content area slides out or pops up on the screen, triggered by other controls.
 ### Import
 
 ```javascript
@@ -22,34 +21,34 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 #### Popup Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|popup display|Boolean|`false`|-|
-|has-mask|masked layer|Boolean|`true`|-|
-|mask-closable|click on the mask to close the popup|Boolean|`true`|-|
-|position|popup position|String|`center`|`center`, `top`, `bottom`, `left`, `right`|
-|transition|popup over animation|String|`fade, slide-up/down/left/right`|-|
-|prevent-scroll|prevent rolling breakdown|Boolean|`false`|-|
-|prevent-scroll-exclude|exclusions of preventing rolling breakdown|String/HTMLElement|-|-|
+|v-model|display popup or not|Boolean|`false`|-|
+|has-mask|has mask or not|Boolean|`true`|-|
+|mask-closable|if the popup will be closed when clicking mask|Boolean|`true`|-|
+|position|the position of popup|String|`center`|`center`, `top`, `bottom`, `left`, `right`|
+|transition|the animation effect of popup|String|`fade, slide-up/down/left/right`|-|
+|prevent-scroll|whether to prevent from scrolling or not|Boolean|`false`|-|
+|prevent-scroll-exclude|excluded elements of prevented scrolling|String/HTMLElement|-|-|
 
 #### PopupTitleBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |title|title of popup|String|-|-|
-|ok-text|text of confirmation|String|-|no confirmation button if empty|
-|cancel-text|text of cancellation|String|-|no cancel button if empty|
+|ok-text|confirmation text|String|-|no confirmation button if empty|
+|cancel-text|cancellation text|String|-|no cancellation button if empty|
 
 #### Popup Events
 
 #### @beforeShow()
-Popup will display
+Popup will be shown
 
 #### @show()
-Popup has been displayed
+Show popup
 
 #### @beforeHide()
-Popup will hide
+Popup will be hiden
 
 #### @hide()
-Popup has been hidden
+Hide popup
 
 #### PopupTitleBar Events
 

@@ -1,9 +1,9 @@
 ---
-title: DropMenu
+title: Drop-down Menu
 preview: https://didi.github.io/mand-mobile/examples/#/drop-menu
 ---
 
-Drop-down menu for list filtering
+Drop-down menu is for list filtering
 
 ### Import
 
@@ -21,9 +21,9 @@ Vue.component(DropMenu.name, DropMenu)
 #### DropMenu Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|data|data source|Array<{text, disabled, options, ...}>|`[]`|type of `options` is `Array<{text, disabled, ...}>`|
+|data|data source|Array<{text, disabled, options, ...}>|`[]`|`disabled` is whether to disable a button or not; the type of `options` is `Array<{text, disabled, ...}>`|
 |defaultValue|initial value|Array<String>|`[]`|-|
-|option-render|return options rendering content|Function({text, disabled, ...}):String|-|`vue 2.1.0+` can use `slot-scope`，refer to `Radio`|
+|option-render|return rendering contents of each option|Function({text, disabled, ...}):String|-|`vue 2.1.0+` can use `slot-scope`，refer to `Radio`|
 
 #### DropMenu Methods
 
@@ -52,7 +52,7 @@ Returns
 #### DropMenu Events
 
 ##### @change(barItem, listItem)
-`listItem` selection changes
+Select some event
 
 |Props | Description | Type|
 |----|-----|------|
@@ -60,7 +60,7 @@ Returns
 |listItem|data of `listItem`|Object: {text, disabled, ...}|
 
 ##### @show()
-Drop-down menu has been shown
+Show events on drop-down menu
 
 ##### @hide()
-Drop-down menu has been hidden
+Hide events on drop-down menu

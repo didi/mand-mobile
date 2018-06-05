@@ -3,7 +3,7 @@ title: ImageReader
 preview: https://didi.github.io/mand-mobile/examples/#/image-reader
 ---
 
-Used for photo album reading or to take photos
+For photo album reading or photos taking
 
 ### Import
 
@@ -11,7 +11,7 @@ Used for photo album reading or to take photos
 import { ImageReader } from 'mand-mobile'
 import imageProcessor from 'mand-mobile/lib/image-reader/image-processor'
 
-// Image processing plugin, usage refer to #imageProcessor
+// Image processing plugin, refer to #imageProcessor for usage
 
 Vue.component(ImageReader.name, ImageReader)
 ```
@@ -29,15 +29,15 @@ Vue.component(ImageReader.name, ImageReader)
 |mime|supported image types|Array|`*`|such as `['jpeg','png']`|
 |is-camera-only|only support photographing|Boolean|`false`|-|
 |is-multiple|support selection of multiple sheets|Boolean|`false`|-|
-|amount|number of sheets|Number|-|only valid when `is-multiple` is `true`|
+|amount|number of sheets|Number|-|valid only when `is-multiple` is `true`|
 
 #### ImageReader Events
 
 ##### @select
-Picture selection completion has not yet started reading
+Picture selection completed, while reading hasn't been started yet
 
 ##### @complete(name, { dataUrl, blob })
-Picture read completion
+Picture reading completed
 
 |Parameters | Description | Type|
 |----|-----|------|
@@ -46,17 +46,17 @@ Picture read completion
 |blob|Image Blob object for `formData`|Blob|
 
 ##### @error(name, { code, msg })
-Picture read failed
+Picture selection and reading failed
 
 |Parameters | Description | Type|
 |----|-----|------|
 |name|identifier|String|
-|code|error code, see appendix|String|
-|msg|error message, see appendix|String|
+|code|error identifier|String|
+|msg|error message|String|
 
 ### imageProcessor
 
-Used for image axial correction, picture quality compression, height control
+For image axial correction, picture quality compression and height control
 
 #### Import
 
@@ -65,7 +65,7 @@ import imageProcessor from 'mand-mobile/lib/image-reader/image-processor'
 
 /**
  * options Image processing configuration
- * fn(dataUrl, blob) Process complete callback
+ * fn(dataUrl, blob) Process completes callback
  * @return Promise({dataUrl, blob})
  */
 imageProcessor(options[, fn])
