@@ -78,6 +78,7 @@
 
 <script>
 import MfeTable from './Table'
+import { localStore } from '../assets/js/util'
 import algoliasearch from 'algoliasearch'
 
 export default {
@@ -230,7 +231,9 @@ export default {
     },
 
     changeLang () {
-      location.href = location.href.replace(this.lang, this.lang === 'zh-CN' ? 'en-US' : 'zh-CN')
+      const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+      localStore('lang', lang)
+      location.href = location.href.replace(this.lang, lang)
 
       if (~location.href.indexOf('home')) {
        location.reload()
