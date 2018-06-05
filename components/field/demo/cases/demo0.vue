@@ -57,5 +57,5 @@ export default {
     padding 0 32px
   .strong-tip
     font-size 24px
-    color color-text-hightlight
+    color color-text-highlight
 </style>

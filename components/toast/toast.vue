@@ -86,21 +86,22 @@ export default {
     position relative
     z-index toast-zindex
     &.has-icon .md-toast-content
-      padding-left 100px
+      padding-left toast-text-left
     .md-toast-content
       position relative
       display inline-block
       text-align left
-      padding 32px
-      border-radius 4px
+      padding toast-gap
+      border-radius toast-radius
       font-size toast-font-size
       color toast-color
       background-color toast-fill
       box-sizing content-box
-    svg
+    .md-icon
       position absolute
-      top 30px
-      left 32px
+      top 50%
+      left toast-gap
+      transform translateY(-50%)
     .md-popup
       .md-popup-box
         width 468px

@@ -152,8 +152,8 @@ export default {
   z-index tab-zindex
   height tab-height
   font-size tab-font-size
-  color color-gray-1
-  background color-bg-base
+  color tab-text-color
+  background tab-bg
 
   .md-tab-titles-wrpper
     position relative

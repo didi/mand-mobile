@@ -325,7 +325,7 @@ block()
     background-color color-bg-base
   .md-cashier-container
     block()
-    background color-bg-base
+    background cashier-bg
     -webkit-touch-callout none
     -webkit-user-select none
     transition all .3s
@@ -360,16 +360,16 @@ block()
             block()
             text-align center
             &.choose-title
-              font-size font-body-normal
-              color color-text-minor
+              font-size cashier-choose-title-font-size 
+              color cashier-choose-title-color
             &.choose-number
               margin-top 35px
-              font-size 72px
-              color color-text-base
+              font-size cashier-choose-amount-font-size
+              color cashier-choose-amount-color
             &.choose-describe
               margin-top 15px
-              font-size font-minor-normal
-              color color-text-minor
+              font-size cashier-choose-describe-font-size
+              color cashier-choose-describe-color
         .choose-channel
           clearfix()
           max-height 500px
@@ -385,8 +385,8 @@ block()
               block()
               position relative
               padding 15px 40px 15px 0
-              font-size font-minor-large
-              color color-text-minor
+              font-size cashier-choose-channel-font-size
+              color cashier-choose-channel-color
               box-sizing border-box
               .item-icon
                 float left
@@ -401,11 +401,11 @@ block()
                 right 0
                 transform translateY(-50%)
                 &.md-icon-circle-right
-                  color color-primary
+                  color cashier-choose-channel-icon-color
           .choose-channel-more
             margin-top 10px
-            font-size font-minor-large
-            color color-text-minor
+            font-size cashier-choose-more-font-size
+            color cashier-choose-more-color
             text-align center
             &:after
               content ""

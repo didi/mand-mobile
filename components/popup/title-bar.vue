@@ -79,8 +79,8 @@
 .md-popup-title-bar
   width 100%
   height popup-title-bar-height
-  background color-bg-base
-  hairline(bottom, color-border-base)
+  background popup-title-bar-bg
+  hairline(bottom, popup-title-bar-border-color)
   clearfix()
   &>div
     display flex
@@ -92,7 +92,7 @@
     text-overflow ellipsis
     word-break break-word
     white-space nowrap
-    color color-text-base
+    color popup-title-bar-color-title
   .title-bar-left, .title-bar-right
     width 20%
     // padding 0 h-gap-lg
@@ -102,7 +102,7 @@
     width 60%
     font-size popup-title-bar-font-size-title
   .title-bar-left
-    color color-text-minor
+    color popup-title-bar-color-button-left
   .title-bar-right
-    color color-text-hightlight
+    color popup-title-bar-color-button-right
 </style>
