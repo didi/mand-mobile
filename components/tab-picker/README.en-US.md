@@ -3,7 +3,7 @@ title: TabPicker
 preview: https://didi.github.io/mand-mobile/examples/#/tab-picker
 ---
 
-The tab panel supports cascade or non-cascaded selection of the bottom of page
+Support cascaded or non-cascaded selections in the footer
 
 ### Import
 
@@ -12,10 +12,10 @@ import { TabPicker } from 'mand-mobile'
 
 Vue.component(TabPicker.name, TabPicker)
 ```
+### Instruction
 
-### user guidance
+The title of the tab panel supports customized rendering (via slot-scope)
 
-The title of the tab panel supports custom rendering (via slot-scope)
 ```html
   <!-- props is data for each tab tag -->
   <div
@@ -26,7 +26,9 @@ The title of the tab panel supports custom rendering (via slot-scope)
       {{ props.label }}
     </div>
 ```
-Asynchronous cascading panel supports incoming slots
+
+Asynchronous cascading panel supports passing slots
+
 ```html
   <!--Acquiring data asynchronously loading slot-->
   <div slot="loading">loading tag</div>
@@ -43,56 +45,56 @@ Asynchronous cascading panel supports incoming slots
 #### TabPicker Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|tabpicker show or hide|Boolean|`false`|-|
-|data|data source|Array|`[]`|data format reference `Appendix`|
-|data-struct|data cascaded type|String|`noCascade`|`normal`, `cascade`, `async`|
-|default-index|initial selected option index of each column|Array|`[]`|-|
-|option-render|return option rendering content|Array<Function({text, disabled, ...}):String>|`[]`|`vue 2.1.0+` surpports `slot-scope`，reference `Appendix`|
-|async-func|acquiring data function asynchronously|Function(value, callBack)|-|-|
-|title|title of tabpicker|String|-|-|
+|v-model|whether to show tabpicker or not|Boolean|`false`|-|
+|data|data source|Array|`[]`|refer to `Appendix` for data format|
+|data-struct|the type of cascaded data|String|`noCascade`|`normal`, `cascade`, `async`|
+|default-index|the index of initially selected item|Array|`[]`|-|
+|option-render|return rendering contents of each option|Array<Function({text, disabled, ...}):String>|`[]`|`vue 2.1.0+` surpports `slot-scope`，see `Appendix`|
+|async-func|acquire data asynchronously|Function(value, callBack)|-|-|
+|title|the title of tabpicker|String|-|-|
 |ok-text|text of confirmation button|String|`confirm`|-|
 |cancel-text|text of cancellation button|String|`cancel`|-|
-|mask-closable|click on the mask to close the tabpicker|Boolean|`true`|-|
+|mask-closable|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
 
 #### TabPicker Methods
 
 ##### getSelectedItem()
-Get the value of all column selections
+Get all values of selected items in the column
 
 Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsValue|the value of all column selections|Array<{value, lable, ...}>|
+|columnsValue|values of selected items in the column|Array<{value, lable, ...}>|
 
 #### TabPicker Events
 
 ##### @change(select)
-TabPicker has been changed the selection of some column
+Change selections of columns in the tabpicker
 
 |Parameters | Description | Type|
 |----|-----|------|
 |select|the value of change selections|Object: {value,lable, ...}|
 
 ##### @confirm(columnsValue)
-TabPicker has been clicked confirmation button
+Confirm selections in the tabpicker
 
 |Parameters | Description | Type|
 |----|-----|------|
 |columnsValue|the value of all column selections|Array<{value, lable, ...}>|
 
 ##### @cancel()
-TabPicker has been clicked cancellation button
+Cancel selections in the tabpicker
 
 ##### @show()
-TabPicker has been displayed
+Show tabPicker
 
 ##### @hide()
-TabPicker has been hidden
+Hide tabPicker
 
 ### Appendix
 
-* Non-cascade data source data format
+* Data format of non-cascaded data source 
 
 ```javascript
 [
@@ -115,7 +117,7 @@ TabPicker has been hidden
 ]
 ```
 
-* Cascade data source data format
+* Data format of cascaded data source 
 
 ```javascript
 [
@@ -163,7 +165,7 @@ TabPicker has been hidden
 ]
 ```
 
-* Custom rendering option
+* Customized rendering option
 
 ```html
 <template>
