@@ -31,8 +31,8 @@ Vue.component(Dialog.name, Dialog)
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
 | position | the position of popup, `center/top/bottom/left/right` | String | `center`| - |
 | transition | the animation effect of popup, `fade, slide-up/down/left/right`  | String | `fade` | - |
-| prevent-scroll | whether to prevent scrolling or not| Boolean | false | - |
-| prevent-scroll-exclude | excluded elements of preventing scrolling| String | - | - |
+| prevent-scroll | whether to prevent from scrolling or not| Boolean | false | - |
+| prevent-scroll-exclude | excluded elements of prevented scrolling| String | - | - |
 
 #### Dialog Slots
 Default slots is used as the content of dialog
@@ -63,7 +63,7 @@ Dynamically create a confirmation dialog
 | content | content of dialog | String | -|
 | cancelText | cancelation button | String | `Cancel` |
 | confirmText | confirmation button | String | `Confirm` |
-| onConfirm | callback function is invoked when user clicks confirmation button | Function | -|
+| onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 
 ##### Dialog.alert(props)
 Dynamically create an alert dialog
@@ -74,7 +74,7 @@ Dynamically create an alert dialog
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
-| onConfirm | callback function is invoked when user clicks confirmation button | Function | -|
+| onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 
 ##### Dialog.succeed(props)
 Dynamically create a success dialog
@@ -84,7 +84,7 @@ Dynamically create a success dialog
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
-| onConfirm | callback function is invoked when user clicks confirmation button| Function | -|
+| onConfirm | callback function is invoked when clicking confirmation button| Function | -|
 
 ##### Dialog.failed(props)
 Dynamically create a fail dialog
@@ -94,4 +94,4 @@ Dynamically create a fail dialog
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
-| onConfirm | callback function is invoked when user clicks confirmation button| Function | -|
+| onConfirm | callback function is invoked when clicking confirmation button| Function | -|
