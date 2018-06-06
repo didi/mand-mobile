@@ -3,7 +3,7 @@ title: Agree
 preview: https://didi.github.io/mand-mobile/examples/#/agree
 ---
 
-Toggle check state
+For toggling states
 
 ### Import
 
@@ -21,16 +21,16 @@ Vue.component(Agree.name, Agree)
 #### Agree Props
 | Props | Description | Type | Default |
 |----|-----|------|------|
-| v-model | Controlled boolean value, whether is checked or not | Boolean | `false` |
-| disabled | Whether disable it or not | Boolean | `false` |
-| size | The size of component, can be set as `xs`, `sm`, `md`, `lg` | String | `md` |
+| v-model | whether it is checked or not | Boolean | `false` |
+| disabled | Whether to disable it or not | Boolean | `false` |
+| size | The size of icon, can be set as `xs`, `sm`, `md`, `lg` | String | `md` |
 
 #### Agree Instance Events
 
 ##### @change(name, checked)
-Emit when check state changed
+Invoked when checked state is changed
 
 | Props | Description | Type |
 |----|-----|------|
-| name | The unique name of component | Number, String |
+| name | The unique name of radio button | Number/String |
 | checked | Whether it is checked or not | Boolean |
