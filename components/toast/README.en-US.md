@@ -21,10 +21,10 @@ Dynamically create a toast
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| icon | icon of message type | String | - |Refer to `Icon` component |
-| content | message content | String/Number | - |- |
-| duration | delay time to close in millisecond, set `0` will always be visible | Number | `3000` | - |
-| hasMask | whether to show a transparent mask, which will prevent user touch action | Boolean | `false` | - |
+| icon | name of icon | String | - |Refer to `Icon` component for customized icons|
+| content | content of message| String/Number | - |- |
+| duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
+| hasMask | whether to show a transparent mask, which will prevent users from clicking| Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
 #### Toast.info(content, duration, hasMask, parentNode)
@@ -32,19 +32,19 @@ Dynamically create a text toast
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| content | message content | String/Number | - |- |
-| duration | delay time to close in millisecond, set `0` will always be visible | Number | `3000` | - |
-| hasMask | whether to show a transparent mask, which will prevent user touch action | Boolean | `false` | - |
+| content | content of message| String/Number | - |- |
+| duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
+| hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
 #### Toast.succeed(content, duration, hasMask, parentNode)
-Dynamically create a succeed toast
+Dynamically create a success toast
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| content | message content | String/Number | - |- |
-| duration | delay time to close in millisecond, set `0` will always be visible | Number | `3000` | - |
-| hasMask | whether to show a transparent mask, which will prevent user touch action | Boolean | `false` | - |
+| content | content of message | String/Number | - |- |
+| duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
+| hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
 #### Toast.failed(content, duration, hasMask, parentNode)
@@ -52,9 +52,9 @@ Dynamically create a failed toast
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| content | message content | String/Number | - |- |
-| duration | delay time to close in millisecond, set `0` will always be visible | Number | `3000` | - |
-| hasMask | whether to show a transparent mask, which will prevent user touch action | Boolean | `false` | - |
+| content | content of message| String/Number | - |- |
+| duration |toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
+| hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
 #### Toast.loading(content, duration, hasMask, parentNode)
@@ -62,9 +62,9 @@ Dynamically create a loading toast
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| content | message content | String/Number | - |- |
-| duration | delay time to close in millisecond, set `0` will always be visible | Number | `0` | - |
-| hasMask | whether to show a transparent mask, which will prevent user touch action | Boolean | `false` | - |
+| content | content of message| String/Number | - |- |
+| duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `0` | - |
+| hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
 #### Toast.hide()

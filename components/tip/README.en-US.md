@@ -21,13 +21,13 @@ Vue.component(Tip.name, Tip)
 #### Tip Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|------|
-| content | message content | String | Number | - |
-| placement | position of tip | String | `top` | `top`, `left`, `bottom`, `right`|
+| content |the content of tip| String | Number | - |
+| placement | the position of tip | String | `top` | `top`, `left`, `bottom`, `right`|
 
 #### Tip Instance Events
 
 ##### @show()
-Emit after dialog is shown
+Invoked after dialog is shown
 
 ##### @hide()
-Emit after dialog is hidden
+Invoked after dialog is hidden
