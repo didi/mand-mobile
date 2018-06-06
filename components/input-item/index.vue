@@ -306,6 +306,12 @@ export default {
   mounted() {
     this.isVirtualKeyboard && this.$_initNumberKeyBoard()
   },
+  beforeDestroy() {
+    const keyboard = this.inputNumberKeyboard
+    if (keyboard && keyboard.$el) {
+      document.body.removeChild(keyboard.$el)
+    }
+  },
 
   methods: {
     // MARK: private methods
