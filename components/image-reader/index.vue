@@ -135,7 +135,9 @@ export default {
 
       /* istanbul ignore next */
       if (fileElement.files && fileElement.files.length) {
-        this.$_emitter('select')
+        this.$_emitter('select', {
+          files: Array.prototype.slice.call(fileElement.files),
+        })
 
         // error 超出每次上传最大张数
         if (this.amount && fileElement.files.length > this.amount) {
@@ -150,7 +152,7 @@ export default {
         this.$_readFile(fileElement)
       }
     },
-    $_onReaderComplete({errorCode, dataUrl}) {
+    $_onReaderComplete({errorCode, dataUrl, file}) {
       if (errorCode) {
         this.$_emitter('error', {
           code: errorCode,
@@ -162,6 +164,7 @@ export default {
       this.$_emitter('complete', {
         blob: dataURItoBlob(dataUrl),
         dataUrl: dataUrl,
+        file,
       })
       this.$_cleaeFile()
     },
