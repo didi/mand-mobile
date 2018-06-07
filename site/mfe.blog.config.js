@@ -154,7 +154,7 @@ module.exports = {
         {
           name: 'changelog',
           text: 'Change Log',
-          markdown: resolve('CHANGELOG.md'),
+          markdown: resolve('CHANGELOG.en-US.md'),
         },
         {
           name: 'theme',
@@ -187,17 +187,17 @@ module.exports = {
         {
           name: 'color',
           text: 'Color',
-          markdown: resolve('site/docs/design/color.md'),
+          markdown: resolve('site/docs/design/color.en-US.md'),
         },
         {
           name: 'font',
           text: 'Font',
-          markdown: resolve('site/docs/design/font.md'),
+          markdown: resolve('site/docs/design/font.en-US.md'),
         },
         {
           name: 'other',
           text: 'Other',
-          markdown: resolve('site/docs/design/other.md'),
+          markdown: resolve('site/docs/design/other.en-US.md'),
         }
       ]
     }]

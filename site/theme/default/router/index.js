@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../Home'
 import Error from '../Error'
+import { localStore } from '../assets/js/util'
 import Routes from '../../../public/route'
 
 Vue.use(Router)
@@ -22,11 +23,12 @@ Routes.map((item, index) => {
   return item
 })
 
+const langCached = localStore('lang') || 'en-US'
 const routes = [
   ...Routes,
   {path: '/en-US/home', component: Home, meta: {noMenu: true}},
   {path: '/zh-CN/home', component: Home, meta: {noMenu: true}},
-  {path: '/', redirect: '/en-US/home'},
+  {path: '/', redirect: `/${langCached}/home`},
   {path: '*', component: Error, meta: {noMenu: true}},
 ]
 
