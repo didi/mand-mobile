@@ -3,7 +3,7 @@ title: InputItem
 preview: https://didi.github.io/mand-mobile/examples/#/input-item
 ---
 
-Single-line text input box to support special scene text formatting
+Single-line text input, supports text formatting in exact scenarios
 
 ### Import
 
@@ -21,33 +21,33 @@ Vue.component(InputItem.name, InputItem)
 #### InputItem Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|type|input type, special type with text formatting|String|`text`|`text`,`bankCard`,`phone`,<br/>`money`,`password`|
-|name|input name|String|-|one of the event arguments that can be used to distinguish multi inputs|
+|type|input type, special type has text formatting|String|`text`|`text`,`bankCard`,`phone`,<br/>`money`,`password`|
+|name|name of input|String|-|one of the event arguments, is used to distinguish multi inputs|
 |v-model|value of input|String|-|-|
-|title|label of input|String|-|support `HtmlFragment`，also use `slot(name: left)` instead|
+|title|title of input|String|-|support `HtmlFragment` and `slot(name: left)`|
 |placeholder|placeholder of input|String|-|-|
-|maxlength|maximum number of characters that can be entered|String/Number|-|`phone` type is fixed at 11|
+|maxlength|maximum number of characters that can be entered|String/Number|-|the maxlength of `phone` type is fixed at 11|
 |size|size of input|String|`normal`|`large`,`normal`|
 |align|text alignment|String|`left`|`left`,`center`,`right`|
 |error|error message|String|-|-|
 |readonly|readonly|Boolean|`false`|-|
 |disabled|disabled|Boolean|`false`|-|
-|is-title-latent|floating Label|Boolean|`false`|label will display when input is focused or content is not empty|
-|is-highlight|input highlighted|Boolean|`false`|only affects the `placeholder` color|
-|is-formative|input text is automatically formatted according to the type|Boolean|`type` is `bankCard`, `phone`, `money` defaults to `true`, otherwise `false`|-|
-|formation|input text formatting callback method|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|incoming parameter `name` is the name of input, `curValue` is input value, `curPos` is the current position of input cursor, and the `value` formatted value is returned. `range` is the position of input cursor after formatting.|
-|clearable|use clear control|Boolean|`false`|-|
-|is-virtual-keyboard|use financial numeric keypad control|Boolean|`false`|-|
-|virtual-keyboard-disorder|financial numeric keypad numbers keys out of order|Boolean|`false`|-|
-|virtual-keyboard-ok-text|financial numeric keypad confirmation key text|String|`确定`|-|
+|is-title-latent|hide title or not|Boolean|`false`|title will be displayed when input is focused or content is not empty|
+|is-highlight|the input is highlighted or not|Boolean|`false`|only affect the font color of `placeholder`|
+|is-formative|if the input text is automatically formatted according to the type|Boolean|the default value is `true` when `type` is `bankCard`, `phone` or `money`, otherwise `false`|-|
+|formation|input text formatting callback function|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|passing parameter `name` is the name of input, `curValue` is input value, `curPos` is the current position of input cursor, and returned `value` is formatted value. `range` is the position of input cursor after formatting|
+|clearable|use clear control or not|Boolean|`false`|-|
+|is-virtual-keyboard|if use financial numeric keypad control|Boolean|`false`|-|
+|virtual-keyboard-disorder|if number keys of financial numeric keypad is out of order|Boolean|`false`|-|
+|virtual-keyboard-ok-text|confirmation key texts of financial numeric keypad|String|`confirm`|-|
 
 #### InputItem Slots
 
 #### left
-Left slot, generally used to place icons, etc.
+Left slot, generally is used to place icons, etc.
 
 #### right
-Right slot, generally used to place icons, etc.
+Right slot, generally is used to place icons, etc.
 
 #### InputItem Methods
 
@@ -69,13 +69,13 @@ Input gets focus
 Input loses focus
 
 ##### @change(name, value)
-Input value change
+Change the value of input
 
 ##### @confirm(name, value)
 Input value confirmation, valid only when using a financial numeric keypad or component within a `form` element
 
 ##### @keyup(name, event)
-key press, trigger only if is-virtual-keyboard is false
+key press, is invoked only if `is-virtual-keyboard` is false
 
 ##### @keydown(name, event)
-key release, trigger only if is-virtual-keyboard is false
+key release, is invoked only if `is-virtual-keyboard` is false
