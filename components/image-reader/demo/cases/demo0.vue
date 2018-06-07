@@ -58,11 +58,16 @@ export default {
     }
   },
   methods: {
-    onReaderSelect() {
+    onReaderSelect(name, {files}) {
+      files.forEach(file => {
+        console.log('[Mand Mobile] ImageReader Selected:', 'File Name ' + file.name)
+      })
       Toast.loading('图片读取中...')
     },
-    onReaderComplete(name, {dataUrl}) {
+    onReaderComplete(name, {dataUrl, file}) {
       const demoImageList = this.imageList[name] || []
+
+      console.log('[Mand Mobile] ImageReader Complete:', 'File Name ' + file.name)
 
       demoImageList.push(dataUrl)
       this.$set(this.imageList, name, demoImageList)
