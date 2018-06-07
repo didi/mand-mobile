@@ -28,6 +28,8 @@ Vue.component(Cashier.name, Cashier)
 |payment-title|支付金额标题|String|`支付金额`|支持`html fragment`|
 |payment-amount|支付金额|String|`0.00`|支持`html fragment`|
 |payment-describe|支付金额说明|String|-|支持`html fragment`|
+|pay-button-text|确认支付按钮文案|String|`确认支付`|支持`html fragment`|
+|more-button-text|更多支付渠道按钮文案|String|`更多支付方式`|支持`html fragment`|
 
 #### Cashier Methods
 
@@ -63,12 +65,17 @@ Vue.component(Cashier.name, Cashier)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |text|支付成功说明 | String |`支付成功`|支持`html fragment`|
+|buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
+|handler| 按钮点击回调 | Function | - | - |
 
 * `fail` option
 
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |text|支付失败说明 | String |`支付失败，请稍后重试`|支持`html fragment`|
+|buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
+|handler| 按钮点击回调 | Function | - | - |
+
 
 #### Cashier Events
 

@@ -33,17 +33,23 @@ Vue.component(ImageReader.name, ImageReader)
 
 #### ImageReader Events
 
-##### @select
+##### @select(name, { files })
 Picture selection completed, while reading hasn't been started yet
 
-##### @complete(name, { dataUrl, blob })
+|Parameters | Description | Type|
+|----|-----|------|
+|name|identifier|String|
+|files|image file objects set|Array<File>|
+
+##### @complete(name, { dataUrl, blob, file })
 Picture reading completed
 
 |Parameters | Description | Type|
 |----|-----|------|
 |name|identifier|String|
 |dataUrl|base64|String|
-|blob|Image Blob object for `formData`|Blob|
+|blob|image Blob object for `formData`|Blob|
+|file|image file object|File|
 
 ##### @error(name, { code, msg })
 Picture selection and reading failed
