@@ -39,7 +39,7 @@
 	</div>
 </template>
 
-<script>import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier} from 'mand-mobile'
+<script>import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier, Toast} from 'mand-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -132,7 +132,12 @@ export default {
         })
       } else {
         this.createPay().then(() => {
-          this.cashier.next(this.cashierResult)
+          this.cashier.next(this.cashierResult, {
+            buttonText: '好的',
+            handler: () => {
+              Toast.info(`${this.cashierResult}点击`)
+            },
+          })
         })
       }
     },

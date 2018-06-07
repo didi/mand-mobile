@@ -71,11 +71,16 @@
               v-if="!isSingle"
               class="choose-channel-more"
               :class="{disabled: isChannelActive}"
+              v-html="moreButtonText"
               @click="$_onChannelMore"
-            >更多支付方式</div>
+            ></div>
           </div>
           <div class="md-cashier-block-btn">
-            <md-button class="md-cashier-pay-button" @click="$_onChannelBtnClick">确定支付</md-button>
+            <md-button
+              class="md-cashier-pay-button"
+              v-html="payButtonText"
+              @click="$_onChannelBtnClick"
+            ></md-button>
           </div>
         </div>
 
@@ -113,7 +118,14 @@
           </div>
           <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
           <div class="md-cashier-block-btn" v-if="scene === 'success'">
-            <md-button @click="isCashierShow = false">我知道了</md-button>
+            <md-button
+              v-html="sceneOption.success.buttonText"
+              @click="() => {
+                isCashierShow = false
+                sceneOption.success.handler && sceneOption.success.handler()
+              }"
+            >
+            </md-button>
           </div>
         </div>
 
@@ -127,7 +139,14 @@
           </div>
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <div class="md-cashier-block-btn">
-            <md-button @click="isCashierShow = false">我知道了</md-button>
+            <md-button
+              v-html="sceneOption.fail.buttonText"
+              @click="() => {
+                isCashierShow = false
+                sceneOption.fail.handler && sceneOption.fail.handler()
+              }"
+            >
+            </md-button>
           </div>
         </div>
       </div>
@@ -191,6 +210,14 @@ export default {
       type: String,
       default: '',
     },
+    payButtonText: {
+      type: String,
+      default: '\u786e\u5b9a\u652f\u4ed8', // 确定支付
+    },
+    moreButtonText: {
+      type: String,
+      default: '\u66f4\u591a\u652f\u4ed8\u65b9\u5f0f', // 更多支付方式
+    },
   },
 
   data() {
@@ -208,9 +235,13 @@ export default {
         },
         success: {
           text: '\u652f\u4ed8\u6210\u529f', // 支付成功
+          buttonText: '\u6211\u77e5\u9053\u4e86', // 我知道了
+          handler: null,
         },
         fail: {
           text: '\u652f\u4ed8\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5', // 支付失败，请稍后重试
+          buttonText: '\u6211\u77e5\u9053\u4e86', // 我知道了
+          handler: null,
         },
         captcha: {
           text: '',
