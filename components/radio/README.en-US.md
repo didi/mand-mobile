@@ -21,19 +21,19 @@ Vue.component(Radio.name, Radio)
 #### Radio Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|`value` of the selected option|String|-|If there is no `value` property in the data source, it is `text` or `label`|
-|options|option data source|Array<{text, value, disabled, ...}>|`[]`|`disabled` is option disabled|
-|default-index|default selection index|Number|`-1`|invalid when `v-model` has initial value|
-|invalid-index|disabled selection index|Number/Array|`-1`|equal to the attribute `disabled` in the `options` element|
-|has-input-option|has editable item|Boolean|`false`|-|
-|input-option-label|name of editable item|String|-|only for `has-input-option`|
-|input-option-placeholder|placeholder of editable item|String|-|only for `has-input-option`|
+|v-model|`value` of the selected item|String|-|If there is no `value` property in the data source, it is `text` or `label`|
+|options|option data source|Array<{text, value, disabled, ...}>|`[]`|`disabled` is to disable option or not|
+|default-index|the index of default selection|Number|`-1`|invalid when `v-model` has initial value|
+|invalid-index|the index of disabled selection|Number/Array|`-1`|same to the attribute `disabled` in the `options` element|
+|has-input-option|has editable item or not|Boolean|`false`|-|
+|input-option-label|name of editable item|String|-|only when `has-input-option` is true|
+|input-option-placeholder|placeholder of editable item|String|-|only when `has-input-option` is true|
 |icon|icon of selected option|String|`right`|-|
 |icon-inverse|icon of unselected options|String|-|-|
-|icon-size|icon size|String|`sm`|-|
-|icon-position|icon position|String|`right`|`left`, `right`|
-|option-render|return custom rendering content for each option|Function({text, value, disabled, ...}): String|-|`vue 2.1.0+` can use `slot-scope`, see #Appendix|
-|is-slot-scope|mandatory use `slot-scope`|Boolean|-|it may be necessary to dynamically determine whether to use in some cases|
+|icon-size|the size of icon|String|`sm`|-|
+|icon-position|the position of icon|String|`right`|`left`, `right`|
+|option-render|return customized rendering content for each option|Function({text, value, disabled, ...}): String|-|`vue 2.1.0+` can use `slot-scope`, see #Appendix|
+|is-slot-scope|if it is mandatory to use `slot-scope`|Boolean|-|it depends on exact cases to determine whether to use it or not|
 
 #### Radio Methods
 

@@ -21,11 +21,11 @@ Vue.component(NumberKeyboard.name, NumberKeyboard)
 #### NumberKeyboard Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|v-model|keyboard display|Boolean|`false`|-|
-|is-view|inline display in page, otherwise it is in `Popup`|Boolean|`false`|-|
-|type|keyboard type|String|`professional`|`professional` has confirmation key and decimal point are often used for price or amount input, `simple` is generally used for password or verification code input|
-|disorder|keyboard numeric keys are out of order|Boolean|`false`| -|
-|ok-text|confirm key text|String|`确认`|-|
+|v-model|display keyboard or not|Boolean|`false`|-|
+|is-view|inline display in page, otherwise it shows as `Popup`|Boolean|`false`|-|
+|type|keyboard type|String|`professional`|`professional` with confirmation key and decimal point is often used for price or amount input, `simple` is generally used for password or verification code input|
+|disorder|if numeric keys of keyboard are out of order|Boolean|`false`| -|
+|ok-text|text of confirmation key|String|`confirm`|-|
 
 #### NumberKeyboard Methods
 
@@ -38,14 +38,14 @@ Hide keyboard
 #### NumberKeyboard Events
 
 ##### @enter(val)
-Numeric key click
+Click numeric key
 
 |Props | Description | Type|
 |----|-----|------|
 |val | value | Number|
 
 ##### @delete()
-Delete key click
+Click delete key
 
 ##### @confirm()
-Confirmation key click
+Click confirmation key

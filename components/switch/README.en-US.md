@@ -21,8 +21,8 @@ Vue.component(Switch.name, Switch)
 #### Switch Props
 | Props | Description | Type | Default |
 |----|-----|------|------|
-|v-model| Whether is on or off |Boolean|`false`|
-|disabled| Whether is disabled or not |Boolean|`false`|
+|v-model| Whether it is on or off |Boolean|`false`|
+|disabled| Whether it is disabled or not |Boolean|`false`|
 
 #### Switch Instance Events
 
@@ -30,4 +30,4 @@ Vue.component(Switch.name, Switch)
 
 | Props | Description | Type |
 |----|-----|------|
-|isActive| Whether is on or off |Boolean|
+|isActive| Whether it is on or off |Boolean|
