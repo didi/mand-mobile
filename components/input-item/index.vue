@@ -2,7 +2,7 @@
   <div
     class="md-input-item"
     :class="[
-      isHighlight ? 'is-hightlight' : '',
+      isHighlight ? 'is-highlight' : '',
       isTitleLatent ? 'is-title-latent' : '',
       isInputActive ? 'active' : '',
       isInputFocus ? 'focus' : '',
@@ -306,6 +306,12 @@ export default {
   mounted() {
     this.isVirtualKeyboard && this.$_initNumberKeyBoard()
   },
+  beforeDestroy() {
+    const keyboard = this.inputNumberKeyboard
+    if (keyboard && keyboard.$el) {
+      document.body.removeChild(keyboard.$el)
+    }
+  },
 
   methods: {
     // MARK: private methods
@@ -595,9 +601,9 @@ export default {
         color transparent
     &.error
       padding-bottom 40px
-  &.is-hightlight
+  &.is-highlight
     .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
-      color input-item-placeholder-hightlight
+      color input-item-placeholder-highlight
   &.large .md-input-item-input
     font-size input-item-font-size-large
   &.error

@@ -58,7 +58,7 @@ export default {
   -webkit-tap-highlight-color transparent
   position relative
   text-align center
-  border-radius radius-normal
+  border-radius button-primary-radius
   box-sizing border-box
   overflow visible
   &.disabled
@@ -96,21 +96,21 @@ export default {
       height button-primary-height
       line-height button-primary-height
       font-size button-primary-font-size
-      font-weight font-weight-medium
+      font-weight button-primary-font-weight
 
   &.ghost
     color button-ghost-color
-    hairline(all, button-ghost-color, true)
+    hairline(all, button-ghost-color, button-ghost-radius)
     &:active::before
       background-color button-ghost-fill-tap
   &.ghost-primary
     color button-ghost-primary-color
-    hairline(all, button-ghost-primary-color, true)
+    hairline(all, button-ghost-primary-color, button-ghost-radius)
     &:active::before
       background-color button-ghost-primary-fill-tap
   &.ghost, &.ghost-primary
     &.disabled
-      opacity opacity-disabled
+      opacity button-disabled-opacity
     &.large
       width button-ghost-width
       height button-ghost-height
@@ -126,12 +126,12 @@ export default {
     background-color button-link-fill
     color button-link-color
     .md-button-inner
-      hairline(top, color-border-base)
-      hairline(bottom, color-border-base)
+      hairline(top, button-link-border)
+      hairline(bottom, button-link-border)
     &:active::before
       background-color button-link-fill-tap
     &.disabled
-      opacity opacity-disabled
+      opacity button-disabled-opacity
     &.large, &.small
       width button-link-width
       height button-link-height
@@ -141,6 +141,6 @@ export default {
       display flex
       align-items center
       justify-content center
-      margin-right h-gap-sm
+      margin-right button-icon-gap
 
 </style>

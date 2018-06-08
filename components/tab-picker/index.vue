@@ -465,9 +465,6 @@ export default {
 
 <style lang="stylus" scoped>
 .md-tab-picker
-  color color-gray-1
-  -webkit-font-smoothing antialiased
-  font-size tab-picker-font-size
   .md-tab-picker-content
     background color-bg-base
 </style>

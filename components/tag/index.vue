@@ -90,26 +90,26 @@
   display inline-block
   .default
     background rgba(0,0,0,0)
-    color color-primary
-    border-color color-primary
+    color tag-color
+    border-color tag-color
   .shape-square
     border-radius 0
   .shape-fillet
-    border-radius 3px
+    border-radius tag-fillet-radius
   .shape-circle
   .size-large
-    font-size 28px
+    font-size tag-large-font-size
     padding 5px
   .size-small
-    font-size 20px
+    font-size tag-small-font-size
     padding 5px
   .size-tiny
-    font-size 12px
+    font-size tag-tiny-font-size
     padding 5px    
   .type-fill
-    background color-primary
+    background tag-color
   .type-ghost
-    border 1px solid color-primary
+    border 1px solid tag-color
     background rgba(0,0,0,0)
 
   .font-weight-normal

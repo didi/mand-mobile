@@ -244,12 +244,12 @@ export default {
           word-ellipsis()
           clearfix()
         &.active
-          color color-primary
+          color selector-active-color
   .md-field-item.selected
-    color color-primary !important
+    color selector-active-color !important
   &.is-check
     .md-field-item.selected .md-icon
-      fill color-primary !important
+      fill selector-active-color !important
       .md-field-item-content.left
         padding-right 32px
   &.is-normal

@@ -239,7 +239,7 @@ export default {
         display block
         padding-bottom 100%
       &::after
-        border-radius radius-normal
+        border-radius codebox-input-radius
       &.is-active
         &::after
           border-color codebox-border-active-color

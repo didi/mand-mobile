@@ -30,8 +30,7 @@
   </div>
 </template>
 
-<script>
-import {Field, FieldItem, InputItem, Dialog} from 'mand-mobile'
+<script>import {Field, FieldItem, InputItem, Dialog} from 'mand-mobile'
 
 export default {
   name: 'field-demo',
@@ -51,8 +50,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-example-child-field-2
@@ -61,5 +59,5 @@ export default {
     padding 0 32px
   .strong-tip
     font-size 24px
-    color color-text-hightlight
+    color color-text-highlight
 </style>

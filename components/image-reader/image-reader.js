@@ -44,7 +44,7 @@ export default function(global) {
           }
         : null
 
-    const onReadImageComplete = msg => {
+    const onReadImageComplete = (msg = {}) => {
       /* istanbul ignore else */
       if (this.callback) {
         this.callback(msg)

@@ -3,6 +3,7 @@ const path = require('path')
 const config = require('../../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const resolve = file => path.resolve(__dirname, file)
+const isProd = process.env.NODE_ENV === 'production'
 
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -45,16 +46,20 @@ exports.cssLoaders = function (options) {
       return ['vue-style-loader'].concat(loaders)
     }
   }
-
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   const stylusMixins = [
     '~nib/lib/nib/vendor',
     '~nib/lib/nib/gradients.styl',
-    '~nib/lib/nib/flex',
-    resolve('../../components/_style/mixin/util.styl'),
-    resolve('../../components/_style/mixin/theme.styl'),
-    resolve('../../examples/theme.custom.styl')
+    resolve('../../components/_style/mixin/util.styl')
   ]
+
+  if (isProd) {
+    stylusMixins.push(resolve('../../components/_style/mixin/theme.variable.styl'))
+  } else {
+    stylusMixins.push(resolve('../../components/_style/mixin/theme.styl'))
+    stylusMixins.push(resolve('../../examples/theme.custom.styl'))
+  }
+
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),

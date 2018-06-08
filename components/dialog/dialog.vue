@@ -161,7 +161,7 @@ export default {
     overflow hidden
   .md-dialog-body
     position relative
-    color color-text-minor
+    color dialog-text-color
     font-size dialog-text-font-size
     text-align center
     padding 50px 30px 40px 30px
@@ -177,17 +177,17 @@ export default {
       fill dialog-icon-fill
   .md-dialog-close
     position absolute
-    color color-text-caption
+    color dialog-close-color
     top 20px
     right 20px
     z-index 15
   .md-dialog-title
-    color color-text-base
+    color dialog-title-color
     font-size dialog-title-font-size
     margin-bottom 15px
   .md-dialog-actions
     display flex
-    hairline(top, color-border-base)
+    hairline(top, dialog-action-border-color)
     a
       flex 1 1 0%
       display flex
@@ -196,8 +196,8 @@ export default {
       height dialog-action-height
       font-size dialog-action-font-size
       color color-text-caption
-      border-right 1px solid color-border-base
+      border-right 1px solid dialog-action-border-color
       &:last-child
-        color color-primary
+        color dialog-action-highlight-color
         border-right 0
 </style>

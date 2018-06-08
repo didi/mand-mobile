@@ -124,7 +124,8 @@ export default {
     .text
       position absolute
       top 30px
-      color color-text-base
+      color steps-text-color
+      font-size steps-text-font-size
       white-space nowrap
       transform translateX(-50%)
 

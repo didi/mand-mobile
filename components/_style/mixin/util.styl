@@ -47,7 +47,7 @@ hairline-common(direction, color)
     @media (min-resolution: 3dppx)
       transform scaleX(0.33) translateX(100%)
 
-hairline(direction = all, color = color-line-1, radius = false)
+hairline(direction = all, color = color-line-1, radius = 0)
   position relative
   if direction == top
     &::after
@@ -95,7 +95,7 @@ hairline(direction = all, color = color-line-1, radius = false)
       transform scale(0.5)
       z-index 2
       if radius
-        border-radius radius-normal * 2
+        border-radius radius
 
 svg-background(svg)
   background-image url(svg)

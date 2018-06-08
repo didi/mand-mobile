@@ -29,7 +29,7 @@
   .md-field-title
     display flex
     font-size field-title-font-size
-    font-weight field-title-weight
+    font-weight field-title-font-weight
     color field-title-color
     line-height 45px
     padding field-padding-v 0 field-title-margin
@@ -42,7 +42,7 @@
     .md-field-item:last-of-type::before
       display none
     .md-input-item.error .md-input-item-container
-      hairline(bottom, input-item-color-error )
+      hairline(bottom, input-item-color-error)
   .md-radio .md-radio-item
     padding-left 0 !important
     padding-right 0 !important

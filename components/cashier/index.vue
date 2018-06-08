@@ -71,11 +71,16 @@
               v-if="!isSingle"
               class="choose-channel-more"
               :class="{disabled: isChannelActive}"
+              v-html="moreButtonText"
               @click="$_onChannelMore"
-            >更多支付方式</div>
+            ></div>
           </div>
           <div class="md-cashier-block-btn">
-            <md-button class="md-cashier-pay-button" @click="$_onChannelBtnClick">确定支付</md-button>
+            <md-button
+              class="md-cashier-pay-button"
+              v-html="payButtonText"
+              @click="$_onChannelBtnClick"
+            ></md-button>
           </div>
         </div>
 
@@ -113,7 +118,14 @@
           </div>
           <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
           <div class="md-cashier-block-btn" v-if="scene === 'success'">
-            <md-button @click="isCashierShow = false">我知道了</md-button>
+            <md-button
+              v-html="sceneOption.success.buttonText"
+              @click="() => {
+                isCashierShow = false
+                sceneOption.success.handler && sceneOption.success.handler()
+              }"
+            >
+            </md-button>
           </div>
         </div>
 
@@ -127,7 +139,14 @@
           </div>
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <div class="md-cashier-block-btn">
-            <md-button @click="isCashierShow = false">我知道了</md-button>
+            <md-button
+              v-html="sceneOption.fail.buttonText"
+              @click="() => {
+                isCashierShow = false
+                sceneOption.fail.handler && sceneOption.fail.handler()
+              }"
+            >
+            </md-button>
           </div>
         </div>
       </div>
@@ -191,6 +210,14 @@ export default {
       type: String,
       default: '',
     },
+    payButtonText: {
+      type: String,
+      default: '\u786e\u5b9a\u652f\u4ed8', // 确定支付
+    },
+    moreButtonText: {
+      type: String,
+      default: '\u66f4\u591a\u652f\u4ed8\u65b9\u5f0f', // 更多支付方式
+    },
   },
 
   data() {
@@ -208,9 +235,13 @@ export default {
         },
         success: {
           text: '\u652f\u4ed8\u6210\u529f', // 支付成功
+          buttonText: '\u6211\u77e5\u9053\u4e86', // 我知道了
+          handler: null,
         },
         fail: {
           text: '\u652f\u4ed8\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5', // 支付失败，请稍后重试
+          buttonText: '\u6211\u77e5\u9053\u4e86', // 我知道了
+          handler: null,
         },
         captcha: {
           text: '',
@@ -325,7 +356,7 @@ block()
     background-color color-bg-base
   .md-cashier-container
     block()
-    background color-bg-base
+    background cashier-bg
     -webkit-touch-callout none
     -webkit-user-select none
     transition all .3s
@@ -360,16 +391,16 @@ block()
             block()
             text-align center
             &.choose-title
-              font-size font-body-normal
-              color color-text-minor
+              font-size cashier-choose-title-font-size 
+              color cashier-choose-title-color
             &.choose-number
               margin-top 35px
-              font-size 72px
-              color color-text-base
+              font-size cashier-choose-amount-font-size
+              color cashier-choose-amount-color
             &.choose-describe
               margin-top 15px
-              font-size font-minor-normal
-              color color-text-minor
+              font-size cashier-choose-describe-font-size
+              color cashier-choose-describe-color
         .choose-channel
           clearfix()
           max-height 500px
@@ -385,8 +416,8 @@ block()
               block()
               position relative
               padding 15px 40px 15px 0
-              font-size font-minor-large
-              color color-text-minor
+              font-size cashier-choose-channel-font-size
+              color cashier-choose-channel-color
               box-sizing border-box
               .item-icon
                 float left
@@ -401,11 +432,11 @@ block()
                 right 0
                 transform translateY(-50%)
                 &.md-icon-circle-right
-                  color color-primary
+                  color cashier-choose-channel-icon-color
           .choose-channel-more
             margin-top 10px
-            font-size font-minor-large
-            color color-text-minor
+            font-size cashier-choose-more-font-size
+            color cashier-choose-more-color
             text-align center
             &:after
               content ""
