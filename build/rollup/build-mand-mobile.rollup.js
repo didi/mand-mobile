@@ -5,33 +5,32 @@ const {
   PROJECT_DIR,
   rollupPlugin
 } = require('./rollup-plugin-config')
+const isSpecial = process.env.BUILD_TYPE === 'special'
 
 const inputOptions = {
   input: path.resolve(PROJECT_DIR, 'components/index.js'),
   external: ['vue'],
   plugins: rollupPlugin
 }
-const outputUmdOptions = {
-  file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
-  format: 'umd',
-  name: 'mand-mobile'
-}
-
-const outputEsOptions = {
-  file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
-  format: 'es',
-}
 
 function build() {
   return rollup.rollup(inputOptions)
           .then(bundle => {
             return Promise.all([
-              bundle.write(outputUmdOptions).then(() => {
-                console.info('build umd module succ')
-              }),
-              bundle.write(outputEsOptions).then(() => {
-                console.info('build es module succ')
-              })
+              isSpecial
+              ? bundle.write({
+                  file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
+                  format: 'es',
+                }).then(() => {
+                  console.info('Build ES Module & Variable Css Success')
+                })
+              : bundle.write({
+                  file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
+                  format: 'umd',
+                  name: 'mand-mobile'
+                }).then(() => {
+                  console.info('Build UMD Module Success')
+                })
             ])
           })
           .catch(err => {

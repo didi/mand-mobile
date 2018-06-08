@@ -28,6 +28,7 @@ const babelrc = require('babelrc-rollup').default
 const isProduction = process.env.NODE_ENV === 'production'
 const isTest = process.env.NODE_ENV === 'testing'
 const isDev = !(isProduction || isTest)
+const isSpecial = process.env.BUILD_TYPE === 'special'
 
 function resolve(dir) {
   return path.resolve(__dirname, '../..', dir)
@@ -47,8 +48,12 @@ function vueWarpper() {
     distDir = DEV_OUTPUT_DIR
     fileName = 'mand-mobile-dev.css'
   } else if (isProduction) {
+    if (isSpecial) {
+      fileName = 'mand-mobile.variable.css'
+    } else {
+      fileName = 'mand-mobile.css'
+    }
     distDir = LIB_DIR
-    fileName = 'mand-mobile.css'
   } else if (isTest) {
     distDir = TEST_OUTPUT_DIR
     fileName = 'mand-mobile-test.css'
