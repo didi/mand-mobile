@@ -21,7 +21,7 @@ $ npm run create # Create a new component, fill in information according to the 
 ```shell
 $ npm run dev # Visit http://localhost:4000/[COMPONENT NAME]
 
-$ npm run dev -- --[COMPONENT NAME] # npm run dev -- --button, visit http://localhost:4000
+$ npm run dev -- --component [COMPONENT NAME] # npm run dev -- --component button, visit http://localhost:4000
 ```
 
 #### Test Component
