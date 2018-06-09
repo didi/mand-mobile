@@ -62,11 +62,11 @@ export default {
 <style lang="stylus">
 .md-notice-bar
   z-index notice-bar-zindex
-  font-size font-minor-large
+  font-size notice-bar-font-size
   height 75px
   line-height 75px
   background-color notice-bar-fill
-  color color-text-base-inverse
+  color notice-bar-color
   position relative
   padding-left 80px
   .md-notice-icon

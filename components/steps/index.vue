@@ -110,7 +110,12 @@ export default {
       width steps-size
       height steps-size
       background steps-color
-      border-radius 6px
+      border-radius steps-size
+
+    &.reached
+      .md-icon
+        width steps-size-active
+        height steps-size-active
 
   .text-wrapper
     position absolute

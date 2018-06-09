@@ -427,14 +427,14 @@ export default {
       &.top
         top 0
         background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-        hairline(bottom, color-border-base)
-        // border-bottom solid 1px color-border-base
+        hairline(bottom, picker-border-color)
+        // border-bottom solid 1px picker-border-color
       &.bottom
         bottom 0
         bottom constant(safe-area-inset-bottom)
         background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-        hairline(top, color-border-base)
-        // border-top solid 1px color-border-base
+        hairline(top, picker-border-color)
+        // border-top solid 1px picker-border-color
     .md-picker-column-hooks
       display flex
       position absolute

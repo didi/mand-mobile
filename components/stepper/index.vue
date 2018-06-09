@@ -179,7 +179,7 @@ export default {
   height stepper-height
   display flex
   &.disabled
-    opacity opacity-disabled
+    opacity stepper-disabled-opacity
   .md-stepper-button
     position relative
     width stepper-width-button
@@ -215,7 +215,7 @@ export default {
     height stepper-height
     padding 0 4px
     text-align center
-    border-radius 2px
+    border-radius stepper-radius-button
     input
       width stepper-width-input
       height stepper-height
@@ -227,5 +227,5 @@ export default {
       background-color stepper-fill
       text-align center
       color stepper-color
-      border-radius unset
+      border-radius stepper-radius-input
 </style>

@@ -226,25 +226,6 @@ export default {
     .md-selector-container
       background color-bg-base
       overflow auto
-      .md-selector-item
-        position relative
-        height selector-height
-        line-height selector-height
-        padding 0 h-gap-lg
-        font-size selector-font-size
-        color selector-color
-        text-align center
-        box-sizing border-box
-        hairline(bottom, color-border-base)
-        clearfix()
-        .md-selector-item-inner
-          float left
-          width 100%
-          height 100%
-          word-ellipsis()
-          clearfix()
-        &.active
-          color selector-active-color
   .md-field-item.selected
     color selector-active-color !important
   &.is-check

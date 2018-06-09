@@ -91,7 +91,7 @@ export default {
       position relative
       display inline-block
       text-align left
-      padding toast-gap
+      padding toast-padding
       border-radius toast-radius
       font-size toast-font-size
       color toast-color
@@ -100,7 +100,7 @@ export default {
     .md-icon
       position absolute
       top 50%
-      left toast-gap
+      left toast-padding
       transform translateY(-50%)
     .md-popup
       .md-popup-box
