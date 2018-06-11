@@ -5,19 +5,18 @@
   </div>
 </template>
 
-<script>
-import {Button} from 'mand-mobile'
+<script>import {Button} from 'mand-mobile'
 
 export default {
   name: 'button-demo',
   /* DELETE */
   title: '主按钮',
+  titleEnUS: 'Primary buttons',
   codeSandBox: 'https://codesandbox.io/s/kkzq4mylp5',
   /* DELETE */
   components: {
     [Button.name]: Button,
   },
 }
-
-</script>
+</script>
 

@@ -12,14 +12,15 @@
   </div>
 </template>
 
-<script>
-import {Tabs} from 'mand-mobile'
+<script>import {Tabs} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '指定默认标签',
+  titleEnUS: 'Specify the default tab',
   describe: '默认标签2',
+  describeEnUS: 'Default tab 2',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,
@@ -30,5 +31,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

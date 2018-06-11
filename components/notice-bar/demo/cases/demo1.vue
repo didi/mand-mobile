@@ -15,6 +15,7 @@ export default {
   name: 'notice-bar-demo',
   /* DELETE */
   title: '设置图标',
+  titleEnUS: 'With icon',
   codeSandBox: 'https://codesandbox.io/s/53zlz1nj24',
   /* DELETE */
   components: {

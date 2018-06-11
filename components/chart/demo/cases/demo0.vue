@@ -23,13 +23,13 @@
 	</div>
 </template>
 
-<script>
-import {Chart} from 'mand-mobile'
+<script>import {Chart} from 'mand-mobile'
 
 export default {
   name: 'chart-demo',
   /* DELETE */
   title: '多折线',
+  titleEnUS: 'Multiple fold lines',
   describe: '',
   /* DELETE */
   components: {
@@ -41,8 +41,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
   svg

@@ -18,18 +18,17 @@
   </div>
 </template>
 
-<script>
-import {TabBar, Icon} from 'mand-mobile'
+<script>import {TabBar, Icon} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
-  title: '自定制按钮内容',
+  title: '自定义内容',
+  titleEnUS: 'Custom content',
   /* DELETE */
   components: {
     [Icon.name]: Icon,
     [TabBar.name]: TabBar,
   },
 }
-
-</script>
+</script>

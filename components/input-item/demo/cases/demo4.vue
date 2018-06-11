@@ -20,18 +20,17 @@
   </div>
 </template>
 
-<script>
-import {InputItem, Field} from 'mand-mobile'
+<script>import {InputItem, Field} from 'mand-mobile'
 
 export default {
   name: 'input-item-demo',
   /* DELETE */
   title: '错误提示',
+  titleEnUS: 'input with error message',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,
   },
 }
-
-</script>
+</script>

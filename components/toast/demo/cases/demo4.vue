@@ -4,13 +4,13 @@
   </div>
 </template>
 
-<script>
-import {Toast, Button} from 'mand-mobile'
+<script>import {Toast, Button} from 'mand-mobile'
 
 export default {
   name: 'toast-demo',
   /* DELETE */
   title: '连续调用',
+  titleEnUS: 'Continuous call',
   /* DELETE */
   components: {
     [Button.name]: Button,
@@ -27,5 +27,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

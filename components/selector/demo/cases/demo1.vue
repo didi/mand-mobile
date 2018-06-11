@@ -26,13 +26,13 @@
   </div>
 </template>
 
-<script>
-import {Selector, Field, FieldItem} from 'mand-mobile'
+<script>import {Selector, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'selector-demo',
   /* DELETE */
   title: '自定义选项',
+  titleEnUS: 'Custom options',
   height: 500,
   /* DELETE */
   components: {
@@ -71,8 +71,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-selector-1

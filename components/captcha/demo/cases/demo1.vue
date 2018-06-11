@@ -9,21 +9,20 @@
   </div>
 </template>
 
-<script>
-import {Captcha} from 'mand-mobile'
+<script>import {Captcha} from 'mand-mobile'
 
 export default {
   name: 'captcha-demo',
   /* DELETE */
   title: '内联',
+  titleEnUS: 'Inline display',
   height: 650,
   /* DELETE */
   components: {
     [Captcha.name]: Captcha,
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-example-child-captcha-1

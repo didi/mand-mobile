@@ -12,21 +12,21 @@
     <ul class="menu-list-0">
       <li class="menu-item-0" v-for="(item0, index0) in menu" :key="index0">
         <router-link 
-          :to="`/${nav}/${item0.name}`"
+          :to="`/${lang}/${nav}/${item0.name}`"
           :class="{disabled: !item0.src && !item0.markdown}"
           v-html="item0.text">
         </router-link> 
         <ul class="menu-list-1" v-if="item0.menu">
           <li class="menu-item-1" v-for="(item1, index1) in item0.menu" :key="index1">
             <router-link 
-              :to="`/${nav}/${item0.name}/${item1.name}`"
+              :to="`/${lang}/${nav}/${item0.name}/${item1.name}`"
               :class="{disabled: !item1.src && !item1.markdown}"
               v-html="item1.text">
             </router-link> 
             <ul class="menu-list-2" v-if="item1.menu">
               <li class="menu-item-2" v-for="(item2, index2) in item1.menu" :key="index2">
                 <router-link
-                  :to="`/${nav}/${item0.name}/${item1.name}/${item2.name}`"
+                  :to="`/${lang}/${nav}/${item0.name}/${item1.name}/${item2.name}`"
                   :class="{disabled: !item2.src && !item2.markdown}"
                   v-html="item2.text">
                 </router-link> 
@@ -65,10 +65,14 @@ export default {
   },
   computed: {
     nav() {
-      return this.$route.path.split('/')[1] || ''
+      return this.$route.path.split('/')[2] || ''
+    },
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
     },
     menu() {
-      return this.nav ? findMenu(window.mbConfig.source, this.nav) : []
+      const list = window.mbConfig.source[this.lang === 'zh-CN' ? 0 : 1].menu
+      return this.nav ? findMenu(list, this.nav) : []
     },
   },
   methods: {},

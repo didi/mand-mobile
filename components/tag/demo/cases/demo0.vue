@@ -13,6 +13,7 @@ export default {
   name: 'tag-demo',
   /* DELETE */
   title: '半圆',
+  titleEnUS: 'Semicircle',
   codeSandBox: 'https://codesandbox.io/s/721xmvrx11',
   /* DELETE */
   components: {

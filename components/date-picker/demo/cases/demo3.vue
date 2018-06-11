@@ -32,6 +32,7 @@ export default {
   name: 'date-picker-demo',
   /* DELETE */
   title: '自定义类型和选项文案值',
+  titleEnUS: 'Custom type and option textual values',
   height: 500,
   /* DELETE */
   components: {

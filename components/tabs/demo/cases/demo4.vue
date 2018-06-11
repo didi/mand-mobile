@@ -12,13 +12,13 @@
   </div>
 </template>
 
-<script>
-import {Tabs} from 'mand-mobile'
+<script>import {Tabs} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '禁用下划线动画',
+  titleEnUS: 'Disable underline animation',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,
@@ -29,5 +29,4 @@ export default {
     }
   },
 }
-
-</script>
+</script>

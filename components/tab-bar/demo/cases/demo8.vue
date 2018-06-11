@@ -12,8 +12,7 @@
   </div>
 </template>
 
-<script>
-import {TabBar, Icon} from 'mand-mobile'
+<script>import {TabBar, Icon} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
@@ -43,5 +42,4 @@ export default {
     [TabBar.name]: TabBar,
   },
 }
-
-</script>
+</script>

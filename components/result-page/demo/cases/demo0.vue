@@ -6,8 +6,7 @@
   </div>
 </template>
 
-<script>
-import {ResultPage} from 'mand-mobile'
+<script>import {ResultPage} from 'mand-mobile'
 
 export default {
   name: 'result-page-demo',
@@ -18,8 +17,7 @@ export default {
     [ResultPage.name]: ResultPage,
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-result-page.customized

@@ -12,6 +12,7 @@ export default {
   name: 'steps-demo',
   /* DELETE */
   title: '三个步骤',
+  titleEnUS: 'Three steps',
   codeSandBox: 'https://codesandbox.io/s/38zp7vq22m',
   height: 150,
   /* DELETE */

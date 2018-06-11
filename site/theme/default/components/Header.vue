@@ -13,7 +13,7 @@
             <i class="icon-magnifier" :class="{active: searchFocus}"></i>
             <input
               type="text"
-              placeholder="搜索"
+              :placeholder="lang === 'en-US' ? 'Search' : '搜索'"
               autocomplete="off"
               v-model="searchValue"
               @click.stop
@@ -34,30 +34,37 @@
         <div class="default-header-github default-header-operater">
           <a href="https://github.com/didi/mand-mobile" target="_blank"></a>
         </div>
-        <!-- <div class="default-header-lang default-header-operater">
+        <div class="default-header-lang default-header-operater">
           <div class="operater-select" @click="changeLang">
             <span v-if="lang === 'en-US'">中文</span>
             <span v-else>English</span>
           </div>
-        </div> -->
+        </div>
         <div class="default-header-version default-header-operater">
-          <div class="current-version" @click.stop="versionTableShow = true">
-            <span class="operater-select">1.x</span>
+          <div class="operater-select" @click.stop="versionTableShow = true">
+            <span>1.x</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
         </div>
         <div class="default-header-nav">
           <ul>
-            <li class="nav-item">
-              <router-link :to="{path:'/home'}">首页</router-link>
-            </li>
-            <li class="nav-item" v-for="(item, index) in nav" :key="index" v-if="!item.hidden">
+            <template v-if="lang === 'en-US'">
+              <li class="nav-item">
+                <router-link :to="{path:'/en-US/home'}">Home</router-link>
+              </li>
+            </template>
+            <template v-else>
+              <li class="nav-item">
+                <router-link :to="{path:'/zh-CN/home'}">首页</router-link>
+              </li>
+            </template>
+            <li class="nav-item" v-for="(item, index) in menu" :key="index">
               <template v-if="item.src && ~item.src.indexOf('//')">
                 <a :href="item.src" v-html="item.text" target="_blank"></a>
               </template>
               <template v-else>
                 <router-link
-                  :to="`/${item.name}`"
+                  :to="`/${lang}/${item.name}`"
                   v-html="item.text">
                 </router-link>
               </template>
@@ -71,6 +78,7 @@
 
 <script>
 import MfeTable from './Table'
+import { localStore } from '../assets/js/util'
 import algoliasearch from 'algoliasearch'
 
 export default {
@@ -89,7 +97,6 @@ export default {
 
   data() {
     return {
-      nav: window.mbConfig.source,
       title: window.mbConfig.title,
       logo: window.mbConfig.logo,
       searchValue: '',
@@ -104,6 +111,16 @@ export default {
       searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
       searchHandler: null
     }
+  },
+
+  computed: {
+    menu () {
+      const list = window.mbConfig.source[this.lang === 'zh-CN' ? 0 : 1] || {}
+      return list.menu || []
+    },
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
   },
 
   methods: {
@@ -213,6 +230,15 @@ export default {
       }
     },
 
+    changeLang () {
+      const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+      localStore('lang', lang)
+      location.href = location.href.replace(this.lang, lang)
+
+      if (~location.href.indexOf('home')) {
+       location.reload()
+      }
+    },
   },
 }
 

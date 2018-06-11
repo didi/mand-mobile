@@ -7,20 +7,19 @@
   </div>
 </template>
 
-<script>
-import {ResultPage} from 'mand-mobile'
+<script>import {ResultPage} from 'mand-mobile'
 
 export default {
   name: 'result-page-demo',
   /* DELETE */
   title: '网络异常',
+  titleEnUS: 'Network anomaly',
   /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-result-page.customized

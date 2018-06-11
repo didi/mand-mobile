@@ -7,19 +7,18 @@
   </div>
 </template>
 
-<script>
-import {Button} from 'mand-mobile'
+<script>import {Button} from 'mand-mobile'
 
 export default {
   name: 'button-demo',
   /* DELETE */
   title: '线性按钮小尺寸',
+  titleEnUS: 'Small size ghost buttons',
   codeSandBox: 'https://codesandbox.io/s/jlv69qoq8v',
   /* DELETE */
   components: {
     [Button.name]: Button,
   },
 }
-
-</script>
+</script>
 

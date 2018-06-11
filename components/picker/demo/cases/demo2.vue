@@ -35,8 +35,7 @@
   </div>
 </template>
 
-<script>
-import {Picker, Field, FieldItem} from 'mand-mobile'
+<script>import {Picker, Field, FieldItem} from 'mand-mobile'
 import simple from 'mand-mobile/components/picker/demo/data/simple'
 import district from 'mand-mobile/components/picker/demo/data/district'
 
@@ -44,6 +43,7 @@ export default {
   name: 'picker-demo',
   /* DELETE */
   title: '弹出展示',
+  titleEnUS: 'Display in Popup',
   height: 350,
   /* DELETE */
   components: {
@@ -73,5 +73,4 @@ export default {
     },
   },
 }
-
-</script>
+</script>

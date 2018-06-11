@@ -6,13 +6,13 @@
   </div>
 </template>
 
-<script>
-import {TabBar} from 'mand-mobile'
+<script>import {TabBar} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '设置边距',
+  titleEnUS: 'Setting margins',
   /* DELETE */
   components: {
     [TabBar.name]: TabBar,
@@ -23,8 +23,7 @@ export default {
     }
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus" scoped>
 .md-tab-bar
