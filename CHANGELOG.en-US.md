@@ -5,83 +5,83 @@ title: Change Log
 ### 1.3.0
 `2018-06-01`
 - Feature
-  - `Selector`, `TabPicker`增加`mask-closable`，支持蒙层点击关闭 #64
-  - `Cashier`更改渠道展示方式，当支付渠道为两个直接展示 #77
-  - `Capatcha`支持自定义按钮文案，支持通过`auto-countdown`控制验证码是否自动发送 #84
-  - `ActionSheet`增加`maxHeight`控制展示区域最大高度 #86
-  - `InputItem`增加类型`Number`, 支持其他Html Input标准类型 #95
-  - `Picker`，`DatePicker`，`TabPicker`点击取消或蒙层将会撤销选择更改
+  - `Selector`, `TabPicker` add support of `mask-closable` porp #64
+  - `Cashier` change the presentation of channels #77
+  - `Capatcha` add support to customize button text and add `auto-countdown` prop to control whether auto send code or not #84
+  - `ActionSheet` add `maxHeight` #86
+  - `InputItem` support `Number` type and other standard html input type #95
+  - `Picker`，`DatePicker`，`TabPicker` will cancel change when click mask or cancel button
 - Fix
-  - 修复`DatePicker`默认时间不在可选范围内的异常，将默认值教正至临近边界值 #75
-  - 修复部分文档错误信息
+  - Fix `DatePicker` bug #75
+  - Fix some document bugs
 
 ### 1.2.3
 `2018-05-11`
 - Fix
-  - 修复issue #78
-  - 站点更新
+  - Fix issue #78
+  - Update documentation site
 
 ### 1.2.2
 `2018-05-09`
 - Fix
-  - 修复issue #67
-  - 修复issue #69
-  - 修复issue #72
+  - Fix issue #67
+  - Fix issue #69
+  - Fix issue #72
 - Feature
-  - 新增`vw`适配方案
-  - Popup适配iPhone X
+  - Add `vw` responsive
+  - Make `Popup` to adapt iPhone X
 
 <!-- CUTOFF -->
 ### 1.1.1
 `2018-05-06`
 - Fix
-  - 修复issue #62
-  - 修复issue #63
+  - Fix issue #62
+  - Fix issue #63
 
 ### 1.1.0
 `2018-05-04`
 - Feature
-  - `Swiper` 增加`fade`模式下的触摸滚动 #20
-  - `ImageViewer` 增加`v-model`控制展示和隐藏 #42
-  - `Toast` content 属性支持数字 #43
+  - Add `fade` mode of `Swiper` #20
+  - Add `v-model` prop to control the visibility of `ImageViewer` #42
+  - Add support digit support of `Toast` content #43
 
 - Fix
-  - 修复`Picker`在联动数据时，重置`DefaultIndex`引起的滚动异常 # 50
-  - 修复构建时`Autoprefixer`的`display:box`的警告 #54
+  - Fix `Picker` bug when reset `DefaultIndex` #50
+  - Fix `display:box` warning of `Autoprefixer` #54
 
 <!-- CUTOFF -->
 ### 1.0.9
 `2018-04-26`
-- 修复issue #47
+- Fix issue #47
 
 ### 1.0.8
 `2018-04-24`
 - Button组件点击事件无需`.native`修饰符
-- 为Landscape组件增加`mask-closable`选项
+- `Landscape` component add `mask-closable` prop
 
 ### 1.0.6
 `2018-04-20`
-- 修复issue #29
+- Fix issue #29
 
 <!-- CUTOFF -->
 ### 1.0.5
 `2018-04-18`
-- 修复issue #24
+- Fix issue #24
 
 ### 1.0.4
 `2018-04-12`
-- 修复components/index.js
+- Fix `components/index.js` bug
 
 ### 1.0.2
 `2018-04-12`
-- 注入全局变量version
+- Add global package version
 
 ### 1.0.1
 `2018-04-12`
-- 修复错误的main指向
+- Fix wrong package entry
 
 ### 1.0.0
 `2018-04-11`
-- 正式公开发布
+- Initial release
 
 
