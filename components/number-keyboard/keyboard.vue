@@ -105,13 +105,13 @@
   display flex
   width number-keyboard-width
   height number-keyboard-height
-  hairline(top, color-border-base)
+  hairline(top, number-keyboard-key-bordr-color)
   .keyboard-number, .keyboard-operate
     display flex
     clearfix()
   .keyboard-number
     flex 3
-    background number-keyboard-key-bg
+    background number-keyboard-bg
     .keyboard-number-list
       float left
       width 100%
@@ -119,14 +119,14 @@
         float left
         width 33.3%
         height number-keyboard-key-height
-        hairline(right, color-border-base)
-        hairline(top, color-border-base)
+        hairline(right, number-keyboard-key-bordr-color)
+        hairline(top, number-keyboard-key-bordr-color)
         text-align center
         line-height number-keyboard-key-height
         font-size number-keyboard-key-font-size
         color number-keyboard-key-color
         transition background .3s
-        background color-bg-base
+        background number-keyboard-key-bg
         &.no-bg
           background transparent
         &:after
@@ -139,7 +139,7 @@
           background url(../_style/images/keyboard-del-simple.png) center no-repeat
           background-size 46px
         &.slidedown
-          background color-bg-base url(../_style/images/keyboard-hide.png) center no-repeat
+          background number-keyboard-key-bg url(../_style/images/keyboard-hide.png) center no-repeat
           background-size 55px
         &:active
           background-color number-keyboard-key-bg-tap
@@ -154,22 +154,22 @@
         position relative
         float left
         width 100%
-        background color-bg-base
+        background number-keyboard-key-bg
         transition background .3s
         &.delete
           height number-keyboard-key-height
-          background color-bg-base url(../_style/images/keyboard-del.png) center no-repeat
+          background number-keyboard-key-bg url(../_style/images/keyboard-del.png) center no-repeat
           background-size 42px
           display flex
           flex 1
-          hairline(left, color-border-base)
+          hairline(left, number-keyboard-key-bordr-color)
           &:after
             left -1px
           &:active
             background-color number-keyboard-key-bg-tap
         &.confirm
           overflow hidden
-          color color-text-base-inverse
+          color number-keyboard-key-confirm-color
           font-size number-keyboard-key-font-size
           background number-keyboard-key-confirm-bg
           display flex

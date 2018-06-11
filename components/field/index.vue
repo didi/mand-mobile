@@ -41,6 +41,8 @@
       hairline(bottom, field-item-border-color)
     .md-field-item:last-of-type::before
       display none
+    .md-input-item:last-of-type .md-input-item-container::before
+      display none
     .md-input-item.error .md-input-item-container
       hairline(bottom, input-item-color-error)
   .md-radio .md-radio-item

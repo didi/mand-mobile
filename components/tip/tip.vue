@@ -49,7 +49,7 @@ export default {
     max-width 400px
     color tip-color
     font-size tip-font-size
-    padding tip-gap
+    padding tip-padding
     border-radius tip-radius
     background-color tip-fill
     z-index tip-zindex

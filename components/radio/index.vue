@@ -273,9 +273,9 @@ export default {
         right h-gap-lg
         top 50%
         transform translateY(-50%)
-        fill radio-fill
+        fill radio-color
       &.selected
-        color radio-fill
+        color radio-color
       &.icon-left
         .md-icon
           left h-gap-lg
@@ -288,6 +288,6 @@ export default {
     padding 0 32px
     &.selected
       .md-input-item-title
-        color radio-fill
+        color radio-color
 </style>
 

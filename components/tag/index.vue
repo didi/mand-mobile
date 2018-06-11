@@ -107,6 +107,7 @@
     font-size tag-tiny-font-size
     padding 5px    
   .type-fill
+    color color-text-base-inverse
     background tag-color
   .type-ghost
     border 1px solid tag-color
