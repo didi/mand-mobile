@@ -10,6 +10,7 @@ export default {
   name: 'toast-demo',
   /* DELETE */
   title: '纯文字',
+  titleEnUS: 'Plain text',
   /* DELETE */
   components: {
     [Button.name]: Button,

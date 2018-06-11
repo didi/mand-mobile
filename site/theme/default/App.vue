@@ -66,7 +66,7 @@ export default {
       return this.$route.meta.noMenu
     },
     isHome() {
-      return this.$route.path === '/home'
+      return !!~this.$route.path.indexOf('/home')
     }
   },
   mounted () {

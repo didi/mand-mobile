@@ -18,7 +18,9 @@ export default {
   name: 'number-keyboard-demo',
   /* DELETE */
   title: '简单类型',
+  titleEnUS: 'Simple type',
   describe: '无确认键和小数点，一般用于密码或验证码输入',
+  describeEnUS: 'No confirmation key and decimal point, generally used for password or verification code input',
   /* DELETE */
   components: {
     [Button.name]: Button,

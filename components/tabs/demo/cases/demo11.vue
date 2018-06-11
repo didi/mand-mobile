@@ -16,6 +16,7 @@ export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '设置标题栏边距',
+  titleEnUS: 'Setting margins',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,

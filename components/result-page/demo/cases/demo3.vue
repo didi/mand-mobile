@@ -15,6 +15,7 @@ export default {
   name: 'result-page-demo',
   /* DELETE */
   title: '自定义图案',
+  titleEnUS: 'Custom pattern',
   /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,

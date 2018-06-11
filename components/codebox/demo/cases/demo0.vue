@@ -12,9 +12,6 @@
 
 export default {
   name: 'codebox-demo',
-  /* DELETE */
-  title: '默认',
-  /* DELETE */
   components: {
     [Codebox.name]: Codebox,
   },

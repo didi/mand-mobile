@@ -16,6 +16,7 @@ export default {
   name: 'date-picker-demo',
   /* DELETE */
   title: '日期时间选择 <a href="javascript:window.triggerDatePicker0()">getFormatDate()</a>',
+  titleEnUS: 'Date & Time selection <a href="javascript:window.triggerDatePicker0()">getFormatDate()</a>',
   /* DELETE */
   components: {
     [DatePicker.name]: DatePicker,

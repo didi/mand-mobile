@@ -17,6 +17,7 @@ export default {
   name: 'agree-demo',
   /* DELETE */
   title: '选中状态',
+  titleEnUS: 'Selected state',
   height: 120,
   /* DELETE */
   components: {

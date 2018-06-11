@@ -5,6 +5,11 @@
         <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
       </md-landscape>
 
+      <md-button @click.native="showMaskClosable=true">点击蒙层关闭</md-button>
+      <md-landscape v-model="showMaskClosable" :mask-closable="true">
+        <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
+      </md-landscape>
+
       <md-button @click="showNoMask=true">无蒙层</md-button>
       <md-landscape v-model="showNoMask" :has-mask="false">
         <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
@@ -30,7 +35,6 @@
 export default {
   name: 'landscape-demo',
   /* DELETE */
-  title: '示例',
   height: 700,
   /* DELETE */
   components: {
@@ -43,6 +47,7 @@ export default {
       showNoMask: false,
       showScroll: false,
       showListen: false,
+      showMaskClosable: false,
     }
   },
   methods: {
@@ -54,16 +59,26 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-example-child-landscape
-  .md-button
-    margin-bottom 20px
-  .content
-    background #f
-  .scroll-area
-    padding 40px
-    color #6
-    h1
-      margin-bottom 40px
-    p
-      margin 20px
+.md-example-child-landscape {
+  .md-button {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    background: #f;
+  }
+
+  .scroll-area {
+    padding: 40px;
+    color: #6;
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin: 20px;
+    }
+  }
+}
 </style>

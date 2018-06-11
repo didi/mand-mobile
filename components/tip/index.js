@@ -11,7 +11,7 @@ export default {
       default: 'top',
     },
     content: {
-      type: String,
+      type: [String, Number],
       default: '',
     },
   },

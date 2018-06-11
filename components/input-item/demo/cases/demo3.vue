@@ -35,6 +35,7 @@ export default {
   name: 'input-item-demo',
   /* DELETE */
   title: '表单控件',
+  titleEnUS: 'input with controls',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,

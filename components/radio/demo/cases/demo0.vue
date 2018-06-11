@@ -16,7 +16,10 @@ export default {
   /* DELETE */
   title:
     '普通单选框 <a href="javascript:window.RadioTrigger0()">getSelectedValue</a><a href="javascript:window.RadioTrigger1()">getSelectedIndex</a>',
+  titleEnUS:
+    'Normal radio <a href="javascript:window.RadioTrigger0()">getSelectedValue</a><a href="javascript:window.RadioTrigger1()">getSelectedIndex</a>',
   describe: '通过default-index默认选中',
+  describeEnUS: 'Default selected by "default-index"',
   /* DELETE */
   components: {
     [Radio.name]: Radio,

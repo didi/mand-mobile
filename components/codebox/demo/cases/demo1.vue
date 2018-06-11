@@ -14,6 +14,7 @@ export default {
   name: 'codebox-demo',
   /* DELETE */
   title: '掩码遮蔽',
+  titleEnUS: 'Character mask',
   /* DELETE */
   components: {
     [Codebox.name]: Codebox,

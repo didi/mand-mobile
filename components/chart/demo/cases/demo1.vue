@@ -26,6 +26,7 @@ export default {
   name: 'chart-demo',
   /* DELETE */
   title: '渐变折线',
+  titleEnUS: 'Gradient fold line',
   describe: '',
   /* DELETE */
   components: {

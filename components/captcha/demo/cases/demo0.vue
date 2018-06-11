@@ -72,6 +72,7 @@ export default {
   name: 'captcha-demo',
   /* DELETE */
   title: '自定义',
+  titleEnUS: 'Customize',
   height: 650,
   /* DELETE */
   components: {

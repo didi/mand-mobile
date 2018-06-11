@@ -16,7 +16,7 @@ module.exports = {
     '<!-- CUTOFF -->': '<div class="md-blog-cut-off"></div>',
   },
   output: resolve('public'),
-  defaultTemplate: resolve('theme/default/components/Doc.vue'),
+  defaultTemplate: resolve('theme/default/DocTemplate.vue'),
   links: [],
   copyRight: '',
   produceBy: '',

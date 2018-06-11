@@ -20,6 +20,7 @@ export default {
   name: 'tab-picker-demo',
   /* DELETE */
   title: '普通多频道',
+  titleEnUS: 'Normal multi-channel',
   height: 500,
   /* DELETE */
   components: {

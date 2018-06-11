@@ -105,7 +105,7 @@
     padding 5px
   .size-tiny
     font-size tag-tiny-font-size
-    padding 5px    
+    padding 5px
   .type-fill
     color color-text-base-inverse
     background tag-color

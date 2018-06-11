@@ -12,6 +12,7 @@ export default {
   name: 'action-bar-demo',
   /* DELETE */
   title: '通栏带文案',
+  titleEnUS: 'With text',
   height: 150,
   codeSandBox: 'https://codesandbox.io/s/48kj4x289x',
   /* DELETE */

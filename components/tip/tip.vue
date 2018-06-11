@@ -18,7 +18,7 @@ export default {
       type: String,
     },
     content: {
-      type: String,
+      type: [String, Number],
     },
   },
 

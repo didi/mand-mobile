@@ -18,6 +18,7 @@ export default {
   name: 'date-picker-demo',
   /* DELETE */
   title: '日期选择',
+  titleEnUS: 'Date selection',
   describe: '2013/9/9 - 2020/9/9',
   /* DELETE */
   components: {

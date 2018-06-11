@@ -15,8 +15,8 @@
 export default {
   name: 'number-keyboard-demo',
   /* DELETE */
-  title: '基本',
   describe: '有确认键和小数点，一般用于价格或金额输入',
+  describeEnUS: 'With confirmation key and decimal point, generally used for price or amount input',
   /* DELETE */
   components: {
     [Button.name]: Button,

@@ -15,6 +15,7 @@ export default {
   name: 'captcha-demo',
   /* DELETE */
   title: '内联',
+  titleEnUS: 'Inline display',
   height: 650,
   /* DELETE */
   components: {

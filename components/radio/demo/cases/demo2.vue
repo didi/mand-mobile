@@ -18,7 +18,9 @@ export default {
   name: 'radio-demo',
   /* DELETE */
   title: '自定义选项内容1',
+  titleEnUS: 'Custom option content 1',
   describe: '使用slot-scope',
+  describeEnUS: 'Use "slot-scope"',
   /* DELETE */
   components: {
     [Radio.name]: Radio,

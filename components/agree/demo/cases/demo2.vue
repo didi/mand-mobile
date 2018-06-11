@@ -17,6 +17,7 @@ export default {
   name: 'agree-demo',
   /* DELETE */
   title: '选中不可用状态',
+  titleEnUS: 'Selected and unavailable state',
   height: 120,
   /* DELETE */
   components: {

@@ -3,7 +3,7 @@ title: TabPicker 多级联动选择器
 preview: https://didi.github.io/mand-mobile/examples/#/tab-picker
 ---
 
-底部级联选择、非级联选择的tab切换的面板
+底部级联选择、非级联选择的tab切换面板
 
 ### 引入
 
@@ -44,12 +44,12 @@ tab切换的title支持自定义渲染（通过slot-scope）
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |v-model|控制显示或隐藏|Boolean|`false`| -|
-|data|数据源|Array|`[]`|参数据格式考`附录`|
+|data|数据源|Array|`[]`|数据格式参考`附录`|
 |data-struct|数据级联类型|String|`noCascade`|`normal`, `cascade`, `async`|
 |default-index|初始选中项索引|Array|`[]`|-|
 |option-render|返回各选项渲染内容|Array<Function({text, disabled, ...}):String>|`[]`|`vue 2.1.0+`可使用`slot-scope`，见附录|
 |async-func|异步获取数据函数|Function(value, callBack)|-|-|
-|title|弹窗标题|Boolean|-|-|
+|title|弹窗标题|String|-|-|
 |ok-text|确认按钮文案|String|`确认`|-|
 |cancel-text|取消按钮文案|String|`取消`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|

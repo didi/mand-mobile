@@ -17,8 +17,7 @@
   </div>
 </template>
 
-<script>
-import Scroller from '../_util/scroller'
+<script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 import {warn} from '../_util'
 
@@ -244,7 +243,7 @@ export default {
 
     $_opacity(animate = true, opacity) {
       if (typeof opacity !== 'undefined') {
-        let toIndex = 0;
+        let toIndex = 0
         let fromIndex = this.toIndex
         const itemCount = this.rItemCount
 
@@ -266,7 +265,7 @@ export default {
         from.style.opacity = 1 - Math.abs(opacity)
         from.style.transition = animate ? 'opacity 300ms ease' : ''
         to.style.opacity = Math.abs(opacity)
-        return;
+        return
       }
 
       const from = this.$children[this.fromIndex].$el
@@ -521,7 +520,7 @@ export default {
       const offset = this.isVertical
         ? _offsetTop - dragState.itemHeight * this.index
         : _offsetLeft - dragState.itemWidth * this.index
-      
+
       if (this.isSlide) {
         this.$_translate(this.$swiper, offset)
       } else {
@@ -649,8 +648,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
   .md-swiper-box

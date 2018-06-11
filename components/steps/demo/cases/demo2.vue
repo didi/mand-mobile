@@ -18,7 +18,8 @@
 export default {
   name: 'steps-demo',
   /* DELETE */
-  title: '自定义步骤图样',
+  title: '自定义步骤图标',
+  titleEnUS: 'Custom step icon',
   codeSandBox: 'https://codesandbox.io/s/9jz3y30wow',
   height: 150,
   /* DELETE */

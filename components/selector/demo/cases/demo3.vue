@@ -29,6 +29,7 @@ export default {
   name: 'selector-demo',
   /* DELETE */
   title: 'Check模式',
+  titleEnUS: 'Check mode',
   height: 500,
   /* DELETE */
   components: {

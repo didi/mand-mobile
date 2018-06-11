@@ -10,6 +10,7 @@ export default {
   name: 'toast-demo',
   /* DELETE */
   title: '连续调用',
+  titleEnUS: 'Continuous call',
   /* DELETE */
   components: {
     [Button.name]: Button,

@@ -64,7 +64,7 @@ Toast.succeed('操作成功')
 
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
-| content | 提示内容文本 | String | - |
+| content | 提示内容文本 | String, Number | - |
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `0` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `true` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|

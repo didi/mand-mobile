@@ -1,7 +1,7 @@
 <template>
   <div class="md-drop-menu">
     <div class="md-drop-menu-bar">
-      <template v-for="(item, index) in data">  
+      <template v-for="(item, index) in data">
         <div
           class="bar-item"
           :class="{
@@ -12,7 +12,7 @@
           :key="index"
           @click="$_onBarItemClick(item, index)"
         >
-          <span 
+          <span
             v-text="$_getBarItemText(item, index)"
           ></span>
         </div>

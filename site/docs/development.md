@@ -21,7 +21,7 @@ $ npm run create # 新增组件， 根据提示填写组件信息
 ```shell
 $ npm run dev # 访问 http://localhost:4000/[组件名称]
 
-$ npm run dev -- --[component name] # npm run dev -- --button, 访问 http://localhost:4000
+$ npm run dev -- --component [COMPONENT NAME] # npm run dev -- --component button, 访问 http://localhost:4000
 ```
 
 #### 测试组件

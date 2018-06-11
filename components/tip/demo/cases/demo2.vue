@@ -12,6 +12,7 @@ export default {
   name: 'tips-demo',
   /* DELETE */
   title: '左侧',
+  titleEnUS: 'Left',
   /* DELETE */
   components: {
     [Tip.name]: Tip,

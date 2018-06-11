@@ -17,6 +17,7 @@ export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '无动画',
+  titleEnUS: 'No animation',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,

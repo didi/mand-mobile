@@ -13,6 +13,7 @@ export default {
   name: 'result-page-demo',
   /* DELETE */
   title: '网络异常',
+  titleEnUS: 'Network anomaly',
   /* DELETE */
   components: {
     [ResultPage.name]: ResultPage,

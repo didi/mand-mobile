@@ -22,7 +22,7 @@ Vue.component(ActionBar.name, ActionBar)
 #### ActionBar Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|actions|按钮组|Array<{text, disabled, onClick}>|-|`text`为按钮文案，<br/>`disabled`为是否禁用改按钮，<br/>`onClick`为点击事件响应函数，传参数与`click`事件相同|
+|actions|按钮组|Array<{text, disabled, onClick}>|-|`text`为按钮文案，<br/>`disabled`为是否禁用该按钮，<br/>`onClick`为点击事件响应函数，传参数与`click`事件相同|
 |has-text|是否显示文案|Boolean|是否含有`slot`|文案可通过`slot`传入|
 
 

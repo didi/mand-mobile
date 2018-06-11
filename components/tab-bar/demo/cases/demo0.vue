@@ -10,9 +10,6 @@
 
 export default {
   name: 'tab-bar-demo',
-  /* DELETE */
-  title: '基本',
-  /* DELETE */
   components: {
     [TabBar.name]: TabBar,
   },

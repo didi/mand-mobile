@@ -39,6 +39,7 @@ export default {
   name: 'image-reader-demo',
   /* DELETE */
   title: '图片选择',
+  titleEnUS: 'Picture selection',
   codeSandBox: 'https://codesandbox.io/s/nwln4xppk0',
   /* DELETE */
   components: {

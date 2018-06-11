@@ -17,6 +17,7 @@ export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '不带下划线',
+  titleEnUS: 'Without underline',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,

@@ -13,6 +13,7 @@ export default {
   name: 'switch-demo',
   /* DELETE */
   title: '开启状态',
+  titleEnUS: 'Open',
   /* DELETE */
   components: {
     [Switch.name]: Switch,

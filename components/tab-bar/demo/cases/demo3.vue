@@ -14,6 +14,7 @@ export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '指定下划线长度',
+  titleEnUS: 'Underline width',
   /* DELETE */
   components: {
     [TabBar.name]: TabBar,

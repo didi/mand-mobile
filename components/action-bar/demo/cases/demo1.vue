@@ -10,6 +10,7 @@ export default {
   name: 'action-bar-demo',
   /* DELETE */
   title: '通栏多按钮禁用',
+  titleEnUS: 'Multiple buttons and disabled button',
   height: 150,
   codeSandBox: 'https://codesandbox.io/s/zn3yv60633',
   /* DELETE */

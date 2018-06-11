@@ -17,6 +17,7 @@ export default {
   name: 'tab-bar-demo',
   /* DELETE */
   title: '标题栏处于下方',
+  titleEnUS: 'Title bar is below',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,

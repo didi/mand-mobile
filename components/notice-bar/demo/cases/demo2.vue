@@ -10,7 +10,9 @@ export default {
   name: 'notice-bar-demo',
   /* DELETE */
   title: '设置时间',
+  titleEnUS: 'Setting dwell time',
   describe: '5s后隐藏',
+  describeEnUS: 'Hidden after 5s',
   codeSandBox: 'https://codesandbox.io/s/w3opvyq97',
   /* DELETE */
   components: {

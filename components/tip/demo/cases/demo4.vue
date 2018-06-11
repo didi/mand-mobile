@@ -12,6 +12,7 @@ export default {
   name: 'tips-demo',
   /* DELETE */
   title: '事件',
+  titleEnUS: 'Event',
   /* DELETE */
   components: {
     [Tip.name]: Tip,

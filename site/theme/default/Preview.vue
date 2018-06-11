@@ -6,11 +6,20 @@
         <template v-for="category in components">
           <template v-for="(component, j) in category.menu">
             <div class="preview-category-item" :key="`financial-${j}`" v-if="~financialComponents.indexOf(component.name)">
-              <router-link :to="`/docs/components/${category.name}/${component.name}`">
+              <router-link :to="`/${lang}/docs/components/${category.name}/${component.name}`">
                 <div class="preview-category-item-img">
                   <img :src="`//manhattan.didistatic.com/static/manhattan/mand/preview/${component.name}.jpg`" :alt="component.name">
                 </div>
-                <div class="preview-category-item-title" v-html="component.text"></div>
+                <div
+                  v-if="lang === 'zh-CN'"
+                  class="preview-category-item-title"
+                  v-html="component.text">
+                </div>
+                <div
+                  v-else
+                  class="preview-category-item-title"
+                  v-html="component.name">
+                </div>
               </router-link>
             </div>
           </template>
@@ -23,11 +32,20 @@
         <div class="preview-category-list">
           <template v-for="(component, j) in category.menu">
             <div class="preview-category-item" :key="`item-${j}`">
-              <router-link :to="`/docs/components/${category.name}/${component.name}`">
+              <router-link :to="`/${lang}/docs/components/${category.name}/${component.name}`">
                 <div class="preview-category-item-img">
                   <img :src="`//manhattan.didistatic.com/static/manhattan/mand/preview/${component.name}.jpg`" :alt="component.name">
                 </div>
-                <div class="preview-category-item-title" v-html="component.text"></div>
+                <div
+                  v-if="lang === 'zh-CN'"
+                  class="preview-category-item-title"
+                  v-html="component.text">
+                </div>
+                <div
+                  v-else
+                  class="preview-category-item-title"
+                  v-html="component.name">
+                </div>
               </router-link>
             </div>
           </template>
@@ -48,7 +66,10 @@ export default {
   computed: {
     components () {
       return window.mbConfig.components
-    }
+    },
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
   }
 }
 </script>

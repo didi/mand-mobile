@@ -24,6 +24,7 @@ export default {
   name: 'tab-picker-demo',
   /* DELETE */
   title: '级联多频道',
+  titleEnUS: 'Cascading multi-channel',
   height: 500,
   /* DELETE */
   components: {

@@ -32,6 +32,7 @@ export default {
   name: 'selector-demo',
   /* DELETE */
   title: '自定义选项',
+  titleEnUS: 'Custom options',
   height: 500,
   /* DELETE */
   components: {

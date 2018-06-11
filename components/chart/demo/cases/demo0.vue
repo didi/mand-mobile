@@ -29,6 +29,7 @@ export default {
   name: 'chart-demo',
   /* DELETE */
   title: '多折线',
+  titleEnUS: 'Multiple fold lines',
   describe: '',
   /* DELETE */
   components: {

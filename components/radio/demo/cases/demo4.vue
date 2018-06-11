@@ -18,6 +18,7 @@ export default {
   name: 'radio-demo',
   /* DELETE */
   title: 'Icon设置',
+  titleEnUS: 'Setting icon',
   /* DELETE */
   components: {
     [Radio.name]: Radio,

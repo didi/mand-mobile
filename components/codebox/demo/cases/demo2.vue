@@ -13,6 +13,7 @@ export default {
   name: 'codebox-demo',
   /* DELETE */
   title: '不限长度',
+  titleEnUS: 'Unlimited length',
   /* DELETE */
   components: {
     [Codebox.name]: Codebox,

@@ -2,7 +2,7 @@
   <div class="md-landscape">
 		<md-popup
       v-model="isLandscapeShow"
-      :mask-closable="false"
+      :mask-closable="maskClosable"
       prevent-scroll
       :prevent-scroll-exclude="scroll ? '.content' : null"
       :has-mask="hasMask"
@@ -46,6 +46,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    maskClosable: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -73,7 +77,7 @@ export default {
 .md-landscape
   .content
     position relative
-    width 540px
+    min-width 540px
     min-height 500px
     font-size 28px
     text-align center

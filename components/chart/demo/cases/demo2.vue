@@ -26,6 +26,7 @@ export default {
   name: 'chart-demo',
   /* DELETE */
   title: '区域填充',
+  titleEnUS: 'Area fill',
   describe: '',
   /* DELETE */
   components: {

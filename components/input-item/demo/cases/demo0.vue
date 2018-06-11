@@ -53,6 +53,7 @@ export default {
   name: 'input-item-demo',
   /* DELETE */
   title: '普通输入框',
+  titleEnUS: 'Normal input',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,

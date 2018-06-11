@@ -42,7 +42,7 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 @import '~mand-mobile/components/_style/mixin/util'
 @import '~mand-mobile/components/_style/mixin/theme'
 
-// 建议安装并引入css拓展nib
+// 安装并引入css拓展nib(可选)
 @import '~nib/lib/nib/vendor'
 @import '~nib/lib/nib/gradients'
 
@@ -92,7 +92,7 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       options: {
         stylus: {
-          // pxtorem 配置可根据项目需要而定
+          // pxtorem (配置可根据项目需要而定)
           use: [poststylus(pxtorem({ rootValue: 100, propWhiteList: [] }))]
         }
       }

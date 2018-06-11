@@ -14,6 +14,7 @@ export default {
   name: 'switch-demo',
   /* DELETE */
   title: '关闭不可用状态',
+  titleEnUS: 'Closed and disabled',
   /* DELETE */
   components: {
     [Switch.name]: Switch,

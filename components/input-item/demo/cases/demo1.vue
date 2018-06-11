@@ -24,7 +24,8 @@
 export default {
   name: 'input-item-demo',
   /* DELETE */
-  title: '标题隐藏输入框',
+  title: '标题浮动输入框',
+  titleEnUS: 'Floating title input',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,

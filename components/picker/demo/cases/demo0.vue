@@ -19,7 +19,10 @@ export default {
   /* DELETE */
   title:
     '单列数据 <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a>',
+  titleEnUS:
+    'Single column <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a>',
   describe: '禁用2-4项',
+  describeEnUS: 'Disable 2-4 items',
   /* DELETE */
   components: {
     [Picker.name]: Picker,
