@@ -2,6 +2,20 @@
 title: Change Log
 ---
 
+### 1.3.2
+`2018-06-11`
+- Feature
+  - Increase `css varialbe` coverage
+
+### 1.3.1
+`2018-06-08`
+- Feature
+  - Add support of `css varialbe`
+  - `ImageReader` callback add image file argument
+  - `Cashier` add support of customized text
+- Fix
+  - `InputItem` issue #104
+
 ### 1.3.0
 `2018-06-01`
 - Feature
