@@ -47,7 +47,7 @@ Vue.component(ImageReader.name, ImageReader)
 |name|选择器标识|String|
 |dataUrl|图片Base64|String|
 |blob|图片Blob对象，可用于`formData`|Blob|
-|files|图片对象|File|
+|file|图片对象|File|
 
 ##### @error(name, { code, msg })
 图片选择读取失败事件

@@ -126,6 +126,12 @@ module.exports = {
           markdown: resolve('site/docs/design/other.md'),
         }
       ]
+    },
+    {
+      name: 'palatee',
+      text: '调色板',
+      src: 'https://mand-mobile.github.io/palette',
+      dot: true
     }]
   }, {
     name: 'en-US',
@@ -200,6 +206,12 @@ module.exports = {
           markdown: resolve('site/docs/design/other.en-US.md'),
         }
       ]
+    },
+    {
+      name: 'palatee',
+      text: 'Palatee',
+      src: 'https://mand-mobile.github.io/palette',
+      dot: true
     }]
   }],
   components: generateSource(),
@@ -228,6 +240,10 @@ module.exports = {
           {
             text: '脚手架模板',
             src: 'https://github.com/mand-mobile/mand-mobile-template',
+          },
+          {
+            text: '调色板',
+            src: 'https://mand-mobile.github.io/palette'
           },
           {
             text: '国内镜像 🇨🇳',
@@ -293,6 +309,10 @@ module.exports = {
           {
             text: 'Template',
             src: 'https://github.com/mand-mobile/mand-mobile-template',
+          },
+          {
+            text: 'Palette',
+            src: 'https://mand-mobile.github.io/palette'
           },
           {
             text: 'China Mirror 🇨🇳',

@@ -463,7 +463,7 @@ export default {
 
   .default-doc-content
     position relative
-    min-height 1500px
+    min-height 800px
     padding 0 64px 87px
 
   .default-doc-demo-container
