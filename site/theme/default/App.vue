@@ -96,7 +96,7 @@ export default {
       .default-content-wrapper
         overflow visible   
   .default-content
-    min-height 1500px
+    min-height 800px
     padding 32px 0
     &:after
       content ""

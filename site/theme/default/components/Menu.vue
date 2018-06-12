@@ -84,7 +84,7 @@ export default {
 .mfe-blog-theme-default-menu
   float left
   width 16.666%
-  min-height 1500px
+  // min-height 1500px
   height 100%
   // padding 32px 0
   box-sizing border-box

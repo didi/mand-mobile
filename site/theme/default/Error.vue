@@ -4,24 +4,34 @@
       <img src="//manhattan.didistatic.com/static/manhattan/mfd/result-page/lost" alt="">
       <div class="error-box-text">
         <h1>404</h1>
-        <p>抱歉，您访问的页面丢失...了</p>
-        <router-link to="/home">返回首页</router-link>
+        <p>
+          {{ lang === 'zh-CN' ? '抱歉，您访问的页面丢失...了' : 'Sorry, the page you visited is lost...'}}
+        </p>
+        <router-link to="/">
+          {{ lang === 'zh-CN' ? '返回首页' : 'Go Home'}}
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
-<script>export default {}
-</script>
+<script>
+export default {
+  computed: {
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    }
+  }
+}
+
+</script>
 
 <style lang="stylus">
 .mfe-blog-theme-default-error
+  display flex
+  justify-content center
   .error-box
     position relative
-    left 50%
-    display inline-block
-    width 500px
-    margin-left -250px
     margin-top 10%
     &:after
       content ""
@@ -32,6 +42,7 @@
     .error-box-text
       float right
       margin-top 20px
+      margin-left 35px
       h1
         font-size 48px
       p
