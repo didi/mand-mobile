@@ -103,6 +103,10 @@ Vue.use(mandMobile)
 
 #### 使用前准备
 
+##### Normalize
+
+为标准化浏览器元素的样式，推荐引入[Normalize.css](http://necolas.github.io/normalize.css/)
+
 ##### FastClick
 
 为避免[浏览器兼容问题](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)引起的点击问题, 推荐引入[FastClick](https://github.com/ftlabs/fastclick)

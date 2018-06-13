@@ -32,6 +32,8 @@
 * [开发指南](site/docs/development.md)
 * [更新日志](CHANGELOG.md)
 * [示例集合](https://didi.github.io/mand-mobile/examples/)
+* [调色板](https://github.com/mand-mobile/palette)
+* [更多](https://github.com/mand-mobile)
 
 ## 预览
 
