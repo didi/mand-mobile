@@ -40,12 +40,12 @@
             <span v-else>English</span>
           </div>
         </div>
-        <div class="default-header-version default-header-operater">
+        <!-- <div class="default-header-version default-header-operater">
           <div class="operater-select" @click.stop="versionTableShow = true">
             <span>1.x</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
-        </div>
+        </div> -->
         <div class="default-header-nav">
           <ul>
             <template v-if="lang === 'en-US'">
@@ -68,6 +68,7 @@
                   v-html="item.text">
                 </router-link>
               </template>
+              <i class="dot" v-if="item.dot"></i>
             </li>
           </ul>
         </div>
@@ -151,7 +152,7 @@ export default {
     preSearch(word) {
       if (word) {
         this.searchData = []
-        this.createSearchData(word, this.nav)
+        this.createSearchData(word, this.menu)
         this.searchTableShow = true
       } else {
         this.searchTableShow = false
@@ -206,7 +207,7 @@ export default {
       return hit
     },
 
-    traverseSource(word, source = this.nav, path = [], level = 0) {
+    traverseSource(word, source = this.menu, path = [], level = 0) {
       for (let i = 0, len = source.length; i < len; i++) {
         const item = source[i]
         const name = item.name
@@ -224,7 +225,7 @@ export default {
         }
 
         if (word === item.name) {
-          item.path = `/${path.join('/')}`
+          item.path = `/${this.lang}/${path.join('/')}`
           return item
         }
       }
@@ -343,6 +344,7 @@ export default {
         float left
         height 100%
       li.nav-item
+        position relative
         a
           position relative
           display inline-block
@@ -368,6 +370,15 @@ export default {
             color #048EFA
             &:after
               display block
+        i.dot
+          position absolute 
+          top 50%
+          right 6px
+          width 8px
+          height 8px
+          margin-top -10px
+          border-radius 8px
+          background #f56c6c
     .default-header-operater
       position relative
       float right

@@ -28,6 +28,9 @@ const routes = [
   ...Routes,
   {path: '/en-US/home', component: Home, meta: {noMenu: true}},
   {path: '/zh-CN/home', component: Home, meta: {noMenu: true}},
+  {path: '/home', redirect: `/${langCached}/home`},
+  {path: '/docs/*', redirect: `/${langCached}/docs/*`},
+  {path: '/design/*', redirect: `/${langCached}/design/*`},
   {path: '/', redirect: `/${langCached}/home`},
   {path: '*', component: Error, meta: {noMenu: true}},
 ]
