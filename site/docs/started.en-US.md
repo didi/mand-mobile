@@ -108,6 +108,10 @@ Vue.use(mandMobile)
 
 #### Prepare Before Use
 
+##### Normalize
+
+To make browsers render all elements more consistently and in line with modern standards，[Normalize.css](http://necolas.github.io/normalize.css/) is recommended to import.
+
 ##### FastClick
 
 To avoid click problems caused by [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile), [FastClick](https://github.com/ftlabs/fastclick) is recommended to import.

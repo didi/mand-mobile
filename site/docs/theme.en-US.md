@@ -37,6 +37,7 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 * Create a customized theme file, such as `theme.custom.styl`
 
 ```stylus
+@import '~mand-mobile/components/_style/global'
 @import '~mand-mobile/components/_style/mixin/util'
 @import '~mand-mobile/components/_style/mixin/theme'
 
