@@ -128,7 +128,7 @@ module.exports = {
       ]
     },
     {
-      name: 'palatee',
+      name: 'palatte',
       text: '调色板',
       src: 'https://mand-mobile.github.io/palette',
       dot: true
@@ -208,8 +208,8 @@ module.exports = {
       ]
     },
     {
-      name: 'palatee',
-      text: 'Palatee',
+      name: 'palette',
+      text: 'Palette',
       src: 'https://mand-mobile.github.io/palette',
       dot: true
     }]
