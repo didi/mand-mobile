@@ -39,6 +39,7 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 * 创建自定义主题文件，如`theme.custom.styl`
 
 ```stylus
+@import '~mand-mobile/components/_style/global'
 @import '~mand-mobile/components/_style/mixin/util'
 @import '~mand-mobile/components/_style/mixin/theme'
 
