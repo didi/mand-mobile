@@ -1,5 +1,11 @@
 <template>
-  <div class="md-toast" :class="{'has-icon': icon}">
+  <div
+    class="md-toast"
+    :class="[
+      icon ? 'has-icon' : '',
+      position,
+    ]"
+  >
     <md-popup
       v-model="visible"
       @hide="$_onHide"
@@ -37,6 +43,11 @@ export default {
     duration: {
       type: Number,
       default: 0,
+    },
+    position: {
+      // top, left, bottom
+      type: String,
+      default: 'center',
     },
     hasMask: {
       type: Boolean,
@@ -109,4 +120,12 @@ export default {
         overflow visible
       .md-popup-mask
         background transparent
+    &.bottom
+      .md-popup.center .md-popup-box
+        top auto
+        bottom 50px
+    &.top
+      .md-popup.center .md-popup-box
+        top 50px
+        bottom auto
 </style>
