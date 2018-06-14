@@ -483,6 +483,7 @@ export default {
       justify-content center
       padding 0
     .default-header-nav li.nav-item a
+      padding 0 10px !important
       line-height 32px !important
       font-size 12px !important
       &:after
