@@ -49,6 +49,7 @@
             :placeholder="placeholder"
             :disabled="disabled"
             :readonly="readonly"
+            :maxlength="isFormative ? '' : maxlength"
             autocomplete="off"
             @focus="$_onFocus"
             @blur="$_onBlur"
