@@ -2,6 +2,13 @@
 title: 更新日志
 ---
 
+### 1.3.3
+`2018-06-15`
+- Feature
+  - 新增`Toast`自定义位置参数 #89
+- Fix
+  - 修复`InputItem`长度限制
+
 ### 1.3.2
 `2018-06-11`
 - Feature
@@ -14,7 +21,7 @@ title: 更新日志
   - `ImageReader`组件新增图片对象参数
   - `Cashier`新增自定义文案
 - Fix
-  - 修复`InputItem`销毁未删除虚拟键盘问题issue #104
+  - 修复`InputItem`销毁未删除虚拟键盘问题issue #104
 
 ### 1.3.0
 `2018-06-01`

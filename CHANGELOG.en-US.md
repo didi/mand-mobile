@@ -2,6 +2,13 @@
 title: Change Log
 ---
 
+### 1.3.3
+`2018-06-15`
+- Feature
+  - `Toast` add support of custom position #89
+- Fix
+  - `InputItem` unformatted input maxlength limit
+
 ### 1.3.2
 `2018-06-11`
 - Feature
