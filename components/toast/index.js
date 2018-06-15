@@ -2,7 +2,14 @@ import Vue from 'vue'
 import ToastOptions from './toast'
 const ToastConstructor = Vue.extend(ToastOptions)
 
-function Toast({content = '', icon = '', duration = 3000, hasMask = false, parentNode = document.body}) {
+function Toast({
+  content = '',
+  icon = '',
+  duration = 3000,
+  position = 'center',
+  hasMask = false,
+  parentNode = document.body,
+}) {
   let vm = Toast._instance
 
   if (!vm) {
@@ -11,6 +18,7 @@ function Toast({content = '', icon = '', duration = 3000, hasMask = false, paren
         content,
         icon,
         duration,
+        position,
         hasMask,
       },
     }).$mount()
