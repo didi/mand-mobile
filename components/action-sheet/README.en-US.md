@@ -20,14 +20,15 @@ Vue.component(ActionSheet.name, ActionSheet)
 ### API
 
 #### ActionSheet Props
-|Props | Description | Type | Default |
-|----|-----|------|------|------|
-|v-model|display actionsheet or not|Boolean|`false`|
-|title|title of actionsheet|String|-
-|options|options of actionsheet|Array<{text, value}>| []
-|default-index|default selected index|Boolean|0
-|invalid-index|invalid index|Number| -1
-|cancel-text|cancel text|String|-
+|Props | Description | Type | Default | Note |
+|----|-----|------|------|------|------|
+|v-model|display actionsheet or not|Boolean|`false`|-|
+|title|title of actionsheet|String|-|-|
+|options|options of actionsheet|Array<{text, value}>| [] |-|
+|default-index|default selected index|Boolean|0|-|
+|invalid-index|invalid index|Number| -1|-|
+|cancel-text|cancel text|String|-|-|
+|max-height|the maximum height of actionsheet area|Number|`400`|unit `px`|
 
 
 #### ActionSheet Events

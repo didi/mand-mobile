@@ -19,14 +19,14 @@ Vue.component(ActionSheet.name, ActionSheet)
 ### API
 
 #### ActionSheet Props
-|属性 | 说明 | 类型 | 默认值 |
-|----|-----|------|------|
-|v-model|面板是否可见|Boolean| `false`|
-|title|面板标题|String|- |
-|options|面板选项| Array<{text, value}>| `[]`|
-|default-index|默认选中项| Boolean| `0`|
-|invalid-index|禁用选择项索引 |Number|`-1`|
-|cancel-text|取消按钮文案 |String |-|
+|属性 | 说明 | 类型 | 默认值 | 备注 |
+|----|-----|------|------|------|
+|v-model|面板是否可见|Boolean| `false`|-|
+|title|面板标题|String|-|-|
+|options|面板选项| Array<{text, value}>| `[]`|-|
+|default-index|默认选中项| Boolean| `0`|-|
+|invalid-index|禁用选择项索引 |Number|`-1`|-|
+|cancel-text|取消按钮文案 |String |-|-|
 |max-height|面板最高高度, 超出后可滚动|Number|400|单位`px`|
 
 #### ActionSheet Events
