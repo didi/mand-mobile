@@ -60,7 +60,7 @@ export default {
   name: 'mfe-blog-theme-default-home',
   data () {
     return {
-      financialComponents: ['captcha', 'cashier', 'chart', 'codebox', 'input-item', 'number-keyboard']
+      financialComponents: ['amount', 'captcha', 'cashier', 'chart', 'codebox', 'input-item', 'number-keyboard']
     }
   },
   computed: {
