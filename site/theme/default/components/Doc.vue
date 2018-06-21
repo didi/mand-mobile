@@ -231,6 +231,7 @@
 
     <!-- 文档目录索引 -->
     <div
+      v-if="!hiddenToc"
       class="default-doc-toc"
       :class="{'is-stricky': isTocStricky}"
       v-html="toc">
@@ -287,16 +288,22 @@ export default {
     lang() {
       return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
     },
+    hiddenToc() {
+      return this.info.toc === 'hidden'
+    }
   },
 
   mounted() {
-    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-    $(window).bind('scroll', () => {
+    if (!this.hiddenToc) {
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      $(window).bind('scroll', () => {
+        const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+        this.strickyTocBar(scrollTop)
+        // this.strickyToggleBar(scrollTop)
+      })
       this.strickyTocBar(scrollTop)
-      // this.strickyToggleBar(scrollTop)
-    })
-    this.strickyTocBar(scrollTop)
+    }
+    
     if (location.hash) {
       const tmpHash = location.hash.substr(1)
       location.hash = ''
