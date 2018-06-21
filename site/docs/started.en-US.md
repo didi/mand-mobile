@@ -4,7 +4,7 @@ title: Quickstart
 
 #### Scaffold
 
-**New project** can be initialized and integrated with `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to [Installation](#docs/started?anchor=Installation) for **existing projects**.
+**New project** can be initialized and integrated with `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to <a href="javascript:jumpAnchor('Installation')">Installation</a> for **existing projects**.
 
 * vue cli 2.0([Template](https://github.com/mand-mobile/mand-mobile-template))
 

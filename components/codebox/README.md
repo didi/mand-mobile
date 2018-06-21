@@ -40,5 +40,5 @@ Vue.component(Codebox.name, Codebox)
 
 #### Codebox Events
 
-#### @submit(code)
+##### @submit(code)
 用户提交输入内容事件

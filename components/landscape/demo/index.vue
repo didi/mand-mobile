@@ -1,7 +1,7 @@
 <template>
   <div class="md-example landscape">
     <section class="md-example-section" v-for="(demo, index) in demos" :key="index">
-      <div class="md-example-title" v-html="demo.title"></div>
+      <div class="md-example-title" v-html="demo.title || '基础'"></div>
       <div class="md-example-describe" v-html="demo.describe"></div>
       <div class="md-example-content">
         <component :is="demo"></component>
