@@ -13,6 +13,10 @@ import { InputItem } from 'mand-mobile'
 Vue.component(InputItem.name, InputItem)
 ```
 
+### Instruction
+
+<b>Validation</b> for `input-item` can use third-party tools, such as[vee-validate](https://baianat.github.io/vee-validate/). Examples can refer to<a href="javascript:jumpAnchor('Validation')">Validation</a>
+
 ### Code Examples
 <!-- DEMO -->
 
@@ -79,3 +83,7 @@ key press, is invoked only if `is-virtual-keyboard` is false
 
 ##### @keydown(name, event)
 key release, is invoked only if `is-virtual-keyboard` is false
+
+### Validation
+
+<iframe src="https://codesandbox.io/embed/5z344nk79x?autoresize=1&fontsize=12&module=%2Fsrc%2FApp.vue" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>

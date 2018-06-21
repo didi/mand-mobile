@@ -28,7 +28,7 @@ Vue.component(Codebox.name, Codebox)
 | disorder| whether to use random keyboard layout or not | Boolean | `false` |
 | system | whether to use system keyboard or simulated keyboard | Boolean | `false` |
 
-#### Codebox Instance Methods
+#### Codebox Methods
 
 ##### focus()
 
@@ -37,5 +37,5 @@ Hide keyboard
 
 #### Codebox Events
 
-#### @submit(code)
+##### @submit(code)
 Invoked when user submit

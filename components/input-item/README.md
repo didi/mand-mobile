@@ -13,6 +13,11 @@ import { InputItem } from 'mand-mobile'
 Vue.component(InputItem.name, InputItem)
 ```
 
+### 使用指南
+
+`input-item`的<b>表单校验</b>可使用第三方工具，如[vee-validate](https://baianat.github.io/vee-validate/)，使用示例可参考<a href="javascript:jumpAnchor('表单校验')">表单校验</a>
+
+
 ### 代码演示
 <!-- DEMO -->
 
@@ -79,3 +84,7 @@ Vue.component(InputItem.name, InputItem)
 
 ##### @keydown(name, event)
 表单按键释放事件，仅`is-virtual-keyboard`为`false`时触发
+
+### 表单校验
+
+<iframe src="https://codesandbox.io/embed/5z344nk79x?autoresize=1&fontsize=12&module=%2Fsrc%2FApp.vue" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>

@@ -16,7 +16,7 @@ Toast.succeed('Good Job!')
 
 ### API
 
-#### Toast({content, icon, duration, hasMask, parentNode})
+#### Toast({content, icon, duration, position, hasMask, parentNode})
 Dynamically create a toast
 
 | Props | Description | Type | Default | Note |
