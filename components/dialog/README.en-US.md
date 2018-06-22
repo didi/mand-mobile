@@ -95,3 +95,6 @@ Dynamically create a fail dialog
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
+
+#### Dialog.closeAll()
+Close all global dialogs

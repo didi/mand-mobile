@@ -94,3 +94,6 @@ Vue.component(Dialog.name, Dialog)
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
+
+#### Dialog.closeAll()
+静态方法关闭所有动态创建的全局Dialog

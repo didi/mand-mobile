@@ -4,6 +4,15 @@ const DialogConstructor = Vue.extend(Dialog)
 
 const noop = function() {}
 
+// all active instances
+const instances = []
+
+/**
+ * Dialog factory
+ *
+ * @param {Object} props
+ * @return {Dialog}
+ */
 const generate = function({title = '', icon = '', content = '', closable = false, btns = []}) {
   const vm = new DialogConstructor({
     propsData: {
@@ -16,23 +25,44 @@ const generate = function({title = '', icon = '', content = '', closable = false
     },
   }).$mount()
 
+  instances.push(vm)
+
   vm.$on('input', val => {
     if (!val) {
       vm.value = false
     }
   })
   vm.$on('hide', () => {
+    const index = instances.indexOf(vm)
+    if (index >= 0) {
+      instances.splice(index, 1)
+    }
     vm.$destroy()
   })
 
   return vm
 }
 
-Dialog.confirm = ({title = '', icon = '', content = '', cancelText = '取消', confirmText = '确定', onConfirm = noop}) => {
+/**
+ * Dynamically create a confirm dialog
+ *
+ * @param {Object} props
+ * @return {Dialog}
+ */
+Dialog.confirm = ({
+  title = '',
+  icon = '',
+  content = '',
+  cancelText = '取消',
+  confirmText = '确定',
+  closable = false,
+  onConfirm = noop,
+}) => {
   const vm = generate({
     title,
     icon,
     content,
+    closable,
     btns: [
       {
         text: cancelText,
@@ -52,11 +82,18 @@ Dialog.confirm = ({title = '', icon = '', content = '', cancelText = '取消', c
   return vm
 }
 
-Dialog.alert = ({title = '', icon = '', content = '', confirmText = '确定', onConfirm = noop}) => {
+/**
+ * Dynamically create a alert dialog
+ *
+ * @param {Object} props
+ * @return {Dialog}
+ */
+Dialog.alert = ({title = '', icon = '', content = '', confirmText = '确定', closable = false, onConfirm = noop}) => {
   const vm = generate({
     title,
     icon,
     content,
+    closable,
     btns: [
       {
         text: confirmText,
@@ -72,14 +109,38 @@ Dialog.alert = ({title = '', icon = '', content = '', confirmText = '确定', on
   return vm
 }
 
+/**
+ * Dynamically create a succeed dialog
+ *
+ * @param {Object} props
+ * @return {Dialog}
+ */
 Dialog.succeed = props => {
   props.icon = 'circle-right'
   return Dialog.confirm(props)
 }
 
+/**
+ * Dynamically create a failed dialog
+ *
+ * @param {Object} props
+ * @return {Dialog}
+ */
 Dialog.failed = props => {
   props.icon = 'circle-cross'
   return Dialog.confirm(props)
+}
+
+/**
+ * Close all actived static dialogs
+ *
+ * @static
+ * @return void
+ */
+Dialog.closeAll = () => {
+  instances.forEach(instance => {
+    instance.hide()
+  })
 }
 
 export default Dialog
