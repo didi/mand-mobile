@@ -46,3 +46,24 @@ Vue.component(ActionSheet.name, ActionSheet)
 
 ##### @hide()
 面板隐藏事件
+
+#### ActionSheet Static Methods
+
+##### create(props)
+静态方法创建操作菜单, 返回ActionSheet实例。可以通过控制实例的`value`属性来控制显示或隐藏操作菜单。
+
+|属性 | 说明 | 类型 | 默认值 | 备注 |
+|----|-----|------|------|------|
+|value|面板是否立即可见|Boolean| `true`|-|
+|title|面板标题|String|-|-|
+|options|面板选项| Array<{text, value}>| `[]`|-|
+|default-index|默认选中项| Boolean| `0`|-|
+|invalid-index|禁用选择项索引 |Number|`-1`|-|
+|cancel-text|取消按钮文案 |String |-|-|
+|max-height|面板最高高度, 超出后可滚动|Number|400|单位`px`|
+
+##### closeAll()
+关闭所有全局操作菜单
+
+##### destroyAll()
+关闭并销毁所有全局操作菜单
