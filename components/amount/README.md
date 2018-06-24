@@ -1,3 +1,8 @@
+---
+title: Amount 金融数字
+preview: https://didi.github.io/mand-mobile/examples/#/amount
+---
+
 金融数字，一般用于金额，数量等
 
 ### 引入
