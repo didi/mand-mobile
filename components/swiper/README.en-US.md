@@ -22,15 +22,15 @@ Vue.component(SwiperItem.name, SwiperItem)
 
 #### Swiper Props
 
-| Props | Description | Type | Default | Note |
+| Props | Description | Type | Default | Options/Note |
 |---|---|---|---|---|
 |autoplay|the interval (ms) of autoplay; set `0` to disable autoplay|Number|`3000`|`0`, `[500, +Int.Max)`|
 |transition|animation effects|String|`slide`|`slide`, `slideY`, `fade`, `fade`|
 |default-index|default selected index|Number|`0`|`[0, length - 1]`|
-|has-dots|whether to display the indication dots|Boolean|`true`|`true`, `false`|
-|is-prevent|whether to prevent the default event|Boolean|`true`|`true`, `false`|
-|is-loop|whether is infinite loop|Boolean|`true`|`true`, `false`|
-|dragable|whether is dragable|Boolean|`true`|`true`, `false`|
+|has-dots|whether to display the indication dots|Boolean|`true`|-|
+|is-prevent|whether to prevent the default event|Boolean|`true`|set it to `false` when binding click event to `swiper-item`|
+|is-loop|whether is infinite loop|Boolean|`true`|-|
+|dragable|whether is dragable|Boolean|`true`|-|
 
 #### Swiper Methods
 
