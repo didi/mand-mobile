@@ -31,7 +31,7 @@ toc: hidden
   - `Cashier` change the presentation of channels [#77](https://github.com/didi/mand-mobile/issues/77)
   - `Capatcha` add support to customize button text and add `auto-countdown` prop to control whether auto send code or not [#84](https://github.com/didi/mand-mobile/issues/84)
   - `ActionSheet` add `maxHeight` [#86](https://github.com/didi/mand-mobile/issues/86)
-  - `InputItem` support `Number` type and other standard html input type [#95](https://github.com/didi/mand-mobile/issues/95)
+  - `InputItem` support `digit` type and other standard html input type [#95](https://github.com/didi/mand-mobile/issues/95)
   - `Picker`，`DatePicker`，`TabPicker` will cancel change when click mask or cancel button
 - Fix
   - Fix `DatePicker` bug [#75](https://github.com/didi/mand-mobile/issues/75)

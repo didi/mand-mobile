@@ -54,7 +54,7 @@ Asynchronous cascading panel supports passing slots
 |title|the title of tabpicker|String|-|-|
 |ok-text|text of confirmation button|String|`confirm`|-|
 |cancel-text|text of cancellation button|String|`cancel`|-|
-|mask-closable|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
+|mask-closable<sup class="version-after">1.3.0+</sup>|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
 
 #### TabPicker Methods
 

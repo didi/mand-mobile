@@ -31,7 +31,7 @@ toc: hidden
   - `Cashier`更改渠道展示方式，当支付渠道为两个直接展示 [#77](https://github.com/didi/mand-mobile/issues/77)
   - `Capatcha`支持自定义按钮文案，支持通过`auto-countdown`控制验证码是否自动发送 [#84](https://github.com/didi/mand-mobile/issues/84)
   - `ActionSheet`增加`maxHeight`控制展示区域最大高度 [#86](https://github.com/didi/mand-mobile/issues/86)
-  - `InputItem`增加类型`Number`, 支持其他Html Input标准类型 [#95](https://github.com/didi/mand-mobile/issues/95)
+  - `InputItem`增加类型`digit`, 支持其他Html Input标准类型 [#95](https://github.com/didi/mand-mobile/issues/95)
   - `Picker`，`DatePicker`，`TabPicker`点击取消或蒙层将会撤销选择更改
 - Fix
   - 修复`DatePicker`默认时间不在可选范围内的异常，将默认值教正至临近边界值 [#75](https://github.com/didi/mand-mobile/issues/75)
