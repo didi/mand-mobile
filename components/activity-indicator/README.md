@@ -3,7 +3,7 @@ title: ActivityIndicator 活动指示器
 preview: https://didi.github.io/mand-mobile/examples/#/activity-indicator
 ---
 
-活动指示器，一般用于正在进行中的任务示意
+活动指示器，一般用于正在进行中的任务示意 <sup class="version-after">1.4.0+</sup>
 
 ### 引入
 
