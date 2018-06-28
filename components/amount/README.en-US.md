@@ -3,7 +3,7 @@ title: Amount
 preview: https://didi.github.io/mand-mobile/examples/#/amount
 ---
 
-Financial figures, generally used for amounts, quantities, etc.
+Financial figures, generally used for amounts, quantities, etc. <sup class="version-after">1.4.0+</sup>
 
 ### Import
 
