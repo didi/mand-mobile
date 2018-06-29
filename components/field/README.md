@@ -37,6 +37,17 @@ Vue.component(FieldItem.name, FieldItem)
 |value|内容|String|-|-|
 |solid|是否固定标题宽度，超出会自动换行|Boolean|`false`|-|
 
+#### FieldItem Slots
+
+##### default
+内容默认插槽
+
+##### left
+标题左侧插槽 <sup class="version-after">1.4.0+</sup>
+
+##### right
+内容右侧插槽 <sup class="version-after">1.4.0+</sup>
+
 #### FieldItem Events
 
 ##### @click(name)

@@ -8,6 +8,10 @@
     :name="name"
     @click="$_onItemClick($event, name)">
     <div class="md-field-item-inner">
+      <!-- Left Control -->
+      <div class="md-field-item-extra" v-if="$slots.left">
+        <slot name="left"></slot>
+      </div>
       <div
         class="md-field-item-label"
         :class="[
@@ -19,6 +23,7 @@
           v-html="brief"
         ></div>
       </div>
+      <!-- Content -->
       <div
         v-if="customized"
         class="md-field-item-content"
@@ -31,11 +36,19 @@
         :class="[align]">
         {{value}}
       </div>
+      <!-- Right Control -->
+      <div
+        class="md-field-right"
+        v-if="$slots.right"
+      >
+        <slot name="right"></slot>
+      </div>
       <md-icon
-        v-if="arrow"
+        v-else-if="arrow"
         class="md-field-arrow"
         :name="arrow"
-        size="lg"></md-icon>
+        size="lg">
+      </md-icon>
     </div>
   </div>
 </template>
@@ -76,12 +89,6 @@ export default {
     arrow: {
       type: String,
       default: '',
-      validator(value) {
-        if (!value) {
-          return true
-        }
-        return ['arrow-up', 'arrow-right', 'arrow-down', 'arrow-left'].indexOf(value) > -1
-      },
     },
     customized: {
       type: Boolean,
@@ -121,7 +128,6 @@ export default {
   position relative
   box-sizing border-box
   width 100%
-  padding field-item-padding-v 0
   background-color field-item-bg-color
   color field-item-color
   &.disabled
@@ -142,6 +148,10 @@ export default {
   .md-field-item-inner
       display flex
       align-items center
+      padding field-item-padding-v 0
+  .md-field-item-extra
+    display flex
+    margin-right field-item-padding-v
   .md-field-item-label
     &.solid
       width input-item-title-width
@@ -167,4 +177,8 @@ export default {
     top 50%
     transform translate(42px, -50%)
     color field-item-icon-color
+  .md-field-right
+    display flex
+    align-items center
+    justify-content center
 </style>
