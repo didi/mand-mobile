@@ -22,7 +22,7 @@ describe('Agree', () => {
     expect(wrapper.vm.iconName).to.equal('circle-right')
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    wrapper.find('.agree-icon')[0].trigger('click')
+    wrapper.find('.md-agree-icon')[0].trigger('click')
     expect(eventStub.calledWith('change')).to.be.true
   })
 
