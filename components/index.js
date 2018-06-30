@@ -40,6 +40,7 @@ import Captcha from './captcha'
 import Codebox from './codebox'
 import Cashier from './cashier'
 import Chart from './chart'
+import ActivityIndicator from './activity-indicator'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -90,6 +91,7 @@ export const components = {
   Codebox,
   Cashier,
   Chart,
+  ActivityIndicator,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -146,6 +148,7 @@ export {
   Codebox,
   Cashier,
   Chart,
+  ActivityIndicator,
   /* @init<%${componentNameUpper},%> */
 }
 
