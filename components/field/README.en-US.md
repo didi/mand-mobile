@@ -37,6 +37,17 @@ Vue.component(FieldItem.name, FieldItem)
 |value|content|String|-|-|
 |solid|the width of title is fixed or not|Boolean|false|-|
 
+#### FieldItem Slots
+
+##### default
+Default slot of content
+
+##### left
+Left slot of title <sup class="version-after">1.4.0+</sup>
+
+##### right
+Right slot of content <sup class="version-after">1.4.0+</sup>
+
 #### FieldItem Events
 
 ##### @click(name)

@@ -114,7 +114,10 @@
           }"
           :key="sceneKey">
           <div class="md-cashier-block-icon">
-            <md-cashier-rolling ref="rolling" :is-success="scene === 'success'"></md-cashier-rolling>
+            <md-activity-indicator-rolling-success
+              ref="rolling"
+              :is-success="scene === 'success'"
+            ></md-activity-indicator-rolling-success>
           </div>
           <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
           <div class="md-cashier-block-btn" v-if="scene === 'success'">
@@ -159,7 +162,7 @@ import PopupTitlebar from '../popup/title-bar'
 import Captcha from '../captcha'
 import Button from '../button'
 import Icon from '../icon'
-import Rolling from './rolling'
+import RollerSuccess from '../activity-indicator/roller-success'
 import {noop, extend} from '../_util'
 
 const BLOCK_MAX_HEIGHT = 1000
@@ -173,7 +176,7 @@ export default {
     [Captcha.name]: Captcha,
     [Button.name]: Button,
     [Icon.name]: Icon,
-    [Rolling.name]: Rolling,
+    [RollerSuccess.name]: RollerSuccess,
   },
 
   props: {

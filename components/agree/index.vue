@@ -5,7 +5,7 @@
       disabled ? 'disabled' : ''
     ]">
     <div
-      class="agree-icon"
+      class="md-agree-icon"
       :class="[
         value ? 'checked' : ''
       ]"
@@ -14,7 +14,9 @@
       :name="iconName"
       :size="size"></md-icon>
     </div>
-    <slot></slot>
+    <div class="md-agree-content">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -69,9 +71,12 @@ export default {
   display flex
   &.disabled
     opacity agree-disabled-opacity
-  .agree-icon
+  .md-agree-icon
     margin-right 10px
+    flex-shrink 0
     color agree-fill-inverse
     &.checked
       color agree-fill
+  .md-agree-content
+    flex 1 1 0%
 </style>

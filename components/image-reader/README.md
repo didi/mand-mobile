@@ -34,29 +34,29 @@ Vue.component(ImageReader.name, ImageReader)
 ##### @select(name, { files })
 图片选择完成事件，还未开始读取
 
-|属性 | 说明 | 类型|
-|----|-----|------|
-|name|选择器标识|String|
-|files|图片对象集合|Array<File>|
+|属性 | 说明 | 类型| 备注|
+|-----|-----|-----|-----|
+|name|选择器标识|String|-|
+|files<sup class="version-after">1.3.1+</sup>|图片对象集合|Array<File>|-|
 
 ##### @complete(name, { dataUrl, blob, file })
 图片选择读取完成事件
 
-|属性 | 说明 | 类型|
-|----|-----|------|
-|name|选择器标识|String|
-|dataUrl|图片Base64|String|
-|blob|图片Blob对象，可用于`formData`|Blob|
-|file|图片对象|File|
+|属性 | 说明 | 类型| 备注|
+|-----|-----|-----|-----|
+|name|选择器标识|String|-|
+|dataUrl|图片Base64|String|-|
+|blob|图片Blob对象，可用于`formData`|Blob|-|
+|file<sup class="version-after">1.3.1+</sup>|图片对象|File|-|
 
 ##### @error(name, { code, msg })
 图片选择读取失败事件
 
-|属性 | 说明 | 类型|
-|----|-----|------|
-|name|选择器标识|String|
-|code|错误标识，见附录|String|
-|msg|错误信息，见附录|String|
+|属性 | 说明 | 类型| 备注|
+|-----|-----|-----|-----|
+|name|选择器标识|String|-|
+|code|错误标识，见附录|String|-|
+|msg|错误信息，见附录|String|-|
 
 ### imageProcessor
 
@@ -79,7 +79,7 @@ imageProcessor(options[, fn])
 #### options
 
 |属性 | 说明 | 类型| 备注|
-|----|-----|------|------|
+|-----|-----|-----|-----|
 |dataUrl|图片Base64|String|-|
 |width|图片宽度|Number|单位`px`, 宽度超出时等比缩放|
 |height|图片高度|Number|单位`px`, 高度超出时等比缩放|

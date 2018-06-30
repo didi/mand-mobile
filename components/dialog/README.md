@@ -56,7 +56,7 @@ Vue.component(Dialog.name, Dialog)
 静态方法创建确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | icon | 图标 | String | -|
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
@@ -68,7 +68,7 @@ Vue.component(Dialog.name, Dialog)
 静态方法创建警告模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | icon | 图标 | String | -|
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
@@ -79,7 +79,7 @@ Vue.component(Dialog.name, Dialog)
 静态方法创建成功确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
@@ -89,8 +89,11 @@ Vue.component(Dialog.name, Dialog)
 静态方法创建失败确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
+
+##### Dialog.closeAll()
+静态方法关闭所有动态创建的全局Dialog <sup class="version-after">1.4.0+</sup>

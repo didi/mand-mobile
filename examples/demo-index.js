@@ -35,4 +35,7 @@ export const DatePicker = r => require.ensure([], () => r(require('../components
 export const Captcha = r => require.ensure([], () => r(require('../components/captcha/demo')), 'captcha')
 export const Codebox =  r => require.ensure([], () => r(require('../components/codebox/demo')), 'codebox')
 export const Cashier =  r => require.ensure([], () => r(require('../components/cashier/demo')), 'cashier')
-export const Chart =  r => require.ensure([], () => r(require('../components/chart/demo')), 'chart')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const Chart =  r => require.ensure([], () => r(require('../components/chart/demo')), 'chart')
+export const Amount =  r => require.ensure([], () => r(require('../components/amount/demo')), 'amount')
+export const ActivityIndicator =  r => require.ensure([], () => r(require('../components/activity-indicator/demo')), 'activity-indicator')
+/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

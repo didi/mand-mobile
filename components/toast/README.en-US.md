@@ -24,7 +24,7 @@ Dynamically create a toast
 | icon | name of icon | String | - |Refer to `Icon` component for customized icons|
 | content | content of message| String/Number | - |- |
 | duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
-| position | display position | String | `center` | `top/center/bottom` |
+| position <sup class="version-after">1.3.3+</sup>| display position | String | `center` | `top/center/bottom` |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking| Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 

@@ -43,5 +43,8 @@ module.exports = function(config) {
       reporters: [{type: 'lcov', subdir: '.'}, {type: 'text'}],
       includeAllSources: false,
     },
+    browserConsoleLogOptions: {
+      terminal: !!scope
+    }
   })
 }

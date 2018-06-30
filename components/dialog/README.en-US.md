@@ -57,7 +57,7 @@ Dynamically create interactive dialogs
 Dynamically create a confirmation dialog
 
 | Props | Description | Type | Default |
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | icon | icon of message type | String | - |
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
@@ -69,7 +69,7 @@ Dynamically create a confirmation dialog
 Dynamically create an alert dialog
 
 | Props | Description | Type | Default |
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | icon | icon of message type | String | - |
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
@@ -80,7 +80,7 @@ Dynamically create an alert dialog
 Dynamically create a success dialog
 
 | Props | Description | Type | Default |
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
@@ -90,8 +90,11 @@ Dynamically create a success dialog
 Dynamically create a fail dialog
 
 | Props | Description | Type | Default |
-|----|-----|------|------|
+|-----|-----|-----|-----|
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
+
+##### Dialog.closeAll()
+Close all global dialogs <sup class="version-after">1.4.0+</sup>

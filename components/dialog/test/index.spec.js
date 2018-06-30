@@ -1,15 +1,19 @@
-import Dialog from '../dialog.vue'
+import Dialog from '../index'
 import sinon from 'sinon'
 import {mount} from 'avoriaz'
 // import { setTimeout } from 'timers';
 
 describe('Dialog', () => {
-  let wrapper
+  let wrapper, vm
 
   afterEach(() => {
     wrapper && wrapper.destroy()
+    vm && vm.$destroy()
   })
 
+  /*--------------------------------------------------------------------------*/
+  /* Component Tests
+  /*--------------------------------------------------------------------------*/
   it('create a simple dialog', () => {
     wrapper = mount(Dialog, {
       propsData: {
@@ -82,22 +86,74 @@ describe('Dialog', () => {
     expect(clickHandler.called).to.equal(true)
   })
 
-  // it('emit input/hide/show event', (done) => {
-  //   wrapper = mount(Dialog, {
-  //     propsData: {
-  //       value: true
-  //     }
-  //   })
-  //   const eventStub = sinon.stub(wrapper.vm, '$emit')
-  //   setTimeout(() => {
-  //     expect(eventStub.calledWith('show')).to.be.true
-  //     wrapper.first('.md-dialog-close').trigger('click')
-  //     wrapper.setProps({ value: false })
-  //     setTimeout(() => {
-  //       expect(eventStub.calledWith('input')).to.be.true
-  //       expect(eventStub.calledWith('hide')).to.be.true
-  //       done()
-  //     }, 500)
-  //   }, 500)
-  // })
+  it('emit input event', done => {
+    wrapper = mount(Dialog, {
+      propsData: {
+        value: true,
+      },
+    })
+    const eventStub = sinon.stub(wrapper.vm, '$emit')
+    wrapper.setProps({value: false})
+    setTimeout(() => {
+      expect(eventStub.calledWith('input', false)).to.be.true
+      done()
+    }, 100)
+  })
+
+  it('emit show event', done => {
+    wrapper = mount(Dialog, {
+      propsData: {
+        value: false,
+      },
+    })
+    const eventStub = sinon.stub(wrapper.vm, '$emit')
+    wrapper.setProps({value: true})
+    setTimeout(() => {
+      expect(eventStub.calledWith('show')).to.be.true
+      done()
+    }, 400)
+  })
+
+  /*--------------------------------------------------------------------------*/
+  /* Static Method Tests
+  /*--------------------------------------------------------------------------*/
+
+  it('generate a confirm dialog', () => {
+    vm = Dialog.confirm({})
+    expect(vm.btns.length).to.equal(2)
+  })
+
+  it('generate a alert dialog', () => {
+    vm = Dialog.alert({})
+    expect(vm.btns.length).to.equal(1)
+  })
+
+  it('generate a succeed dialog', () => {
+    vm = Dialog.succeed({})
+    expect(vm.icon).to.equal('circle-right')
+  })
+
+  it('generate a failed dialog', done => {
+    vm = Dialog.failed({})
+    const eventSpy = sinon.spy(vm, '$emit')
+    vm.value = false
+    expect(vm.icon).to.equal('circle-cross')
+    setTimeout(() => {
+      expect(eventSpy.calledWith('hide')).to.be.true
+      done()
+    }, 300)
+  })
+
+  it('close all dialogs', done => {
+    const d1 = Dialog.confirm({})
+    const d2 = Dialog.succeed({})
+    const eventStub1 = sinon.stub(d1, '$emit')
+    const eventStub2 = sinon.stub(d2, '$emit')
+    Dialog.closeAll()
+    setTimeout(() => {
+      expect(eventStub1.calledWith('input', false)).to.be.true
+      expect(eventStub2.calledWith('input', false)).to.be.true
+      done()
+    }, 400)
+  })
 })

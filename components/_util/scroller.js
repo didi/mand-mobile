@@ -9,7 +9,7 @@
  */
 import {noop, warn, extend} from './index'
 
-import Animate from './animate'
+import Animate, {easeOutCubic, easeInOutCubic} from './animate'
 
 const members = {
   _isSingleTouch: false,
@@ -49,18 +49,6 @@ const members = {
   _maxDecelerationScrollTop: null,
   _decelerationVelocityX: null,
   _decelerationVelocityY: null,
-}
-
-const easeOutCubic = pos => {
-  return Math.pow(pos - 1, 3) + 1
-}
-
-const easeInOutCubic = pos => {
-  if ((pos /= 0.5) < 1) {
-    return 0.5 * Math.pow(pos, 3)
-  }
-
-  return 0.5 * (Math.pow(pos - 2, 3) + 2)
 }
 
 export default class Scroller {
