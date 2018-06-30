@@ -28,7 +28,7 @@ Vue.component(ActionSheet.name, ActionSheet)
 |default-index|default selected index|Boolean|0|-|
 |invalid-index|invalid index|Number| -1|-|
 |cancel-text|cancel text|String|-|-|
-|max-height|the maximum height of actionsheet area|Number|`400`|unit `px`|
+|max-height<sup class="version-after">1.3.0+</sup>|the maximum height of actionsheet area|Number|`400`|unit `px`|
 
 
 #### ActionSheet Events
@@ -51,3 +51,23 @@ Show actionsheet
 ##### @hide()
 
 Hide actionsheet
+
+#### ActionSheet Static Methods
+
+##### create(props)
+Static create a global ActionSheet, and return instance. You can change instance `value` to toggle the visibility of ActionSheet.
+
+|----|-----|------|------|------|------|
+|value|display actionsheet or not|Boolean|`true`|-|
+|title|title of actionsheet|String|-|-|
+|options|options of actionsheet|Array<{text, value}>| [] |-|
+|default-index|default selected index|Boolean|0|-|
+|invalid-index|invalid index|Number| -1|-|
+|cancel-text|cancel text|String|-|-|
+|max-height|the maximum height of actionsheet area|Number|`400`|unit `px`|
+
+##### closeAll()
+Close all global ActionSheets
+
+#### destroyAll()
+Close and destroy all global ActionSheets

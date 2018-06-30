@@ -391,12 +391,19 @@
   }
 
   table td, table th {
+    position: relative;
     border-bottom: .5px solid #ebebeb;
     padding: 15px;
     max-width: 250px;
     font-size: 13px;
     code {
       font-size: 12px;
+    }
+    sup.version-after, sup.version-before {
+      position: absolute;
+      top: 3px;
+      // right: 0;
+      padding: 0px 3px;
     }
   }
 
@@ -452,6 +459,26 @@
   img {
     vertical-align: middle;
     max-width: 100%;
+  }
+  sup.version-after {
+    padding: 1px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: #048efa;
+    border-radius: 2px;
+    font-style: normal;
+    transform: scale(.6);
+    opacity: .6;
+  }
+  sup.version-before {
+    padding: 1px 5px;
+    font-size: 16px;
+    color: #fff;
+    background: #f56c6c;
+    border-radius: 2px;
+    font-style: normal;
+    transform: scale(.6);
+    opacity: .6;
   }
 }
 

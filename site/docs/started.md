@@ -4,7 +4,7 @@ title: 快速上手
 
 #### 脚手架
 
-**新项目**可通过[vue-cli](https://github.com/vuejs/vue-cli)初始化集成`mand-mobile`，**现有项目**集成请参考[安装](#docs/started?anchor=安装)
+**新项目**可通过[vue-cli](https://github.com/vuejs/vue-cli)初始化集成`mand-mobile`，**现有项目**集成请参考<a href="javascript:jumpAnchor('安装')">安装</a>
 
 * vue cli 2.0([模板](https://github.com/mand-mobile/mand-mobile-template))
 

@@ -41,6 +41,7 @@ import Codebox from './codebox'
 import Cashier from './cashier'
 import Chart from './chart'
 import Amount from './amount'
+import ActivityIndicator from './activity-indicator'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -92,6 +93,7 @@ export const components = {
   Cashier,
   Chart,
   Amount,
+  ActivityIndicator,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -149,6 +151,7 @@ export {
   Cashier,
   Chart,
   Amount,
+  ActivityIndicator,
   /* @init<%${componentNameUpper},%> */
 }
 

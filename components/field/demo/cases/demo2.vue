@@ -26,11 +26,23 @@
         align="right"
         @click="onClick">
       </md-field-item>
+      <md-field-item
+        name="item2"
+        title="左右插槽"
+        arrow="arrow-right"
+        solid
+        align="right"
+        @click="onClick">
+        <div>内容展示</div>
+        <md-icon name="bank-zs" slot="left"></md-icon>
+        <md-icon name="circle-alert" slot="right"></md-icon>
+      </md-field-item>
     </md-field>
   </div>
 </template>
 
-<script>import {Field, FieldItem, InputItem, Dialog} from 'mand-mobile'
+<script>import {Field, FieldItem, InputItem, Icon, Dialog} from 'mand-mobile'
+import '@examples/assets/images/bank-zs.svg'
 
 export default {
   name: 'field-demo',
@@ -42,6 +54,7 @@ export default {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [InputItem.name]: InputItem,
+    [Icon.name]: Icon,
   },
   methods: {
     onClick(name) {

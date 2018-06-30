@@ -46,7 +46,7 @@
             :type="inputType"
             :name="name"
             v-model="inputBindValue"
-            :placeholder="placeholder"
+            :placeholder="inputPlaceholder"
             :disabled="disabled"
             :readonly="readonly"
             :maxlength="isFormative ? '' : maxlength"
@@ -72,8 +72,8 @@
             <span v-text="inputValue"></span>
             <span
               class="md-input-item-fake-placeholder"
-              v-if="inputValue === '' && placeholder !== ''"
-              v-text="placeholder"></span>
+              v-if="inputValue === '' && inputPlaceholder !== ''"
+              v-text="inputPlaceholder"></span>
           </div>
         </template>
 
@@ -266,6 +266,9 @@ export default {
       } else {
         return this.maxlength
       }
+    },
+    inputPlaceholder() {
+      return this.isTitleLatent && this.isInputActive ? '' : this.placeholder
     },
     isInputActive() {
       return !this.isInputEmpty || this.isInputFocus
@@ -597,9 +600,9 @@ export default {
       .md-input-item-title
         opacity 1
         top 10px
-        transform translateY(0)
-      .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
-        color transparent
+        transform translate3d(0, 0, 0)
+      // .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
+      //   color transparent
     &.error
       padding-bottom 40px
   &.is-highlight
