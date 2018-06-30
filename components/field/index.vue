@@ -34,7 +34,10 @@
   .md-field-content
     display flex
     flex-direction column
-    .md-field-item, .md-input-item, .md-input-item.is-title-latent .md-input-item-msg
+    .md-field-item,
+    .md-input-item,
+    .md-input-item.is-title-latent .md-input-item-msg,
+    .md-radio
       padding-left field-padding-h
       padding-right field-padding-h
       box-sizing border-box
