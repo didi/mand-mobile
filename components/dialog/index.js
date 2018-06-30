@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Dialog from './dialog'
 const DialogConstructor = Vue.extend(Dialog)
 
+/* istanbul ignore next */
 const noop = function() {}
 
 // all active instances
@@ -28,12 +29,14 @@ const generate = function({title = '', icon = '', content = '', closable = false
   instances.push(vm)
 
   vm.$on('input', val => {
+    /* istanbul ignore else */
     if (!val) {
       vm.value = false
     }
   })
   vm.$on('hide', () => {
     const index = instances.indexOf(vm)
+    /* istanbul ignore else */
     if (index >= 0) {
       instances.splice(index, 1)
     }
@@ -66,11 +69,11 @@ Dialog.confirm = ({
     btns: [
       {
         text: cancelText,
-        handler: () => vm.close(),
+        handler: /* istanbul ignore next */ () => vm.close(),
       },
       {
         text: confirmText,
-        handler: () => {
+        handler: /* istanbul ignore next */ () => {
           if (onConfirm() !== false) {
             vm.close()
           }
@@ -97,7 +100,7 @@ Dialog.alert = ({title = '', icon = '', content = '', confirmText = '确定', cl
     btns: [
       {
         text: confirmText,
-        handler: () => {
+        handler: /* istanbul ignore next */ () => {
           if (onConfirm() !== false) {
             vm.close()
           }
@@ -139,7 +142,7 @@ Dialog.failed = props => {
  */
 Dialog.closeAll = () => {
   instances.forEach(instance => {
-    instance.hide()
+    instance.close()
   })
 }
 
