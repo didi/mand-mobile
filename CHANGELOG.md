@@ -3,6 +3,16 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.4.0
+`2018-06-30`
+- Feature
+  - 新增`Amount`金融数字组件
+  - 新增`ActivityIndicator`进度组件
+  - `Dialog`新增`Dialog.closeAll`静态方法
+  - `ActionSheet`新增静态方法创建操作菜单 [#79](https://github.com/didi/mand-mobile/issues/79)
+- Fix
+  - 修复`Agree`布局问题
+
 ### 1.3.3
 `2018-06-15`
 - Feature
