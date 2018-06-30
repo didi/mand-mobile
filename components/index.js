@@ -41,6 +41,8 @@ import Codebox from './codebox'
 import Cashier from './cashier'
 import Chart from './chart'
 import ActivityIndicator from './activity-indicator'
+import ScrollView from './scroll-view'
+import ScrollViewRefresh from './scroll-view-refresh'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -92,6 +94,8 @@ export const components = {
   Cashier,
   Chart,
   ActivityIndicator,
+  ScrollView,
+  ScrollViewRefresh,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -149,6 +153,8 @@ export {
   Cashier,
   Chart,
   ActivityIndicator,
+  ScrollView,
+  ScrollViewRefresh,
   /* @init<%${componentNameUpper},%> */
 }
 

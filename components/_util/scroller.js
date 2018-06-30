@@ -271,7 +271,6 @@ export default class Scroller {
     if (left === this._scrollLeft && top === this._scrollTop) {
       animate = false
     }
-
     // Publish new values
     if (!this._isTracking) {
       this._publish(left, top, zoom, animate)
@@ -513,6 +512,20 @@ export default class Scroller {
           // Slow down on the edges
           if (this.options.bouncing) {
             scrollTop += moveY / 2 * this.options.speedMultiplier
+            // Support pull-to-refresh (only when only y is scrollable)
+            if (!this._enableScrollX && this._refreshHeight != null) {
+              if (!this._refreshActive && scrollTop <= -this._refreshHeight) {
+                this._refreshActive = true
+                if (this._refreshActivate) {
+                  this._refreshActivate()
+                }
+              } else if (this._refreshActive && scrollTop > -this._refreshHeight) {
+                this._refreshActive = false
+                if (this._refreshDeactivate) {
+                  this._refreshDeactivate()
+                }
+              }
+            }
           } else if (scrollTop > maxScrollTop) {
             scrollTop = maxScrollTop
           } else {

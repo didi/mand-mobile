@@ -1,0 +1,254 @@
+<template>
+  <div
+    class="md-scroll-view"
+    @touchstart="$_onScollerTouchStart"
+    @touchmove="$_onScollerTouchMove"
+    @touchend="$_onScollerTouchEnd"
+    @touchcancel="$_onScollerTouchEnd"
+    @mousedown="$_onScollerMouseDown"
+    @mousemove="$_onScollerMouseMove"
+    @mouseup="$_onScollerMouseUp"
+  >
+    <div class="scroll-view-container">
+      <div
+        v-if="hasRefresher"
+        class="scroll-view-refresh"
+        :class="{'refreshing': isRefreshing, 'refresh-active': isRefreshActive}"
+        :style="{top: `-${refreshOffsetY}px`}"
+      >
+        <slot
+          name="refresh"
+          :scroll-y="scrollY"
+          :is-refreshing="isRefreshing"
+          :is-refresh-active="isRefreshActive"
+        ></slot>
+      </div>
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<script>import Scroller from '../_util/scroller'
+import {render} from '../_util/render'
+
+export default {
+  name: 'md-scroll-view',
+
+  props: {
+    scrollingX: {
+      type: Boolean,
+      default: true,
+    },
+    scrollingY: {
+      type: Boolean,
+      default: true,
+    },
+  },
+
+  data() {
+    return {
+      container: null,
+      content: null,
+      refresher: null,
+      scroller: null,
+      isInitialed: false,
+      isMouseDown: false,
+      isRefreshing: false,
+      isRefreshActive: false,
+      scrollX: null,
+      scrollY: null,
+    }
+  },
+
+  computed: {
+    hasRefresher() {
+      return !!(this.$slots.refresh || this.$scopedSlots.refresh)
+    },
+    refreshOffsetY() {
+      return this.refresher ? this.refresher.clientHeight : 0
+    },
+  },
+
+  mounted() {
+    this.container = this.$el
+    this.refresher = this.$el.querySelector('.scroll-view-refresh')
+    this.content = this.$el.querySelector('.scroll-view-container')
+
+    // window.addEventListener('resize', this.$_reflowScroller, false)
+    this.$_initScroller()
+  },
+
+  methods: {
+    $_initScroller() {
+      const container = this.container
+      const content = this.content
+      const rect = container.getBoundingClientRect()
+      const scroller = new Scroller(
+        (left, top) => {
+          render(content, left, top)
+          if (this.isInitialed) {
+            this.$_onScroll(left, top)
+          }
+        },
+        {
+          scrollingX: this.scrollingX,
+          scrollingY: this.scrollingY,
+          zooming: false,
+        },
+      )
+
+      scroller.setPosition(rect.left + container.clientLeft, rect.top + container.clientTop)
+
+      if (this.hasRefresher) {
+        scroller.activatePullToRefresh(
+          this.refreshOffsetY,
+          () => {
+            this.isRefreshActive = true
+            this.isRefreshing = false
+          },
+          () => {
+            this.isRefreshActive = false
+            this.isRefreshing = false
+            this.$emit('refreshActive')
+          },
+          () => {
+            this.isRefreshActive = false
+            this.isRefreshing = true
+            this.$emit('refreshing')
+          },
+        )
+      }
+
+      this.scroller = scroller
+      this.$nextTick(() => {
+        this.isInitialed = true
+      })
+      this.$_reflowScroller()
+    },
+    $_reflowScroller() {
+      const container = this.container
+      const content = this.content
+
+      if (!this.scroller || !container || !content) {
+        return
+      }
+
+      this.scroller.setDimensions(
+        container.clientWidth,
+        container.clientHeight,
+        content.offsetWidth,
+        content.offsetHeight,
+      )
+    },
+
+    // MARK: events handler
+    $_onScollerTouchStart(event) {
+      if (
+        !this.scroller ||
+        (event.touches[0] && event.touches[0].target && event.touches[0].target.tagName.match(/input|textarea|select/i))
+      ) {
+        return
+      }
+
+      this.scroller.doTouchStart(event.touches, event.timeStamp)
+      event.preventDefault()
+    },
+    $_onScollerTouchMove(event) {
+      if (!this.scroller) {
+        return
+      }
+      this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
+    },
+    $_onScollerTouchEnd(event) {
+      if (!this.scroller) {
+        return
+      }
+      this.scroller.doTouchEnd(event.timeStamp)
+    },
+    $_onScollerMouseDown(event) {
+      if (!this.scroller || event.target.tagName.match(/input|textarea|select/i)) {
+        return
+      }
+
+      this.scroller.doTouchStart(
+        [
+          {
+            pageX: event.pageX,
+            pageY: event.pageY,
+          },
+        ],
+        event.timeStamp,
+      )
+      this.isMouseDown = true
+    },
+    $_onScollerMouseMove(event) {
+      if (!this.scroller || !this.isMouseDown) {
+        return
+      }
+
+      this.scroller.doTouchMove(
+        [
+          {
+            pageX: event.pageX,
+            pageY: event.pageY,
+          },
+        ],
+        event.timeStamp,
+      )
+      this.isMouseDown = true
+    },
+    $_onScollerMouseUp(event) {
+      if (!this.scroller || !this.isMouseDown) {
+        return
+      }
+
+      this.scroller.doTouchEnd(event.timeStamp)
+      this.isMouseDown = false
+    },
+    $_onScroll(left, top) {
+      left = +left.toFixed(2)
+      top = +top.toFixed(2)
+      if (this.scrollX === left && this.scrollY === top) {
+        return
+      }
+      this.scrollX = left
+      this.scrollY = top
+      this.$emit('scroll', {scrollX: left, scrollY: top})
+    },
+
+    triggerRefresh() {
+      if (!this.scroller) {
+        return
+      }
+
+      this.scroller.triggerPullToRefresh()
+    },
+    finishRefresh() {
+      if (!this.scroller) {
+        return
+      }
+
+      this.scroller.finishPullToRefresh()
+    },
+  },
+}
+</script>
+
+<style lang="stylus">
+.md-scroll-view
+  display block
+  // width 100%
+  height 100%
+  background #fff
+  overflow hidden
+  user-select none
+  .scroll-view-container
+    clearfix()
+    position relative
+    // display inline-block
+    .scroll-view-refresh
+      clearfix()
+      position absolute
+      left 0
+      right 0
+</style>
