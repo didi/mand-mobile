@@ -20,7 +20,7 @@
           :stroke-width="strokeWidth"
           :stroke-dashoffset="this.circlePerimeter / 2"
           :r="radius"
-          :style="{animation: `${id} 2s cubic-bezier(1.0, 0.5, 0.8, 1.0) infinite`}"
+          :style="circleStyle"
         >
           <animateTransform
             :dur="`${duration}s`"
@@ -55,6 +55,10 @@
       type: String,
       default: 'transparent',
     },
+    process: {
+      // process control 0-1
+      type: Number,
+    },
   },
 
   computed: {
@@ -73,6 +77,18 @@
     circlePerimeter() {
       return this.size * 3.1415
     },
+    circleStyle() {
+      /* istanbul ignore else */
+      if (this.process === undefined) {
+        return {
+          animation: `${this.id} 2s cubic-bezier(1.0, 0.5, 0.8, 1.0) infinite`,
+        }
+      } else {
+        return {
+          strokeDasharray: `${this.process * this.circlePerimeter} ${(1 - this.process) * this.circlePerimeter}`,
+        }
+      }
+    },
     duration() {
       return 2
     },
@@ -89,6 +105,11 @@
 
   methods: {
     $_insertKeyframes() {
+      /* istanbul ignore if */
+      if (this.process !== undefined) {
+        // No need to add animation
+        return
+      }
       const id = this.id
       const keyframes = `from{stroke-dasharray:0 ${this.circlePerimeter};}to{stroke-dasharray:${this
         .circlePerimeter} 0;}`
