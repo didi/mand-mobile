@@ -40,6 +40,7 @@ import Captcha from './captcha'
 import Codebox from './codebox'
 import Cashier from './cashier'
 import Chart from './chart'
+import Amount from './amount'
 import ActivityIndicator from './activity-indicator'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
@@ -91,6 +92,7 @@ export const components = {
   Codebox,
   Cashier,
   Chart,
+  Amount,
   ActivityIndicator,
   /* @init<%${componentNameUpper},%> */
 }
@@ -148,6 +150,7 @@ export {
   Codebox,
   Cashier,
   Chart,
+  Amount,
   ActivityIndicator,
   /* @init<%${componentNameUpper},%> */
 }
