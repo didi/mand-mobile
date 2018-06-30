@@ -13,7 +13,7 @@ export default {
   name: 'amount-demo',
   /* DELETE */
   title: '千位分隔符',
-  titleEnUs: 'Thousands Separator',
+  titleEnUS: 'Thousands Separator',
   /* DELETE */
   components: {
     [Amount.name]: Amount,

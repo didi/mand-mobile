@@ -13,7 +13,7 @@ export default {
   name: 'amount-demo',
   /* DELETE */
   title: '大写中文',
-  titleEnUs: 'Capital Chinese',
+  titleEnUS: 'Capital Chinese',
   /* DELETE */
   components: {
     [Amount.name]: Amount,
