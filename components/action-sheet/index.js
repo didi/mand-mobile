@@ -10,7 +10,8 @@ const instances = []
 /**
  * Dynamically create a ActionSheet
  *
- * @param {Objects} param
+ * @param {Object} param
+ * @return {ActionSheet}
  */
 ActionSheet.create = function({
   value = true,
@@ -38,41 +39,57 @@ ActionSheet.create = function({
 
   instances.push(vm)
 
+  /* istanbul ignore else */
   if (value) {
     document.body.appendChild(vm.$el)
     vm.value = true
   }
-  vm.$watch('value', val => {
-    if (val) {
-      document.body.appendChild(vm.$el)
-    }
-  })
-  vm.$on('input', val => {
-    if (val) {
-      vm.value = true
-    } else {
-      vm.value = false
-    }
-  })
-  vm.$on('show', () => {
-    if (typeof onShow === 'function') {
-      onShow.call(null)
-    }
-  })
-  vm.$on('hide', () => {
-    const parent = vm.$el.parentNode
-    if (parent) {
-      parent.removeChild(vm.$el)
-    }
-    if (typeof onHide === 'function') {
-      onHide.call(null)
-    }
-  })
-  vm.$on('selected', item => {
-    if (typeof onSelected === 'function') {
-      onSelected.call(null, item)
-    }
-  })
+  vm.$watch(
+    'value',
+    /* istanbul ignore next */ val => {
+      if (val) {
+        document.body.appendChild(vm.$el)
+      }
+    },
+  )
+  vm.$on(
+    'input',
+    /* istanbul ignore next */ val => {
+      if (val) {
+        vm.value = true
+      } else {
+        vm.value = false
+      }
+    },
+  )
+  vm.$on(
+    'show',
+    /* istanbul ignore next */ () => {
+      if (typeof onShow === 'function') {
+        onShow.call(null)
+      }
+    },
+  )
+  vm.$on(
+    'hide',
+    /* istanbul ignore next */ () => {
+      const parent = vm.$el.parentNode
+      if (parent) {
+        parent.removeChild(vm.$el)
+      }
+      if (typeof onHide === 'function') {
+        onHide.call(null)
+      }
+    },
+  )
+  vm.$on(
+    'selected',
+    /* istanbul ignore next */ item => {
+      if (typeof onSelected === 'function') {
+        onSelected.call(null, item)
+      }
+    },
+  )
 
   vm.$on('hook:beforeDestroy', () => {
     const parent = vm.$el.parentNode
@@ -102,6 +119,9 @@ ActionSheet.closeAll = () => {
 
 /**
  * Close and destroy all actived global ActionSheets
+ *
+ * @static
+ * @return void
  */
 ActionSheet.destroyAll = () => {
   instances.forEach(instance => {
