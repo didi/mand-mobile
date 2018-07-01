@@ -35,5 +35,7 @@ export {default as Captcha} from '../components/captcha/demo'
 export {default as Codebox} from '../components/codebox/demo'
 export {default as Cashier} from '../components/cashier/demo'
 export {default as Chart} from '../components/chart/demo'
+export {default as Amount} from '../components/amount/demo'
+export {default as ActivityIndicator} from '../components/activity-indicator/demo'
 
 /* @init<%export {default as ${componentNameUpper}} = '../components/${componentName}/demo' */
