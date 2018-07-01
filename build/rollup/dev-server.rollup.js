@@ -21,10 +21,9 @@ const outputCommonjsOptions = {
 }
 
 function watch() {
-  const watchOptions = {
-    ...inputOptions,
+  const watchOptions = Object.assign(inputOptions, {
     output: outputCommonjsOptions,
-  }
+  })
   const watcher = rollup.watch(watchOptions)
   watcher.on('event', e => {
     console.info(e)
