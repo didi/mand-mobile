@@ -24,6 +24,13 @@
         ></slot>
       </div>
       <slot></slot>
+      <div
+        v-if="hasMore"
+        :is-end-reaching="isEndReaching"
+        class="scroll-view-more"
+      >
+        <slot name="more"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -50,11 +57,14 @@ export default {
       container: null,
       content: null,
       refresher: null,
+      more: null,
       scroller: null,
+      refreshOffsetY: 0,
       isInitialed: false,
       isMouseDown: false,
       isRefreshing: false,
       isRefreshActive: false,
+      isEndReaching: false,
       scrollX: null,
       scrollY: null,
     }
@@ -64,22 +74,29 @@ export default {
     hasRefresher() {
       return !!(this.$slots.refresh || this.$scopedSlots.refresh)
     },
-    refreshOffsetY() {
-      return this.refresher ? this.refresher.clientHeight : 0
+    hasMore() {
+      return !!(this.$slots.more || this.$scopedSlots.more)
     },
   },
 
   mounted() {
-    this.container = this.$el
-    this.refresher = this.$el.querySelector('.scroll-view-refresh')
-    this.content = this.$el.querySelector('.scroll-view-container')
-
-    // window.addEventListener('resize', this.$_reflowScroller, false)
+    window.addEventListener(
+      'resize',
+      () => {
+        this.$_initScroller()
+      },
+      false,
+    )
     this.$_initScroller()
   },
 
   methods: {
     $_initScroller() {
+      this.container = this.$el
+      this.refresher = this.$el.querySelector('.scroll-view-refresh')
+      this.content = this.$el.querySelector('.scroll-view-container')
+      this.refreshOffsetY = this.refresher ? this.refresher.clientHeight : 0
+
       const container = this.container
       const content = this.content
       const rect = container.getBoundingClientRect()
@@ -123,22 +140,7 @@ export default {
       this.$nextTick(() => {
         this.isInitialed = true
       })
-      this.$_reflowScroller()
-    },
-    $_reflowScroller() {
-      const container = this.container
-      const content = this.content
-
-      if (!this.scroller || !container || !content) {
-        return
-      }
-
-      this.scroller.setDimensions(
-        container.clientWidth,
-        container.clientHeight,
-        content.offsetWidth,
-        content.offsetHeight,
-      )
+      this.reflowScroller()
     },
 
     // MARK: events handler
@@ -213,9 +215,35 @@ export default {
       }
       this.scrollX = left
       this.scrollY = top
+
+      const containerHeight = this.container.clientHeight
+      const content = this.content.offsetHeight
+      if (top > 0 && !this.isEndReaching && content > containerHeight && content - containerHeight <= top) {
+        console.log('xxxxxx', top)
+        this.isEndReaching = true
+        this.$emit('endReached')
+      }
       this.$emit('scroll', {scrollX: left, scrollY: top})
     },
 
+    reflowScroller() {
+      const container = this.container
+      const content = this.content
+
+      if (!this.scroller || !container || !content) {
+        return
+      }
+
+      this.$nextTick(() => {
+        this.scroller.setDimensions(
+          container.clientWidth,
+          container.clientHeight,
+          content.offsetWidth,
+          content.offsetHeight,
+        )
+        this.isEndReaching = false
+      })
+    },
     triggerRefresh() {
       if (!this.scroller) {
         return
