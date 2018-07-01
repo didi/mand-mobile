@@ -3,13 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
-### 1.4.0
-`2018-06-30`
+### 1.4.1
+`2018-07-01`
 - Feature
   - Add `Amount` component
   - Add `ActivityIndicator` component
   - `Dialog` add `Dialog.closeAll` static method
   - `ActionSheet` add static method to create action-sheet [#79](https://github.com/didi/mand-mobile/issues/79)
+  - `FieldItem` remove restrictions on `arrow` [#124](https://github.com/didi/mand-mobile/issues/124)
 - Fix
   - `Agree` flexbox layout bug
 
