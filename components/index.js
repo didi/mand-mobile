@@ -40,6 +40,7 @@ import Captcha from './captcha'
 import Codebox from './codebox'
 import Cashier from './cashier'
 import Chart from './chart'
+import Amount from './amount'
 import ActivityIndicator from './activity-indicator'
 import ScrollView from './scroll-view'
 import ScrollViewRefresh from './scroll-view-refresh'
@@ -93,6 +94,7 @@ export const components = {
   Codebox,
   Cashier,
   Chart,
+  Amount,
   ActivityIndicator,
   ScrollView,
   ScrollViewRefresh,
@@ -152,6 +154,7 @@ export {
   Codebox,
   Cashier,
   Chart,
+  Amount,
   ActivityIndicator,
   ScrollView,
   ScrollViewRefresh,
