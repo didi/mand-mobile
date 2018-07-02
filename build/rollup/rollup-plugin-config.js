@@ -135,11 +135,11 @@ const rollupPlugin = [
   })),
 
   // dest
-  // ...(conditionHelper(isProduction, [
-  //   uglify({
-  //     compress: {},
-  //   }),
-  // ])),
+  ...(conditionHelper(isProduction, [
+    uglify({
+      compress: {},
+    }),
+  ])),
   ...(conditionHelper(isDev, [
     fillHtmlPlugin({
       template: resolve('examples/index.livereload.html'),
