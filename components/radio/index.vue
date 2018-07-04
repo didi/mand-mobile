@@ -270,7 +270,7 @@ export default {
       padding 22px 32px
       .md-icon
         position absolute
-        right h-gap-lg
+        right 0
         top 50%
         transform translateY(-50%)
         fill radio-color
@@ -278,7 +278,7 @@ export default {
         color radio-color
       &.icon-left
         .md-icon
-          left h-gap-lg
+          left 0
           right auto !important
         .md-field-item-content
           padding-left 40px
