@@ -3,7 +3,7 @@ title: Change Log
 toc: hidden
 ---
 
-### 1.4.2
+### 1.4.3
 `2018-07-04`
 - Fix
   - `Radio` style bug
