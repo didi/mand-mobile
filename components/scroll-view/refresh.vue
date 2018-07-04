@@ -35,7 +35,7 @@ export default {
     },
     refreshActiveText: {
       type: String,
-      default: '释放即可刷新',
+      default: '释放刷新',
     },
     refreshingText: {
       type: String,
@@ -48,7 +48,14 @@ export default {
       if (!this.$el || !this.scrollY) {
         return +this.scrollY
       }
-      return Math.abs(this.scrollY) / 70
+
+      const refreshHeight = this.$el.clientHeight
+
+      if (Math.abs(this.scrollY) < refreshHeight / 2) {
+        return 0
+      }
+      // first 1/3 is not included in progress
+      return (Math.abs(this.scrollY) - refreshHeight / 2) / (refreshHeight / 2)
     },
     refreshTip() {
       if (this.isRefreshing) {
@@ -74,8 +81,9 @@ export default {
     .md-activity-indicator-svg
       width 32px !important
       height 32px !important
+      transform rotateZ(-45deg)
   .refresh-tip
     margin-left 15px
-    font-size 28px
+    font-size 24px
     color #999
 </style>

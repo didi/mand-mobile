@@ -27,6 +27,7 @@
       <div
         v-if="hasMore"
         :is-end-reaching="isEndReaching"
+        :class="{active: isEndReaching}"
         class="scroll-view-more"
       >
         <slot name="more"></slot>
@@ -49,6 +50,10 @@ export default {
     scrollingY: {
       type: Boolean,
       default: true,
+    },
+    endReachedThreshold: {
+      type: Number,
+      default: 0,
     },
   },
 
@@ -94,8 +99,10 @@ export default {
     $_initScroller() {
       this.container = this.$el
       this.refresher = this.$el.querySelector('.scroll-view-refresh')
+      this.more = this.$el.querySelector('.scroll-view-more')
       this.content = this.$el.querySelector('.scroll-view-container')
       this.refreshOffsetY = this.refresher ? this.refresher.clientHeight : 0
+      this.moreOffsetY = this.more ? this.more.clientHeight : 0
 
       const container = this.container
       const content = this.content
@@ -137,10 +144,10 @@ export default {
       }
 
       this.scroller = scroller
-      this.$nextTick(() => {
-        this.isInitialed = true
-      })
       this.reflowScroller()
+      setTimeout(() => {
+        this.isInitialed = true
+      }, 50)
     },
 
     // MARK: events handler
@@ -216,13 +223,20 @@ export default {
       this.scrollX = left
       this.scrollY = top
 
-      const containerHeight = this.container.clientHeight
-      const content = this.content.offsetHeight
-      if (top > 0 && !this.isEndReaching && content > containerHeight && content - containerHeight <= top) {
-        console.log('xxxxxx', top)
+      const containerHeight = this.scroller._clientHeight
+      const content = this.scroller._contentHeight
+      const moreOffsetY = this.moreOffsetY
+      const moreThreshold = this.endReachedThreshold
+      if (
+        top > 0 &&
+        !this.isEndReaching &&
+        content > containerHeight &&
+        content - containerHeight <= top + moreOffsetY + moreThreshold
+      ) {
         this.isEndReaching = true
         this.$emit('endReached')
       }
+
       this.$emit('scroll', {scrollX: left, scrollY: top})
     },
 
@@ -257,6 +271,15 @@ export default {
       }
 
       this.scroller.finishPullToRefresh()
+      this.reflowScroller()
+    },
+    finishLoadMore() {
+      if (!this.scroller) {
+        return
+      }
+
+      this.isEndReaching = false
+      this.reflowScroller()
     },
   },
 }
@@ -279,4 +302,8 @@ export default {
       position absolute
       left 0
       right 0
+    .scroll-view-more
+      visibility hidden
+      &.active
+        visibility visible
 </style>
