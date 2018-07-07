@@ -165,7 +165,7 @@ export default {
       default: '',
     },
     value: {
-      type: String,
+      type: [String, Number],
       default: '',
     },
     placeholder: {
@@ -283,7 +283,7 @@ export default {
 
   watch: {
     value(val) {
-      this.inputValue = this.$_formateValue(this.$_subValue(val)).value
+      this.inputValue = this.$_formateValue(this.$_subValue(val + '')).value
     },
     inputValue(val) {
       this.inputBindValue = val
@@ -305,7 +305,7 @@ export default {
   },
 
   created() {
-    this.inputValue = this.$_formateValue(this.$_subValue(this.value)).value
+    this.inputValue = this.$_formateValue(this.$_subValue(this.value + '')).value
   },
   mounted() {
     this.isVirtualKeyboard && this.$_initNumberKeyBoard()
