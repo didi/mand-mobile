@@ -30,6 +30,8 @@ export default {
   /* DELETE */
   title: '下拉刷新 <a href="javascript:ScrollViewTrigger1()">触发下拉刷新</a>',
   titleEnUS: 'Pull Refresh <a href="javascript:ScrollViewTrigger1()">Trigger Pull Refresh</a>',
+  message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
   height: 800,
   /* DELETE */
   components: {

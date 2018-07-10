@@ -24,10 +24,12 @@
 <script>import {ScrollView, ScrollViewMore} from 'mand-mobile'
 
 export default {
-  name: 'scroll-view-demo-0',
+  name: 'scroll-view-demo-2',
   /* DELETE */
   title: '加载更多',
   titleEnUS: 'Load More',
+  message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
   height: 800,
   /* DELETE */
   components: {
@@ -52,7 +54,7 @@ export default {
           this.isFinished = true
         }
         this.$refs.scrollView.finishLoadMore()
-      }, 2000)
+      }, 1000)
     },
   },
 }
@@ -65,5 +67,6 @@ export default {
     padding 30px 0
     text-align center
     font-size 32px
+    font-family DINAlternate-Bold
     border-bottom .5px solid #efefef
 </style>

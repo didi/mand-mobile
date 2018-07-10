@@ -38,4 +38,5 @@ export const Cashier =  r => require.ensure([], () => r(require('../components/c
 export const Chart =  r => require.ensure([], () => r(require('../components/chart/demo')), 'chart')
 export const Amount =  r => require.ensure([], () => r(require('../components/amount/demo')), 'amount')
 export const ActivityIndicator =  r => require.ensure([], () => r(require('../components/activity-indicator/demo')), 'activity-indicator')
+export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
 /* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

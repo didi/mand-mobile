@@ -722,14 +722,16 @@ export default class Scroller {
         }
       }
 
-      // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
-      this._isAnimating = Animate.start(
-        step,
-        verify,
-        completed,
-        this.options.animationDuration,
-        wasAnimating ? easeOutCubic : easeInOutCubic,
-      )
+      Animate.requestAnimationFrame(() => {
+        // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
+        this._isAnimating = Animate.start(
+          step,
+          verify,
+          completed,
+          this.options.animationDuration,
+          wasAnimating ? easeOutCubic : easeInOutCubic,
+        )
+      })
     } else {
       this._scheduledLeft = this._scrollLeft = left
       this._scheduledTop = this._scrollTop = top
@@ -786,7 +788,7 @@ export default class Scroller {
     }
 
     // How much velocity is required to keep the deceleration running
-    const minVelocityToKeepDecelerating = this.options.snapping ? 4 : 0.001
+    const minVelocityToKeepDecelerating = this.options.snapping ? 4 : 0.05
 
     // Detect whether it's still worth to continue animating steps
     // If we are already slow enough to not being user perceivable anymore, we stop the whole process here.

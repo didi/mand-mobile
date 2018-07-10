@@ -118,6 +118,7 @@ export default {
           scrollingX: this.scrollingX,
           scrollingY: this.scrollingY,
           zooming: false,
+          animationDuration: 200,
         },
       )
 
@@ -240,6 +241,12 @@ export default {
       this.$emit('scroll', {scrollX: left, scrollY: top})
     },
 
+    scrollTo(left, top, animate = false) {
+      if (!this.scroller) {
+        return
+      }
+      this.scroller.scrollTo(left, top, animate)
+    },
     reflowScroller() {
       const container = this.container
       const content = this.content
