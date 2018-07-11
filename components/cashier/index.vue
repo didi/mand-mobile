@@ -374,6 +374,9 @@ block()
         height 100px
         margin-top 75px
         transform translateX(-50%)
+        .md-activity-indicator-svg
+          width 100px !important
+          height 100px !important
       .md-cashier-block-text
         block()
         margin-top 20px
