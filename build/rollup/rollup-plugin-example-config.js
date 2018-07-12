@@ -15,6 +15,7 @@ const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
 const common = require('rollup-plugin-commonjs')
 const svgSpritePlugin = require('./rollup-plugin-svg-sprite')
+const stylusCompilerPlugin = require('./rollup-plugin-stylus-compiler')
 const pkg = require('../../package.json')
 // const postcssUrl = require('postcss-url')
 const px2rem = require('postcss-pxtorem')
@@ -73,8 +74,11 @@ const rollupPlugin = [
     limit: 10 * 1024,
   }),
   jsonPlugin(),
-  postcss(),
   vue,
+  stylusCompilerPlugin({
+    fn: stylusMixin,
+  }),
+  postcss(),
   babel(babelrc({
     addModuleOptions: false,
     findRollupPresets: true,

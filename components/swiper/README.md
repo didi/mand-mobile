@@ -51,11 +51,11 @@ vm.$refs.swiper.play(5000)
 vm.$refs.swiper.stop()
 ```
 
-##### pre()
+##### prev()
 前一个item
 
 ```js
-vm.$refs.swiper.pre()
+vm.$refs.swiper.prev()
 ```
 
 ##### next()

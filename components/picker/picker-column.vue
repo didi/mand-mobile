@@ -233,8 +233,18 @@ export default {
       traverse(data, (item, level, indexs) => {
         const columnIndex = indexs[0]
         const itemIndex = indexs[1]
-        const itemDefaultIndex = defaultIndex[columnIndex]
+        let itemDefaultIndex = defaultIndex[columnIndex]
         const itemDefaultValue = defaultValue[columnIndex]
+
+        /* 
+         * given a default itemIndex when both defaultIndex & defaultValue are undefined
+         * avoid activieIndexs failing to initialize
+         */
+        if (itemDefaultIndex === undefined && itemDefaultValue === undefined) {
+          itemDefaultIndex = 0
+        }
+
+        // get initial itemIndex of each columnIndex by defaultIndex or defaultValue
         if (
           (itemDefaultIndex !== undefined && itemIndex === itemDefaultIndex) ||
           (itemDefaultValue !== undefined &&
