@@ -9,9 +9,8 @@
   </div>
 </template>
 
-<script>export default {
+<script>export default {
   name: 'md-scroll-view-more',
-
   props: {
     loadingText: {
       type: String,
@@ -27,7 +26,7 @@
     },
   },
 }
-</script>
+</script>
 
 <style lang="stylus">
 .md-scroll-view-more
@@ -36,4 +35,3 @@
   text-align center
   color color-text-caption
 </style>
-

@@ -7,8 +7,8 @@
     >
       <md-scroll-view-refresh
         slot="refresh"
-        slot-scope="{ scrollY, isRefreshActive, isRefreshing }"
-        :scroll-y="scrollY"
+        slot-scope="{ scrollTop, isRefreshActive, isRefreshing }"
+        :scroll-top="scrollTop"
         :is-refreshing="isRefreshing"
         :is-refresh-active="isRefreshActive"
       ></md-scroll-view-refresh>

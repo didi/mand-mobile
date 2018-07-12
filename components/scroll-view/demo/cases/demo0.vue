@@ -7,9 +7,9 @@
       <div
         v-for="i in list"
         :key="i"
-        class="scroll-view-list"
+        class="scroll-view-item"
       >
-        <p class="scroll-view-item">{{i}}</p>
+        {{i}}
       </div>
     </md-scroll-view>
   </div>
@@ -40,8 +40,8 @@ export default {
     }
   },
   methods: {
-    $_onScroll({scrollX, scrollY}) {
-      console.log(`[Mand Mobile ScrollView - demo0 - onScroll] scrollX: ${scrollX}, scrollY: ${scrollY}`)
+    $_onScroll({scrollLeft, scrollTop}) {
+      console.log(`[Mand Mobile ScrollView - demo0 - onScroll] scrollLeft: ${scrollLeft}, scrollTop: ${scrollTop}`)
     },
     addItems() {
       this.list += 5

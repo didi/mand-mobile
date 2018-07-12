@@ -18,7 +18,7 @@
       >
         <slot
           name="refresh"
-          :scroll-y="scrollY"
+          :scroll-top="scrollY"
           :is-refreshing="isRefreshing"
           :is-refresh-active="isRefreshActive"
         ></slot>
@@ -36,12 +36,10 @@
   </div>
 </template>
 
-<script>import Scroller from '../_util/scroller'
+<script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
-
 export default {
   name: 'md-scroll-view',
-
   props: {
     scrollingX: {
       type: Boolean,
@@ -51,12 +49,15 @@ export default {
       type: Boolean,
       default: true,
     },
+    bouncing: {
+      type: Boolean,
+      default: true,
+    },
     endReachedThreshold: {
       type: Number,
       default: 0,
     },
   },
-
   data() {
     return {
       container: null,
@@ -74,7 +75,6 @@ export default {
       scrollY: null,
     }
   },
-
   computed: {
     hasRefresher() {
       return !!(this.$slots.refresh || this.$scopedSlots.refresh)
@@ -83,7 +83,6 @@ export default {
       return !!(this.$slots.more || this.$scopedSlots.more)
     },
   },
-
   mounted() {
     window.addEventListener(
       'resize',
@@ -94,7 +93,6 @@ export default {
     )
     this.$_initScroller()
   },
-
   methods: {
     $_initScroller() {
       this.container = this.$el
@@ -103,7 +101,6 @@ export default {
       this.content = this.$el.querySelector('.scroll-view-container')
       this.refreshOffsetY = this.refresher ? this.refresher.clientHeight : 0
       this.moreOffsetY = this.more ? this.more.clientHeight : 0
-
       const container = this.container
       const content = this.content
       const rect = container.getBoundingClientRect()
@@ -117,13 +114,12 @@ export default {
         {
           scrollingX: this.scrollingX,
           scrollingY: this.scrollingY,
+          bouncing: this.bouncing,
           zooming: false,
           animationDuration: 200,
         },
       )
-
       scroller.setPosition(rect.left + container.clientLeft, rect.top + container.clientTop)
-
       if (this.hasRefresher) {
         scroller.activatePullToRefresh(
           this.refreshOffsetY,
@@ -143,14 +139,12 @@ export default {
           },
         )
       }
-
       this.scroller = scroller
       this.reflowScroller()
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
     },
-
     // MARK: events handler
     $_onScollerTouchStart(event) {
       if (
@@ -159,7 +153,6 @@ export default {
       ) {
         return
       }
-
       this.scroller.doTouchStart(event.touches, event.timeStamp)
       event.preventDefault()
     },
@@ -179,7 +172,6 @@ export default {
       if (!this.scroller || event.target.tagName.match(/input|textarea|select/i)) {
         return
       }
-
       this.scroller.doTouchStart(
         [
           {
@@ -195,7 +187,6 @@ export default {
       if (!this.scroller || !this.isMouseDown) {
         return
       }
-
       this.scroller.doTouchMove(
         [
           {
@@ -211,7 +202,6 @@ export default {
       if (!this.scroller || !this.isMouseDown) {
         return
       }
-
       this.scroller.doTouchEnd(event.timeStamp)
       this.isMouseDown = false
     },
@@ -223,7 +213,6 @@ export default {
       }
       this.scrollX = left
       this.scrollY = top
-
       const containerHeight = this.scroller._clientHeight
       const content = this.scroller._contentHeight
       const moreOffsetY = this.moreOffsetY
@@ -237,10 +226,8 @@ export default {
         this.isEndReaching = true
         this.$emit('endReached')
       }
-
-      this.$emit('scroll', {scrollX: left, scrollY: top})
+      this.$emit('scroll', {scrollLeft: left, scrollTop: top})
     },
-
     scrollTo(left, top, animate = false) {
       if (!this.scroller) {
         return
@@ -250,11 +237,9 @@ export default {
     reflowScroller() {
       const container = this.container
       const content = this.content
-
       if (!this.scroller || !container || !content) {
         return
       }
-
       this.$nextTick(() => {
         this.scroller.setDimensions(
           container.clientWidth,
@@ -269,14 +254,12 @@ export default {
       if (!this.scroller) {
         return
       }
-
       this.scroller.triggerPullToRefresh()
     },
     finishRefresh() {
       if (!this.scroller) {
         return
       }
-
       this.scroller.finishPullToRefresh()
       this.reflowScroller()
     },
@@ -284,13 +267,12 @@ export default {
       if (!this.scroller) {
         return
       }
-
       this.isEndReaching = false
       this.reflowScroller()
     },
   },
 }
-</script>
+</script>
 
 <style lang="stylus">
 .md-scroll-view

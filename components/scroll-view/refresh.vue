@@ -17,7 +17,7 @@ export default {
   },
 
   props: {
-    scrollY: {
+    scrollTop: {
       type: Number,
       default: 0,
     },
@@ -45,17 +45,17 @@ export default {
 
   computed: {
     process() {
-      if (!this.$el || !this.scrollY) {
-        return +this.scrollY
+      if (!this.$el || !this.scrollTop) {
+        return +this.scrollTop
       }
 
       const refreshHeight = this.$el.clientHeight
 
-      if (Math.abs(this.scrollY) < refreshHeight / 2) {
+      if (Math.abs(this.scrollTop) < refreshHeight / 2) {
         return 0
       }
       // first 1/3 is not included in progress
-      return (Math.abs(this.scrollY) - refreshHeight / 2) / (refreshHeight / 2)
+      return (Math.abs(this.scrollTop) - refreshHeight / 2) / (refreshHeight / 2)
     },
     refreshTip() {
       if (this.isRefreshing) {
