@@ -52,11 +52,11 @@ stop autoplay
 vm.$refs.swiper.stop()
 ```
 
-##### pre()
+##### prev()
 switch to the previous item
 
 ```js
-vm.$refs.swiper.pre()
+vm.$refs.swiper.prev()
 ```
 
 ##### next()
