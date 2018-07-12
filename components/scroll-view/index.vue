@@ -8,6 +8,7 @@
     @mousedown="$_onScollerMouseDown"
     @mousemove="$_onScollerMouseMove"
     @mouseup="$_onScollerMouseUp"
+    @mouseleave="$_onScollerMouseUp"
   >
     <div class="scroll-view-container">
       <div
