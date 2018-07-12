@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.4.4
+`2018-07-12`
+- Fix
+  - `Swiper` document bug [#138](https://github.com/didi/mand-mobile/issues/138)
+  - `Cashier` success icon style bug
+  - `InputItem` numeric value support [#132](https://github.com/didi/mand-mobile/issues/132)
+  - `Picker` return `undefined` of `getColumnValue` method when not set `defeaultIndex` [#131](https://github.com/didi/mand-mobile/issues/131)
+
 ### 1.4.3
 `2018-07-04`
 - Fix

@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.4.4
+`2018-07-12`
+- Fix
+  - 修正`Swiper`文档错误 [#138](https://github.com/didi/mand-mobile/issues/138)
+  - 修复`Cashier`成功图标样式问题
+  - 修复`InputItem`数值支持 [#132](https://github.com/didi/mand-mobile/issues/132)
+  - 修复`Picker`未设置`defaultIndex`时`getColumnValue`取值`undefined`的问题 [#131](https://github.com/didi/mand-mobile/issues/131)
+
 ### 1.4.3
 `2018-07-04`
 - Fix
