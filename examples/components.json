@@ -133,11 +133,6 @@
 		"icon": "popup",
 		"text": "弹出层"
 	}, {
-		"name": "ScrollView",
-		"path": "/scroll-view",
-		"icon": "scroll-view",
-		"text": "滚动区域/下拉刷新"
-	}, {
 		"name": "Selector",
 		"path": "/selector",
 		"icon": "selector",
@@ -197,5 +192,15 @@
 		"path": "/switch",
 		"icon": "switch",
 		"text": "开关"
+	}]
+}, {
+	"category": "gesture",
+	"name": "Gesture",
+	"text": "手势",
+	"list": [{
+		"name": "ScrollView",
+		"path": "/scroll-view",
+		"icon": "scroll-view",
+		"text": "滚动区域/下拉刷新"
 	}]
 }]

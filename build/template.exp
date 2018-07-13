@@ -14,7 +14,7 @@ expect "组件中文名称，如：轻提示"
 
 send "${chinese_name}\r"
 
-expect "组件类型, 选项: basic feedback form business"
+expect "组件类型, 选项: basic feedback form business gesture"
 
 send "${component_type}\r"
 
