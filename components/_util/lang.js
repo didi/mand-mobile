@@ -67,5 +67,5 @@ export function functionToUrl(fn) {
  * generate random id
  */
 export function randomId(prefix = '', length = 8) {
-  return `${prefix}-${parseInt(Math.random() * 10 ** length)}`
+  return `${prefix}-${parseInt(Math.pow(Math.random() * 10, length))}`
 }
