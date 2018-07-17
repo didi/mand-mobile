@@ -54,7 +54,7 @@
 </template>
 
 <script>import Icon from '../icon'
-import {isEmptyObject} from '../_util'
+import {isEmptyObject, randomId} from '../_util'
 
 export default {
   name: 'md-field-item',
@@ -67,7 +67,7 @@ export default {
     name: {
       type: Number | String,
       default() {
-        return `field-item-${parseInt(Math.pow(Math.random() * 10), 8)}`
+        return randomId('field-item')
       },
     },
     title: {
