@@ -67,7 +67,7 @@ export default {
     name: {
       type: Number | String,
       default() {
-        return `field-item-${parseInt((Math.random() * 10) ** 8)}`
+        return `field-item-${parseInt(Math.pow(Math.random() * 10), 8)}`
       },
     },
     title: {
