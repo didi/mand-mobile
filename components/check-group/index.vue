@@ -63,7 +63,7 @@ export default {
       immediate: true,
       handler(val) {
         const items = normalizeValue(val)
-        const changed = this.selected.every(val => items.indexOf(val) !== -1)
+        const changed = items.length !== this.selected.length || this.selected.some(val => items.indexOf(val) === -1)
 
         if (changed) {
           this.selected = items
@@ -88,12 +88,15 @@ export default {
         const oIndex = values.indexOf(items[i])
         const sIndex = selected.indexOf(items[i])
 
+        /* istanbul ignore else */
         if (oIndex !== -1) {
           const option = this.options[oIndex]
+          /* istanbul ignore else */
           if (!option.disabled) {
             if (sIndex !== -1) {
               selected.splice(sIndex, 1)
             } else {
+              /* istanbul ignore else */
               if (maxSelects === 1) {
                 selected = [option.value]
               } else if (maxSelects <= 0 || selected.length < maxSelects) {
