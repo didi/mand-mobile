@@ -40,4 +40,4 @@ Vue.component(CheckGroup.name, CheckGroup)
 
 |参数 | 说明 | 类型 | 默认值 |
 |----|-----|------|------|
-|value|即将选中的选项的值|[String, Array]|-|
+|value|即将新增的选中选项值|[String, Array]|-|

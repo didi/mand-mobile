@@ -1,16 +1,16 @@
 ---
-title: CheckGroup
-preview: https://didi.github.io/mand-mobile/examples/#/check-group
+title: CheckList
+preview: https://didi.github.io/mand-mobile/examples/#/check-list
 ---
 
-UI renderless check group component.
+Check list component.
 
 ### Import
 
 ```javascript
-import {  CheckGroup } from 'mand-mobile'
+import {  CheckList } from 'mand-mobile'
 
-Vue.component(CheckGroup.name, CheckGroup)
+Vue.component(CheckList.name, CheckList)
 ```
 
 ### Code Examples
@@ -18,12 +18,16 @@ Vue.component(CheckGroup.name, CheckGroup)
 
 ### API
 
-#### CheckGroup Props
+#### CheckList Props
 |属性 | 说明 | 类型 | 默认值 | 备注 || Props | Description | Type | Default | Note ||----|-----|------|------|------|
 |v-model|selected values|[String,Array]|-|-|
 |options|option array|Array|-|-|
 |max|max select options|Number|1|`0`: no limits; `1`: only allow select one; `2` or more: only allow select 2 options|
 |disabled|whether disable selection or not|Boolean|false|-|
+|title|title of select set|String|''|-|
+|icon|icon of selected option|String|'right'|-|
+|iconPosition|position of icon|String|'right'|-|
+|iconSize|icon size|String|'sm'|-|
 
 ##### options
 The structure of option array，`value` is required。
@@ -33,7 +37,7 @@ The structure of option array，`value` is required。
 ]
 ```
 
-#### CheckGroup Methods
+#### CheckList Methods
 
 ##### select(value)
 
