@@ -23,12 +23,12 @@ export default {
     return {
       selected: '1',
       options: [
-        {value: '1', label: '选项一'},
-        {value: '2', label: '选项二', disabled: true},
-        {value: '3', label: '选项三'},
-        {value: '4', label: '选项四'},
-        {value: '5', label: '选项五'},
-        {value: '6', label: '选项六'},
+        {value: '1', label: '无UI'},
+        {value: '2', label: '禁用选项', disabled: true},
+        {value: '3', label: '点我啊'},
+        {value: '4', label: '点我啊'},
+        {value: '5', label: '点我啊'},
+        {value: '6', label: '点我啊'},
       ],
     }
   },

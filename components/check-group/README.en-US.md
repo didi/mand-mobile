@@ -40,3 +40,17 @@ The structure of option array，`value` is required。
 |Argument | Description | Type | Default |
 |----|-----|------|------|
 |value|the option value you want to add|[String, Array]|-|
+
+#### CheckGroup Slots
+`CheckGroup` default slot will be used as template, and it will receive `{option, select}` from `slot-scope`. The `option` has all props you pass to component and `isSelected` prop.
+
+```
+<md-check-group
+  v-model="selected"
+  :options="options"
+>
+  <div slot-scope="{ option, select }" @click="select(option.value)">
+    ...
+  </div>
+</md-check-group>
+```

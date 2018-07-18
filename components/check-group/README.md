@@ -41,3 +41,17 @@ Vue.component(CheckGroup.name, CheckGroup)
 |参数 | 说明 | 类型 | 默认值 |
 |----|-----|------|------|
 |value|即将新增的选中选项值|[String, Array]|-|
+
+#### CheckGroup Slots
+`CheckGroup`的默认插槽将被作为列表项模板使用, 会暴露`{option, select}`给`slot-scope`使用。其中`option`在原有选项配置对象里新增了`isSelected`字段布尔值。
+
+```
+<md-check-group
+  v-model="selected"
+  :options="options"
+>
+  <div slot-scope="{ option, select }" @click="select(option.value)">
+    ...
+  </div>
+</md-check-group>
+```
