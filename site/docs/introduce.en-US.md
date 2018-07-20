@@ -8,21 +8,21 @@ title: Mand Mobile
 
 * <b>Rich Components</b>
 
-    30+ practical components can meet the basic needs of the mobile development, especially for financial scenarios.
+    40+ practical components can meet the basic needs of the mobile development, especially for financial scenarios.
 
-* <b>Unified visual specification</b> 
+* <b>Unified visual specification</b>
 
     Designed and maintained by designers of DiDi Strategic Business Department to ensure a high\-level visual consistency within and among projects.
 
-* <b>Strictly controlled Bundle volume </b> 
+* <b>Strictly controlled Bundle volume </b>
 
-    Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and export two format packages, `es` and `umd`. The `es` package size is only `139kb (gzip 34kb)`, and the final size of `umd` is only `135kb (gzip 33kb)`.
+    Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and export two format packages, `es` and `umd`. The `es` package size is only `169kb (gzip 41kb)`, and the final size of `umd` is only `163kb (gzip 40kb)`.
 
-* <b>Flexible style theme</b> 
+* <b>Flexible style theme</b>
 
     UI style is configurable, flexible and easy to adapt to different design styles.
 
-* <b>Support TypeScript</b> 
+* <b>Support TypeScript</b>
 
 #### Version
 - [![npm package](http://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)

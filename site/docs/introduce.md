@@ -8,21 +8,21 @@ title: Mand Mobile
 
 * <b>丰富的组件</b>
 
-    30+的实用组件，能够满足移动端开发的基本需求，尤其是对金融场景的需求进行了特别支持
+    40+的实用组件，能够满足移动端开发的基本需求，尤其是对金融场景的需求进行了特别支持
 
-* <b>统一的视觉规范</b> 
+* <b>统一的视觉规范</b>
 
     由滴滴战略事业群设计师设计并维护，保证了应用的项目内部、项目之间都能保持高度的视觉一致性
 
-* <b>严格控制的Bundle体积 </b> 
+* <b>严格控制的Bundle体积 </b>
 
     提供按需加载能力，使用灵活，避免引入无用代码，同时导出`es`，`umd`两种格式包，其中`es`打包大小仅为`139kb(gzip 34kb)`，`umd`格式最终大小仅为`135kb(gzip 33kb)`
 
-* <b>灵活转换的样式主题</b> 
+* <b>灵活转换的样式主题</b>
 
     UI样式可配置，拓展灵活，轻松适应不同的设计风格
 
-* <b>支持TypeScript</b> 
+* <b>支持TypeScript</b>
 
 #### 版本
 - [![npm package](http://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)

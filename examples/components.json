@@ -78,6 +78,11 @@
 	"name": "Business",
 	"text": "业务相关",
 	"list": [{
+		"name": "Amount",
+		"path": "/amount",
+		"icon": "amount",
+		"text": "金融数字"
+	}, {
 		"name": "Captcha",
 		"path": "/captcha",
 		"icon": "captcha",
