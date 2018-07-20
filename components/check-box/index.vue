@@ -81,8 +81,8 @@ export default {
 .md-check-box
   display flex
   flex-wrap wrap
-  margin-left 0 - checkbox-space
-  margin-right 0 - checkbox-space
+  margin-left checkbox-container-space
+  margin-right checkbox-container-space
   &.is-2col .md-check-box-col
     flex 0 0 50%
     width 50%
