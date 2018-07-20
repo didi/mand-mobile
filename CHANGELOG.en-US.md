@@ -8,13 +8,13 @@ toc: hidden
 - Feature
   - Add `ScrollView` component
   - Add `CheckGroup`, `CheckList`, `CheckBox` components
-  - `Radio` support `is-across-border` prop
-  - `Steps` support `slot-scoped` with `index`
-  - `TabBar` support horizontal scroll
+  - `Radio` supports `is-across-border` prop
+  - `Steps` supports `slot-scoped` with `index`
+  - `TabBar` supports horizontal scrolling
 - Fix
-  - `Swiper` async load items bug [#150](https://github.com/didi/mand-mobile/issues/150)
-  - Autoinstall library in global environment [#141](https://github.com/didi/mand-mobile/issues/141)
-  - `Radio` style bug
+  - Fix asynchronous data-loading bug  of `Swiper`[#150](https://github.com/didi/mand-mobile/issues/150)
+  - Fix automatic-installing bug while importing components library in global environment [#141](https://github.com/didi/mand-mobile/issues/141)
+  - Fix style bug of `Radio`
 
 ### 1.4.4
 `2018-07-12`
