@@ -227,8 +227,8 @@ export default {
     .md-selector-container
       background color-bg-base
       overflow auto
-      &.selected
-        color selector-active-color !important
+  .md-field-item.selected
+    color selector-active-color !important
   &.is-check
     .md-field-item.selected .md-icon
       fill selector-active-color !important
