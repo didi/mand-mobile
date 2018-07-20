@@ -37,6 +37,14 @@ export default {
     }
   },
   mounted() {
+    // Simulation of asynchronous
+    setTimeout(() => {
+      this.simple = simple.concat(simple)
+    }, 10000)
+    // Simulation of asynchronous
+    setTimeout(() => {
+      this.simple = simple
+    }, 24500)
     window.triggerSwiper0 = () => {
       this.goto()
     }
