@@ -3,6 +3,19 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.5.0
+`2018-07-20`
+- Feature
+  - 新增`ScrollView`组件
+  - 新增`CheckGroup`, `CheckList`, `CheckBox`组件
+  - `Radio`新增`is-across-border`支持边框通栏样式
+  - `Steps`新增`slot-scoped`中透传`index`
+  - `TabBar`支持横向滚动
+- Fix
+  - 修正`Swiper`异步加载数据问题 [#150](https://github.com/didi/mand-mobile/issues/150)
+  - 修正全局引用组件库的自动安装问题 [#141](https://github.com/didi/mand-mobile/issues/141)
+  - 修正`Radio`样式问题
+
 ### 1.4.4
 `2018-07-12`
 - Fix

@@ -3,6 +3,19 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.5.0
+`2018-07-20`
+- Feature
+  - Add `ScrollView` component
+  - Add `CheckGroup`, `CheckList`, `CheckBox` components
+  - `Radio` support `is-across-border` prop
+  - `Steps` support `slot-scoped` with `index`
+  - `TabBar` support horizontal scroll
+- Fix
+  - `Swiper` async load items bug [#150](https://github.com/didi/mand-mobile/issues/150)
+  - Autoinstall library in global environment [#141](https://github.com/didi/mand-mobile/issues/141)
+  - `Radio` style bug
+
 ### 1.4.4
 `2018-07-12`
 - Fix
