@@ -4,9 +4,11 @@
       :steps="steps"
       :current="2">
       <div slot="reached" slot-scope="props">
+        <!-- props.index -->
         <md-icon name="circle-alert" size="lg"></md-icon>
       </div>
-      <div slot="current">
+      <div slot="current" slot-scope="props">
+        <!-- props.index -->
         <md-icon name="hollow-plus" size="lg"></md-icon>
       </div>
     </md-steps>

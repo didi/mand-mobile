@@ -17,12 +17,14 @@
 
           <slot
             name="reached"
-            v-if="index < current && $scopedSlots.reached">
+            :index="index"
+            v-if="index < current && ($scopedSlots.reached || $slots.reached)">
           </slot>
 
           <slot
             name="current"
-            v-else-if="index === current && $slots.current">
+            :index="index"
+            v-else-if="index === current && ($scopedSlots.current || $slots.current)">
           </slot>
 
           <md-icon
