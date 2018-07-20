@@ -34,6 +34,7 @@
             icon="circle-right"
             icon-inverse="circle"
             icon-size="md"
+            is-across-border
             :optionRender="optionRender"
             :is-slot-scope="hasSlot"
             @change="$_onSelectorChoose"
@@ -226,8 +227,8 @@ export default {
     .md-selector-container
       background color-bg-base
       overflow auto
-  .md-field-item.selected
-    color selector-active-color !important
+      &.selected
+        color selector-active-color !important
   &.is-check
     .md-field-item.selected .md-icon
       fill selector-active-color !important

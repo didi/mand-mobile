@@ -132,7 +132,8 @@ export default {
   color field-item-color
   &.disabled
     .md-field-item-inner
-      opacity field-item-color-disabled
+      .md-field-item-label, .md-field-item-content
+        opacity field-item-color-disabled
   &.has-arrow
     .md-field-item-content
       padding-right 28px
