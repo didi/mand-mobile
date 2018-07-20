@@ -3,6 +3,30 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.4.4
+`2018-07-12`
+- Fix
+  - 修正`Swiper`文档错误 [#138](https://github.com/didi/mand-mobile/issues/138)
+  - 修复`Cashier`成功图标样式问题
+  - 修复`InputItem`数值支持 [#132](https://github.com/didi/mand-mobile/issues/132)
+  - 修复`Picker`未设置`defaultIndex`时`getColumnValue`取值`undefined`的问题 [#131](https://github.com/didi/mand-mobile/issues/131)
+
+### 1.4.3
+`2018-07-04`
+- Fix
+  - 修复`Radio`样式问题
+
+### 1.4.1
+`2018-07-01`
+- Feature
+  - 新增金融数字`Amount`
+  - 新增活动指示器`ActivityIndicator`
+  - 新增`Dialog`关闭所有模态窗方法`closeAll`
+  - 新增`ActionSheet`单例调用模式及静态方法 [#79](https://github.com/didi/mand-mobile/issues/79)
+  - 新增`FieldItem`左右插槽并取消`arrow`限制 [#124](https://github.com/didi/mand-mobile/issues/124)
+- Fix
+  - 修复`Agree`布局问题
+
 ### 1.3.3
 `2018-06-15`
 - Feature

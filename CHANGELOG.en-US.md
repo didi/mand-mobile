@@ -3,6 +3,30 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.4.4
+`2018-07-12`
+- Fix
+  - `Swiper` document bug [#138](https://github.com/didi/mand-mobile/issues/138)
+  - `Cashier` success icon style bug
+  - `InputItem` numeric value support [#132](https://github.com/didi/mand-mobile/issues/132)
+  - `Picker` return `undefined` of `getColumnValue` method when not set `defeaultIndex` [#131](https://github.com/didi/mand-mobile/issues/131)
+
+### 1.4.3
+`2018-07-04`
+- Fix
+  - `Radio` style bug
+
+### 1.4.1
+`2018-07-01`
+- Feature
+  - Add `Amount` component
+  - Add `ActivityIndicator` component
+  - `Dialog` add `Dialog.closeAll` static method
+  - `ActionSheet` add static method to create action-sheet [#79](https://github.com/didi/mand-mobile/issues/79)
+  - `FieldItem` remove restrictions on `arrow` [#124](https://github.com/didi/mand-mobile/issues/124)
+- Fix
+  - `Agree` flexbox layout bug
+
 ### 1.3.3
 `2018-06-15`
 - Feature
