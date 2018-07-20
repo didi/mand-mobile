@@ -34,6 +34,7 @@ Vue.component(Radio.name, Radio)
 |icon-position|图标位置|String|`right`|`left`, `right`|
 |option-render|返回各选项自定义渲染内容|Function({text, value, disabled, ...}): String|-|`vue 2.1.0+`可使用`slot-scope`，见附录|
 |is-slot-scope|是否强制使用或不使用`slot-scope`|Boolean|-|某些情况下需要根据业务逻辑动态确定是否使用|
+|is-across-border<sup class="version-after">1.5.0+</sup>|边框通栏，两侧无间距|Boolean|false|-|
 
 #### Radio Methods
 

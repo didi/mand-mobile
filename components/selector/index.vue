@@ -34,6 +34,7 @@
             icon="circle-right"
             icon-inverse="circle"
             icon-size="md"
+            is-across-border
             :optionRender="optionRender"
             :is-slot-scope="hasSlot"
             @change="$_onSelectorChoose"

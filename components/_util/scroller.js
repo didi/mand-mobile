@@ -58,6 +58,7 @@ export default class Scroller {
       scrollingY: true,
       animating: true,
       animationDuration: 250,
+      inRequestAnimationFrame: false,
       bouncing: true,
       locking: true,
       paging: false,
@@ -259,7 +260,6 @@ export default class Scroller {
     if (left === this._scrollLeft && top === this._scrollTop) {
       animate = false
     }
-
     // Publish new values
     if (!this._isTracking) {
       this._publish(left, top, zoom, animate)
@@ -501,6 +501,20 @@ export default class Scroller {
           // Slow down on the edges
           if (this.options.bouncing) {
             scrollTop += moveY / 2 * this.options.speedMultiplier
+            // Support pull-to-refresh (only when only y is scrollable)
+            if (!this._enableScrollX && this._refreshHeight != null) {
+              if (!this._refreshActive && scrollTop <= -this._refreshHeight) {
+                this._refreshActive = true
+                if (this._refreshActivate) {
+                  this._refreshActivate()
+                }
+              } else if (this._refreshActive && scrollTop > -this._refreshHeight) {
+                this._refreshActive = false
+                if (this._refreshDeactivate) {
+                  this._refreshDeactivate()
+                }
+              }
+            }
           } else if (scrollTop > maxScrollTop) {
             scrollTop = maxScrollTop
           } else {
@@ -709,14 +723,24 @@ export default class Scroller {
         }
       }
 
-      // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
-      this._isAnimating = Animate.start(
-        step,
-        verify,
-        completed,
-        this.options.animationDuration,
-        wasAnimating ? easeOutCubic : easeInOutCubic,
-      )
+      const doAnimation = () => {
+        // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
+        this._isAnimating = Animate.start(
+          step,
+          verify,
+          completed,
+          this.options.animationDuration,
+          wasAnimating ? easeOutCubic : easeInOutCubic,
+        )
+      }
+
+      if (this.options.inRequestAnimationFrame) {
+        Animate.requestAnimationFrame(() => {
+          doAnimation()
+        })
+      } else {
+        doAnimation()
+      }
     } else {
       this._scheduledLeft = this._scrollLeft = left
       this._scheduledTop = this._scrollTop = top

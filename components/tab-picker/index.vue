@@ -36,6 +36,7 @@
               :default-index="~renderData[index].clickedKey ? renderData[index].clickedKey : -1"
               :key="renderData[index].clickedKey"
               :is-slot-scope="hasOptionSlotScope"
+              is-across-border
               @change="$_onRadioChange"
             >
               <template

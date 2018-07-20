@@ -1,5 +1,5 @@
 <template>
-  <div class="md-radio">
+  <div class="md-radio" :class="{across: isAcrossBorder}">
     <md-field>
       <template v-for="(item, index) in options">
         <md-field-item
@@ -135,6 +135,10 @@ export default {
       type: Boolean,
       default: undefined,
     },
+    isAcrossBorder: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -264,10 +268,12 @@ export default {
 <style lang="stylus">
 .md-radio
   .md-field
-    padding 0
-    .md-field-item
+    padding 0 32px
+    .md-field-item.md-radio-item
       position relative
-      padding 22px 32px
+      padding 0
+      .md-field-item-inner
+        padding 32px 0
       .md-icon
         position absolute
         right 0
@@ -284,10 +290,21 @@ export default {
           padding-left 40px
       .md-field-item-content.left
         margin-left 0
-  .md-input-item
-    padding 0 32px
-    &.selected
-      .md-input-item-title
-        color radio-color
+    .md-input-item
+      padding 0 !important
+      &.selected
+        .md-input-item-title
+          color radio-color
+  &.across
+    .md-field
+      padding 0
+      .md-field-item.md-radio-item
+        .md-field-item-inner
+          padding 32px
+          .md-icon
+            right 32px
+        &.icon-left
+          .md-icon
+            left 32px
 </style>
 
