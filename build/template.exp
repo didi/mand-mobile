@@ -8,7 +8,7 @@ set component_desc [lindex $argv 3]
 set author [lindex $argv 4]
 set create_time [lindex $argv 5]
 set component_path [lindex $argv 6]
-spawn vue init mand-mobile/create-component-template "$component_path/${component_name}"
+spawn mfe init mfe-template-mfd-mobile "$component_path/${component_name}"
 
 expect "组件中文名称，如：轻提示"
 

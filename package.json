@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "1.1.0",
+  "version": "1.4.4",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -17,6 +17,7 @@
   },
   "files": [
     "lib",
+    "lib-vw",
     "components",
     "types",
     "assets"
@@ -27,7 +28,8 @@
     "dev:site": "cd site && npm start",
     "create": "node build/component-init.js",
     "cz": "git-cz",
-    "build": "rm -rf ./lib && rm -rf ./lib-vw && npm run build:components && npm run build:mand-mobile && npm run build:mand-mobile-special && node build/rollup/build-vw-responsive",
+    "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",
+    "build": "npm run clean && npm run build:components && npm run build:mand-mobile && npm run build:mand-mobile-special && node build/rollup/build-vw-responsive",
     "build:site": "cd site && npm run generate && npm run build",
     "prebuild:example": "npm run build",
     "build:example": "cross-env NODE_ENV=production BUILD_TYPE=example node build/rollup/build-example.rollup",
@@ -187,7 +189,7 @@
     "rollup-plugin-require-context": "0.0.2",
     "rollup-plugin-stylus-css-modules": "^1.5.0",
     "rollup-plugin-template-html": "^0.0.3",
-    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-plugin-uglify": "3.0.0",
     "rollup-plugin-url": "^1.3.0",
     "rollup-plugin-vue": "^3.0.0",
     "rollup-pluginutils": "^2.3.0",
