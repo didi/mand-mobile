@@ -42,6 +42,9 @@ import Cashier from './cashier'
 import Chart from './chart'
 import Amount from './amount'
 import ActivityIndicator from './activity-indicator'
+import CheckGroup from './check-group'
+import CheckList from './check-list'
+import CheckBox from './check-box'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -94,6 +97,9 @@ export const components = {
   Chart,
   Amount,
   ActivityIndicator,
+  CheckGroup,
+  CheckList,
+  CheckBox,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -161,6 +167,9 @@ export {
   Chart,
   Amount,
   ActivityIndicator,
+  CheckGroup,
+  CheckList,
+  CheckBox,
   /* @init<%${componentNameUpper},%> */
 }
 
