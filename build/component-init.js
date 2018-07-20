@@ -172,6 +172,7 @@ function launch() {
         "feedback",
         "form",
         "business",
+        "gesture"
       ],
       name: 'componentType',
       message: '组件类型',

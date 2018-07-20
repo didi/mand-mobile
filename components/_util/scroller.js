@@ -259,7 +259,6 @@ export default class Scroller {
     if (left === this._scrollLeft && top === this._scrollTop) {
       animate = false
     }
-
     // Publish new values
     if (!this._isTracking) {
       this._publish(left, top, zoom, animate)
@@ -501,6 +500,20 @@ export default class Scroller {
           // Slow down on the edges
           if (this.options.bouncing) {
             scrollTop += moveY / 2 * this.options.speedMultiplier
+            // Support pull-to-refresh (only when only y is scrollable)
+            if (!this._enableScrollX && this._refreshHeight != null) {
+              if (!this._refreshActive && scrollTop <= -this._refreshHeight) {
+                this._refreshActive = true
+                if (this._refreshActivate) {
+                  this._refreshActivate()
+                }
+              } else if (this._refreshActive && scrollTop > -this._refreshHeight) {
+                this._refreshActive = false
+                if (this._refreshDeactivate) {
+                  this._refreshDeactivate()
+                }
+              }
+            }
           } else if (scrollTop > maxScrollTop) {
             scrollTop = maxScrollTop
           } else {
@@ -709,14 +722,16 @@ export default class Scroller {
         }
       }
 
-      // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
-      this._isAnimating = Animate.start(
-        step,
-        verify,
-        completed,
-        this.options.animationDuration,
-        wasAnimating ? easeOutCubic : easeInOutCubic,
-      )
+      Animate.requestAnimationFrame(() => {
+        // When continuing based on previous animation we choose an ease-out animation instead of ease-in-out
+        this._isAnimating = Animate.start(
+          step,
+          verify,
+          completed,
+          this.options.animationDuration,
+          wasAnimating ? easeOutCubic : easeInOutCubic,
+        )
+      })
     } else {
       this._scheduledLeft = this._scrollLeft = left
       this._scheduledTop = this._scrollTop = top
@@ -773,7 +788,7 @@ export default class Scroller {
     }
 
     // How much velocity is required to keep the deceleration running
-    const minVelocityToKeepDecelerating = this.options.snapping ? 4 : 0.001
+    const minVelocityToKeepDecelerating = this.options.snapping ? 4 : 0.05
 
     // Detect whether it's still worth to continue animating steps
     // If we are already slow enough to not being user perceivable anymore, we stop the whole process here.

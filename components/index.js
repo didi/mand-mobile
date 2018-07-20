@@ -45,6 +45,9 @@ import ActivityIndicator from './activity-indicator'
 import CheckGroup from './check-group'
 import CheckList from './check-list'
 import CheckBox from './check-box'
+import ScrollView from './scroll-view'
+import ScrollViewRefresh from './scroll-view-refresh'
+import ScrollViewMore from './scroll-view-more'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -100,6 +103,9 @@ export const components = {
   CheckGroup,
   CheckList,
   CheckBox,
+  ScrollView,
+  ScrollViewRefresh,
+  ScrollViewMore,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -170,6 +176,9 @@ export {
   CheckGroup,
   CheckList,
   CheckBox,
+  ScrollView,
+  ScrollViewRefresh,
+  ScrollViewMore,
   /* @init<%${componentNameUpper},%> */
 }
 

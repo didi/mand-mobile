@@ -40,4 +40,6 @@ export const Amount =  r => require.ensure([], () => r(require('../components/am
 export const ActivityIndicator =  r => require.ensure([], () => r(require('../components/activity-indicator/demo')), 'activity-indicator')
 export const CheckGroup =  r => require.ensure([], () => r(require('../components/check-group/demo')), 'check-group')
 export const CheckList =  r => require.ensure([], () => r(require('../components/check-list/demo')), 'check-list')
-export const CheckBox =  r => require.ensure([], () => r(require('../components/check-box/demo')), 'check-box')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const CheckBox =  r => require.ensure([], () => r(require('../components/check-box/demo')), 'check-box')
+export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
+/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

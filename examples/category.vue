@@ -132,9 +132,11 @@ block()
     &:nth-of-type(2) .cg-category-title:before
       background #83D23A
     &:nth-of-type(3) .cg-category-title:before
-      background #FFC013
-    &:nth-of-type(4) .cg-category-title:before
       background #FF7A2E
+    &:nth-of-type(4) .cg-category-title:before
+      background #FFC013
+    &:nth-of-type(5) .cg-category-title:before
+      background #FF525D
     .cg-category-list
       block()
       background #FCFCFC
