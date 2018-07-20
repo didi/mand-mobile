@@ -37,7 +37,7 @@
   </div>
 </template>
 
-<script>import Scroller from '../_util/scroller'
+<script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 export default {
   name: 'md-scroll-view',
@@ -118,6 +118,7 @@ export default {
           bouncing: this.bouncing,
           zooming: false,
           animationDuration: 200,
+          inRequestAnimationFrame: true,
         },
       )
       scroller.setPosition(rect.left + container.clientLeft, rect.top + container.clientTop)
@@ -273,7 +274,7 @@ export default {
     },
   },
 }
-</script>
+</script>
 
 <style lang="stylus">
 .md-scroll-view

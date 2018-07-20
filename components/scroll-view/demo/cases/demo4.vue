@@ -86,9 +86,9 @@ export default {
         offset += innerHeight
       })
     },
-    $_onScroll({scrollY}) {
+    $_onScroll({scrollTop}) {
       if (!this.isManual) {
-        this.scrollY = scrollY
+        this.scrollY = scrollTop
       }
     },
     $_onTabChange(index) {

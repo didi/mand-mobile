@@ -73,8 +73,8 @@ export default {
         offset += innerHeight
       })
     },
-    $_onScroll({scrollY}) {
-      this.scrollY = scrollY
+    $_onScroll({scrollTop}) {
+      this.scrollY = scrollTop
     },
   },
 }
