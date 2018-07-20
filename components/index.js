@@ -107,6 +107,15 @@ const install = function(Vue) {
     const component = components[name]
     component.name && Vue.component(component.name, component)
   })
+
+  // 全局服务注入
+  Vue.prototype.$toast = components.Toast
+  Vue.prototype.$dialog = components.Dialog
+  Vue.prototype.$sheet = components.ActionSheet
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
 }
 
 // 集合组件暴露
