@@ -42,6 +42,9 @@ import Cashier from './cashier'
 import Chart from './chart'
 import Amount from './amount'
 import ActivityIndicator from './activity-indicator'
+import ScrollView from './scroll-view'
+import ScrollViewRefresh from './scroll-view-refresh'
+import ScrollViewMore from './scroll-view-more'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -94,6 +97,9 @@ export const components = {
   Chart,
   Amount,
   ActivityIndicator,
+  ScrollView,
+  ScrollViewRefresh,
+  ScrollViewMore,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -152,6 +158,9 @@ export {
   Chart,
   Amount,
   ActivityIndicator,
+  ScrollView,
+  ScrollViewRefresh,
+  ScrollViewMore,
   /* @init<%${componentNameUpper},%> */
 }
 
