@@ -471,7 +471,7 @@ export default {
       if (this.noDrag) {
         return
       }
-      this.$_clearTimer()
+      this.stop()
 
       const element = this.$el
       const point = this.hasTouch ? event.touches[0] : event
@@ -538,7 +538,7 @@ export default {
       const itemCount = this.rItemCount
 
       if (dragDuration < 300 && dragState.currentLeft === undefined) {
-        this.$_startPlay()
+        this.play(this.autoplay)
         return
       }
 
@@ -570,7 +570,7 @@ export default {
 
       this.dragState = {}
 
-      this.$_startPlay()
+      this.play(this.autoplay)
     },
 
     // MARK: events handler, 如 $_onButtonClick
