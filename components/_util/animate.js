@@ -1,4 +1,6 @@
+/* istanbul ignore file */
 const Animate = (global => {
+  /* istanbul ignore next */
   const time =
     Date.now ||
     (() => {

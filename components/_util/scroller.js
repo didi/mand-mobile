@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /*
  * Based on the work of: Scroller
  * http://github.com/zynga/scroller
@@ -7,6 +8,7 @@
  * https://raw.github.com/zynga/scroller/master/MIT-LICENSE.txt
  *
  */
+
 import {noop, warn, extend} from './index'
 
 import Animate, {easeOutCubic, easeInOutCubic} from './animate'
@@ -50,7 +52,7 @@ const members = {
   _decelerationVelocityX: null,
   _decelerationVelocityY: null,
 }
-
+/* istanbul ignore next */
 export default class Scroller {
   constructor(callback = noop, options) {
     this.options = {
