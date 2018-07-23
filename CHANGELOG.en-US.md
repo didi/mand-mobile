@@ -3,6 +3,11 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.5.1
+`2018-07-23`
+- Fix
+  - Improve Typescript definitions [#153](https://github.com/didi/mand-mobile/issues/153)
+
 ### 1.5.0
 `2018-07-20`
 - Feature

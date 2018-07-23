@@ -3,6 +3,11 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.5.1
+`2018-07-23`
+- Fix
+  - 完善 Typescript 类型声明 [#153](https://github.com/didi/mand-mobile/issues/153)
+
 ### 1.5.0
 `2018-07-20`
 - Feature
