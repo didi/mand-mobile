@@ -3,7 +3,7 @@ title: CheckList 复选列表
 preview: https://didi.github.io/mand-mobile/examples/#/check-list
 ---
 
-复选列表
+复选列表. <sup class="version-after">1.5.0+</sup>
 
 ### 引入
 

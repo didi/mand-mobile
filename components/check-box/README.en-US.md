@@ -3,7 +3,7 @@ title: CheckBox
 preview: https://didi.github.io/mand-mobile/examples/#/check-box
 ---
 
-Check box component.
+Check box component. <sup class="version-after">1.5.0+</sup>
 
 ### Import
 

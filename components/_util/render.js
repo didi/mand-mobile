@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export const render = (function(global) {
   const docStyle = document.documentElement.style
 

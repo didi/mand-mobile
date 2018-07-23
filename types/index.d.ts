@@ -4,9 +4,10 @@ import { Toast } from './toast'
 import imageProcessor from './image-processor'
 import { Dialog } from './dialog'
 
-
 export function install(vue: typeof Vue): void
 
+export class ActivityIndicator extends MandComponent { }
+export class Amount extends MandComponent { }
 export class ActionBar extends MandComponent { }
 export class ActionSheet extends MandComponent { }
 export class Agree extends MandComponent { }
@@ -15,6 +16,9 @@ export class Captcha extends MandComponent { }
 export class Cashier extends MandComponent { }
 export class Chart extends MandComponent { }
 export class Codebox extends MandComponent { }
+export class CheckGroup extends MandComponent { }
+export class CheckBox extends MandComponent { }
+export class CheckList extends MandComponent { }
 export class DatePicker extends MandComponent { }
 export class DropMenu extends MandComponent { }
 export class Field extends MandComponent { }
@@ -37,6 +41,9 @@ export class Steps extends MandComponent { }
 export class Swiper extends MandComponent { }
 export class SwiperItem extends MandComponent { }
 export class Switch extends MandComponent { }
+export class ScrollView extends MandComponent { }
+export class ScrollViewMore extends MandComponent { }
+export class ScrollViewRefresh extends MandComponent { }
 export class TabBar extends MandComponent { }
 export class TabPicker extends MandComponent { }
 export class Tabs extends MandComponent { }
@@ -55,5 +62,5 @@ export class Tip extends MandComponent { }
 
 export {
   Toast,
-  Dialog,
+  Dialog
 }
