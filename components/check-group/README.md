@@ -3,7 +3,7 @@ title: CheckGroup 选择项组
 preview: https://didi.github.io/mand-mobile/examples/#/check-group
 ---
 
-无 UI 的抽象选择项基础组件, 可根据具体场景自定义样式。
+无 UI 的抽象选择项基础组件, 可根据具体场景自定义样式. <sup class="version-after">1.5.0+</sup>
 
 ### 引入
 

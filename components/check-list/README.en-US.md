@@ -3,7 +3,7 @@ title: CheckList
 preview: https://didi.github.io/mand-mobile/examples/#/check-list
 ---
 
-Check list component.
+Check list component. <sup class="version-after">1.5.0+</sup>
 
 ### Import
 
