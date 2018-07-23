@@ -87,9 +87,9 @@ export default {
       dimension: 0,
       dragState: {},
       timer: null,
-      reInitTimer: null,
       noDrag: false,
       scroller: null,
+      isStoped: false,
       $swiper: null,
     }
   },
@@ -116,9 +116,6 @@ export default {
     },
   },
 
-  // watch: {
-  // },
-
   // LiftCircle Hook
   /*
   beforeCreate
@@ -129,11 +126,11 @@ export default {
     this.ready = true
     this.hasTouch = 'ontouchstart' in window
     this.$swiper = this.$el.querySelector('.md-swiper-container')
-    setTimeout(() => {
+    this.$nextTick(() => {
       this.$_reInitItems()
       this.$_startPlay()
       this.$_bindEvents()
-    }, 100)
+    })
   },
   /*
   beforeUpdate
@@ -143,13 +140,7 @@ export default {
   beforeDestroy
   */
   destroyed() {
-    if (this.timer) {
-      this.$_clearTimer()
-    }
-    if (this.reInitTimer) {
-      clearTimeout(this.reInitTimer)
-      this.reInitTimer = null
-    }
+    this.$_clearTimer()
   },
   /*
   errorCaptured
@@ -397,8 +388,10 @@ export default {
     },
 
     $_clearTimer() {
-      clearInterval(this.timer)
-      this.timer = null
+      if (this.timer) {
+        clearInterval(this.timer)
+        this.timer = null
+      }
     },
 
     $_isScroll(distanceX, distanceY) {
@@ -478,7 +471,7 @@ export default {
       if (this.noDrag) {
         return
       }
-      this.$_clearTimer()
+      this.stop()
 
       const element = this.$el
       const point = this.hasTouch ? event.touches[0] : event
@@ -545,7 +538,7 @@ export default {
       const itemCount = this.rItemCount
 
       if (dragDuration < 300 && dragState.currentLeft === undefined) {
-        this.$_startPlay()
+        this.play(this.autoplay)
         return
       }
 
@@ -577,7 +570,7 @@ export default {
 
       this.dragState = {}
 
-      this.$_startPlay()
+      this.play(this.autoplay)
     },
 
     // MARK: events handler, 如 $_onButtonClick
@@ -610,41 +603,45 @@ export default {
       return this.$_calcuRealIndex(this.index)
     },
 
-    play(autoplay) {
-      if (this.timer) {
-        this.$_clearTimer()
-      }
+    play(autoplay = 3000) {
+      this.$_clearTimer()
       if (autoplay < 500) {
         return
       }
-      this.autoplay = autoplay || this.autoplay || 3000
+      this.autoplay = autoplay || this.autoplay
       this.$_startPlay()
+      this.isStoped = false
     },
 
     stop() {
-      if (this.timer) {
-        this.$_clearTimer()
-      }
+      this.$_clearTimer()
+      this.isStoped = true
     },
 
     swiperItemCreated() {
       if (!this.ready) {
         return
       }
-      clearTimeout(this.reInitTimer)
-      this.reInitTimer = setTimeout(() => {
+      this.$nextTick(() => {
+        this.$_clearTimer()
         this.$_reInitItems()
-      }, 100)
+        if (this.autoplay > 0 && !this.isStoped) {
+          this.$_startPlay()
+        }
+      })
     },
 
     swiperItemDestroyed() {
       if (!this.ready) {
         return
       }
-      clearTimeout(this.reInitTimer)
-      this.reInitTimer = setTimeout(() => {
+      this.$nextTick(() => {
+        this.$_clearTimer()
         this.$_reInitItems()
-      }, 100)
+        if (this.autoplay > 0 && !this.isStoped) {
+          this.$_startPlay()
+        }
+      })
     },
   },
 }

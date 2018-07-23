@@ -37,4 +37,8 @@ export {default as Cashier} from '../components/cashier/demo'
 export {default as Chart} from '../components/chart/demo'
 export {default as Amount} from '../components/amount/demo'
 export {default as ActivityIndicator} from '../components/activity-indicator/demo'
+export {default as CheckGroup} from '../components/check-group/demo'
+export {default as CheckList} from '../components/check-list/demo'
+export {default as CheckBox} from '../components/check-box/demo'
+export {default as ScrollView} from '../components/scroll-view/demo'
 /* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */

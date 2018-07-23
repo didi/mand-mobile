@@ -23,6 +23,7 @@
           :style="circleStyle"
         >
           <animateTransform
+            v-if="process === undefined"
             :dur="`${duration}s`"
             :values="`0 ${viewBoxSize/2} ${viewBoxSize/2};360 ${viewBoxSize/2} ${viewBoxSize/2}`"
             attributeName="transform"
@@ -105,11 +106,6 @@
 
   methods: {
     $_insertKeyframes() {
-      /* istanbul ignore if */
-      if (this.process !== undefined) {
-        // No need to add animation
-        return
-      }
       const id = this.id
       const keyframes = `from{stroke-dasharray:0 ${this.circlePerimeter};}to{stroke-dasharray:${this
         .circlePerimeter} 0;}`

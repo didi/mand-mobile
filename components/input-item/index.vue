@@ -135,7 +135,7 @@
 </template>
 
 <script>import Icon from '../icon'
-import NumberKeyborad from '../number-keyboard'
+import NumberKeyboard from '../number-keyboard'
 import {getCursorsPosition, setCursorsPosition} from './cursor'
 import {noop, isIOS, isAndroid, randomId} from '../_util'
 import {formatValueByGapRule, formatValueByGapStep, trimValue} from '../_util/formate-value'
@@ -145,7 +145,7 @@ export default {
 
   components: {
     [Icon.name]: Icon,
-    [NumberKeyborad.name]: NumberKeyborad,
+    [NumberKeyboard.name]: NumberKeyboard,
   },
 
   props: {
@@ -413,9 +413,9 @@ export default {
       document.removeEventListener('click', this.$_blurFakeInput, false)
     },
     $_initNumberKeyBoard() {
-      const keyborad = this.$refs['number-keyboard']
-      this.inputNumberKeyboard = keyborad
-      document.body.appendChild(keyborad.$el)
+      const keyboard = this.$refs['number-keyboard']
+      this.inputNumberKeyboard = keyboard
+      document.body.appendChild(keyboard.$el)
     },
 
     // MARK: events handler
@@ -515,14 +515,14 @@ export default {
     margin-right input-item-title-gap
     font-size field-title-font-size
     color field-title-color
-    word-break()      
+    word-break()
     &.fixed
       width input-item-title-width
   .md-input-item-control
     position relative
     display flex
     flex-direction column
-    flex 1 
+    flex 1
     min-height input-item-height
     .md-input-item-clear, .md-input-item-right
       position absolute
@@ -544,7 +544,7 @@ export default {
       // display flex
       width 100%
       height input-item-height
-      color input-item-color 
+      color input-item-color
       font-size input-item-font-size
       font-weight input-item-font-weight
       -webkit-appearance none
@@ -554,15 +554,15 @@ export default {
       box-sizing border-box
       -webkit-tap-highlight-color transparent
       appearance none
-      
+
     .md-input-item-input
       &:disabled, &[disabled]
         opacity input-item-color-disabled
       &::-webkit-input-placeholder
         color input-item-placeholder
       &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
-        -webkit-appearance none 
-  &.left 
+        -webkit-appearance none
+  &.left
     .md-input-item-input, .md-input-item-fake
       text-align left
   &.center
@@ -613,7 +613,7 @@ export default {
   &.error
     .md-input-item-title
       color input-item-color-error
-    
+
   .md-input-item-fake
     line-height input-item-height
     word-ellipsis()
@@ -652,7 +652,7 @@ export default {
     border-radius 2px
   &.is-android .md-input-item-fake:after
     border-right solid 4px color-text-base
-  
+
   @-webkit-keyframes keyboard-cursor
     0%
       opacity 1

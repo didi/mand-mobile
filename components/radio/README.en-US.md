@@ -34,6 +34,7 @@ Vue.component(Radio.name, Radio)
 |icon-position|the position of icon|String|`right`|`left`, `right`|
 |option-render|return customized rendering content for each option|Function({text, value, disabled, ...}): String|-|`vue 2.1.0+` can use `slot-scope`, see #Appendix|
 |is-slot-scope|if it is mandatory to use `slot-scope`|Boolean|-|it depends on exact cases to determine whether to use it or not|
+|is-across-border<sup class="version-after">1.5.0+</sup>|border through option item, no gap on both sides|Boolean|false|-|
 
 #### Radio Methods
 

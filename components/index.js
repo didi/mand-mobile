@@ -42,6 +42,12 @@ import Cashier from './cashier'
 import Chart from './chart'
 import Amount from './amount'
 import ActivityIndicator from './activity-indicator'
+import CheckGroup from './check-group'
+import CheckList from './check-list'
+import CheckBox from './check-box'
+import ScrollView from './scroll-view'
+import ScrollViewRefresh from './scroll-view-refresh'
+import ScrollViewMore from './scroll-view-more'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -94,6 +100,12 @@ export const components = {
   Chart,
   Amount,
   ActivityIndicator,
+  CheckGroup,
+  CheckList,
+  CheckBox,
+  ScrollView,
+  ScrollViewRefresh,
+  ScrollViewMore,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -107,6 +119,15 @@ const install = function(Vue) {
     const component = components[name]
     component.name && Vue.component(component.name, component)
   })
+
+  // 全局服务注入
+  Vue.prototype.$toast = components.Toast
+  Vue.prototype.$dialog = components.Dialog
+  Vue.prototype.$sheet = components.ActionSheet
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
 }
 
 // 集合组件暴露
@@ -152,6 +173,12 @@ export {
   Chart,
   Amount,
   ActivityIndicator,
+  CheckGroup,
+  CheckList,
+  CheckBox,
+  ScrollView,
+  ScrollViewRefresh,
+  ScrollViewMore,
   /* @init<%${componentNameUpper},%> */
 }
 

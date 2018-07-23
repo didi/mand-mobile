@@ -55,19 +55,7 @@ export default {
 
   methods: {
     // MARK: private methods
-    $_onSelectTab (index) {
-      this.selectTab(index)
-    },
-
-    // MARK: public methods
-    selectTab (i) {
-      const index = parseInt(i)
-      if (index >= 0 && index < this.titleList().length) {
-        this.activeIndex = index
-      }
-    },
-
-    titleList () {
+    $_titleList () {
       if (this.titles && this.titles.length) {
         return this.titles
       } else if (this.$slots.default && this.$slots.default.length) {
@@ -75,15 +63,23 @@ export default {
       } else {
         return []
       }
+    },
+
+    // MARK: public methods
+    selectTab (i) {
+      const index = parseInt(i)
+      if (index >= 0 && index < this.$_titleList().length) {
+        this.activeIndex = index
+      }
     }
   },
 
-  render (createElement) {
+  render (h) {
     const self = this
     let tabTitles = []
     const mapper = (item, index) => {
-      return createElement(
-        'div',
+      return h(
+        'a',
         {
           class: {
             'md-tab-title': true,
@@ -91,7 +87,7 @@ export default {
           },
           on: {
             click: () => {
-              self.$_onSelectTab(index)
+              self.selectTab(index)
             }
           }
         },
@@ -101,16 +97,17 @@ export default {
       )
     }
 
-    tabTitles = this.titleList().map(mapper)
+    tabTitles = this.$_titleList().map(mapper)
 
     const innerElements = [...tabTitles]
+
     if (this.showInkBar) {
       const padPercent = (100 - this.inkBarLength) / 2
       const width = this.inkBarLength / tabTitles.length
       const pad = padPercent / tabTitles.length
       const offset = ((this.activeIndex * 100) / tabTitles.length) + pad
 
-      innerElements.push(createElement(
+      innerElements.push(h(
         'div',
         {
           class: {
@@ -125,22 +122,16 @@ export default {
       ))
     }
 
-    return createElement(
-      'div',
-      {
-        class: {
-          'md-tab-bar': true
-        }
-      },
-      [createElement(
-        'div',
-        {
-          class: {
-            'md-tab-titles-wrpper': true
-          }
-        },
-        innerElements
-      )]
+    return h('nav', { staticClass: 'md-tab-bar' },
+      [
+        h('div', { staticClass: 'md-tab-bar-inner' },
+          [
+            h('div', { staticClass: 'md-tab-titles-wrapper' },
+              innerElements
+            )
+          ]
+        )
+      ]
     )
   }
 }
@@ -155,16 +146,27 @@ export default {
   color tab-text-color
   background tab-bg
 
-  .md-tab-titles-wrpper
+  .md-tab-bar-inner
+    width 100%
+    height tab-height
+    overflow auto
+    -webkit-overflow-scrolling touch
+    &::-webkit-scrollbar
+      display none
+
+  .md-tab-titles-wrapper
     position relative
     height 100%
-    display flex
+    min-width 100%
+    display inline-flex
     justify-content space-around
+
   .md-tab-title
-    display flex
+    display inline-flex
     justify-content center
     align-items center
-    flex 1
+    flex 1 0 100px
+    min-width 100px
     height 100%
     text-align center
     &.active

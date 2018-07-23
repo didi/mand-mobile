@@ -5,6 +5,7 @@
         <a class="default-header-logo" href="/mand-mobile">
           <img :src="logo" alt="logo">
           <span v-html="title"></span>
+          <sup>v{{version}}</sup>
         </a>
       </div>
       <div class="default-header-content">
@@ -78,6 +79,7 @@
 </template>
 
 <script>
+import mandMobileInfo from 'mand-mobile/package.json'
 import MfeTable from './Table'
 import { localStore } from '../assets/js/util'
 import algoliasearch from 'algoliasearch'
@@ -122,6 +124,9 @@ export default {
     lang() {
       return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
     },
+    version() {
+      return mandMobileInfo ? mandMobileInfo.version : ''
+    }
   },
 
   methods: {
@@ -294,6 +299,12 @@ export default {
           font-style normal
           font-weight 500
           font-family "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace  !important
+      sup
+        margin-left 10px
+        color #999
+        font-weight 300
+        font-size 12px
+        font-family DINAlternate-Bold
   .default-header-content
     display inline-block
     width 83%

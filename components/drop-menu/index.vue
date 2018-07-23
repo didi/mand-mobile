@@ -32,6 +32,7 @@
           :options="activeMenuListData"
           :optionRender="optionRender"
           :is-slot-scope="hasSlot"
+          is-across-border
           @change="$_onListItemClick"
         >
           <template slot-scope="{ option }">
