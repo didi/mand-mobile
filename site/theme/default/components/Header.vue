@@ -508,6 +508,8 @@ export default {
       img
         height 24px !important
         margin 0
+      sup
+        display none
     // .default-header-logo
     //   margin-top 10px
     &.active .default-header-nav li.nav-item a
