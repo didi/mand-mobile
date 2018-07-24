@@ -156,12 +156,12 @@ export default {
         return
       }
       this.scroller.doTouchStart(event.touches, event.timeStamp)
-      event.preventDefault()
     },
     $_onScollerTouchMove(event) {
       if (!this.scroller) {
         return
       }
+      event.preventDefault()
       this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
     },
     $_onScollerTouchEnd(event) {
