@@ -3,6 +3,12 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.5.2
+`2018-07-24`
+- Fix
+  - 修正`ScrollView`内容无法触发点击事件 [#158](https://github.com/didi/mand-mobile/issues/158)
+  - 修正`Selector`组件滚动穿透 [157](https://github.com/didi/mand-mobile/issues/157)
+
 ### 1.5.1
 `2018-07-23`
 - Fix

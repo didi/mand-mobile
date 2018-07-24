@@ -3,6 +3,12 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.5.2
+`2018-07-24`
+- Fix
+  - `ScrollView` content not response to click event [#158](https://github.com/didi/mand-mobile/issues/158)
+  - `Selector` scroll bug  [157](https://github.com/didi/mand-mobile/issues/157)
+
 ### 1.5.1
 `2018-07-23`
 - Fix
