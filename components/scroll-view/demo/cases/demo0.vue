@@ -6,8 +6,9 @@
     >
       <div
         v-for="i in list"
-        :key="i"
         class="scroll-view-item"
+        :key="i"
+        @click="$_onItemClick(i)"
       >
         {{i}}
       </div>
@@ -15,7 +16,7 @@
   </div>
 </template>
 
-<script>import {ScrollView} from 'mand-mobile'
+<script>import {ScrollView, Toast} from 'mand-mobile'
 
 export default {
   name: 'scroll-view-demo-0',
@@ -40,6 +41,9 @@ export default {
     }
   },
   methods: {
+    $_onItemClick(i) {
+      Toast.info(`Click ${i}`)
+    },
     $_onScroll({scrollLeft, scrollTop}) {
       console.log(`[Mand Mobile ScrollView - demo0 - onScroll] scrollLeft: ${scrollLeft}, scrollTop: ${scrollTop}`)
     },

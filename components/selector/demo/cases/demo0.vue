@@ -53,6 +53,24 @@ export default {
           {
             text: '选项四',
           },
+          {
+            text: '选项五',
+          },
+          {
+            text: '选项六',
+          },
+          {
+            text: '选项七',
+          },
+          {
+            text: '选项八',
+          },
+          {
+            text: '选项九',
+          },
+          {
+            text: '选项十',
+          },
         ],
       ],
       selectorValue: '选项二',

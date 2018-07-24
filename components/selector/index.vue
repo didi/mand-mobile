@@ -10,8 +10,6 @@
       v-model="isSelectorShow"
       position="bottom"
       :mask-closable="maskClosable"
-      prevent-scroll
-      :prevent-scroll-exclude="scroller"
       @show="$_onSelectorShow"
       @hide="$_onSelectorHide"
       @maskClick="$_onSelectorCancel"
@@ -23,7 +21,12 @@
         @confirm="$_onSelectorConfirm"
         @cancel="$_onSelectorCancel"
       ></md-popup-title-bar>
-      <div class="md-selector-container" :style="{maxHeight: `${maxHeight}px`}">
+      <md-scroll-view
+        ref="scroll"
+        class="md-selector-container"
+        :scrolling-x="false"
+        :style="{maxHeight: `${maxHeight}px`}"
+      >
         <div class="md-selector-list">
           <md-radio
             ref="radio"
@@ -44,7 +47,7 @@
             </template>
           </md-radio>
         </div>
-      </div>
+      </md-scroll-view>
     </md-popup>
   </div>
 </template>
@@ -52,6 +55,7 @@
 <script>import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import Radio from '../radio'
+import ScrollView from '../scroll-view'
 import {noop} from '../_util'
 
 export default {
@@ -61,6 +65,7 @@ export default {
     [Radio.name]: Radio,
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
+    [ScrollView.name]: ScrollView,
   },
 
   props: {
@@ -120,7 +125,6 @@ export default {
       radioKey: Date.now(),
       activeIndex: -1,
       tmpActiveIndex: -1,
-      scroller: '',
     }
   },
 
@@ -167,12 +171,7 @@ export default {
       return Array.isArray(invalidIndex) ? !!~invalidIndex.indexOf(index) : index === invalidIndex
     },
     $_setScroller() {
-      const boxer = this.$el ? this.$el.querySelector('.md-selector-list') : null
-      if (boxer && boxer.clientHeight >= this.maxHeight) {
-        this.scroller = '.md-selector-container'
-      } else {
-        this.scroller = ''
-      }
+      this.$refs.scroll.reflowScroller()
     },
 
     // MARK: events handler
@@ -188,7 +187,7 @@ export default {
       this.tmpActiveIndex = this.activeIndex
 
       if (this.tmpActiveIndex !== -1) {
-        this.$refs['radio'].selectByIndex(this.tmpActiveIndex)
+        this.$refs.radio.selectByIndex(this.tmpActiveIndex)
       } else {
         // reset radio
         this.radioKey = Date.now()
@@ -226,7 +225,7 @@ export default {
       background-color color-bg-base
     .md-selector-container
       background color-bg-base
-      overflow auto
+      overflow hidden
   .md-field-item.selected
     color selector-active-color !important
   &.is-check
