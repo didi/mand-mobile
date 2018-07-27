@@ -287,8 +287,9 @@ export default {
     },
     inputValue(val) {
       this.inputBindValue = val
-      this.$emit('input', this.$_trimValue(val))
-      this.$emit('change', this.name, this.$_trimValue(val))
+      val = this.isFormative ? this.$_trimValue(val) : val
+      this.$emit('input', val)
+      this.$emit('change', this.name, val)
     },
     isInputFocus(val) {
       if (!this.isVirtualKeyboard) {
