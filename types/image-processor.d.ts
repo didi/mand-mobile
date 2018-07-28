@@ -10,6 +10,6 @@ export interface ImageProcessorData {
   blob: Blob
 }
 
-export declare function ImageProcessor(
+export default function ImageProcessor(
   options: ImageProcessorOptions,
   callback?: (data: ImageProcessorData) => any): Promise<ImageProcessorData>
