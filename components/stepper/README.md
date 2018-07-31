@@ -21,12 +21,14 @@ Vue.component(Stepper.name, Stepper)
 #### Stepper Props
 属性    | 说明 | 类型 | 默认值
 ---------|------|--------|----
-default-value |默认值| Number|-
-step|每次改变步数，可以为小数|Number|`1`
-min|最小值|Number|`-Infinity`
-max|最大值|Number|`Infinity`
+v-model<sup class="version-after">1.5.3+</sup> | 当前值 | Number/String |-
+default-value |默认值| Number/String|-
+step|每次改变步数，可以为小数|Number/String|`1`
+min|最小值|Number/String|`-Infinity`
+max|最大值|Number/String|`Infinity`
 disabled|禁用| Boolean|`false`
 read-only|只读| Boolean|`false`
+is-integer<sup class="version-after">1.5.3+</sup>|只能输入整数| Boolean|`false`
 
 #### Stepper Events
 
