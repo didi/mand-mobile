@@ -3,13 +3,15 @@
     <md-field>
       <md-field-item
         name="arrow4"
-        title="步进2"
+        title="步进2, 只允许输入整数"
         customized
         align="right">
         <div class="normal-tip">
           <md-stepper
+            v-model="value"
             :step="2"
             :min="2"
+            is-integer
           ></md-stepper>
         </div>
       </md-field-item>
@@ -30,6 +32,11 @@ export default {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [Stepper.name]: Stepper,
+  },
+  data() {
+    return {
+      value: 3,
+    }
   },
 }
 </script>

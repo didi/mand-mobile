@@ -8,8 +8,9 @@
         align="right">
         <div class="normal-tip">
           <md-stepper
-            :min="-12"
-            :max="18"
+            v-model="value"
+            min="-12"
+            max="18"
           ></md-stepper>
         </div>
       </md-field-item>
@@ -30,6 +31,11 @@ export default {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [Stepper.name]: Stepper,
+  },
+  data() {
+    return {
+      value: 0,
+    }
   },
 }
 </script>
