@@ -16,7 +16,6 @@
       :default-index="1"
       :invalid-index="2"
       title="普通模式"
-      cancelText="取消"
       @choose="onSelectorChoose($event)"
     ></md-selector>
   </div>
