@@ -24,11 +24,18 @@ export type DialogSucceedOptions = {
 export type DialogFailedOptions = DialogSucceedOptions
 
 export interface Dialog {
+  (options?: ToastConstructorOptions): void
   confirm(options: DialogConfirmOptions): Vue
   alert(options: DialogAlertOptions): Vue
   succeed(options: DialogSucceedOptions): Vue
   failed(options: DialogFailedOptions): Vue
   closeAll(): void
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $dialog: Dialog
+  }
 }
 
 export const Dialog: Dialog

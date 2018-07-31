@@ -19,4 +19,10 @@ export interface Toast {
   hide(): void
 }
 
+declare module 'vue/types/vue' {
+  interface Vue {
+    $toast: Toast
+  }
+}
+
 export const Toast: Toast
