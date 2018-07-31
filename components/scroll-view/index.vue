@@ -39,6 +39,7 @@
 
 <script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
+
 export default {
   name: 'md-scroll-view',
   props: {
@@ -53,6 +54,10 @@ export default {
     bouncing: {
       type: Boolean,
       default: true,
+    },
+    autoReflow: {
+      type: Boolean,
+      default: false,
     },
     endReachedThreshold: {
       type: Number,
@@ -74,6 +79,11 @@ export default {
       isEndReaching: false,
       scrollX: null,
       scrollY: null,
+      containerW: 0,
+      containerH: 0,
+      contentW: 0,
+      contentH: 0,
+      reflowTimer: null,
     }
   },
   computed: {
@@ -93,6 +103,10 @@ export default {
       false,
     )
     this.$_initScroller()
+    this.autoReflow && this.$_initAutoReflow()
+  },
+  destroyed() {
+    this.reflowTimer && clearInterval(this.reflowTimer)
   },
   methods: {
     $_initScroller() {
@@ -146,6 +160,11 @@ export default {
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
+    },
+    $_initAutoReflow() {
+      this.reflowTimer = setInterval(() => {
+        this.reflowScroller()
+      }, 100)
     },
     // MARK: events handler
     $_onScollerTouchStart(event) {
@@ -243,13 +262,28 @@ export default {
         return
       }
       this.$nextTick(() => {
-        this.scroller.setDimensions(
-          container.clientWidth,
-          container.clientHeight,
-          content.offsetWidth,
-          content.offsetHeight,
-        )
-        this.isEndReaching = false
+        const containerW = container.clientWidth
+        const containerH = container.clientHeight
+        const contentW = content.offsetWidth
+        const contentH = content.offsetHeight
+
+        if (
+          this.containerW !== containerW ||
+          this.containerH !== containerH ||
+          this.contentW !== contentW ||
+          this.contentH !== contentH
+        ) {
+          this.scroller.setDimensions(
+            container.clientWidth,
+            container.clientHeight,
+            content.offsetWidth,
+            content.offsetHeight,
+          )
+          this.containerW = containerW
+          this.containerH = containerH
+          this.contentW = contentW
+          this.contentH = contentH
+        }
       })
     },
     triggerRefresh() {

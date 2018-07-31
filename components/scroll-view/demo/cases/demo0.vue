@@ -49,6 +49,7 @@ export default {
     },
     addItems() {
       this.list += 5
+      // 如果把autoReflow设置为false, 需调用reflowScroller
       this.$refs.scrollView.reflowScroller()
     },
   },

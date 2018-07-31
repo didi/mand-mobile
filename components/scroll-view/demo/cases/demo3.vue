@@ -65,9 +65,8 @@ export default {
   methods: {
     $_initScrollBlock() {
       const blocks = this.$el.querySelectorAll('.scroll-view-category')
-
       let offset = 0
-      blocks.forEach((block, index) => {
+      Array.prototype.slice.call(blocks).forEach((block, index) => {
         const innerHeight = block.clientHeight
         this.$set(this.dimensions, index, [offset, offset + innerHeight])
         offset += innerHeight
