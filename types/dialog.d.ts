@@ -24,7 +24,7 @@ export type DialogSucceedOptions = {
 export type DialogFailedOptions = DialogSucceedOptions
 
 export interface Dialog {
-  (options?: ToastConstructorOptions): void
+  (options?: any): void
   confirm(options: DialogConfirmOptions): Vue
   alert(options: DialogAlertOptions): Vue
   succeed(options: DialogSucceedOptions): Vue
