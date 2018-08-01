@@ -3,7 +3,7 @@ title: 更新日志
 toc: hidden
 ---
 
-### 1.5.3
+### 1.5.4
 `2018-08-01`
 - Feature
   - `Stepper`新增`v-model`绑定 [#171](https://github.com/didi/mand-mobile/issues/171)
