@@ -6,18 +6,19 @@ title: Quickstart
 
 **New project** can be initialized and integrated with `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to <a href="javascript:jumpAnchor('Installation')">Installation</a> for **existing projects**.
 
-* vue cli 2.0([Template](https://github.com/mand-mobile/mand-mobile-template))
+* Vue CLI 2([Template](https://github.com/mand-mobile/mand-mobile-template))
 
-```bash
-npm install -g vue-cli
+```shell
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* vue cli 3.0(See [example](https://github.com/mand-mobile/mand-mobile-vue-cli3-example))
+* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand))
 
-```bash
-npm install -g @vue/cli
-vue create my-mand-mobile-project
+```shell
+vue create my-project
+cd my-project
+npm install --save-dev vue-cli-plugin-mand
+vue invoke mand
 ```
 
 #### Installation
@@ -85,7 +86,7 @@ and then
 import { Button } from 'mand-mobile'
 
 /**
- * [Note] If there is no configuration above, it will be imported in full amount, 
+ * [Note] If there is no configuration above, it will be imported in full amount,
  * all styles need to be manually imported, and reference #Totally Import.
  */
 ```
@@ -124,9 +125,9 @@ To avoid click problems caused by [browser compatibility](https://developer.mozi
 ├── mand-mobile
     ├── components  # Source code, custom theme, etc
     |
-    ├── lib         # After compilation, style unit 'px', generally used 
+    ├── lib         # After compilation, style unit 'px', generally used
     |               # for custom fit programs, etc (default)
-    ├── lib-vw      # After compilation, style unit 'vh/vw', generally used 
+    ├── lib-vw      # After compilation, style unit 'vh/vw', generally used
     |               # in non-compatible scenarios, without additional configuration
     ├── ...
 ```
