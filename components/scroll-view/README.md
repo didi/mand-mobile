@@ -27,9 +27,10 @@ Vue.component(ScrollView.name, ScrollView)
 #### ScrollView Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|scrolling-x | 水平滚动 | Boolean | `true` | -|
-|scrolling-y | 垂直滚动 | Boolean | `true` | -|
+|scrolling-x | 水平滚动 | Boolean | `true` | - |
+|scrolling-y | 垂直滚动 | Boolean | `true` | - |
 |bouncing | 可回弹 | Boolean | `true` | -|
+|autoReflow <sup class="version-after">1.5.3+</sup> | 内容发生变化时自动重置滚动区域尺寸 | Boolean | `false` | 当设置为`false`时，内容发生变化需手动调用`reflowScroller` |
 |endReachedThreshold | 触发到达底部的提前量 | Number | 0 | 单位`px` |
 
 #### ScrollViewRefresh Props
