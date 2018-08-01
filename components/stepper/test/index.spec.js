@@ -81,14 +81,6 @@ describe('Stepper', () => {
     expect(wrapper.vm.isMin).to.equal(true)
   })
 
-  it('stepper method reset', () => {
-    wrapper = mount(Stepper)
-    wrapper.vm.currentNum = null
-    wrapper.vm.min = 5
-    wrapper.vm.$_reset()
-    expect(wrapper.vm.currentNum).to.equal(wrapper.vm.min)
-  })
-
   it('stepper method onChange', () => {
     wrapper = mount(Stepper)
     wrapper.vm.currentNum = 2
