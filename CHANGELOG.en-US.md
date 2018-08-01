@@ -3,6 +3,17 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.5.3
+`2018-08-01`
+- Feature
+  - `Stepper` add `v-model` support [#171](https://github.com/didi/mand-mobile/issues/171)
+  - `Stepper` add `is-integer` prop to allow integer input only [#171](https://github.com/didi/mand-mobile/issues/171)
+  - `ScrollView` add `auto-reflow` prop to auto reflow scroll area size
+- Fix
+  - `Selector` missing prop [#173](https://github.com/didi/mand-mobile/issues/173)
+  - Typescript declaration file [#169](https://github.com/didi/mand-mobile/issues/169)/[#167](https://github.com/didi/mand-mobile/issues/167)/[#166](https://github.com/didi/mand-mobile/issues/166)
+  - Remove `InputItem` auto trim value [#164](https://github.com/didi/mand-mobile/issues/164)
+
 ### 1.5.2
 `2018-07-24`
 - Fix

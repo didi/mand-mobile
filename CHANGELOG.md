@@ -3,11 +3,22 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.5.3
+`2018-08-01`
+- Feature
+  - `Stepper`新增`v-model`绑定 [#171](https://github.com/didi/mand-mobile/issues/171)
+  - `Stepper`新增`is-integer`限制输入为整数 [#171](https://github.com/didi/mand-mobile/issues/171)
+  - `ScrollView`新增 `auto-reflow`自动重置滚动区域尺寸
+- Fix
+  - 修正`Selector`参数缺失 [#173](https://github.com/didi/mand-mobile/issues/173)
+  - Typescript声明文件修正 [#169](https://github.com/didi/mand-mobile/issues/169)/[#167](https://github.com/didi/mand-mobile/issues/167)/[#166](https://github.com/didi/mand-mobile/issues/166)
+  - 修正`InputItem`值自动裁剪前后空格问题 [#164](https://github.com/didi/mand-mobile/issues/164)
+
 ### 1.5.2
 `2018-07-24`
 - Fix
   - 修正`ScrollView`内容无法触发点击事件 [#158](https://github.com/didi/mand-mobile/issues/158)
-  - 修正`Selector`组件滚动穿透 [157](https://github.com/didi/mand-mobile/issues/157)
+  - 修正`Selector`组件滚动穿透 [#157](https://github.com/didi/mand-mobile/issues/157)
 
 ### 1.5.1
 `2018-07-23`
