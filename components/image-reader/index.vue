@@ -92,6 +92,7 @@ export default {
     },
     $_readFile(fileElement) {
       const size = +this.size * 1000
+      const files = fileElement.files
       let worker
       let count = 0
 
@@ -100,7 +101,7 @@ export default {
         worker = this.$_openWebWorker(createImageReader)
         // worker send
         worker.postMessage({
-          files: fileElement.files,
+          files,
           size: size,
           isWebWorker: true,
         })
@@ -110,7 +111,8 @@ export default {
 
           count++
 
-          if (count === fileElement.length) {
+          // shut down worker after all files have been read
+          if (count === files.length) {
             this.$_closeWebWorker(worker)
           }
         }
@@ -118,7 +120,7 @@ export default {
         // generate imageReader
         const imageReader = createImageReader(window)
         imageReader({
-          files: fileElement.files,
+          files,
           size: size,
           isWebWorker: false,
           complete: this.$_onReaderComplete,

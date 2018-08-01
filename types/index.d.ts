@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import { MandComponent } from './component'
 import { Toast } from './toast'
-import imageProcessor from './image-processor'
 import { Dialog } from './dialog'
+import { ActionSheet } from './action-sheet'
 
 export function install(vue: typeof Vue): void
 
 export class ActivityIndicator extends MandComponent { }
 export class Amount extends MandComponent { }
 export class ActionBar extends MandComponent { }
-export class ActionSheet extends MandComponent { }
 export class Agree extends MandComponent { }
 export class Button extends MandComponent { }
 export class Captcha extends MandComponent { }
@@ -62,5 +61,6 @@ export class Tip extends MandComponent { }
 
 export {
   Toast,
-  Dialog
+  Dialog,
+  ActionSheet
 }

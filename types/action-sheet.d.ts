@@ -19,9 +19,16 @@ export type ActionSheetCreateOptions = {
 }
 
 export interface ActionSheet {
+  (options?: ActionSheetCreateOptions): void
   create(options: ActionSheetCreateOptions): Vue
   closeAll(): void
   destroyAll(): void
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $sheet: ActionSheet
+  }
 }
 
 export const ActionSheet: ActionSheet

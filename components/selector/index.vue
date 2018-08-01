@@ -99,7 +99,7 @@ export default {
     },
     cancelText: {
       type: String,
-      default: '',
+      default: '取消',
     },
     maskClosable: {
       type: Boolean,

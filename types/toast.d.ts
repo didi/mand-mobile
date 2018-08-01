@@ -1,22 +1,28 @@
 export type ToastOptions = {
   content: string
-  duration: number
-  parentNode: Element,
+  duration?: number
+  parentNode?: Element,
   hasMask?: boolean
 }
 
 export type ToastConstructorOptions = {
-  icon: string,
+  icon?: string,
   position?: string
 } & ToastOptions
 
 export interface Toast {
   (options?: ToastConstructorOptions): void
-  info(options?: ToastOptions): void
-  succeed(options?: ToastOptions): void
-  failed(options?: ToastOptions): void
-  loading(options?: ToastOptions): void
+  info(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
+  succeed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
+  failed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
+  loading(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
   hide(): void
+}
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $toast: Toast
+  }
 }
 
 export const Toast: Toast

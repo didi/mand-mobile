@@ -11,10 +11,10 @@
     </div>
     <div class="md-stepper-number">
       <input type="tel"
-      v-model="currentNum"
-      :readOnly="readOnly"
-      @blur="$_reset"
-      @change="$_onChange">
+        :value="currentNum"
+        :readOnly="readOnly"
+        @input="$_onInput"
+        @blur="$_onChange">
     </div>
     <div
       class="md-stepper-button md-stepper-button-add"
@@ -38,7 +38,7 @@ function accAdd(num1, num2) {
   let r1 = getDecimalNum(num1)
   let r2 = getDecimalNum(num2)
   let m = Math.pow(10, Math.max(r1, r2))
-  return (num1 * m + num2 * m) / m
+  return +((num1 * m + num2 * m) / m)
 }
 
 function subtr(num1, num2) {
@@ -46,7 +46,7 @@ function subtr(num1, num2) {
   let r2 = getDecimalNum(num2)
   let m = Math.pow(10, Math.max(r1, r2))
   let n = r1 >= r2 ? r1 : r2
-  return ((num1 * m - num2 * m) / m).toFixed(n)
+  return +((num1 * m - num2 * m) / m).toFixed(n)
 }
 
 export default {
@@ -56,19 +56,23 @@ export default {
 
   props: {
     defaultValue: {
-      type: Number,
+      type: [Number, String],
+      default: 0,
+    },
+    value: {
+      type: [Number, String],
       default: 0,
     },
     step: {
-      type: Number,
+      type: [Number, String],
       default: 1,
     },
     min: {
-      type: Number,
+      type: [Number, String],
       default: -Number.MAX_VALUE,
     },
     max: {
-      type: Number,
+      type: [Number, String],
       default: Number.MAX_VALUE,
     },
     disabled: {
@@ -76,6 +80,10 @@ export default {
       default: false,
     },
     readOnly: {
+      type: Boolean,
+      default: false,
+    },
+    isInteger: {
       type: Boolean,
       default: false,
     },
@@ -90,8 +98,11 @@ export default {
   },
 
   watch: {
-    defaultValue() {
-      this.currentNum = this._getCurrentNum()
+    defaultValue(val) {
+      this.currentNum = this.$_getCurrentNum(val)
+    },
+    value(val) {
+      this.currentNum = this.$_getCurrentNum(val)
     },
     min(val) {
       if (this.currentNum < val) {
@@ -105,12 +116,17 @@ export default {
       }
       this.$_checkStatus()
     },
+    currentNum(val) {
+      this.$_checkStatus()
+      this.$emit('input', +val)
+      this.$emit('change', +val)
+    },
   },
 
   mounted() {
     // verify that the minimum value is less than the maximum value
     this.$_checkMinMax()
-    this.currentNum = this.$_getCurrentNum()
+    this.currentNum = this.$_getCurrentNum(this.value || this.defaultValue)
     this.$_checkStatus()
   },
 
@@ -130,15 +146,13 @@ export default {
       this.currentNum = accAdd(this.currentNum, this.step)
       this.$_onChange()
     },
-    $_getCurrentNum() {
-      let num = this.defaultValue
-      if (num < this.min) {
-        return this.min
-      } else if (num > this.max) {
-        return this.max
-      } else {
-        return this.defaultValue
-      }
+    $_formatNum(value) {
+      // @elist
+      value = String(value).replace(/[^0-9.-]/g, '')
+      return value === '' ? 0 : this.isInteger ? Math.floor(value) : +value
+    },
+    $_getCurrentNum(value) {
+      return Math.max(Math.min(this.max, this.$_formatNum(value)), this.min)
     },
     $_checkStatus() {
       this.isMin = subtr(this.currentNum, this.step) < this.min
@@ -150,22 +164,18 @@ export default {
       }
       return this.max > this.min
     },
-    $_reset() {
-      if (!this.currentNum || isNaN(this.currentNum)) {
-        this.currentNum = this.min !== -Number.MAX_VALUE ? this.min : 0
-      }
-    },
 
     // MARK: 监听事件方法, 如 $_onButtonClick
-    $_onChange() {
-      let currentNum = this.currentNum ? this.currentNum : this.min
-      if (currentNum < this.min) {
-        this.currentNum = this.min
-      } else if (currentNum > this.max) {
-        this.currentNum = this.max
+    $_onInput(event) {
+      const {value} = event.target
+      const formatted = this.$_formatNum(value)
+      if (+value !== formatted) {
+        event.target.value = formatted
       }
-      this.$_checkStatus()
-      this.$emit('change', this.currentNum)
+      this.currentNum = formatted
+    },
+    $_onChange() {
+      this.currentNum = this.$_getCurrentNum(this.currentNum)
     },
   },
 }

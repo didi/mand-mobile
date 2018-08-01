@@ -77,6 +77,7 @@
 
 <style lang="stylus" scoped>
 .md-popup-title-bar
+  position relative
   width 100%
   height popup-title-bar-height
   background popup-title-bar-bg
@@ -94,15 +95,20 @@
     white-space nowrap
     color popup-title-bar-color-title
   .title-bar-left, .title-bar-right
+    position absolute
     width 20%
     // padding 0 h-gap-lg
     font-size popup-title-bar-font-size-button
     box-sizing border-box
   .title-bar-title
-    width 60%
+    width 100%
+    padding 0 20%
+    box-sizing border-box
     font-size popup-title-bar-font-size-title
   .title-bar-left
+    left 0
     color popup-title-bar-color-button-left
   .title-bar-right
+    right 0
     color popup-title-bar-color-button-right
 </style>

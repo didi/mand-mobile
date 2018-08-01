@@ -163,7 +163,11 @@ export default {
     position relative
     color dialog-text-color
     font-size dialog-text-font-size
-    text-align center
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    text-align left
     padding 50px 30px 40px 30px
   .md-dialog-icon
     position relative
@@ -183,6 +187,7 @@ export default {
     z-index 15
   .md-dialog-title
     color dialog-title-color
+    text-align center
     font-size dialog-title-font-size
     margin-bottom 15px
   .md-dialog-actions
