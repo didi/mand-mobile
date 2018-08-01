@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { MandComponent } from './component'
 
 export type DialogOptions = {
   title?: string
@@ -23,8 +24,7 @@ export type DialogSucceedOptions = {
 
 export type DialogFailedOptions = DialogSucceedOptions
 
-export interface Dialog {
-  (options?: any): void
+export interface IDialog {
   confirm(options: DialogConfirmOptions): Vue
   alert(options: DialogAlertOptions): Vue
   succeed(options: DialogSucceedOptions): Vue
@@ -34,8 +34,14 @@ export interface Dialog {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $dialog: Dialog
+    $dialog: IDialog
   }
 }
 
-export const Dialog: Dialog
+export class Dialog extends MandComponent {
+  static confirm(options: DialogConfirmOptions): Vue
+  static alert(options: DialogAlertOptions): Vue
+  static succeed(options: DialogSucceedOptions): Vue
+  static failed(options: DialogFailedOptions): Vue
+  static closeAll(): void
+}
