@@ -6,18 +6,19 @@ title: 快速上手
 
 **新项目**可通过[vue-cli](https://github.com/vuejs/vue-cli)初始化集成`mand-mobile`，**现有项目**集成请参考<a href="javascript:jumpAnchor('安装')">安装</a>
 
-* vue cli 2.0([模板](https://github.com/mand-mobile/mand-mobile-template))
+* Vue CLI 2([模板](https://github.com/mand-mobile/mand-mobile-template))
 
 ```shell
-npm install -g vue-cli
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* vue cli 3.0(参考[示例](https://github.com/mand-mobile/mand-mobile-vue-cli3-example))
+* Vue CLI 3([插件](https://github.com/mand-mobile/vue-cli-plugin-mand))
 
 ```shell
-npm install -g @vue/cli
-vue create my-mand-mobile-project
+vue create my-project
+cd my-project
+npm install --save-dev vue-cli-plugin-mand
+vue invoke mand
 ```
 
 #### 安装
