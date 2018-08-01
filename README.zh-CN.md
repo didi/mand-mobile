@@ -45,15 +45,27 @@
 
 ## 安装 & 使用
 
-### 新项目模板
+### CLI
 
-新项目可使用[vue-cli](https://github.com/vuejs/vue-cli/tree/master)通过[mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template)进行初始化。
+#### Vue CLI 2
+通过[mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template)创建新项目。
 
 ```bash
 vue init mand-mobile/mand-mobile-template my-project
 ```
 
-### 安装
+#### Vue CLI 3
+通过[vue-cli-plugin-mand](https://github.com/mand-mobile/vue-cli-plugin-mand)向 Vue CLI 3 新建的项目里初始化。(默认支持按需引用)
+
+```bash
+vue create my-project
+cd my-project
+npm install --save-dev vue-cli-plugin-mand
+vue invoke mand
+```
+
+### 手动安装
+在已有项目里手动安装 Mand Mobile 的包。
 
 ```bash
 npm install mand-mobile --save

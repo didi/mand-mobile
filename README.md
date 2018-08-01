@@ -26,7 +26,7 @@
 [![gzip js size](http://img.badgesize.io/https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js?compression=gzip&label=gzip%20size:%20JS&style=flat-square)](https://unpkg.com/mand-mobile/)
 [![gzip css size](http://img.badgesize.io/https://unpkg.com/mand-mobile/lib/mand-mobile.css?compression=gzip&label=gzip%20size:%20CSS&style=flat-square)](https://unpkg.com/mand-mobile/)
 
-A mobile UI toolkit, based on Vue.js 2, is designed for financial scenarios. 
+A mobile UI toolkit, based on Vue.js 2, is designed for financial scenarios.
 
 ## Links
 
@@ -47,13 +47,24 @@ You can scan the following QR code to access the examples:
 
 ### Template for new project
 
-New project can be initialized and integrated with  mand-mobile by [vue-cli](https://github.com/vuejs/vue-cli/tree/master) with [mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template).
+#### Vue CLI 2
+New project can be initialized and integrated with mand-mobile by [vue-cli-2](https://github.com/vuejs/vue-cli/tree/v2) with [mand-mobile-template](https://github.com/mand-mobile/mand-mobile-template).
 
 ```bash
 vue init mand-mobile/mand-mobile-template my-project
 ```
 
-### Install
+#### Vue CLI 3
+New project can be initialized and integrated with mand-mobile by [vue-cli](https://github.com/vuejs/vue-cli/tree/master) with [vue-cli-plugin-mand](https://github.com/mand-mobile/vue-cli-plugin-mand).
+
+```bash
+vue create my-project
+cd my-project
+npm install --save-dev vue-cli-plugin-mand
+vue invoke mand
+```
+
+### Manually
 
 ```bash
 npm install mand-mobile --save
