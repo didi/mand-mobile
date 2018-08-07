@@ -1,7 +1,12 @@
 <template>
   <div class="md-example-child md-example-child-button md-example-child-button-0">
-    <md-button>Primary</md-button>
-    <md-button disabled>Primary Disabled</md-button>
+    <md-button type="default">Default</md-button>
+    <md-button type="default" inactive>Default Inactive</md-button>
+    <md-button type="primary">Primary</md-button>
+    <md-button type="primary" inactive>Primary Inactive</md-button>
+    <md-button type="warning">Warning</md-button>
+    <md-button type="warning" inactive>Warning Inactive</md-button>
+    <md-button type="disabled">Disabled</md-button>    
   </div>
 </template>
 
@@ -10,8 +15,6 @@
 export default {
   name: 'button-demo',
   /* DELETE */
-  title: '主按钮',
-  titleEnUS: 'Primary buttons',
   codeSandBox: 'https://codesandbox.io/s/kkzq4mylp5',
   /* DELETE */
   components: {

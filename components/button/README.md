@@ -21,10 +21,11 @@ Vue.component(Button.name, Button)
 #### Button Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------ |------|
-|type|按钮类型|String|`primary`|`primary`, `ghost`, `ghost-primary`, `link`|
-|size|按钮大小|String|`large`|`large`, `small`。仅在`type`为`ghost/ghost-primary`时生效|
-|icon|按钮图标|String|-|可选值请参考组件`Icon`|
-|disabled|是否禁用|Boolean|`false`|-|
+|type|类型|String|`default`|`default/primary/warning/disabled/link`|
+|plain|朴素|Boolean|`false`|-|
+|round|圆角|Boolean|`false`|-|
+|icon|图标|String|-|可选值请参考组件`Icon`|
+|inactive|未激活|Boolean|`false`|`inactive`设为`true`和`disabled`类型的按钮都无法点击，前者一般用于表单校验无效等主观因素，后者用于无权限或无库存等客观因素|
 
 #### Button Events
 

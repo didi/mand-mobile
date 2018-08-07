@@ -14,9 +14,10 @@ import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
 import Demo2 from './cases/demo2'
 import Demo3 from './cases/demo3'
+import Demo4 from './cases/demo4'
 
 export default {
-  ...createDemoModule('button', [Demo0, Demo1, Demo2, Demo3]),
+  ...createDemoModule('button', [Demo0, Demo1, Demo2, Demo3, Demo4]),
 }
 
 // export default {
@@ -43,6 +44,8 @@ export default {
     .md-button
       float left
       margin-bottom 10px
+      &.inline, &.link
+        margin-right 10px
     .md-example-box
       float left
       width 100%

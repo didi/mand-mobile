@@ -1,14 +1,22 @@
 <template>
   <div
     class="md-button"
-    :class="[type, size, disabled ? 'disabled' : '', icon ? 'with-icon' : '']"
+    :class="[
+      type,
+      inactive ? 'inactive' : 'active',
+      inline ? 'inline' : '',
+      round ? 'round' : '',
+      plain ? 'plain' : ''
+    ]"
     @click="$_onBtnClick"
   >
     <div class="md-button-inner">
       <template v-if="icon">
         <md-icon :name="icon"></md-icon>
       </template>
-      <slot></slot>
+      <p class="md-button-content">
+        <slot></slot>
+      </p>
     </div>
   </div>
 </template>
@@ -24,17 +32,25 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'primary',
-    },
-    size: {
-      type: String,
-      default: 'large',
+      default: 'primary', // default, primary, warning, disabled, link
     },
     icon: {
       type: String,
       default: '',
     },
-    disabled: {
+    plain: {
+      type: Boolean,
+      default: false,
+    },
+    round: {
+      type: Boolean,
+      default: false,
+    },
+    inline: {
+      type: Boolean,
+      default: false,
+    },
+    inactive: {
       type: Boolean,
       default: false,
     },
@@ -42,7 +58,7 @@ export default {
 
   methods: {
     $_onBtnClick(event) {
-      if (this.disabled) {
+      if (this.inactive || this.type === 'disabled') {
         event.stopImmediatePropagation()
       } else {
         this.$emit('click', event)
@@ -57,21 +73,16 @@ export default {
   -webkit-user-select none
   -webkit-tap-highlight-color transparent
   position relative
+  width button-width
+  height button-height
+  line-height button-height
+  font-size button-font-size
+  font-weight button-font-weight
   text-align center
-  border-radius button-primary-radius
+  border-radius button-radius
   box-sizing border-box
+  transition all .3s
   overflow visible
-  &.disabled
-    &:active::before
-      display none
-  &::before
-    absolute-pos()
-    display none
-    content ''
-    position absolute
-    box-sizing border-box
-  &:active::before
-    display block
   .md-button-inner
     display flex
     align-items center
@@ -82,65 +93,92 @@ export default {
     text-overflow ellipsis
     word-break break-word
     white-space nowrap
-
-  // type
-  &.primary
-    background-color button-primary-fill
-    color color-text-base-inverse
-    &:active::before
-      background-color button-primary-fill-tap
-    &.disabled
-      background-color button-primary-fill-disabled
-    &.large, &.small
-      width button-primary-width
-      height button-primary-height
-      line-height button-primary-height
-      font-size button-primary-font-size
-      font-weight button-primary-font-weight
-
-  &.ghost
-    color button-ghost-color
-    hairline(all, button-ghost-color, button-ghost-radius)
-    &:active::before
-      background-color button-ghost-fill-tap
-  &.ghost-primary
-    color button-ghost-primary-color
-    hairline(all, button-ghost-primary-color, button-ghost-radius)
-    &:active::before
-      background-color button-ghost-primary-fill-tap
-  &.ghost, &.ghost-primary
-    &.disabled
-      opacity button-disabled-opacity
-    &.large
-      width button-ghost-width
-      height button-ghost-height
-      line-height button-ghost-height
-      font-size button-ghost-font-size
-    &.small
-      width button-ghost-width-sm
-      height button-ghost-height-sm
-      line-height button-ghost-height-sm
-      font-size button-ghost-font-size
-
-  &.link
-    background-color button-link-fill
-    color button-link-color
-    .md-button-inner
-      hairline(top, button-link-border)
-      hairline(bottom, button-link-border)
-    &:active::before
-      background-color button-link-fill-tap
-    &.disabled
-      opacity button-disabled-opacity
-    &.large, &.small
-      width button-link-width
-      height button-link-height
-      font-size font-heading-normal
-  &.with-icon
+    .md-button-content
+      display flex
+      align-items center
+      padding 0 6px
+      .md-icon
+        padding 0
     .md-icon
       display flex
       align-items center
       justify-content center
-      margin-right button-icon-gap
+      padding 0 6px
 
+  // type
+  &.default
+    background-color button-default-fill
+    color button-default-color
+    hairline(all, color-border-element, button-radius)
+    &.active:active
+      background-color button-default-active-fill
+  &.primary
+    background-color button-primary-fill
+    color button-primary-color
+    hairline(all, button-primary-fill, button-radius)
+    &.active:active
+      background-color button-primary-active-fill
+  &.warning
+    background-color button-warning-fill
+    color button-warning-color
+    hairline(all, button-warning-fill, button-radius)
+    &.active:active
+      background-color button-warning-active-fill
+  &.disabled
+    background-color button-disabled-fill
+    color button-disabled-color
+    hairline(all, button-disabled-fill, button-radius)
+  
+  &.plain
+    background transparent
+
+    &.default
+      color button-default-color
+      hairline(all, color-border-element, button-radius)
+      &.active:active
+        background-color button-default-plain-active-fill
+    &.primary
+      color button-primary-fill
+      hairline(all, button-primary-fill, button-radius)
+      &.active:active
+        background-color button-primary-plain-active-fill
+    &.warning
+      color button-warning-fill
+      hairline(all, button-warning-fill, button-radius)
+      &.active:active
+        background-color button-warning-plain-active-fill
+    &.disabled
+      color button-disabled-fill
+      hairline(all, button-disabled-fill, button-radius)
+
+  &.round
+    border-radius button-height
+    &:after
+      border-radius button-height * 2
+
+  &.inline
+    width button-inline-width
+    height button-inline-height
+    font-size button-inline-font-size
+    &.round
+      border-radius button-inline-height
+      &:after
+        border-radius button-inline-height * 2
+
+  &.link
+    display inline
+    width auto
+    height auto
+    line-height 1
+    font-size button-inline-font-size
+    font-weight font-weight-normal
+    color button-primary-fill
+    &.inactive
+      color color-text-disabled
+      opacity 1
+
+  &.inactive
+    opacity opacity-disabled
+    &.disabled
+      opacity 1
 </style>

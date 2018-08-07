@@ -1,9 +1,9 @@
 <template>
   <div class="md-example-child md-example-child-button md-example-child-button-2">
-    <md-button type="ghost" size="small">Ghost-S</md-button>
-    <md-button type="ghost" size="small" disabled style="margin-left:5px">Ghost-S</md-button>
-    <md-button type="ghost-primary" size="small" style="margin-left:5px">Ghost-P-S</md-button>
-    <md-button type="ghost-primary" size="small" disabled style="margin-left:5px">Ghost-P-S</md-button>
+    <md-button type="default" round>Default</md-button>
+    <md-button type="primary" round>Primary</md-button>
+    <md-button type="warning" round>Warning</md-button>
+    <md-button type="disabled" round>Disabled</md-button>
   </div>
 </template>
 
@@ -12,8 +12,8 @@
 export default {
   name: 'button-demo',
   /* DELETE */
-  title: '线性按钮小尺寸',
-  titleEnUS: 'Small size ghost buttons',
+  title: '圆角按钮',
+  titleEnUS: 'Round Buttons',
   codeSandBox: 'https://codesandbox.io/s/jlv69qoq8v',
   /* DELETE */
   components: {

@@ -1,22 +1,22 @@
 <template>
   <div class="md-example-child  md-example-child-button md-example-child-button-3">
-    <md-button type="primary" inline>Primary</md-button>
-    <md-button type="primary" inline plain>Primary</md-button>
-    <md-button type="warning" inline>Warning</md-button>
+    <md-button type="link" icon="hollow-plus">评论</md-button>
+    <md-button type="link" inactive>去看看<md-icon name="arrow-right" size="md"></md-icon></md-button>
   </div>
 </template>
 
-<script>import {Button} from 'mand-mobile'
+<script>import {Button, Icon} from 'mand-mobile'
 
 export default {
   name: 'button-demo',
   /* DELETE */
-  title: '行内按钮',
-  titleEnUS: 'Inline buttons',
+  title: '文字链接按钮',
+  titleEnUS: 'Text link buttons',
   codeSandBox: 'https://codesandbox.io/s/7zy8yp8zy6',
   /* DELETE */
   components: {
     [Button.name]: Button,
+    [Icon.name]: Icon,
   },
 }
 </script>
