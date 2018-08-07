@@ -56,7 +56,8 @@ exports.cssLoaders = function (options) {
   if (isProd) {
     stylusMixins.push(resolve('../../components/_style/mixin/theme.variable.styl'))
   } else {
-    stylusMixins.push(resolve('../../components/_style/mixin/theme.styl'))
+    stylusMixins.push(resolve('../../components/_style/mixin/theme.components.styl'))
+    stylusMixins.push(resolve('../../components/_style/mixin/theme.basic.styl'))
     stylusMixins.push(resolve('../../examples/theme.custom.styl'))
   }
 

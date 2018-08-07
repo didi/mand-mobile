@@ -39,7 +39,8 @@ exports.cssLoaders = function(options) {
 
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   const stylusMixins = [
-    resolve('../components/_style/mixin/theme.styl'),
+    resolve('../components/_style/mixin/theme.components.styl'),
+    resolve('../components/_style/mixin/theme.basic.styl'),
     resolve('../components/_style/mixin/util.styl'),
     resolve('theme/default/assets/css/mixin.styl')
   ]

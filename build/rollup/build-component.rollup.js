@@ -33,7 +33,8 @@ function compileVueStylus (content, cb, compiler, filePath) {
     .set('filename', filePath)
     .define('url', stylus.url())
     .import(path.join(__dirname, '../../components/_style/mixin/util.styl'))
-    .import(path.join(__dirname, '../../components/_style/mixin/theme.styl'))
+    .import(path.join(__dirname, '../../components/_style/mixin/theme.components.styl'))
+    .import(path.join(__dirname, '../../components/_style/mixin/theme.basic.styl'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/vendor'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/gradients'))
     .render((err, css) => {

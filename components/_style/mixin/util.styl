@@ -11,10 +11,6 @@ clearfix()
     content ""
     display table
     clear both
-// normalize()
-//   margin 0
-//   padding 0
-//   list-style none
 
 word-break()
   word-break break-all
@@ -47,7 +43,7 @@ hairline-common(direction, color)
     @media (min-resolution: 3dppx)
       transform scaleX(0.33) translateX(100%)
 
-hairline(direction = all, color = color-line-1, radius = 0)
+hairline(direction = all, color = color-border-base, radius = 0)
   position relative
   if direction == top
     &::after
