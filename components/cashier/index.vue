@@ -55,7 +55,7 @@
               </li>
             </ul>
             <ul class="choose-channel-list" v-else-if="channels[defaultIndex]">
-              <li class="choose-channel-item default" @click="$_onChannelItemClick(channels[defaultIndex], index)">
+              <li class="choose-channel-item default" @click="$_onChannelItemClick(channels[defaultIndex], defaultIndex)">
                 <i class="item-icon" :class="channels[defaultIndex].icon">
                   <md-icon :name="channels[defaultIndex].icon"></md-icon>
                 </i>
