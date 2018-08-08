@@ -62,7 +62,7 @@ import { Icon } from 'mand-mobile'
 
 export default {
   name: 'icon-demo',
-  component: {
+  components: {
     [Icon.name]: Icon
   }
 }
