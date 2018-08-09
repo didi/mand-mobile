@@ -22,6 +22,7 @@ Vue.component(Button.name, Button)
 |Props | Description | Type | Default | Note |
 |----|-----|------|------ |------|
 |type|-|String|`default`|`default/primary/warning/disabled/link`|
+|size|-|String|`large`|`large/small`|
 |plain|-|Boolean|`false`|-|
 |round|-|Boolean|`false`|-|
 |icon|-|String|-|refer to `Icon` for optional values|

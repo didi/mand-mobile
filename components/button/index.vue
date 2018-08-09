@@ -6,7 +6,8 @@
       inactive ? 'inactive' : 'active',
       inline ? 'inline' : '',
       round ? 'round' : '',
-      plain ? 'plain' : ''
+      plain ? 'plain' : '',
+      size === 'small' ? 'small' : ''
     ]"
     @click="$_onBtnClick"
   >
@@ -37,6 +38,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    size: {
+      type: String,
+      default: 'large', // large, small
     },
     plain: {
       type: Boolean,
@@ -70,10 +75,8 @@ export default {
 
 <style lang="stylus">
 .md-button
-  -webkit-user-select none
-  -webkit-tap-highlight-color transparent
   position relative
-  width button-width
+  display block
   height button-height
   line-height button-height
   font-size button-font-size
@@ -82,6 +85,8 @@ export default {
   border-radius button-radius
   box-sizing border-box
   transition all .3s
+  -webkit-user-select none
+  -webkit-tap-highlight-color transparent
   overflow visible
   .md-button-inner
     display flex
@@ -154,23 +159,26 @@ export default {
   &.round
     border-radius button-height
     &:after
-      border-radius button-height * 2
+      border-radius button-height
 
   &.inline
-    width button-inline-width
-    height button-inline-height
-    font-size button-inline-font-size
+    display inline-block
+    padding 0 h-gap-md
+
+  &.small
+    height button-small-height
+    font-size button-small-font-size
     &.round
-      border-radius button-inline-height
+      border-radius button-small-height
       &:after
-        border-radius button-inline-height * 2
+        border-radius button-small-height
 
   &.link
     display inline
     width auto
     height auto
     line-height 1
-    font-size button-inline-font-size
+    font-size button-small-font-size
     font-weight font-weight-normal
     color button-primary-fill
     &.inactive

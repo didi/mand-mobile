@@ -1,8 +1,10 @@
 <template>
   <div class="md-example-child  md-example-child-button md-example-child-button-3">
-    <md-button type="primary" inline>Primary</md-button>
-    <md-button type="primary" inline plain>Primary</md-button>
-    <md-button type="warning" inline>Warning</md-button>
+    <md-button type="primary" inline>Inline Primary</md-button>
+    <md-button type="primary" inline plain>Inline Plain</md-button>
+    <br>
+    <md-button type="warning" size="small" inline>Warning</md-button>
+    <md-button type="disabled" size="small" inline>Disabled</md-button>
   </div>
 </template>
 

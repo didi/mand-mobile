@@ -42,7 +42,7 @@ export default {
       font-size font-heading-normal
       font-weight normal
     .md-button
-      float left
+      // float left
       margin-bottom 10px
       &.inline, &.link
         margin-right 10px
