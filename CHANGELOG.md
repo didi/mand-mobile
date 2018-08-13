@@ -3,6 +3,12 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.5.5
+`2018-08-13`
+- Fix
+  - `ScrollView` 修正无标签名时的方法调用错误 [#183](https://github.com/didi/mand-mobile/issues/183)
+  - `Cashier` 修正属性缺失问题 [#181](https://github.com/didi/mand-mobile/issues/181)
+
 ### 1.5.4
 `2018-08-01`
 - Feature

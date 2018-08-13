@@ -3,6 +3,12 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.5.5
+`2018-08-13`
+- Fix
+  - `ScrollView` fix fault tolerance without tagName [#183](https://github.com/didi/mand-mobile/issues/183)
+  - `Cashier` fix passed index of default selected item to click hand [#181](https://github.com/didi/mand-mobile/issues/181)
+
 ### 1.5.4
 `2018-08-01`
 - Feature
