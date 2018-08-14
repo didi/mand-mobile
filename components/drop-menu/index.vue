@@ -25,6 +25,7 @@
       :prevent-scroll-exclude="scroller"
       @show="$_onListShow"
       @hide="$_onListHide"
+      @before-hide="$_onListBeforeHide"
     >
       <div class="md-drop-menu-list">
         <md-radio
@@ -32,7 +33,7 @@
           :options="activeMenuListData"
           :optionRender="optionRender"
           :is-slot-scope="hasSlot"
-          is-across-border
+          is-align-center
           @change="$_onListItemClick"
         >
           <template slot-scope="{ option }">
@@ -173,9 +174,11 @@ export default {
     },
     $_onListHide() {
       /* istanbul ignore next  */
-      this.activeMenuBarIndex = -1
-      /* istanbul ignore next  */
       this.$emit('hide')
+    },
+    $_onListBeforeHide() {
+      /* istanbul ignore next  */
+      this.activeMenuBarIndex = -1
     },
 
     // MARK: public methods
@@ -201,6 +204,7 @@ export default {
   box-sizing border-box
   color color-text-minor
   font-size drop-menu-font-size
+  font-weight drop-menu-font-weight
   .md-drop-menu-bar
     z-index drop-menu-zindex
     display flex
@@ -213,7 +217,6 @@ export default {
       margin 2% 0
       align-items center
       justify-content center
-      border-right dotted 2px drop-menu-bar-border-color
       span
         position relative
         padding-right 30px
@@ -228,7 +231,6 @@ export default {
           border-left solid 8px transparent
           border-right solid 8px transparent
           border-top solid 9px color-text-minor
-          border-radius 4px
           transition transform .3s ease-in-out-quint
       &.active
         span:after
@@ -239,8 +241,6 @@ export default {
           border-top-color drop-menu-color
       &.disabled
         opacity drop-menu-disabled-opacity
-      &:last-of-type
-        border none
   .md-drop-menu-list
     width 100%
     padding-top drop-menu-height

@@ -59,7 +59,9 @@ export default {
 .md-example-child-drop-menu-3
   .md-drop-menu-custom-title
     font-size 28px
+    text-align center
   .md-drop-menu-custom-brief
     font-size 20px
     color #999
+    text-align center
 </style>
