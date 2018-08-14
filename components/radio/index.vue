@@ -1,5 +1,11 @@
 <template>
-  <div class="md-radio" :class="{across: isAcrossBorder}">
+  <div
+    class="md-radio"
+    :class="{
+      'across': isAcrossBorder,
+      'align-center': isAlignCenter,
+    }"
+  >
     <md-field>
       <template v-for="(item, index) in options">
         <md-field-item
@@ -126,6 +132,10 @@ export default {
     iconPosition: {
       type: String,
       default: 'right',
+    },
+    isAlignCenter: {
+      type: Boolean,
+      default: false,
     },
     optionRender: {
       type: Function,
@@ -306,5 +316,11 @@ export default {
         &.icon-left
           .md-icon
             left 32px
+
+  &.align-center
+    .md-field-item-content.left
+      justify-content center
+    .md-field-item .md-icon
+      display none
 </style>
 
