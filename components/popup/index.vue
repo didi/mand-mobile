@@ -231,8 +231,8 @@
     max-height 100%
     overflow auto
     will-change auto
-    &.slide-up
-      padding-bottom env(safe-area-inset-bottom)
+    // &.slide-up
+    //   padding-bottom env(safe-area-inset-bottom)
   .md-popup-mask
     absolute-pos()
     position absolute

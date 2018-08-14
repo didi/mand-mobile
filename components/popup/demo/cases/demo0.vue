@@ -14,6 +14,7 @@
     >
       <md-popup-title-bar
         title="Popup Title"
+        describe="Popup Description"
         ok-text="ok"
         cancel-text="cancel"
         @confirm="hidePopUp('bottom')"
@@ -104,6 +105,7 @@ export default {
     background color-bg-base
     box-sizing border-box
     text-align center
+    background-color #FFF
   .md-example-popup-center
     padding 50px
     border-radius radius-normal
@@ -120,7 +122,7 @@ export default {
       transform translateY(-50%)
   .md-example-popup-bottom
     width 100%
-    padding: 50px 0
+    padding 100px 0
     p
       line-height 50px
   .md-example-popup-left, .md-example-popup-right
@@ -128,6 +130,6 @@ export default {
     padding 0 150px
     display flex
     align-items center
-  .md-popup-box
-    background-color #FFF
+  // .md-popup-box
+  //   background-color #FFF
 </style>

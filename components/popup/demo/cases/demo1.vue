@@ -24,11 +24,15 @@
     >
       <md-popup-title-bar
         title="Popup Prevent Scroll"
-        ok-text="ok"
-        cancel-text="cancel"
         @confirm="hidePopUp('scroll')"
         @cancel="hidePopUp('scroll')"
-      ></md-popup-title-bar>
+      >
+        <md-icon
+          name="cross"
+          size="lg"
+          slot="cancel"
+        ></md-icon>
+      </md-popup-title-bar>
       <div class="md-example-popup md-example-popup-bottom" style="height: 200px;overflow:auto">
         <p v-for="n in 50" :key="n">Popup Bottom {{ n }}</p>
       </div>
@@ -93,12 +97,18 @@ export default {
   width 100%
   .md-button
     margin-bottom 20px
+  .md-popup-title-bar
+    .md-popup-cancel
+      .md-icon
+        align-self flex-start
+        margin-left 32px
   .md-example-popup
     position relative
     font-size font-minor-large
     background color-bg-base
     box-sizing border-box
     text-align center
+    background-color #FFF
   .md-example-popup-center
     padding 50px
     border-radius radius-normal
@@ -123,6 +133,4 @@ export default {
     padding 0 150px
     display flex
     align-items center
-  .md-popup-box
-    background-color #FFF
 </style>
