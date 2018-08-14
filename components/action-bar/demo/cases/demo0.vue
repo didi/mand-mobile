@@ -9,8 +9,6 @@
 export default {
   name: 'action-bar-demo',
   /* DELETE */
-  title: '通栏多按钮',
-  titleEnUS: 'Multiple buttons',
   height: 150,
   codeSandBox: 'https://codesandbox.io/s/qvk465q29j',
   /* DELETE */
@@ -21,11 +19,7 @@ export default {
     return {
       data: [
         {
-          text: '操作一',
-          onClick: this.handleClick,
-        },
-        {
-          text: '操作二',
+          text: '主要按钮',
           onClick: this.handleClick,
         },
       ],

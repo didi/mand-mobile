@@ -1,0 +1,53 @@
+<template>
+  <div class="md-example-child md-example-child-action-bar md-example-child-3">
+    <md-action-bar :actions="data" @click="onBtnClick">
+      <span class="price">
+        &yen;128.00<small>起</small>
+      </span>
+    </md-action-bar>
+  </div>
+</template>
+
+<script>import {ActionBar, Dialog} from 'mand-mobile'
+
+export default {
+  name: 'action-bar-demo',
+  /* DELETE */
+  title: '使用插槽',
+  titleEnUS: 'With slot',
+  height: 150,
+  codeSandBox: 'https://codesandbox.io/s/48kj4x289x',
+  /* DELETE */
+  components: {
+    [ActionBar.name]: ActionBar,
+  },
+  data() {
+    return {
+      data: [
+        {
+          text: '主要按钮',
+        },
+      ],
+    }
+  },
+  methods: {
+    onBtnClick(event, action) {
+      Dialog.alert({
+        content: `${action.text}点击`,
+      })
+    },
+  },
+}
+</script>
+
+<style lang="stylus" scoped>
+.price
+  font-weight 500
+  font-size 48px
+  color #FF823A
+  small
+    margin-left 10px
+    font-size 32px
+    color #858B9C
+</style>
+

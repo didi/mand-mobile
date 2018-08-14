@@ -1,20 +1,18 @@
 <template>
-  <div class="md-example-child md-example-child-action-bar md-example-child-2">
-    <md-action-bar :actions="data" @click="onBtnClick">
-      &yen;128.00
-    </md-action-bar>
+  <div class="md-example-child md-example-child-action-bar md-example-child-1">
+    <md-action-bar :actions="data"></md-action-bar>
   </div>
 </template>
 
-<script>import {ActionBar, Dialog} from 'mand-mobile'
+<script>import {ActionBar, Toast} from 'mand-mobile'
 
 export default {
   name: 'action-bar-demo',
   /* DELETE */
-  title: '通栏带文案',
-  titleEnUS: 'With text',
+  title: '按钮禁用',
+  titleEnUS: 'Multiple buttons and disabled button',
   height: 150,
-  codeSandBox: 'https://codesandbox.io/s/48kj4x289x',
+  codeSandBox: 'https://codesandbox.io/s/zn3yv60633',
   /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,
@@ -23,16 +21,19 @@ export default {
     return {
       data: [
         {
-          text: '操作',
+          text: '次要按钮',
+          disabled: true,
+        },
+        {
+          text: '主要按钮',
+          disabled: true,
         },
       ],
     }
   },
   methods: {
-    onBtnClick(event, action) {
-      Dialog.alert({
-        content: `${action.text}完成`,
-      })
+    handleClick() {
+      Toast.succeed('Click')
     },
   },
 }
