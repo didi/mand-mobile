@@ -190,7 +190,7 @@ export default {
       this.scroller.doTouchEnd(event.timeStamp)
     },
     $_onScollerMouseDown(event) {
-      if (!this.scroller || event.target.tagName.match(/input|textarea|select/i)) {
+      if (!this.scroller || (event.target.tagName && event.target.tagName.match(/input|textarea|select/i))) {
         return
       }
       this.scroller.doTouchStart(
