@@ -168,10 +168,8 @@ export default {
     },
     // MARK: events handler
     $_onScollerTouchStart(event) {
-      if (
-        !this.scroller ||
-        (event.touches[0] && event.touches[0].target && event.touches[0].target.tagName.match(/input|textarea|select/i))
-      ) {
+      // event.target.tagName && event.target.tagName.match(/input|textarea|select/i)
+      if (!this.scroller) {
         return
       }
       this.scroller.doTouchStart(event.touches, event.timeStamp)
@@ -190,7 +188,7 @@ export default {
       this.scroller.doTouchEnd(event.timeStamp)
     },
     $_onScollerMouseDown(event) {
-      if (!this.scroller || (event.target.tagName && event.target.tagName.match(/input|textarea|select/i))) {
+      if (!this.scroller) {
         return
       }
       this.scroller.doTouchStart(
@@ -267,23 +265,16 @@ export default {
         const contentW = content.offsetWidth
         const contentH = content.offsetHeight
 
-        if (
-          this.containerW !== containerW ||
-          this.containerH !== containerH ||
-          this.contentW !== contentW ||
-          this.contentH !== contentH
-        ) {
-          this.scroller.setDimensions(
-            container.clientWidth,
-            container.clientHeight,
-            content.offsetWidth,
-            content.offsetHeight,
-          )
-          this.containerW = containerW
-          this.containerH = containerH
-          this.contentW = contentW
-          this.contentH = contentH
-        }
+        this.scroller.setDimensions(
+          container.clientWidth,
+          container.clientHeight,
+          content.offsetWidth,
+          content.offsetHeight,
+        )
+        this.containerW = containerW
+        this.containerH = containerH
+        this.contentW = contentW
+        this.contentH = contentH
       })
     },
     triggerRefresh() {
