@@ -1,8 +1,21 @@
 <template>
-  <div class="md-field">
+  <div class="md-field" :class="{'is-plain': plain}">
     <div
       class="md-field-title"
-      v-if="title !== ''">{{title}}</div>
+      v-if="title !== '' || value !== '' "
+    >
+      <div class="md-field-title-inner">
+        <p class="title" v-if="title !== ''">
+          {{title}}
+        </p>
+        <p class="value" v-if="$slots.titleValue">
+          <slot name="titleValue"></slot>
+        </p>
+        <p class="value" v-else-if="value !== ''">
+          {{value}}
+        </p>
+      </div>
+    </div>
     <div class="md-field-content">
       <slot></slot>
     </div>
@@ -17,20 +30,40 @@
       type: String,
       default: '',
     },
+    value: {
+      type: String,
+      default: '',
+    },
+    arrow: {
+      type: String,
+      default: '',
+    },
+    plain: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
 
 <style lang="stylus">
 .md-field
-  background-color field-item-bg-color
+  background-color field-bg-color
   .md-field-title
-    display flex
-    font-size field-title-font-size
-    font-weight field-title-font-weight
-    color field-title-color
-    line-height 45px
     padding field-padding-v field-padding-h field-title-margin field-padding-h
+    .md-field-title-inner
+      display flex
+      font-size field-title-font-size
+      font-weight field-title-font-weight
+      color field-title-color
+      &>p
+        flex 1
+        &.title
+          text-align left
+        &.value
+          font-size field-title-operator-font-size
+          color field-title-operator-color
+          text-align right
   .md-field-content
     display flex
     flex-direction column
@@ -54,4 +87,33 @@
     padding-left 0 !important
     padding-right 0 !important
 
+  &.is-plain
+    background-color field-bg-plain-color
+    .md-field-title
+      padding field-item-padding-plain-v field-padding-plain-h 0
+      .md-field-title-inner
+        padding-bottom field-item-padding-plain-v
+        font-size field-title-plain-font-size
+        color field-title-plain-color
+        hairline(bottom, field-item-border-color)
+    .md-field-item
+      padding-left field-padding-plain-h
+      padding-right field-padding-plain-h
+      .md-field-item-inner
+        margin-bottom field-item-padding-plain-v
+        padding 0
+        &:before
+          display none
+        .md-field-item-label
+          .md-field-item-title
+            font-size field-item-label-plain-font-size
+            color field-item-label-plain-color
+          .md-field-item-brief
+            display none
+        .md-field-item-content
+          font-size field-item-cotent-plain-font-size
+          font-weight font-weight-normal
+          color field-item-content-plain-color
+      &:first-of-type
+        margin-top field-item-padding-plain-v
 </style>

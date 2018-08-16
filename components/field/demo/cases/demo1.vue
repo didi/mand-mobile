@@ -1,52 +1,62 @@
 <template>
   <div class="md-example-child md-example-child-field md-example-child-field-1">
-    <md-field title="包含多个条目的列表">
+    <md-field
+      title="区域标题"
+    >
       <md-field-item
         name="item0"
-        title="普通条目"
-        arrow="arrow-right"
-        @click="onClick">
+        title="步进器"
+        align="right">
+        <md-stepper></md-stepper>
       </md-field-item>
-      <md-field-item
+      <md-input-item
         name="item1"
-        title="标题"
-        brief="展示摘要描述，摘要较长时会自动换行"
-        arrow="arrow-right"
-        solid
-        @click="onClick">
-      </md-field-item>
+        title="输入框"
+        placeholder="请输入..."
+      ></md-input-item>
       <md-field-item
         name="item2"
-        title="使用switch"
+        title="开关"
+        brief="包含子区域"
         align="right">
         <md-switch name="switch0" v-model="switchActive"></md-switch>
-      </md-field-item>
-      <md-field-item
-        name="item3"
-        title="输入框"
-        customized
-        align="center">
-        <md-input-item
-          ref="input1"
-          placeholder="请输入..."
-        ></md-input-item>
+        <md-field slot="child" plain>
+          <div>
+            <md-field-item
+              title="企业名称"
+              value="xxxxx"
+              align="right"
+            ></md-field-item>
+            <md-field-item
+              title="社会信用代码"
+              value="xxxxx"
+              align="right"
+            ></md-field-item>
+            <md-field-item
+              title="单位电话"
+              value="xxxxx"
+              align="right"
+            ></md-field-item>
+          </div>
+        </md-field>
       </md-field-item>
     </md-field>
   </div>
 </template>
 
-<script>import {Field, FieldItem, Dialog, InputItem, Switch} from 'mand-mobile'
+<script>import {Field, FieldItem, Dialog, InputItem, Stepper, Switch} from 'mand-mobile'
 
 export default {
   name: 'field-demo',
   /* DELETE */
-  title: '多个条目',
-  titleEnUS: 'Multiple items',
+  title: '配合控件',
+  titleEnUS: 'With control',
   /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [InputItem.name]: InputItem,
+    [Stepper.name]: Stepper,
     [Switch.name]: Switch,
   },
   data() {

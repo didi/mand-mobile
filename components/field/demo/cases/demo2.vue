@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-field md-example-child-field-2">
-    <md-field title="包含内容的条目">
+    <md-field>
       <md-field-item
         name="item0"
         title="短标题"
@@ -11,7 +11,7 @@
       </md-field-item>
       <md-field-item
         name="item1"
-        title="一个不换行的长标题"
+        title="标题宽度不固定"
         arrow="arrow-right"
         value="内容居中展示"
         align="center"
@@ -19,7 +19,7 @@
       </md-field-item>
       <md-field-item
         name="item2"
-        title="一个换行的长标题"
+        title="标题宽度固定"
         arrow="arrow-right"
         value="内容靠右展示"
         solid
@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script>import {Field, FieldItem, InputItem, Icon, Dialog} from 'mand-mobile'
+<script>import {Field, FieldItem, Dialog, InputItem, Icon} from 'mand-mobile'
 import '@examples/assets/images/bank-zs.svg'
 
 export default {
