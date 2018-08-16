@@ -95,13 +95,6 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener(
-      'resize',
-      () => {
-        this.$_initScroller()
-      },
-      false,
-    )
     this.$_initScroller()
     this.autoReflow && this.$_initAutoReflow()
   },
@@ -156,7 +149,7 @@ export default {
         )
       }
       this.scroller = scroller
-      this.reflowScroller()
+      this.reflowScroller(true)
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
@@ -253,7 +246,7 @@ export default {
       }
       this.scroller.scrollTo(left, top, animate)
     },
-    reflowScroller() {
+    reflowScroller(force = false) {
       const container = this.container
       const content = this.content
       if (!this.scroller || !container || !content) {
@@ -265,16 +258,24 @@ export default {
         const contentW = content.offsetWidth
         const contentH = content.offsetHeight
 
-        this.scroller.setDimensions(
-          container.clientWidth,
-          container.clientHeight,
-          content.offsetWidth,
-          content.offsetHeight,
-        )
-        this.containerW = containerW
-        this.containerH = containerH
-        this.contentW = contentW
-        this.contentH = contentH
+        if (
+          force ||
+          this.containerW !== containerW ||
+          this.containerH !== containerH ||
+          this.contentW !== contentW ||
+          this.contentH !== contentH
+        ) {
+          this.scroller.setDimensions(
+            container.clientWidth,
+            container.clientHeight,
+            content.offsetWidth,
+            content.offsetHeight,
+          )
+          this.containerW = containerW
+          this.containerH = containerH
+          this.contentW = contentW
+          this.contentH = contentH
+        }
       })
     },
     triggerRefresh() {
