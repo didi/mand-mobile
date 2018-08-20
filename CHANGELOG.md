@@ -3,6 +3,11 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.5.6
+`2018-08-20`
+- Fix
+  - `ScrollView` 修正键盘弹起时无法滚动问题 [#184](https://github.com/didi/mand-mobile/issues/184)
+
 ### 1.5.5
 `2018-08-13`
 - Fix

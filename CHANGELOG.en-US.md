@@ -3,6 +3,11 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.5.6
+`2018-08-20`
+- Fix
+  - `ScrollView` not scrollable when there is a keyboard [#184](https://github.com/didi/mand-mobile/issues/184)
+
 ### 1.5.5
 `2018-08-13`
 - Fix
