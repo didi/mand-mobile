@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { MandComponent } from './component'
 
 export type ActionSheetItem = {
   value: string,
@@ -18,8 +19,7 @@ export type ActionSheetCreateOptions = {
   onSelected?: (item: ActionSheetItem) => void,
 }
 
-export interface ActionSheet {
-  (options?: ActionSheetCreateOptions): void
+export interface IActionSheet {
   create(options: ActionSheetCreateOptions): Vue
   closeAll(): void
   destroyAll(): void
@@ -27,8 +27,12 @@ export interface ActionSheet {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $sheet: ActionSheet
+    $sheet: IActionSheet
   }
 }
 
-export const ActionSheet: ActionSheet
+export class ActionSheet extends MandComponent {
+  static create(options: ActionSheetCreateOptions): Vue
+  static closeAll(): void
+  static destroyAll(): void
+}

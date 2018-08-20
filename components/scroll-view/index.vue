@@ -95,13 +95,6 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener(
-      'resize',
-      () => {
-        this.$_initScroller()
-      },
-      false,
-    )
     this.$_initScroller()
     this.autoReflow && this.$_initAutoReflow()
   },
@@ -156,7 +149,7 @@ export default {
         )
       }
       this.scroller = scroller
-      this.reflowScroller()
+      this.reflowScroller(true)
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
@@ -168,10 +161,8 @@ export default {
     },
     // MARK: events handler
     $_onScollerTouchStart(event) {
-      if (
-        !this.scroller ||
-        (event.touches[0] && event.touches[0].target && event.touches[0].target.tagName.match(/input|textarea|select/i))
-      ) {
+      // event.target.tagName && event.target.tagName.match(/input|textarea|select/i)
+      if (!this.scroller) {
         return
       }
       this.scroller.doTouchStart(event.touches, event.timeStamp)
@@ -190,7 +181,7 @@ export default {
       this.scroller.doTouchEnd(event.timeStamp)
     },
     $_onScollerMouseDown(event) {
-      if (!this.scroller || event.target.tagName.match(/input|textarea|select/i)) {
+      if (!this.scroller) {
         return
       }
       this.scroller.doTouchStart(
@@ -255,7 +246,7 @@ export default {
       }
       this.scroller.scrollTo(left, top, animate)
     },
-    reflowScroller() {
+    reflowScroller(force = false) {
       const container = this.container
       const content = this.content
       if (!this.scroller || !container || !content) {
@@ -268,6 +259,7 @@ export default {
         const contentH = content.offsetHeight
 
         if (
+          force ||
           this.containerW !== containerW ||
           this.containerH !== containerH ||
           this.contentW !== contentW ||
