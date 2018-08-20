@@ -14,7 +14,6 @@
       v-model="isSelectorShow"
       :data="data[0]"
       title="自定义选项"
-      cancelText="取消"
       :optionRender="optionRender"
       @choose="onSelectorChoose($event)"
     >
@@ -56,7 +55,7 @@ export default {
           },
         ],
       ],
-      selectorValue: '选项二',
+      selectorValue: '',
     }
   },
   methods: {

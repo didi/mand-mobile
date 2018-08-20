@@ -16,7 +16,6 @@
       :default-index="1"
       title="确认模式"
       okText="确认"
-      cancelText="取消"
       @confirm="onSelectorConfirm($event)"
     ></md-selector>
   </div>

@@ -20,7 +20,14 @@
         :cancel-text="cancelText"
         @confirm="$_onSelectorConfirm"
         @cancel="$_onSelectorCancel"
-      ></md-popup-title-bar>
+      >
+        <md-icon
+          v-if="!isCheck && !isNeedConfirm && !cancelText"
+          name="cross"
+          size="lg"
+          slot="cancel"
+        ></md-icon>
+      </md-popup-title-bar>
       <md-scroll-view
         ref="scroll"
         class="md-selector-container"
@@ -37,7 +44,6 @@
             icon="circle-right"
             icon-inverse="circle"
             icon-size="md"
-            is-across-border
             :optionRender="optionRender"
             :is-slot-scope="hasSlot"
             @change="$_onSelectorChoose"
@@ -52,7 +58,8 @@
   </div>
 </template>
 
-<script>import Popup from '../popup'
+<script>import Icon from '../icon'
+import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import Radio from '../radio'
 import ScrollView from '../scroll-view'
@@ -62,6 +69,7 @@ export default {
   name: 'md-selector',
 
   components: {
+    [Icon.name]: Icon,
     [Radio.name]: Radio,
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
@@ -99,7 +107,9 @@ export default {
     },
     cancelText: {
       type: String,
-      default: '取消',
+      default() {
+        return this.okText ? '取消' : ''
+      },
     },
     maskClosable: {
       type: Boolean,
@@ -221,13 +231,13 @@ export default {
 .md-selector
   .md-popup
     z-index selector-zindex !important
-    .md-popup-box
-      background-color color-bg-base
+    .md-popup-title-bar .md-popup-cancel
+      .md-icon
+        align-self flex-start
+        margin-left h-gap-lg
     .md-selector-container
-      background color-bg-base
+      padding-bottom constant(safe-area-inset-bottom)
       overflow hidden
-  .md-field-item.selected
-    color selector-active-color !important
   &.is-check
     .md-field-item.selected .md-icon
       fill selector-active-color !important
