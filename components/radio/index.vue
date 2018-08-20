@@ -278,12 +278,11 @@ export default {
 <style lang="stylus">
 .md-radio
   .md-field
-    padding 0 32px
     .md-field-item.md-radio-item
       position relative
-      padding 0
       .md-field-item-inner
-        padding 32px 0
+        .md-field-item-content
+          font-weight font-weight-normal
       .md-icon
         position absolute
         right 0
@@ -291,7 +290,8 @@ export default {
         transform translateY(-50%)
         fill radio-color
       &.selected
-        color radio-color
+        .md-field-item-content
+          color radio-color
       &.icon-left
         .md-icon
           left 0
@@ -307,12 +307,10 @@ export default {
           color radio-color
   &.across
     .md-field
-      padding 0
       .md-field-item.md-radio-item
-        .md-field-item-inner
-          padding 32px
-          .md-icon
-            right 32px
+        padding 0
+        .md-field-item-inner .md-icon
+          right 32px
         &.icon-left
           .md-icon
             left 32px
