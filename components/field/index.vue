@@ -69,7 +69,8 @@
     flex-direction column
     .md-field-item,
     .md-input-item,
-    .md-input-item.is-title-latent .md-input-item-msg,
+    .md-input-item-brief,
+    .md-input-item-msg,
     .md-radio
       padding-left field-padding-h
       padding-right field-padding-h
@@ -82,7 +83,11 @@
     // .md-input-item:last-of-type .md-input-item-container::before
     //   display none
     .md-input-item.error .md-input-item-container
-      hairline(bottom, input-item-color-error)
+      hairline(bottom, input-item-color-error, 0, 4px)
+    .md-input-item.focus
+      .md-input-item-container
+        hairline(bottom, color-text-base, 0, 4px)
+
   .md-radio .md-radio-item
     padding-left 0 !important
     padding-right 0 !important

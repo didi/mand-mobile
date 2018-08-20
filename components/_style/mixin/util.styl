@@ -43,7 +43,7 @@ hairline-common(direction, color)
     @media (min-resolution: 3dppx)
       transform scaleX(0.33) translateX(100%)
 
-hairline(direction = all, color = color-border-base, radius = 0)
+hairline(direction = all, color = color-border-base, radius = 0, size = border-width-base)
   position relative
   if direction == top
     &::after
@@ -51,7 +51,7 @@ hairline(direction = all, color = color-border-base, radius = 0)
       top 0
       left 0
       width 100%
-      height border-width-base
+      height size
 
   else if direction == bottom
     &::before
@@ -59,14 +59,14 @@ hairline(direction = all, color = color-border-base, radius = 0)
       bottom 0
       left 0
       width 100%
-      height border-width-base
+      height size
     
   else if direction == left
     &::after
       hairline-common(direction, color)
       top 0
       left 0
-      width border-width-base
+      width size
       height 100%
 
   else if direction == right
@@ -74,7 +74,7 @@ hairline(direction = all, color = color-border-base, radius = 0)
       hairline-common(direction, color)
       top 0
       right 0
-      width border-width-base
+      width size
       height 100%
 
   else

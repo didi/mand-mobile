@@ -7,6 +7,7 @@
       isInputActive ? 'active' : '',
       isInputFocus ? 'focus' : '',
       isInputError ? 'error' : '',
+      isInputBrief ? 'with-brief' : '',
       clearable ? 'is-clear' : '',
       inputEnv,
       align,
@@ -77,15 +78,6 @@
           </div>
         </template>
 
-        <!-- -------------------- -->
-        <!-- ERROR TIP FOR NORMAL -->
-        <!-- -------------------- -->
-        <div
-          v-if="!isTitleLatent && error !== ''"
-          class="md-input-item-msg"
-          v-text="error"
-        ></div>
-
         <!-- ------------ -->
         <!--  CLEART BTN  -->
         <!-- ------------ -->
@@ -110,12 +102,17 @@
       </div>
     </div>
     <!-- -------------------- -->
-    <!-- ERROR TIP FOR LATENT -->
+    <!-- BRIEF/ERROR TIP -->
     <!-- -------------------- -->
     <div
-      v-if="isTitleLatent && error !== ''"
+      v-if="error !== ''"
       class="md-input-item-msg"
       v-text="error"
+    ></div>
+    <div
+      v-else-if="brief !== ''"
+      class="md-input-item-brief"
+      v-text="brief"
     ></div>
     <!-- ------------ -->
     <!--   KEYBORARD  -->
@@ -161,6 +158,10 @@ export default {
       },
     },
     title: {
+      type: String,
+      default: '',
+    },
+    brief: {
       type: String,
       default: '',
     },
@@ -277,7 +278,10 @@ export default {
       return !this.inputValue.length
     },
     isInputError() {
-      return !!this.error
+      return this.error !== ''
+    },
+    isInputBrief() {
+      return this.brief !== '' && !this.isInputError
     },
   },
 
@@ -498,6 +502,7 @@ export default {
 
 <style lang="stylus">
 .md-input-item
+  position relative
   display flex
   flex 1
   align-self stretch
@@ -514,8 +519,8 @@ export default {
     height input-item-height
     align-items center
     margin-right input-item-title-gap
-    font-size field-title-font-size
-    color field-title-color
+    font-size field-item-label-font-size
+    color field-item-label-color
     word-break()
     &.fixed
       width input-item-title-width
@@ -530,7 +535,7 @@ export default {
       z-index 2
       top 0
       right 0
-      width 50px
+      min-width 50px
       height input-item-height
       display flex
       align-items center
@@ -548,6 +553,7 @@ export default {
       color input-item-color
       font-size input-item-font-size
       font-weight input-item-font-weight
+      font-family DINPro-Medium
       -webkit-appearance none
       border none
       background transparent
@@ -561,6 +567,7 @@ export default {
         opacity input-item-color-disabled
       &::-webkit-input-placeholder
         color input-item-placeholder
+        font-weight font-weight-normal
       &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
         -webkit-appearance none
   &.left
@@ -575,7 +582,6 @@ export default {
   &.is-clear .md-input-item-control
     padding-right 50px !important
   &.is-title-latent
-    position relative
     padding-top 10px
     // overflow hidden
     .md-input-item-title
@@ -591,12 +597,6 @@ export default {
       will-change auto
     .md-input-item-extra, .md-input-item-control
       top 15px
-    .md-input-item-msg
-      position absolute
-      left 0
-      bottom 0
-      top auto !important
-      margin 0
     &.active
       .md-input-item-title
         opacity 1
@@ -604,16 +604,13 @@ export default {
         transform translate3d(0, 0, 0)
       // .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
       //   color transparent
-    &.error
-      padding-bottom 40px
   &.is-highlight
     .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
       color input-item-placeholder-highlight
   &.large .md-input-item-input
     font-size input-item-font-size-large
-  &.error
-    .md-input-item-title
-      color input-item-color-error
+  &.error, &.with-brief
+    padding-bottom 60px
 
   .md-input-item-fake
     line-height input-item-height
@@ -637,22 +634,35 @@ export default {
       left 0
       width 100%
       color input-item-placeholder
+      font-weight font-weight-normal
 
-  .md-input-item-msg
-    position relative
-    top -10px
+  .md-input-item-msg, .md-input-item-brief
+    position absolute
+    left 0
+    bottom 0
+    margin 0
     float left
     width 100%
     margin-bottom 10px
+    word-break()
+  .md-input-item-brief
+    font-size input-item-font-size-brief
+    color input-item-color-brief
+  .md-input-item-msg
     font-size input-item-font-size-error
     color input-item-color-error
-    word-break()
 
-  &.is-ios .md-input-item-fake:after
-    border-right solid 6px #2C6CF5
-    border-radius 2px
-  &.is-android .md-input-item-fake:after
-    border-right solid 4px color-text-base
+  &.is-ios
+    .md-input-item-input::-webkit-input-placeholder
+      position relative
+      top -5px
+      overflow visible
+    .md-input-item-fake:after
+      border-right solid 6px #2C6CF5
+      border-radius 2px
+  &.is-android
+    .md-input-item-fake:after
+      border-right solid 4px color-text-base
 
   @-webkit-keyframes keyboard-cursor
     0%

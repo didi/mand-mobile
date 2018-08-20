@@ -1,105 +1,67 @@
 <template>
   <div class="md-example-child md-example-child-input-item-3">
-    <md-field>
-      <md-input-item
-        ref="input9"
-        title="带清空按钮"
-        placeholder="normal text"
-        value="with clear button"
-        clearable
-      ></md-input-item>
-      <md-input-item
-        ref="input10"
-        title="带金融键盘"
-        placeholder="financial number keyboard"
-        is-virtual-keyboard
-        clearable
-        @focus="onFakeInputFocus"
-        @blur="onFakeInputBlur"
-      ></md-input-item>
-      <md-input-item
-        ref="input11"
-        placeholder="left/right slots"
+    <md-field title="转出金额(元)">
+      <div
+        class="field-operator"
+        slot="titleValue"
+        @click="onClick('操作')"
       >
-        <md-icon name="bank-zs" slot="left"></md-icon>
-        <md-icon name="circle-alert" slot="right" @click.native="onClick"></md-icon>
+        <md-icon name="circle-alert"></md-icon>
+      </div>
+      <md-input-item
+        type="money"
+        v-model="value"
+        brief="理财提示文案，字符超出10个自动变小"
+        placeholder="最多30万元"
+        :size="size"
+      >
+        <div class="input-operator" slot="right" @click="takeAll">全部取出</div>
       </md-input-item>
     </md-field>
   </div>
 </template>
 
-<script>import {InputItem, Field, Icon, Toast} from 'mand-mobile'
-import '@examples/assets/images/bank-zs.svg'
+<script>import {InputItem, Field, Icon} from 'mand-mobile'
 
 export default {
   name: 'input-item-demo',
   /* DELETE */
-  title: '表单控件',
-  titleEnUS: 'input with controls',
+  title: '大尺寸金融表单',
+  titleEnUS: 'Large size financial input-item',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,
     [Field.name]: Field,
     [Icon.name]: Icon,
   },
+  data() {
+    return {
+      value: '',
+    }
+  },
+  computed: {
+    size() {
+      return this.value.length > 10 ? 'small' : 'large'
+    },
+  },
   methods: {
-    onClick() {
-      Toast({
-        content: 'some information',
-        icon: 'circle-alert',
-      })
-    },
-    onFakeInputFocus() {
-      function getElementPosition(element) {
-        const defaultRect = {top: 0, left: 0}
-        const rect = element
-          ? (element.getBoundingClientRect && element.getBoundingClientRect()) || defaultRect
-          : defaultRect
-        const ret = {
-          top: rect.top,
-          left: rect.left,
-        }
-        return ret
-      }
-
-      setTimeout(() => {
-        const wrapper = this.$el
-        const inputer = this.$refs['input10']
-        const inputEl = inputer.$el
-        const keyboardEl = document
-          .querySelector(`#${inputer.name}-number-keyboard`)
-          .querySelector('.md-number-keyboard-container')
-        const offset =
-          keyboardEl.clientHeight +
-          inputEl.clientHeight -
-          document.documentElement.clientHeight +
-          getElementPosition(inputEl).top +
-          30
-
-        const oldPaddingBottom = +wrapper.style.paddingBottom.replace(/px|rem|em/gi, '')
-        const oldScrollTop = document.body.scrollTop
-        const newPaddingBottom = oldPaddingBottom + offset
-        const newScrollTop = oldScrollTop + offset
-
-        wrapper.style.paddingBottom = `${newPaddingBottom}px`
-        document.body.scrollTop = newScrollTop
-
-        this.scrollInputBack = () => {
-          wrapper.style.paddingBottom = `${oldPaddingBottom}px`
-          document.body.scrollTop = oldScrollTop
-          this.scrollInputBack = null
-        }
-      }, 300)
-    },
-    onFakeInputBlur() {
-      this.scrollInputBack && this.scrollInputBack()
+    takeAll() {
+      this.value = '300000'
     },
   },
 }
 </script>
 
 <style lang="stylus">
-.md-example-child-input-item-2
-  .md-number-keyboard .md-popup-box
-    max-width 720px
+.md-example-child-input-item-3
+  .md-field
+    .field-operator
+      display flex
+      align-items center
+      justify-content flex-end
+    .input-operator
+      font-size 28px
+      color #2F86F6
+    .md-input-item-input
+      padding-right 140px
 </style>

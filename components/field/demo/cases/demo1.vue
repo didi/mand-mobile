@@ -76,9 +76,6 @@ export default {
 
 <style lang="stylus" scoped>
 .md-example-child-field-1
-  .md-input-item
-    background #FFF
-    padding 0 32px
   .strong-tip
     font-size 24px
     color color-text-highlight

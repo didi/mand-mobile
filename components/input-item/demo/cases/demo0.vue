@@ -26,12 +26,6 @@
         is-highlight
       ></md-input-item>
       <md-input-item
-        ref="input2"
-        title="大尺寸表单"
-        placeholder="大尺寸表单"
-        size="large"
-      ></md-input-item>
-      <md-input-item
         ref="input3"
         title="文本居中"
         placeholder="文本居中"
