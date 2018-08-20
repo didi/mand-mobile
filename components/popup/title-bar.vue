@@ -21,11 +21,19 @@
 
     <!-- Title -->
     <div
-      class="title-bar-title"
       v-if="title"
+      class="title-bar-title"
     >
-      <p class="title" v-html="title"></p>
-      <p class="describe" v-html="describe"></p>
+      <p
+        v-if="title"
+        class="title"
+        v-html="title"
+      ></p>
+      <p
+        v-if="describe"
+        class="describe"
+        v-html="describe"
+      ></p>
     </div>
     <div
       class="title-bar-title"
