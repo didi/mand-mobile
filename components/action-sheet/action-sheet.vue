@@ -138,9 +138,9 @@ export default {
     overflow auto
     header
       vertical-height(action-sheet-height)
-      padding 0 30px
       word-ellipsis()
     >ul
+      padding 0 action-sheet-padding-h
       li
         vertical-height(action-sheet-height)
         hairline(top, color-border-base)
@@ -154,6 +154,7 @@ export default {
           height 132px
           line-height 120px
           color action-sheet-color-cancel
+          font-weight font-weight-medium
           &::before
             display block
             content ''
