@@ -97,7 +97,6 @@
   height popup-title-bar-height
   background-color popup-title-bar-bg
   clearfix()
-  border-radius popup-title-bar-radius popup-title-bar-radius 0 0
   overflow hidden
   &.large
     height popup-title-bar-height-large

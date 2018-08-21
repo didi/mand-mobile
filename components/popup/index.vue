@@ -256,6 +256,7 @@
   &.bottom .md-popup-box
     bottom 0
     left 0
+    border-radius popup-title-bar-radius popup-title-bar-radius 0 0
   &.left .md-popup-box
     left 0
     top 0
