@@ -4,7 +4,7 @@
       :value="value"
       :hasMask="hasMask"
       :maskClosable="maskClosable"
-      :position="position"
+      position="center"
       :transition="transition"
       :preventScroll="preventScroll"
       :preventScrollExclude="preventScrollExclude"
@@ -31,9 +31,10 @@
             <slot></slot>
           </div>
         </div>
-        <footer class="md-dialog-actions">
+        <footer class="md-dialog-actions" :class="{ 'is-column': layout === 'column' }">
           <a
             role="button"
+            class="md-dialog-btn"
             v-for="(btn, index) in btns"
             :key="index"
             v-text="btn.text"
@@ -81,6 +82,10 @@ export default {
       type: Array,
       default: () => [],
     },
+    layout: {
+      type: String,
+      default: 'row',
+    },
     appendTo: {
       default: () => document.body,
     },
@@ -91,10 +96,6 @@ export default {
     maskClosable: {
       type: Boolean,
       default: false,
-    },
-    position: {
-      type: String,
-      default: 'center',
     },
     transition: {
       type: String,
@@ -152,7 +153,6 @@ export default {
 
 <style lang="stylus">
 .md-dialog
-  position relative
   z-index dialog-zindex
   .md-dialog-content
     width dialog-width
@@ -160,7 +160,6 @@ export default {
     background-color color-bg-base
     overflow hidden
   .md-dialog-body
-    position relative
     color dialog-text-color
     font-size dialog-text-font-size
     display flex
@@ -168,13 +167,13 @@ export default {
     align-items center
     justify-content center
     text-align left
-    padding 50px 30px 40px 30px
+    padding v-gap-sl h-gap-sl
   .md-dialog-icon
     position relative
     display block
     width dialog-icon-size
     height dialog-icon-size
-    margin 0 auto 20px auto
+    margin v-gap-md auto
     .md-icon
       width dialog-icon-size
       height dialog-icon-size
@@ -182,27 +181,78 @@ export default {
   .md-dialog-close
     position absolute
     color dialog-close-color
-    top 20px
-    right 20px
+    top 32px
+    right 32px
     z-index 15
   .md-dialog-title
     color dialog-title-color
     text-align center
     font-size dialog-title-font-size
-    margin-bottom 15px
+    line-height 1.2
+    margin-bottom 28px
   .md-dialog-actions
     display flex
     hairline(top, dialog-action-border-color)
-    a
-      flex 1 1 0%
-      display flex
-      align-items center
-      justify-content center
-      height dialog-action-height
-      font-size dialog-action-font-size
-      color color-text-caption
-      border-right 1px solid dialog-action-border-color
-      &:last-child
-        color dialog-action-highlight-color
-        border-right 0
+    &.is-column
+      flex-direction column
+      .md-dialog-btn
+        flex 0 0 auto
+        remove-hairline(right)
+        &:not(:first-child)
+          hairline(top, dialog-action-border-color)
+        &:last-child
+          color color-text-caption
+        &:first-child
+          color dialog-action-highlight-color
+  .md-dialog-btn
+    flex 1 1 0%
+    display flex
+    align-items center
+    justify-content center
+    height dialog-action-height
+    font-size dialog-action-font-size
+    color color-text-caption
+    text-align center
+    hairline(right, dialog-action-border-color)
+    &:last-child
+      color dialog-action-highlight-color
+      remove-hairline(right)
+
+  .md-popup.center
+    .md-popup-box
+      transform translate(-50%, -50%)
+      &.fade-enter
+        opacity 0.01
+        transform translate(-50%, -20%)
+      &.fade-leave-to
+        opacity 0.01
+        transform translate(-50%, -70%)
+      &.fade-enter-active,
+      &.fade-leave-active,
+      &.bounce-leave-active
+        transition all 200ms
+      &.bounce-enter
+        opacity 0.01
+      &.bounce-enter-active
+        animation bounce-in 300ms
+      &.bounce-leave-to
+        opacity 0.01
+        transform translate(-50%, -50%) scale(0.5)
+@keyframes bounce-in {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  1% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  45% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 </style>

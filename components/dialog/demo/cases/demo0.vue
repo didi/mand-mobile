@@ -26,6 +26,7 @@
     <md-dialog
       title="窗口标题"
       :closable="false"
+      layout="column"
       v-model="actDialog.open"
       :btns="actDialog.btns"
     >
@@ -48,6 +49,10 @@ export default {
         open: false,
         btns: [
           {
+            text: '取消',
+            handler: this.onBasicCancel,
+          },
+          {
             text: '确认操作',
             handler: this.onBasicConfirm,
           },
@@ -66,11 +71,16 @@ export default {
         open: false,
         btns: [
           {
-            text: '取消',
-            handler: this.onActCancel,
+            text: '操作一',
+            type: 'danger',
+            handler: this.onActConfirm,
           },
           {
-            text: '确认操作',
+            text: '操作二',
+            handler: this.onActConfirm,
+          },
+          {
+            text: '操作三',
             handler: this.onActConfirm,
           },
         ],
@@ -84,22 +94,19 @@ export default {
       })
       this.basicDialog.open = false
     },
+    onBasicCancel() {
+      Toast({
+        content: '你点击了取消',
+      })
+      this.basicDialog.open = false
+    },
     onIconConfirm() {
       Toast({
         content: '你点击了确认',
       })
       this.iconDialog.open = false
     },
-    onActCancel() {
-      Toast({
-        content: '你点击了取消',
-      })
-      this.actDialog.open = false
-    },
     onActConfirm() {
-      Toast({
-        content: '你点击了确认',
-      })
       this.actDialog.open = false
     },
   },

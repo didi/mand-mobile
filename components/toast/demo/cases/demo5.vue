@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     showToast() {
-      Toast.succeed('文字部分最多展示十二个字最多展示两行')
+      Toast.succeed('所有文案部分字数最多展示15个字')
     },
   },
 }

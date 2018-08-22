@@ -25,12 +25,12 @@ Vue.component(Dialog.name, Dialog)
 | title | 窗口标题 | String | -|-|
 | icon | Icon组件图标名称 | String | -|如需自定义图标, 请查看`Icon`组件|
 | closable | 是否显示关闭按钮 | Boolean | `true`|-|
+| layout | 底部按钮组布局方式, `row, column` | String | `row` | - |
 | btns | 底部操作按钮组 | Array | `[]`|-|
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
-| position | 弹出层位置, `center/top/bottom/left/right` | String | `center`|-|
-| transition | 弹出层过度动画, `fade, slide-up/down/left/right`  | String | `fade`|-|
+| transition | 弹出层过度动画, `fade, bounce`  | String | `fade`|-|
 | prevent-scroll | 是否禁止滚动穿透 | Boolean | false |-|
 | prevent-scroll-exclude | 禁止滚动排除元素  | String | -|-|
 

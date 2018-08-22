@@ -1,11 +1,5 @@
 <template>
-  <div
-    class="md-toast"
-    :class="[
-      icon ? 'has-icon' : '',
-      position,
-    ]"
-  >
+  <div class="md-toast" :class="[position]">
     <md-popup
       v-model="visible"
       @hide="$_onHide"
@@ -14,7 +8,7 @@
     >
       <div class="md-toast-content">
         <md-icon v-if="icon" :name="icon" size="lg" />
-        <span v-text="content"></span>
+        <div class="md-toast-text" v-text="content"></div>
       </div>
     </md-popup>
   </div>
@@ -94,30 +88,33 @@ export default {
 
 <style lang="stylus">
   .md-toast
-    position relative
     z-index toast-zindex
-    &.has-icon .md-toast-content
-      padding-left toast-text-left
     .md-toast-content
-      position relative
-      display inline-block
-      text-align left
+      display inline-flex
+      align-items center
+      max-width 100%
+      min-width 80px
       padding toast-padding
       border-radius toast-radius
       font-size toast-font-size
+      text-align left
+      line-height 1.42857142
       color toast-color
       background-color toast-fill
-      box-sizing content-box
+      box-sizing border-box
+      overflow hidden
     .md-icon
-      position absolute
-      top 50%
-      left toast-padding
-      transform translateY(-50%)
+      flex-shrink 0
+      color toast-color
+      margin-right 12px
+    .md-toast-text
+      white-space nowrap
+      text-overflow: ellipsis
+      overflow hidden
     .md-popup
       .md-popup-box
-        width 468px
+        width 540px
         text-align center
-        overflow visible
       .md-popup-mask
         background transparent
     &.bottom
