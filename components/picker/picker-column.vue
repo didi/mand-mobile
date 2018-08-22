@@ -13,11 +13,14 @@
               <template v-for="(item, j) in colunm">
                 <li
                   class="column-item"
-                  :class="{'disabled': $_isColumnIndexInvalid(i, j)}"
+                  :class="{
+                    'active': $_isColumnIndexActive(i, j),
+                    'disabled': $_isColumnIndexInvalid(i, j)
+                  }"
                   :style="{
                     'height': `${style.indicatorHeight}px`,
                     'line-height': `${style.indicatorHeight}px`
-                    }"
+                  }"
                   :key="j"
                   v-text="item.text || item.label"
                   >
@@ -261,6 +264,10 @@ export default {
     $_getColumnOffsetByIndex(index) {
       return index * this.style.indicatorHeight
     },
+    $_isColumnIndexActive(columnIndex, itemIndex) {
+      const activeIndex = this.activedIndexs[columnIndex]
+      return activeIndex === itemIndex
+    },
     $_isColumnIndexInvalid(columnIndex, itemIndex) {
       const invalidIndex = this.invalidIndex[columnIndex]
       return inArray(invalidIndex, itemIndex)
@@ -423,26 +430,28 @@ export default {
 .md-picker-column
   position relative
   width 100%
+  padding 0 picker-padding-h
   padding-bottom constant(safe-area-inset-bottom)
-  background color-bg-base
+  background color-bg-inverse
+  box-sizing border-box
   transform translate3d(0, 0, 0)
   .md-picker-column-container
     height 100%
     .md-picker-column-masker
       position absolute !important
       z-index 2
-      left 0
-      right 0
+      left picker-padding-h
+      right picker-padding-h
       transform translate3d(0, 0, 0)
       &.top
         top 0
-        background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
+        // background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
         hairline(bottom, picker-border-color)
         // border-bottom solid 1px picker-border-color
       &.bottom
         bottom 0
         bottom constant(safe-area-inset-bottom)
-        background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
+        // background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
         hairline(top, picker-border-color)
         // border-top solid 1px picker-border-color
     .md-picker-column-hooks
@@ -480,6 +489,9 @@ export default {
             font-size picker-font-size
             text-align center
             word-ellipsis()
+            &.active
+              color picker-color-active
+              font-weight picker-font-weight-active
             &.disabled
               opacity picker-disabled-opacity
 </style>

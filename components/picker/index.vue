@@ -315,5 +315,5 @@ export default {
   &.with-popup .md-popup
     z-index picker-zindex !important  
   .md-popup-box
-    background-color color-bg-base 
+    background-color color-bg-inverse
 </style>
