@@ -11,7 +11,6 @@
     >vertical loading</md-activity-indicator>
     <md-activity-indicator
       class="md-activity-indicator-css"
-      color="#048efa"
     >loading...</md-activity-indicator>
 	</div>
 </template>

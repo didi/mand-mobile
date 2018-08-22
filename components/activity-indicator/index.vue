@@ -74,7 +74,7 @@ export default {
         if (this.type === 'spinner') {
           return 'dark'
         } else {
-          return '#fc9153'
+          return '#2F86F6'
         }
       },
     },

@@ -54,7 +54,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#fc9153',
+      default: '#2F86F6',
     },
     isSuccess: {
       type: Boolean,
