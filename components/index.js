@@ -48,6 +48,8 @@ import CheckBox from './check-box'
 import ScrollView from './scroll-view'
 import ScrollViewRefresh from './scroll-view-refresh'
 import ScrollViewMore from './scroll-view-more'
+import Bill from './bill'
+import WaterMark from './water-mark'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -106,6 +108,8 @@ export const components = {
   ScrollView,
   ScrollViewRefresh,
   ScrollViewMore,
+  Bill,
+  WaterMark,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -179,6 +183,8 @@ export {
   ScrollView,
   ScrollViewRefresh,
   ScrollViewMore,
+  Bill,
+  WaterMark,
   /* @init<%${componentNameUpper},%> */
 }
 
