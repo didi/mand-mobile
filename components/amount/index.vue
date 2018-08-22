@@ -115,6 +115,5 @@ export default {
 <style lang="stylus" scoped>
 .md-amount
   &.numerical
-    font-family DINAlternate-Bold
-    font-weight font-weight-medium
+    font-family DINPro-Medium
 </style>
