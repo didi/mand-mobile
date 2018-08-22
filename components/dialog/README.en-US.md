@@ -25,6 +25,7 @@ Vue.component(Dialog.name, Dialog)
 | title | title of dialog | String | - | - |
 | icon | name of icon | String | - |Refer to `Icon` component for customized icon|
 | closable | whether the close button is visible or not | Boolean | `true` | - |
+| layout | layout of action buttons, `row, column` | String | `row` | - |
 | btns | action buttons in the footer| Array {text, handler} | `[]` | - |
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
 | has-mask | has mask or not | Boolean | `true` | - |

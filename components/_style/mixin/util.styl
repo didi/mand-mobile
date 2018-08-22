@@ -50,6 +50,8 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       hairline-common(direction, color)
       top 0
       left 0
+      right auto
+      bottom auto
       width 100%
       height size
 
@@ -58,14 +60,18 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       hairline-common(direction, color)
       bottom 0
       left 0
+      right auto
+      top auto
       width 100%
       height size
-    
+
   else if direction == left
     &::after
       hairline-common(direction, color)
       top 0
       left 0
+      right auto
+      bottom auto
       width size
       height 100%
 
@@ -74,6 +80,8 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       hairline-common(direction, color)
       top 0
       right 0
+      left auto
+      bottom auto
       width size
       height 100%
 
@@ -83,6 +91,8 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       position absolute
       top 0
       left 0
+      right auto
+      bottom auto
       width 200%
       height 200%
       border solid border-width-base color
@@ -92,6 +102,28 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       z-index 2
       if radius
         border-radius radius * 2
+
+remove-hairline(direction = all)
+  position relative
+  if direction == top
+    &::after
+      display none
+
+  else if direction == bottom
+    &::before
+      display none
+
+  else if direction == left
+    &::after
+      display none
+
+  else if direction == right
+    &::before
+      display none
+
+  else
+    &::after
+      display none
 
 svg-background(svg)
   background-image url(svg)
