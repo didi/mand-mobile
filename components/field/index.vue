@@ -116,7 +116,7 @@
           .md-field-item-brief
             display none
         .md-field-item-content
-          font-size field-item-cotent-plain-font-size
+          font-size field-item-content-plain-font-size
           font-weight font-weight-normal
           color field-item-content-plain-color
       &:first-of-type

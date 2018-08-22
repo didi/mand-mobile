@@ -183,13 +183,14 @@ export default {
   .md-field-item-content
     display flex
     flex-grow 1
+    align-items center
     color field-item-content-color
     font-size field-item-content-font-size
     font-weight field-item-content-font-weight
     &.left
       margin-left v-gap-lg
     &.right
-      flex-direction row-reverse
+      justify-content flex-end
     &.center
       justify-content center
   .md-field-arrow
