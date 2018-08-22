@@ -352,9 +352,10 @@ block()
   float left
   width 100%
 .md-cashier
-  .md-popup-title-bar
-    .md-icon-cross
-      color color-text-base
+  .md-popup-title-bar .md-popup-cancel
+    .md-icon
+      align-self flex-start
+      margin-left h-gap-lg
   .md-popup-box
     background-color color-bg-base
   .md-cashier-container
@@ -402,6 +403,7 @@ block()
             &.choose-number
               margin-top 35px
               font-size cashier-choose-amount-font-size
+              font-family DINPro-Medium
               color cashier-choose-amount-color
             &.choose-describe
               margin-top 15px
