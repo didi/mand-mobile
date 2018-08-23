@@ -1,12 +1,8 @@
 <template>
   <div class="md-example-child md-example-child-tabs md-example-child-tabs-0">
     <md-tabs
-      :titles="titles"
-    >
-      <div v-for="(title, index) of titles" :key="index">
-        {{title}}的内容
-      </div>
-    </md-tabs>
+      :items="items"
+    />
   </div>
 </template>
 
@@ -19,7 +15,14 @@ export default {
   },
   data() {
     return {
-      titles: ['第一', '第二', '第三', '第四'],
+      items: [
+        {key: 1, label: '标签1'},
+        {key: 2, label: '标签2'},
+        {key: 3, label: '标签3'},
+        {key: 4, label: '标签4'},
+        {key: 5, label: '标签5'},
+        {key: 6, label: '标签6'},
+      ],
     }
   },
 }

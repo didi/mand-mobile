@@ -1,192 +1,187 @@
-<script>import TabBar from '../tab-bar'
+<template>
+  <nav class="md-tabs">
+    <div class="md-tabs-wrapper" ref="wrapper">
+      <template v-if="maxLength < this.items.length">
+        <div class="md-tabs-start"></div>
+        <div class="md-tabs-end"></div>
+      </template>
+      <md-scroll-view
+        :scrolling-x="scrollable"
+        :scrolling-y="false"
+        ref="scroller"
+      >
+        <a
+          class="md-tabs-item"
+          :class="{
+            'is-active': activeKey === item.key
+          }"
+          :style="itemStyle"
+          v-for="(item, index) in items"
+          :key="item.key"
+          v-text="item.label"
+          @click="onClick(item, index)"
+        ></a>
+        <span class="md-tabs-bar" :style="barStyle"></span>
+      </md-scroll-view>
+    </div>
+  </nav>
+</template>
+
+<script>import ScrollView from '../scroll-view'
 
 export default {
   name: 'md-tabs',
 
   components: {
-    [TabBar.name]: TabBar,
+    [ScrollView.name]: ScrollView,
   },
 
   props: {
-    titles: {
+    value: {
+      type: [String, Number],
+      default: '',
+    },
+    items: {
       type: Array,
-      default() {
-        return []
-      },
+      default: () => [],
     },
-    showInkBar: {
-      type: Boolean,
-      default: true,
-    },
-    inkBarLength: {
+    maxLength: {
       type: Number,
-      default: 70,
-      validator(length) {
-        return length > 0 && length <= 100
-      },
-    },
-    inkBarAnimate: {
-      type: Boolean,
-      default: true,
-    },
-    defaultIndex: {
-      type: Number,
-      default: 0,
-    },
-    noslide: {
-      type: Boolean,
-      default: false,
-    },
-    upsideDown: {
-      type: Boolean,
-      default: false,
-    },
-    forceUseArray: {
-      type: Boolean,
-      default: undefined,
+      default: 5,
     },
   },
 
   data() {
     return {
-      activeIndex: this.defaultIndex,
+      activeKey: '',
+      wrapperWidth: 0,
     }
   },
 
-  watch: {
-    activeIndex(val, preVal) {
-      this.$emit('change', val, preVal)
-      this.$emit('indexChanged', val, preVal)
+  computed: {
+    scrollable() {
+      return this.items.length > this.maxLength
     },
+    activeIndex() {
+      for (let i = 0, len = this.items.length; i < len; i++) {
+        if (this.items[i].key === this.activeKey) {
+          return i
+        }
+      }
+      return 0
+    },
+    listStyle() {
+      return {
+        width: this.itemWidth * this.items.length + 'px',
+      }
+    },
+    itemWidth() {
+      return this.wrapperWidth / Math.min(this.items.length, this.maxLength)
+    },
+    itemStyle() {
+      return {
+        width: this.itemWidth + 'px',
+      }
+    },
+    barStyle() {
+      const pos = this.itemWidth * this.activeIndex
+      return {
+        width: this.itemWidth + 'px',
+        transform: `translateX(${pos}px)`,
+      }
+    },
+  },
+
+  watch: {
+    value: {
+      immediate: true,
+      handler(val) {
+        if (val !== this.activeKey) {
+          this.activeKey = val
+        }
+      },
+    },
+  },
+
+  created() {
+    if (this.activeKey === '' && this.items.length) {
+      this.activeKey = this.items[0].key
+    }
   },
 
   mounted() {
-    this.selectTab(this.activeIndex)
+    this.reflow()
   },
 
   methods: {
-    // MARK: public methods
-    selectTab(i) {
-      const index = parseInt(i)
-      if (index >= 0 && index < this.titleList().length) {
-        this.activeIndex = index
-      }
+    reflow() {
+      this.wrapperWidth = this.$refs.wrapper.offsetWidth
+      this.$nextTick(function() {
+        this.$refs.scroller.reflowScroller()
+      })
     },
-
-    titleList() {
-      if (this.titles && this.titles.length) {
-        return this.titles
-      } else if (this.$slots.title && this.$slots.title.length) {
-        return this.$slots.title.filter(el => el.tag)
-      } else {
-        return []
-      }
+    onClick(item) {
+      this.activeKey = item.key
     },
-
-    contentList() {
-      if (this.$slots.default) {
-        return this.$slots.default.filter(el => el.tag)
-      } else {
-        return []
-      }
-    },
-  },
-
-  render(createElement) {
-    const self = this
-
-    const titleBarRenderer = createElement(
-      'md-tab-bar',
-      {
-        props: {
-          titles: self.titles,
-          defaultIndex: self.activeIndex,
-          showInkBar: self.showInkBar,
-          inkBarLength: self.inkBarLength,
-          inkBarAnimate: self.inkBarAnimate,
-          forceUseArray: self.forceUseArray,
-        },
-        class: {
-          'on-bottom': self.upsideDown,
-        },
-        on: {
-          indexChanged(i) {
-            self.selectTab(i)
-          },
-        },
-        scopedSlots: this.$scopedSlots,
-      },
-      this.$slots.title || [],
-    )
-
-    const contentRenderer = this.contentList().map((content, index) => {
-      return createElement(
-        'div',
-        {
-          class: {
-            'md-tab-content': true,
-          },
-          key: index,
-          attrs: {
-            key: index,
-          },
-        },
-        [content],
-      )
-    })
-
-    const contentWrapperRenderer = createElement(
-      'div',
-      {
-        class: {
-          'md-tab-content-wrapper': true,
-        },
-        style: {
-          transform: self.noslide ? '' : `translateX(${-this.activeIndex * 100}%)`,
-        },
-      },
-      [self.noslide ? contentRenderer[this.activeIndex] : contentRenderer],
-    )
-
-    return createElement(
-      'div',
-      {
-        class: {
-          'md-tabs': true,
-        },
-      },
-      self.upsideDown ? [contentWrapperRenderer, titleBarRenderer] : [titleBarRenderer, contentWrapperRenderer],
-    )
   },
 }
 </script>
 
 <style lang="stylus">
 .md-tabs
-  z-index tab-zindex
-  font-size tab-font-size
+  padding-left tab-offset
+  padding-right tab-offset
+  background-color #fff
+.md-tabs-item
+  flex 1 0 auto
   display flex
-  flex-direction column
+  align-items center
+  justify-content center
+  color tab-text-color
+  font-size tab-font-size
+  padding-left tab-space
+  padding-right tab-space
+  box-sizing border-box
+  &.is-active
+    color tab-active-color
+    font-weight 500
+.md-tabs-wrapper
+  position relative
+  line-height 0
+.md-tabs-start,
+.md-tabs-end
+  position absolute
+  top 0
+  left 0
+  width 14px
+  height tab-height
   overflow hidden
-  flex 1
+  &::after
+    content ''
+    display block
+    position absolute
+    left -14px
+    top 50%
+    width 14px
+    margin-top 0 - tab-height * 0.4
+    height tab-height * 0.8
+    border-radius 50%
+    box-shadow: -1px 0 12px 0 rgba(0,0,0,0.2)
+.md-tabs-end
+  left auto
+  right 0
+  transform rotate(180deg)
+.md-tabs-bar
+  position absolute
+  bottom 0
+  left 0
+  display block
+  height tab-bar-height
+  background-color tab-active-color
+  transition transform 300ms
 
-  .md-tab-bar
-    flex-shrink 0
-    hairline(bottom, tab-border-color)
-    &.on-bottom
-      border-bottom none
-      hairline(top, tab-border-color)
-
-  .md-tab-content-wrapper
-    position relative
-    min-height 100px
-    display flex
-    flex 1
-    transition transform .5s
-    .md-tab-content
-      width 100%
-      height 100%
-      top 0
-      overflow-y scroll
-      flex-shrink 0
+.md-tabs
+  .scroll-view-container
+    display inline-flex
+    height tab-height
 </style>
