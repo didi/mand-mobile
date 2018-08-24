@@ -1,6 +1,7 @@
 <template>
   <div class="md-example-child md-example-child-tabs md-example-child-tabs-0">
     <md-tabs
+      v-model="current"
       :items="items"
     />
   </div>
@@ -15,14 +16,8 @@ export default {
   },
   data() {
     return {
-      items: [
-        {key: 1, label: '标签1'},
-        {key: 2, label: '标签2'},
-        {key: 3, label: '标签3'},
-        {key: 4, label: '标签4'},
-        {key: 5, label: '标签5'},
-        {key: 6, label: '标签6'},
-      ],
+      current: 1,
+      items: [{key: 1, label: '标签1'}, {key: 2, label: '标签2'}],
     }
   },
 }

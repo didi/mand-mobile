@@ -1,14 +1,10 @@
 <template>
   <div class="md-example-child md-example-child-tabs md-example-child-tabs-3">
     <md-tabs
-      :titles="titles"
-      :ink-bar-length="40"
-      show-ink-bar
-    >
-      <div v-for="(title, index) of titles" :key="index">
-        {{title}}的内容
-      </div>
-    </md-tabs>
+      v-model="current"
+      :items="items"
+      :hasInk="false"
+    />
   </div>
 </template>
 
@@ -17,15 +13,16 @@
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
-  title: '指定下划线长度',
-  titleEnUS: 'Underline width',
+  title: '无下划线',
+  titleEnUS: 'No ink',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,
   },
   data() {
     return {
-      titles: ['第一', '第二', '第三', '第四'],
+      current: 1,
+      items: [{key: 1, label: '标签1'}, {key: 2, label: '标签2'}, {key: 3, label: '标签3'}],
     }
   },
 }

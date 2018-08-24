@@ -1,50 +1,34 @@
 <template>
   <div class="md-example-child md-example-child-tabs md-example-child-tabs-5">
     <md-tabs
-      show-ink-bar
-    >
-      <div slot="title">
-        <div>
-          <md-icon name="hollow-plus" size="sm"></md-icon>
-          我
-        </div>
-      </div>
-      <div>
-        爱你
-      </div>
-      <div slot="title">
-        <div>
-          <md-icon name="cross" size="sm"></md-icon>
-          你
-        </div>
-      </div>
-      <div>
-        爱他
-      </div>
-      <div slot="title">
-        <div>
-          <md-icon name="right" size="sm"></md-icon>
-          他
-        </div>
-      </div>
-      <div>
-        爱她
-      </div>
-    </md-tabs>
+      v-model="current"
+      :items="items"
+      @change="onChange"
+    />
   </div>
 </template>
 
-<script>import {Icon, Tabs} from 'mand-mobile'
+<script>import {Tabs, Toast} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
-  title: '自定义内容',
-  titleEnUS: 'Custom content',
+  title: '监听事件',
+  titleEnUS: 'Events',
   /* DELETE */
   components: {
-    [Icon.name]: Icon,
     [Tabs.name]: Tabs,
+  },
+  data() {
+    return {
+      current: 1,
+      items: [{key: 1, label: '标签1'}, {key: 2, label: '标签2'}, {key: 3, label: '标签3'}],
+    }
+  },
+  methods: {
+    onChange(item, index) {
+      Toast.info(`index: ${index}, label: ${item.label}`)
+    },
   },
 }
 </script>

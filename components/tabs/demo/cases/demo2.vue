@@ -1,14 +1,10 @@
 <template>
   <div class="md-example-child md-example-child-tabs md-example-child-tabs-2">
     <md-tabs
-      :titles="titles"
-      :default-index="2"
-      show-ink-bar
-    >
-      <div v-for="(title, index) of titles" :key="index">
-        {{title}}的内容
-      </div>
-    </md-tabs>
+      v-model="current"
+      :items="items"
+      :maxLength="5"
+    />
   </div>
 </template>
 
@@ -17,17 +13,25 @@
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
-  title: '指定默认标签',
-  titleEnUS: 'Specify the default tab',
-  describe: '默认标签2',
-  describeEnUS: 'Default tab 2',
+  title: '滚动',
+  titleEnUS: 'Scroll',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,
   },
   data() {
     return {
-      titles: ['第一', '第二', '第三', '第四'],
+      current: 1,
+      items: [
+        {key: 1, label: '精选'},
+        {key: 2, label: '全部'},
+        {key: 3, label: '满减券'},
+        {key: 4, label: '立减券'},
+        {key: 5, label: '免息券'},
+        {key: 6, label: '校园专享'},
+        {key: 7, label: '夜间优惠'},
+        {key: 8, label: '红包'},
+      ],
     }
   },
 }

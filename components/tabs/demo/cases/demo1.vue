@@ -1,13 +1,10 @@
 <template>
   <div class="md-example-child md-example-child-tabs md-example-child-tabs-1">
     <md-tabs
-      :titles="titles"
-      :show-ink-bar="false"
-    >
-      <div v-for="(title, index) of titles" :key="index">
-        {{title}}的内容
-      </div>
-    </md-tabs>
+      v-model="current"
+      :items="items"
+      :maxLength="5"
+    />
   </div>
 </template>
 
@@ -16,15 +13,22 @@
 export default {
   name: 'tab-bar-demo',
   /* DELETE */
-  title: '不带下划线',
-  titleEnUS: 'Without underline',
+  title: '首屏数量',
+  titleEnUS: 'Max length',
   /* DELETE */
   components: {
     [Tabs.name]: Tabs,
   },
   data() {
     return {
-      titles: ['第一', '第二', '第三', '第四'],
+      current: 1,
+      items: [
+        {key: 1, label: '标签1'},
+        {key: 2, label: '标签2'},
+        {key: 3, label: '标签3'},
+        {key: 4, label: '标签4'},
+        {key: 5, label: '标签5'},
+      ],
     }
   },
 }
