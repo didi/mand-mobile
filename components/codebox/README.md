@@ -25,6 +25,8 @@ Vue.component(Codebox.name, Codebox)
 |maxlength|字符最大输入长度, 若为`-1`则不限制输入长度|Number|4|
 |autofocus|是否直通聚焦拉起键盘, 对系统键盘不生效|Boolean|`false`|
 |mask|是否掩码|Boolean|`false`|
+|disabled|禁用输入|Boolean|`false`|
+|justify|自动拉伸布局|Boolean|`false`|
 |closable|点击输入框及键盘其他区域是否收起键盘|Boolean|`true`|
 |ok-text|键盘确认键文案|String|`确认`|
 |disorder|数字键盘是否乱序|Boolean|`false`|

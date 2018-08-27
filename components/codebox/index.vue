@@ -1,6 +1,13 @@
 <template>
   <div class="md-codebox-wrapper">
-    <div class="md-codebox" @click="focus">
+    <div
+      class="md-codebox"
+      :class="{
+        'is-disabled': disabled,
+        'is-justify': justify
+      }"
+      @click="focus"
+    >
       <template v-if="maxlength > 0">
         <span
           v-for="i in num"
@@ -55,7 +62,7 @@
     <md-number-keyboard
       v-show="!system"
       ref="keyboard"
-      class="md-codebox-number-keyboard"
+      class="md-codebox-keyboard"
       :type="maxlength > 0 ? 'simple' : 'professional'"
       :okText="okText"
       :disorder="disorder"
@@ -85,6 +92,14 @@ export default {
       default: 4,
     },
     autofocus: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    justify: {
       type: Boolean,
       default: false,
     },
@@ -204,6 +219,10 @@ export default {
       }
     },
     focus() {
+      if (this.disabled) {
+        return
+      }
+
       this.focused = true
       if (this.system) {
         this.$refs.input.focus()
@@ -214,76 +233,100 @@ export default {
 </script>
 
 <style lang="stylus">
-  .md-codebox-wrapper
-    .md-codebox-input
-      position absolute
-      left -9999px
-      opacity 0
-  .md-codebox
-    position relative
-    display flex
-    flex-wrap nowrap
-    justify-content center
+.md-codebox-wrapper
+  .md-codebox-input
+    position absolute
+    left -9999px
+    opacity 0
+
+.md-codebox
+  position relative
+  display flex
+  flex-wrap nowrap
+  justify-content center
+  &.is-justify
     .md-codebox-box
-      display flex
-      align-items center
-      justify-content center
-      width codebox-width
-      color color-text-base
-      font-size codebox-font-size
-      margin-left codebox-gutter
-      margin-right codebox-gutter
-      hairline(all, codebox-border-color)
-      &::before
-        content ''
-        display block
-        padding-bottom 100%
-      &::after
-        border-radius codebox-input-radius
-      &.is-active
-        &::after
-          border-color codebox-border-active-color
-    .md-codebox-blink
-      display block
-      height 40px
-      width 2px
-      background-color codebox-blink-color
-      animation md-codebox-flash steps(2) 1s infinite
-    .md-codebox-dot
-      display block
-      height 10px
-      width: 10px
-      line-height 10px
-      border-radius 5px
-      background-color codebox-dot-color
-    .md-codebox-holder
-      pointer-events none
-      height codebox-input-height
-      padding codebox-input-padding
-      width 100%
-      text-align center
-      font-size codebox-input-font-size
-      outline none
-      color color-text-base
-      letter-spacing 0.1em
-      border-radius 0
-      border-style solid
-      border-width 0 0 2px 0
-      border-color codebox-input-border-color
-      background none
-      box-shadow none
-      box-sizing border-box
-      -webkit-appearance none
-      &[disabled],
-      &[readonly]
-        color color-text-base
-        opacity 1
-      &.is-active
-        border-color codebox-border-active-color
-  @keyframes md-codebox-flash
-    from
-      opacity 0
-    to
-      opacity 1
+      flex 1 1 0%
+
+.md-codebox-box
+  flex 0 1 codebox-width
+  width codebox-width
+  height codebox-height
+  display flex
+  align-items center
+  justify-content center
+  color codebox-color
+  font-family font-family-number
+  font-size codebox-font-size
+  font-weight normal
+  line-height 1.2
+  margin-left (codebox-gutter / 2)
+  margin-right (codebox-gutter / 2)
+  border-bottom codebox-border-width solid codebox-border-color
+  &:first-child
+    margin-left 0
+  &:last-child
+    margin-right 0
+  &.is-active
+    border-color codebox-border-active-color
+
+.md-codebox-blink
+  display block
+  height (codebox-height * 0.8)
+  width 2px
+  background-color codebox-blink-color
+  animation md-codebox-flash steps(2) 1s infinite
+
+.md-codebox-dot
+  display block
+  height 10px
+  width 10px
+  border-radius 5px
+  background-color codebox-dot-color
+
+.md-codebox-holder
+  pointer-events none
+  height codebox-height
+  line-height codebox-height
+  padding 0 codebox-holder-space
+  width 100%
+  text-align center
+  font-size codebox-font-size
+  outline none
+  color codebox-color
+  letter-spacing 0.1em
+  border-radius 0
+  border-style solid
+  border-width 0 0 codebox-border-width 0
+  border-color codebox-border-color
+  background none
+  box-shadow none
+  box-sizing border-box
+  -webkit-appearance none
+  &[disabled],
+  &[readonly]
+    opacity 1
+    color codebox-color
+    border-color codebox-border-color
+  &.is-active
+    border-color codebox-border-active-color
+
+.md-codebox.is-disabled
+  .md-codebox-box
+    color codebox-disabled-color
+    border-color codebox-disabled-color
+  .md-codebox-blink
+    display none
+  .md-codebox-dot
+    background-color codebox-disabled-color
+  .md-codebox-holder
+    color codebox-disabled-color
+    border-color codebox-disabled-color
+
+@keyframes md-codebox-flash
+  from
+    opacity 0
+  to
+    opacity 1
 </style>
 

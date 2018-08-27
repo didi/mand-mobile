@@ -23,6 +23,8 @@ Vue.component(Codebox.name, Codebox)
 | maxlength | maxlength of captacha, set to `-1` as no restriction | Number | 4 |
 | autofocus | immediately open simulated keyboard, not work for system keyboard | Boolean | `false` |
 | mask | whether to mask code or not | Boolean | `false` |
+|disabled|disable input|Boolean|`false`|
+|justify|take full space|Boolean|`false`|
 | closable | whether to hide keyboard when clicking away | Boolean | `true` |
 | ok-text | the text of confirmation button of the keyboard |String| `Confirm` |
 | disorder| whether to use random keyboard layout or not | Boolean | `false` |
