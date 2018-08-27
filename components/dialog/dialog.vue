@@ -26,10 +26,9 @@
             <md-icon :name="icon" />
           </div>
           <h2 class="md-dialog-title" v-if="title" v-text="title"></h2>
-          <div class="md-dialog-text" v-if="content" v-html="content"></div>
-          <div class="md-dialog-text" v-else-if="$slots.default">
-            <slot></slot>
-          </div>
+          <slot>
+            <div class="md-dialog-text" v-html="content"></div>
+          </slot>
         </div>
         <footer class="md-dialog-actions" :class="{ 'is-column': layout === 'column' }">
           <a
@@ -154,90 +153,98 @@ export default {
 <style lang="stylus">
 .md-dialog
   z-index dialog-zindex
-  .md-dialog-content
-    width dialog-width
-    border-radius dialog-radius
-    background-color color-bg-base
-    overflow hidden
-  .md-dialog-body
-    color dialog-text-color
-    font-size dialog-text-font-size
-    display flex
-    flex-direction column
-    align-items center
-    justify-content center
-    text-align left
-    padding v-gap-sl h-gap-sl
-  .md-dialog-icon
-    position relative
-    display block
-    width dialog-icon-size
-    height dialog-icon-size
-    margin v-gap-md auto
-    .md-icon
-      width dialog-icon-size
-      height dialog-icon-size
-      fill dialog-icon-fill
-  .md-dialog-close
-    position absolute
-    color dialog-close-color
-    top 32px
-    right 32px
-    z-index 15
-  .md-dialog-title
-    color dialog-title-color
-    text-align center
-    font-size dialog-title-font-size
-    line-height 1.2
-    margin-bottom 28px
-  .md-dialog-actions
-    display flex
-    hairline(top, dialog-action-border-color)
-    &.is-column
-      flex-direction column
-      .md-dialog-btn
-        flex 0 0 auto
-        remove-hairline(right)
-        &:not(:first-child)
-          hairline(top, dialog-action-border-color)
-        &:last-child
-          color color-text-caption
-        &:first-child
-          color dialog-action-highlight-color
-  .md-dialog-btn
-    flex 1 1 0%
-    display flex
-    align-items center
-    justify-content center
-    height dialog-action-height
-    font-size dialog-action-font-size
-    color color-text-caption
-    text-align center
-    hairline(right, dialog-action-border-color)
-    &:last-child
-      color dialog-action-highlight-color
-      remove-hairline(right)
 
-  .md-popup.center
-    .md-popup-box
-      transform translate(-50%, -50%)
-      &.fade-enter
-        opacity 0.01
-        transform translate(-50%, -20%)
-      &.fade-leave-to
-        opacity 0.01
-        transform translate(-50%, -70%)
-      &.fade-enter-active,
-      &.fade-leave-active,
-      &.bounce-leave-active
-        transition all 200ms
-      &.bounce-enter
-        opacity 0.01
-      &.bounce-enter-active
-        animation bounce-in 300ms
-      &.bounce-leave-to
-        opacity 0.01
-        transform translate(-50%, -50%) scale(0.5)
+.md-dialog-content
+  width dialog-width
+  border-radius dialog-radius
+  background-color color-bg-base
+  overflow hidden
+
+.md-dialog-body
+  color dialog-text-color
+  font-size dialog-text-font-size
+  text-align left
+  padding v-gap-sl h-gap-sl
+
+.md-dialog-icon
+  position relative
+  display block
+  width dialog-icon-size
+  height dialog-icon-size
+  margin v-gap-md auto
+.md-dialog .md-dialog-icon .md-icon
+  width dialog-icon-size
+  height dialog-icon-size
+  fill dialog-icon-fill
+
+.md-dialog-close
+  position absolute
+  color dialog-close-color
+  top 32px
+  right 32px
+  z-index 15
+
+.md-dialog-title
+  color dialog-title-color
+  text-align center
+  font-size dialog-title-font-size
+  line-height 1.2
+  margin 0 0 28px 0
+
+.md-dialog-text
+  display flex
+  justify-content center
+
+.md-dialog-actions
+  display flex
+  hairline(top, dialog-action-border-color)
+  &.is-column
+    flex-direction column
+    .md-dialog-btn
+      flex 0 0 auto
+      remove-hairline(right)
+      &:not(:first-child)
+        hairline(top, dialog-action-border-color)
+      &:last-child
+        color color-text-caption
+      &:first-child
+        color dialog-action-highlight-color
+
+.md-dialog-btn
+  flex 1 1 0%
+  display flex
+  align-items center
+  justify-content center
+  height dialog-action-height
+  font-size dialog-action-font-size
+  color color-text-caption
+  text-align center
+  hairline(right, dialog-action-border-color)
+  &:last-child
+    color dialog-action-highlight-color
+    remove-hairline(right)
+
+.md-popup.center
+  .md-popup-box
+    transform translate(-50%, -50%)
+    &.fade-enter
+      opacity 0.01
+      transform translate(-50%, -20%)
+    &.fade-leave-to
+      opacity 0.01
+      transform translate(-50%, -70%)
+    &.fade-enter-active,
+    &.fade-leave-active,
+    &.bounce-leave-active
+      transition all 200ms
+    &.bounce-enter
+      opacity 0.01
+    &.bounce-enter-active
+      animation bounce-in 300ms
+    &.bounce-leave-to
+      opacity 0.01
+      transform translate(-50%, -50%) scale(0.5)
+
 @keyframes bounce-in {
   0% {
     transform: translate(-50%, -50%) scale(1);
