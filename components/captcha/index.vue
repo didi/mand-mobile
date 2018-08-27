@@ -3,31 +3,32 @@
     <template v-if="isView">
       <div class="md-captcha-content">
         <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
-        <div class="md-captcha-error" v-text="errorMsg"></div>
         <div class="md-captcha-message">
           <slot></slot>
         </div>
-        <md-button
-          v-if="count"
-          class="md-captcha-countbtn"
-          type="ghost"
-          size="small"
-          v-text="countBtnText"
-          :disabled="this.isCounting"
-          @click="$_onResend"
-        ></md-button>
       </div>
       <md-codebox
         ref="codebox"
         v-model="code"
         :maxlength="maxlength"
         :system="system"
-        :closable="false"
-        :isView="isView"
         :mask="mask"
-        :autofocus="false"
         @submit="$_onSubmit"
+        :closable="false"
+        :isView="true"
+        :justify="true"
+        :autofocus="false"
       />
+      <footer class="md-captcha-footer">
+        <div class="md-captcha-error" v-text="errorMsg"></div>
+        <button
+          class="md-captcha-btn"
+          v-if="count"
+          v-text="countBtnText"
+          :disabled="this.isCounting"
+          @click="$_onResend"
+        ></button>
+      </footer>
     </template>
     <template v-else>
       <md-dialog
@@ -41,19 +42,9 @@
       >
         <div class="md-captcha-content">
           <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
-          <div class="md-captcha-error" v-text="errorMsg"></div>
           <div class="md-captcha-message">
             <slot></slot>
           </div>
-          <md-button
-            v-if="count"
-            class="md-captcha-countbtn"
-            type="ghost"
-            size="small"
-            v-text="countBtnText"
-            :disabled="this.isCounting"
-            @click="$_onResend"
-          ></md-button>
         </div>
         <md-codebox
           ref="codebox"
@@ -62,9 +53,20 @@
           :system="system"
           :closable="false"
           :mask="mask"
+          :justify="true"
           :autofocus="false"
           @submit="$_onSubmit"
         />
+        <footer class="md-captcha-footer">
+          <div class="md-captcha-error" v-text="errorMsg"></div>
+          <button
+            class="md-captcha-btn"
+            v-if="count"
+            v-text="countBtnText"
+            :disabled="this.isCounting"
+            @click="$_onResend"
+          ></button>
+        </footer>
       </md-dialog>
     </template>
   </div>
@@ -231,30 +233,49 @@ export default {
 </script>
 
 <style lang="stylus">
-  .md-captcha
-    .md-dialog
-      z-index captcha-zindex
-      .md-dialog-content
-        margin-bottom number-keyboard-height
-    .md-captcha-content
-      text-align center
-      margin-bottom 20px
-      font-size 24px
-      .md-captcha-title
-        color captcha-title-color
-        font-size captcha-title-font-size
-        margin 0
-      .md-captcha-error
-        color captcha-error-color
-        font-size 24px
-        line-height 32px
-        height 32px
-        margin-bottom 12px
-      .md-captcha-countbtn
-        display inline-block
-        padding-left 16px
-        padding-right 16px
-        margin captcha-countbtn-gap auto
-        width auto
-        min-width 130px
+.md-captcha
+  .md-dialog
+    z-index captcha-zindex
+    .md-dialog-body
+      padding 60px
+    .md-dialog-content
+      margin-bottom number-keyboard-height
+
+.md-captcha-content
+  font-size captcha-font-size
+  color captcha-color
+  text-align center
+  line-height 1.2
+  margin-bottom 50px
+
+.md-captcha-title
+  color captcha-title-color
+  font-size captcha-title-font-size
+  font-weight normal
+  line-height 1.15
+  margin 0 0 16px 0
+
+.md-captcha-footer
+  margin-top 28px
+  display flex
+  font-size captcha-footer-font-size
+  justify-content space-between
+  align-items center
+  overflow hidden
+
+.md-captcha-error
+  flex 1 1 0%
+  color captcha-error-color
+
+.md-captcha-btn
+  display inline-block
+  color captcha-btn-color
+  font-size captcha-footer-font-size
+  padding 0
+  margin 0 0 0 12px
+  border 0
+  border-radius 0
+  background none
+  &:disabled
+    color color-text-disabled
 </style>
