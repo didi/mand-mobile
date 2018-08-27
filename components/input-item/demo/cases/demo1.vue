@@ -33,3 +33,9 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus">
+.md-example-child-input-item-1
+  .md-field
+    padding-bottom 40px
+</style>

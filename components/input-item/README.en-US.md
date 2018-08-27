@@ -30,6 +30,7 @@ Vue.component(InputItem.name, InputItem)
 |v-model|value of input|String|-|-|
 |title|title of input|String|-|support `HtmlFragment` and `slot(name: left)`|
 |placeholder|placeholder of input|String|-|-|
+|brief|description|String|-|-|
 |maxlength|maximum number of characters that can be entered|String/Number|-|the maxlength of `phone` type is fixed at 11|
 |size|size of input|String|`normal`|`large`,`normal`|
 |align|text alignment|String|`left`|`left`,`center`,`right`|
@@ -52,6 +53,12 @@ Left slot, generally is used to place icons, etc.
 
 #### right
 Right slot, generally is used to place icons, etc.
+
+#### brief
+Description slot，generally used to description is more complicated, can not be satisfied with `brief` in `Props`, need to use `v-if` control.(Not recommended)
+
+#### error
+Error slot，generally used to error is more complicated, can not be satisfied with `error` in `Props`, need to use `v-if` control, refer to the 'input with error message' in the example.(Not recommended)
 
 #### InputItem Methods
 
