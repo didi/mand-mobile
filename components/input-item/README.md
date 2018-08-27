@@ -31,6 +31,7 @@ Vue.component(InputItem.name, InputItem)
 |v-model|表单值|String|-|-|
 |title|表单左侧标题|String|-|可以传入`HtmlFragment`，也可直接使用`slot left`代替|
 |placeholder|表单占位符|String|-|-|
+|brief|表单描述|String|-|-|
 |maxlength|表单最大字符数|String/Number|-|`phone`类型固定为11|
 |size|表单尺寸|String|`normal`|`large`,`normal`|
 |align|表单文本对齐方式|String|`left`|`left`,`center`,`right`|
@@ -53,6 +54,12 @@ Vue.component(InputItem.name, InputItem)
 
 #### right
 右侧插槽，一般用于放置图标等
+
+#### brief
+表单描述插槽，一般用于描述内容较复杂，用`Props`中`brief`无法满足的情况，需用`v-if`控制（不推荐）
+
+#### error
+表单错误插槽，一般用于错误内容较复杂，用`Props`中`error`无法满足的情况，需用`v-if`控制，参考示例中的`错误提示`（不推荐）
 
 #### InputItem Methods
 

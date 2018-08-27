@@ -4,9 +4,9 @@
     :class="[
       isHighlight ? 'is-highlight' : '',
       isTitleLatent ? 'is-title-latent' : '',
-      isInputActive ? 'active' : '',
-      isInputFocus ? 'focus' : '',
-      isInputError ? 'error' : '',
+      isInputActive ? 'is-active' : '',
+      isInputFocus ? 'is-focus' : '',
+      isInputError ? 'is-error' : '',
       isInputBrief ? 'with-brief' : '',
       clearable ? 'is-clear' : '',
       inputEnv,
@@ -64,7 +64,7 @@
           <div
             class="md-input-item-fake"
             :class="{
-              'focus': isInputFocus,
+              'is-focus': isInputFocus,
               'disabled': disabled,
               'readonly': readonly
             }"
@@ -85,7 +85,7 @@
           class="md-input-item-clear"
           v-if="clearable && !disabled && !readonly"
           v-show="!isInputEmpty"
-          @click="$_clearInput($event)"
+          @click="$_clearInput"
         >
           <md-icon name="circle-cross"></md-icon>
         </div>
@@ -105,15 +105,19 @@
     <!-- BRIEF/ERROR TIP -->
     <!-- -------------------- -->
     <div
-      v-if="error !== ''"
+      v-if="isInputError"
       class="md-input-item-msg"
-      v-text="error"
-    ></div>
+    >
+      <p v-if="error !== ''" v-text="error"></p>
+      <slot name="error" v-else></slot>
+    </div>
     <div
-      v-else-if="brief !== ''"
+      v-if="isInputBrief"
       class="md-input-item-brief"
-      v-text="brief"
-    ></div>
+    >
+      <p v-if="brief !== ''" v-text="brief"></p>
+      <slot name="brief" v-else></slot>
+    </div>
     <!-- ------------ -->
     <!--   KEYBORARD  -->
     <!-- ------------ -->
@@ -278,10 +282,10 @@ export default {
       return !this.inputValue.length
     },
     isInputError() {
-      return this.error !== ''
+      return this.$slots.error || this.error !== ''
     },
     isInputBrief() {
-      return this.brief !== '' && !this.isInputError
+      return (this.$slots.brief || this.brief !== '') && !this.isInputError
     },
   },
 
@@ -397,8 +401,8 @@ export default {
       }
     },
     $_clearInput() {
-      event.stopImmediatePropagation()
       this.inputValue = ''
+      !this.isTitleLatent && this.focus()
     },
     $_focusFakeInput() {
       this.isInputFocus = true
@@ -450,7 +454,10 @@ export default {
       this.$emit('focus', this.name)
     },
     $_onBlur() {
-      this.isInputFocus = false
+      // Delayed to trigger clear-button's click action before being hidden
+      setTimeout(() => {
+        this.isInputFocus = false
+      }, 200)
       this.$emit('blur', this.name)
     },
     $_onFakeInputClick(event) {
@@ -484,6 +491,9 @@ export default {
         this.$_onFakeInputClick()
       } else {
         this.$el.querySelector('.md-input-item-input').focus()
+        setTimeout(() => {
+          this.isInputFocus = true
+        }, 200)
       }
     },
     blur() {
@@ -491,6 +501,7 @@ export default {
         this.$_blurFakeInput()
       } else {
         this.$el.querySelector('.md-input-item-input').blur()
+        this.isInputFocus = false
       }
     },
     getValue() {
@@ -541,6 +552,7 @@ export default {
       align-items center
       justify-content center
     .md-input-item-clear
+      display none
       color input-item-icon
       z-index 3
       .md-icon
@@ -581,6 +593,9 @@ export default {
       text-align right
   &.is-clear .md-input-item-control
     padding-right 50px !important
+  &.is-focus
+    .md-input-item-clear
+      display flex
   &.is-title-latent
     padding-top 10px
     // overflow hidden
@@ -597,34 +612,35 @@ export default {
       will-change auto
     .md-input-item-extra, .md-input-item-control
       top 15px
-    &.active
+    &.is-active
       .md-input-item-title
         opacity 1
         top 10px
         transform translate3d(0, 0, 0)
       // .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
       //   color transparent
+
   &.is-highlight
     .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
       color input-item-placeholder-highlight
   &.large .md-input-item-input
     font-size input-item-font-size-large
-  &.error, &.with-brief
+  &.is-error, &.with-brief
     padding-bottom 60px
 
   .md-input-item-fake
     line-height input-item-height
     word-ellipsis()
     cursor text
-    &:after
+    &::after
       position relative
       z-index 2
       display none
-      content ""
+      content " "
       height input-item-font-size
       border-right solid 1.5px color-text-base
       animation keyboard-cursor infinite 1s step-start
-    &.focus:after
+    &.is-focus:after
       display inline
     &.disabled
       opacity input-item-color-disabled
@@ -655,7 +671,7 @@ export default {
   &.is-ios
     .md-input-item-input::-webkit-input-placeholder
       position relative
-      top -5px
+      top -3px
       overflow visible
     .md-input-item-fake:after
       border-right solid 6px #2C6CF5

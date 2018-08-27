@@ -55,10 +55,15 @@ export default {
 <style lang="stylus">
 .md-example-child-input-item-3
   .md-field
-    .field-operator
-      display flex
-      align-items center
-      justify-content flex-end
+    padding-bottom 20px
+    .md-field-title
+      .value
+        display flex
+        align-items center
+        justify-content flex-end
+        .field-operator
+          display flex
+          align-items center
     .input-operator
       font-size 28px
       color #2F86F6
