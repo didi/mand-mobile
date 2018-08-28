@@ -1,7 +1,12 @@
 <template>
   <div class="md-tip" :class="wrapperCls">
     <template>{{content}}</template>
-    <md-icon name="cross" size="md" @click.native="$_onClose" />
+    <md-icon
+      v-if="closable"
+      name="cross"
+      size="md"
+      @click.native="$_onClose"
+    />
   </div>
 </template>
 
@@ -17,6 +22,10 @@ export default {
     placement: {
       type: String,
     },
+    closable: {
+      type: Boolean,
+      default: true,
+    },
     content: {
       type: [String, Number],
     },
@@ -24,13 +33,10 @@ export default {
 
   computed: {
     wrapperCls() {
-      const cls = {}
-
-      if (['left', 'bottom', 'right'].indexOf(this.placement) !== -1) {
-        cls[`is-${this.placement}`] = true
+      return {
+        'has-close': this.closable,
+        [`is-${this.placement}`]: ['left', 'bottom', 'right'].indexOf(this.placement) !== -1,
       }
-
-      return cls
     },
   },
 
@@ -45,13 +51,16 @@ export default {
 
 <style lang="stylus">
   .md-tip
+    position relative
     display inline-block
     max-width 400px
     color tip-color
     font-size tip-font-size
+    line-height 1.2
     padding tip-padding
     border-radius tip-radius
     background-color tip-fill
+    box-shadow tip-shadow
     z-index tip-zindex
     &::after
       content ''
@@ -64,30 +73,18 @@ export default {
       border-style solid
       border-width 10px 11px 0 11px
       border-color tip-fill transparent transparent transparent
+    &.has-close
+      padding-right 60px
     &.is-bottom::after
       bottom auto
       top -10px
       border-width 0 11px 10px 11px
       border-color transparent transparent tip-fill transparent
-    &.is-left::after
-      bottom auto
-      right -10px
-      left auto
-      top 50%
-      margin-left 0
-      margin-top -11px
-      border-width 11px 0 11px 10px
-      border-color transparent transparent transparent tip-fill
+    &.is-left::after,
     &.is-right::after
-      bottom auto
-      left -10px
-      right auto
-      top 50%
-      margin-left 0
-      margin-top -11px
-      border-width 11px 10px 11px 0
-      border-color transparent tip-fill transparent transparent
-    .md-icon
+      display none
+
+    .md-icon.md-icon-cross
       position absolute
       right 16px
       top 50%

@@ -139,29 +139,29 @@ export default {
         return
       }
 
-      const tipElRect = this.$_tipVM.$el.getBoundingClientRect()
-      const referenceElRect = this.$el.getBoundingClientRect()
+      const tipEl = this.$_tipVM.$el
+      const referenceEl = this.$el
       const delta = this.$_getPosition(this.$el, this.wrapperEl)
 
       switch (this.placement) {
         case 'left':
-          delta.y += (referenceElRect.height - tipElRect.height) / 2
-          delta.x -= tipElRect.width + 10
+          delta.y += (referenceEl.offsetHeight - tipEl.offsetHeight) / 2
+          delta.x -= tipEl.offsetWidth + 10
           break
 
         case 'right':
-          delta.y += (referenceElRect.height - tipElRect.height) / 2
-          delta.x += referenceElRect.width + 10
+          delta.y += (referenceEl.offsetHeight - tipEl.offsetHeight) / 2
+          delta.x += referenceEl.offsetWidth + 10
           break
 
         case 'bottom':
-          delta.y += referenceElRect.height + 10
-          delta.x += (referenceElRect.width - tipElRect.width) / 2
+          delta.y += referenceEl.offsetHeight + 10
+          delta.x += (referenceEl.offsetWidth - tipEl.offsetWidth) / 2
           break
 
         default:
-          delta.y -= tipElRect.height + 10
-          delta.x += (referenceElRect.width - tipElRect.width) / 2
+          delta.y -= tipEl.offsetHeight + 10
+          delta.x += (this.$el.offsetWidth - tipEl.offsetWidth) / 2
           break
       }
 
