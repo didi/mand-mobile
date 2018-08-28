@@ -3,8 +3,6 @@
     <md-check-box
       v-model="selected"
       :options="options"
-      :max="2"
-      :cols="4"
     >
     </md-check-box>
 	</div>
@@ -22,12 +20,7 @@ export default {
   data() {
     return {
       selected: [],
-      options: [
-        {value: '1', label: '自己'},
-        {value: '2', label: '配偶'},
-        {value: '3', label: '父母'},
-        {value: '4', label: '子女', disabled: true},
-      ],
+      options: [{value: '1', label: '日缴'}, {value: '2', label: '月付'}, {value: '3', label: '季度缴'}],
     }
   },
 }
