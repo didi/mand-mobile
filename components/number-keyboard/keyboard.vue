@@ -124,6 +124,8 @@
         text-align center
         line-height number-keyboard-key-height
         font-size number-keyboard-key-font-size
+        font-weight number-keyboard-key-font-weight
+        font-family DINPro-Medium
         color number-keyboard-key-color
         transition background .3s
         background number-keyboard-key-bg
