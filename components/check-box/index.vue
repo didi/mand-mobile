@@ -81,8 +81,8 @@ export default {
 .md-check-box
   display flex
   flex-wrap wrap
-  margin-left checkbox-container-space
-  margin-right checkbox-container-space
+  margin-left (0 - checkbox-space / 2)
+  margin-right (0 - checkbox-space / 2)
   &.is-2col .md-check-box-col
     flex 0 0 50%
     width 50%
@@ -95,22 +95,27 @@ export default {
   &.is-5col .md-check-box-col
     flex 0 0 20%
     width 20%
-  .md-check-box-col
-    flex 1 1 0%
-    padding checkbox-space
-    box-sizing border-box
-  .md-check-box-item
-    text-align center
-    padding 12px
-    color checkbox-color
-    font-size checkbox-font-size
-    border 1px solid checkbox-border-color
-    border-radius checkbox-border-radius
-    box-sizing border-box
-    &.is-selected
-      color checkbox-tap-color
-      border-color checkbox-tap-color
-      background-color checkbox-bg-tap-color
-    &.is-disabled
-      opacity checkbox-disabled-opacity
+
+.md-check-box-col
+  flex 0 0 auto
+  padding (checkbox-space / 2)
+  box-sizing border-box
+
+.md-check-box-item
+  padding v-gap-sm
+  text-align center
+  min-width checkbox-min-width
+  color checkbox-color
+  font-size checkbox-font-size
+  border 1px solid checkbox-border-color
+  border-radius checkbox-border-radius
+  box-sizing border-box
+  &.is-selected
+    color checkbox-active-color
+    border-color checkbox-active-border-color
+    background-color checkbox-active-bg
+  &.is-disabled
+    color checkbox-disabled-color
+    border-color checkbox-disabled-color
+    background-color none
 </style>

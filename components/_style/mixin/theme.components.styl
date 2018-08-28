@@ -1,3 +1,5 @@
+@import 'theme.basic'
+
 /*
  * components
  */
@@ -156,18 +158,19 @@ input-item-icon = color-text-placeholder // delete icon
 radio-color = color-text-highlight
 
 // checklist
-checklist-tap-color = color-primary-tap
+checklist-active-color = color-primary
 
 // checkbox
 checkbox-color = color-text-base
-checkbox-font-size = 32px
-checkbox-space = 8px
-checkbox-container-space = -8px
-checkbox-disabled-opacity = opacity-disabled
-checkbox-tap-color = #3ca0e6
-checkbox-bg-tap-color = rgba(#3ca0e6, 0.05)
-checkbox-border-color = color-border-minor
-checkbox-border-radius = 3px
+checkbox-font-size = font-caption-normal
+checkbox-min-width = 150px
+checkbox-space = h-gap-md
+checkbox-disabled-color = color-text-disabled
+checkbox-active-color = color-primary
+checkbox-active-border-color = color-primary
+checkbox-active-bg = alpha(color-primary, 0.05)
+checkbox-border-color = color-border-element
+checkbox-border-radius = radius-normal
 
 // switch
 switch-fill = color-primary
