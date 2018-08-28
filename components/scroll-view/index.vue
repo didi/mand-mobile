@@ -10,6 +10,9 @@
     @mouseup="$_onScollerMouseUp"
     @mouseleave="$_onScollerMouseUp"
   >
+    <div class="scroll-view-header" v-if="$slots.header">
+      <slot name="header"></slot>
+    </div>
     <div class="scroll-view-container">
       <div
         v-if="hasRefresher"
@@ -33,6 +36,9 @@
       >
         <slot name="more"></slot>
       </div>
+    </div>
+    <div class="scroll-view-footer" v-if="$slots.footer">
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
@@ -304,12 +310,21 @@ export default {
 
 <style lang="stylus">
 .md-scroll-view
+  position relative
   display block
   // width 100%
   height 100%
   background #fff
   overflow hidden
   user-select none
+  .scroll-view-header, .scroll-view-footer
+    position absolute
+    left 0
+    right 0
+  .scroll-view-header
+    top 0
+  .scroll-view-footer
+    bottom 0
   .scroll-view-container
     clearfix()
     position relative

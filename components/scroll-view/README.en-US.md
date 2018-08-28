@@ -70,6 +70,12 @@ Pull-down refresh component slot, you can use `slot-scoped` to get the relevant 
 ##### more
 load-more component slot
 
+##### header
+header slot
+
+##### footer
+footer slot
+
 #### ScrollView Methods
 
 ##### reflowScroller()
