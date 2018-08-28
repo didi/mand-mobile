@@ -70,6 +70,12 @@ Vue.component(ScrollView.name, ScrollView)
 ##### more
 加载更多组件插槽
 
+##### header
+吸顶区域插槽
+
+##### footer
+吸底区域插槽
+
 #### ScrollView Methods
 
 ##### reflowScroller()

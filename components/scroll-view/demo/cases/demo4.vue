@@ -5,6 +5,15 @@
       :scrolling-x="false"
       @scroll="$_onScroll"
     >
+      <md-tab-bar
+        slot="header"
+        ref="tabBar"
+        :default-index="activeBlockIndex - 1"
+        :titles="tabBarTitles"
+        :show-ink-bar="true"
+        :key="activeBlockIndex"
+        @indexChanged="$_onTabChange"
+      ></md-tab-bar>
       <div
         v-for="i in category"
         :key="i"
@@ -19,14 +28,6 @@
         </div>
       </div>
     </md-scroll-view>
-    <md-tab-bar
-      ref="tabBar"
-      :default-index="activeBlockIndex - 1"
-      :titles="tabBarTitles"
-      :show-ink-bar="true"
-      :key="activeBlockIndex"
-      @indexChanged="$_onTabChange"
-    ></md-tab-bar>
   </div>
 </template>
 
@@ -108,13 +109,10 @@ export default {
 .md-example-child-scroll-view-4
   position relative
   height 800px
-  padding-top 80px
   .md-tab-bar
-    position absolute
-    top 0
-    left 0
-    right 0
     box-shadow 0 2px 8px #f0f0f0
+  .md-scroll-view
+    padding-top 80px
   .scroll-view-item
     padding 30px 0
     text-align center
