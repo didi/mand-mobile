@@ -116,8 +116,8 @@ export default {
     width 100%
     height 75px
     line-height 75px
-    background notice-bar-fill
-    color notice-bar-color
+    background #4a4c5b
+    color #fff
     .md-icon
       position absolute
       right 20px

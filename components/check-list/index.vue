@@ -101,14 +101,13 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-check-list
-  .md-check-list-item
-    &.is-selected
-      color checklist-tap-color
-      .md-icon
-        fill checklist-tap-color
-    .md-field-item-label
-      display none
-    .md-field-item-content.left
-      margin-left 0
+.md-check-list-item
+  &.is-selected
+    color checklist-active-color
+    .md-icon
+      fill checklist-active-color
+  .md-field-item-label
+    display none
+  .md-field-item-content.left
+    margin-left 0
 </style>

@@ -3,11 +3,9 @@
     <md-check-box
       v-model="selected"
       :options="options"
+      :max="2"
+      :cols="4"
     >
-      <div slot="content" slot-scope="{ option }" class="payment-gateway">
-        <p v-text="option.label"></p>
-        <p class="muted" v-text="option.desc"></p>
-      </div>
     </md-check-box>
 	</div>
 </template>
@@ -16,25 +14,24 @@
 
 export default {
   name: 'check-box-demo',
-  title: '支付方式',
+  title: '样例二',
   describe: '',
   components: {
     [CheckBox.name]: CheckBox,
   },
   data() {
     return {
-      selected: '',
-      options: [{value: '1', label: '微信', desc: '减免1.2元'}, {value: '2', label: '支付宝', desc: '9.8折'}],
+      selected: [],
+      options: [
+        {value: '1', label: '自己'},
+        {value: '2', label: '配偶'},
+        {value: '3', label: '父母'},
+        {value: '4', label: '子女', disabled: true},
+      ],
     }
   },
 }
 </script>
 
 <style lang="stylus" scoped>
-.payment-gateway
-  text-align center
-  font-size 0.32rem
-.muted
-  color #888
-  font-size 0.24rem
 </style>
