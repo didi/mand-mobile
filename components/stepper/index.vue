@@ -11,6 +11,7 @@
     </div>
     <div class="md-stepper-number">
       <input type="tel"
+        :size="contentLength"
         :value="currentNum"
         :readOnly="readOnly"
         @input="$_onInput"
@@ -95,6 +96,16 @@ export default {
       isMax: false,
       currentNum: 0,
     }
+  },
+
+  computed: {
+    contentLength() {
+      if (!this.value) {
+        return 2
+      }
+      const length = this.value.toString().length
+      return length > 2 ? length : 2
+    },
   },
 
   watch: {
@@ -189,7 +200,12 @@ export default {
   height stepper-height
   display flex
   &.disabled
-    opacity stepper-disabled-opacity
+    .md-stepper-button
+      &:before,
+      &:after
+        opacity stepper-disabled-opacity
+    input
+      opacity stepper-disabled-opacity
   .md-stepper-button
     position relative
     width stepper-width-button
@@ -197,7 +213,6 @@ export default {
     background-color stepper-fill
     border-radius 2px
     &:after
-      center()
       content ""
       position absolute
       width 24px
@@ -208,7 +223,6 @@ export default {
       transform translate(-50%, -50%)
     &.md-stepper-button-add
       &:before
-        center()
         content ""
         position absolute
         width 2px
@@ -218,23 +232,26 @@ export default {
         background stepper-color
         transform translate(-50%, -50%)
     &.disabled
-      opacity stepper-disabled-opacity
+      &:before,
+      &:after
+        opacity stepper-disabled-opacity
   .md-stepper-number
     margin 0 4px
-    min-width 68px
+    min-width stepper-width-input
     height stepper-height
     padding 0 4px
     text-align center
     border-radius stepper-radius-button
+    background-color stepper-fill
     input
-      width stepper-width-input
+      width 100%
       height stepper-height
       border none
       outline none
       font-size stepper-input-font-size
       line-height stepper-height
+      background-color transparent
       box-sizing border-box
-      background-color stepper-fill
       text-align center
       color stepper-color
       border-radius stepper-radius-input
