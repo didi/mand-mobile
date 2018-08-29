@@ -537,7 +537,7 @@ export default {
     padding 10px 0
     box-sizing border-box
     border-top solid 1px #ebebeb
-    background #fbf9f9
+    background #f3f4f5
     .doc-demo-box-preview-box
       position relative
       width 100%

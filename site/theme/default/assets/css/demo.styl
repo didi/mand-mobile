@@ -10,8 +10,14 @@
 
 .md-example-child-button
   .md-button
-    float left
     margin-bottom 10px
+  &.md-example-child-button-3
+    .md-button
+      float left
+      margin-right 10px
+    br
+      float left
+      width 100%
 .md-example-child-agree
   margin-top 70px
   padding 0 h-gap-lg
@@ -110,6 +116,8 @@
 .md-example-chart-child
   svg
     width 100% !important
+.md-example-child-result-page
+  background-color #fff
 
 .md-image-viewer
   position absolute !important
@@ -153,6 +161,9 @@
 .md-picker
   .md-popup
     position absolute !important
+  .md-picker-column-masker
+    &::before, &::after
+      transform none !important
 .md-cashier 
   .md-popup.with-mask
     position absolute !important
