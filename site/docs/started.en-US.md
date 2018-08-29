@@ -31,12 +31,9 @@ npm install mand-mobile --save
 
 ##### CDN
 
-```html
-<link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
+Add `script` and `link` tags in your browser and use the global variable `window['mand-mobile']`.
 
-<!-- window['mand-mobile'] -->
-<script src="https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js"></script>
-```
+The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>. You can also download it via [UNPKG](https://unpkg.com/mand-mobile/lib/)
 
 #### Import
 
@@ -44,7 +41,7 @@ npm install mand-mobile --save
 
 > Use <a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a>
   or
-  <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>. No need to configure style path and default directory is 'lib', other directory reference #Release Package Directory
+  <a href="https://github.com/Brooooooklyn/ts-import-plugin" target="_blank">ts-import-plugin</a>. No need to configure style path and default directory is 'lib', other directory reference <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>
 
 ```javascript
 {
