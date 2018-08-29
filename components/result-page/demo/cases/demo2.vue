@@ -1,8 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-result-page md-example-child-result-page-2">
-    <md-result-page
-      :buttons="buttons">
-    </md-result-page>
+    <md-result-page :buttons="buttons"></md-result-page>
   </div>
 </template>
 
@@ -28,7 +26,7 @@ export default {
         },
         {
           text: '高亮按钮',
-          type: 'ghost-primary',
+          type: 'primary',
           handler() {
             Toast.succeed('不普通操作')
           },

@@ -35,5 +35,5 @@ It is recommended to set the parent element filled with windows to achieve cente
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |text | button text | String | - | - |
-|type | button style | String | `ghost` |`ghost-primary` is alternative, refer to `Button` |
+|type | button style | String | `default` | refer to `Button` |
 |handler | callback of click operation | Function | - | callback function invoked after clicking |

@@ -5,8 +5,11 @@
     <div class="subtext" v-if="subtext">{{subtext}}</div>
     <div class="buttons" v-if="buttons.length">
       <md-button
-        :type="button.type || 'ghost'"
         v-for="(button, index) of buttons"
+        :type="button.type"
+        plain
+        inline
+        size="small"
         :key="index"
         @click="button.handler">
         {{button.text}}
@@ -50,9 +53,9 @@ export default {
   },
 
   data() {
-    const pre = '//manhattan.didistatic.com/static/manhattan/mfd/result-page/'
+    const pre = '//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/'
     const data = {
-      actualImgUrl: this.imgUrl || `${pre}${this.type}`,
+      actualImgUrl: this.imgUrl || `${pre}${this.type}.png`,
       actualText:
         this.text ||
         {
@@ -77,26 +80,21 @@ export default {
   flex-direction column
   width 100%
   height 100%
-  color color-text-base
   text-align center
 
   >img
-    width 220px
-    margin 20px
-    &.lost
-      height 241.9px
-    &.network
-      height 253.7px
-    &.empty
-      height 205.7px
+    width result-page-image-size
+    height result-page-image-size
+    margin 40px
 
   .text
-    margin 10px
-    font-size 30px
+    margin 20px
+    color result-page-title-color
+    font-size result-page-title-font-size
 
   .subtext
-    color color-text-caption
-    font-size 26px
+    color result-page-describe-color
+    font-size result-page-describe-font-size
 
   .buttons
     display flex

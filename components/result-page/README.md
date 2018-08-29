@@ -35,5 +35,5 @@ Vue.component(ResultPage.name, ResultPage)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |text | 按钮文字 | String | - | - |
-|type | 按钮样式类别 | String | `ghost` | 还可以选择`ghost-primary`，可参考`Button`控件 |
+|type | 按钮样式类别 | String | `default` | 可参考`Button` |
 |handler | 点击操作 | Function | - | 点击按钮后调用的方法 |

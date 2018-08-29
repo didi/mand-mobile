@@ -12,6 +12,23 @@ action-bar-button-gap = 22px
 action-bar-slot-height = button-height
 action-bar-zindex = 100
 
+// action-sheet
+action-sheet-height = 120px
+action-sheet-padding-h = h-gap-sl
+action-sheet-color = color-text-body
+action-sheet-color-highlight = color-primary
+action-sheet-color-cancel = color-text-minor
+action-sheet-font-size = font-caption-normal
+action-sheet-bg = color-bg-inverse
+action-sheet-disabled-opacity = opacity-disabled
+action-sheet-cancel-gap-bg = color-bg-base
+action-sheet-zindex = 1101
+
+// agree
+agree-fill = color-primary
+agree-fill-inverse = color-bg-disabled
+agree-disabled-opacity = opacity-disabled
+
 // bill
 bill-bg = color-bg-base
 bill-name-font-size = font-caption-large
@@ -49,57 +66,97 @@ button-small-font-size = font-body-large
 
 button-radius = radius-normal
 
-// icon
-icon-size-xs = 20px
-icon-size-sm = 24px
-icon-size-md = 32px
-icon-size-lg = 42px
+// captcha
+captcha-zindex = 1400
+captcha-title-color = color-text-base
+captcha-title-font-size = font-heading-normal
+captcha-color = color-text-caption
+captcha-font-size = font-body-large
+captcha-footer-font-size = font-minor-large
+captcha-error-color = #FF525D
+captcha-countbtn-gap = h-gap-lg
+captcha-btn-color = color-primary
 
+// cashier
+cashier-bg = color-bg-inverse
+cashier-choose-title-font-size = font-body-large // 支付标题
+cashier-choose-title-color = color-text-minor
+cashier-choose-amount-font-size = font-heading-large // 支付金额
+cashier-choose-amount-color = color-text-base
+cashier-choose-describe-font-size = font-minor-normal // 支付描述
+cashier-choose-describe-color = color-text-minor
+cashier-choose-channel-font-size = font-minor-large // 支付渠道
+cashier-choose-channel-color = color-text-minor
+cashier-choose-channel-icon-color = color-primary
+cashier-choose-more-font-size = font-minor-large // 更多支付方式
+cashier-choose-more-color = color-text-minor
 
-// notice-bar
-notice-bar-fill = rgba(89, 158, 248, .08)
-notice-bar-font-size = font-body-normal
-notice-bar-color = color-primary
-notice-bar-zindex = 1300
-notice-bar-border-radius = 32px
+// chart
+chart-line-color = #ccc
+chart-path-color = color-primary
+chart-text-color = color-text-minor
+chart-label-size = 22px
+chart-value-size = 20px
 
-// stepper
-stepper-fill = color-primary-background
-stepper-disabled-opacity = opacity-disabled
-stepper-color = color-text-base
-stepper-font-size = font-body-large
-stepper-input-font-size = font-body-normal
-stepper-height = 50px
-stepper-width-button = 54px
-stepper-width-input = 68px
-stepper-radius-button = 0
-stepper-radius-input = 0
+// checklist
+checklist-active-color = color-primary
 
-// steps
-steps-color = #ccc
-steps-color-active = color-primary
-steps-border = dotted 2px #ccc
-steps-border-active = solid 2px #ccc
-steps-size = 12px // icon size
-steps-size-active = 32px
-steps-text-color = color-text-base
-steps-text-font-size = font-minor-large
+// checkbox
+checkbox-color = color-text-base
+checkbox-font-size = font-caption-normal
+checkbox-min-width = 150px
+checkbox-space = h-gap-md
+checkbox-disabled-color = color-text-disabled
+checkbox-active-color = color-primary
+checkbox-active-border-color = color-primary
+checkbox-active-bg = alpha(color-primary, 0.05)
+checkbox-border-color = color-border-element
+checkbox-border-radius = radius-normal
 
-// tabs
-tab-font-size = font-body-large
-tab-text-color = color-text-minor
-tab-active-color = color-primary
-tab-bg = color-bg-base
-tab-height = 80px
-tab-ink-height = 3px
-tab-offset = h-gap-sl
+// codebox
+codebox-font-size = 50px
+codebox-width = 66px
+codebox-height = 70px
+codebox-gutter = 18px
+codebox-border-width = 2px
+codebox-border-color = color-border-element
+codebox-border-active-color = color-text-base
+codebox-color = color-text-base
+codebox-blink-color = color-text-base
+codebox-dot-color = color-text-base
+codebox-holder-space = h-gap-sm
+codebox-disabled-color = color-text-disabled
 
-// tag
-tag-color = color-primary
-tag-fillet-radius = radius-normal
-tag-large-font-size = font-body-normal
-tag-small-font-size = font-minor-normal
-tag-tiny-font-size = 12px
+// date-picker
+date-picker-font-size = font-caption-normal
+date-time-picker-font-size = font-body-large
+
+// dialog
+dialog-width = 606px
+dialog-radius = 8px
+dialog-title-font-size = 40px
+dialog-title-color = color-text-base
+dialog-text-font-size = font-body-large
+dialog-text-color = color-text-minor
+dialog-action-height = 100px
+dialog-action-font-size = font-caption-large
+dialog-action-border-color = color-border-base
+dialog-close-color = color-text-caption
+dialog-action-highlight-color = color-primary
+dialog-icon-size = 100px
+dialog-icon-fill = color-text-caption
+dialog-zindex = 1402
+
+// drop-menu
+drop-menu-height = 110px
+drop-menu-zindex = 1200
+drop-menu-bar-bg = color-bg-inverse
+drop-menu-bar-border-color = color-border-base
+drop-menu-list-bg = color-bg-inverse
+drop-menu-color = color-primary
+drop-menu-font-size = font-caption-normal
+drop-menu-font-weight = font-weight-medium
+drop-menu-disabled-opacity = opacity-disabled
 
 // field
 field-padding-h = h-gap-sl
@@ -135,6 +192,17 @@ field-item-label-plain-font-size = font-body-large
 field-item-content-plain-color = color-text-body
 field-item-content-plain-font-size = font-body-large
 
+// icon
+icon-size-xs = 20px
+icon-size-sm = 24px
+icon-size-md = 32px
+icon-size-lg = 42px
+
+// image-viewer
+image-viewer-zindex = 1001
+image-viewer-index-font-size = 32px
+image-viewer-index-bottom = 100px
+
 // input-item
 input-item-height = 100px
 input-item-title-width = 170px
@@ -154,154 +222,12 @@ input-item-placeholder = color-text-placeholder
 input-item-placeholder-highlight = color-primary
 input-item-icon = color-text-placeholder // delete icon
 
-// radio
-radio-color = color-text-highlight
-
-// checklist
-checklist-active-color = color-primary
-
-// checkbox
-checkbox-color = color-text-base
-checkbox-font-size = font-caption-normal
-checkbox-min-width = 150px
-checkbox-space = h-gap-md
-checkbox-disabled-color = color-text-disabled
-checkbox-active-color = color-primary
-checkbox-active-border-color = color-primary
-checkbox-active-bg = alpha(color-primary, 0.05)
-checkbox-border-color = color-border-element
-checkbox-border-radius = radius-normal
-
-// switch
-switch-fill = color-primary
-switch-fill-inverse = color-bg-disabled
-switch-handle-color = #FFF
-switch-item-color-disabled = opacity-disabled
-
-// agree
-agree-fill = color-primary
-agree-fill-inverse = color-bg-disabled
-agree-disabled-opacity = opacity-disabled
-
-// action-sheet
-action-sheet-height = 120px
-action-sheet-padding-h = h-gap-sl
-action-sheet-color = color-text-body
-action-sheet-color-highlight = color-primary
-action-sheet-color-cancel = color-text-minor
-action-sheet-font-size = font-caption-normal
-action-sheet-bg = color-bg-inverse
-action-sheet-disabled-opacity = opacity-disabled
-action-sheet-cancel-gap-bg = color-bg-base
-action-sheet-zindex = 1101
-
-// picker
-picker-padding-h = h-gap-sl
-picker-font-size = font-caption-normal
-picker-disabled-opacity = .2
-picker-color = color-text-disabled
-picker-color-active = color-text-highlight
-picker-font-weight-active = font-weight-medium
-picker-border-color = color-border-base
-picker-zindex = 1100
-
-// selector
-selector-disabled-opacity = .2
-selector-active-color = color-primary
-selector-zindex = 1102
-
-// dialog
-dialog-width = 606px
-dialog-radius = 8px
-dialog-title-font-size = 40px
-dialog-title-color = color-text-base
-dialog-text-font-size = font-body-large
-dialog-text-color = color-text-minor
-dialog-action-height = 100px
-dialog-action-font-size = font-caption-large
-dialog-action-border-color = color-border-base
-dialog-close-color = color-text-caption
-dialog-action-highlight-color = color-primary
-dialog-icon-size = 100px
-dialog-icon-fill = color-text-caption
-dialog-zindex = 1402
-
-// toast
-toast-fill = rgba(65, 72, 93, .77)
-toast-font-size = font-body-large
-toast-color = #fff
-toast-radius = radius-normal
-toast-padding = 20px 30px
-toast-zindex = 1501
-
-// tip
-tip-fill = rgba(65, 72, 93, .77)
-tip-font-size = font-minor-large
-tip-color = color-text-base-inverse
-tip-radius = 1000px
-tip-padding = 15px 32px
-tip-close-size = 32px
-tip-zindex = 1300
-tip-shadow = 0 5px 20px #C5CAD5
-
-// captcha
-captcha-zindex = 1400
-captcha-title-color = color-text-base
-captcha-title-font-size = font-heading-normal
-captcha-color = color-text-caption
-captcha-font-size = font-body-large
-captcha-footer-font-size = font-minor-large
-captcha-error-color = #FF525D
-captcha-countbtn-gap = h-gap-lg
-captcha-btn-color = color-primary
-
-// codebox
-codebox-font-size = 50px
-codebox-width = 66px
-codebox-height = 70px
-codebox-gutter = 18px
-codebox-border-width = 2px
-codebox-border-color = color-border-element
-codebox-border-active-color = color-text-base
-codebox-color = color-text-base
-codebox-blink-color = color-text-base
-codebox-dot-color = color-text-base
-codebox-holder-space = h-gap-sm
-codebox-disabled-color = color-text-disabled
-
-// chart
-chart-line-color = #ccc
-chart-path-color = color-primary
-chart-text-color = color-text-minor
-chart-label-size = 22px
-chart-value-size = 20px
-
-// popup
-popup-title-bar-bg = color-bg-base
-popup-title-bar-height = 120px
-popup-title-bar-height-large = 180px
-popup-title-bar-radius = 8px
-popup-title-bar-font-size-button = font-caption-large
-popup-title-bar-font-weight-button = font-weight-medium
-popup-title-bar-font-size-title = 40px
-popup-title-bar-font-size-describe = font-body-large
-popup-title-bar-color-title = color-text-base
-popup-title-bar-color-describe = color-text-caption
-popup-title-bar-color-button-left = color-text-minor
-popup-title-bar-color-button-right = color-text-highlight
-popup-mask-bg = color-mask
-popup-zindex = 1000
-
-// drop-menu
-drop-menu-height = 110px
-drop-menu-zindex = 1200
-drop-menu-bar-bg = color-bg-inverse
-drop-menu-bar-border-color = color-border-base
-drop-menu-list-bg = color-bg-inverse
-drop-menu-color = color-primary
-drop-menu-font-size = font-caption-normal
-drop-menu-font-weight = font-weight-medium
-drop-menu-disabled-opacity = opacity-disabled
+// notice-bar
+notice-bar-fill = rgba(89, 158, 248, .08)
+notice-bar-font-size = font-body-normal
+notice-bar-color = color-primary
+notice-bar-zindex = 1300
+notice-bar-border-radius = 32px
 
 // number-keyboard
 number-keyboard-width = 100%
@@ -319,31 +245,113 @@ number-keyboard-key-confirm-color = color-text-base-inverse
 number-keyboard-key-bordr-color = color-border-base
 number-keyboard-zindex = 1403
 
+// picker
+picker-padding-h = h-gap-sl
+picker-font-size = font-caption-normal
+picker-disabled-opacity = .2
+picker-color = color-text-disabled
+picker-color-active = color-text-highlight
+picker-font-weight-active = font-weight-medium
+picker-border-color = color-border-base
+picker-zindex = 1100
+
+// popup
+popup-title-bar-bg = color-bg-base
+popup-title-bar-height = 120px
+popup-title-bar-height-large = 180px
+popup-title-bar-radius = 8px
+popup-title-bar-font-size-button = font-caption-large
+popup-title-bar-font-weight-button = font-weight-medium
+popup-title-bar-font-size-title = 40px
+popup-title-bar-font-size-describe = font-body-large
+popup-title-bar-color-title = color-text-base
+popup-title-bar-color-describe = color-text-caption
+popup-title-bar-color-button-left = color-text-minor
+popup-title-bar-color-button-right = color-text-highlight
+popup-mask-bg = color-mask
+popup-zindex = 1000
+
+// radio
+radio-color = color-text-highlight
+
+// result-page
+result-page-image-size = 260px
+result-page-title-font-size = font-caption-normal
+result-page-describe-font-size = font-body-large
+result-page-title-color = color-text-base
+result-page-describe-color = color-text-caption
+
+// selector
+selector-disabled-opacity = .2
+selector-active-color = color-primary
+selector-zindex = 1102
+
+// stepper
+stepper-fill = color-primary-background
+stepper-disabled-opacity = opacity-disabled
+stepper-color = color-text-base
+stepper-font-size = font-body-large
+stepper-input-font-size = font-body-normal
+stepper-height = 50px
+stepper-width-button = 54px
+stepper-width-input = 68px
+stepper-radius-button = 0
+stepper-radius-input = 0
+
+// steps
+steps-color = #ccc
+steps-color-active = color-primary
+steps-border = dotted 2px #ccc
+steps-border-active = solid 2px #ccc
+steps-size = 12px // icon size
+steps-size-active = 32px
+steps-text-color = color-text-base
+steps-text-font-size = font-minor-large
+
+// switch
+switch-fill = color-primary
+switch-fill-inverse = color-bg-disabled
+switch-handle-color = #FFF
+switch-item-color-disabled = opacity-disabled
+
+// tabs
+tab-font-size = font-body-large
+tab-text-color = color-text-minor
+tab-active-color = color-primary
+tab-bg = color-bg-base
+tab-height = 80px
+tab-ink-height = 3px
+tab-offset = h-gap-sl
+
 //tab-picker
 tab-picker-font-size = font-body-normal
 tab-picker-color = color-text-base
 tab-picker-highlight-color = color-primary
 tab-picker-min-height = 100px
 
-// date-picker
-date-picker-font-size = font-caption-normal
-date-time-picker-font-size = font-body-large
+// tag
+tag-color = color-primary
+tag-fillet-radius = radius-normal
+tag-large-font-size = font-body-normal
+tag-small-font-size = font-minor-normal
+tag-tiny-font-size = 12px
 
-// image-viewer
-image-viewer-zindex = 1001
-image-viewer-index-font-size = 32px
-image-viewer-index-bottom = 100px
+// tip
+tip-fill = rgba(65, 72, 93, .77)
+tip-font-size = font-minor-large
+tip-color = color-text-base-inverse
+tip-radius = 1000px
+tip-padding = 15px 32px
+tip-close-size = 32px
+tip-zindex = 1300
+tip-shadow = 0 5px 20px #C5CAD5
 
-// cashier
-cashier-bg = color-bg-inverse
-cashier-choose-title-font-size = font-body-large // 支付标题
-cashier-choose-title-color = color-text-minor
-cashier-choose-amount-font-size = font-heading-large // 支付金额
-cashier-choose-amount-color = color-text-base
-cashier-choose-describe-font-size = font-minor-normal // 支付描述
-cashier-choose-describe-color = color-text-minor
-cashier-choose-channel-font-size = font-minor-large // 支付渠道
-cashier-choose-channel-color = color-text-minor
-cashier-choose-channel-icon-color = color-primary
-cashier-choose-more-font-size = font-minor-large // 更多支付方式
-cashier-choose-more-color = color-text-minor
+// toast
+toast-fill = rgba(65, 72, 93, .77)
+toast-font-size = font-body-large
+toast-color = #fff
+toast-radius = radius-normal
+toast-padding = 20px 30px
+toast-zindex = 1501
+
+
