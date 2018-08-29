@@ -25,6 +25,7 @@ Vue.component(Button.name, Button)
 |size|-|String|`large`|`large/small`|
 |plain|-|Boolean|`false`|-|
 |round|-|Boolean|`false`|-|
+|inline|-|Boolean|`false`|-|
 |icon|-|String|-|refer to `Icon` for optional values|
 |inactive|-|Boolean|`false`|The button is not clickable which is inactive or disabled. The former is generally used for subjective factors such as invalid form validation, and the latter is used for objective factors such as no permission or no inventory.|
 

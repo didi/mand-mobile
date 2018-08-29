@@ -33,7 +33,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'primary', // default, primary, warning, disabled, link
+      default: 'default', // default, primary, warning, disabled, link
     },
     icon: {
       type: String,
