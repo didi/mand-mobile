@@ -29,7 +29,7 @@ vue invoke mand
 npm install mand-mobile --save
 ```
 
-##### CDN
+##### 浏览器引入
 
 在浏览器中使用`script`和`link`标签直接引入文件，并使用全局变量 `window['mand-mobile']`
 
