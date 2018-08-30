@@ -70,7 +70,7 @@
           case 'right':
             return 'slide-left'
           default:
-            return 'fade'
+            return 'fade' // fade/fade-bounce/fade-slide
         }
       },
     },
@@ -264,10 +264,29 @@
     right 0
     top 0
 
+  /*
+   **************
+   * TRANSITION *
+   **************
+   */
   .fade-enter-active, .fade-leave-active
     transition opacity .3s
   .fade-enter, .fade-leave-to, .fade-leave-active
     opacity 0
+
+  .fade-bounce-leave-active
+    transition all .2s
+  .fade-bounce-enter-active
+    animation bounce-in .3s
+  .fade-bounce-enter, .fade-bounce-leave-to
+    opacity 0
+    transform translate(-50%, -50%) scale(0.5)
+
+  .fade-slide-enter-active, .fade-slide-leave-active
+    transition all .3s
+  .fade-slide-enter, .fade-slide-leave-to
+    opacity 0
+    transform translate(-50%, -70%) !important
 
   .slide-up-enter-active, .slide-up-leave-active, .slide-down-enter-active, .slide-down-leave-active, .bottom .show
     transform translateY(0)
@@ -295,4 +314,21 @@
     transform translateX(-70%)
   .slide-right-leave-active
     transform translateX(-100%)
+
+  /*
+   *************
+   * ANIMATION *
+   *************
+   */
+  @keyframes bounce-in
+    0%
+      transform translate(-50%, -50%) scale(1)
+    1%
+      transform translate(-50%, -50%) scale(0.5)
+    45%
+      transform translate(-50%, -50%) scale(1.05)
+    80%
+      transform translate(-50%, -50%) scale(0.95)
+    100%
+      transform translate(-50%, -50%) scale(1)
 </style>
