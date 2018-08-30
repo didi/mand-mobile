@@ -286,7 +286,7 @@
     transition all .3s
   .fade-slide-enter, .fade-slide-leave-to
     opacity 0
-    transform translate(-50%, -70%) !important
+    transform translate(-50%, calc(-50% - 20px)) !important
 
   .slide-up-enter-active, .slide-up-leave-active, .slide-down-enter-active, .slide-down-leave-active, .bottom .show
     transform translateY(0)
