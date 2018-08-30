@@ -1,23 +1,24 @@
 <template>
-  <div class="md-landscape">
+  <div class="md-landscape" :class="{'is-full': fullScreen}">
 		<md-popup
       v-model="isLandscapeShow"
       :mask-closable="maskClosable"
       prevent-scroll
-      :prevent-scroll-exclude="scroll ? '.content' : null"
-      :has-mask="hasMask"
+      :prevent-scroll-exclude="scroll ? '.landscape-content' : null"
+      :has-mask="!fullScreen && hasMask"
+      :transition="fullScreen ? 'fade' : 'fade-slide'"
       @input="$emit('input', false)"
       @show="$emit('show')"
       @hide="$emit('hide')">
-      <div class="content" :class="{scroll}">
+      <div class="landscape-content" :class="{scroll}">
         <slot></slot>
       </div>
     </md-popup>
-    <div class="close"
+    <div class="landscape-close"
       @click="$_close"
       v-show="isLandscapeShow"
-      :class="{dark: !hasMask}">
-      <md-icon name="cross" size="lg"></md-icon>
+      :class="{dark: !hasMask || fullScreen}">
+      <md-icon name="cross"></md-icon>
     </div>
   </div>
 </template>
@@ -39,6 +40,10 @@ export default {
       default: false,
     },
     scroll: {
+      type: Boolean,
+      default: false,
+    },
+    fullScreen: {
       type: Boolean,
       default: false,
     },
@@ -75,13 +80,28 @@ export default {
 
 <style lang="stylus">
 .md-landscape
-  .content
+  &.is-full
+    .md-popup.center .md-popup-box
+      absolute-pos()
+      transform none
+      background landscape-fullscreen-bg
+    .landscape-content
+      width 100%
+      height 100%
+
+  .md-popup.with-mask, .md-popup .md-popup-box
+    z-index landscape-zindex
+
+  .landscape-content
+    display flex
+    justify-content center
+    align-items center
     position relative
-    min-width 540px
-    min-height 500px
-    font-size 28px
+    width landscape-width
+    font-size font-body-large
     text-align center
-    border-radius 4px
+    border-radius landscape-radius
+    overflow hidden
     >img
       width 100%
       height 100%
@@ -89,15 +109,17 @@ export default {
     &.scroll
       max-height 700px
       overflow-y scroll
-  .close
+  .landscape-close
     position fixed
-    z-index 1000
+    z-index landscape-zindex
     left 0
     right 0
     bottom 10%
-    width 40px
-    margin 0 auto
     color color-text-base-inverse
+    text-align center
     &.dark
       color color-text-base
+    .md-icon
+      width 50px
+      height 50px
 </style>
