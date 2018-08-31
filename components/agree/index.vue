@@ -10,9 +10,16 @@
         value ? 'checked' : ''
       ]"
       @click="$_onChange($event)">
+      <div class="checked-wrap">
+        <md-icon
+          name="circle-right"
+          :size="size">
+        </md-icon>
+      </div>
       <md-icon
-      :name="iconName"
-      :size="size"></md-icon>
+      name="circle"
+      :size="size">
+      </md-icon>
     </div>
     <div class="md-agree-content">
       <slot></slot>
@@ -47,12 +54,6 @@ export default {
     return {}
   },
 
-  computed: {
-    iconName() {
-      return this.value ? 'circle-right' : 'circle'
-    },
-  },
-
   methods: {
     // MARK: events handler, 如 $_onButtonClick
     $_onChange(event) {
@@ -69,14 +70,27 @@ export default {
 <style lang="stylus">
 .md-agree
   display flex
+  align-items center
   &.disabled
     opacity agree-disabled-opacity
   .md-agree-icon
+    position relative
     margin-right 10px
     flex-shrink 0
     color agree-fill-inverse
     &.checked
       color agree-fill
+      .checked-wrap
+        svg
+          transform scale(1)
+    .checked-wrap
+      position absolute
+      top 0
+      left 0
+      width 100%
+      svg
+        transform scale(0)
+        transition transform ease-in-out .1s
   .md-agree-content
     flex 1 1 0%
 </style>
