@@ -10,14 +10,14 @@ import PopupTitleBar from './popup-title-bar'
 import ActionBar from './action-bar'
 import ActionSheet from './action-sheet'
 import DropMenu from './drop-menu'
-import TabBar from './tab-bar'
 import Picker from './picker'
 import Selector from './selector'
 import Swiper from './swiper'
 import SwiperItem from './swiper-item'
 import Toast from './toast'
 import Tip from './tip'
-import Tabs from './tabs'
+import {Tabs, TabPane} from './tabs'
+import TabBar from './tab-bar'
 import Tag from './tag'
 import InputItem from './input-item'
 import Stepper from './stepper'
@@ -110,6 +110,7 @@ export const components = {
   ScrollViewMore,
   Bill,
   WaterMark,
+  TabPane,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -185,6 +186,7 @@ export {
   ScrollViewMore,
   Bill,
   WaterMark,
+  TabPane,
   /* @init<%${componentNameUpper},%> */
 }
 

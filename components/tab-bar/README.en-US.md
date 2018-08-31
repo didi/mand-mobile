@@ -18,30 +18,34 @@ Vue.component(TabBar.name, TabBar)
 
 ### API
 
-#### TabBar Props
+#### Tabbar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-| titles | array of titles of tab bar | Array | - | Passing in the array will render the component directly based on the contents of the array, or you can insert a customized title button directly into the control without using this property. This value is an array of strings while not using `scope-slot`; or an array of objects when using `scope-slot`, and each object is used as props for parent component|
-| show-ink-bar | display underline | Boolean | true | - |
-| ink-bar-length | the width of underline | Number | 70 | the percentage of the width of underline that in the label button, between `0-100` |
-| ink-bar-animate | enable underline animation | Boolean | true | - |
-| default-index | default activated label index | Number | 0 | - |
+|items|menus data|Array<{name: String, label: String, disabled: Boolean}>|-|-|
+| has-ink | display underline ink bar | Boolean | true | - |
+| ink-length | the width of ink bar | Number | 80 | the percentage width of ink bar, between `0-100` |
+| v-model | key of selected menu | String | - | - |
 
-#### TabBar Methods
+#### Tabbar Methods
 
-##### selectTab(index)
-select a tab
+##### reflow(index)
+relayout tabbar
 
-|Parameters | Description | Type|  Default |
-|----|-----|------|------|
-| index | index of tab | Number | - |
+#### Tabbar Events
 
-#### TabBar Events
-
-##### @indexChanged(index, preIndex)
-selected tab index changes
+##### @change(item, index)
+selected menu index changes
 
 |Props | Description | Type|
 |----|-----|------|
-| index | index of current selected tab | Number |
-| preIndex | index of previous selected tab | Number |
+| item | object of previous selected menu | Object |
+| index | index of current selected menu | Number |
+
+#### Tabbar Slot
+```javascript
+<md-tabbar>
+  <template slot="item" slot-scope="{ item, currentName, index, items }">
+
+  </template>
+</md-tabbar>
+```

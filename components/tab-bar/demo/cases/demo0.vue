@@ -1,8 +1,9 @@
 <template>
-  <div class="md-example-child md-example-child-tab-bar md-example-child-tab-bar-0">
+  <div class="md-example-child md-example-child-tabs md-example-child-tab-bar-0">
     <md-tab-bar
-      :titles="titles"
-    ></md-tab-bar>
+      v-model="current"
+      :items="items"
+    />
   </div>
 </template>
 
@@ -15,7 +16,8 @@ export default {
   },
   data() {
     return {
-      titles: ['第一', '第二', '第三', '第四'],
+      current: 1,
+      items: [{name: 1, label: '标签1'}, {name: 2, label: '标签2'}],
     }
   },
 }

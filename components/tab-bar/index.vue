@@ -1,182 +1,289 @@
-<script>
+<template>
+  <nav class="md-tab-bar">
+    <div class="md-tab-bar-inner" ref="wrapper">
+      <template v-if="scrollable">
+        <div class="md-tab-bar-start" v-show="maskStartShown"></div>
+        <div class="md-tab-bar-end" v-show="maskEndShown"></div>
+      </template>
+      <md-scroll-view
+        :scrolling-x="true"
+        :scrolling-y="false"
+        @scroll="$_onScroll"
+        ref="scroller"
+      >
+        <div class="md-tab-bar-list" :style="{width: contentW + 'px'}">
+          <a
+            class="md-tab-bar-item"
+            :class="{
+              'is-active': currentName === item.name,
+              'is-disabled': !!item.disabled
+            }"
+            v-for="(item, index) in items"
+            :key="item.name"
+            ref="items"
+            @click="$_onClick(item)"
+          >
+            <slot
+              name="item"
+              :item="item"
+              :items="items"
+              :index="index"
+              :currentName="currentName"
+            >{{ item.label }}</slot>
+          </a>
+        </div>
+        <span
+          class="md-tab-bar-ink"
+          :class="{
+            'is-disabled': currentTab && currentTab.disabled
+          }"
+          v-if="hasInk"
+          :style="{
+            width: inkWidth + 'px',
+            transform: 'translateX(' + inkPos + 'px)',
+          }"
+        ></span>
+      </md-scroll-view>
+    </div>
+  </nav>
+</template>
+
+<script>import ScrollView from '../scroll-view'
+
 export default {
   name: 'md-tab-bar',
 
+  components: {
+    [ScrollView.name]: ScrollView,
+  },
+
   props: {
-    titles: {
+    value: {
+      type: [String, Number],
+      default: '',
+    },
+    items: {
       type: Array,
-      default () {
-        return []
-      }
+      default: () => [],
     },
-    showInkBar: {
+    hasInk: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    inkBarLength: {
+    inkLength: {
       type: Number,
-      default: 70,
-      validator (length) {
-        return length > 0 && length <= 100
-      }
+      default: 100,
     },
-    inkBarAnimate: {
-      type: Boolean,
-      default: true
-    },
-    defaultIndex: {
-      type: Number,
-      default: 0
-    },
-    forceUseArray: {
-      type: Boolean,
-      default: undefined
+  },
+
+  data() {
+    return {
+      currentName: '',
+      wrapperW: 0,
+      contentW: 0,
+      inkWidth: 0,
+      inkPos: 0,
+      maskStartShown: false,
+      maskEndShown: true,
     }
   },
 
-  data () {
-    return {
-      activeIndex: this.defaultIndex
-    }
+  computed: {
+    scrollable() {
+      return this.contentW > this.wrapperW
+    },
+    currentIndex() {
+      for (let i = 0, len = this.items.length; i < len; i++) {
+        if (this.items[i].name === this.currentName) {
+          return i
+        }
+      }
+    },
+    currentTab() {
+      if (this.currentIndex) {
+        return this.items[this.currentIndex]
+      }
+    },
   },
 
   watch: {
-    defaultIndex (val) {
-      this.selectTab(val)
+    value: {
+      immediate: true,
+      handler(val) {
+        if (val !== this.currentName) {
+          this.currentName = val
+        }
+      },
     },
-    activeIndex (val, preVal) {
-      this.$emit('indexChanged', val, preVal)
-    }
+    inkWidth() {
+      /* istanbul ignore next */
+      this.$nextTick(function() {
+        this.reflow()
+      })
+    },
+    items() {
+      this.$nextTick(function() {
+        this.reflow()
+      })
+    },
+    currentIndex() {
+      this.$nextTick(function() {
+        this.reflow()
+      })
+    },
   },
 
-  mounted () {
-    this.selectTab(this.activeIndex)
+  created() {
+    if (this.currentName === '' && this.items.length) {
+      this.currentName = this.items[0].name
+      this.$emit('change', this.items[0], 0)
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.reflow)
+    this.reflow()
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.reflow)
   },
 
   methods: {
-    // MARK: private methods
-    $_titleList () {
-      if (this.titles && this.titles.length) {
-        return this.titles
-      } else if (this.$slots.default && this.$slots.default.length) {
-        return this.$slots.default.filter(el => el.tag)
+    // MARK: private events
+    $_onScroll({scrollLeft}) /* istanbul ignore next */ {
+      if (scrollLeft > 0) {
+        this.maskStartShown = true
       } else {
-        return []
+        this.maskStartShown = false
+      }
+
+      if (scrollLeft >= this.$refs.scroller.contentW - this.$refs.scroller.containerW) {
+        this.maskEndShown = false
+      } else {
+        this.maskEndShown = true
       }
     },
-
-    // MARK: public methods
-    selectTab (i) {
-      const index = parseInt(i)
-      if (index >= 0 && index < this.$_titleList().length) {
-        this.activeIndex = index
+    $_onClick(item) {
+      if (item.disabled) {
+        return
       }
-    }
-  },
+      this.currentName = item.name
+      this.$emit('input', item.name)
+      this.$emit('change', item, this.currentIndex)
+    },
+    // MARK: public methods
+    reflow() {
+      if (!this.$refs.items || this.$refs.items.length === 0) {
+        return
+      }
 
-  render (h) {
-    const self = this
-    let tabTitles = []
-    const mapper = (item, index) => {
-      return h(
-        'a',
-        {
-          class: {
-            'md-tab-title': true,
-            active: this.activeIndex === index
-          },
-          on: {
-            click: () => {
-              self.selectTab(index)
-            }
-          }
-        },
-        [
-          (this.forceUseArray !== undefined ? this.forceUseArray : !!this.$scopedSlots.title) ? this.$scopedSlots.title(item) : item
-        ]
-      )
-    }
+      this.wrapperW = this.$refs.wrapper.offsetWidth
 
-    tabTitles = this.$_titleList().map(mapper)
-
-    const innerElements = [...tabTitles]
-
-    if (this.showInkBar) {
-      const padPercent = (100 - this.inkBarLength) / 2
-      const width = this.inkBarLength / tabTitles.length
-      const pad = padPercent / tabTitles.length
-      const offset = ((this.activeIndex * 100) / tabTitles.length) + pad
-
-      innerElements.push(h(
-        'div',
-        {
-          class: {
-            'ink-bar': true,
-            'animate': this.inkBarAnimate
-          },
-          style: {
-            width: `${width}%`,
-            left: `${offset}%`
-          }
+      let contentWidth = 0
+      for (let i = 0, len = this.items.length; i < len; i++) {
+        contentWidth += this.$refs.items[i].offsetWidth
+      }
+      this.contentW = contentWidth
+      this.$refs.scroller.reflowScroller()
+      this.$nextTick(() => {
+        if (!this.$refs.items || !this.$refs.items[this.currentIndex]) {
+          return
         }
-      ))
-    }
 
-    return h('nav', { staticClass: 'md-tab-bar' },
-      [
-        h('div', { staticClass: 'md-tab-bar-inner' },
-          [
-            h('div', { staticClass: 'md-tab-titles-wrapper' },
-              innerElements
-            )
-          ]
-        )
-      ]
-    )
-  }
+        const target = this.$refs.items[this.currentIndex]
+        this.inkWidth = target.offsetWidth * this.inkLength / 100
+        this.inkPos = target.offsetLeft + (target.offsetWidth - this.inkWidth) / 2
+
+        const prevTarget = this.$refs.items[this.currentIndex - 1]
+        const nextTarget = this.$refs.items[this.currentIndex + 1]
+
+        const wrapperRect = this.$refs.wrapper.getBoundingClientRect()
+        const prevTargetRect = prevTarget && prevTarget.getBoundingClientRect()
+        const nextTargetRect = nextTarget && nextTarget.getBoundingClientRect()
+
+        /* istanbul ignore next */
+        if (prevTargetRect && prevTargetRect.left < wrapperRect.left) {
+          this.$refs.scroller.scrollTo(prevTarget.offsetLeft, 0, true)
+        } else if (nextTargetRect && nextTargetRect.right > wrapperRect.right) {
+          this.$refs.scroller.scrollTo(nextTarget.offsetLeft + nextTarget.offsetWidth - this.wrapperWidth, 0, true)
+        }
+      })
+    },
+  },
 }
-</script>
+</script>
 
 <style lang="stylus">
 .md-tab-bar
+  padding-left tab-offset
+  padding-right tab-offset
+  background-color tab-bg
+
+.md-tab-bar-inner
   position relative
-  z-index tab-zindex
-  height tab-height
-  font-size tab-font-size
+  width 100%
+  line-height 0
+
+.md-tab-bar-list
+  display flex
+  justify-content space-between
+  min-width 100%
+
+.md-tab-bar-item
+  flex-shrink 0
+  position relative
+  display inline-flex
+  align-items center
+  justify-content center
   color tab-text-color
-  background tab-bg
+  font-size tab-font-size
+  height tab-height
+  padding 0 tab-item-gap
+  margin 0 auto
+  box-sizing border-box
+  &.is-active
+    color tab-active-color
+  &.is-disabled
+    color tab-disabled-color
 
-  .md-tab-bar-inner
-    width 100%
-    height tab-height
-    overflow auto
-    -webkit-overflow-scrolling touch
-    &::-webkit-scrollbar
-      display none
+.md-tab-bar-ink
+  position absolute
+  bottom 0
+  left 0
+  display block
+  height tab-ink-height
+  background-color tab-active-color
+  transition all 300ms
+  &.is-disabled
+    background-color tab-disabled-color
 
-  .md-tab-titles-wrapper
-    position relative
-    height 100%
-    min-width 100%
-    display inline-flex
-    justify-content space-around
-
-  .md-tab-title
-    display inline-flex
-    justify-content center
-    align-items center
-    flex 1 0 100px
-    min-width 100px
-    height 100%
-    text-align center
-    &.active
-      color tab-color
-
-  .ink-bar
+.md-tab-bar-start,
+.md-tab-bar-end
+  position absolute
+  top 0
+  left 0
+  width 14px
+  height tab-height
+  overflow hidden
+  &::after
+    content ''
+    display block
     position absolute
-    bottom 0
-    height tab-ink-bar-height
-    background tab-color
-    &.animate
-      transition left 0.3s
+    left -14px
+    top 50%
+    width 14px
+    margin-top 0 - tab-height * 0.4
+    height tab-height * 0.8
+    border-radius 50%
+    box-shadow: -1px 0 12px 0 rgba(0,0,0,0.2)
+.md-tab-bar-end
+  left auto
+  right 0
+  transform rotate(180deg)
+
+.md-tab-bar
+  .md-scroll-view
+    background none
+  .scroll-view-container
+    display inline-flex
+    min-width 100%
 </style>

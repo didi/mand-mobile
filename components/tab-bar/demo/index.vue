@@ -17,14 +17,9 @@ import Demo2 from './cases/demo2'
 import Demo3 from './cases/demo3'
 import Demo4 from './cases/demo4'
 import Demo5 from './cases/demo5'
-import Demo6 from './cases/demo6'
-import Demo7 from './cases/demo7'
-import Demo8 from './cases/demo8'
-import Demo9 from './cases/demo9'
-import Demo10 from './cases/demo10'
 
 export default {
-  ...createDemoModule('tab-bar', [Demo0, Demo1, Demo2, Demo3, Demo4, Demo5, Demo6, Demo7, Demo8, Demo9, Demo10]),
+  ...createDemoModule('tab-bar', [Demo0, Demo1, Demo2, Demo3, Demo4, Demo5]),
 }
 </script>
 

@@ -49,6 +49,7 @@ block()
   position relative
   min-height 100%
   max-width 750px
+  font-size 28px
   font-size-adjust none
   -webkit-text-size-adjust 100%
   -webkit-overflow-scrolling touch
@@ -91,10 +92,10 @@ block()
       &.name-zh
         top 9px
         margin-left h-gap-sm
-        font-size font-body-large 
+        font-size font-body-large
         font-weight font-weight-normal
         color color-text-minor
-        
+
   .md-example-wrapper
     position relative
     z-index 3
@@ -122,7 +123,7 @@ block()
         .md-example-describe
           block()
           margin-top 15px
-          font-size font-minor-large 
+          font-size font-minor-large
           font-weight 300
           color color-text-minor
         .md-example-content
