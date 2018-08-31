@@ -1,57 +1,115 @@
 <template>
   <div class="md-example-child md-example-child-tab-picker md-example-child-tab-picker-0">
-    <md-button @click="showTabPicker">普通多频道</md-button>
+    <md-field title="地址">
+      <md-field-item
+        :title="addressStr"
+        arrow="arrow-right"
+        @click="show = !show"
+      />
+    </md-field>
     <md-tab-picker
-      v-model="isTabPickerShow"
-      :title="title"
-      :data="pickerData"
-      ok-text="确认"
-      cancel-text="取消"
-      @confirm="onTabPickerConfirm"
-      @change="onTabPickerChange"
-    ></md-tab-picker>
+      title="请选择"
+      describe="请选择您所在的省份、城市、区县"
+      v-model="show"
+      :data="data"
+      @change="handleChange"
+    />
   </div>
 </template>
 
-<script>import {Button, TabPicker} from 'mand-mobile'
-import pickerData from 'mand-mobile/components/tab-picker/demo/data/no-cascade'
+<script>import {Field, FieldItem, TabPicker} from 'mand-mobile'
 
 export default {
-  name: 'tab-picker-demo',
-  /* DELETE */
-  title: '普通多频道',
-  titleEnUS: 'Normal multi-channel',
-  height: 500,
-  /* DELETE */
+  name: 'tab-bar-demo',
   components: {
+    [Field.name]: Field,
+    [FieldItem.name]: FieldItem,
     [TabPicker.name]: TabPicker,
-    [Button.name]: Button,
   },
-
   data() {
     return {
-      isTabPickerShow: false,
-      title: '选择title',
-      pickerData,
+      show: false,
+      address: [],
+      data: {
+        name: 'province',
+        label: '省',
+        options: [
+          {
+            value: 'pk',
+            label: '北京',
+            children: {
+              name: 'block',
+              label: '区',
+              options: [
+                {
+                  value: 'hd',
+                  label: '海淀',
+                },
+                {
+                  value: 'cp',
+                  label: '昌平',
+                },
+                {
+                  value: 'cy',
+                  label: '朝阳',
+                },
+              ],
+            },
+          },
+          {
+            value: 'sx',
+            label: '四川',
+            children: {
+              name: 'city',
+              label: '市',
+              options: [
+                {
+                  value: 'cd',
+                  label: '成都市',
+                  children: {
+                    name: 'block',
+                    label: '区',
+                    options: [
+                      {
+                        value: 'gx',
+                        label: '高新区',
+                      },
+                      {
+                        value: 'qy',
+                        label: '青羊区',
+                      },
+                    ],
+                  },
+                },
+                {
+                  value: 'my',
+                  label: '绵阳市',
+                  children: {
+                    name: 'block',
+                    label: '区',
+                    options: [
+                      {
+                        value: 'jn',
+                        label: '金牛区',
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
     }
   },
-
+  computed: {
+    addressStr() {
+      return this.address.map(item => item.label).join(' ') || '请选择联系地址'
+    },
+  },
   methods: {
-    showTabPicker() {
-      this.isTabPickerShow = true
-    },
-    onTabPickerConfirm(selected) {
-      if (selected) {
-        console.log(`[Mand Mobile] TabPicker 确认选择项: ${JSON.stringify(selected)}`)
-      } else {
-        console.warn('[Mand Mobile] TabPicker 点击确认按钮时未选择到任何确定项')
-      }
-    },
-    onTabPickerChange(select) {
-      console.log(
-        `[Mand Mobile] TabPicker 第${select.selectTab}列, 第${select.selectIndex}项: label: ${select.selectItem
-          .label}, value: ${select.selectItem.value}`,
-      )
+    handleChange(data) {
+      this.address = data
     },
   },
 }

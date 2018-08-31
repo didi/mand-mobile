@@ -7,7 +7,11 @@
       }
     }]
   ],
-  "plugins": ["transform-object-rest-spread", "syntax-dynamic-import"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "syntax-dynamic-import",
+    "transform-vue-jsx"
+  ],
   "env": {
     "test": {
       "presets": [["env", {

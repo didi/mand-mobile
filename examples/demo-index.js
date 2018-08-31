@@ -42,4 +42,6 @@ export const CheckGroup =  r => require.ensure([], () => r(require('../component
 export const CheckList =  r => require.ensure([], () => r(require('../components/check-list/demo')), 'check-list')
 export const CheckBox =  r => require.ensure([], () => r(require('../components/check-box/demo')), 'check-box')
 export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
-export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')
+export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
+/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
