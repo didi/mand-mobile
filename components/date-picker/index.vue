@@ -25,6 +25,7 @@
 import Picker from '../picker'
 import {
   toObject,
+  toArray,
   warn
 } from '../_util'
 
@@ -109,19 +110,9 @@ export default {
       type: String,
       default: ''
     },
-    halfDayText: {
-      type: Array,
-      default () {
-        return ['上午', '下午']
-      }
-    },
     textRender: {
       type: [Function, String],
       default: ''
-    },
-    isTwelveHours: {
-      type: Boolean,
-      default: false
     },
     title: {
       type: String
@@ -150,7 +141,7 @@ export default {
       oldColumnData: null,
       columnDataDefault: [],
       columnDataGenerator: [],
-      disabledCascadeComlumnIndex: [] // columns do not need cascading 
+      disabledHalfDay: [],
     }
   },
 
@@ -166,6 +157,12 @@ export default {
     },
     currentDate () {
       return this.currentDateIns.getDate()
+    },
+    currentHours () {
+      return this.currentDateIns.getHours()
+    },
+    currentMinutes () {
+      return this.currentDateIns.getMinutes()
     }
   },
 
@@ -213,6 +210,7 @@ export default {
       this.columnData = []
       this.columnDataDefault = []
       this.columnDataGenerator = []
+      this.disabledHalfDay = []
     },
     $_initColumnData (columnIndex, defaultDate = [], isSetColumn = true) {
       const columnData = this.columnData
@@ -256,12 +254,10 @@ export default {
           break
         case 'time':
           this.$_initColumnDataGeneratorForTime(defaultDate)
-          this.disabledCascadeComlumnIndex = [0, 1, 2]
           break
         case 'datetime':
           this.$_initColumnDataGeneratorForDate(defaultDate)
           this.$_initColumnDataGeneratorForTime(defaultDate)
-          this.disabledCascadeComlumnIndex = [2, 3, 4, 5]
           break
         default:
           this.$_initColumnDataGeneratorForCustom(defaultDate)
@@ -286,31 +282,14 @@ export default {
         this.$_generateHourData,
         this.$_generateMinuteData
       ])
-
-      if (this.isTwelveHours) {
-        this.columnDataGenerator.push(this.$_generateAPData)
-        if (defaultDate) {
-          const hourInfo = this.$_transHourTo12(defaultDate.getHours())
-          this.columnDataDefault = this.columnDataDefault.concat([
-            hourInfo.hour,
-            defaultDate.getMinutes(),
-            hourInfo.ap
-          ])
-        }
-      } else {
-        this.columnDataDefault = defaultDate ? this.columnDataDefault.concat([
-          defaultDate.getHours(),
-          defaultDate.getMinutes()
-        ]) : []
-      }
+      this.columnDataDefault = defaultDate ? this.columnDataDefault.concat([
+        defaultDate.getHours(),
+        defaultDate.getMinutes()
+      ]) : []
     },
     $_initColumnDataGeneratorForCustom (defaultDate) {
-      let hourInfo
-      this.customTypes.forEach((type, index) => {
+      this.customTypes.forEach(type => {
         type = TYPE_FORMAT[type] || type
-        if (type === 'Date' || type === 'Hour' || type === 'Minute') {
-          this.disabledCascadeComlumnIndex.push(index)
-        }
         this.columnDataGenerator.push(this[`$_generate${type}Data`])
 
         if (defaultDate) {
@@ -320,18 +299,9 @@ export default {
             value += 1
           }
 
-          if (this.isTwelveHours && type === 'Hour') {
-            hourInfo = this.$_transHourTo12(value)
-            value = hourInfo.hour
-          }
           this.columnDataDefault.push(value)
         }
       })
-
-      if (this.isTwelveHours && ~this.customTypes.indexOf('Hour')) {
-        this.columnDataGenerator.push(this.$_generateAPData)
-        this.columnDataDefault.push(hourInfo.ap)
-      }
     },
     $_getDefaultDate () {
       const defaultDate = this.defaultDate
@@ -364,13 +334,13 @@ export default {
     $_generateMonthData (year = this.currentYear) {
       let start, end
 
-      if (this.minDate && this.minDate.getFullYear() === year) {
+      if (this.$_isDateTimeEqual(this.minDate, year)) {
         start = this.minDate.getMonth() + 1
       } else {
         start = 1
       }
 
-      if (this.maxDate && this.maxDate.getFullYear() === year) {
+      if (this.$_isDateTimeEqual(this.maxDate, year)) {
         end = this.maxDate.getMonth() + 1
       } else {
         end = 12
@@ -378,20 +348,19 @@ export default {
 
       return this.$_generateData(start, end, 'Month', this.unitText[1] || '')
     },
-    $_generateDateData (year = this.currentYear, month = this.currentMonth) {
+    $_generateDateData (
+      year = this.currentYear,
+      month = this.currentMonth
+    ) {
       let start, end
 
-      if (this.minDate &&
-          this.minDate.getFullYear() === year &&
-          this.minDate.getMonth() + 1 === month) {
+      if (this.$_isDateTimeEqual(this.minDate, year, month)) {
         start = this.minDate.getDate()
       } else {
         start = 1
       }
-      
-      if (this.maxDate &&
-          this.maxDate.getFullYear() === year &&
-          this.maxDate.getMonth() + 1 === month) {
+
+      if (this.$_isDateTimeEqual(this.maxDate, year, month)) {
         end = this.maxDate.getDate()
       } else {
         end = new Date(year, month, 0).getDate()
@@ -409,57 +378,57 @@ export default {
 
       return dateData
     },
-    $_generateHourData () {
-      let start = this.minDate ? this.minDate.getHours() : 0
-      let end = this.maxDate ? this.maxDate.getHours() : 23
+    $_generateHourData (
+      year = this.currentYear,
+      month = this.currentMonth,
+      date = this.currentDate
+    ) {
+      let start, end
+      
+      if (this.$_isDateTimeEqual(this.minDate, year, month, date)) {
+        start = this.minDate.getHours()
+      } else {
+        start = 0
+      }
 
-      if (end < start) {
+      if (this.$_isDateTimeEqual(this.maxDate, year, month, date)) {
+          end = this.maxDate.getHours()
+      } else {
         end = 23
       }
 
-      if (this.isTwelveHours) {
-        start = this.$_transHourTo12(start).hour
-        end = this.$_transHourTo12(end).hour
+      if (end < start) {
+        end = 23
       }
       
       if (start > end) {
         warn('MinDate Hour should be earlier than MaxDate')
         return
       }
-
-      const hoursData = this.$_generateData(start, end, 'Hour', this.unitText[3] || '', 1, arguments)
-
-      if (this.isTwelveHours && hoursData[0].value === 0) {
-        let text
-        if (this.textRender) {
-          text = this.textRender.apply(this, [
-            TYPE_FORMAT_INVERSE['Hour'],
-            ...arguments,
-            12
-          ])
-        }
-        hoursData[0].text = text || `12${this.unitText[3] || ''}`
+  
+      return this.$_generateData(start, end, 'Hour', this.unitText[3] || '', 1, arguments)
+    },
+    $_generateMinuteData (
+      year = this.currentYear,
+      month = this.currentMonth,
+      date = this.currentDate,
+      hour = this.currentHours
+    ) {
+      let start, end
+      
+      if (this.$_isDateTimeEqual(this.minDate, year, month, date, hour)) {
+        start = this.minDate.getMinutes()
+      } else {
+        start = 0
       }
 
-      return hoursData
-    },
-    $_generateMinuteData () {
-      const start = this.minDate ? this.minDate.getMinutes() : 0
-      const end = this.maxDate ? this.maxDate.getMinutes() : 59
+      if (this.$_isDateTimeEqual(this.maxDate, year, month, date, hour)) {
+          end = this.maxDate.getMinutes()
+      } else {
+        end = 59
+      }
+
       return this.$_generateData(start, end, 'Minute', this.unitText[4] || '', this.minuteStep, arguments)
-    },
-    $_generateAPData () {
-      return [{
-        text: this.halfDayText[0],
-        type: 'HalfDay',
-        typeFormat: 'HalfDay',
-        value: 0
-      }, {
-        text: this.halfDayText[1],
-        type: 'HalfDay',
-        typeFormat: 'HalfDay',
-        value: 1
-      }]
     },
     $_generateData (from, to, type, unit, step = 1, args) {
       let count = from
@@ -486,6 +455,37 @@ export default {
 
       return data
     },
+    /**
+     * Determine whether year, month, date, etc of 
+     * the current date are equal to the given value
+     * @params Date
+     * @params year, month, date ...
+     */
+    $_isDateTimeEqual () {
+      const methods = Object.keys(TYPE_METHODS).map(key => {
+        return TYPE_METHODS[key]
+      })
+      const args = toArray(arguments)
+      const date = args[0]
+
+      let res = true
+      if (!date) {
+        return res = false
+      }
+
+      for (let i = 1; i < args.length; i++) {
+        const methodName = methods[i - 1]
+        const curVal = date[methodName]() + Number(methodName === 'getMonth')
+        const targetVal = +args[i]
+
+        if (curVal !== targetVal) {
+          res = false
+          break
+        }
+      }
+
+      return res
+    },
     $_transHourTo12 (hour) {
       if (hour < 12) {
         return {
@@ -511,11 +511,6 @@ export default {
     $_onPickerChange (columnIndex, itemIndex, value) {
       this.$emit('change', columnIndex, itemIndex, value)
 
-      // column of time parts do not need cascading
-      if (~this.disabledCascadeComlumnIndex.indexOf(columnIndex)) {
-        return
-      }
-
       if (columnIndex < this.columnData.length - 1) {
         this.$_initColumnData(columnIndex + 1)
       }
@@ -531,11 +526,6 @@ export default {
     getFormatDate (format = 'yyyy-MM-dd hh:mm') {
       const columnValues = this.picker.getColumnValues()
       let hourTo24 = false
-
-      if (this.isTwelveHours) {
-        const halfHour = [...columnValues].splice(columnValues.length - 1, 1)[0]
-        halfHour.value && (hourTo24 = true)
-      }
 
       columnValues.forEach(item => {
         /* istanbul ignore if */
