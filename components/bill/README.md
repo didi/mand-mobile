@@ -3,7 +3,7 @@ title: Bill 票据
 preview: https://didi.github.io/mand-mobile/examples/#/bill
 ---
 
-Electronic bill
+电子账单或票据
 
 ### 引入
 

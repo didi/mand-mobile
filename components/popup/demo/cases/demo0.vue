@@ -67,8 +67,8 @@
 export default {
   name: 'popup-demo',
   /* DELETE */
-  title: '不同位置弹出',
-  titleEnUS: 'Pop up from different positions',
+  title: '不同位置',
+  titleEnUS: 'Different positions',
   height: 500,
   /* DELETE */
   components: {
@@ -101,8 +101,9 @@ export default {
     margin-bottom 20px
   .md-example-popup
     position relative
-    font-size font-minor-large
-    background color-bg-base
+    font-size 28px
+    font-family DINPro
+    font-weight 500
     box-sizing border-box
     text-align center
     background-color #FFF
@@ -130,6 +131,4 @@ export default {
     padding 0 150px
     display flex
     align-items center
-  // .md-popup-box
-  //   background-color #FFF
 </style>
