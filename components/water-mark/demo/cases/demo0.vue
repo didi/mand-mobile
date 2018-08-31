@@ -3,6 +3,7 @@
     <md-water-mark
       class="text-container"
       content="MAND MOBILE"
+      spacing="10vw"
     >
       <p class="text">
         每个人都有属于自己的一片森林，也许我们从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。

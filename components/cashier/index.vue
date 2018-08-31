@@ -78,6 +78,7 @@
           <div class="md-cashier-block-btn">
             <md-button
               class="md-cashier-pay-button"
+              type="primary"
               v-html="payButtonText"
               @click="$_onChannelBtnClick"
             ></md-button>
@@ -122,6 +123,7 @@
           <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
           <div class="md-cashier-block-btn" v-if="scene === 'success'">
             <md-button
+              type="primary"
               v-html="sceneOption.success.buttonText"
               @click="() => {
                 isCashierShow = false
@@ -143,6 +145,7 @@
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <div class="md-cashier-block-btn">
             <md-button
+              type="primary"
               v-html="sceneOption.fail.buttonText"
               @click="() => {
                 isCashierShow = false

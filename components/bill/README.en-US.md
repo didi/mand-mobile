@@ -3,7 +3,7 @@ title: Bill
 preview: https://didi.github.io/mand-mobile/examples/#/water-mask
 ---
 
-Container with watermark background
+Electronic bill
 
 ### 引入
 
