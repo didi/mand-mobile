@@ -204,7 +204,7 @@ export default {
         if (prevTargetRect && prevTargetRect.left < wrapperRect.left) {
           this.$refs.scroller.scrollTo(prevTarget.offsetLeft, 0, true)
         } else if (nextTargetRect && nextTargetRect.right > wrapperRect.right) {
-          this.$refs.scroller.scrollTo(nextTarget.offsetLeft + nextTarget.offsetWidth - this.wrapperWidth, 0, true)
+          this.$refs.scroller.scrollTo(nextTarget.offsetLeft + nextTarget.offsetWidth - this.wrapperW, 0, true)
         }
       })
     },
