@@ -28,6 +28,18 @@
               :value="pane.value"
               :options="pane.options"
               @input="$_onSelectPaneItem($event, index)"
+              v-if="$scopedSlots.item"
+            >
+              <template slot-scope="{ option }">
+                <slot name="item" :option="option"></slot>
+              </template>
+            </md-radio>
+            <md-radio
+              v-else
+              isAcrossBorder
+              :value="pane.value"
+              :options="pane.options"
+              @input="$_onSelectPaneItem($event, index)"
             />
           </md-tab-pane>
         </md-tabs>
@@ -59,6 +71,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    defaultValue: {
+      type: Array,
+      default: () => [],
+    },
     title: {
       type: String,
       default: '',
@@ -84,7 +100,7 @@ export default {
   data() {
     return {
       selected: [],
-      currentTab: this.data.name,
+      currentTab: '',
     }
   },
 
@@ -93,8 +109,7 @@ export default {
       const panes = []
       let target = this.data
       let cursor = 0
-
-      while (target) {
+      while (target && target.name) {
         const pane = {
           name: target.name,
           label: target.label || this.placeholder,
@@ -123,6 +138,18 @@ export default {
     },
   },
 
+  created() {
+    /* istanbul ignore else */
+    if (this.defaultValue) {
+      this.selected = this.defaultValue
+    }
+
+    /* istanbul ignore else */
+    if (this.data) {
+      this.currentTab = this.data.name
+    }
+  },
+
   methods: {
     // MARK: private events
     $_onInput(val) {
@@ -132,14 +159,14 @@ export default {
       this.$emit('input', false)
     },
     $_onSelectPaneItem(value, index) {
-      if (!value) {
-        this.selected.splice(index, this.selected.length - index)
-      } else {
-        this.selected.splice(index, this.selected.length - index, value)
-      }
-      this.$emit('change', this.getSelectedOptions())
+      this.selected.splice(index, this.selected.length - index, value)
+      this.$emit('change', {
+        values: this.getSelectedValues(),
+        options: this.getSelectedOptions(),
+      })
       this.$nextTick(function() {
         const nextPane = this.panes[index + 1]
+        /* istanbul ignore else */
         if (nextPane) {
           this.currentTab = nextPane.name
         }
@@ -150,7 +177,11 @@ export default {
       return this.selected
     },
     getSelectedOptions() {
-      return this.panes.filter(pane => pane.value).map(pane => pane.selected)
+      if (this.panes && this.panes.length) {
+        return this.panes.filter(pane => pane.value).map(pane => pane.selected)
+      } else {
+        return []
+      }
     },
   },
 }
