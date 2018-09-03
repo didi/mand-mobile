@@ -6,6 +6,8 @@
         :disorder="disorder"
         :ok-text="okText"
         :is-view="isView"
+        :hide-dot="hideDot"
+        :text-render="textRender"
         @enter="$_onEnter"
         @delete="$_onDelete"
         @confirm="$_onConfirm"
@@ -25,6 +27,8 @@
           :disorder="disorder"
           :ok-text="okText"
           :is-view="isView"
+          :hide-dot="hideDot"
+          :text-render="textRender"
           @enter="$_onEnter"
           @delete="$_onDelete"
           @confirm="$_onConfirm"
@@ -59,11 +63,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    hideDot: {
+      type: Boolean,
+    },
     disorder: {
       type: Boolean,
     },
     okText: {
       type: String,
+    },
+    textRender: {
+      type: Function,
     },
   },
 
@@ -118,4 +128,5 @@ export default {
     z-index number-keyboard-zindex !important
   .md-popup-box
     background-color color-bg-base
+    padding-bottom constant(safe-area-inset-bottom)
 </style>

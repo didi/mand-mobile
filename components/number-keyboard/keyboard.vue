@@ -10,8 +10,18 @@
           @click="$_onNumberKeyClick($event, keyNumberList[n-1])">
         </li>
         <template v-if="type === 'professional'">
-          <li class="keyboard-number-item" @click="$_onNumberKeyClick($event, '.')">.</li>
-          <li class="keyboard-number-item" @click="$_onNumberKeyClick($event, keyNumberList[9])">{{ keyNumberList[9] }}</li>
+          <li class="keyboard-number-item"
+            v-if="!hideDot"
+            v-text="dotText"
+            @click="$_onNumberKeyClick($event, dotText)"
+          ></li>
+          <li
+            class="keyboard-number-item"
+            :class="{'large-item': hideDot}"
+            @click="$_onNumberKeyClick($event, keyNumberList[9])"
+          >
+            {{ keyNumberList[9] }}
+          </li>
           <li class="keyboard-number-item" v-if="isView"></li>
           <li class="keyboard-number-item slidedown" @click="$_onSlideDoneClick()" v-else></li>
         </template>
@@ -31,7 +41,8 @@
   </div>
 </template>
 
-<script>export default {
+<script>import {noop} from '../_util'
+export default {
   name: 'md-number-keyboard-container',
 
   props: {
@@ -44,6 +55,10 @@
       type: Boolean,
       default: false,
     },
+    hideDot: {
+      type: Boolean,
+      default: false,
+    },
     okText: {
       type: String,
       default: '确定',
@@ -51,12 +66,22 @@
     isView: {
       type: Boolean,
     },
+    textRender: {
+      type: Function,
+      default: noop,
+    },
   },
 
   data() {
     return {
       keyNumberList: [],
     }
+  },
+
+  computed: {
+    dotText() {
+      return this.textRender('.') || '.'
+    },
   },
 
   created() {
@@ -67,16 +92,12 @@
     // MARK: private methods
     $_generateKeyNumber() {
       const baseStack = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+      const baseStackTmp = [...baseStack]
       /* istanbul ignore next */
-      if (this.disorder) {
-        let count = 0
-        while (baseStack.length) {
-          this.$set(this.keyNumberList, count, baseStack.splice(parseInt(Math.random() * baseStack.length), 1)[0] || 0)
-          count++
-        }
-      } else {
-        this.keyNumberList = baseStack
-      }
+      this.keyNumberList = baseStack.map(item => {
+        const val = this.disorder ? baseStackTmp.splice(parseInt(Math.random() * baseStackTmp.length), 1)[0] || 0 : item
+        return this.textRender(val) || val
+      })
     },
 
     // MARK: events handler, 如 $_onButtonClick
@@ -135,19 +156,23 @@
             display none
         &:nth-of-type(n+4):after
             display inline
-        &:nth-of-type(3n):before
-            display none
+        // &:nth-of-type(3n):before
+        //     display none
         &.delete
-          background url(../_style/images/keyboard-del-simple.png) center no-repeat
+          background url(../_style/images/keyboard-del.png) center no-repeat
           background-size 46px
         &.slidedown
           background number-keyboard-key-bg url(../_style/images/keyboard-hide.png) center no-repeat
-          background-size 55px
+          background-size 54px
+        &.large-item
+          width 66.6%
         &:active
           background-color number-keyboard-key-bg-tap
   .keyboard-operate
     flex 1
     .keyboard-operate-list
+      position relative
+      left -1px
       float left
       width 100%
       display flex
@@ -164,22 +189,19 @@
           background-size 42px
           display flex
           flex 1
-          hairline(left, number-keyboard-key-bordr-color)
-          &:after
-            left -1px
           &:active
             background-color number-keyboard-key-bg-tap
         &.confirm
+          top -2px
           overflow hidden
           color number-keyboard-key-confirm-color
           font-size number-keyboard-key-font-size
           background number-keyboard-key-confirm-bg
           display flex
-          flex 3
+          flex 1
           align-items center
           justify-content center
-          font-size font-heading-normal
-          font-weight font-weight-medium
+          font-size font-caption-large
           &:active
             background-color number-keyboard-key-confirm-bg-tap
 
