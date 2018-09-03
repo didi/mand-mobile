@@ -84,7 +84,7 @@
         <div
           class="md-input-item-clear"
           v-if="clearable && !disabled && !readonly"
-          v-show="!isInputEmpty"
+          v-show="!isInputEmpty && isInputFocus"
           @click="$_clearInput"
         >
           <md-icon name="circle-cross"></md-icon>
@@ -454,10 +454,7 @@ export default {
       this.$emit('focus', this.name)
     },
     $_onBlur() {
-      // Delayed to trigger clear-button's click action before being hidden
-      setTimeout(() => {
-        this.isInputFocus = false
-      }, 200)
+      this.isInputFocus = false
       this.$emit('blur', this.name)
     },
     $_onFakeInputClick(event) {
@@ -552,7 +549,6 @@ export default {
       align-items center
       justify-content center
     .md-input-item-clear
-      display none
       color input-item-icon
       z-index 3
       .md-icon
@@ -593,9 +589,6 @@ export default {
       text-align right
   &.is-clear .md-input-item-control
     padding-right 50px !important
-  &.is-focus
-    .md-input-item-clear
-      display flex
   &.is-title-latent
     padding-top 10px
     // overflow hidden
