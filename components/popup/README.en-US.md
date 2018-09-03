@@ -25,7 +25,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |has-mask|has mask or not|Boolean|`true`|-|
 |mask-closable|if the popup will be closed when clicking mask|Boolean|`true`|-|
 |position|the position of popup|String|`center`|`center`, `top`, `bottom`, `left`, `right`|
-|transition|the animation effect of popup|String|`fade/fade-bounce/fade-slide, slide-up/slide-down/slide-left/slide-right`|-|
+|transition|the animation effect of popup|String|`fade/fade-bounce/fade-slide/fade-zoom, slide-up/slide-down/slide-left/slide-right`|-|
 |prevent-scroll|whether to prevent from scrolling or not|Boolean|`false`|this program still has scrolling penetration at the top and bottom of the content, recommend to use `ScrollView` as the scrolling area|
 |prevent-scroll-exclude|excluded elements of prevented scrolling|String/HTMLElement|-|-|
 

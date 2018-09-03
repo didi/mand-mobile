@@ -87,42 +87,44 @@ export default {
 </script>
 
 <style lang="stylus">
-  .md-toast
-    z-index toast-zindex
-    .md-toast-content
-      display inline-flex
-      align-items center
-      max-width 100%
-      min-width 80px
-      padding toast-padding
-      border-radius toast-radius
-      font-size toast-font-size
-      text-align left
-      line-height 1.42857142
-      color toast-color
-      background-color toast-fill
-      box-sizing border-box
-      overflow hidden
-    .md-icon
-      flex-shrink 0
-      color toast-color
-      margin-right 12px
-    .md-toast-text
-      white-space nowrap
-      text-overflow: ellipsis
-      overflow hidden
-    .md-popup
-      .md-popup-box
-        width 540px
-        text-align center
-      .md-popup-mask
-        background transparent
-    &.bottom
-      .md-popup.center .md-popup-box
-        top auto
-        bottom 50px
-    &.top
-      .md-popup.center .md-popup-box
-        top 50px
-        bottom auto
+.md-toast
+  z-index toast-zindex
+  .md-icon
+    flex-shrink 0
+    color toast-color
+    margin-right 12px
+  .md-popup
+    .md-popup-box
+      width 540px
+      text-align center
+    .md-popup-mask
+      background transparent
+  &.bottom
+    .md-popup.center .md-popup-box
+      top auto
+      bottom 50px
+  &.top
+    .md-popup.center .md-popup-box
+      top 50px
+      bottom auto
+
+.md-toast-content
+  display inline-flex
+  align-items center
+  max-width 100%
+  min-width 80px
+  padding toast-padding
+  border-radius toast-radius
+  font-size toast-font-size
+  text-align left
+  line-height 1.42857142
+  color toast-color
+  background-color toast-fill
+  box-sizing border-box
+  overflow hidden
+
+.md-toast-text
+  white-space nowrap
+  text-overflow: ellipsis
+  overflow hidden
 </style>

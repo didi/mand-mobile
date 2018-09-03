@@ -31,7 +31,7 @@ Vue.component(Dialog.name, Dialog)
 | has-mask | has mask or not | Boolean | `true` | - |
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
 | position | the position of popup, `center/top/bottom/left/right` | String | `center`| - |
-| transition | the animation effect of popup, `fade, slide-up/down/left/right`  | String | `fade` | - |
+| transition | the animation effect of Popup | String | `fade` | - |
 | prevent-scroll | whether to prevent from scrolling or not| Boolean | false | - |
 | prevent-scroll-exclude | excluded elements of prevented scrolling| String | - | - |
 

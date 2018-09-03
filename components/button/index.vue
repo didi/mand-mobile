@@ -88,28 +88,31 @@ export default {
   -webkit-user-select none
   -webkit-tap-highlight-color transparent
   overflow visible
-  .md-button-inner
+
+.md-button-inner
+  display flex
+  align-items center
+  justify-content center
+  width 100%
+  height 100%
+  overflow hidden
+  text-overflow ellipsis
+  word-break break-word
+  white-space nowrap
+
+.md-button-content
+  display flex
+  align-items center
+  padding 0 6px
+  .md-icon
+    padding 0
+
+.md-button
+  .md-icon
     display flex
     align-items center
     justify-content center
-    width 100%
-    height 100%
-    overflow hidden
-    text-overflow ellipsis
-    word-break break-word
-    white-space nowrap
-    .md-button-content
-      display flex
-      align-items center
-      padding 0 6px
-      .md-icon
-        padding 0
-    .md-icon
-      display flex
-      align-items center
-      justify-content center
-      padding 0 6px
-
+    padding 0 6px
   // type
   &.default
     background-color button-default-fill
@@ -133,7 +136,7 @@ export default {
     background-color button-disabled-fill
     color button-disabled-color
     hairline(all, button-disabled-fill, button-radius)
-  
+
   &.plain
     background transparent
 

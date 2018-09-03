@@ -70,7 +70,7 @@
           case 'right':
             return 'slide-left'
           default:
-            return 'fade' // fade/fade-bounce/fade-slide
+            return 'fade' // fade/fade-bounce/fade-slide/fade-zoom
         }
       },
     },
@@ -224,20 +224,6 @@
     .md-popup-box
       position absolute
       z-index 2
-  .md-popup-box
-    position fixed
-    z-index popup-zindex
-    max-width 100%
-    max-height 100%
-    overflow auto
-    will-change auto
-    // &.slide-up
-    //   padding-bottom env(safe-area-inset-bottom)
-  .md-popup-mask
-    absolute-pos()
-    position absolute
-    z-index 1
-    background-color popup-mask-bg
   &.center .md-popup-box
     absolute-pos(50%, auto, auto, 50%)
     transform translate(-50%, -50%)
@@ -264,29 +250,53 @@
     right 0
     top 0
 
+.md-popup-mask
+  absolute-pos()
+  position absolute
+  z-index 1
+  background-color popup-mask-bg
+
+.md-popup-box
+  position fixed
+  z-index popup-zindex
+  max-width 100%
+  max-height 100%
+  overflow auto
+  will-change auto
+
+.md-popup
   /*
    **************
    * TRANSITION *
    **************
    */
-  .fade-enter-active, .fade-leave-active
-    transition opacity .3s
-  .fade-enter, .fade-leave-to, .fade-leave-active
-    opacity 0
+  &.center
+    .fade-enter-active, .fade-leave-active
+      transition opacity .3s
+    .fade-enter, .fade-leave-to
+      opacity 0.01
 
-  .fade-bounce-leave-active
-    transition all .2s
-  .fade-bounce-enter-active
-    animation bounce-in .3s
-  .fade-bounce-enter, .fade-bounce-leave-to
-    opacity 0
-    transform translate(-50%, -50%) scale(0.5)
+    .fade-zoom-enter, .fade-zoom-leave-to
+      opacity 0.01
+      transform translate(-50%, -50%) scale(0.75)
+    .fade-zoom-leave-active
+      transition all .2s
+    .fade-zoom-enter-active
+      transition all .3s
 
-  .fade-slide-enter-active, .fade-slide-leave-active
-    transition all .3s
-  .fade-slide-enter, .fade-slide-leave-to
-    opacity 0
-    transform translate(-50%, calc(-50% - 20px)) !important
+    .fade-bounce-enter, .fade-bounce-leave-to
+      opacity 0.01
+      transform translate(-50%, -50%) scale(0.5)
+    .fade-bounce-leave-active
+      transition all .2s
+    .fade-bounce-enter-active
+      animation bounce-in .3s
+
+    .fade-slide-enter-active, .fade-slide-leave-active
+      transition all .3s
+    .fade-slide-enter, .fade-slide-leave-to
+      opacity 0.01
+      transform translate(-50%, calc(-50% - 20px)) !important
 
   .slide-up-enter-active, .slide-up-leave-active, .slide-down-enter-active, .slide-down-leave-active, .bottom .show
     transform translateY(0)

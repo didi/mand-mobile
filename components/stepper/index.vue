@@ -206,53 +206,55 @@ export default {
         opacity stepper-disabled-opacity
     input
       opacity stepper-disabled-opacity
-  .md-stepper-button
-    position relative
-    width stepper-width-button
-    height stepper-height
-    background-color stepper-fill
-    border-radius 2px
-    &:after
+
+.md-stepper-button
+  position relative
+  width stepper-width-button
+  height stepper-height
+  background-color stepper-fill
+  border-radius 2px
+  &:after
+    content ""
+    position absolute
+    width 24px
+    height 2px
+    top 50%
+    left 50%
+    background stepper-color
+    transform translate(-50%, -50%)
+  &.md-stepper-button-add
+    &:before
       content ""
       position absolute
-      width 24px
-      height 2px
+      width 2px
+      height 24px
       top 50%
       left 50%
       background stepper-color
       transform translate(-50%, -50%)
-    &.md-stepper-button-add
-      &:before
-        content ""
-        position absolute
-        width 2px
-        height 24px
-        top 50%
-        left 50%
-        background stepper-color
-        transform translate(-50%, -50%)
-    &.disabled
-      &:before,
-      &:after
-        opacity stepper-disabled-opacity
-  .md-stepper-number
-    margin 0 4px
-    min-width stepper-width-input
+  &.disabled
+    &:before,
+    &:after
+      opacity stepper-disabled-opacity
+
+.md-stepper-number
+  margin 0 4px
+  min-width stepper-width-input
+  height stepper-height
+  padding 0 4px
+  text-align center
+  border-radius stepper-radius-button
+  background-color stepper-fill
+  input
+    width 100%
     height stepper-height
-    padding 0 4px
+    border none
+    outline none
+    font-size stepper-input-font-size
+    line-height stepper-height
+    background-color transparent
+    box-sizing border-box
     text-align center
-    border-radius stepper-radius-button
-    background-color stepper-fill
-    input
-      width 100%
-      height stepper-height
-      border none
-      outline none
-      font-size stepper-input-font-size
-      line-height stepper-height
-      background-color transparent
-      box-sizing border-box
-      text-align center
-      color stepper-color
-      border-radius stepper-radius-input
+    color stepper-color
+    border-radius stepper-radius-input
 </style>

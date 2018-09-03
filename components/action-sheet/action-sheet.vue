@@ -9,8 +9,8 @@
       @hide="$_onHide"
     >
       <div class="md-action-sheet-content" :style="{maxHeight: `${maxHeight}px`}">
-        <header v-if="title">{{ title }}</header>
-        <ul>
+        <header class="md-action-sheet-header" v-if="title">{{ title }}</header>
+        <ul class="md-action-sheet-list">
           <template v-for="(item, index) in options">
             <li
               :key="index"
@@ -129,37 +129,41 @@ export default {
 .md-action-sheet
   color action-sheet-color
   -webkit-font-smoothing antialiased
-  .md-action-sheet-content
-    position relative
-    width 100%
-    font-size action-sheet-font-size
-    background action-sheet-bg
-    text-align center
-    overflow auto
-    header
-      vertical-height(action-sheet-height)
-      word-ellipsis()
-    >ul
-      padding 0 action-sheet-padding-h
-      li
-        vertical-height(action-sheet-height)
-        hairline(top, color-border-base)
-        box-sizing border-box
-        font-size action-sheet-font-size
-        &.active
-          color action-sheet-color-highlight
-        &.disabled
-          opacity action-sheet-disabled-opacity
-        &.cancel-btn
-          height 132px
-          line-height 120px
-          color action-sheet-color-cancel
-          font-weight font-weight-medium
-          &::before
-            display block
-            content ''
-            height 12px
-            background action-sheet-cancel-gap-bg
   .md-popup-box
     background-color color-bg-base
+
+.md-action-sheet-content
+  position relative
+  width 100%
+  font-size action-sheet-font-size
+  background action-sheet-bg
+  text-align center
+  overflow auto
+
+.md-action-sheet-header
+  vertical-height(action-sheet-height)
+  word-ellipsis()
+
+.md-action-sheet-list
+  padding 0 action-sheet-padding-h
+
+.md-action-sheet-item
+  vertical-height(action-sheet-height)
+  hairline(top, color-border-base)
+  box-sizing border-box
+  font-size action-sheet-font-size
+  &.active
+    color action-sheet-color-highlight
+  &.disabled
+    opacity action-sheet-disabled-opacity
+  &.cancel-btn
+    height 132px
+    line-height 120px
+    color action-sheet-color-cancel
+    font-weight font-weight-medium
+    &::before
+      display block
+      content ''
+      height 12px
+      background action-sheet-cancel-gap-bg
 </style>
