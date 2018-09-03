@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.0
+`2018-09-03`
+- Feature
+  - `ScrollView` Add header/footer slots [#188](https://github.com/didi/mand-mobile/issues/188)
+- Fix
+  - `InputItem` clear-btn visbible only input focused [#196](https://github.com/didi/mand-mobile/issues/196)
+  - `DatePicker` reset column before update [#192](https://github.com/didi/mand-mobile/issues/192)
+
 ### 1.5.6
 `2018-08-20`
 - Fix

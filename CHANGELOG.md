@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.0
+`2018-09-03`
+- Feature
+  - `ScrollView` 新增header/footer插槽 [#188](https://github.com/didi/mand-mobile/issues/188)
+- Fix
+  - `InputItem` 清空按钮只在聚焦的时候显示 [#196](https://github.com/didi/mand-mobile/issues/196)
+  - `DatePicker` 设置default-date出现复数列 [#192](https://github.com/didi/mand-mobile/issues/192)
+
 ### 1.5.6
 `2018-08-20`
 - Fix
