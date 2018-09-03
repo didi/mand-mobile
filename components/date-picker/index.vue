@@ -141,7 +141,6 @@ export default {
       oldColumnData: null,
       columnDataDefault: [],
       columnDataGenerator: [],
-      disabledHalfDay: [],
     }
   },
 
@@ -210,7 +209,6 @@ export default {
       this.columnData = []
       this.columnDataDefault = []
       this.columnDataGenerator = []
-      this.disabledHalfDay = []
     },
     $_initColumnData (columnIndex, defaultDate = [], isSetColumn = true) {
       const columnData = this.columnData
