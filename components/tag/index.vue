@@ -1,7 +1,26 @@
 <template>
   <div class="md-tag">
     <div :class="computedClass" :style="[computedStyle, jsComputedStyle]">
-      <slot></slot>
+      <template v-if="shape === 'quarter'">
+        <div class="quarter-wrap">
+          <slot></slot>
+        </div>
+      </template>
+      <template v-else>
+        <div
+          class="left-coupon"
+          :style="{ background: fillColor ? 'radial-gradient(circle at left, transparent 33%, ' + fillColor + ' 33%)' : ''}"
+          v-if="shape === 'coupon'"
+        >
+        </div>
+        <slot></slot>
+        <div
+          class="right-coupon"
+          :style="{ background: fillColor ? 'radial-gradient(circle at right, transparent 33%, ' + fillColor + ' 33%)' : ''}"
+          v-if="shape === 'coupon'"
+        >
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -14,7 +33,7 @@
       default: 'large',
     },
     shape: {
-      // square, circle, fillet
+      // square, circle, fillet, quarter, coupon
       type: String,
       default: 'square',
     },
@@ -68,14 +87,17 @@
     },
   },
   mounted() {
-    const vm = this
-    vm.$set(vm.jsComputedStyle, 'padding', Math.max(vm.$el.offsetHeight * 0.15, 3) + 'px')
-    vm.$nextTick(function() {
-      if (vm.shape === 'circle') {
-        const height = vm.$el.offsetHeight / 2
-        vm.$set(vm.jsComputedStyle, 'paddingLeft', height + 'px')
-        vm.$set(vm.jsComputedStyle, 'paddingRight', height + 'px')
-        vm.$set(vm.jsComputedStyle, 'borderRadius', height + 'px')
+    const padding = Math.max(this.$el.offsetHeight * 0.15, 3)
+    this.$set(this.jsComputedStyle, 'padding', padding + 'px')
+    this.$nextTick(() => {
+      if (this.shape === 'circle') {
+        const height = this.$el.offsetHeight / 2
+        this.$set(this.jsComputedStyle, 'paddingLeft', height + 'px')
+        this.$set(this.jsComputedStyle, 'paddingRight', height + 'px')
+        this.$set(this.jsComputedStyle, 'borderRadius', height + 'px')
+      }
+      if (this.shape === 'quarter') {
+        this.$set(this.jsComputedStyle, 'padding', '0 0 100% 0')
       }
     })
   },
@@ -96,6 +118,25 @@
     border-radius 0
   .shape-fillet
     border-radius tag-fillet-radius
+  .shape-quarter
+    display flex
+    height 0
+    border-radius 0 0 0 100%
+    .quarter-wrap
+      display inline-block
+      padding 14px 10px 10px 14px
+  .shape-coupon
+    position relative
+    .left-coupon,
+    .right-coupon
+      position absolute
+      top 0
+      width 10px
+      height 100%
+    .left-coupon
+      left -10px
+    .right-coupon
+      right -10px
   .shape-circle
   .size-large
     font-size tag-large-font-size
