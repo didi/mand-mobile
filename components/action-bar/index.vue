@@ -70,23 +70,25 @@ export default {
   padding-bottom constant(safe-area-inset-bottom)
   background color-bg-inverse
   clearfix()
-  .md-action-bar-text
+
+.md-action-bar-text
+  display flex
+  flex 1
+  height action-bar-slot-height
+  margin-right action-bar-button-gap
+  align-items center
+  overflow hidden
+
+.md-action-bar-button
+  display flex
+  flex 1
+  height 100%
+  .button-item
     display flex
-    flex 1
-    height action-bar-slot-height
-    margin-right action-bar-button-gap
+    float right
     align-items center
-    overflow hidden
-  .md-action-bar-button
-    display flex
+    justify-content center
     flex 1
-    height 100%
-    .button-item
-      display flex
-      float right
-      align-items center
-      justify-content center
-      flex 1
-      &:nth-of-type(2)
-        margin-left action-bar-button-gap
+    &:nth-of-type(2)
+      margin-left action-bar-button-gap
 </style>

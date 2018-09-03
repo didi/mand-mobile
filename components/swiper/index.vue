@@ -648,59 +648,63 @@ export default {
 </script>
 
 <style lang="stylus">
-  .md-swiper-box
-    overflow hidden
-  .md-swiper, .md-swiper-box
-    width 100%
-    height 100%
-    position relative
-    will-change transform
-    &.disabled
-      visibility hidden
-    &.md-swiper-fade
-      .md-swiper-item
-        position absolute
-        opacity 0
-        top 0
-        left 0
-    &.md-swiper-vertical
-      .md-swiper-container
-        width 100%
-        height auto
-        box-orient vertical
-        flex-direction column
-      .md-swiper-indicators
-        flex-direction column
-        width 6px
-        right 10px
-        left auto
-        bottom auto
-        top 50%
-        transform translate(0, -50%)
-        &.disabled
-          visibility hidden
-        .md-swiper-indicator
-          margin 5px 0
+.md-swiper-box
+  overflow hidden
+
+.md-swiper, .md-swiper-box
+  width 100%
+  height 100%
+  position relative
+  will-change transform
+  &.disabled
+    visibility hidden
+  &.md-swiper-fade
+    .md-swiper-item
+      position absolute
+      opacity 0
+      top 0
+      left 0
+  &.md-swiper-vertical
     .md-swiper-container
-      height 100%
-      width auto
-      position relative
-      display flex
-      box-sizing content-box
+      width 100%
+      height auto
+      box-orient vertical
+      flex-direction column
     .md-swiper-indicators
-        position absolute
-        bottom 10px
-        left 50%
-        display flex
-        transform translateX(-50%)
-        .md-swiper-indicator
-          width 6px
-          height 6px
-          display inline-block
-          border-radius 100%
-          background #999
-          opacity .5
-          margin 0 5px
-          &.md-swiper-indicator-active
-            background #333
+      flex-direction column
+      width 6px
+      right 10px
+      left auto
+      bottom auto
+      top 50%
+      transform translate(0, -50%)
+      &.disabled
+        visibility hidden
+      .md-swiper-indicator
+        margin 5px 0
+
+.md-swiper-container
+  height 100%
+  width auto
+  position relative
+  display flex
+  box-sizing content-box
+
+.md-swiper-indicators
+    position absolute
+    bottom 10px
+    left 50%
+    display flex
+    transform translateX(-50%)
+
+.md-swiper-indicator
+  width 6px
+  height 6px
+  display inline-block
+  border-radius 100%
+  background #999
+  opacity .5
+  margin 0 5px
+  &.md-swiper-indicator-active
+    background #333
 </style>

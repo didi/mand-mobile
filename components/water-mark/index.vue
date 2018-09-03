@@ -76,27 +76,31 @@
 .md-water-mark
   position relative
   overflow hidden
-  .water-mark-container
-    position relative
-    z-index 2
-  .water-mark-list
-    clearfix()
-    absolute-pos()
-    position absolute
-    filter grayscale(100%)
-    display flex
-    flex-direction column
-    justify-content center
-    .water-mark-line
-      position relative
-      left 50%
-      float left
-      width 10000%
-      display flex
-      justify-content center
-      transform translateX(-50%)
-      .water-mark-item
-        float left
-        font-size font-body-large
-        color color-text-caption
+
+.water-mark-container
+  position relative
+  z-index 2
+
+.water-mark-list
+  clearfix()
+  absolute-pos()
+  position absolute
+  filter grayscale(100%)
+  display flex
+  flex-direction column
+  justify-content center
+
+.water-mark-line
+  position relative
+  left 50%
+  float left
+  width 10000%
+  display flex
+  justify-content center
+  transform translateX(-50%)
+
+.water-mark-item
+  float left
+  font-size font-body-large
+  color color-text-caption
 </style>
