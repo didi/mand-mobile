@@ -204,8 +204,15 @@ export default {
       this.$_initPickerColumn()
     },
     $_initPickerColumn () {
+      this.$_resetPickerColumn()
       this.$_initColumnDataGenerator()
-      this.$_initColumnData(0, this.columnDataDefault, false)
+      this.$_initColumnData(0, this.columnDataDefault)
+    },
+    $_resetPickerColumn() {
+      this.oldColumnData = null
+      this.columnData = []
+      this.columnDataDefault = []
+      this.columnDataGenerator = []
     },
     $_initColumnData (columnIndex, defaultDate = [], isSetColumn = true) {
       const columnData = this.columnData

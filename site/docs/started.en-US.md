@@ -33,7 +33,7 @@ npm install mand-mobile --save
 
 Add `script` and `link` tags in your browser and use the global variable `window['mand-mobile']`.
 
-The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>. You can also download it via [UNPKG](https://unpkg.com/mand-mobile/lib/).
+The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>. You can also download it via [UNPKG](https://unpkg.com/mand-mobile/lib/)
 
 #### Import
 

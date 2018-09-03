@@ -3,7 +3,9 @@
     v-if="name"
     class="md-icon"
     :class="[`md-icon-${name}`, size]"
-    :style="{fill: color}">
+    :style="{fill: color}"
+    @click="$emit('click', $event)"
+  >
     <use :xlink:href="`#${name}`"/>
   </svg>
 </template>

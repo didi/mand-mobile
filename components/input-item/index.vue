@@ -92,7 +92,7 @@
         <div
           class="md-input-item-clear"
           v-if="clearable && !disabled && !readonly"
-          v-show="!isInputEmpty"
+          v-show="!isInputEmpty && isInputFocus"
           @click="$_clearInput($event)"
         >
           <md-icon name="circle-cross"></md-icon>
