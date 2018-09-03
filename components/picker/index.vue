@@ -52,7 +52,7 @@
 import PopTitleBar from '../popup/title-bar'
 import PickerColumn from './picker-column'
 import cascadePicker from './cascade'
-import {compareObjects} from '../_util'
+import {compareObjects, extend} from '../_util'
 
 export default {
   name: 'md-picker',
@@ -196,7 +196,7 @@ export default {
       } else {
         // mark initial activedIndexs as snapshoot
         setTimeout(() => {
-          this.oldActivedIndexs = [...this.column.activedIndexs]
+          this.oldActivedIndexs = extend([], this.column.activedIndexs)
         }, 100)
       }
     },

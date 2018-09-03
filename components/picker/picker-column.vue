@@ -55,7 +55,7 @@
 
 <script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
-import {noop, getDpr, traverse, inArray, warn} from '../_util'
+import {noop, getDpr, traverse, inArray, extend, warn} from '../_util'
 
 const dpr = getDpr()
 const API_LIST = [
@@ -124,14 +124,14 @@ export default {
   watch: {
     data: {
       handler(val) {
-        this.columnValues = [...val]
+        this.columnValues = extend([], val)
       },
       deep: true,
     },
   },
 
   created() {
-    this.columnValues = [...this.data]
+    this.columnValues = extend([], this.data)
   },
 
   methods: {
