@@ -1,0 +1,70 @@
+{
+  "name": "province",
+  "label": "省",
+  "options": [
+    {
+      "value": "pk",
+      "label": "北京",
+      "children": {
+        "name": "block",
+        "label": "",
+        "options": [
+          {
+            "value": "hd",
+            "label": "海淀"
+          },
+          {
+            "value": "cp",
+            "label": "昌平"
+          },
+          {
+            "value": "cy",
+            "label": "朝阳"
+          }
+        ]
+      }
+    },
+    {
+      "value": "sx",
+      "label": "四川",
+      "children": {
+        "name": "city",
+        "label": "市",
+        "options": [
+          {
+            "value": "cd",
+            "label": "成都市",
+            "children": {
+              "name": "block",
+              "label": "区",
+              "options": [
+                {
+                  "value": "gx",
+                  "label": "高新区"
+                },
+                {
+                  "value": "qy",
+                  "label": "青羊区"
+                }
+              ]
+            }
+          },
+          {
+            "value": "my",
+            "label": "绵阳市",
+            "children": {
+              "name": "block",
+              "label": "区",
+              "options": [
+                {
+                  "value": "jn",
+                  "label": "金牛区"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

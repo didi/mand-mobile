@@ -60,7 +60,11 @@ export default {
     },
     // MARK: public methods
     $_getPaneNodes() {
-      return this.$slots.default.filter(v => v.componentOptions && v.componentOptions.Ctor.extendOptions === TabPane)
+      if (this.$slots.default) {
+        return this.$slots.default.filter(v => v.componentOptions && v.componentOptions.Ctor.extendOptions === TabPane)
+      } else {
+        return []
+      }
     },
     $_getCurrentPaneVnode(vnodes) {
       if (!vnodes) {
