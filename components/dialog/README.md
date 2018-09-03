@@ -30,7 +30,7 @@ Vue.component(Dialog.name, Dialog)
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
-| transition | 弹出层过度动画, `fade, bounce`  | String | `fade`|-|
+| transition | Popup弹出层过度动画 | String | `fade`|-|
 | prevent-scroll | 是否禁止滚动穿透 | Boolean | false |-|
 | prevent-scroll-exclude | 禁止滚动排除元素  | String | -|-|
 

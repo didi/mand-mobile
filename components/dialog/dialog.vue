@@ -223,43 +223,4 @@ export default {
   &:last-child
     color dialog-action-highlight-color
     remove-hairline(right)
-
-.md-popup.center
-  .md-popup-box
-    transform translate(-50%, -50%)
-    &.fade-enter
-      opacity 0.01
-      transform translate(-50%, -20%)
-    &.fade-leave-to
-      opacity 0.01
-      transform translate(-50%, -70%)
-    &.fade-enter-active,
-    &.fade-leave-active,
-    &.bounce-leave-active
-      transition all 200ms
-    &.bounce-enter
-      opacity 0.01
-    &.bounce-enter-active
-      animation bounce-in 300ms
-    &.bounce-leave-to
-      opacity 0.01
-      transform translate(-50%, -50%) scale(0.5)
-
-@keyframes bounce-in {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  1% {
-    transform: translate(-50%, -50%) scale(0.5);
-  }
-  45% {
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-  80% {
-    transform: translate(-50%, -50%) scale(0.95);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
 </style>
