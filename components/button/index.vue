@@ -133,7 +133,7 @@ export default {
     background-color button-disabled-fill
     color button-disabled-color
     hairline(all, button-disabled-fill, button-radius)
-  
+
   &.plain
     background transparent
 

@@ -11,28 +11,28 @@
       }"
     >
       <ul
-        v-for="i in (repeatY ? 50 : 1)"
+        v-for="(i, lineIndex) in (repeatY ? 50 : 1)"
         class="water-mark-line"
         :style="{
           marginBottom: spacing,
         }"
-        :key="`line-${i}`"
+        :key="`line-${lineIndex}`"
       >
         <li
-          v-for="j in (repeatX ? 50 : 1)"
+          v-for="(j, itemIndex) in (repeatX ? 50 : 1)"
           class="water-mark-item"
           :style="i % 2 === 0 ? {
             marginLeft: repeatX ? spacing : 0,
           } : {
             marginRight: repeatX ? spacing : 0,
           }"
-          :key="`item-${j}`"
+          :key="`item-${itemIndex}`"
         >
           <p v-if="content">{{ content }}</p>
           <slot
             v-else-if="!!$scopedSlots.watermark"
             name="watermark"
-            @index="index"
+            @index="{ i: lineIndex, j: itemIndex }"
           ></slot>
         </li>
       </ul>

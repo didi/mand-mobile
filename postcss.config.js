@@ -7,6 +7,7 @@ module.exports = (ctx) => ({
     'postcss-url': {url: 'inline'},
     'cssnano': { zindex: false, mergeIdents: false, discardUnused: false, autoprefixer: false, reduceIdents: false
     },
-    'autoprefixer': { browsers: browserslist }
+    'autoprefixer': { browsers: browserslist },
+    'postcss-mpvue-wxss': {}
   }
 })

@@ -1,7 +1,10 @@
 'use strict'
 const utils = require('./utils')
 const config = require('../../config')
-const isProduction = process.env.NODE_ENV === 'production'
+let isProduction = process.env.NODE_ENV === 'production'
+if (process.env.NODE_ENV === 'weapp') {
+  isProduction = true
+}
 
 module.exports = {
   loaders: utils.cssLoaders({

@@ -1,0 +1,7 @@
+<import src="index$a00009ce" /><template name="demo4$7a3173da">
+  <view class="_div data-v-5e884b56 md-example-child  md-example-child-button md-example-child-button-3">
+    <md-button type="link" icon="hollow-plus" class="_md-button data-v-5e884b56">评论</md-button>
+    <md-button type="link" inactive class="_md-button data-v-5e884b56">去看看<md-icon name="arrow-right" size="md" class="_md-icon data-v-5e884b56"></md-icon>
+    </md-button>
+  </view>
+</template>
