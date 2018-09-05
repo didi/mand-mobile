@@ -1,0 +1,8 @@
+<import src="index$a00009ce" /><template name="demo1$7a072d57">
+  <view class="_div data-v-5edcd85c md-example-child md-example-child-button md-example-child-button-1">
+    <md-button type="default" plain class="_md-button data-v-5edcd85c">Default</md-button>
+    <md-button type="primary" plain class="_md-button data-v-5edcd85c">Primary</md-button>
+    <md-button type="warning" plain class="_md-button data-v-5edcd85c">Warning</md-button>
+    <md-button type="disabled" plain class="_md-button data-v-5edcd85c">Disabled</md-button>
+  </view>
+</template>

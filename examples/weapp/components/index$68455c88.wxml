@@ -1,0 +1,3 @@
+<template name="index$68455c88"><svg wx:if="{{name}}" class="_svg data-v-258f0a2d md-icon {{[`md-icon-${name}`, size]}}" bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" style=" {{('fill:' + color + ';')}}">
+    <use xlink:href="{{`#${name}`}}" class="_use data-v-258f0a2d"></use>
+  </svg></template>

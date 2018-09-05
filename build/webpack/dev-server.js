@@ -11,7 +11,16 @@ const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const proxyMiddleware = require('http-proxy-middleware')
-let webpackConfig = require('./webpack.dev.conf')
+
+let webpackConfig
+// 这需要判断是否构建小程序
+let isWeapp = process.env.NODE_ENV === 'weapp'
+if (isWeapp) {
+  webpackConfig = require('./webpack.dev.weapp.conf')
+} else {
+  webpackConfig = require('./webpack.dev.conf')
+}
+
 // default port where dev server listens for incoming traffic
 const port = process.env.PORT || config.dev.port
 // automatically open browser, if not set will be false
@@ -23,19 +32,31 @@ const proxyTable = config.dev.proxyTable
 const app = express()
 const compiler = webpack(webpackConfig)
 const resolve = file => path.resolve(__dirname, file)
-const devMiddleware = require('webpack-dev-middleware')(compiler, {
-  publicPath: webpackConfig.output.publicPath,
-})
 
-const hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: false,
-  heartbeat: 2000
-})
+let devMiddleware
+// 小程序需要引入webpack-dev-middleware-hard-disk
+if (isWeapp) {
+  devMiddleware = require('webpack-dev-middleware-hard-disk')(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+    quiet: true
+  })
+} else {
+  devMiddleware = require('webpack-dev-middleware')(compiler, {
+    publicPath: webpackConfig.output.publicPath,
+  })
+
+  const hotMiddleware = require('webpack-hot-middleware')(compiler, {
+    log: false,
+    heartbeat: 2000
+  })
+  // enable hot-reload and state-preserving
+  // compilation error display
+  app.use(hotMiddleware)
+}
 
 const serve = function (path) {
   return express.static(resolve(path), {})
 }
-
 
 // force page reload when html-webpack-plugin template changes
 // currently disabled until this is resolved:
@@ -46,10 +67,6 @@ const serve = function (path) {
 //     cb()
 //   })
 // })
-
-// enable hot-reload and state-preserving
-// compilation error display
-app.use(hotMiddleware)
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {
@@ -64,7 +81,6 @@ Object.keys(proxyTable).forEach(function (context) {
 app.use(require('connect-history-api-fallback')())
 
 // serve webpack bundle output
-app.use(devMiddleware)
 app.use('/static', serve(path.join(__dirname, '../../static')))
 // serve pure static assets
 // const staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
