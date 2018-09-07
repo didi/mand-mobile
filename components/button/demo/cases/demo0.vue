@@ -6,7 +6,7 @@
     <md-button type="primary" inactive>Primary Inactive</md-button>
     <md-button type="warning">Warning</md-button>
     <md-button type="warning" inactive>Warning Inactive</md-button>
-    <md-button type="disabled">Disabled</md-button>    
+    <md-button type="disabled">Disabled</md-button>
   </div>
 </template>
 
