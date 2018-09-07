@@ -181,10 +181,11 @@ export default {
   height 100%
   z-index 100
   -webkit-tap-highlight-color rgba(0,0,0,0)
-  .md-image-reader-file
-    position absolute
-    width 100%
-    height 100%
-    opacity 0
-    -webkit-tap-highlight-color rgba(0,0,0,0)
+
+.md-image-reader-file
+  position absolute
+  width 100%
+  height 100%
+  opacity 0
+  -webkit-tap-highlight-color rgba(0,0,0,0)
 </style>

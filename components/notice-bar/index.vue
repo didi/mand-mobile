@@ -150,34 +150,38 @@ export default {
   padding-left 32px
   &.md-notice-bar-circle
     border-radius notice-bar-border-radius
-  .md-notice-bar-left,
-  .md-notice-bar-right
-    padding-right 24px
-    display flex
-    align-items center
-  .md-notice-bar-empty
-    padding-right 0
-  .md-notice-bar-content
-    flex 1
-    margin auto
-    width auto
-    line-height 64px
-    white-space nowrap
-    overflow hidden
-    &.md-notice-bar-multi-content
-      padding h-gap-md 0
-      line-height font-caption-large
-      white-space normal
-    .md-notice-bar-content-animate
-      padding-left 100%
-      display inline-block
-      animation md-notice-bar-animation linear 9s infinite both
-  @keyframes md-notice-bar-animation {
-    0% {
-      transform translate3d(0, 0, 0)
-    }
-    100% {
-      transform translate3d(-100%, 0, 0)
-    }
+
+.md-notice-bar-left,
+.md-notice-bar-right
+  padding-right 24px
+  display flex
+  align-items center
+
+.md-notice-bar-empty
+  padding-right 0
+
+.md-notice-bar-content
+  flex 1
+  margin auto
+  width auto
+  line-height 64px
+  white-space nowrap
+  overflow hidden
+  &.md-notice-bar-multi-content
+    padding h-gap-md 0
+    line-height font-caption-large
+    white-space normal
+  .md-notice-bar-content-animate
+    padding-left 100%
+    display inline-block
+    animation md-notice-bar-animation linear 9s infinite both
+
+@keyframes md-notice-bar-animation {
+  0% {
+    transform translate3d(0, 0, 0)
   }
+  100% {
+    transform translate3d(-100%, 0, 0)
+  }
+}
 </style>

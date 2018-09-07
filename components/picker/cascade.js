@@ -1,4 +1,4 @@
-import {warn} from '../_util'
+import {extend, warn} from '../_util'
 
 const defaultOptions = {
   currentLevel: 0,
@@ -14,8 +14,7 @@ const defaultOptions = {
  * @param {*} fn 
  */
 export default function(picker, options = {}, fn) {
-  // options = {...defaultOptions, ...options}
-  options = Object.assign({}, defaultOptions, options)
+  options = extend(defaultOptions, options)
 
   /* istanbul ignore if */
   if (!picker) {

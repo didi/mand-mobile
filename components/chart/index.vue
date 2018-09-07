@@ -275,23 +275,25 @@
 </script>
 
 <style lang="stylus">
-  .md-chart
-    line
-      stroke chart-line-color
-      stroke-width 0.5
-      stroke-linecap square
-    path
-      stroke chart-path-color
-      stroke-width 1
-      stroke-linecap butt
-    .md-chart-axis-y
-      text
-        fill chart-text-color
-        font-size chart-value-size
-        text-anchor end
-    .md-chart-axis-x
-      text
-        fill chart-text-color
-        font-size chart-label-size
-        text-anchor middle
+.md-chart
+  line
+    stroke chart-line-color
+    stroke-width 0.5
+    stroke-linecap square
+  path
+    stroke chart-path-color
+    stroke-width 1
+    stroke-linecap butt
+
+.md-chart-axis-y
+  text
+    fill chart-text-color
+    font-size chart-value-size
+    text-anchor end
+
+.md-chart-axis-x
+  text
+    fill chart-text-color
+    font-size chart-label-size
+    text-anchor middle
 </style>

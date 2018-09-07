@@ -10,7 +10,7 @@
         value ? 'checked' : ''
       ]"
       @click="$_onChange($event)">
-      <div class="checked-wrap">
+      <div class="md-agree-checked-wrap">
         <md-icon
           name="circle-right"
           :size="size">
@@ -73,24 +73,27 @@ export default {
   align-items center
   &.disabled
     opacity agree-disabled-opacity
-  .md-agree-icon
-    position relative
-    margin-right 10px
-    flex-shrink 0
-    color agree-fill-inverse
-    &.checked
-      color agree-fill
-      .checked-wrap
-        svg
-          transform scale(1)
-    .checked-wrap
-      position absolute
-      top 0
-      left 0
-      width 100%
+
+.md-agree-icon
+  position relative
+  margin-right 10px
+  flex-shrink 0
+  color agree-fill-inverse
+  &.checked
+    color agree-fill
+    .md-agree-checked-wrap
       svg
-        transform scale(0)
-        transition transform ease-in-out .1s
-  .md-agree-content
-    flex 1 1 0%
+        transform scale(1)
+
+.md-agree-checked-wrap
+  position absolute
+  top 0
+  left 0
+  width 100%
+  svg
+    transform scale(0)
+    transition transform ease-in-out .1s
+
+.md-agree-content
+  flex 1 1 0%
 </style>

@@ -4,7 +4,7 @@
       type="carousel"
       :size="15"
     ></md-activity-indicator>
-    <md-button @click="createPay">
+    <md-button type="primary" @click="createPay">
       <md-activity-indicator
         v-if="loading"
         class="md-activity-indicator-css"

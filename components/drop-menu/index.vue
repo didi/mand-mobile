@@ -205,45 +205,47 @@ export default {
   color color-text-minor
   font-size drop-menu-font-size
   font-weight drop-menu-font-weight
-  .md-drop-menu-bar
-    z-index drop-menu-zindex
+
+.md-drop-menu-bar
+  z-index drop-menu-zindex
+  display flex
+  height 100%
+  background drop-menu-bar-bg
+  hairline(bottom, drop-menu-bar-border-color)
+  .bar-item
     display flex
-    height 100%
-    background drop-menu-bar-bg
-    hairline(bottom, drop-menu-bar-border-color)
-    .bar-item
-      display flex
-      flex 1
-      margin 2% 0
-      align-items center
-      justify-content center
-      span
-        position relative
-        padding-right 30px
-        &:after
-          content ""
-          position absolute
-          right 0
-          top 50%
-          width 0
-          height 0
-          margin-top -4px
-          border-left solid 8px transparent
-          border-right solid 8px transparent
-          border-top solid 9px color-text-minor
-          transition transform .3s ease-in-out-quint
-      &.active
-        span:after
-          transform rotate(180deg)
-      &.selected
-        color drop-menu-color
-        span:after
-          border-top-color drop-menu-color
-      &.disabled
-        opacity drop-menu-disabled-opacity
-  .md-drop-menu-list
-    width 100%
-    padding-top drop-menu-height
-    background drop-menu-list-bg
-    box-sizing border-box
+    flex 1
+    margin 2% 0
+    align-items center
+    justify-content center
+    span
+      position relative
+      padding-right 30px
+      &:after
+        content ""
+        position absolute
+        right 0
+        top 50%
+        width 0
+        height 0
+        margin-top -4px
+        border-left solid 8px transparent
+        border-right solid 8px transparent
+        border-top solid 9px color-text-minor
+        transition transform .3s ease-in-out-quint
+    &.active
+      span:after
+        transform rotate(180deg)
+    &.selected
+      color drop-menu-color
+      span:after
+        border-top-color drop-menu-color
+    &.disabled
+      opacity drop-menu-disabled-opacity
+
+.md-drop-menu-list
+  width 100%
+  padding-top drop-menu-height
+  background drop-menu-list-bg
+  box-sizing border-box
 </style>

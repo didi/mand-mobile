@@ -19,6 +19,16 @@
         Popup Center
       </div>
     </md-popup>
+
+    <md-button @click="showPopUp(2)">Fade Zoom</md-button>
+    <md-popup
+      v-model="isPopupShow[2]"
+      transition="fade-zoom"
+    >
+      <div class="md-example-popup md-example-popup-center">
+        Popup Center
+      </div>
+    </md-popup>
   </div>
 </template>
 

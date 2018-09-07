@@ -50,45 +50,45 @@ export default {
 
 
 <style lang="stylus">
-  .md-tip
-    position relative
-    display inline-block
-    max-width 400px
-    color tip-color
-    font-size tip-font-size
-    line-height 1.2
-    padding tip-padding
-    border-radius tip-radius
-    background-color tip-fill
-    box-shadow tip-shadow
-    z-index tip-zindex
-    &::after
-      content ''
-      position absolute
-      bottom -10px
-      left 50%
-      margin-left -11px
-      width 0
-      height 0
-      border-style solid
-      border-width 10px 11px 0 11px
-      border-color tip-fill transparent transparent transparent
-    &.has-close
-      padding-right 60px
-    &.is-bottom::after
-      bottom auto
-      top -10px
-      border-width 0 11px 10px 11px
-      border-color transparent transparent tip-fill transparent
-    &.is-left::after,
-    &.is-right::after
-      display none
+.md-tip
+  position relative
+  display inline-block
+  max-width 400px
+  color tip-color
+  font-size tip-font-size
+  line-height 1.2
+  padding tip-padding
+  border-radius tip-radius
+  background-color tip-fill
+  box-shadow tip-shadow
+  z-index tip-zindex
+  &::after
+    content ''
+    position absolute
+    bottom -10px
+    left 50%
+    margin-left -11px
+    width 0
+    height 0
+    border-style solid
+    border-width 10px 11px 0 11px
+    border-color tip-fill transparent transparent transparent
+  &.has-close
+    padding-right 60px
+  &.is-bottom::after
+    bottom auto
+    top -10px
+    border-width 0 11px 10px 11px
+    border-color transparent transparent tip-fill transparent
+  &.is-left::after,
+  &.is-right::after
+    display none
 
-    .md-icon.md-icon-cross
-      position absolute
-      right 16px
-      top 50%
-      width tip-close-size
-      height tip-close-size
-      transform translateY(-50%)
+  .md-icon.md-icon-cross
+    position absolute
+    right 16px
+    top 50%
+    width tip-close-size
+    height tip-close-size
+    transform translateY(-50%)
 </style>
