@@ -33,10 +33,9 @@ function getEntry (rootSrc, pattern) {
 }
 
 const appEntry = {
-  app: resolve('./examples/weapp.main.js'),
-  list: resolve('./examples/weapp.index.main.js')
+  app: resolve('./examples/weapp.main.js')
 }
-const pagesEntry = getEntry(resolve('./components'), 'button/demo/page.js')
+const pagesEntry = getEntry(resolve('./components'), 'popup/demo/cases/page.js')
 const entry = Object.assign({}, appEntry, pagesEntry)
 
 // 微信小程序解析.vue文件使用mpvue-loader解析
@@ -137,6 +136,14 @@ module.exports = merge(baseWebpackConfig, {
     //     ignore: ['.*']
     //   }
     // ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../../examples/*.json'),
+        to: path.resolve(__dirname, '../../examples/weapp'),
+        ignore: ['.*'],
+        flatten: true
+      }
+    ]),
     new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsPlugin()
   ]
