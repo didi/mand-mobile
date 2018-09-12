@@ -52,6 +52,7 @@
       <md-input-item
         v-if="hasInputOption"
         ref="inputItem"
+        class="md-radio-item"
         :class="{
           'selected': $_isSelectedIndex(options.length),
         }"
@@ -300,11 +301,9 @@ export default {
           padding-left 40px
       .md-field-item-content.left
         margin-left 0
-    .md-input-item
-      padding 0 !important
-      &.selected
-        .md-input-item-title
-          color radio-color
+    .md-input-item.selected
+      .md-input-item-title
+        color radio-color
   &.across
     .md-field
       .md-field-item.md-radio-item
