@@ -16,7 +16,8 @@ import Swiper from './swiper'
 import SwiperItem from './swiper-item'
 import Toast from './toast'
 import Tip from './tip'
-import {Tabs, TabPane} from './tabs'
+import Tabs from './tabs'
+import TabPane from './tab-pane'
 import TabBar from './tab-bar'
 import Tag from './tag'
 import InputItem from './input-item'
@@ -122,7 +123,9 @@ const install = function(Vue) {
   const componentsNames = Object.keys(components)
   componentsNames.forEach(name => {
     const component = components[name]
-    component.name && Vue.component(component.name, component)
+    if (component.name) {
+      Vue.component(component.name, component)
+    }
   })
 
   // 全局服务注入
