@@ -18,7 +18,7 @@
 </template>
 
 <script>import {Field, FieldItem, TabPicker} from 'mand-mobile'
-import data from '../data'
+import data from 'mand-mobile/components/tab-picker/demo/data'
 
 export default {
   name: 'tab-bar-demo',

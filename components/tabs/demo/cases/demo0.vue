@@ -18,6 +18,9 @@
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
+  height: 500,
+  /* DELETE */
   components: {
     [Tabs.name]: Tabs,
     [TabPane.name]: TabPane,
