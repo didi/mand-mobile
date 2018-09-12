@@ -257,7 +257,6 @@ export default {
   display flex
   height 64px
   border-bottom solid 1px #f0f1f2
-  box-shadow 0 2px 8px #f0f1f2
   clearfix()
   .default-header-container
     position relative
