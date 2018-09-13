@@ -33,9 +33,9 @@ function getEntry (rootSrc, pattern) {
 }
 
 const appEntry = {
-  app: resolve('./examples/weapp.main.js')
+  app: resolve('./examples/weapp/main.js')
 }
-const pagesEntry = getEntry(resolve('./components'), 'popup/demo/cases/page.js')
+const pagesEntry = getEntry(resolve('./components'), '**/**/page.js')
 const entry = Object.assign({}, appEntry, pagesEntry)
 
 // 微信小程序解析.vue文件使用mpvue-loader解析
@@ -95,6 +95,7 @@ module.exports = merge(baseWebpackConfig, {
     publicPath: config.devWeapp.assetsPublicPath
   },
   plugins: [
+    new DashBoardPlugin(),
     new MpvuePlugin(),
     new webpack.DefinePlugin({
       'process.env': config.devWeapp.env,
@@ -138,8 +139,8 @@ module.exports = merge(baseWebpackConfig, {
     // ]),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../../examples/*.json'),
-        to: path.resolve(__dirname, '../../examples/weapp'),
+        from: path.resolve(__dirname, '../../examples/weapp/*.json'),
+        to: path.resolve(__dirname, '../../examples/weapp/example'),
         ignore: ['.*'],
         flatten: true
       }

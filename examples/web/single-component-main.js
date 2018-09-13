@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import FastClick from 'fastclick'
 import App from './single-component-app'
-import '../components/_style/global.styl'
+import '../../components/_style/global.styl'
 
 if ('ontouchstart' in window) {
   FastClick.attach(document.body)

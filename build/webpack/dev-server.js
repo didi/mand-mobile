@@ -44,6 +44,7 @@ if (isWeapp) {
   devMiddleware = require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
   })
+  app.use(devMiddleware)
 
   const hotMiddleware = require('webpack-hot-middleware')(compiler, {
     log: false,

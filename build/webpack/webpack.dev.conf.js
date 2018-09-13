@@ -17,12 +17,12 @@ const pxtoremConfig = pxtorem({ rootValue: 100, propWhiteList: [], minPixelValue
 const argv = require('yargs').argv
 
 let entry = {
-  'index': ['./build/webpack/dev-client', './examples/main.js']
+  'index': ['./build/webpack/dev-client', './examples/web/main.js']
 }
 
 if (argv.component) {
   entry = {
-    'index': ['./build/webpack/dev-client', './examples/single-component-main.js']
+    'index': ['./build/webpack/dev-client', './examples/web/single-component-main.js']
   }
 }
 
@@ -61,7 +61,7 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.dev.index,
-      template: './examples/index.html',
+      template: './examples/web/index.html',
       inject: true
     }),
     new FriendlyErrorsPlugin()

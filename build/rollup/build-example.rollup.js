@@ -3,7 +3,7 @@ const rollup = require('rollup')
 const path = require('path')
 
 const inputOptions = {
-  input: path.resolve(PROJECT_DIR, 'examples/main.indemand.js'),
+  input: path.resolve(PROJECT_DIR, 'examples/web/main.js'),
   plugins: rollupPlugin,
 }
 
