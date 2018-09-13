@@ -67,7 +67,6 @@ export default {
   titleEnUS: 'Other configuration',
   message: '防止滚动击穿请在移动设备中扫码预览',
   messageEnUS: 'Preventing rolling breakdown should be previewed on mobile device',
-  height: 750,
   /* DELETE */
   components: {
     [Popup.name]: Popup,

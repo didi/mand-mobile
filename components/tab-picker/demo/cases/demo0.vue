@@ -22,6 +22,9 @@ import data from 'mand-mobile/components/tab-picker/demo/data'
 
 export default {
   name: 'tab-bar-demo',
+  /* DELETE */
+  height: 450,
+  /* DELETE */
   components: {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,

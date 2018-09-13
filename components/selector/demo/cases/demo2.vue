@@ -28,7 +28,7 @@ export default {
   /* DELETE */
   title: '确认模式',
   titleEnUS: 'Confirmed mode',
-  height: 500,
+  height: 400,
   /* DELETE */
   components: {
     [Selector.name]: Selector,

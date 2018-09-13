@@ -39,7 +39,6 @@ export default {
   /* DELETE */
   title: '动画',
   titleEnUS: 'Transition',
-  height: 750,
   /* DELETE */
   components: {
     [Popup.name]: Popup,
