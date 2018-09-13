@@ -1,12 +1,15 @@
 <template>
   <div class="md-tip" :class="wrapperCls">
-    <template>{{content}}</template>
-    <md-icon
-      v-if="closable"
-      name="cross"
-      size="md"
-      @click.native="$_onClose"
-    />
+    <div class="tip-content">
+      <template>{{content}}</template>
+      <md-icon
+        v-if="closable"
+        name="cross"
+        size="md"
+        @click.native="$_onClose"
+      />
+    </div>
+    <div class="tip-bg"></div>
   </div>
 </template>
 
@@ -54,35 +57,56 @@ export default {
   position relative
   display inline-block
   max-width 400px
-  color tip-color
-  font-size tip-font-size
-  line-height 1.2
-  padding tip-padding
-  border-radius tip-radius
-  background-color tip-fill
-  box-shadow tip-shadow
   z-index tip-zindex
-  &::after
-    content ''
+  .tip-content
+    position relative
+    padding tip-padding
+    color tip-color
+    font-size tip-font-size
+    line-height 1.2
+    z-index 2
+  .tip-bg
     position absolute
-    bottom -10px
-    left 50%
-    margin-left -11px
-    width 0
-    height 0
-    border-style solid
-    border-width 10px 11px 0 11px
-    border-color tip-fill transparent transparent transparent
+    absolute-pos()
+    border-radius tip-radius
+    background-color tip-fill
+    box-shadow tip-shadow
+    opacity tip-fill-opacity
+    &::after
+      content ''
+      position absolute
+      bottom -10px
+      left 50%
+      margin-left -11px
+      width 0
+      height 0
+      border-style solid
+      border-width 10px 11px 0 11px
+      border-color tip-fill transparent transparent transparent
   &.has-close
-    padding-right 60px
-  &.is-bottom::after
-    bottom auto
-    top -10px
-    border-width 0 11px 10px 11px
-    border-color transparent transparent tip-fill transparent
-  &.is-left::after,
-  &.is-right::after
-    display none
+    .tip-content
+      padding-right 60px
+  &.is-bottom
+    .tip-bg::after
+      bottom auto
+      top -10px
+      border-width 0 11px 10px 11px
+      border-color transparent transparent tip-fill transparent
+  &.is-left
+    .tip-bg::after
+      top 50%
+      right -6px
+      left auto
+      margin-top -11px
+      border-width 11px 0 11px 10px
+      border-color transparent transparent transparent tip-fill
+  &.is-right
+    .tip-bg::after
+      top 50%
+      left 4px
+      margin-top -11px
+      border-width 11px 10px 11px 0
+      border-color transparent tip-fill transparent transparent
 
   .md-icon.md-icon-cross
     position absolute
