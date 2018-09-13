@@ -2,18 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import routes from './route.indemand'
+import routes from './route'
 import App from './App'
-
-import '../components/_style/global.styl'
-import './theme.custom.styl'
-import {FastClick} from 'fastclick'
-
+import FastClick from 'fastclick'
+import '../../components/_style/global.styl'
+import '../theme.custom.styl'
 
 if ('ontouchstart' in window) {
   FastClick.attach(document.body)
 }
-
 
 Vue.config.productionTip = false
 

@@ -17,7 +17,7 @@ const env = config.example.env
 
 const webpackConfig = merge(baseWebpackConfig, {
   entry: {
-    'index': './examples/main.js',
+    'index': './examples/web/main.js',
   },
   module: {
     rules: utils.styleLoaders({

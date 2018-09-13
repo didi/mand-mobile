@@ -1,7 +1,5 @@
-
-
-import components from './components.json'
-import * as demo from './demo-index.indemand'
+import components from '../components.json'
+import * as demo from './demo-index'
 
 const traverseComponents = (data, fn) => {
   data.map(item =>

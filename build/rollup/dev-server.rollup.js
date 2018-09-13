@@ -11,7 +11,7 @@ const history = require('connect-history-api-fallback')
 const port = 4000
 
 const inputOptions = {
-  input: path.resolve(PROJECT_DIR, 'examples/main.indemand.js'),
+  input: path.resolve(PROJECT_DIR, 'examples/web/main.js'),
   plugins: rollupPlugin,
 }
 
@@ -44,7 +44,7 @@ function serve(path) {
 function runServer() {
   // rollup buildwatch
   watch()
-  
+
   // livereload
   const lrserver = livereload.createServer()
   lrserver.watch(path.join(process.cwd(), 'output'))

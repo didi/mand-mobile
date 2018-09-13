@@ -61,9 +61,9 @@ module.exports = {
   devWeapp: {
     env: require('./dev.env'),
     port: process.env.PORT || 4000,
-    assetsRoot: path.resolve(__dirname, '../examples/weapp'),
+    assetsRoot: path.resolve(__dirname, '../examples/weapp/example'),
     assetsSubDirectory: '',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/example',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
