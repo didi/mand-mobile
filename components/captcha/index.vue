@@ -235,7 +235,8 @@ export default {
 <style lang="stylus">
 .md-captcha
   .md-dialog
-    z-index captcha-zindex
+    .md-popup.with-mask
+      z-index captcha-zindex
     .md-dialog-body
       padding 60px
     .md-dialog-content
