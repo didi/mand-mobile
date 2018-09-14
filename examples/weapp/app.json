@@ -1,6 +1,7 @@
 {
   "pages": [
-    "popup/demo/cases/page"
+    "category/page",
+    "button/demo/page"
   ],
   "window": {
     "backgroundTextStyle": "light",

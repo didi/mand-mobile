@@ -1,5 +1,6 @@
 <template>
-  <svg
+  <div></div>
+  <!-- <svg
     v-if="name"
     class="md-icon"
     :class="[`md-icon-${name}`, size]"
@@ -7,7 +8,7 @@
     @click="$emit('click', $event)"
   >
     <use :xlink:href="`#${name}`"/>
-  </svg>
+  </svg> -->
 </template>
 
 <script>import loadSprite from './load-spirte'

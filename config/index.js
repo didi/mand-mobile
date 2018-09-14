@@ -61,7 +61,7 @@ module.exports = {
   devWeapp: {
     env: require('./dev.env'),
     port: process.env.PORT || 4000,
-    assetsRoot: path.resolve(__dirname, '../examples/weapp/example'),
+    assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: '',
     assetsPublicPath: '/example',
     proxyTable: {},

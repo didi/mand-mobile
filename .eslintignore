@@ -1,6 +1,7 @@
 build/*.js
 config/*.js
 lib/*
+dist/*
 output/*
 examples/*
 site/*

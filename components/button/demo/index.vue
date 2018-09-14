@@ -1,33 +1,35 @@
 <template>
   <div class="md-example button">
-    <section class="md-example-section" v-for="(demo, index) in demos" :key="index">
-      <div class="md-example-title" v-html="demo.title || '基础'"></div>
+    <section class="md-example-section">
+      <div class="md-example-title"></div>
       <div class="md-example-content">
-        <component :is="demo"></component>
+        <demo0></demo0>
       </div>
     </section>
+    <!-- <section class="md-example-section">
+      <div class="md-example-title"></div>
+      <div class="md-example-content">
+        <demo1></demo1>
+      </div>
+    </section> -->
 	</div>
 </template>
 
-<script>import createDemoModule from '../../../examples/create-demo-module'
-import Demo0 from './cases/demo0'
-import Demo1 from './cases/demo1'
-import Demo2 from './cases/demo2'
-import Demo3 from './cases/demo3'
-import Demo4 from './cases/demo4'
+<script>import Demo0 from './cases/demo0'
+// import Demo1 from './cases/demo1'
+// import Demo2 from './cases/demo2'
+// import Demo3 from './cases/demo3'
+// import Demo4 from './cases/demo4'
 
 export default {
-  ...createDemoModule('button', [Demo0, Demo1, Demo2, Demo3, Demo4]),
+  components: {
+    Demo0,
+    // Demo1,
+    // Demo2,
+    // Demo3,
+    // Demo4
+  },
 }
-
-// export default {
-//   name: `button-demo`,
-//   data() {
-//     return {
-//       demos: [Demo0, Demo1, Demo2, Demo3],
-//     }
-//   },
-// }
 </script>
 
 <style lang="stylus">
