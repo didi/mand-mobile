@@ -43,4 +43,4 @@ export {default as CheckBox} from '../components/check-box/demo'
 export {default as ScrollView} from '../components/scroll-view/demo'
 export {default as Bill} from '../components/bill/demo'
 export {default as WaterMark} from '../components/water-mark/demo'
-/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */
+export {default as Transition} from '../components/transition/demo'/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */

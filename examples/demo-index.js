@@ -44,4 +44,4 @@ export const CheckBox =  r => require.ensure([], () => r(require('../components/
 export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
 export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')
 export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
-/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

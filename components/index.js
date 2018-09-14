@@ -51,6 +51,7 @@ import ScrollViewRefresh from './scroll-view-refresh'
 import ScrollViewMore from './scroll-view-more'
 import Bill from './bill'
 import WaterMark from './water-mark'
+import Transition from './transition'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -112,6 +113,7 @@ export const components = {
   Bill,
   WaterMark,
   TabPane,
+  Transition,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -190,6 +192,7 @@ export {
   Bill,
   WaterMark,
   TabPane,
+  Transition,
   /* @init<%${componentNameUpper},%> */
 }
 
