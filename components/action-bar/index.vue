@@ -3,10 +3,10 @@
     <div class="md-action-bar-text" v-if="hasSlots">
       <slot></slot>
     </div>
-    <div class="md-action-bar-button">
+    <div class="md-action-bar-group">
       <template v-for="(item, index) in coerceActions">
         <md-button
-          class="button-item"
+          class="md-action-bar-button"
           :type="!!item.disabled ? 'disabled' : 'primary'"
           :plain="index !== coerceActions.length - 1"
           :key="index"
@@ -79,16 +79,17 @@ export default {
   align-items center
   overflow hidden
 
-.md-action-bar-button
+.md-action-bar-group
   display flex
   flex 1
   height 100%
-  .button-item
-    display flex
-    float right
-    align-items center
-    justify-content center
-    flex 1
-    &:nth-of-type(2)
-      margin-left action-bar-button-gap
+
+.md-action-bar-button
+  display flex
+  float right
+  align-items center
+  justify-content center
+  flex 1
+  &:nth-of-type(2)
+    margin-left action-bar-button-gap
 </style>

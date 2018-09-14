@@ -18,17 +18,18 @@
         :isView="true"
         :justify="true"
         :autofocus="false"
-      />
-      <footer class="md-captcha-footer">
-        <div class="md-captcha-error" v-text="errorMsg"></div>
-        <button
-          class="md-captcha-btn"
-          v-if="count"
-          v-text="countBtnText"
-          :disabled="this.isCounting"
-          @click="$_onResend"
-        ></button>
-      </footer>
+      >
+        <footer class="md-captcha-footer">
+          <div class="md-captcha-error" v-text="errorMsg"></div>
+          <button
+            class="md-captcha-btn"
+            v-if="count"
+            v-text="countBtnText"
+            :disabled="this.isCounting"
+            @click="$_onResend"
+          ></button>
+        </footer>
+      </md-codebox>
     </template>
     <template v-else>
       <md-dialog
@@ -56,17 +57,18 @@
           :justify="true"
           :autofocus="false"
           @submit="$_onSubmit"
-        />
-        <footer class="md-captcha-footer">
-          <div class="md-captcha-error" v-text="errorMsg"></div>
-          <button
-            class="md-captcha-btn"
-            v-if="count"
-            v-text="countBtnText"
-            :disabled="this.isCounting"
-            @click="$_onResend"
-          ></button>
-        </footer>
+        >
+          <footer class="md-captcha-footer">
+            <div class="md-captcha-error" v-text="errorMsg"></div>
+            <button
+              class="md-captcha-btn"
+              v-if="count"
+              v-text="countBtnText"
+              :disabled="this.isCounting"
+              @click="$_onResend"
+            ></button>
+          </footer>
+        </md-codebox>
       </md-dialog>
     </template>
   </div>
@@ -238,9 +240,11 @@ export default {
     .md-popup.with-mask
       z-index captcha-zindex
     .md-dialog-body
-      padding 60px
+      padding 60px 60px 30px 60px
     .md-dialog-content
       margin-bottom number-keyboard-height
+  .md-codebox
+    margin-bottom 28px
 
 .md-captcha-content
   font-size captcha-font-size
@@ -257,7 +261,7 @@ export default {
   margin 0 0 16px 0
 
 .md-captcha-footer
-  margin-top 28px
+  margin 28px 0
   display flex
   font-size captcha-footer-font-size
   justify-content space-between
