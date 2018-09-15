@@ -98,7 +98,7 @@ export default {
     },
     transition: {
       type: String,
-      default: 'fade',
+      default: 'md-fade',
     },
     preventScroll: {
       type: Boolean,
