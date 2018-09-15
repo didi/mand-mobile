@@ -8,7 +8,7 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
-const pxtoremConfig = pxtorem({ rootValue: 100, propWhiteList: [] })
+const pxtoremConfig = pxtorem({ rootValue: 100, minPixelValue: 2, propWhiteList: [] })
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function(name) {
   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])

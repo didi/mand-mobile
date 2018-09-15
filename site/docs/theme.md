@@ -94,7 +94,7 @@ module.exports = {
       options: {
         stylus: {
           // pxtorem (配置可根据项目需要而定)
-          use: [poststylus(pxtorem({ rootValue: 100, propWhiteList: [] }))]
+          use: [poststylus(pxtorem({ rootValue: 100, minPixelValue: 2, propWhiteList: [] }))]
         }
       }
     }),

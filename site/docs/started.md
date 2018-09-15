@@ -141,6 +141,7 @@ module.exports = {
   plugins: [
     require('postcss-pxtorem')({
       rootValue: 100,
+      minPixelValue: 2,
       propWhiteList: []
     })
   ]
@@ -155,6 +156,7 @@ const pxtorem = require('postcss-pxtorem');
 // Postcss
 webpackConfig.postcss.push(pxtorem({
   rootValue: 100,
+  minPixelValue: 2,
   propWhiteList: []
 }))
 
@@ -167,6 +169,7 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
       use: [
         poststylus(pxtorem({
           rootValue: 100,
+          minPixelValue: 2,
           propWhiteList: []
         }))
       ]
