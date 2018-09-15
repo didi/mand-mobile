@@ -1,19 +1,29 @@
+<template>
+  <div class="md-tabs">
+    <md-tab-bar
+      :items="menus"
+      :value="currentName"
+      @change="$_handleTabClick"
+      :has-ink="hasInk"
+      :ink-length="inkLength"
+    />
+    <div class="md-tabs-content">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
 <script>import TabBar from '../tab-bar'
-import TabPane from './tab-pane'
+
 export default {
   name: 'md-tabs',
 
   components: {
     [TabBar.name]: TabBar,
-    [TabPane.name]: TabPane,
   },
 
   props: {
     value: String,
-    transition: {
-      type: String,
-      default: 'md-tab-slide',
-    },
     hasInk: {
       type: Boolean,
       default: true,
@@ -22,15 +32,12 @@ export default {
       type: Number,
       default: 80,
     },
-    maxLength: {
-      type: Number,
-      default: 5,
-    },
   },
 
   data() {
     return {
       currentName: this.value,
+      panes: [],
     }
   },
 
@@ -42,12 +49,21 @@ export default {
     },
   },
 
-  created() {
-    if (!this.currentName) {
-      const paneVnodes = this.$_getPaneNodes()
-      if (paneVnodes.length) {
-        this.currentName = paneVnodes[0].componentOptions.propsData.name
-      }
+  computed: {
+    menus() {
+      return this.panes.map(pane => {
+        return {
+          name: pane.name,
+          label: pane.label,
+          disabled: pane.disabled,
+        }
+      })
+    },
+  },
+
+  mounted() {
+    if (!this.currentName && this.menus.length) {
+      this.currentName = this.menus[0].name
     }
   },
 
@@ -58,56 +74,18 @@ export default {
       this.$emit('input', tab.name)
       this.$emit('change', tab)
     },
-    // MARK: public methods
-    $_getPaneNodes() {
-      if (this.$slots.default) {
-        return this.$slots.default.filter(v => v.componentOptions && v.componentOptions.Ctor.extendOptions === TabPane)
-      } else {
-        return []
+    // MARK: private methods
+    $_addPane(pane) {
+      if (this.panes.indexOf(pane) === -1) {
+        this.panes.push(pane)
       }
     },
-    $_getCurrentPaneVnode(vnodes) {
-      if (!vnodes) {
-        vnodes = this.getPaneNodes()
+    $_removePane(pane) {
+      const index = this.panes.indexOf(pane)
+      if (index >= 0) {
+        this.panes.splice(index, 1)
       }
-      for (let i = 0, len = vnodes.length; i < len; i++) {
-        if (vnodes[i].componentOptions.propsData.name === this.currentName) {
-          return vnodes[i]
-        }
-      }
-      return null
     },
-  },
-
-  render() {
-    const paneVnodes = this.$_getPaneNodes()
-    const activePaneVnode = this.$_getCurrentPaneVnode(paneVnodes)
-    const menus = paneVnodes.map(v => {
-      const props = v.componentOptions.propsData
-      v.key = props.name
-      return {
-        name: props.name,
-        label: props.label,
-        disabled: props.disabled === '' || !!props.disabled,
-      }
-    })
-    return (
-      <div class="md-tabs">
-        <md-tab-bar
-          items={menus}
-          value={this.currentName}
-          onChange={this.$_handleTabClick}
-          hasInk={this.hasInk}
-          inkLength={this.inkLength}
-          maxLength={this.maxLength}
-        />
-        <div class="md-tabs-content">
-          <transition name={this.transition}>
-            <keep-alive>{activePaneVnode}</keep-alive>
-          </transition>
-        </div>
-      </div>
-    )
   },
 }
 </script>
