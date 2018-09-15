@@ -13,7 +13,7 @@ const pkg = require('../../package.json')
 // Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 //   baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 // })
-const pxtoremConfig = pxtorem({ rootValue: 100, propWhiteList: [] })
+const pxtoremConfig = pxtorem({ rootValue: 100, propWhiteList: [], minPixelValue: 2 })
 const argv = require('yargs').argv
 
 let entry = {

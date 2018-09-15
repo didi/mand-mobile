@@ -37,7 +37,7 @@ function vueWarpper() {
       use: [stylusMixin],
     },
     postcss: [
-      px2rem({ rootValue: 100, propWhiteList: [] })
+      px2rem({ rootValue: 100, minPixelValue: 2, propWhiteList: [] })
     ]
   })
 }
