@@ -1,76 +1,56 @@
 <template>
-  <div
-    class="md-radio"
-    :class="{
-      'across': isAcrossBorder,
-      'align-center': isAlignCenter,
-    }"
-  >
-    <md-field>
-      <template v-for="(item, index) in options">
-        <md-field-item
-          class="md-radio-item"
-          :class="{
-            'selected': $_isSelectedIndex(index) || $_isSelectedValue(item.value || item.text || item.label, index),
-            'icon-left': iconPosition === 'left'
-          }"
-          title=""
-          :key="index"
-          :disabled="$_isInvalidIndex(item, index)"
-          @click="$_onItemClick(item, index)"
-          customized
-        >
-          <!-- radio-option-content -->
-          <template v-if="hasSlot">
-            <!-- use slot -->
-            <div class="md-radio-content">
-              <slot :option="item"></slot>
-            </div>
-          </template>
-          <template v-else>
-            <!-- use data or optionRender -->
-            <div class="md-radio-content" v-html="$_getItemText(item)"></div>
-          </template>
+  <md-field class="md-radio" :class="{'is-across': isAcrossBorder, 'is-center': isAlignCenter}">
+    <md-field-item
+      class="md-radio-item"
+      v-for="(item, index) in options"
+      :class="{
+        'is-selected': $_isSelectedIndex(index) || $_isSelectedValue(item.value || item.text || item.label, index)
+      }"
+      :key="index"
+      :disabled="$_isInvalidIndex(item, index)"
+      @click="$_onItemClick(item, index)"
+    >
+      <div class="md-radio-item-content">
+        <slot :option="item">
+          <p class="md-field-item-title md-radio-item-title" v-text="item.text || item.label"></p>
+          <p class="md-field-item-describe md-radio-item-describe" v-if="item.describe" v-text="item.describe"></p>
+        </slot>
+      </div>
 
-          <!-- radio-option-check-icon -->
-          <template v-if="$_isSelectedIndex(index) || $_isSelectedValue(item.value || item.text || item.label, index)">
-            <md-icon
-              v-if="icon"
-              :name="icon"
-              :size="iconSize"
-            ></md-icon>
-          </template>
-          <template v-else>
-            <md-icon
-              v-if="iconInverse"
-              :name="iconInverse"
-              :size="iconSize"
-            ></md-icon>
-          </template>
-        </md-field-item>
+      <!-- radio-option-check-icon -->
+      <template :slot="iconPosition === 'left' ? 'start': 'after'">
+        <md-icon
+          v-if="icon && ($_isSelectedIndex(index) || $_isSelectedValue(item.value || item.text || item.label, index))"
+          :name="icon"
+          :size="iconSize"
+        ></md-icon>
+        <md-icon
+          v-else-if="iconInverse"
+          :name="iconInverse"
+          :size="iconSize"
+        ></md-icon>
       </template>
-      <md-input-item
-        v-if="hasInputOption"
-        ref="inputItem"
-        class="md-radio-item"
-        :class="{
-          'selected': $_isSelectedIndex(options.length),
-        }"
-        :title="inputOptionLabel"
-        :placeholder="inputOptionPlaceholder"
-        v-model="inputOptionValue"
-        @focus="$_onItemFocus(options.length)"
-      >
-      </md-input-item>
-    </md-field>
-  </div>
+    </md-field-item>
+    <md-input-item
+      v-if="hasInputOption"
+      ref="inputItem"
+      class="md-radio-item"
+      :class="{
+        'is-selected': $_isSelectedIndex(options.length),
+      }"
+      :title="inputOptionLabel"
+      :placeholder="inputOptionPlaceholder"
+      v-model="inputOptionValue"
+      @focus="$_onItemFocus(options.length)"
+    />
+  </md-field>
 </template>
 
 <script>import Field from '../field'
 import FieldItem from '../field-item'
 import InputItem from '../input-item'
 import Icon from '../icon'
-import {inArray, compareObjects, noop, warn} from '../_util'
+import {inArray, compareObjects, warn} from '../_util'
 export default {
   name: 'md-radio',
 
@@ -102,13 +82,13 @@ export default {
         return []
       },
     },
-    hasInputOption: {
-      type: Boolean,
-      default: false,
-    },
     value: {
       type: String,
       default: '',
+    },
+    hasInputOption: {
+      type: Boolean,
+      default: false,
     },
     inputOptionLabel: {
       type: String,
@@ -137,14 +117,6 @@ export default {
     isAlignCenter: {
       type: Boolean,
       default: false,
-    },
-    optionRender: {
-      type: Function,
-      default: noop,
-    },
-    isSlotScope: {
-      type: Boolean,
-      default: undefined,
     },
     isAcrossBorder: {
       type: Boolean,
@@ -277,47 +249,33 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-radio
-  .md-field
-    .md-field-item.md-radio-item
-      position relative
-      .md-field-item-inner
-        .md-field-item-content
-          font-weight font-weight-normal
-      .md-icon
-        position absolute
-        right 0
-        top 50%
-        transform translateY(-50%)
-        fill radio-color
-      &.selected
-        .md-field-item-content
-          color radio-color
-      &.icon-left
-        .md-icon
-          left 0
-          right auto !important
-        .md-field-item-content
-          padding-left 40px
-      .md-field-item-content.left
-        margin-left 0
-    .md-input-item.selected
-      .md-input-item-title
-        color radio-color
-  &.across
-    .md-field
-      .md-field-item.md-radio-item
-        padding 0
-        .md-field-item-inner .md-icon
-          right 32px
-        &.icon-left
-          .md-icon
-            left 32px
-
-  &.align-center
-    .md-field-item-content.left
-      justify-content center
-    .md-field-item .md-icon
+.md-radio.md-field
+  &.is-across
+    padding-left 0
+    padding-right 0
+    .md-radio-item
+      padding-left field-padding-h
+      padding-right field-padding-h
+  &.is-center
+    .md-field-item-start,
+    .md-field-item-after
       display none
+    .md-radio-item-content
+      text-align center
+
+.md-radio-item
+  &.is-selected
+    .md-radio-item-content,
+    .md-radio-item-title,
+    .md-radio-item-describe,
+    .md-input-item-title
+      color radio-color
+  .md-field-item-start,
+  .md-field-item-after
+    .md-icon
+      fill radio-color
+
+.md-radio-item-content
+  font-weight font-weight-normal
 </style>
 
