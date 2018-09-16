@@ -23,37 +23,69 @@ Vue.component(FieldItem.name, FieldItem)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |title|title|String|-|-|
+|describe|description|String|-|-|
+|disabled|disable content operation|Boolean|false|-|
+|plain|plain style|Boolean|false|-|
+
+When use `disabled` prop, its descendants can use [inject](https://vuejs.org/v2/api/#provide-inject)to have access of `Field` ancestor.
+
+```javascript
+export default {
+  name: 'your-component',
+
+  inject: {
+    rootField: {
+      from: 'rootField',
+      default: () => ({})
+    }
+  },
+
+  computed: {
+    disabled() {
+      return this.rootField.disabled
+    }
+  },
+}
+```
+
+#### Field Slots
+
+##### default
+default content slot
+
+##### header
+header content slot
+
+##### action
+header action slot
+
+##### footer
+footer content slot
+
+---
 
 #### FieldItem Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|name|name|Number/String|-1|-|
-|title|title|Number/String|-|-|
-|brief|subtitle|String|-|-|
-|disabled|whether to disable it or not|Boolean|true|-|
-|arrow|the name of arrow|String|-|`arrow-up`, `arrow-right`, `arrow-down`, `arrow-left`|
-|customized|the content is customized or not|Boolean|have `slot` or not|-|
-|align|the position of customized contents|String|left|`left`, `right`, `center`|
-|value|content|String|-|-|
-|solid|the width of title is fixed or not|Boolean|false|-|
+|title|title|String|-|-|
+|describe|description|String|-|-|
+|disabled|disable item operation|Boolean|false|-|
+|arrow|arrow indicator|Boolean|false|-|
+
+#### FieldItem Events
+##### @click(event)
+click event when not disabled
 
 #### FieldItem Slots
 
 ##### default
-Default slot of content
+default content slot
 
-##### left
-Left slot of title <sup class="version-after">1.4.0+</sup>
+##### start
+start content slot
 
-##### right
-Right slot of content <sup class="version-after">1.4.0+</sup>
+##### after
+after content slot
 
-#### FieldItem Events
-
-##### @click(name)
-
-Click event
-
-|Props | Description | Type |
-|----|-----|------|
-|name|the name of fieldItem|Number/String|
+##### children
+extra children slot
