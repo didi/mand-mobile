@@ -3,23 +3,21 @@
     class="md-bill"
     :content="waterMark"
   >
-    <div>
-      <md-field
-        :title="name"
-        :value="no ? `NO.${no}` : ''"
-        plain
-      >
-        <div class="bill-radius">
-          <i></i><i></i>
-        </div>
-        <div class="bill-detail">
-          <slot></slot>
-        </div>
-        <div class="bill-description">
-          <slot name="description"></slot>
-        </div>
-      </md-field>
-    </div>
+    <md-field
+      :title="name"
+      :value="no ? `NO.${no}` : ''"
+      plain
+    >
+      <div class="bill-radius">
+        <i></i><i></i>
+      </div>
+      <div class="bill-detail">
+        <slot></slot>
+      </div>
+      <div class="bill-description">
+        <slot name="description"></slot>
+      </div>
+    </md-field>
     <div slot="watermark" slot-scope="props" v-if="!!$scopedSlots.watermark">
       <slot name="watermark" @index="1"></slot>
     </div>

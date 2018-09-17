@@ -10,7 +10,7 @@
         value ? 'checked' : ''
       ]"
       @click="$_onChange($event)">
-      <div class="md-agree-checked-wrap">
+      <div class="md-agree-checked">
         <md-icon
           name="circle-right"
           :size="size">
@@ -81,11 +81,11 @@ export default {
   color agree-fill-inverse
   &.checked
     color agree-fill
-    .md-agree-checked-wrap
+    .md-agree-checked
       svg
         transform scale(1)
 
-.md-agree-checked-wrap
+.md-agree-checked
   position absolute
   top 0
   left 0

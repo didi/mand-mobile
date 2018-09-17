@@ -19,69 +19,43 @@ describe('FieldItem', () => {
     expect(wrapper.vm.title).to.equal('field item title')
   })
 
-  it('create a simple field-item with brief', () => {
+  it('create a simple field-item with describe', () => {
     wrapper = mount(FieldItem, {
       propsData: {
         title: 'field item title',
-        brief: 'field item brief',
+        describe: 'field item describe',
       },
     })
 
-    expect(wrapper.find('.md-field-item-brief').length).to.equal(1)
+    expect(wrapper.find('.md-field-item-describe').length).to.equal(1)
   })
 
   it('create a simple field-item with arrow', () => {
     wrapper = mount(FieldItem, {
       propsData: {
         title: 'field item title',
-        brief: 'field item brief',
-        arrow: 'arrow-right',
+        describe: 'field item describe',
+        arrow: true,
       },
     })
 
-    expect(wrapper.hasClass('has-arrow')).to.be.true
+    expect(wrapper.contains('.md-icon-arrow-right')).to.be.true
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
     wrapper.trigger('click')
     expect(eventStub.calledWith('click')).to.be.true
   })
 
-  it('create a field-item with solid title', () => {
-    wrapper = mount(FieldItem, {
-      propsData: {
-        title: 'field item title',
-        brief: 'field item brief',
-        arrow: 'arrow-right',
-        solid: true,
-      },
-    })
-
-    expect(wrapper.find('.solid').length).to.equal(1)
-  })
-
-  it('create a field-item with customized value align right', () => {
-    wrapper = mount(FieldItem, {
-      propsData: {
-        title: 'field item title',
-        brief: 'field item brief',
-        customized: true,
-        align: 'right',
-      },
-    })
-
-    expect(wrapper.vm.customized).to.be.true
-  })
-
   it('create a disabled field-item', () => {
     wrapper = mount(FieldItem, {
       propsData: {
         title: 'field item title',
-        brief: 'field item brief',
-        arrow: 'arrow-right',
+        describe: 'field item describe',
+        arrow: true,
         disabled: true,
       },
     })
 
-    expect(wrapper.hasClass('disabled')).to.be.true
+    expect(wrapper.hasClass('is-disabled')).to.be.true
   })
 })

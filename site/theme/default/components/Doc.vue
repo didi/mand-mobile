@@ -104,12 +104,12 @@
                 </div>
                 <div class="doc-demo-box-toggle" @click="toggleDemoBox(index)">
                   <template v-if="demoBoxShowStat[index]">
-                    <i class="icon-arrow-up"></i>
+                    <i class="icon-triangle-up"></i>
                     <span v-if="lang === 'en-US'">Hide Code</span>
                     <span v-else>代码收起</span>
                   </template>
                   <template v-else>
-                    <i class="icon-arrow-down"></i>
+                    <i class="icon-triangle-down"></i>
                     <span v-if="lang === 'en-US'">Show Code</span>
                     <span v-else>代码展示</span>
                   </template>
@@ -195,12 +195,12 @@
                 </div>
                 <div class="doc-demo-box-toggle" @click="toggleDemoBox(index)">
                   <template v-if="demoBoxShowStat[index]">
-                    <i class="icon-arrow-up"></i>
+                    <i class="icon-triangle-up"></i>
                     <span v-if="lang === 'en-US'">Hide Code</span>
                     <span v-else>代码收起</span>
                   </template>
                   <template v-else>
-                    <i class="icon-arrow-down"></i>
+                    <i class="icon-triangle-down"></i>
                     <span v-if="lang === 'en-US'">Show Code</span>
                     <span v-else>代码展示</span>
                   </template>
@@ -486,9 +486,11 @@ export default {
   .default-doc-demo
     margin-bottom 20px
     .doc-demo-box-info
-      padding 20px
+      padding 15px
       .doc-demo-title
-        font-size 16px
+        display flex
+        align-items center
+        font-size 14px
         font-weight 500
       .doc-demo-describe
         margin-top 10px
@@ -578,7 +580,7 @@ export default {
     background #fff
     overflow hidden
     i
-      margin-right 5px
+      font-size 24px
     span
       position absolute
       top 0

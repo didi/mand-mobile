@@ -51,7 +51,8 @@
 <script>import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import Icon from '../icon'
-import {Tabs, TabPane} from '../tabs'
+import Tabs from '../tabs'
+import TabPane from '../tab-pane'
 import Radio from '../radio'
 
 export default {

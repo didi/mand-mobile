@@ -69,7 +69,6 @@ export default {
   /* DELETE */
   title: '不同位置',
   titleEnUS: 'Different positions',
-  height: 500,
   /* DELETE */
   components: {
     [Popup.name]: Popup,

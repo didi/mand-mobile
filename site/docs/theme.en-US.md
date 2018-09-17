@@ -92,7 +92,7 @@ module.exports = {
       options: {
         stylus: {
           // pxtorem (According to needs of your project)
-          use: [poststylus(pxtorem({ rootValue: 100, propWhiteList: [] }))]
+          use: [poststylus(pxtorem({ rootValue: 100, minPixelValue: 2, propWhiteList: [] }))]
         }
       }
     }),

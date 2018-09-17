@@ -1,9 +1,9 @@
 <template>
-  <div class="md-result-page">
+  <div class="md-result">
     <img :src="actualImgUrl" :class="!imgUrl && type"/>
-    <div class="text">{{actualText}}</div>
-    <div class="subtext" v-if="subtext">{{subtext}}</div>
-    <div class="buttons" v-if="buttons.length">
+    <div class="md-result-text">{{actualText}}</div>
+    <div class="md-result-subtext" v-if="subtext">{{subtext}}</div>
+    <div class="md-result-buttons" v-if="buttons.length">
       <md-button
         v-for="(button, index) of buttons"
         :type="button.type"
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-result-page
+.md-result
   display flex
   align-items center
   justify-content center
@@ -82,22 +82,22 @@ export default {
   height 100%
   text-align center
 
-  >img
+  > img
     width result-page-image-size
     height result-page-image-size
     margin 40px
 
-  .text
-    margin 20px
-    color result-page-title-color
-    font-size result-page-title-font-size
+.md-result-text
+  margin 20px
+  color result-page-title-color
+  font-size result-page-title-font-size
 
-  .subtext
-    color result-page-describe-color
-    font-size result-page-describe-font-size
+.md-result-subtext
+  color result-page-describe-color
+  font-size result-page-describe-font-size
 
-  .buttons
-    display flex
-    .md-button
-      margin 10px
+.md-result-buttons
+  display flex
+  .md-button
+    margin 10px
 </style>

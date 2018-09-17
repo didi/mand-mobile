@@ -401,7 +401,7 @@ block()
             block()
             text-align center
             &.choose-title
-              font-size cashier-choose-title-font-size 
+              font-size cashier-choose-title-font-size
               color cashier-choose-title-color
             &.choose-number
               margin-top 35px
@@ -471,9 +471,19 @@ block()
           block()
         .md-captcha-content
           margin-top 44px
+          margin-bottom 20px
           color color-text-caption
         .md-codebox
           margin-bottom 26px
+        .md-captcha-content,
+        .md-captcha-message,
+        .md-codebox,
+        .md-captcha-footer
+          margin-left 40px
+          margin-right 40px
+        .md-captcha-footer
+          margin-bottom 44px
+
       &.md-cashier-fail
         .md-cashier-block-icon
           position relative

@@ -8,6 +8,7 @@
       isInputFocus ? 'is-focus' : '',
       isInputError ? 'is-error' : '',
       isInputBrief ? 'with-brief' : '',
+      isDisabled ? 'is-disabled': '',
       clearable ? 'is-clear' : '',
       inputEnv,
       align,
@@ -28,7 +29,7 @@
         v-if="title !== ''"
         class="md-input-item-title"
         :class="{
-          fixed: !isTitleLatent
+          'is-fixed': !isTitleLatent
         }"
         v-html="title"
       ></div>
@@ -48,7 +49,7 @@
             :name="name"
             v-model="inputBindValue"
             :placeholder="inputPlaceholder"
-            :disabled="disabled"
+            :disabled="isDisabled"
             :readonly="readonly"
             :maxlength="isFormative ? '' : maxlength"
             autocomplete="off"
@@ -65,7 +66,7 @@
             class="md-input-item-fake"
             :class="{
               'is-focus': isInputFocus,
-              'disabled': disabled,
+              'disabled': isDisabled,
               'readonly': readonly
             }"
             @click="$_onFakeInputClick"
@@ -83,7 +84,7 @@
         <!-- ------------ -->
         <div
           class="md-input-item-clear"
-          v-if="clearable && !disabled && !readonly"
+          v-if="clearable && !isDisabled && !readonly"
           v-show="!isInputEmpty && isInputFocus"
           @click="$_clearInput"
         >
@@ -147,6 +148,13 @@ export default {
   components: {
     [Icon.name]: Icon,
     [NumberKeyboard.name]: NumberKeyboard,
+  },
+
+  inject: {
+    rootField: {
+      from: 'rootField',
+      default: () => ({}),
+    },
   },
 
   props: {
@@ -286,6 +294,9 @@ export default {
     },
     isInputBrief() {
       return (this.$slots.brief || this.brief !== '') && !this.isInputError
+    },
+    isDisabled() {
+      return this.rootField.disabled || this.disabled
     },
   },
 
@@ -458,7 +469,7 @@ export default {
       this.$emit('blur', this.name)
     },
     $_onFakeInputClick(event) {
-      if (this.disabled || this.readonly) {
+      if (this.isDisabled || this.readonly) {
         return
       }
 
@@ -518,74 +529,134 @@ export default {
   min-height input-item-height
   box-sizing border-box
   clearfix()
-  .md-input-item-container
-    display flex
-    flex 1
-  .md-input-item-extra, .md-input-item-title
-    display flex
-    position relative
-    height input-item-height
-    align-items center
-    margin-right input-item-title-gap
-    font-size field-item-label-font-size
-    color field-item-label-color
-    word-break()
-    &.fixed
-      width input-item-title-width
-  .md-input-item-control
-    position relative
-    display flex
-    flex-direction column
-    flex 1
-    min-height input-item-height
-    .md-input-item-clear, .md-input-item-right
-      position absolute
-      z-index 2
-      top 0
-      right 0
-      min-width 50px
-      height input-item-height
-      display flex
-      align-items center
-      justify-content center
-    .md-input-item-clear
-      color input-item-icon
-      z-index 3
-      .md-icon
-        background color-bg-base
-        border-radius radius-circle
-    .md-input-item-input, .md-input-item-fake
-      // display flex
-      width 100%
-      height input-item-height
-      color input-item-color
-      font-size input-item-font-size
-      font-weight input-item-font-weight
-      font-family DINPro-Medium
-      -webkit-appearance none
-      border none
-      background transparent
-      outline none
-      box-sizing border-box
-      -webkit-tap-highlight-color transparent
-      appearance none
 
-    .md-input-item-input
-      &:disabled, &[disabled]
-        opacity input-item-color-disabled
-      &::-webkit-input-placeholder
-        color input-item-placeholder
-        font-weight font-weight-normal
-      &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
-        -webkit-appearance none
+.md-input-item-container
+  position relative
+  display flex
+  flex 1
+  hairline(bottom, input-item-border-color)
+
+.md-input-item-extra,
+.md-input-item-title
+  display flex
+  position relative
+  height input-item-height
+  align-items center
+  margin-right input-item-title-gap
+  font-size field-item-label-font-size
+  color field-item-label-color
+  word-break()
+  &.is-fixed
+    width input-item-title-width
+
+.md-input-item-control
+  position relative
+  display flex
+  flex-direction column
+  flex 1
+  min-height input-item-height
+
+.md-input-item-clear,
+.md-input-item-right
+  position absolute
+  z-index 2
+  top 0
+  right 0
+  min-width 50px
+  height input-item-height
+  display flex
+  align-items center
+  justify-content center
+
+.md-input-item-clear
+  color input-item-icon
+  z-index 3
+  .md-icon
+    background color-bg-base
+    border-radius radius-circle
+
+.md-input-item-input,
+.md-input-item-fake
+  // display flex
+  width 100%
+  height input-item-height
+  color input-item-color
+  font-size input-item-font-size
+  font-weight input-item-font-weight
+  font-family DINPro-Medium
+  -webkit-appearance none
+  border none
+  background transparent
+  outline none
+  box-sizing border-box
+  -webkit-tap-highlight-color transparent
+  appearance none
+
+.md-input-item-input
+  &:disabled, &[disabled]
+    opacity input-item-color-disabled
+  &::-webkit-input-placeholder
+    color input-item-placeholder
+    font-weight font-weight-normal
+  &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+    -webkit-appearance none
+
+.md-input-item-fake
+  line-height input-item-height
+  word-ellipsis()
+  cursor text
+  &::after
+    position relative
+    z-index 2
+    display none
+    content " "
+    height input-item-font-size
+    border-right solid 1.5px color-text-base
+    animation keyboard-cursor infinite 1s step-start
+  &.is-focus:after
+    display inline
+  &.disabled
+    opacity input-item-color-disabled
+
+.md-input-item-fake-placeholder
+  position absolute
+  top 0
+  left 0
+  width 100%
+  color input-item-placeholder
+  font-weight font-weight-normal
+
+.md-input-item-msg,
+.md-input-item-brief
+  position absolute
+  left 0
+  bottom 0
+  margin 0
+  float left
+  width 100%
+  margin-bottom 10px
+  word-break()
+
+.md-input-item-brief
+  font-size input-item-font-size-brief
+  color input-item-color-brief
+
+.md-input-item-msg
+  font-size input-item-font-size-error
+  color input-item-color-error
+
+.md-input-item
   &.left
-    .md-input-item-input, .md-input-item-fake
+    .md-input-item-input,
+    .md-input-item-fake
       text-align left
   &.center
-    .md-input-item-input, .md-input-item-fake
+    .md-input-item-input,
+    .md-input-item-fake
       text-align center
   &.right
-    .md-input-item-input, .md-input-item-fake
+    .md-input-item-input,
+    .md-input-item-fake
       text-align right
   &.is-clear .md-input-item-control
     padding-right 50px !important
@@ -603,7 +674,8 @@ export default {
       transition all .3s ease
       opacity 0
       will-change auto
-    .md-input-item-extra, .md-input-item-control
+    .md-input-item-extra,
+    .md-input-item-control
       top 15px
     &.is-active
       .md-input-item-title
@@ -614,77 +686,39 @@ export default {
       //   color transparent
 
   &.is-highlight
-    .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
+    .md-input-item-input::-webkit-input-placeholder,
+    .md-input-item-fake-placeholder
       color input-item-placeholder-highlight
   &.large .md-input-item-input
     font-size input-item-font-size-large
-  &.is-error, &.with-brief
+  &.is-error,
+  &.with-brief
     padding-bottom 60px
-
-  .md-input-item-fake
-    line-height input-item-height
-    word-ellipsis()
-    cursor text
-    &::after
-      position relative
-      z-index 2
-      display none
-      content " "
-      height input-item-font-size
-      border-right solid 1.5px color-text-base
-      animation keyboard-cursor infinite 1s step-start
-    &.is-focus:after
-      display inline
-    &.disabled
-      opacity input-item-color-disabled
-    .md-input-item-fake-placeholder
-      position absolute
-      top 0
-      left 0
-      width 100%
-      color input-item-placeholder
-      font-weight font-weight-normal
-
-  .md-input-item-msg, .md-input-item-brief
-    position absolute
-    left 0
-    bottom 0
-    margin 0
-    float left
-    width 100%
-    margin-bottom 10px
-    word-break()
-  .md-input-item-brief
-    font-size input-item-font-size-brief
-    color input-item-color-brief
-  .md-input-item-msg
-    font-size input-item-font-size-error
-    color input-item-color-error
 
   &.is-ios
     .md-input-item-input::-webkit-input-placeholder
       position relative
       top -3px
       overflow visible
-    .md-input-item-fake:after
+    .md-input-item-fake::after
       border-right solid 6px #2C6CF5
       border-radius 2px
   &.is-android
-    .md-input-item-fake:after
+    .md-input-item-fake::after
       border-right solid 4px color-text-base
 
-  @-webkit-keyframes keyboard-cursor
-    0%
-      opacity 1
-    50%
-      opacity 0
-    to
-      opacity 1
-  @keyframes keyboard-cursor
-    0%
-      opacity 1
-    50%
-      opacity 0
-    to
-      opacity 1
+@-webkit-keyframes keyboard-cursor
+  0%
+    opacity 1
+  50%
+    opacity 0
+  to
+    opacity 1
+@keyframes keyboard-cursor
+  0%
+    opacity 1
+  50%
+    opacity 0
+  to
+    opacity 1
 </style>

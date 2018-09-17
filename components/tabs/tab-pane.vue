@@ -1,5 +1,5 @@
 <template>
-  <div class="md-tab-pane" role="tabpanel">
+  <div class="md-tab-pane" v-show="active" role="tabpanel">
     <slot></slot>
   </div>
 </template>
@@ -17,6 +17,28 @@
     disabled: {
       type: Boolean,
     },
+  },
+
+  computed: {
+    active() {
+      return this.$parent.currentName === this.name
+    },
+  },
+
+  watch: {
+    label() {
+      this.$parent.$forceUpdate()
+    },
+    disabled() {
+      this.$parent.$forceUpdate()
+    },
+  },
+
+  created() {
+    this.$parent.$_addPane(this)
+  },
+  destroyed() {
+    this.$parent.$_removePane(this)
   },
 }
 </script>

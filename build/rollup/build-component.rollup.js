@@ -42,7 +42,9 @@ function compileVueStylus (content, cb, compiler, filePath) {
         throw err
       }
       postcss([autoprefixer])
-        .process(css)
+        .process(css, {
+          from: undefined
+        })
         .then(result => {
           cb(null, result.css)
         })
@@ -75,20 +77,22 @@ function computedCompilerConfig(filePath) {
 
 function move(destDir) {
   return new Promise((resolve, reject) => {
-    copy(SRC_BASE, destDir, {filter: function(item) {
-      if (/demo|test/.test(item)) {
-        return false
-      }
-      if (/^index.js$/.test(item)) {
-        return false
-      }
-      return true
-    }}, function (err, result) {
-      if (err) {
-        reject(err)
-      }
-      resolve(result)
-    })
+    copy(SRC_BASE, destDir, {
+      overwrite: true,
+      filter: function(item) {
+        if (/demo|test/.test(item)) {
+          return false
+        }
+        if (/^index.js$/.test(item)) {
+          return false
+        }
+        return true
+      }}, function (err, result) {
+        if (err) {
+          reject(err)
+        }
+        resolve(result)
+      })
   })
 }
 

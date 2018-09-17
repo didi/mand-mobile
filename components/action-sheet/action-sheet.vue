@@ -23,7 +23,7 @@
               v-html="item.text || item.label"
             ></li>
           </template>
-          <li class="cancel-btn" @click="$_onCancel">{{ cancelText }}</li>
+          <li class="md-action-sheet-cancel" @click="$_onCancel">{{ cancelText }}</li>
         </ul>
       </div>
     </md-popup>
@@ -156,14 +156,15 @@ export default {
     color action-sheet-color-highlight
   &.disabled
     opacity action-sheet-disabled-opacity
-  &.cancel-btn
-    height 132px
-    line-height 120px
-    color action-sheet-color-cancel
-    font-weight font-weight-medium
-    &::before
-      display block
-      content ''
-      height 12px
-      background action-sheet-cancel-gap-bg
+
+.md-action-sheet-cancel
+  height 132px
+  line-height 120px
+  color action-sheet-color-cancel
+  font-weight font-weight-medium
+  &::before
+    display block
+    content ''
+    height 12px
+    background action-sheet-cancel-gap-bg
 </style>
