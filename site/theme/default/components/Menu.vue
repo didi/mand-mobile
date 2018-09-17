@@ -112,12 +112,13 @@ export default {
     float left
     width 100%
     font-size 14px
+    font-family DinPro
     color #314659
     text-decoration none
     transition all .3s
     -webkit-font-smoothing initial
     &:hover
-      color #048EFA
+      color #2f86f6
     &.disabled
       color #999
       pointer-events none
@@ -133,12 +134,12 @@ export default {
       top 25%
       width 4px
       height 50%
-      background #048EFA
+      background #2f86f6
     &.router-link-active
-      color #048EFA
+      color #2f86f6
       font-weight 500
       span
-        color #048EFA
+        color #2f86f6
       // background RGBA(252, 145, 83, .05)
       &:after
         display block

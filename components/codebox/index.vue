@@ -48,7 +48,7 @@
         />
       </template>
     </div>
-
+    <slot></slot>
     <form action="" v-show="system" @submit="$_onSubmit">
       <input
         :value="code"

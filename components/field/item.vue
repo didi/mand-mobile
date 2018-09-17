@@ -1,64 +1,26 @@
 <template>
-  <div
-    class="md-field-item"
-    :class="[
-      arrow ? 'has-arrow' : '' ,
-      !!$slots.child ? 'has-child' : '' ,
-      disabled ? 'disabled' : '',
-    ]"
-    :name="name"
-    @click="$_onItemClick($event, name)">
-    <div class="md-field-item-inner">
-      <!-- Left Control -->
-      <div class="md-field-item-extra" v-if="$slots.left">
-        <slot name="left"></slot>
+  <div class="md-field-item" :class="{ 'is-disabled': currentDisabled }" @click="$_onClick">
+    <div class="md-field-item-content">
+      <div class="md-field-item-start" v-if="$slots.start">
+        <slot name="start"></slot>
       </div>
-      <div
-        class="md-field-item-label"
-        :class="[
-          solid ? 'solid' : ''
-        ]">
-        <div class="md-field-item-title" v-html="title"></div>
-        <div class="md-field-item-brief"
-          v-if="brief"
-          v-html="brief"
-        ></div>
-      </div>
-      <!-- Content -->
-      <div
-        v-if="customized"
-        class="md-field-item-content"
-        :class="[align]">
+      <div class="md-field-item-inner">
+        <p class="md-field-item-title" v-if="title" v-text="title"></p>
+        <p class="md-field-item-describe" v-if="describe" v-text="describe"></p>
         <slot></slot>
       </div>
-      <div
-        v-else
-        class="md-field-item-content"
-        :class="[align]">
-        {{value}}
+      <div class="md-field-item-after" v-if="arrow || $slots.after">
+        <slot name="after"></slot>
+        <md-icon v-if="arrow" name="arrow-right" size="lg" />
       </div>
-      <!-- Right Control -->
-      <div
-        class="md-field-right"
-        v-if="$slots.right"
-      >
-        <slot name="right"></slot>
-      </div>
-      <md-icon
-        v-else-if="arrow"
-        class="md-field-arrow"
-        :name="arrow"
-        size="lg">
-      </md-icon>
     </div>
-    <div class="md-field-child" v-if="$slots.child">
-      <slot name="child"></slot>
+    <div class="md-field-item-children" v-if="$slots.children">
+      <slot name="children"></slot>
     </div>
   </div>
 </template>
 
 <script>import Icon from '../icon'
-import {isEmptyObject, randomId} from '../_util'
 
 export default {
   name: 'md-field-item',
@@ -67,60 +29,43 @@ export default {
     [Icon.name]: Icon,
   },
 
-  props: {
-    name: {
-      type: Number | String,
-      default() {
-        return randomId('field-item')
-      },
+  inject: {
+    rootField: {
+      from: 'rootField',
+      default: () => ({}),
     },
+  },
+
+  props: {
     title: {
       type: String,
       default: '',
     },
-    brief: {
+    describe: {
       type: String,
       default: '',
     },
-    value: {
-      type: String,
-      default: '',
+    arrow: {
+      type: Boolean,
+      default: false,
     },
     disabled: {
       type: Boolean,
       default: false,
     },
-    arrow: {
-      type: String,
-      default: '',
-    },
-    customized: {
-      type: Boolean,
-      default() {
-        return !isEmptyObject(this.$slots)
-      },
-    },
-    align: {
-      // left, right, center
-      type: String,
-      default: 'left',
-      validator(value) {
-        return ['left', 'right', 'center'].indexOf(value) > -1
-      },
-    },
-    solid: {
-      type: Boolean,
-      default: false,
+  },
+
+  computed: {
+    currentDisabled() {
+      return this.rootField.disabled || this.disabled
     },
   },
 
   methods: {
-    // MARK: events handler
-    $_onItemClick(event, name) {
-      if (this.disabled) {
-        return
+    $_onClick(e) {
+      if (!this.currentDisabled) {
+        this.$emit('click', e)
       }
-      this.$emit('click', name)
     },
   },
 }
@@ -128,79 +73,56 @@ export default {
 
 <style lang="stylus">
 .md-field-item
-  -webkit-tap-highlight-color transparent
   position relative
+  &:not(:last-child)
+    hairline(bottom, field-item-border-color)
+
+.md-field-item-content
+  display flex
+  align-items center
+  justify-content space-between
+  min-height field-item-min-height
+  padding-top field-item-padding-v
+  padding-bottom field-item-padding-v
   box-sizing border-box
-  width 100%
-  &.disabled
-    .md-field-item-inner
-      .md-field-item-label, .md-field-item-content
-        opacity field-item-color-disabled
-  &.has-arrow
-    .md-field-item-content
-      padding-right 28px
-    &::after
-      absolute-pos()
-      display none
-      content ''
-      position absolute
-      box-sizing border-box
-      background-color field-item-bg-tap-color
-    &:active::after
-      display block
-  &.has-child
-    padding 0 !important
-    .md-field-item-inner
-      padding field-item-padding-v field-padding-h
-    .md-field-child
-      position relative
-      &:before
-        content ''
-        position absolute
-        top -12px
-        left 10%
-        border-left solid 12px transparent
-        border-right solid 12px transparent
-        border-bottom solid 12px field-bg-plain-color
-      .md-field-item
-        padding-left field-padding-h !important
-        padding-right field-padding-h !important
-  .md-field-item-inner
-      display flex
-      align-items center
-      padding field-item-padding-v 0
-  .md-field-item-extra
-    display flex
-    margin-right field-item-padding-v
-  .md-field-item-label
-    &.solid
-      width input-item-title-width
-    .md-field-item-title
-      font-size field-item-label-font-size
-    .md-field-item-brief
-      font-size field-item-brief-font-size
-      color field-item-brief-color
-  .md-field-item-content
-    display flex
-    flex-grow 1
-    align-items center
-    color field-item-content-color
-    font-size field-item-content-font-size
-    font-weight field-item-content-font-weight
-    &.left
-      margin-left v-gap-lg
-    &.right
-      justify-content flex-end
-    &.center
-      justify-content center
-  .md-field-arrow
-    position absolute
-    right 28px
-    top 50%
-    transform translate(42px, -50%)
-    color field-item-icon-color
-  .md-field-right
-    display flex
-    align-items center
-    justify-content center
+
+.md-field-item-start
+  flex-shrink 0
+  margin-right h-gap-lg
+
+.md-field-item-inner
+  flex 1 1 0%
+  color field-item-color
+  font-size field-item-font-size
+  line-height 1.2
+
+.md-field-item-after
+  flex-shrink 0
+  margin-left h-gap-sm
+  display inline-flex
+  align-items center
+  justify-content flex-end
+  color field-item-after-color
+  font-size field-item-after-font-size
+  .md-icon-arrow-right
+    margin-right -12px
+
+.md-field-item-title
+  line-height 1.2
+
+.md-field-item-describe
+  color #858B9C
+  font-size 24px
+  line-height 1.4
+  margin-top v-gap-sm
+
+.md-field-item-children
+  padding-bottom field-item-padding-v
+
+.md-field-item
+  &.is-disabled
+    .md-field-item-inner,
+    .md-field-item-describe,
+    .md-field-item-after
+      color color-text-disabled
 </style>

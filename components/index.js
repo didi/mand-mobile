@@ -16,7 +16,8 @@ import Swiper from './swiper'
 import SwiperItem from './swiper-item'
 import Toast from './toast'
 import Tip from './tip'
-import {Tabs, TabPane} from './tabs'
+import Tabs from './tabs'
+import TabPane from './tab-pane'
 import TabBar from './tab-bar'
 import Tag from './tag'
 import InputItem from './input-item'
@@ -50,6 +51,7 @@ import ScrollViewRefresh from './scroll-view-refresh'
 import ScrollViewMore from './scroll-view-more'
 import Bill from './bill'
 import WaterMark from './water-mark'
+import Transition from './transition'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -111,6 +113,7 @@ export const components = {
   Bill,
   WaterMark,
   TabPane,
+  Transition,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -122,7 +125,9 @@ const install = function(Vue) {
   const componentsNames = Object.keys(components)
   componentsNames.forEach(name => {
     const component = components[name]
-    component.name && Vue.component(component.name, component)
+    if (component.name) {
+      Vue.component(component.name, component)
+    }
   })
 
   // 全局服务注入
@@ -187,6 +192,7 @@ export {
   Bill,
   WaterMark,
   TabPane,
+  Transition,
   /* @init<%${componentNameUpper},%> */
 }
 

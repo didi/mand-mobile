@@ -3,7 +3,7 @@ title: Field 区域列表组合
 preview: https://didi.github.io/mand-mobile/examples/#/field
 ---
 
-区域列表垂直排列，显示当前的内容、状态和可进行的操作
+区域列表垂直排列，显示当前的内容、状态和可进行的操作。
 
 ### 引入
 
@@ -23,36 +23,69 @@ Vue.component(FieldItem.name, FieldItem)
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 |title|标题|String|-|-|
+|describe|描述内容|String|-|-|
+|disabled|是否禁用区域|Boolean|false|-|
+|plain|镂空样式|Boolean|false|-|
+
+当使用了`disabled`选项时，其后代内容可以通过[inject](https://vuejs.org/v2/api/#provide-inject)的方式获取祖先`Field`的实例属性。
+
+```javascript
+export default {
+  name: 'your-component',
+
+  inject: {
+    rootField: {
+      from: 'rootField',
+      default: () => ({})
+    }
+  },
+
+  computed: {
+    disabled() {
+      return this.rootField.disabled
+    }
+  },
+}
+```
+
+#### Field Slots
+
+##### default
+内容默认插槽
+
+##### header
+页眉内容插槽
+
+##### action
+页眉操作区域插槽
+
+##### footer
+页脚内容插槽
+
+---
 
 #### FieldItem Props
-|属性 | 说明 | 类型 | 默认值 |备注|
+|属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
-|name|标识|Number/String| `-1`|-|
 |title|标题|String|-|-|
-|brief|子标题|String|-|-|
-|disabled|是否禁用|Boolean|`true`|-|
-|arrow|箭头名称|String|-|`arrow-up`, `arrow-right`, `arrow-down`, `arrow-left`|
-|customized|内容是否自定义|Boolean|是否有`slot`|-|
-|align|自定义内容时，内容位置|String|`left`|`left`, `right`, `center`|
-|value|内容|String|-|-|
-|solid|是否固定标题宽度，超出会自动换行|Boolean|`false`|-|
+|describe|描述内容|String|-|-|
+|disabled|是否禁用项目|Boolean|false|-|
+|arrow|动作箭头标识|Boolean|false|-|
+
+#### FieldItem Events
+##### @click(event)
+非禁用状态下的点击事件
 
 #### FieldItem Slots
 
 ##### default
 内容默认插槽
 
-##### left
-标题左侧插槽 <sup class="version-after">1.4.0+</sup>
+##### start
+头部区域插槽
 
-##### right
-内容右侧插槽 <sup class="version-after">1.4.0+</sup>
+##### after
+末尾预期插槽
 
-#### FieldItem Events
-
-##### @click(name)
-点击事件
-
-|属性 | 说明 | 类型|
-|----|-----|------|
-|name|fieldItem标识|Number/String|
+##### children
+额外内容插槽

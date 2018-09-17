@@ -30,7 +30,6 @@ export default {
   titleEnUS: 'Load More',
   message: '请在移动设备中扫码预览',
   messageEnUS: 'Please scan QR code and preview on mobile device',
-  height: 800,
   /* DELETE */
   components: {
     [ScrollView.name]: ScrollView,
