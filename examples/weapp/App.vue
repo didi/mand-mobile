@@ -4,6 +4,8 @@
   }
 </script>
 <style lang="stylus">
-.md-example
+page
   padding 20px
+  box-sizing border-box
+  background #f3f4f5
 </style>

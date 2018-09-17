@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "webpack-dashboard -m -- node build/webpack/dev-server",
     "dev:site": "cd site && npm start",
-    "dev:weapp": "cross-env NODE_ENV=weapp webpack-dashboard -m -- node build/webpack/dev-server",
+    "dev:weapp": "rm -rf dist/* && cross-env NODE_ENV=weapp webpack-dashboard -m -- node build/webpack/dev-server",
     "create": "node build/component-init.js",
     "cz": "git-cz",
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",

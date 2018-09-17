@@ -15,7 +15,10 @@
       <template v-if="icon">
         <md-icon :name="icon"></md-icon>
       </template>
-      <p class="md-button-content">
+      <p class="md-button-content" v-if="content">
+        {{ content }}
+      </p>
+      <p class="md-button-content" v-else>
         <slot></slot>
       </p>
     </div>
@@ -58,6 +61,9 @@ export default {
     inactive: {
       type: Boolean,
       default: false,
+    },
+    content: {
+      type: String,
     },
   },
 
