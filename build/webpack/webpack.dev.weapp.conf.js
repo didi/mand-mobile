@@ -52,8 +52,15 @@ baseWebpackConfig = merge.smart(baseWebpackConfig, {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'mpvue-loader',
-        options: vueLoaderConfig
+        use: [
+          {
+            loader: 'mpvue-loader',
+            options: vueLoaderConfig
+          },
+          {
+            loader: path.resolve('platforms/weapp/loader.js')
+          }
+        ]
       },
       {
         test: /\.js$/,
