@@ -80,16 +80,6 @@ export default {
         }
       },
     },
-    preventScroll: {
-      type: Boolean,
-      default: false,
-    },
-    preventScrollExclude: {
-      type: [String, HTMLElement],
-      default() {
-        return ''
-      },
-    },
   },
 
   data() {
@@ -118,13 +108,6 @@ export default {
         this.$_hidePopupBox()
       }
     },
-    preventScrollExclude(val, oldVal) {
-      // remove old listener before add
-      /* istanbul ignore next */
-      this.$_preventScrollExclude(false, oldVal)
-      /* istanbul ignore next */
-      this.$_preventScrollExclude(true, val)
-    },
   },
 
   mounted() {
@@ -144,43 +127,15 @@ export default {
           this.$_onPopupTransitionEnd()
         }
       })
-
-      this.preventScroll && this.$_preventScroll(true)
     },
     $_hidePopupBox() {
       this.isAnimation = true
       this.isPopupBoxShow = false
-      this.preventScroll && this.$_preventScroll(false)
       this.$emit('input', false)
       /* istanbul ignore if */
       if (process.env.NODE_ENV === 'testing') {
         this.$_onPopupTransitionEnd()
       }
-    },
-    $_preventScroll(isBind) {
-      const handler = isBind ? 'addEventListener' : 'removeEventListener'
-      const masker = this.$el.querySelector('.md-popup-mask')
-      const boxer = this.$el.querySelector('.md-popup-box')
-
-      masker && masker[handler]('touchmove', this.$_preventDefault, false)
-      boxer && boxer[handler]('touchmove', this.$_preventDefault, false)
-      this.$_preventScrollExclude(isBind)
-    },
-    $_preventScrollExclude(isBind, preventScrollExclude) {
-      const handler = isBind ? 'addEventListener' : 'removeEventListener'
-      preventScrollExclude = preventScrollExclude || this.preventScrollExclude
-      const excluder =
-        preventScrollExclude && typeof preventScrollExclude === 'string'
-          ? this.$el.querySelector(preventScrollExclude)
-          : preventScrollExclude
-      excluder && excluder[handler]('touchmove', this.$_stopImmediatePropagation, false)
-    },
-    $_preventDefault(event) {
-      event.preventDefault()
-    },
-    $_stopImmediatePropagation(event) {
-      /* istanbul ignore next */
-      event.stopImmediatePropagation()
     },
 
     // MARK: event handler

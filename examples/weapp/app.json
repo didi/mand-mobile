@@ -1,7 +1,8 @@
 {
   "pages": [
     "category/page",
-    "button/demo/page"
+    "button/demo/page",
+    "action-bar/demo/page"
   ],
   "window": {
     "backgroundTextStyle": "light",

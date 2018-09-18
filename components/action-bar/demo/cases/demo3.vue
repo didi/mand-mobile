@@ -1,9 +1,9 @@
 <template>
   <div class="md-example-child md-example-child-action-bar md-example-child-3">
     <md-action-bar :actions="data" @click="onBtnClick">
-      <span class="price">
-        &yen;128.00<small>起</small>
-      </span>
+      <p class="price">
+        &yen;128.00<span>起</span>
+      </p>
     </md-action-bar>
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
   font-weight 500
   font-size 48px
   color #FF823A
-  small
+  span
     margin-left 10px
     font-size 32px
     color #858B9C

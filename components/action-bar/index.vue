@@ -4,17 +4,14 @@
       <slot></slot>
     </div>
     <div class="md-action-bar-group">
-      <template v-for="(item, index) in coerceActions">
-        <md-button
-          class="md-action-bar-button"
-          :type="!!item.disabled ? 'disabled' : 'primary'"
-          :plain="index !== coerceActions.length - 1"
-          :key="index"
-          @click="$_onBtnClick($event, item)"
-        >
-          {{ item.text }}
-        </md-button>
-      </template>
+      <md-button
+        v-for="(item, index) in coerceActions"
+        :type="!!item.disabled ? 'disabled' : 'primary'"
+        :plain="index !== coerceActions.length - 1"
+        :content="item.text"
+        :key="index"
+        @click="$_onBtnClick($event, item)"
+      ></md-button>
     </div>
   </div>
 </template>
@@ -83,13 +80,12 @@ export default {
   display flex
   flex 1
   height 100%
-
-.md-action-bar-button
-  display flex
-  float right
-  align-items center
-  justify-content center
-  flex 1
-  &:nth-of-type(2)
-    margin-left action-bar-button-gap
+  .md-button
+    display flex
+    float right
+    align-items center
+    justify-content center
+    flex 1
+    &:nth-of-type(2)
+      margin-left action-bar-button-gap
 </style>
