@@ -2,7 +2,9 @@
   "pages": [
     "category/page",
     "button/demo/page",
-    "action-bar/demo/page"
+    "action-bar/demo/page",
+    "field/demo/page",
+    "switch/demo/page"
   ],
   "window": {
     "backgroundTextStyle": "light",
