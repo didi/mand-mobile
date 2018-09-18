@@ -1,16 +1,15 @@
 <template>
   <div class="md-field-item" :class="{ 'is-disabled': currentDisabled }" @click="$_onClick">
     <div class="md-field-item-content">
-      <div class="md-field-item-start" v-if="$slots.start">
-        <slot name="start"></slot>
+      <label class="md-field-item-title" v-if="title" v-text="title"></label>
+      <div class="md-field-item-control">
+        <slot>
+          <template v-if="content">{{ content }}</template>
+          <div class="md-field-item-placeholder" v-else-if="placeholder" v-text="placeholder"></div>
+        </slot>
       </div>
-      <div class="md-field-item-inner">
-        <p class="md-field-item-title" v-if="title" v-text="title"></p>
-        <p class="md-field-item-describe" v-if="describe" v-text="describe"></p>
-        <slot></slot>
-      </div>
-      <div class="md-field-item-after" v-if="arrow || $slots.after">
-        <slot name="after"></slot>
+      <div class="md-field-item-addon" v-if="arrow || $slots.addon">
+        <slot name="addon"></slot>
         <md-icon v-if="arrow" name="arrow-right" size="lg" />
       </div>
     </div>
@@ -41,7 +40,11 @@ export default {
       type: String,
       default: '',
     },
-    describe: {
+    placeholder: {
+      type: String,
+      default: '',
+    },
+    content: {
       type: String,
       default: '',
     },
@@ -74,8 +77,6 @@ export default {
 <style lang="stylus">
 .md-field-item
   position relative
-  &:not(:last-child)
-    hairline(bottom, field-item-border-color)
 
 .md-field-item-content
   display flex
@@ -85,44 +86,44 @@ export default {
   padding-top field-item-padding-v
   padding-bottom field-item-padding-v
   box-sizing border-box
+  hairline(bottom, field-item-border-color)
 
-.md-field-item-start
+.md-field-item-title
   flex-shrink 0
-  margin-right h-gap-lg
+  width field-item-title-width
+  margin-right field-item-title-gap
+  font-size field-item-font-size
+  line-height 1.2
 
-.md-field-item-inner
+.md-field-item-control
+  position relative
   flex 1 1 0%
   color field-item-color
   font-size field-item-font-size
   line-height 1.2
 
-.md-field-item-after
+.md-field-item-placeholder
+  color field-item-placeholder-color
+
+.md-field-item-addon
   flex-shrink 0
   margin-left h-gap-sm
   display inline-flex
   align-items center
   justify-content flex-end
-  color field-item-after-color
-  font-size field-item-after-font-size
+  color field-item-addon-color
+  font-size field-item-addon-font-size
   .md-icon-arrow-right
     margin-right -12px
 
-.md-field-item-title
-  line-height 1.2
-
-.md-field-item-describe
-  color #858B9C
-  font-size 24px
-  line-height 1.4
-  margin-top v-gap-sm
-
 .md-field-item-children
-  padding-bottom field-item-padding-v
+  font-size field-item-children-font-size
+  margin-top v-gap-sm
+  margin-bottom v-gap-sm
 
 .md-field-item
   &.is-disabled
-    .md-field-item-inner,
-    .md-field-item-describe,
+    .md-field-item-control,
     .md-field-item-after
       color color-text-disabled
 </style>
