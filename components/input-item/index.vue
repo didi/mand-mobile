@@ -1,5 +1,5 @@
 <template>
-  <div
+  <md-field-item
     class="md-input-item"
     :class="[
       isHighlight ? 'is-highlight' : '',
@@ -13,99 +13,80 @@
       inputEnv,
       align,
       size
-    ]">
-    <div class="md-input-item-container">
-      <!-- ------------ -->
-      <!--   LEFT SLOT  -->
-      <!-- ------------ -->
-      <div class="md-input-item-extra" v-if="$slots.left">
-        <slot name="left"></slot>
-      </div>
-
-      <!-- ------------ -->
-      <!--     TITLE    -->
-      <!-- ------------ -->
+    ]"
+    :title="title"
+  >
+    <slot name="left"></slot>
+    <!-- ------------ -->
+    <!--    INPUT     -->
+    <!-- ------------ -->
+    <!-- Native Input -->
+    <template v-if="!isVirtualKeyboard">
+      <input
+        class="md-input-item-input"
+        :type="inputType"
+        :name="name"
+        v-model="inputBindValue"
+        :placeholder="inputPlaceholder"
+        :disabled="isDisabled"
+        :readonly="readonly"
+        :maxlength="isFormative ? '' : maxlength"
+        autocomplete="off"
+        @focus="$_onFocus"
+        @blur="$_onBlur"
+        @keyup="$_onKeyup"
+        @keydown="$_onKeydown"
+        @input="$_onInput"
+      />
+    </template>
+    <!-- Fake Input -->
+    <template v-else>
       <div
-        v-if="title !== ''"
-        class="md-input-item-title"
+        class="md-input-item-fake"
         :class="{
-          'is-fixed': !isTitleLatent
+          'is-focus': isInputFocus,
+          'disabled': isDisabled,
+          'readonly': readonly
         }"
-        v-html="title"
-      ></div>
-
-      <!-- ------------ -->
-      <!--   CONTROL    -->
-      <!-- ------------ -->
-      <div class="md-input-item-control">
-        <!-- ------------ -->
-        <!--    INPUT     -->
-        <!-- ------------ -->
-        <!-- Native Input -->
-        <template v-if="!isVirtualKeyboard">
-          <input
-            class="md-input-item-input"
-            :type="inputType"
-            :name="name"
-            v-model="inputBindValue"
-            :placeholder="inputPlaceholder"
-            :disabled="isDisabled"
-            :readonly="readonly"
-            :maxlength="isFormative ? '' : maxlength"
-            autocomplete="off"
-            @focus="$_onFocus"
-            @blur="$_onBlur"
-            @keyup="$_onKeyup"
-            @keydown="$_onKeydown"
-            @input="$_onInput"
-          />
-        </template>
-        <!-- Fake Input -->
-        <template v-else>
-          <div
-            class="md-input-item-fake"
-            :class="{
-              'is-focus': isInputFocus,
-              'disabled': isDisabled,
-              'readonly': readonly
-            }"
-            @click="$_onFakeInputClick"
-          >
-            <span v-text="inputValue"></span>
-            <span
-              class="md-input-item-fake-placeholder"
-              v-if="inputValue === '' && inputPlaceholder !== ''"
-              v-text="inputPlaceholder"></span>
-          </div>
-        </template>
-
-        <!-- ------------ -->
-        <!--  CLEART BTN  -->
-        <!-- ------------ -->
-        <div
-          class="md-input-item-clear"
-          v-if="clearable && !isDisabled && !readonly"
-          v-show="!isInputEmpty && isInputFocus"
-          @click="$_clearInput"
-        >
-          <md-icon name="circle-cross"></md-icon>
-        </div>
-
-        <!-- ------------ -->
-        <!--  RIGHT SLOT  -->
-        <!-- ------------ -->
-        <div
-          class="md-input-item-right"
-          v-if="$slots.right"
-        >
-          <slot name="right"></slot>
-        </div>
+        @click="$_onFakeInputClick"
+      >
+        <span v-text="inputValue"></span>
+        <span
+          class="md-input-item-fake-placeholder"
+          v-if="inputValue === '' && inputPlaceholder !== ''"
+          v-text="inputPlaceholder"></span>
       </div>
+    </template>
+
+    <!-- ------------ -->
+    <!--  CLEART BTN  -->
+    <!-- ------------ -->
+    <div
+      slot="addon"
+      class="md-input-item-clear"
+      v-if="clearable && !isDisabled && !readonly"
+      v-show="!isInputEmpty && isInputFocus"
+      @click="$_clearInput"
+    >
+      <md-icon name="circle-cross"></md-icon>
     </div>
+
+    <!-- ------------ -->
+    <!--  RIGHT SLOT  -->
+    <!-- ------------ -->
+    <div
+      slot="addon"
+      class="md-input-item-right"
+      v-if="$slots.right"
+    >
+      <slot name="right"></slot>
+    </div>
+
     <!-- -------------------- -->
     <!-- BRIEF/ERROR TIP -->
     <!-- -------------------- -->
     <div
+      slot="children"
       v-if="isInputError"
       class="md-input-item-msg"
     >
@@ -113,6 +94,7 @@
       <slot name="error" v-else></slot>
     </div>
     <div
+      slot="children"
       v-if="isInputBrief"
       class="md-input-item-brief"
     >
@@ -123,6 +105,7 @@
     <!--   KEYBORARD  -->
     <!-- ------------ -->
     <md-number-keyboard
+      slot="children"
       v-if="isVirtualKeyboard"
       ref="number-keyboard"
       :id="`${name}-number-keyboard`"
@@ -133,10 +116,11 @@
       @delete="$_onNumberKeyBoardDelete"
       @confirm="$_onNumberKeyBoardConfirm"
     ></md-number-keyboard>
-  </div>
+  </md-field-item>
 </template>
 
 <script>import Icon from '../icon'
+import FieldItem from '../field-item'
 import NumberKeyboard from '../number-keyboard'
 import {getCursorsPosition, setCursorsPosition} from './cursor'
 import {noop, isIOS, isAndroid, randomId} from '../_util'
@@ -147,6 +131,7 @@ export default {
 
   components: {
     [Icon.name]: Icon,
+    [FieldItem.name]: FieldItem,
     [NumberKeyboard.name]: NumberKeyboard,
   },
 
@@ -521,56 +506,15 @@ export default {
 
 <style lang="stylus">
 .md-input-item
-  position relative
-  display flex
-  flex 1
-  align-self stretch
-  position relative
-  min-height input-item-height
-  box-sizing border-box
-  clearfix()
-
-.md-input-item-container
-  position relative
-  display flex
-  flex 1
-  hairline(bottom, input-item-border-color)
-
-.md-input-item-extra,
-.md-input-item-title
-  display flex
-  position relative
-  height input-item-height
-  align-items center
-  margin-right input-item-title-gap
-  font-size field-item-label-font-size
-  color field-item-label-color
-  word-break()
-  &.is-fixed
-    width input-item-title-width
-
-.md-input-item-control
-  position relative
-  display flex
-  flex-direction column
-  flex 1
-  min-height input-item-height
-
-.md-input-item-clear,
-.md-input-item-right
-  position absolute
-  z-index 2
-  top 0
-  right 0
-  min-width 50px
-  height input-item-height
-  display flex
-  align-items center
-  justify-content center
+  .md-field-item-content
+    padding-top 0
+    padding-bottom 0
+  .md-field-item-control
+    display flex
+    align-items center
 
 .md-input-item-clear
   color input-item-icon
-  z-index 3
   .md-icon
     background color-bg-base
     border-radius radius-circle
@@ -628,14 +572,9 @@ export default {
 
 .md-input-item-msg,
 .md-input-item-brief
-  position absolute
-  left 0
-  bottom 0
-  margin 0
-  float left
-  width 100%
-  margin-bottom 10px
   word-break()
+  &:not(:last-child)
+    margin-bottom 10px
 
 .md-input-item-brief
   font-size input-item-font-size-brief
@@ -650,20 +589,19 @@ export default {
     .md-input-item-input,
     .md-input-item-fake
       text-align left
+
   &.center
     .md-input-item-input,
     .md-input-item-fake
       text-align center
+
   &.right
     .md-input-item-input,
     .md-input-item-fake
       text-align right
-  &.is-clear .md-input-item-control
-    padding-right 50px !important
+
   &.is-title-latent
-    padding-top 10px
-    // overflow hidden
-    .md-input-item-title
+    .md-field-item-title
       position absolute
       top 50%
       left 0
@@ -674,11 +612,10 @@ export default {
       transition all .3s ease
       opacity 0
       will-change auto
-    .md-input-item-extra,
-    .md-input-item-control
+    .md-field-item-control
       top 15px
     &.is-active
-      .md-input-item-title
+      .md-field-item-title
         opacity 1
         top 10px
         transform translate3d(0, 0, 0)
@@ -689,11 +626,13 @@ export default {
     .md-input-item-input::-webkit-input-placeholder,
     .md-input-item-fake-placeholder
       color input-item-placeholder-highlight
+
   &.large .md-input-item-input
     font-size input-item-font-size-large
-  &.is-error,
-  &.with-brief
-    padding-bottom 60px
+
+  &.is-error
+    .md-field-item-content::before
+      background-color input-item-color-error
 
   &.is-ios
     .md-input-item-input::-webkit-input-placeholder
