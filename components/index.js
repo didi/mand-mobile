@@ -33,6 +33,7 @@ import TabPicker from './tab-picker'
 import Dialog from './dialog'
 import Field from './field'
 import FieldItem from './field-item'
+import CellItem from './cell-item'
 import Switch from './switch'
 import Agree from './agree'
 import Radio from './radio'
@@ -94,6 +95,7 @@ export const components = {
   Dialog,
   Field,
   FieldItem,
+  CellItem,
   Switch,
   Agree,
   Radio,
@@ -173,6 +175,7 @@ export {
   Dialog,
   Field,
   FieldItem,
+  CellItem,
   Switch,
   Agree,
   Radio,

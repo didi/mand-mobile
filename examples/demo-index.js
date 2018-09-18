@@ -28,6 +28,7 @@ export const ImageViewer = r => require.ensure([], () => r(require('../component
 export const ImageReader = r => require.ensure([], () => r(require('../components/image-reader/demo')), 'image-reader')
 export const TabPicker = r => require.ensure([], () => r(require('../components/tab-picker/demo')), 'tab-picker')
 export const Field = r => require.ensure([], () => r(require('../components/field/demo')), 'field')
+export const CellItem = r => require.ensure([], () => r(require('../components/cell-item/demo')), 'cell-item')
 export const Switch = r => require.ensure([], () => r(require('../components/switch/demo')), 'switch')
 export const Agree = r => require.ensure([], () => r(require('../components/agree/demo')), 'agree')
 export const Radio = r => require.ensure([], () => r(require('../components/radio/demo')), 'radio')
@@ -44,4 +45,5 @@ export const CheckBox =  r => require.ensure([], () => r(require('../components/
 export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
 export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')
 export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
-export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')
+/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
