@@ -1,52 +1,32 @@
 <template>
   <div class="md-example-child md-example-child-radio md-example-child-radio-1">
-    <md-radio
-      ref="radio"
-      :options="data"
-      v-model="optionValue"
-      input-option-label="其它选项"
-      input-option-placeholder="其它选项内容"
-      has-input-option
-      @change="onRadioChange"
-      @input="onRadioInput"
-    ></md-radio>
+    <md-field>
+      <md-field-item title="婚姻状况">
+        <md-radio name="2" v-model="marriage" label="已婚" inline />
+        <md-radio name="1" v-model="marriage" label="未婚" inline />
+        <md-radio name="3" v-model="marriage" label="保密" inline />
+      </md-field-item>
+    </md-field>
   </div>
 </template>
 
-<script>import {Radio} from 'mand-mobile'
+<script>import {Radio, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '可编辑选项单选框 <a href="javascript:window.RadioTrigger2()">selectByIndex(2)</a>',
-  titleEnUS: 'With editable option',
-  describe: '通过v-model初始值默认选中',
-  describeEnUS: 'Default selected by "v-model"',
+  title: '表单项组合',
+  titleEnUS: 'With Field',
   /* DELETE */
   components: {
+    [Field.name]: Field,
+    [FieldItem.name]: FieldItem,
     [Radio.name]: Radio,
   },
   data() {
     return {
-      data: [{text: '选项1'}, {text: '选项2'}],
-      optionValue: '选项2',
+      marriage: '2',
     }
-  },
-  mounted() {
-    window.RadioTrigger2 = () => {
-      this.selectByIndex('radio', 2)
-    }
-  },
-  methods: {
-    onRadioChange(value, index) {
-      console.log(`[Mand-Mobile]: Radio, options: ${JSON.stringify(value)}, index: ${index}`)
-    },
-    onRadioInput(value) {
-      console.log(`[Mand-Mobile]: Radio, options: ${JSON.stringify(value)}`)
-    },
-    selectByIndex(radio, index) {
-      this.$refs[radio].selectByIndex(index)
-    },
   },
 }
 </script>

@@ -13,9 +13,9 @@
 <script>import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
-import Demo2 from './cases/demo2'
-import Demo3 from './cases/demo3'
-import Demo4 from './cases/demo4'
+// import Demo2 from './cases/demo2'
+// import Demo3 from './cases/demo3'
+// import Demo4 from './cases/demo4'
 
-export default {...createDemoModule('radio', [Demo0, Demo1, Demo2, Demo3, Demo4])}
+export default {...createDemoModule('radio', [Demo0, Demo1])}
 </script>
