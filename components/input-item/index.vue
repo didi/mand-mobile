@@ -16,7 +16,9 @@
     ]"
     :title="title"
   >
-    <slot name="left"></slot>
+    <template slot="left">
+      <slot name="left"></slot>
+    </template>
     <!-- ------------ -->
     <!--    INPUT     -->
     <!-- ------------ -->
@@ -58,64 +60,58 @@
       </div>
     </template>
 
-    <!-- ------------ -->
-    <!--  CLEART BTN  -->
-    <!-- ------------ -->
-    <div
-      slot="addon"
-      class="md-input-item-clear"
-      v-if="clearable && !isDisabled && !readonly"
-      v-show="!isInputEmpty && isInputFocus"
-      @click="$_clearInput"
-    >
-      <md-icon name="circle-cross"></md-icon>
-    </div>
+    <template slot="right">
+      <!-- ------------ -->
+      <!--  CLEART BTN  -->
+      <!-- ------------ -->
+      <div
+        class="md-input-item-clear"
+        v-if="clearable && !isDisabled && !readonly"
+        v-show="!isInputEmpty && isInputFocus"
+        @click="$_clearInput"
+      >
+        <md-icon name="circle-cross"></md-icon>
+      </div>
 
-    <!-- ------------ -->
-    <!--  RIGHT SLOT  -->
-    <!-- ------------ -->
-    <div
-      slot="addon"
-      class="md-input-item-right"
-      v-if="$slots.right"
-    >
+      <!-- ------------ -->
+      <!--  RIGHT SLOT  -->
+      <!-- ------------ -->
       <slot name="right"></slot>
-    </div>
+    </template>
 
-    <!-- -------------------- -->
-    <!-- BRIEF/ERROR TIP -->
-    <!-- -------------------- -->
-    <div
-      slot="children"
-      v-if="isInputError"
-      class="md-input-item-msg"
-    >
-      <p v-if="error !== ''" v-text="error"></p>
-      <slot name="error" v-else></slot>
-    </div>
-    <div
-      slot="children"
-      v-if="isInputBrief"
-      class="md-input-item-brief"
-    >
-      <p v-if="brief !== ''" v-text="brief"></p>
-      <slot name="brief" v-else></slot>
-    </div>
-    <!-- ------------ -->
-    <!--   KEYBORARD  -->
-    <!-- ------------ -->
-    <md-number-keyboard
-      slot="children"
-      v-if="isVirtualKeyboard"
-      ref="number-keyboard"
-      :id="`${name}-number-keyboard`"
-      class="md-input-item-number-keyboard"
-      :ok-text="virtualKeyboardOkText"
-      :disorder="virtualKeyboardDisorder"
-      @enter="$_onNumberKeyBoardEnter"
-      @delete="$_onNumberKeyBoardDelete"
-      @confirm="$_onNumberKeyBoardConfirm"
-    ></md-number-keyboard>
+    <template slot="children">
+      <!-- -------------------- -->
+      <!-- BRIEF/ERROR TIP -->
+      <!-- -------------------- -->
+      <div
+        v-if="isInputError"
+        class="md-input-item-msg"
+      >
+        <p v-if="error !== ''" v-text="error"></p>
+        <slot name="error" v-else></slot>
+      </div>
+      <div
+        v-if="isInputBrief"
+        class="md-input-item-brief"
+      >
+        <p v-if="brief !== ''" v-text="brief"></p>
+        <slot name="brief" v-else></slot>
+      </div>
+      <!-- ------------ -->
+      <!--   KEYBORARD  -->
+      <!-- ------------ -->
+      <md-number-keyboard
+        v-if="isVirtualKeyboard"
+        ref="number-keyboard"
+        :id="`${name}-number-keyboard`"
+        class="md-input-item-number-keyboard"
+        :ok-text="virtualKeyboardOkText"
+        :disorder="virtualKeyboardDisorder"
+        @enter="$_onNumberKeyBoardEnter"
+        @delete="$_onNumberKeyBoardDelete"
+        @confirm="$_onNumberKeyBoardConfirm"
+      ></md-number-keyboard>
+    </template>
   </md-field-item>
 </template>
 
