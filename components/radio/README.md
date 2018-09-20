@@ -8,9 +8,10 @@ preview: https://didi.github.io/mand-mobile/examples/#/radio
 ### 引入
 
 ```javascript
-import { Radio } from 'mand-mobile'
+import { Radio, RadioList } from 'mand-mobile'
 
 Vue.component(Radio.name, Radio)
+Vue.component(RadioList.name, RadioList)
 ```
 
 ### 代码演示
@@ -21,70 +22,57 @@ Vue.component(Radio.name, Radio)
 #### Radio Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|选中项的`value`|String|-|如果数据源中没有`value`, 则为`text`或`label`|
+|v-model|选中项的`name`|String|-|
+|name|唯一键值|String|-|-|
+|label|描述文案|String-|-|
+|disabled|是否禁用选项|Boolean|false|-|
+|inline|是否内联显示|Boolean|false|-|
+|icon|选中项的图标|String|`circle-right`|-|
+|icon-inverse|非选中项的图标|String|`circle`|-|
+|size|图标大小|String|`md`|-|
+
+---
+
+#### Radio List Props
+|属性 | 说明 | 类型 | 默认值 | 备注|
+|----|-----|------|------|------|
+|v-model|选中项的`value`|String|-|
 |options|选项数据源|Array<{text, value, disabled, ...}>|`[]`|`disabled`为选项是否禁用|
-|default-index|默认选择项索引|Number|`-1`|`v-model`有初始值时无效|
-|invalid-index|禁用选择项索引|Number/Array|`-1`|作用等同于`options`元素中的属性`disabled`|
-|has-input-option|是否具有可编辑项|Boolean|`false`|-|
-|input-option-label|可编辑项的名称|String|-|仅用于`has-input-option`为`true`|
-|input-option-placeholder|可编辑项的占位提示|String|-|仅用于`has-input-option`为`true`|
-|icon|选中项的图标|String|`right`|-|
-|icon-inverse|非选中项的图标|String|-|-|
-|icon-size|图标大小|String|`sm`|-|
-|icon-position|图标位置|String|`right`|`left`, `right`|
-|option-render|返回各选项自定义渲染内容|Function({text, value, disabled, ...}): String|-|`vue 2.1.0+`可使用`slot-scope`，见附录|
-|is-slot-scope|是否强制使用或不使用`slot-scope`|Boolean|-|某些情况下需要根据业务逻辑动态确定是否使用|
-|is-across-border<sup class="version-after">1.5.0+</sup>|边框通栏，两侧无间距|Boolean|false|-|
+|has-input|是否具有可编辑项|Boolean|`false`|-|
+|input-label|可编辑项的名称|String|-|仅用于`has-input`为`true`|
+|input-placeholder|可编辑项的占位提示|String|-|仅用于`has-input`为`true`|
+|icon|选中项的图标|String|`circle-right`|-|
+|icon-inverse|非选中项的图标|String|`circle`|-|
+|icon-size|图标大小|String|`lg`|-|
+|icon-position|图标位置|String|`left`|`left`, `right`|
 
-#### Radio Methods
+#### Radio List Methods
 
-##### getSelectedValue(): option
-获取当前选中项
-
-返回
-
-|属性 | 说明 | 类型|
-|----|-----|------|
-|option|选中项的数据|`Object:{text, value, disabled, ...}`，如果选中为可编辑项，则为`String`|
-
-##### getSelectedIndex(): index
-获取当前选中项索引值
-
-返回
-
-|属性 | 说明 | 类型|
-|----|-----|------|
-|index|选中项索引值|Number|
-
-##### selectByIndex(index)
+##### select(value)
 设置选中项
 
 |参数 | 说明 | 类型|
 |----|-----|------|
-|index|选中项索引值|Number|
+|value|选中项的value|String|
 
-#### Component Events
+#### Radio List Events
 
-##### @change(option, index)
+##### @input(value)
 切换选中项事件
 
 |属性 | 说明 | 类型|
 |----|-----|------|
-|option|选中项的数据|`Object:{text, value, disabled, ...}`，如果选中为可编辑项，则为`String`|
-|index|选中项索引值|Number|
+|value|当前选中项的value|String|
 
-#### 附录
-
+#### Radio List Slots
 ```html
 <template>
-  <md-radio
-    :options="data"
-  >
+  <md-radio-list :options="data">
     <!-- option 为每个选项的数据 -->
-    <template slot-scope="{ option }">
-      <div class="md-radio-custom-title" v-text="option.text"></div>
-      <div class="md-radio-custom-brief">{{ option.text }}的自定义描述</div>
+    <template slot="option" slot-scope="{ option }">
+      <div class="custom-title" v-text="option.text"></div>
+      <div class="custom-brief">{{ option.text }}的自定义描述</div>
     </template>
-  </md-radio>
+  </md-radio-list>
 </template>
 ```

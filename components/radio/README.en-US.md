@@ -19,72 +19,59 @@ Vue.component(Radio.name, Radio)
 ### API
 
 #### Radio Props
+|属性 | 说明 | 类型 | 默认值 | 备注|
+|----|-----|------|------|------|
+|v-model|selected `name`|String|-|
+|name|unique name|String|-|-|
+|label|description text|String-|-|
+|disabled|whether disable option|Boolean|false|-|
+|inline|whether display as inline block|Boolean|false|-|
+|icon|selected icon name|String|`circle-right`|-|
+|icon-inverse|icon name|String|`circle`|-|
+|size|size of icon|String|`md`|-|
+
+---
+
+#### Radio List Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|`value` of the selected item|String|-|If there is no `value` property in the data source, it is `text` or `label`|
+|v-model|`value` of the selected item|String|-|-|
 |options|option data source|Array<{text, value, disabled, ...}>|`[]`|`disabled` is to disable option or not|
-|default-index|the index of default selection|Number|`-1`|invalid when `v-model` has initial value|
-|invalid-index|the index of disabled selection|Number/Array|`-1`|same to the attribute `disabled` in the `options` element|
-|has-input-option|has editable item or not|Boolean|`false`|-|
-|input-option-label|name of editable item|String|-|only when `has-input-option` is true|
-|input-option-placeholder|placeholder of editable item|String|-|only when `has-input-option` is true|
-|icon|icon of selected option|String|`right`|-|
-|icon-inverse|icon of unselected options|String|-|-|
-|icon-size|the size of icon|String|`sm`|-|
-|icon-position|the position of icon|String|`right`|`left`, `right`|
-|option-render|return customized rendering content for each option|Function({text, value, disabled, ...}): String|-|`vue 2.1.0+` can use `slot-scope`, see #Appendix|
-|is-slot-scope|if it is mandatory to use `slot-scope`|Boolean|-|it depends on exact cases to determine whether to use it or not|
-|is-across-border<sup class="version-after">1.5.0+</sup>|border through option item, no gap on both sides|Boolean|false|-|
+|has-input|has editable item or not|Boolean|`false`|-|
+|input-label|name of editable item|String|-|only when `has-input` is true|
+|input-placeholder|placeholder of editable item|String|-|only when `has-input` is true|
+|icon|icon of selected option|String|`circle-right`|-|
+|icon-inverse|icon of unselected options|String|`circle`|-|
+|icon-size|the size of icon|String|`lg`|-|
+|icon-position|the position of icon|String|`left`|`left`, `right`|
 
-#### Radio Methods
+#### Radio List Methods
 
-##### getSelectedValue(): option
-Get data of selected option
+##### select(value)
+Set selected value
 
-Returns
-
-|Props | Description | Type|
+|Parameters | Description | Type |
 |----|-----|------|
-|option|data of selected option|`Object:{text, value, disabled, ...}`，if selected option is editable, the type is `String`|
+|value|value of option|String|
 
-##### getSelectedIndex(): index
-Get index of selected option
+#### Radio List Events
 
-Returns
-
-|Props | Description | Type|
-|----|-----|------|
-|index|index of selected option|Number|
-
-##### selectByIndex(index)
-Set a option as selected
-
-|Parameters | Description | Type|
-|----|-----|------|
-|index|index of selected option|Number|
-
-#### Component Events
-
-##### @change(option, index)
+##### @input(value)
 Selected option changed
 
-|Props | Description | Type|
+|Props | Description | Type |
 |----|-----|------|
-|option|data of selected option|`Object:{text, value, disabled, ...}`，if selected option is editable, the type is `String`|
-|index|index of selected option|Number|
+|value|value of selected option|`String`|
 
-#### Appendix
-
+#### Radio List Slots
 ```html
 <template>
-  <md-radio
-    :options="data"
-  >
-    <!-- 'option' is the data of each option -->
-    <template slot-scope="{ option }">
-      <div class="md-radio-custom-title" v-text="option.text"></div>
-      <div class="md-radio-custom-brief">{{ option.text }} Custom Description</div>
+  <md-radio-list :options="data">
+    <!-- option 为每个选项的数据 -->
+    <template slot="option" slot-scope="{ option }">
+      <div class="custom-title" v-text="option.text"></div>
+      <div class="custom-brief">{{ option.text }}的自定义描述</div>
     </template>
-  </md-radio>
+  </md-radio-list>
 </template>
 ```

@@ -1,43 +1,82 @@
 <template>
   <div class="md-example-child md-example-child-radio md-example-child-radio-2">
-    <md-radio
-      ref="radio"
-      :options="data"
-    >
-      <template slot-scope="{ option }">
-        <div class="md-radio-custom-title" v-text="option.text"></div>
-        <div class="md-radio-custom-brief">{{ option.text }}的自定义描述</div>
-      </template>
-    </md-radio>
+    <md-field title="简单选择列表" class="radio-field">
+      <md-radio-list
+        :options="banks"
+        v-model="myBank"
+      />
+    </md-field>
+    <md-field title="输入项" class="radio-field">
+      <md-radio-list
+        :options="reasons"
+        v-model="myReason"
+        icon="right"
+        icon-inverse=""
+        icon-position="right"
+        has-input
+        input-label="其他"
+        input-placeholder="请输入原因"
+      />
+    </md-field>
   </div>
 </template>
 
-<script>import {Radio} from 'mand-mobile'
+<script>import {Field, RadioList} from 'mand-mobile'
 
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '自定义选项内容1',
-  titleEnUS: 'Custom option content 1',
-  describe: '使用slot-scope',
-  describeEnUS: 'Use "slot-scope"',
+  title: '列表模式',
+  titleEnUS: 'List Radio',
   /* DELETE */
   components: {
-    [Radio.name]: Radio,
+    [Field.name]: Field,
+    [RadioList.name]: RadioList,
   },
   data() {
     return {
-      data: [{text: '选项1'}, {text: '选项2'}],
+      myBank: '',
+      banks: [
+        {
+          value: '0',
+          text: '交通银行(尾号3089)',
+          brief: '选项摘要描述',
+        },
+        {
+          value: '1',
+          text: '招商银行(尾号2342)',
+          brief: '选项摘要描述',
+        },
+      ],
+      myReason: '',
+      reasons: [
+        {
+          value: '0',
+          text: '我有其他保险',
+        },
+        {
+          value: '1',
+          text: '每单都扣，我担心扣太多',
+        },
+        {
+          value: '2',
+          text: '我身体好，不需要重疾险',
+        },
+        {
+          value: '3',
+          text: '接单少，加入这个没什么用',
+        },
+        {
+          value: '4',
+          text: '我不了解这是什么计划',
+        },
+      ],
     }
   },
 }
 </script>
 
-<style lang="stylus">
-.md-example-child-radio-2
-  .md-radio-custom-title
-    font-size 28px
-  .md-radio-custom-brief
-    font-size 20px
-    color #999
+<style lang="stylus" scoped>
+  .radio-field
+    margin-bottom 40px
 </style>

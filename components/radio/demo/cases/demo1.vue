@@ -15,7 +15,7 @@
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '表单项组合',
+  title: '表单项内联',
   titleEnUS: 'With Field',
   /* DELETE */
   components: {
