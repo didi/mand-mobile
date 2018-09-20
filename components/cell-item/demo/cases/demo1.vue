@@ -3,15 +3,15 @@
     <md-field>
       <md-cell-item title="滴水贷" arrow />
       <md-cell-item title="信用付">
-        <md-switch slot="addon" v-model="open" />
+        <md-switch slot="right" v-model="open" />
       </md-cell-item>
       <md-cell-item title="滴水贷" addon="可用8000.34" arrow />
       <md-cell-item title="信用付" addon="可用8000.34" />
       <md-cell-item title="滴水贷" addon="可用8000.34" arrow>
-        <div class="holder" slot="start"></div>
+        <div class="holder" slot="left"></div>
       </md-cell-item>
       <md-cell-item title="信用付" addon="可用8000.34" arrow>
-        <div class="holder" slot="start"></div>
+        <div class="holder" slot="left"></div>
       </md-cell-item>
     </md-field>
   </div>

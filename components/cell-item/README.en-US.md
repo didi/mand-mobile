@@ -36,11 +36,11 @@ click event when not disabled
 ##### default
 default content slot
 
-##### start
-start content slot
+##### left
+left content slot
 
-##### addon
-addon content slot
+##### right
+right content slot
 
 ##### children
 extra children slot

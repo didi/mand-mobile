@@ -36,10 +36,10 @@ Vue.component(CellItem.name, CellItem)
 ##### default
 内容默认插槽
 
-##### start
-头部区域插槽
+##### left
+起始区域插槽
 
-##### addon
+##### right
 末尾附加内容插槽
 
 ##### children

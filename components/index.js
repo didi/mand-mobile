@@ -37,6 +37,7 @@ import CellItem from './cell-item'
 import Switch from './switch'
 import Agree from './agree'
 import Radio from './radio'
+import RadioList from './radio-list'
 import DatePicker from './date-picker'
 import Captcha from './captcha'
 import Codebox from './codebox'
@@ -99,6 +100,7 @@ export const components = {
   Switch,
   Agree,
   Radio,
+  RadioList,
   DatePicker,
   Captcha,
   Codebox,
@@ -179,6 +181,7 @@ export {
   Switch,
   Agree,
   Radio,
+  RadioList,
   DatePicker,
   Captcha,
   Codebox,
