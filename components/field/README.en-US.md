@@ -23,7 +23,7 @@ Vue.component(FieldItem.name, FieldItem)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |title|title|String|-|-|
-|describe|description|String|-|-|
+|brief|description|String|-|-|
 |disabled|disable content operation|Boolean|false|-|
 |plain|plain style|Boolean|false|-|
 
@@ -68,7 +68,8 @@ footer content slot
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |title|title|String|-|-|
-|describe|description|String|-|-|
+|brief|description|String|-|-|
+|addon|help info text|String|-|-|
 |disabled|disable item operation|Boolean|false|-|
 |arrow|arrow indicator|Boolean|false|-|
 
@@ -81,11 +82,11 @@ click event when not disabled
 ##### default
 default content slot
 
-##### start
-start content slot
+##### left
+left content slot
 
-##### after
-after content slot
+##### right
+right content slot
 
 ##### children
 extra children slot

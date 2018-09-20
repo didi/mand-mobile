@@ -2,14 +2,17 @@
   <div class="md-field-item" :class="{ 'is-disabled': currentDisabled }" @click="$_onClick">
     <div class="md-field-item-content">
       <label class="md-field-item-title" v-if="title" v-text="title"></label>
+      <div class="md-field-item-left" v-if="$slots.left">
+        <slot name="left"></slot>
+      </div>
       <div class="md-field-item-control">
         <slot>
           <template v-if="content">{{ content }}</template>
           <div class="md-field-item-placeholder" v-else-if="placeholder" v-text="placeholder"></div>
         </slot>
       </div>
-      <div class="md-field-item-addon" v-if="arrow || $slots.addon">
-        <slot name="addon"></slot>
+      <div class="md-field-item-right" v-if="arrow || addon || $slots.right">
+        <slot name="right">{{ addon }}</slot>
         <md-icon v-if="arrow" name="arrow-right" size="lg" />
       </div>
     </div>
@@ -45,6 +48,10 @@ export default {
       default: '',
     },
     content: {
+      type: String,
+      default: '',
+    },
+    addon: {
       type: String,
       default: '',
     },
@@ -95,6 +102,15 @@ export default {
   font-size field-item-font-size
   line-height 1.2
 
+.md-field-item-left
+  flex-shrink 0
+  margin-right h-gap-sm
+  display inline-flex
+  align-items center
+  justify-content flex-start
+  color field-item-addon-color
+  font-size field-item-addon-font-size
+
 .md-field-item-control
   position relative
   flex 1 1 0%
@@ -105,7 +121,7 @@ export default {
 .md-field-item-placeholder
   color field-item-placeholder-color
 
-.md-field-item-addon
+.md-field-item-right
   flex-shrink 0
   margin-left h-gap-sm
   display inline-flex
@@ -124,6 +140,7 @@ export default {
 .md-field-item
   &.is-disabled
     .md-field-item-control,
-    .md-field-item-after
+    .md-field-item-left,
+    .md-field-item-right
       color color-text-disabled
 </style>

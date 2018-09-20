@@ -1,9 +1,9 @@
 <template>
   <fieldset class="md-field" :class="{'is-plain': plain, 'is-disabled': disabled}">
-    <header class="md-field-header" v-if="title || describe || $slots.header || $slots.action">
+    <header class="md-field-header" v-if="title || brief || $slots.header || $slots.action">
       <div class="md-field-heading">
         <legend v-if="title" class="md-field-title" v-text="title"></legend>
-        <p v-if="describe" class="md-field-describe" v-text="describe"></p>
+        <p v-if="brief" class="md-field-brief" v-text="brief"></p>
         <slot name="header"></slot>
       </div>
       <div class="md-field-action">
@@ -27,7 +27,7 @@
       type: String,
       default: '',
     },
-    describe: {
+    brief: {
       type: String,
       default: '',
     },
@@ -82,9 +82,9 @@
   font-size field-title-font-size
   font-weight field-title-font-weight
 
-.md-field-describe
-  color field-describe-color
-  font-size field-describe-font-size
+.md-field-brief
+  color field-brief-color
+  font-size field-brief-font-size
   line-height 1.4
 
 .md-field-footer
@@ -94,7 +94,7 @@
   &:disabled,
   &.is-disabled
     .md-field-title,
-    .md-field-describe,
+    .md-field-brief,
     .md-field-action,
     .md-field-content,
     .md-field-footer

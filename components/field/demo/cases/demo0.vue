@@ -1,12 +1,12 @@
 <template>
   <div class="md-example-child md-example-child-field md-example-child-field-0">
-    <md-field title="区域标题" describe="区域描述性文本，可根据具体场景配置">
+    <md-field title="区域标题" brief="区域描述性文本，可根据具体场景配置">
       <template slot="action">
         操作<md-icon name="arrow-right"></md-icon>
       </template>
       <p slot="footer">区域页脚区域内容插槽</p>
       <md-field-item title="标题区域" placeholder="提示文本" />
-      <md-field-item title="标题区域" content="内容文本" />
+      <md-field-item title="标题区域" content="内容文本" addon="次要信息" />
       <md-field-item title="附加内容" content="正文内容">
         <p slot="children">这是子内容区域</p>
       </md-field-item>

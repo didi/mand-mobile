@@ -23,7 +23,7 @@ Vue.component(FieldItem.name, FieldItem)
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 |title|标题|String|-|-|
-|describe|描述内容|String|-|-|
+|brief|描述内容|String|-|-|
 |disabled|是否禁用区域|Boolean|false|-|
 |plain|镂空样式|Boolean|false|-|
 
@@ -68,7 +68,8 @@ export default {
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 |title|标题|String|-|-|
-|describe|描述内容|String|-|-|
+|brief|描述内容|String|-|-|
+|addon|附加文案|String|-|-|
 |disabled|是否禁用项目|Boolean|false|-|
 |arrow|动作箭头标识|Boolean|false|-|
 
@@ -81,11 +82,11 @@ export default {
 ##### default
 内容默认插槽
 
-##### start
-头部区域插槽
+##### left
+起始区域插槽
 
-##### after
-末尾预期插槽
+##### right
+末尾区域插槽
 
 ##### children
 额外内容插槽
