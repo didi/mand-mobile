@@ -3,7 +3,7 @@
     class="md-bill"
     :content="waterMark"
   >
-    <header class="md-bill-header" slot="header">
+    <header class="md-bill-header">
       <h4 class="md-bill-title" v-if="title" v-text="title"></h4>
       <div class="md-bill-no" v-if="no">NO.{{no}}</div>
     </header>
@@ -55,7 +55,7 @@ export default {
 <style lang="stylus">
 .md-bill
   position relative
-  background bill-bg
+  background none
   overflow hidden
 
 .md-bill-header
@@ -63,6 +63,7 @@ export default {
   align-items center
   justify-content space-between
   padding 20px 32px 0
+  background-color bill-bg
 
 .md-bill-title
   color bill-name-color
@@ -80,7 +81,7 @@ export default {
   padding 10px
   margin 0 18px
   background-color bill-bg
-  box-sizing content-box
+  box-sizing border-box
   span
     position absolute
     display block
@@ -99,11 +100,11 @@ export default {
     height 36px
     border-radius 18px
   &::before
-    left -72px
+    left -36px
     box-shadow 10px 0 0 bill-bg
   &::after
-    right -72px
-    box-shadow 10px 0 0 bill-bg
+    right -36px
+    box-shadow -10px 0 0 bill-bg
 
 .md-bill-content
   padding 0 32px 20px 32px
