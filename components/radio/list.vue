@@ -1,7 +1,7 @@
 <template>
   <div
     class="md-radio-list"
-    :class="{ 'is-center': alignCenter }"
+    :class="{ 'is-align-center': alignCenter }"
   >
     <md-cell-item
       v-for="(item, index) in options"
@@ -13,7 +13,7 @@
       :title="$scopedSlots.option ? '' : (item.text || item.label)"
       :brief="$scopedSlots.option ? '' : item.brief"
       :disabled="item.disabled"
-      @click="select(item.value)"
+      @click="$_select(item)"
     >
       <slot name="option" :option="item"></slot>
       <md-radio
@@ -132,6 +132,11 @@ export default {
   },
 
   methods: {
+    // MARK: private methods
+    $_select(option) {
+      this.selectedValue = option.value
+      this.$emit('change', option)
+    },
     // MARK: public methods
     select(value) {
       this.selectedValue = value
@@ -143,8 +148,18 @@ export default {
 
 <style lang="stylus">
 .md-radio-item
+  &.is-selected
+    .md-cell-item-title
+      color radio-color
   .md-radio
     margin-top 0
     margin-bottom 0
+
+.md-radio-list.is-align-center
+  .md-cell-item-content
+    text-align center
+  .md-cell-left,
+  .md-cell-right
+    display none
 </style>
 

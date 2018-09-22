@@ -34,9 +34,11 @@ export default {
           text: '一级选项1',
           options: [
             {
+              value: '0',
               text: '二级选项1',
             },
             {
+              value: '1',
               text: '二级选项2',
             },
           ],

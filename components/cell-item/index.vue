@@ -4,7 +4,7 @@
       <div class="md-cell-item-left" v-if="$slots.left">
         <slot name="left"></slot>
       </div>
-      <div class="md-cell-item-content">
+      <div v-if="title || brief || $slots.default" class="md-cell-item-content">
         <p class="md-cell-item-title" v-if="title" v-text="title"></p>
         <p class="md-cell-item-brief" v-if="brief" v-text="brief"></p>
         <slot></slot>

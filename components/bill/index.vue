@@ -3,42 +3,40 @@
     class="md-bill"
     :content="waterMark"
   >
-    <md-field
-      :title="name"
-      :value="no ? `NO.${no}` : ''"
-      plain
-    >
-      <div class="bill-radius">
-        <i></i><i></i>
-      </div>
-      <div class="bill-detail">
+    <header class="md-bill-header" slot="header">
+      <h4 class="md-bill-title" v-if="title" v-text="title"></h4>
+      <div class="md-bill-no" v-if="no">NO.{{no}}</div>
+    </header>
+    <div class="md-bill-neck">
+      <span></span>
+    </div>
+    <div class="md-bill-content">
+      <div class="md-bill-detail">
         <slot></slot>
       </div>
-      <div class="bill-description">
+      <footer v-if="$slots.description" class="md-bill-description">
         <slot name="description"></slot>
-      </div>
-    </md-field>
+      </footer>
+    </div>
     <div slot="watermark" slot-scope="props" v-if="!!$scopedSlots.watermark">
       <slot name="watermark" @index="1"></slot>
     </div>
   </md-water-mark>
 </template>
 
-<script>import Field from '../field'
-import FieldItem from '../field/item'
+<script>import FieldItem from '../field-item'
 import WaterMark from '../water-mark'
 
 export default {
   name: 'md-bill',
 
   components: {
-    [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [WaterMark.name]: WaterMark,
   },
 
   props: {
-    name: {
+    title: {
       type: String,
       default: '',
     },
@@ -59,53 +57,66 @@ export default {
   position relative
   background bill-bg
   overflow hidden
-  .md-field.is-plain
-    position relative
-    z-index 2
-    background-color transparent
-    .md-field-title
-      .md-field-title-inner
-        .title
-          color bill-name-color
-          font-size bill-name-font-size
-          font-weight font-weight-medium
-          font-family Songti SC
-        .value
-          display flex
-          flex-direction column
-          justify-content center
-          color bill-no-color
-          font-size bill-no-font-size
-    .md-field-content
-      position relative
-      .md-field-item
-        padding 0
 
-    .bill-radius
-      position absolute
-      top -18px
-      left 0
-      right 0
-      z-index 3
-      i
-        position relative
-        width 36px
-        height 36px
-        background color-bg-inverse
-        border-radius radius-circle
-        &:first-of-type
-          float left
-          left -18px
-        &:last-of-type
-          float right
-          right -18px
-    .bill-detail
-      padding 20px 0 40px 0
-      margin 0 field-padding-plain-h
-      hairline(bottom, field-item-border-color)
-    .bill-description
-      padding 40px field-padding-plain-h
-      color bill-description-color
-      font-size bill-description-font-size
-      line-height 1.5
+.md-bill-header
+  display flex
+  align-items center
+  justify-content space-between
+  padding 20px 32px 0
+
+.md-bill-title
+  color bill-name-color
+  font-size bill-name-font-size
+  font-weight font-weight-medium
+  font-family Songti SC
+
+.md-bill-no
+   color bill-no-color
+  font-size bill-no-font-size
+
+.md-bill-neck
+  position relative
+  height 36px
+  padding 10px
+  margin 0 18px
+  background-color bill-bg
+  box-sizing content-box
+  span
+    position absolute
+    display block
+    top 50%
+    left 10px
+    right 10px
+    height 1px
+    hairline(bottom, field-item-border-color)
+  &::before,
+  &::after
+    content ''
+    display block
+    position absolute
+    top 0
+    width 36px
+    height 36px
+    border-radius 18px
+  &::before
+    left -72px
+    box-shadow 10px 0 0 bill-bg
+  &::after
+    right -72px
+    box-shadow 10px 0 0 bill-bg
+
+.md-bill-content
+  padding 0 32px 20px 32px
+  background-color bill-bg
+
+.md-bill-detail
+  padding-bottom 40px
+
+.md-bill-description
+  position relative
+  padding-top 40px
+  line-height 1.5
+  color bill-description-color
+  font-size bill-description-font-size
+  hairline(top, field-item-border-color)
 </style>

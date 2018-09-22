@@ -28,33 +28,33 @@
       @before-hide="$_onListBeforeHide"
     >
       <div class="md-drop-menu-list">
-        <md-radio
+        <md-radio-list
           v-model="selectedMenuListValue[activeMenuBarIndex]"
           :options="activeMenuListData"
-          :optionRender="optionRender"
-          :is-slot-scope="hasSlot"
-          is-align-center
+          align-center
           @change="$_onListItemClick"
         >
-          <template slot-scope="{ option }">
-            <slot :option="option"></slot>
+          <template v-if="$slots.default">
+            <tempalte slot="option" slot-scope="{ option }">
+              <slot :option="option"></slot>
+            </tempalte>
           </template>
-        </md-radio>
+        </md-radio-list>
       </div>
     </md-popup>
   </div>
 </template>
 
 <script>import Popup from '../popup'
-import Radio from '../radio'
-import {noop, traverse, compareObjects} from '../_util'
+import RadioList from '../radio-list'
+import {traverse, compareObjects} from '../_util'
 
 export default {
   name: 'md-drop-menu',
 
   components: {
     [Popup.name]: Popup,
-    [Radio.name]: Radio,
+    [RadioList.name]: RadioList,
   },
 
   props: {
@@ -69,10 +69,6 @@ export default {
       default() {
         return []
       },
-    },
-    optionRender: {
-      type: Function,
-      default: noop,
     },
   },
 

@@ -1,5 +1,12 @@
 <template>
-  <div class="md-field-item" :class="{ 'is-disabled': currentDisabled }" @click="$_onClick">
+  <div
+    class="md-field-item"
+    :class="{
+      'is-disabled': currentDisabled,
+      'is-align-right': alignRight
+    }"
+    @click="$_onClick"
+  >
     <div class="md-field-item-content">
       <label class="md-field-item-title" v-if="title" v-text="title"></label>
       <div class="md-field-item-left" v-if="$slots.left">
@@ -56,6 +63,10 @@ export default {
       default: '',
     },
     arrow: {
+      type: Boolean,
+      default: false,
+    },
+    alignRight: {
       type: Boolean,
       default: false,
     },
@@ -143,4 +154,7 @@ export default {
     .md-field-item-left,
     .md-field-item-right
       color color-text-disabled
+  &.is-align-right
+    .md-field-item-control
+      text-align right
 </style>

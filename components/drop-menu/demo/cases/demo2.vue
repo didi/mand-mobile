@@ -30,22 +30,28 @@ export default {
           text: '排量',
           options: [
             {
+              value: '0',
               text: '1.6L',
             },
             {
+              value: '1',
               text: '1.8L',
             },
             {
+              value: '2',
               text: '2.0L',
               disabled: true,
             },
             {
+              value: '3',
               text: '1.2T',
             },
             {
+              value: '4',
               text: '1.4T',
             },
             {
+              value: '5',
               text: '1.6T',
             },
           ],
