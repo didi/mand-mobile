@@ -1,7 +1,5 @@
-// import Vue from 'vue'
 import Selector from '../index'
 import {mount} from 'avoriaz'
-import {setTimeout} from 'timers'
 
 describe('Selector', () => {
   let wrapper
@@ -10,32 +8,33 @@ describe('Selector', () => {
     wrapper && wrapper.destroy()
   })
 
-  it('create a selector', done => {
-    wrapper = mount(Selector)
+  it('create a selector', () => {
+    wrapper = mount(Selector, {
+      propsData: {
+        value: true,
+        data: [
+          {
+            value: '1',
+            text: '选项一',
+          },
+          {
+            value: '2',
+            text: '选项二',
+          },
+          {
+            value: '3',
+            text: '选项三',
+          },
+          {
+            value: '4',
+            text: '选项四',
+          },
+        ],
+      },
+    })
 
     expect(wrapper.hasClass('md-selector')).to.be.true
-    expect(wrapper.vm.data.length).to.equal(0)
-
-    wrapper.vm.value = true
-    wrapper.vm.data = [
-      {
-        text: '选项一',
-      },
-      {
-        text: '选项二',
-      },
-      {
-        text: '选项三',
-      },
-      {
-        text: '选项四',
-      },
-    ]
-
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.find('.md-radio-item').length).to.equal(4)
-      done()
-    })
+    expect(wrapper.find('.md-radio-item').length).to.equal(4)
   })
 
   it('create a selector as check mode', () => {
@@ -50,54 +49,64 @@ describe('Selector', () => {
     expect(wrapper.vm.isNeedConfirm).to.equal(true)
   })
 
-  it('create a selector with default and invalid', done => {
-    wrapper = mount(Selector)
-
-    wrapper.vm.value = true
-    wrapper.vm.defaultIndex = 1
-    wrapper.vm.invalidIndex = 2
-    wrapper.vm.data = [
-      {
-        text: '选项一',
+  it('create a selector with default value', () => {
+    wrapper = mount(Selector, {
+      propsData: {
+        value: true,
+        defaultValue: '2',
+        data: [
+          {
+            value: '1',
+            text: '选项一',
+          },
+          {
+            value: '2',
+            text: '选项二',
+          },
+          {
+            value: '3',
+            disabled: true,
+            text: '选项三',
+          },
+          {
+            value: '4',
+            text: '选项四',
+          },
+        ],
       },
-      {
-        text: '选项二',
-      },
-      {
-        text: '选项三',
-      },
-      {
-        text: '选项四',
-      },
-    ]
-
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.find('.md-radio-item')[1].hasClass('selected')).to.equal(true)
-      expect(wrapper.find('.md-radio-item')[2].hasClass('disabled')).to.equal(true)
-      done()
     })
+
+    expect(wrapper.find('.md-radio-item')[1].hasClass('is-selected')).to.equal(true)
+    expect(wrapper.find('.md-radio-item')[2].hasClass('is-disabled')).to.equal(true)
   })
 
   it('selector events choose', done => {
-    wrapper = mount(Selector)
+    wrapper = mount(Selector, {
+      propsData: {
+        value: true,
+        data: [
+          {
+            value: '1',
+            text: '选项一',
+          },
+          {
+            value: '2',
+            text: '选项二',
+          },
+          {
+            value: '3',
+            disabled: true,
+            text: '选项三',
+          },
+          {
+            value: '4',
+            text: '选项四',
+          },
+        ],
+      },
+    })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-
-    wrapper.vm.value = true
-    wrapper.vm.data = [
-      {
-        text: '选项一',
-      },
-      {
-        text: '选项二',
-      },
-      {
-        text: '选项三',
-      },
-      {
-        text: '选项四',
-      },
-    ]
 
     wrapper.vm.$nextTick(() => {
       wrapper.find('.md-radio-item')[0].trigger('click')
@@ -109,26 +118,34 @@ describe('Selector', () => {
   })
 
   it('selector events confirm', done => {
-    wrapper = mount(Selector)
+    wrapper = mount(Selector, {
+      propsData: {
+        value: true,
+        okText: 'ok',
+        data: [
+          {
+            value: '1',
+            text: '选项一',
+          },
+          {
+            value: '2',
+            text: '选项二',
+          },
+          {
+            value: '3',
+            disabled: true,
+            text: '选项三',
+          },
+          {
+            value: '4',
+            text: '选项四',
+          },
+        ],
+      },
+    })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
 
-    wrapper.vm.value = true
-    wrapper.vm.data = [
-      {
-        text: '选项一',
-      },
-      {
-        text: '选项二',
-      },
-      {
-        text: '选项三',
-      },
-      {
-        text: '选项四',
-      },
-    ]
-    wrapper.vm.okText = 'ok'
     wrapper.vm.$nextTick(() => {
       const item = wrapper.find('.md-radio-item')[0]
       const confirmBtn = wrapper.find('.md-popup-confirm')[0]
@@ -145,31 +162,35 @@ describe('Selector', () => {
   it('selector events cancel', done => {
     wrapper = mount(Selector, {
       propsData: {
+        value: true,
         data: [
           [
             {
+              value: '1',
               text: '选项一',
             },
             {
+              value: '2',
               text: '选项二',
             },
             {
+              value: '3',
               text: '选项三',
             },
             {
+              value: '4',
               text: '选项四',
             },
           ],
         ],
         okText: 'ok',
         cancelText: 'cancel',
-        defaultIndex: 2,
+        defaultValue: '3',
       },
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
 
-    wrapper.vm.value = true
     wrapper.vm.$nextTick(() => {
       const cancelBtn = wrapper.find('.md-popup-cancel')[0]
       cancelBtn.trigger('click')

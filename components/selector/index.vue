@@ -3,7 +3,7 @@
     class="md-selector"
     :class="{
       'is-normal': !isCheck,
-      'is-check': isCheck && isNeedConfirm
+      'is-check': isCheck
     }"
   >
     <md-popup
@@ -34,25 +34,36 @@
         :scrolling-x="false"
         :style="{maxHeight: `${maxHeight}px`}"
       >
-        <div class="md-selector-list">
-          <md-radio
-            ref="radio"
-            :key="radioKey"
-            :options="data"
-            :default-index="defaultIndex"
-            :invalid-index="invalidIndex"
-            icon="circle-right"
-            icon-inverse="circle"
-            icon-size="md"
-            :optionRender="optionRender"
-            :is-slot-scope="hasSlot"
-            @change="$_onSelectorChoose"
-          >
-            <template slot-scope="{ option }">
-              <slot :option="option"></slot>
-            </template>
-          </md-radio>
-        </div>
+        <md-radio-list
+          v-if="hasSlot"
+          class="md-selector-list"
+          ref="radio"
+          :key="radioKey"
+          :value="defaultValue"
+          :options="data"
+          icon="right"
+          icon-inverse=""
+          icon-position="right"
+          icon-size="md"
+          @change="$_onSelectorChoose"
+        >
+          <template slot-scope="{ option }">
+            <slot :option="option"></slot>
+          </template>
+        </md-radio-list>
+        <md-radio-list
+          v-else
+          class="md-selector-list"
+          ref="radio"
+          :key="radioKey"
+          :value="defaultValue"
+          :options="data"
+          icon="right"
+          icon-inverse=""
+          icon-position="right"
+          icon-size="md"
+          @change="$_onSelectorChoose"
+        />
       </md-scroll-view>
     </md-popup>
   </div>
@@ -61,16 +72,15 @@
 <script>import Icon from '../icon'
 import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
-import Radio from '../radio'
+import RadioList from '../radio-list'
 import ScrollView from '../scroll-view'
-import {noop} from '../_util'
 
 export default {
   name: 'md-selector',
 
   components: {
     [Icon.name]: Icon,
-    [Radio.name]: Radio,
+    [RadioList.name]: RadioList,
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
     [ScrollView.name]: ScrollView,
@@ -87,15 +97,9 @@ export default {
         return []
       },
     },
-    defaultIndex: {
-      type: Number,
-      default: -1,
-    },
-    invalidIndex: {
-      type: [Array, Number],
-      default() {
-        return -1
-      },
+    defaultValue: {
+      type: String,
+      default: '',
     },
     title: {
       type: String,
@@ -119,10 +123,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    optionRender: {
-      type: Function,
-      default: noop,
-    },
     maxHeight: {
       type: Number,
       default: 400,
@@ -131,7 +131,7 @@ export default {
 
   data() {
     return {
-      isSelectorShow: false,
+      isSelectorShow: this.value,
       radioKey: Date.now(),
       activeIndex: -1,
       tmpActiveIndex: -1,
@@ -156,34 +156,11 @@ export default {
     },
   },
 
-  created() {
-    this.value && (this.isSelectorShow = this.value)
-    !this.isNeedConfirm && (this.activeIndex = this.defaultIndex)
-    this.activeIndex = this.tmpActiveIndex = this.defaultIndex
-  },
-
   methods: {
     // MARK: private methods
-    $_getItemText(item) {
-      const renderText = this.itemRender(item)
-      return renderText || item.text || item.label
-    },
-    $_isActive(index) {
-      const activeIndex = this.tmpActiveIndex
-      if (activeIndex > -1) {
-        return activeIndex === index
-      } else {
-        return this.defaultIndex === index
-      }
-    },
-    $_isInvalid(index) {
-      const invalidIndex = this.invalidIndex
-      return Array.isArray(invalidIndex) ? !!~invalidIndex.indexOf(index) : index === invalidIndex
-    },
     $_setScroller() {
       this.$refs.scroll.reflowScroller()
     },
-
     // MARK: events handler
     $_onSelectorConfirm() {
       if (this.tmpActiveIndex > -1) {
@@ -230,22 +207,23 @@ export default {
 <style lang="stylus">
 .md-selector
   .md-popup
-    z-index selector-zindex !important
-    .md-popup-title-bar .md-popup-cancel
-      .md-icon
-        align-self flex-start
-        margin-left h-gap-lg
-    .md-selector-container
-      padding-bottom constant(safe-area-inset-bottom)
-      overflow hidden
-  &.is-check
-    .md-field-item.selected .md-icon
-      fill selector-active-color !important
-      .md-field-item-content.left
-        padding-right 32px
+    z-index selector-zindex
+  .md-popup-title-bar .md-popup-cancel
+    .md-icon
+      align-self flex-start
+      margin-left h-gap-lg
+
+.md-selector-container
+  padding-left h-gap-sl
+  padding-right h-gap-sl
+  padding-bottom constant(safe-area-inset-bottom)
+  overflow hidden
+
+.md-selector
   &.is-normal
-    .md-field-item-content.left
-      justify-content center
-    .md-field-item .md-icon
-      display none
+    .md-radio-item
+      text-align center
+      .md-cell-item-left,
+      .md-cell-item-right
+        display none
 </style>

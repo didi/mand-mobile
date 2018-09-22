@@ -24,16 +24,13 @@ Vue.component(Selector.name, Selector)
 |----|-----|------|------|------|
 |v-model|display selector or not|Boolean|false|-|
 |data|data source|Array<{value,text,...}>|`[]`|`label` can be a `html` fragment|
-|default-index|the index of initially selected item|Number|-|-|
-|invalid-index|the index of disabled item|Number|-|-|
+|default-value|the value of initially selected item|String|-|-|
 |title|the title of selector|String|-|-|
 |ok-text|confirmation text|String|-|if empty, it will be `confirmed mode`, that is, click to select directly|
 |cancel-text|cancellation text|String|`cancel`|-|
 |mask-closable<sup class="version-after">1.3.0+</sup>|if the popup will be closed when clicking mask|Boolean|`true`|-|
 |is-check|has a `check` icon or not|Boolean|`false`|only for `confirmed mode`|
-|option-render|return rendering contents of each option|Function({value, text ,...}):String|-|`vue 2.1.0+` can use `slot-scope`, refer to `Radio`|
 |max-height<sup class="version-after">1.3.0+</sup>|the maximum height of selectable area|Number|`400`|unit `px`|
-
 
 #### Selector Events
 
@@ -51,3 +48,12 @@ Show selector
 
 #### @hide()
 Hide selector
+
+#### Selector Slots
+```html
+<md-selector>
+  <template slot-scope="{ option }">
+    <div class="md-selector-custom-title">Hello, {{ option.text }}</div>
+  </template>
+</md-selector>
+```

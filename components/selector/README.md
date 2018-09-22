@@ -24,16 +24,13 @@ Vue.component(Selector.name, Selector)
 |----|-----|------|------|------|
 |v-model|选择器是否可见|Boolean|false|-|
 |data|数据源|Array<{value,text,...}>|`[]`|`label`可为`html`片段|
-|default-index|选择器初始选中项索引|Number|-|-|
-|invalid-index|选择器不可用选项索引|Number|-|-|
+|default-value|选择器初始选中项的值|String|-|-|
 |title|选择器标题|String|-|-|
 |ok-text|选择器确认文案|String|-|若为空则为`确认模式`，即点击选项直接选择|
 |cancel-text|选择器取消文案|String|`取消`|-|
 |mask-closable<sup class="version-after">1.3.0+</sup>|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 |is-check|是否有`check`图标|Boolean|`false`|仅`确认模式`|
-|option-render|返回各选项渲染内容|Function({value, text ,...}):String|-|`vue 2.1.0+`可使用`slot-scope`，参考`Radio`|
 |max-height<sup class="version-after">1.3.0+</sup>|选择器内容区域最高高度, 超出后可滚动|Number|400|单位`px`|
-
 
 #### Selector Events
 
@@ -51,3 +48,12 @@ Vue.component(Selector.name, Selector)
 
 #### @hide()
 选择器隐藏事件
+
+#### Selector Slots
+```html
+<md-selector>
+  <template slot-scope="{ option }">
+    <div class="md-selector-custom-title">Hello, {{ option.text }}</div>
+  </template>
+</md-selector>
+```

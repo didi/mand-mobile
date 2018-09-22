@@ -18,13 +18,3 @@ import Demo3 from './cases/demo3'
 
 export default {...createDemoModule('selecotor', [Demo0, Demo1, Demo2, Demo3])}
 </script>
-
-<style lang="stylus">
-.md-example-child-selecotor
-  .md-field-item-custom-title
-    font-weight font-weight-medium
-    text-align center
-  .md-field-item-custom-brief
-    font-size font-minor-normal
-    text-align center
-</style>
