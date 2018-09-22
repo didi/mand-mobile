@@ -46,4 +46,4 @@ export const ScrollView =  r => require.ensure([], () => r(require('../component
 export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')
 export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
 export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')
-/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const DetailItem =  r => require.ensure([], () => r(require('../components/detail-item/demo')), 'detail-item')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

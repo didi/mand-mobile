@@ -18,6 +18,18 @@
       },
       { "path": "/button", "name": "Button", "icon": "button", "text": "按钮" },
       {
+        "name": "CellItem",
+        "path": "/cell-item",
+        "icon": "cell-item",
+        "text": "列表单元"
+      },
+      {
+        "name": "DetailItem",
+        "path": "/detail-item",
+        "icon": "detail-item",
+        "text": "清单项"
+      },
+      {
         "name": "DropMenu",
         "path": "/drop-menu",
         "icon": "drop-menu",
@@ -50,7 +62,6 @@
       },
       { "name": "Steps", "path": "/steps", "icon": "steps", "text": "步骤条" },
       { "name": "Swiper", "path": "/swiper", "icon": "swiper", "text": "轮播" },
-      { "name": "CellItem", "path": "/cell-item", "icon": "cell-item", "text": "列表单元" },
       {
         "name": "TabBar",
         "path": "/tab-bar",
