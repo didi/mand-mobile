@@ -10,12 +10,12 @@
       :class="{
         'is-selected': selectedValue === item.value && !inputSelected,
       }"
-      :title="$scopedSlots.option ? '' : (item.text || item.label)"
-      :brief="$scopedSlots.option ? '' : item.brief"
+      :title="$scopedSlots.default ? '' : (item.text || item.label)"
+      :brief="$scopedSlots.default ? '' : item.brief"
       :disabled="item.disabled"
-      @click="$_select(item)"
+      @click="$_select(item, index)"
     >
-      <slot name="option" :option="item"></slot>
+      <slot :option="item"></slot>
       <md-radio
         v-if="!alignCenter"
         :name="item.value"
@@ -133,14 +133,20 @@ export default {
 
   methods: {
     // MARK: private methods
-    $_select(option) {
+    $_select(option, index) {
       this.selectedValue = option.value
-      this.$emit('change', option)
+      this.$emit('change', option, index)
     },
     // MARK: public methods
     select(value) {
       this.selectedValue = value
       this.inputSelected = false
+    },
+    selectByIndex(index) {
+      const item = this.options[index]
+      if (item) {
+        this.select(item.value)
+      }
     },
   },
 }
