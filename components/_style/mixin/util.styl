@@ -44,7 +44,6 @@ hairline-common(direction, color)
       transform scaleX(0.33) translateX(100%)
 
 hairline(direction = all, color = color-border-base, radius = 0, size = border-width-base)
-  position relative
   if direction == top
     &::after
       hairline-common(direction, color)
@@ -104,7 +103,6 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
         border-radius radius * 2
 
 remove-hairline(direction = all)
-  position relative
   if direction == top
     &::after
       display none
