@@ -18,6 +18,7 @@ describe('DropMenu', () => {
         text: 'hello',
         options: [
           {
+            value: 'world',
             text: 'world',
           },
         ],
@@ -40,6 +41,7 @@ describe('DropMenu', () => {
             text: 'hello',
             options: [
               {
+                value: 'world',
                 text: 'world',
               },
             ],
@@ -48,7 +50,7 @@ describe('DropMenu', () => {
       },
     })
     const barItem = wrapper.find('.bar-item')
-    const mockData = [{text: 'world'}]
+    const mockData = [{value: 'world', text: 'world'}]
 
     barItem[0].trigger('click')
     expect(barItem[0].hasClass('active')).to.true
@@ -71,6 +73,7 @@ describe('DropMenu', () => {
             text: 'hello',
             options: [
               {
+                value: 'world',
                 text: 'world',
               },
             ],
@@ -79,10 +82,10 @@ describe('DropMenu', () => {
       },
     })
     const barItem = wrapper.find('.bar-item')
-    const mockData = [{text: 'world'}]
+    const mockData = [{value: 'world', text: 'world'}]
 
     barItem[0].trigger('click')
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       const listItem = wrapper.find('.md-radio-item')
       listItem[0].trigger('click')
 
@@ -91,7 +94,7 @@ describe('DropMenu', () => {
       expect(wrapper.instance().getSelectedValue(0).text).to.equal('world')
       expect(wrapper.instance().getSelectedValues()[0].text).to.equal('world')
       done()
-    })
+    }, 350)
   })
 
   it('drop-menu events', done => {
@@ -102,6 +105,7 @@ describe('DropMenu', () => {
             text: 'hello',
             options: [
               {
+                value: 'world',
                 text: 'world',
               },
             ],
@@ -138,6 +142,7 @@ describe('DropMenu', () => {
             text: 'hello',
             options: [
               {
+                value: 'hello',
                 text: 'hello',
                 disabled: true,
               },
@@ -152,7 +157,7 @@ describe('DropMenu', () => {
     barItem[1].trigger('click')
     setTimeout(() => {
       const listItem = wrapper.find('.md-radio-item')
-      expect(listItem[0].hasClass('disabled')).to.true
+      expect(listItem[0].hasClass('is-disabled')).to.true
       done()
     }, 500)
   })
@@ -165,9 +170,11 @@ describe('DropMenu', () => {
             text: 'hello',
             options: [
               {
+                value: 'word',
                 text: 'world',
               },
               {
+                value: 'space',
                 text: 'space',
               },
             ],
@@ -185,7 +192,7 @@ describe('DropMenu', () => {
       barItem[0].trigger('click')
       setTimeout(() => {
         const listItem = wrapper.find('.md-radio-item')
-        expect(listItem[1].hasClass('selected')).to.true
+        expect(listItem[1].hasClass('is-selected')).to.true
         done()
       }, 300)
     })

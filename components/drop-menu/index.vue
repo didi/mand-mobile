@@ -34,8 +34,8 @@
           align-center
           @change="$_onListItemClick"
         >
-          <template v-if="$slots.default">
-            <tempalte slot="option" slot-scope="{ option }">
+          <template v-if="hasSlot">
+            <tempalte slot-scope="{ option }">
               <slot :option="option"></slot>
             </tempalte>
           </template>
@@ -79,7 +79,6 @@ export default {
       selectedMenuListValue: [],
       selectedMenuListIndex: [],
       activeMenuBarIndex: -1,
-      activeMenuListData: [],
       scroller: '',
     }
   },
@@ -87,6 +86,13 @@ export default {
   computed: {
     hasSlot() {
       return !!this.$scopedSlots.default
+    },
+    activeMenuListData() {
+      if (this.activeMenuBarIndex < 0) {
+        return []
+      }
+
+      return this.data[this.activeMenuBarIndex].options
     },
   },
 
@@ -151,7 +157,6 @@ export default {
       if (!this.isPopupShow) {
         this.isPopupShow = true
         this.activeMenuBarIndex = index
-        this.activeMenuListData = barItem.options
       } else {
         this.isPopupShow = false
       }
@@ -160,6 +165,7 @@ export default {
       const activeMenuBarIndex = this.activeMenuBarIndex
       const barItem = this.data[activeMenuBarIndex]
       this.isPopupShow = false
+      this.selectedMenuListValue[activeMenuBarIndex] = listItem.value
       this.$set(this.selectedMenuListItem, activeMenuBarIndex, listItem)
       this.$emit('change', barItem, listItem)
     },
@@ -203,6 +209,7 @@ export default {
   font-weight drop-menu-font-weight
 
 .md-drop-menu-bar
+  position relative
   z-index drop-menu-zindex
   display flex
   height 100%
