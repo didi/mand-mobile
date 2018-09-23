@@ -20,7 +20,7 @@
       </div>
       <div class="md-field-item-right" v-if="arrow || addon || $slots.right">
         <slot name="right">{{ addon }}</slot>
-        <md-icon v-if="arrow" name="arrow-right" size="lg" />
+        <md-icon v-if="arrow" :name="arrow === true ? 'arrow-right' : arrow" size="lg" />
       </div>
     </div>
     <div class="md-field-item-children" v-if="$slots.children">
@@ -63,7 +63,7 @@ export default {
       default: '',
     },
     arrow: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false,
     },
     alignRight: {
