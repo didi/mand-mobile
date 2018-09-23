@@ -23,23 +23,27 @@
             :name="pane.name"
             :label="pane.label"
           >
-            <md-radio
-              isAcrossBorder
+            <md-radio-list
+              v-if="hasSlot"
               :value="pane.value"
               :options="pane.options"
               @input="$_onSelectPaneItem($event, index)"
-              v-if="$scopedSlots.item"
+              icon="right"
+              icon-inverse=""
+              icon-position="right"
             >
               <template slot-scope="{ option }">
-                <slot name="item" :option="option"></slot>
+                <slot :option="option"></slot>
               </template>
-            </md-radio>
-            <md-radio
+            </md-radio-list>
+            <md-radio-list
               v-else
-              isAcrossBorder
               :value="pane.value"
               :options="pane.options"
               @input="$_onSelectPaneItem($event, index)"
+              icon="right"
+              icon-inverse=""
+              icon-position="right"
             />
           </md-tab-pane>
         </md-tabs>
@@ -53,7 +57,7 @@ import PopupTitlebar from '../popup/title-bar'
 import Icon from '../icon'
 import Tabs from '../tabs'
 import TabPane from '../tab-pane'
-import Radio from '../radio'
+import RadioList from '../radio-list'
 
 export default {
   name: 'md-tab-picker',
@@ -64,7 +68,7 @@ export default {
     [Icon.name]: Icon,
     [Tabs.name]: Tabs,
     [TabPane.name]: TabPane,
-    [Radio.name]: Radio,
+    [RadioList.name]: RadioList,
   },
 
   props: {
@@ -136,6 +140,9 @@ export default {
       }
 
       return panes
+    },
+    hasSlot() {
+      return !!this.$scopedSlots.default
     },
   },
 

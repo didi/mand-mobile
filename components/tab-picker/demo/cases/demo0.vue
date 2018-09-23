@@ -2,9 +2,11 @@
   <div class="md-example-child md-example-child-tab-picker md-example-child-tab-picker-0">
     <md-field title="地址">
       <md-field-item
-        :title="addressStr"
+        title="联系地址"
         arrow="arrow-right"
         @click="show = !show"
+        placeholder="请选择联系地址"
+        :content="addressStr"
       />
     </md-field>
     <md-tab-picker
@@ -39,7 +41,7 @@ export default {
   },
   computed: {
     addressStr() {
-      return this.address.map(item => item.label).join(' ') || '请选择联系地址'
+      return this.address.map(item => item.label).join(' ')
     },
   },
   methods: {
