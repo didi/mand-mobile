@@ -214,6 +214,7 @@ export default {
 
 <style lang="stylus">
 .md-tab-bar
+  position relative
   padding-left tab-offset
   padding-right tab-offset
   background-color tab-bg
