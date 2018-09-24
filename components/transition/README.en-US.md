@@ -1,5 +1,5 @@
 ---
-title: Transition 动画
+title: Transition
 preview: https://didi.github.io/mand-mobile/examples/#/transition
 ---
 
@@ -17,9 +17,9 @@ Vue.component(Transition.name, Transition)
 <!-- DEMO -->
 
 ### API
-`md-transition`组件为Vue内置`transtion`的一层封装，支持所有Transition的属性参数。
+`md-transition` is a wrapper of vue `transtion`, support all `transition` props.
 
-其中内置动画`name`参数如下：
+built-in transition name：
 
 - `md-fade`
 - `md-fade-up`

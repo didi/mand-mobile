@@ -14,7 +14,7 @@
   &-enter-active
     animation bounce-in 300ms linear
   &-leave-active
-    animation zoom-out 200ms linear
+    animation zoom-out 250ms linear
 
 .md-zoom
   &-enter, &-leave-to
@@ -23,7 +23,7 @@
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition all 200ms linear
+    transition all 250ms linear
 
 .md-punch
   &-enter, &-leave-to
@@ -32,7 +32,7 @@
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition all 200ms linear
+    transition all 250ms linear
 
 .md-slide-up
   &-enter, &-leave-to
@@ -40,7 +40,7 @@
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
-    transition transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    transition transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .md-slide-right
   &-enter, &-leave-to
@@ -48,7 +48,7 @@
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
-    transition transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    transition transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .md-slide-left
   &-enter, &-leave-to
@@ -56,7 +56,7 @@
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
-    transition transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    transition transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .md-slide-down
   &-enter, &-leave-to
@@ -64,7 +64,7 @@
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
-    transition transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1)
+    transition transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1)
 
 .md-fade
   &-enter, &-leave-to
@@ -72,7 +72,7 @@
   &-enter-active
     transition opacity 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition opacity 200ms linear
+    transition opacity 250ms linear
 
 .md-fade-up
   &-enter, &-leave-to
@@ -81,7 +81,7 @@
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition all 200ms linear
+    transition all 250ms linear
 
 .md-fade-down
   &-enter, &-leave-to
@@ -90,7 +90,7 @@
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition all 200ms linear
+    transition all 250ms linear
 
 .md-fade-right
   &-enter, &-leave-to
@@ -99,7 +99,7 @@
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition all 200ms linear
+    transition all 250ms linear
 
 .md-fade-left
   &-enter, &-leave-to
@@ -108,7 +108,7 @@
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
-    transition all 200ms linear
+    transition all 250ms linear
 
 @keyframes bounce-in
   0%
