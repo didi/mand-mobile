@@ -67,8 +67,7 @@ Selected option changed
 ```html
 <template>
   <md-radio-list :options="data">
-    <!-- option 为每个选项的数据 -->
-    <template slot="option" slot-scope="{ option }">
+    <template slot-scope="{ option }">
       <div class="custom-title" v-text="option.text"></div>
       <div class="custom-brief">{{ option.text }}的自定义描述</div>
     </template>

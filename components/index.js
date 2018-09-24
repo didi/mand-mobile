@@ -45,9 +45,10 @@ import Cashier from './cashier'
 import Chart from './chart'
 import Amount from './amount'
 import ActivityIndicator from './activity-indicator'
+import Check from './check'
+import CheckBox from './check-box'
 import CheckGroup from './check-group'
 import CheckList from './check-list'
-import CheckBox from './check-box'
 import ScrollView from './scroll-view'
 import ScrollViewRefresh from './scroll-view-refresh'
 import ScrollViewMore from './scroll-view-more'
@@ -109,9 +110,10 @@ export const components = {
   Chart,
   Amount,
   ActivityIndicator,
+  Check,
+  CheckBox,
   CheckGroup,
   CheckList,
-  CheckBox,
   ScrollView,
   ScrollViewRefresh,
   ScrollViewMore,
@@ -191,9 +193,10 @@ export {
   Chart,
   Amount,
   ActivityIndicator,
+  Check,
+  CheckBox,
   CheckGroup,
   CheckList,
-  CheckBox,
   ScrollView,
   ScrollViewRefresh,
   ScrollViewMore,

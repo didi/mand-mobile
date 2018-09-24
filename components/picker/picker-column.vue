@@ -239,7 +239,7 @@ export default {
         let itemDefaultIndex = defaultIndex[columnIndex]
         const itemDefaultValue = defaultValue[columnIndex]
 
-        /* 
+        /*
          * given a default itemIndex when both defaultIndex & defaultValue are undefined
          * avoid activieIndexs failing to initialize
          */
@@ -435,63 +435,69 @@ export default {
   background color-bg-inverse
   box-sizing border-box
   transform translate3d(0, 0, 0)
-  .md-picker-column-container
-    height 100%
-    .md-picker-column-masker
-      position absolute !important
-      z-index 2
-      left picker-padding-h
-      right picker-padding-h
-      transform translate3d(0, 0, 0)
-      &.top
-        top 0
-        // background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-        hairline(bottom, picker-border-color)
-        // border-bottom solid 1px picker-border-color
-      &.bottom
-        bottom 0
-        bottom constant(safe-area-inset-bottom)
-        // background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
-        hairline(top, picker-border-color)
-        // border-top solid 1px picker-border-color
-    .md-picker-column-hooks
-      display flex
-      position absolute
-      z-index 3
-      absolute-pos()
-      .md-picker-column-hook
-        display flex
-        flex 1
-        height 100%
-    .md-picker-column-list
-      display flex
-      height 100%
-      .md-picker-column-item
-        position relative
-        display flex
-        flex 1
-        clearfix()
-        overflow hidden
-        ul.column-list
-          position absolute
-          top 0
-          left 0
-          width 100%
-          transform-origin left top
-          box-sizing border-box
-          transform translate3d(0, 0, 0)
-          li.column-item
-            float left
-            width 100%
-            padding 0 h-gap-md
-            box-sizing border-box
-            color picker-color
-            font-size picker-font-size
-            text-align center
-            word-ellipsis()
-            &.active
-              color picker-color-active
-              font-weight picker-font-weight-active
-            &.disabled
-              opacity picker-disabled-opacity
+
+.md-picker-column-container
+  height 100%
+
+.md-picker-column-masker
+  position absolute !important
+  z-index 2
+  left picker-padding-h
+  right picker-padding-h
+  transform translate3d(0, 0, 0)
+  &.top
+    top 0
+    // background -webkit-gradient(linear,left bottom,left top,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
+    hairline(bottom, picker-border-color)
+    // border-bottom solid 1px picker-border-color
+  &.bottom
+    bottom 0
+    bottom constant(safe-area-inset-bottom)
+    // background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
+    hairline(top, picker-border-color)
+    // border-top solid 1px picker-border-color
+
+.md-picker-column-hooks
+  display flex
+  position absolute
+  z-index 3
+  absolute-pos()
+
+.md-picker-column-hook
+  display flex
+  flex 1
+  height 100%
+
+.md-picker-column-list
+  display flex
+  height 100%
+
+.md-picker-column-item
+  position relative
+  display flex
+  flex 1
+  clearfix()
+  overflow hidden
+  .column-list
+    position absolute
+    top 0
+    left 0
+    width 100%
+    transform-origin left top
+    box-sizing border-box
+    transform translate3d(0, 0, 0)
+    .column-item
+      float left
+      width 100%
+      padding 0 h-gap-md
+      box-sizing border-box
+      color picker-color
+      font-size picker-font-size
+      text-align center
+      word-ellipsis()
+      &.active
+        color picker-color-active
+        font-weight picker-font-weight-active
+      &.disabled
+        opacity picker-disabled-opacity
 </style>

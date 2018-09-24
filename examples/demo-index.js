@@ -39,11 +39,10 @@ export const Cashier =  r => require.ensure([], () => r(require('../components/c
 export const Chart =  r => require.ensure([], () => r(require('../components/chart/demo')), 'chart')
 export const Amount =  r => require.ensure([], () => r(require('../components/amount/demo')), 'amount')
 export const ActivityIndicator =  r => require.ensure([], () => r(require('../components/activity-indicator/demo')), 'activity-indicator')
-export const CheckGroup =  r => require.ensure([], () => r(require('../components/check-group/demo')), 'check-group')
-export const CheckList =  r => require.ensure([], () => r(require('../components/check-list/demo')), 'check-list')
-export const CheckBox =  r => require.ensure([], () => r(require('../components/check-box/demo')), 'check-box')
+export const Check =  r => require.ensure([], () => r(require('../components/check/demo')), 'check')
 export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
 export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')
 export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
 export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')
-export const DetailItem =  r => require.ensure([], () => r(require('../components/detail-item/demo')), 'detail-item')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const DetailItem =  r => require.ensure([], () => r(require('../components/detail-item/demo')), 'detail-item')
+/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

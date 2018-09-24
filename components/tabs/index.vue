@@ -89,23 +89,3 @@ export default {
   },
 }
 </script>
-
-<style lang="stylus">
-.md-tabs
-  position relative
-  overflow hidden
-
-.md-tab-slide-enter-active,
-.md-tab-slide-leave-active
-  transition: all 500ms
-
-.md-tab-slide-enter
-  opacity: 0.01
-  transform: translate3d(-50px, 0, 0)
-
-.md-tab-slide-leave-active
-  position: absolute
-.md-tab-slide-leave-to
-  opacity: 0.01
-  transform: translate3d(50px, 0, 0)
-</style>

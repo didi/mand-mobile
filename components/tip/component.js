@@ -3,5 +3,5 @@ export default {
   'text': '轻提示',
   'category': 'feedback',
   'description': '弹出式轻提示',
-  'author': 'liuxinyumichael'
+  'author': 'moyu <moyuboy@gmail.com>'
 }

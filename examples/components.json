@@ -180,24 +180,6 @@
         "text": "勾选按钮"
       },
       {
-        "name": "CheckBox",
-        "path": "/check-box",
-        "icon": "check-box",
-        "text": "复选框"
-      },
-      {
-        "name": "CheckGroup",
-        "path": "/check-group",
-        "icon": "check-group",
-        "text": "选择项组"
-      },
-      {
-        "name": "CheckList",
-        "path": "/check-list",
-        "icon": "check-list",
-        "text": "多选列表"
-      },
-      {
         "name": "Codebox",
         "path": "/codebox",
         "icon": "codebox",
@@ -221,6 +203,7 @@
         "icon": "number-keyboard",
         "text": "数字键盘"
       },
+      { "name": "Check", "path": "/check", "icon": "check", "text": "选择项组" },
       { "name": "Radio", "path": "/radio", "icon": "radio", "text": "单选框" },
       { "name": "Switch", "path": "/switch", "icon": "switch", "text": "开关" }
     ]

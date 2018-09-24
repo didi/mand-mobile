@@ -42,9 +42,3 @@
   },
 }
 </script>
-
-<style lang="stylus">
-.md-tab-pane
-  width 100%
-  box-sizing border-box
-</style>

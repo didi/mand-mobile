@@ -274,5 +274,5 @@ export default {
   &-enter, &-leave-to
     opacity 0.01
   &-enter-active, &-leave-active
-    transition opacity 200ms
+    transition opacity 250ms
 </style>

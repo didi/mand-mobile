@@ -3,5 +3,5 @@ export default {
   'text': '模态窗口',
   'category': 'feedback',
   'description': '弹出式交互窗口',
-  'author': 'liuxinyumichael'
+  'author': 'moyu <moyuboy@gmail.com>'
 }

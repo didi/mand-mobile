@@ -3,5 +3,5 @@ export default {
   'text': '底部多级联动选择器',
   'category': 'feedback',
   'description': '',
-  'author': 'qiman'
+  'author': 'moyu <moyuboy@gmail.com>'
 }

@@ -89,6 +89,10 @@ export default {
   &.is-checked
     .md-radio-icon
       color radio-color
+  &.is-disabled
+    .md-radio-icon
+    .md-radio-label
+      color color-text-disabled
   &.is-inline
     display inline-flex
     &:not(:last-child)
