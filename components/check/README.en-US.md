@@ -1,6 +1,6 @@
 ---
-title: CheckGroup
-preview: https://didi.github.io/mand-mobile/examples/#/check-group
+title: Check
+preview: https://didi.github.io/mand-mobile/examples/#/check
 ---
 
 UI renderless check group component. <sup class="version-after">1.5.0+</sup>
