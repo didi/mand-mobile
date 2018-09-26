@@ -47,6 +47,7 @@ export default {
       &.inline, &.link
         margin-right 10px
     .md-example-box
+      position relative
       float left
       width 100%
       hairline(top)

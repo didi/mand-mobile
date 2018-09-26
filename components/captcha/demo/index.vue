@@ -29,6 +29,7 @@ export default {...createDemoModule('captcha', [Demo0])}
       font-size font-heading-normal
       font-weight normal
     .md-example-box
+      position relative
       float left
       width 100%
       hairline(top)

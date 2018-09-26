@@ -198,6 +198,7 @@ export default {
 <style lang="stylus">
 .md-tab-picker
   .md-tab-bar
+    position relative
     margin-left tab-picker-h-gap
     margin-right tab-picker-h-gap
     padding-left 0

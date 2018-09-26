@@ -197,6 +197,7 @@ export default {
   justify-content center
 
 .md-dialog-actions
+  position relative
   display flex
   hairline(top, dialog-action-border-color)
   &.is-column
@@ -212,6 +213,7 @@ export default {
         color dialog-action-highlight-color
 
 .md-dialog-btn
+  position relative
   flex 1 1 0%
   display flex
   align-items center

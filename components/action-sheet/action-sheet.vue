@@ -148,6 +148,7 @@ export default {
   padding 0 action-sheet-padding-h
 
 .md-action-sheet-item
+  position relative
   vertical-height(action-sheet-height)
   hairline(top, color-border-base)
   box-sizing border-box

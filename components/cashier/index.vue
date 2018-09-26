@@ -395,6 +395,7 @@ block()
       &.md-cashier-choose
         .choose-text
           clearfix()
+          position relative
           padding 65px 0
           hairline(bottom, color-border-minor)
           p

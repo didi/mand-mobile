@@ -97,6 +97,7 @@ export default {
   position relative
 
 .md-field-item-content
+  position relative
   display flex
   align-items center
   justify-content space-between

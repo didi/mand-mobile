@@ -121,6 +121,7 @@ export default {
 
 <style lang="stylus">
 .md-number-keyboard-container
+  position relative
   -webkit-user-select none
   -webkit-tap-highlight-color transparent
   display flex
@@ -137,6 +138,7 @@ export default {
       float left
       width 100%
       .keyboard-number-item
+        position relative
         float left
         width 33.3%
         height number-keyboard-key-height

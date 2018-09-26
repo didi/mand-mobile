@@ -21,6 +21,7 @@ export default {...createDemoModule('stepper', [Demo0, Demo1, Demo2, Demo3, Demo
 
 <style lang="stylus" scoped>
 .md-example-section
+  position relative
   margin 0 !important
   hairline(bottom, color-border-base)
 .md-example-content

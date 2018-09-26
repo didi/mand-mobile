@@ -108,6 +108,7 @@ export default {
     padding 0
 
 .md-button
+  position relative
   .md-icon
     display flex
     align-items center
