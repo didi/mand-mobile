@@ -1,4 +1,4 @@
-const utils = require('./utils')
+// const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../../config')
 const merge = require('webpack-merge')
@@ -28,6 +28,7 @@ if (argv.component) {
 
 
 module.exports = merge(baseWebpackConfig, {
+  mode: 'development',
   entry,
   output: {
     path: config.dev.assetsRoot,
@@ -36,7 +37,7 @@ module.exports = merge(baseWebpackConfig, {
     publicPath: config.dev.assetsPublicPath
   },
   module: {
-    rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+    // rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
@@ -57,7 +58,6 @@ module.exports = merge(baseWebpackConfig, {
     }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: config.dev.index,

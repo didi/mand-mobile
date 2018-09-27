@@ -2,6 +2,8 @@
 node_modules/
 dist/
 lib/
+dll/
+manifest.json
 output/
 package-lock.json
 yarn.lock
@@ -15,6 +17,7 @@ site/public
 site/dist
 site/build/bin/algolia-key.js
 lib-vw
+.cache-loader
 # Editor directories and files
 .idea
 .vscode
