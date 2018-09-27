@@ -25,7 +25,10 @@ exports.cssLoaders = function (options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = [cssLoader]
+    const loaders = [
+      // 'thread-loader', 
+      cssLoader
+    ]
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
@@ -42,8 +45,8 @@ exports.cssLoaders = function (options) {
         use: loaders,
         fallback: 'vue-style-loader'
       })
-    } else {
-      return ['vue-style-loader'].concat(loaders)
+    } else { 
+      return ['vue-style-loader'].concat(loaders);
     }
   }
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
@@ -64,10 +67,12 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     stylus: generateLoaders('stylus', {
-      import: stylusMixins
+      import: stylusMixins,
+      preferPathResolver: 'webpack',
     }),
     styl: generateLoaders('stylus', {
-      import: stylusMixins
+      import: stylusMixins,
+      preferPathResolver: 'webpack',
     })
   }
 }
@@ -87,3 +92,19 @@ exports.styleLoaders = function (options) {
   }
   return output
 }
+
+  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
+  const stylusMixins = [
+    '~nib/lib/nib/vendor',
+    '~nib/lib/nib/gradients.styl',
+    resolve('../../components/_style/mixin/util.styl')
+  ]
+
+  if (isProd) {
+    stylusMixins.push(resolve('../../components/_style/mixin/theme.variable.styl'))
+  } else {
+    stylusMixins.push(resolve('../../components/_style/mixin/theme.styl'))
+    stylusMixins.push(resolve('../../examples/theme.custom.styl'))
+  }
+
+  exports.stylusMixins = stylusMixins
