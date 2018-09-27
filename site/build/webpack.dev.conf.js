@@ -34,7 +34,6 @@ module.exports = merge(baseWebpackConfig, {
     // }),
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new FriendlyErrorsPlugin(),
   ],
 })

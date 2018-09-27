@@ -65,7 +65,6 @@ const webpackConfig = merge(baseWebpackConfig, {
         safe: true
       }
     }),
-    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 })
 
