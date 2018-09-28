@@ -6,10 +6,17 @@
       preserveAspectRatio="xMidYMid"
       class="md-activity-indicator-svg rolling"
     >
+      <circle
+        fill="none"
+        :stroke="borderColor"
+        :stroke-width="strokeWidth"
+        :cx="viewBoxSize/2"
+        :cy="viewBoxSize/2"
+        :r="radius"
+      />
       <g
         v-if="!$slots.default"
         class="circle"
-        transform="matrix(0, 1, 1, 0, 0, 0)"
       >
         <circle
           class="stroke"
@@ -19,6 +26,7 @@
           :stroke="color"
           :stroke-width="strokeWidth"
           :stroke-dashoffset="this.circlePerimeter / 2"
+          stroke-linecap="round"
           :r="radius"
           :style="circleStyle"
         >
@@ -30,7 +38,7 @@
             type="rotate"
             calcMode="linear"
             keyTimes="0;1"
-            begin="0s"
+            begin="0"
             repeatCount="indefinite"
           ></animateTransform>
         </circle>
@@ -52,6 +60,10 @@
       type: String,
       default: '#2F86F6',
     },
+    borderColor: {
+      type: String,
+      default: 'rgba(0, 0, 0, .1)',
+    },
     fill: {
       type: String,
       default: 'transparent',
@@ -67,7 +79,7 @@
       return `${this.$options.name}-keyframes-${this.size}`
     },
     strokeWidth() {
-      return this.size / 16
+      return this.size / 12
     },
     radius() {
       return this.size / 2
@@ -82,7 +94,7 @@
       /* istanbul ignore else */
       if (this.process === undefined) {
         return {
-          animation: `${this.id} 2s cubic-bezier(1.0, 0.5, 0.8, 1.0) infinite`,
+          animation: `${this.id} 2s cubic-bezier(0.41, 0.314, 0.8, 0.6) infinite`,
         }
       } else {
         return {
