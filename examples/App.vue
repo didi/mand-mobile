@@ -74,7 +74,7 @@ block()
           left 0
           width 100%
           height .04rem
-          background color-bg-mask
+          background color-mask
           border-radius 2px
           &:nth-of-type(1)
             top 0
@@ -112,7 +112,7 @@ block()
           font-weight font-weight-medium
           a
             margin-right 5px
-            background color-primary-tap
+            background color-primary
             color #fff
             padding 5px 10px
             border-radius radius-normal
