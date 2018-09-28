@@ -1,10 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-2">
-    <md-drop-menu
-      ref="dropMenu1"
-      :data="data"
-      :default-value="['1.8L', '自动挡']"
-    ></md-drop-menu>
+    <md-drop-menu :data="data" :default-value="['1', '8']" />
     <div class="content">正文区域</div>
   </div>
 </template>
@@ -59,6 +55,20 @@ export default {
         {
           text: '变速箱',
           disabled: true,
+          options: [
+            {
+              value: '7',
+              text: '手动挡',
+            },
+            {
+              value: '8',
+              text: '自动挡',
+            },
+            {
+              value: '9',
+              text: '手自一体',
+            },
+          ],
         },
       ],
     }
