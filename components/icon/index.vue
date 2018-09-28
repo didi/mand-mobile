@@ -40,6 +40,8 @@ export default {
 .md-icon
   background-size contain
   fill currentColor
+  -webkit-backface-visibility hidden
+  transform translateZ(0) scale(1.0, 1.0)
   // size
   &.xss
     width icon-size-xxs

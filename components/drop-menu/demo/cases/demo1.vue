@@ -1,10 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-1">
-    <md-drop-menu
-      ref="dropMenu1"
-      :data="data"
-      :default-value="['1.8L', '自动挡']"
-    ></md-drop-menu>
+    <md-drop-menu :data="data" :default-value="['1', '8']" />
     <div class="content">正文区域</div>
   </div>
 </template>

@@ -36,7 +36,7 @@
 
 .md-slide-up
   &-enter, &-leave-to
-    transform translate3d(0, 100%, 0)
+    transform translate(0, 100%)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -44,7 +44,7 @@
 
 .md-slide-right
   &-enter, &-leave-to
-    transform translate3d(-100%, 0, 0)
+    transform translate(-100%, 0)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -52,7 +52,7 @@
 
 .md-slide-left
   &-enter, &-leave-to
-    transform translate3d(100%, 0, 0)
+    transform translate(100%, 0)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -60,7 +60,7 @@
 
 .md-slide-down
   &-enter, &-leave-to
-    transform translate3d(0, -100%, 0)
+    transform translate(0, -100%)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -77,7 +77,7 @@
 .md-fade-up
   &-enter, &-leave-to
     opacity 0.01
-    transform translate3d(0, 20%, 0)
+    transform translate(0, 20%)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -86,7 +86,7 @@
 .md-fade-down
   &-enter, &-leave-to
     opacity 0.01
-    transform translate3d(0, -20%, 0)
+    transform translate(0, -20%)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -95,7 +95,7 @@
 .md-fade-right
   &-enter, &-leave-to
     opacity 0.01
-    transform translate3d(-20%, 0, 0)
+    transform translate(-20%, 0)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -104,7 +104,7 @@
 .md-fade-left
   &-enter, &-leave-to
     opacity 0.01
-    transform translate3d(20%, 0, 0)
+    transform translate(20%, 0)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
