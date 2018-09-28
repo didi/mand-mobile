@@ -141,7 +141,7 @@ export default {
     $_setScroller() {
       const boxer = this.$el ? this.$el.querySelector('.md-popup-box') : null
       if (boxer && boxer.clientHeight >= this.$el.clientHeight) {
-        this.scroller = '.md-field-content'
+        this.scroller = '.md-drop-menu-list'
       } else {
         return ''
       }
@@ -176,11 +176,9 @@ export default {
     },
     $_onListHide() {
       /* istanbul ignore next  */
-      this.$emit('hide')
-    },
-    $_onListBeforeHide() {
-      /* istanbul ignore next  */
       this.activeMenuBarIndex = -1
+      /* istanbul ignore next  */
+      this.$emit('hide')
     },
 
     // MARK: public methods
