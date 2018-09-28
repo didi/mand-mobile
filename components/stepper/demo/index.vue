@@ -1,6 +1,8 @@
 <template>
   <div class="md-example stepper">
     <section class="md-example-section" v-for="(demo, index) in demos" :key="index">
+      <div class="md-example-title" v-html="demo.title || '基础'"></div>
+      <div class="md-example-describe" v-html="demo.describe"></div>
       <div class="md-example-content">
         <component :is="demo"></component>
       </div>
@@ -22,8 +24,5 @@ export default {...createDemoModule('stepper', [Demo0, Demo1, Demo2, Demo3, Demo
 <style lang="stylus" scoped>
 .md-example-section
   position relative
-  margin 0 !important
   hairline(bottom, color-border-base)
-.md-example-content
-  margin 0 !important
 </style>
