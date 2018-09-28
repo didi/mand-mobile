@@ -1,16 +1,8 @@
 <template>
   <div class="md-example-child md-example-child-stepper md-example-child-stepper-5">
     <md-field>
-      <md-field-item
-        name="arrow5"
-        title="step为小数1.3"
-        customized
-        align="right">
-        <div class="normal-tip">
-          <md-stepper
-            :step="1.3"
-          ></md-stepper>
-        </div>
+      <md-field-item title="step为小数1.3">
+        <md-stepper slot="right" :step="1.3" />
       </md-field-item>
     </md-field>
   </div>

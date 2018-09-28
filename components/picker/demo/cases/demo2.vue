@@ -4,16 +4,14 @@
       <md-field-item
         title="起保年份"
         arrow="arrow-right"
-        align="right"
-        :value="pickerValue0"
-        @click.native="isPickerShow0 = true">
+        :addon="pickerValue0"
+        @click="isPickerShow0 = true">
       </md-field-item>
       <md-field-item
         title="省市区/县"
         arrow="arrow-right"
-        align="right"
-        :value="pickerValue1"
-        @click.native="isPickerShow1 = true">
+        :addon="pickerValue1"
+        @click="isPickerShow1 = true">
       </md-field-item>
     </md-field>
     <md-picker

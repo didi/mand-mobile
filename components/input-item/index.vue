@@ -15,6 +15,7 @@
       size
     ]"
     :title="title"
+    solid
   >
     <template slot="left">
       <slot name="left"></slot>

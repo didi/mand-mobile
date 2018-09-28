@@ -3,10 +3,10 @@
     <md-field
       title="支付结果"
     >
-      <md-radio
+      <md-radio-list
         v-model="cashierResult"
         :options="cashierResults"
-      ></md-radio>
+      />
     </md-field>
     <md-field
       title="支付配置"
@@ -39,7 +39,7 @@
 	</div>
 </template>
 
-<script>import {Button, Radio, Field, FieldItem, InputItem, Switch, Cashier, Toast} from 'mand-mobile'
+<script>import {Button, RadioList, Field, FieldItem, InputItem, Switch, Cashier, Toast} from 'mand-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -48,7 +48,7 @@ export default {
   /* DELETE */
   components: {
     [Button.name]: Button,
-    [Radio.name]: Radio,
+    [RadioList.name]: RadioList,
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [InputItem.name]: InputItem,

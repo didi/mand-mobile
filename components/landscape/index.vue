@@ -81,9 +81,9 @@ export default {
 <style lang="stylus">
 .md-landscape
   &.is-full
-    .md-popup.center .md-popup-box
+    .md-popup-box
+      position absolute
       absolute-pos()
-      transform none
       background landscape-fullscreen-bg
     .landscape-content
       width 100%

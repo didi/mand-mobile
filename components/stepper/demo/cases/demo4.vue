@@ -1,16 +1,8 @@
 <template>
   <div class="md-example-child md-example-child-stepper md-example-child-stepper-4">
     <md-field>
-      <md-field-item
-        name="arrow4"
-        title="最小值4大于默认值"
-        customized
-        align="right">
-        <div class="normal-tip">
-          <md-stepper
-            :min="4"
-          ></md-stepper>
-        </div>
+      <md-field-item title="最小值4大于默认值">
+        <md-stepper slot="right" :min="4" />
       </md-field-item>
     </md-field>
   </div>

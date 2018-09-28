@@ -51,7 +51,7 @@
 
 .md-detail-item
   &.is-bold
-    .md-detail-content,
+    .md-detail-title,
     .md-detail-content
       font-weight bold
       color detail-item-content-color

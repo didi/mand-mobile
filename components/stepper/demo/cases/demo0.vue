@@ -1,16 +1,8 @@
 <template>
   <div class="md-example-child md-example-child-stepper md-example-child-stepper-0">
     <md-field>
-      <md-field-item
-        name="arrow1"
-        title="禁用"
-        customized
-        align="right">
-        <div class="normal-tip">
-          <md-stepper
-            disabled
-          ></md-stepper>
-        </div>
+      <md-field-item title="禁用">
+        <md-stepper slot="right" disabled />
       </md-field-item>
     </md-field>
   </div>

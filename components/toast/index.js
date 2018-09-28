@@ -28,6 +28,7 @@ function Toast({
   vm.content = content
   vm.icon = icon
   vm.duration = duration
+  vm.position = position
   vm.hasMask = hasMask
   vm.visible = true
 

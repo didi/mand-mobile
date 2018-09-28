@@ -5,13 +5,13 @@
         操作<md-icon name="arrow-right"></md-icon>
       </template>
       <p slot="footer">区域页脚区域内容插槽</p>
-      <md-field-item title="标题区域" placeholder="提示文本" />
-      <md-field-item title="标题区域" content="内容文本" addon="次要信息" />
-      <md-field-item title="附加内容" content="正文内容">
+      <md-field-item solid title="标题区域" placeholder="提示文本" />
+      <md-field-item solid title="标题区域" content="内容文本" addon="次要信息" />
+      <md-field-item solid title="附加内容" content="正文内容">
         <p slot="children">这是子内容区域</p>
       </md-field-item>
-      <md-field-item title="动作条目" arrow @click="onClick" />
-      <md-field-item title="禁用条目" content="内容禁用状态" arrow disabled />
+      <md-field-item solid title="动作条目" arrow @click="onClick" />
+      <md-field-item solid title="禁用条目" content="内容禁用状态" arrow disabled />
     </md-field>
   </div>
 </template>

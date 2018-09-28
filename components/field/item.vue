@@ -2,6 +2,7 @@
   <div
     class="md-field-item"
     :class="{
+      'is-solid': solid,
       'is-disabled': currentDisabled,
       'is-align-right': alignRight
     }"
@@ -66,6 +67,10 @@ export default {
       type: [Boolean, String],
       default: false,
     },
+    solid: {
+      type: Boolean,
+      default: false,
+    },
     alignRight: {
       type: Boolean,
       default: false,
@@ -109,7 +114,6 @@ export default {
 
 .md-field-item-title
   flex-shrink 0
-  width field-item-title-width
   margin-right field-item-title-gap
   font-size field-item-font-size
   line-height 1.2
@@ -150,6 +154,9 @@ export default {
   margin-bottom v-gap-sm
 
 .md-field-item
+  &.is-solid
+    .md-field-item-title
+      width field-item-title-width
   &.is-disabled
     .md-field-item-control,
     .md-field-item-left,

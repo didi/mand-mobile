@@ -101,13 +101,13 @@ export default {
     .md-popup-mask
       background transparent
   &.bottom
-    .md-popup.center .md-popup-box
-      top auto
+    .md-popup .md-popup-box
+      position absolute
       bottom 50px
   &.top
-    .md-popup.center .md-popup-box
+    .md-popup .md-popup-box
+      position absolute
       top 50px
-      bottom auto
 
 .md-toast-content
   display inline-flex

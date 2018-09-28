@@ -71,6 +71,7 @@ export default {
 |brief|描述内容|String|-|-|
 |addon|附加文案|String|-|-|
 |disabled|是否禁用项目|Boolean|false|-|
+|solid|是否固定标题宽度，超出会自动换行|Boolean|false|-|
 |arrow|动作箭头标识|Boolean|false|-|
 
 #### FieldItem Events

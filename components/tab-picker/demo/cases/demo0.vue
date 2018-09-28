@@ -7,6 +7,7 @@
         @click="show = !show"
         placeholder="请选择联系地址"
         :content="addressStr"
+        solid
       />
     </md-field>
     <md-tab-picker
