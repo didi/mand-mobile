@@ -4,6 +4,7 @@
       :stroke-width="strokeWidth"
       :radius="radius"
       fill="#FFF6F1"
+      border-color="transparent"
     >
       <g v-if="isSuccess">
         <circle class="success"
@@ -20,7 +21,7 @@
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
       class="right"
-      :style="{transform: `translate(-48%, -50%) scale(${size/70})`}"
+      :style="{transform: `translate(-50%, -50%) scale(${size/70})`}"
     >
       <g>
         <line
