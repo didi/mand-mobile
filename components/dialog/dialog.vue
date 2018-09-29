@@ -190,6 +190,8 @@ export default {
     text-align center
     font-size dialog-title-font-size
     margin-bottom 15px
+  .md-dialog-text
+    max-width 100%
   .md-dialog-actions
     display flex
     hairline(top, dialog-action-border-color)
