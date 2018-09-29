@@ -12,6 +12,7 @@
           <md-activity-indicator-rolling
             :size="size"
             :color="color"
+            :width="width"
           ></md-activity-indicator-rolling>
         </template>
         <template v-else-if="type === 'roller-success'">
@@ -67,6 +68,9 @@ export default {
     size: {
       type: Number,
       default: 70,
+    },
+    width: {
+      type: Number,
     },
     color: {
       type: String,

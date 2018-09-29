@@ -23,6 +23,7 @@ Vue.component(ActivityIndicator.name, ActivityIndicator)
 |----|-----|------|------|------|
 |type|类型|String|`roller`|`roller`, `spinner`, `carousel`|
 |size|图标大小|Number|`70px`|单位`px`, 也可直接重置`.md-activity-indicator-svg`样式|
+|width|图标宽度|Number|-|单位`px`, 仅用于类型`roller`|
 |color|图标颜色|String|`#fc9153/dark`|`spinner`无法自定义色值，可选值只有`dark`和`light`|
 |text-color|文字颜色|String|`#999`|也可直接重置`.md-activity-indicator-text`样式|
 |text-size|文字大小|String|`70px`|也可直接重置`.md-activity-indicator-text`样式|

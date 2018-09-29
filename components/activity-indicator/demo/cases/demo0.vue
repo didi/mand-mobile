@@ -35,8 +35,8 @@ export default {
     margin-bottom 30px
     &.md-activity-indicator-css
       .md-activity-indicator-svg
-        width 40px !important
-        height 40px !important
+        width 60px !important
+        height 60px !important
       .md-activity-indicator-text
         font-size 32px
 </style>
