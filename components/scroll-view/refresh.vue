@@ -2,6 +2,7 @@
   <div class="md-scroll-view-refresh">
     <md-activity-indicator-rolling
       :process="!isRefreshing ? process : undefined"
+      :width="10"
     ></md-activity-indicator-rolling>
     <p class="refresh-tip">{{ refreshTip }}</p>
   </div>
