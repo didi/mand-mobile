@@ -3,6 +3,11 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.1
+`2018-09-29`
+- Fix
+  - 内容产出最大宽度 [#200](https://github.com/didi/mand-mobile/issues/200)
+
 ### 1.6.0
 `2018-09-03`
 - Feature
