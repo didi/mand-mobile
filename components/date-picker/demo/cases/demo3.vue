@@ -14,9 +14,7 @@
       ref="datePicker"
       v-model="isDatePickerShow"
       type="custom"
-      today-text="&(今天)"
       title="选择出险时间"
-      is-twelve-hours
       :text-render="textRender"
       :custom-types="['yyyy', 'MM','dd', 'hh', 'mm']"
       :default-date="currentDate"
@@ -51,12 +49,11 @@ export default {
     textRender() {
       const args = Array.prototype.slice.call(arguments)
       const typeFormat = args[0] // 类型
-      const column0Value = args[1] // 第1列选中值
-      const column1Value = args[2] // 第2列选中值
+      // const column0Value = args[1] // 第1列选中值
+      // const column1Value = args[2] // 第2列选中值
       const column2Value = args[3] // 第3列选中值
-
       if (typeFormat === 'dd') {
-        return `${column0Value}/${column1Value}/${column2Value}`
+        return `*${column2Value}日`
       }
     },
     onDatePickerChange(columnIndex, itemIndex, value) {

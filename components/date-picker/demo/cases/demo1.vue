@@ -2,10 +2,8 @@
   <div class="md-example-child md-example-child-date-picker md-example-child-date-picker-1">
     <md-date-picker
       type="time"
-      :unit-text="['', '', '', 'h', 'm']"
-      :half-day-text="['AM', 'PM']"
-      :minute-step="30"
-      is-twelve-hours
+      :unit-text="['', '', '', '\'', '\'\'']"
+      :minute-step="1"
       is-view
     ></md-date-picker>
   </div>

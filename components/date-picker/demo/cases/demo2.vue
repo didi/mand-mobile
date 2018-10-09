@@ -4,7 +4,6 @@
       ref="datePicker"
       type="datetime"
       :min-date="currentDate"
-      is-twelve-hours
       is-view
     ></md-date-picker>
   </div>

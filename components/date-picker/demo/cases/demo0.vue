@@ -3,8 +3,8 @@
     <md-date-picker
       ref="datePicker"
       today-text="今天"
-      :minDate="minDate"
-      :maxDate="maxDate"
+      :min-date="minDate"
+      :max-date="maxDate"
       :default-date="currentDate"
       is-view
       @initialed="onDatePickerInitialed"
