@@ -226,7 +226,7 @@ export default {
 
           const itemIndex = this.picker.getColumnIndex(j) || 0
           if (columnData[j]) {
-            columnDataGeneratorParams.push(columnData[j][itemIndex]['value'])
+            columnDataGeneratorParams.push(columnData[j][itemIndex])
           } else {
             columnDataGeneratorParams.push('')
             warn(`DatePicker columnData of index ${j} is void`)
@@ -320,6 +320,19 @@ export default {
 
       return defaultDate
     },
+    $_getGeneratorArguments (args) {
+      const defaultArguments = {
+        Year: this.currentYear,
+        Month: this.currentMonth,
+        Date: this.currentDate,
+        Hour: this.currentHours,
+        Minute: this.currentMinutes
+      }
+      args.map(item => {
+        defaultArguments[item.type] = item.value
+      })
+      return defaultArguments
+    },
     $_generateYearData () {
       const start = this.minDate ? this.minDate.getFullYear() : this.currentYear - 20
       const end = this.maxDate ? this.maxDate.getFullYear() : this.currentYear + 20
@@ -329,44 +342,42 @@ export default {
       }
       return this.$_generateData(start, end, 'Year', this.unitText[0], 1)
     },
-    $_generateMonthData (year = this.currentYear) {
+    $_generateMonthData () {
+      const args = this.$_getGeneratorArguments(toArray(arguments))
       let start, end
 
-      if (this.$_isDateTimeEqual(this.minDate, year)) {
+      if (this.$_isDateTimeEqual(this.minDate, args.Year)) {
         start = this.minDate.getMonth() + 1
       } else {
         start = 1
       }
 
-      if (this.$_isDateTimeEqual(this.maxDate, year)) {
+      if (this.$_isDateTimeEqual(this.maxDate, args.Year)) {
         end = this.maxDate.getMonth() + 1
       } else {
         end = 12
       }
-
-      return this.$_generateData(start, end, 'Month', this.unitText[1] || '')
+      return this.$_generateData(start, end, 'Month', this.unitText[1] || '', 1, arguments)
     },
-    $_generateDateData (
-      year = this.currentYear,
-      month = this.currentMonth
-    ) {
+    $_generateDateData () {
+      const args = this.$_getGeneratorArguments(toArray(arguments))
       let start, end
 
-      if (this.$_isDateTimeEqual(this.minDate, year, month)) {
+      if (this.$_isDateTimeEqual(this.minDate, args.Year, args.Month)) {
         start = this.minDate.getDate()
       } else {
         start = 1
       }
 
-      if (this.$_isDateTimeEqual(this.maxDate, year, month)) {
+      if (this.$_isDateTimeEqual(this.maxDate, args.Year, args.Month)) {
         end = this.maxDate.getDate()
       } else {
-        end = new Date(year, month, 0).getDate()
+        end = new Date(args.Year, args.Month, 0).getDate()
       }
 
       const dateData = this.$_generateData(start, end, 'Date', this.unitText[2] || '', 1, arguments)
 
-      if (year === this.currentYear && month === this.currentMonth && 
+      if (this.$_isDateTimeEqual(this.currentDateIns, args.Year, args.Month) && 
           this.currentDate >= start && this.currentDate <= end &&
           this.todayText) {
         const currentDateIndex = this.currentDate - start
@@ -376,20 +387,17 @@ export default {
 
       return dateData
     },
-    $_generateHourData (
-      year = this.currentYear,
-      month = this.currentMonth,
-      date = this.currentDate
-    ) {
+    $_generateHourData () {
+      const args = this.$_getGeneratorArguments(toArray(arguments))
       let start, end
-      
-      if (this.$_isDateTimeEqual(this.minDate, year, month, date)) {
+
+      if (this.$_isDateTimeEqual(this.minDate, args.Year, args.Month, args.Date)) {
         start = this.minDate.getHours()
       } else {
         start = 0
       }
 
-      if (this.$_isDateTimeEqual(this.maxDate, year, month, date)) {
+      if (this.$_isDateTimeEqual(this.maxDate, args.Year, args.Month, args.Date)) {
           end = this.maxDate.getHours()
       } else {
         end = 23
@@ -406,21 +414,17 @@ export default {
   
       return this.$_generateData(start, end, 'Hour', this.unitText[3] || '', 1, arguments)
     },
-    $_generateMinuteData (
-      year = this.currentYear,
-      month = this.currentMonth,
-      date = this.currentDate,
-      hour = this.currentHours
-    ) {
+    $_generateMinuteData () {
+      const args = this.$_getGeneratorArguments(toArray(arguments))
       let start, end
-      
-      if (this.$_isDateTimeEqual(this.minDate, year, month, date, hour)) {
+
+      if (this.$_isDateTimeEqual(this.minDate, args.Year, args.Month, args.Date, args.Hour)) {
         start = this.minDate.getMinutes()
       } else {
         start = 0
       }
 
-      if (this.$_isDateTimeEqual(this.maxDate, year, month, date, hour)) {
+      if (this.$_isDateTimeEqual(this.maxDate, args.Year, args.Month, args.Date, args.Hour)) {
           end = this.maxDate.getMinutes()
       } else {
         end = 59
@@ -428,18 +432,19 @@ export default {
 
       return this.$_generateData(start, end, 'Minute', this.unitText[4] || '', this.minuteStep, arguments)
     },
-    $_generateData (from, to, type, unit, step = 1, args) {
+    $_generateData (from, to, type, unit, step = 1, args = []) {
       let count = from
       let text
       const data = []
-
-      args = args || []
+      const defaultArgs = toArray(args).map(item => {
+        return typeof item === 'object' ? item.value : item
+      })
 
       while (count <= to) {
         this.textRender 
         && (text = this.textRender.apply(this, [
             TYPE_FORMAT_INVERSE[type],
-            ...args,
+            ...defaultArgs,
             count
            ]))
         data.push({
@@ -523,7 +528,6 @@ export default {
 
     getFormatDate (format = 'yyyy-MM-dd hh:mm') {
       const columnValues = this.picker.getColumnValues()
-      let hourTo24 = false
 
       columnValues.forEach(item => {
         /* istanbul ignore if */
@@ -531,7 +535,7 @@ export default {
           return
         }
 
-        let value = hourTo24 && item.type === 'Hour' ? item.value + 12 : item.value
+        let value = item.value
 
         if (value < 10) {
           value = '0' + value
