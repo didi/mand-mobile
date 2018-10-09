@@ -23,15 +23,13 @@ Vue.component(DatePicker.name, DatePicker)
 |----|-----|------|------|------|
 |type|日期选择类型|String|`date`|`date`, `time`, `datetime`, `custom`|
 |custom-types|自定义类型包含的`日期元素`, `[yyyy, MM, dd, hh, mm]`|Array|-|仅用于type为`custom`|
-|minDate|最小可选日期|Date|-|-|
-|maxDate|最大可选日期|Date|-|-|
+|min-date|最小可选日期（时间）|Date|-|-|
+|max-date|最大可选日期（时间）|Date|-|-|
 |default-date|初始选中日期|Date|-|-|
 |minute-step|分钟数递增步长|Number|`1`|-|
 |unit-text|元素单位展示文案设置|Array|`['年', '月', '日', '时', '分']`|复杂逻辑使用`text-render`|
 |text-render|自定义选项展示文案方法|Function(typeFormat, column0Value, column1Value, ...): String|-|如果使用`text-render`则`unit-text`无效, 示例见附录|              
 |today-text|今天展示文案设置|String|`今天`|使用`&`可占位日期数字，如`&(今天)`|           
-|half-day-text|上下午展示文案设置|Array|`['上午', '下午']`|-|            
-|is-twelve-hours|是否为12时制|Boolean|`false`|-|            
 |is-view|是否内嵌在页面内展示, 否则以弹层形式|Boolean|`false`|-| 
 |title|选择器标题|String|-|-| 
 |ok-text|选择器确认文案|String|`确认`|-| 

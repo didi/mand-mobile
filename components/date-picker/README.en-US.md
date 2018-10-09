@@ -23,15 +23,13 @@ Vue.component(DatePicker.name, DatePicker)
 |----|-----|------|------|------|
 |type|type of selection|String|`date`|`date`, `time`, `datetime`, `custom`|
 |custom-types|customized type contains `date element`, `[yyyy, MM, dd, hh, mm]`|Array|-|valid when the value of type is `custom`|
-|minDate|selectable min date|Date|-|-|
-|maxDate|selectable max date|Date|-|-|
+|min-date|selectable min date(time)|Date|-|-|
+|max-date|selectable max date(time)|Date|-|-|
 |default-date|initial selected date|Date|-|-|
 |minute-step|increasing steps of minutes|Number|`1`|-|
 |unit-text|element unit for text displaying|Array|`['y', 'M', 'd', 'h', 'm']`|`text-render` for complex logic|
 |text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|              
 |today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`|           
-|half-day-text|displaying text of morning and afternoon|Array|`['AM', 'PM']`|-|            
-|is-twelve-hours|12-hour time|Boolean|`false`|-|            
 |is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-| 
 |title|title of date-picker|String|-|-| 
 |ok-text|confirmation text|String|`confirm`|-| 
