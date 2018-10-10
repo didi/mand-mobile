@@ -111,7 +111,7 @@ export default {
   height 800px
   .md-tab-bar
     box-shadow 0 2px 8px #f0f0f0
-  .md-scroll-view
+  .scroll-view-container
     padding-top 80px
   .scroll-view-item
     padding 30px 0
