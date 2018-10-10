@@ -1,20 +1,20 @@
 <template>
   <div class="md-example-child md-example-child-icon md-example-child-icon-2">
     <div class="md-example-item-s">
-      <md-icon name="circle-right" color="#333"></md-icon>
-      <p>xs</p>
+      <md-icon name="security" color="gray"></md-icon>
+      <p>gray</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="circle-right" color="orange"></md-icon>
-      <p>sm</p>
+      <md-icon name="security" color="orange"></md-icon>
+      <p>orange</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="circle-right" color="blue"></md-icon>
-      <p>md</p>
+      <md-icon name="security" color="blue"></md-icon>
+      <p>blue</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="circle-right" color="purple"></md-icon>
-      <p>lg</p>
+      <md-icon name="security" color="purple"></md-icon>
+      <p>purple</p>
     </div>
   </div>
 </template>

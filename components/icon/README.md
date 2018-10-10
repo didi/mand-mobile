@@ -3,7 +3,7 @@ title: Icon 图标
 preview: https://didi.github.io/mand-mobile/examples/#/icon
 ---
 
-SVG 图标
+IconFont、SVG 图标
 
 ### 引入
 
@@ -13,11 +13,22 @@ import { Icon } from 'mand-mobile'
 Vue.component(Icon.name, Icon)
 ```
 
-### 使用指南
+### 代码演示
+<!-- DEMO -->
 
-组件库内置图标可直接使用，`arrow-up/down/left/right`, `circle-alert/cross/right`，`hollo-plus`，`cross`，`spinner`
+### API
 
-其他自定义图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
+#### Icon Props
+|属性 | 说明 | 类型 | 默认值| 备注|
+|----|-----|------|------|------|
+|name|图标名称|String|-|-|
+|size|图标大小|String|`md`|`xs`, `sm`, `md`, `lg`|
+|color|图标颜色|String|`currentColor`|-|
+|svg|使用svg图标|Boolean|`false`|用法见附录|
+
+### 附录
+
+svg图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
 
 1. 安装依赖
 
@@ -68,15 +79,3 @@ export default {
 }
 </script>
 ```
-
-### 代码演示
-<!-- DEMO -->
-
-### API
-
-#### Icon Props
-|属性 | 说明 | 类型 | 默认值| 备注|
-|----|-----|------|------|------|
-|name|图标名称|String|-|-|
-|size|图标大小|String|`md`|`xs`, `sm`, `md`, `lg`|
-|color|图标颜色|String|`currentColor`|该颜色值会作为`fill`的值被设置在`svg`图标上|

@@ -22,7 +22,7 @@ export default {...createDemoModule('icon', [Demo0, Demo1, Demo2])}
 .md-example-child-icon
   .md-example-item, .md-example-item-s
     float left
-    width 33%
+    width 25%
     padding 15px 0
     color #333
     text-align center
