@@ -114,6 +114,7 @@ block()
         position absolute
         right h-gap-lg
         top 50%
+        line-height 42px
         transform translateY(-50%)
         transition transform .3s ease-in-out-quint
       &.active .md-icon
@@ -158,6 +159,7 @@ block()
             position absolute
             right 0
             top 50%
+            line-height 32px
             transform translateY(-50%)
           &.close
             text-align center
