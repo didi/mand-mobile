@@ -22,7 +22,7 @@ Vue.component(Cashier.name, Cashier)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |v-model| display cashier or not|Boolean|`false`|-|
-|channels|data source of payment channel |Array<{text, value, icon}>|`[]`|`icon` can be used as the `name` attribute of `className` or component `Icon`|
+|channels|data source of payment channel |Array<{text, value, icon, iconSvg}>|`[]`|`icon` can be used as the `name` attribute of `className` or component `Icon`, `iconSvg` for using svg icon|
 |default-index|default selected index of payment channel |Number|`0`|-|
 |title|cashier title|String|`pay	`|-|
 |payment-title|payment amount title|String|`payment amount`|support `html fragment`|

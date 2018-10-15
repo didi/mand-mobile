@@ -37,7 +37,7 @@
                 :key="index"
                 @click="$_onChannelItemClick(item, index)">
                 <i class="item-icon" :class="item.icon">
-                  <md-icon :name="item.icon"></md-icon>
+                  <md-icon :name="item.icon" :svg="!!item.iconSvg"></md-icon>
                 </i>
                 <span class="item-label" v-html="item.text || item.label"></span>
                 <template v-if="!isSingle">
