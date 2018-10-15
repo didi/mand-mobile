@@ -6,7 +6,11 @@
       'md-steps-horizontal': direction == 'horizontal'
     }"
   >
-    <div class="md-step" v-for="(step, index) of steps">
+    <div
+      class="md-step"
+      v-for="(step, index) of steps"
+      :key="index"
+    >
       <div class="horizontal-bar-left horizontal-bar bar"
         :key="`bar-${index}-horizontal-left`"
         :class="{
@@ -49,27 +53,27 @@
             :index="index"
             v-else-if="index === iIndex && ($scopedSlots.current || $slots.current)">
           </slot>
-          <md-icon
-            name="circle-right"
+          <!-- <md-icon
+            name="warn"
             v-else-if="index < iIndex">
-          </md-icon>
+          </md-icon> -->
           <md-icon
-            name="circle-alert"
+            name="success"
             v-else-if="index === iIndex">
           </md-icon>
           <div
             class="md-stain-wrap"
-            v-else>
+            v-else
+          >
             <div class="md-stain"></div>
           </div>
-          <div
-            class="vertical-bar-bottom vertical-bar bar"
+          <div class="vertical-bar-bottom vertical-bar bar"
+            v-if="direction == 'vertical'"
             :key="`bar-${index}-vertical-bottom`"
             :class="{
               'reached-delay': index <= cIndex,
               hide: index == steps.length - 1
             }"
-            v-if="direction == 'vertical'"
           >
           </div>
         </div>
@@ -83,12 +87,12 @@
         </div>
       </div>
       <div class="horizontal-bar-right horizontal-bar bar"
-           :key="`bar-${index}-horizontal-right`"
-           :class="{
-             'reached-delay': index <= cIndex,
-             hide: index == steps.length - 1
-           }"
-           v-if="direction == 'horizontal'"
+        v-if="direction == 'horizontal'"
+        :class="{
+          'reached-delay': index <= cIndex,
+          hide: index == steps.length - 1
+        }"
+        :key="`bar-${index}-horizontal-right`"
       >
       </div>
     </div>
@@ -261,6 +265,10 @@ export default {
       .md-icon
         width steps-size-active
         height steps-size-active
+        font-size steps-size-active
+        line-height steps-size-active
+      .md-stain
+        background steps-color-active
 
   .icon-wrapper
     margin 0 4px
