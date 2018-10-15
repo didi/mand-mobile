@@ -18,7 +18,7 @@
       @click="$_close"
       v-show="isLandscapeShow"
       :class="{dark: !hasMask || fullScreen}">
-      <md-icon name="cross"></md-icon>
+      <md-icon name="close"></md-icon>
     </div>
   </div>
 </template>
@@ -120,6 +120,5 @@ export default {
     &.dark
       color color-text-base
     .md-icon
-      width 50px
-      height 50px
+      font-size 50px
 </style>
