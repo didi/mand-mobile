@@ -13,7 +13,7 @@
         }">
         <md-icon
           class="image-reader-item-del"
-          name="circle-cross"
+          name="clear"
           color="#666"
           @click.native="onDeleteImage('reader0', index)">
         </md-icon>
@@ -26,7 +26,7 @@
           @error="onReaderError"
           is-multiple
         ></md-image-reader>
-        <md-icon name="hollow-plus" size="md" color="#CCC"></md-icon>
+        <md-icon name="camera" size="md" color="#CCC"></md-icon>
         <p>上传照片</p>
       </li>
     </ul>
