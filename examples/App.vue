@@ -131,6 +131,7 @@ block()
           position relative
           margin-top 20px
           box-sizing border-box
+          font-size 28px
 .md-dialog pre
   width 100%
   padding 20px 10px
