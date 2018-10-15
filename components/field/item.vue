@@ -21,7 +21,7 @@
       </div>
       <div class="md-field-item-right" v-if="arrow || addon || $slots.right">
         <slot name="right">{{ addon }}</slot>
-        <md-icon v-if="arrow" :name="arrow === true ? 'arrow-right' : arrow" size="lg" />
+        <md-icon v-if="arrow" :name="arrow === true ? 'arrow-right' : arrow" size="md" />
       </div>
     </div>
     <div class="md-field-item-children" v-if="$slots.children">
@@ -132,10 +132,12 @@ export default {
   flex 1 1 0%
   color field-item-color
   font-size field-item-font-size
+  font-weight field-item-font-weight
   line-height 1.2
 
 .md-field-item-placeholder
   color field-item-placeholder-color
+  font-weight font-weight-normal
 
 .md-field-item-right
   flex-shrink 0
@@ -146,7 +148,8 @@ export default {
   color field-item-addon-color
   font-size field-item-addon-font-size
   .md-icon-arrow-right
-    margin-right -12px
+    margin-right -6px
+    color color-text-disabled
 
 .md-field-item-children
   font-size field-item-children-font-size
