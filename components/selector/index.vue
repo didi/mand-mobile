@@ -23,7 +23,7 @@
       >
         <md-icon
           v-if="!isCheck && !isNeedConfirm && !cancelText"
-          name="cross"
+          name="close"
           size="lg"
           slot="cancel"
         ></md-icon>
