@@ -13,7 +13,7 @@
         <slot name="right">
           {{ addon }}
         </slot>
-        <md-icon v-if="arrow" name="arrow-right" size="lg" />
+        <md-icon v-if="arrow" name="arrow-right" size="md" />
       </div>
     </div>
     <div class="md-cell-item-children" v-if="$slots.children">
@@ -98,7 +98,8 @@ export default {
   color cell-item-right-color
   font-size cell-item-right-font-size
   .md-icon-arrow-right
-    margin-right -12px
+    margin-right -6px
+    color color-text-disabled
 
 .md-cell-item-title
   line-height 1.2

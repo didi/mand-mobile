@@ -13,7 +13,7 @@
         <span class="holder" slot="left"></span>
       </md-cell-item>
       <md-cell-item title="建设银行" brief="摘要描述" arrow>
-        <p slot="children">
+        <p slot="children" style="font-size:18px;">
           中国建设银行，在全球范围内为台湾、香港、美国、澳大利亚等国家或地区提供全面金融服务，主要经营公司银行业务、个人银行业务和资金业务，包括居民储蓄存款、信贷资金贷款、住房类贷款、外汇、信用卡，以及投资理财等多种业务。
         </p>
       </md-cell-item>
