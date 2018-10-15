@@ -13,7 +13,7 @@
         :title="title"
         @cancel="$_onPopupCancel"
       >
-        <md-icon name="cross" size="lg" slot="cancel"></md-icon>
+        <md-icon name="close" size="lg" slot="cancel"></md-icon>
       </md-popup-title-bar>
       <div
         class="md-cashier-container"
@@ -43,12 +43,12 @@
                 <template v-if="!isSingle">
                   <md-icon
                     v-if="index === activeChannelIndex"
-                    name="circle-right"
+                    name="checked"
                     class="item-check"
                   ></md-icon>
                   <md-icon
                     v-else
-                    name="circle"
+                    name="check"
                     class="item-check"
                   ></md-icon>
                 </template>
@@ -62,7 +62,7 @@
                 <span class="item-label" v-html="channels[defaultIndex].text || channels[defaultIndex].label"></span>
                 <md-icon
                   v-if="!isSingle"
-                  name="circle-right"
+                  name="checked"
                   class="item-check"
                 ></md-icon>
               </li>
@@ -140,7 +140,7 @@
           class="md-cashier-block md-cashier-fail"
           :key="sceneKey">
           <div class="md-cashier-block-icon">
-            <md-icon name="circle-alert"></md-icon>
+            <md-icon name="warn"></md-icon>
           </div>
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <div class="md-cashier-block-btn">
@@ -443,7 +443,7 @@ block()
                 top 50%
                 right 0
                 transform translateY(-50%)
-                &.md-icon-circle-right
+                &.md-icon
                   color cashier-choose-channel-icon-color
           .choose-channel-more
             margin-top 10px
@@ -488,12 +488,13 @@ block()
       &.md-cashier-fail
         .md-cashier-block-icon
           position relative
-          .md-icon-circle-alert
+          text-align center
+          line-height 100px
+          .md-icon-warn
             position relative
             z-index 2
-            width 100% !important
-            height 100% !important
             color #FFF6F1
+            font-size 100px
           &:after
             content ""
             position absolute
