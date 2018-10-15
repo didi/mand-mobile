@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component 是一个 Vue 实例 1`] = `
+<div
+  class="md-tag"
+>
+  <div
+    class="default size-large shape-square type-ghost font-weight-normal"
+  />
+</div>
+`;
