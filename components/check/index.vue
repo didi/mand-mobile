@@ -39,11 +39,11 @@ export default {
     },
     icon: {
       type: String,
-      default: 'circle-right',
+      default: 'checked',
     },
     iconInverse: {
       type: String,
-      default: 'circle',
+      default: 'check',
     },
     label: {
       type: String,
@@ -99,9 +99,6 @@ export default {
   line-height 1.5
   margin-top v-gap-sm
   margin-bottom v-gap-sm
-  &.is-checked
-    .md-check-icon
-      color check-color
   &.is-disabled
     .md-check-icon
     .md-check-label
@@ -112,6 +109,7 @@ export default {
   flex-shrink 0
   top 0.75em
   line-height 0
+  color check-color
   transform translateY(-50%)
 
 .md-check-label
