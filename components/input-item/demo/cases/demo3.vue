@@ -3,10 +3,10 @@
     <md-field title="转出金额(元)">
       <div
         class="field-operator"
-        slot="titleValue"
-        @click="onClick('操作')"
+        slot="action"
+        @click="onClick"
       >
-        <md-icon name="circle-alert"></md-icon>
+        <md-icon name="info"></md-icon>
       </div>
       <md-input-item
         type="money"
@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script>import {InputItem, Field, Icon} from 'mand-mobile'
+<script>import {InputItem, Field, Icon, Toast} from 'mand-mobile'
 
 export default {
   name: 'input-item-demo',
@@ -47,6 +47,12 @@ export default {
   methods: {
     takeAll() {
       this.value = '300000'
+    },
+    onClick() {
+      Toast({
+        content: 'some information',
+        icon: 'warn',
+      })
     },
   },
 }

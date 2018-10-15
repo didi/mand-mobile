@@ -71,7 +71,7 @@
         v-show="!isInputEmpty && isInputFocus"
         @click="$_clearInput"
       >
-        <md-icon name="circle-cross"></md-icon>
+        <md-icon name="clear"></md-icon>
       </div>
 
       <!-- ------------ -->

@@ -21,8 +21,8 @@
         ref="input11"
         placeholder="left/right slots"
       >
-        <md-icon name="bank-zs" slot="left"></md-icon>
-        <md-icon name="circle-alert" slot="right" @click.native="onClick"></md-icon>
+        <md-icon name="bank-zs" slot="left" svg></md-icon>
+        <md-icon name="info" slot="right" @click.native="onClick"></md-icon>
       </md-input-item>
     </md-field>
   </div>
@@ -46,7 +46,7 @@ export default {
     onClick() {
       Toast({
         content: 'some information',
-        icon: 'circle-alert',
+        icon: 'warn',
       })
     },
     onFakeInputFocus() {
