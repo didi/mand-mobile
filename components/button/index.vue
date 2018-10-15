@@ -13,7 +13,7 @@
   >
     <div class="md-button-inner">
       <template v-if="icon">
-        <md-icon :name="icon"></md-icon>
+        <md-icon :name="icon" :svg="iconSvg"></md-icon>
       </template>
       <p class="md-button-content">
         <slot></slot>
@@ -38,6 +38,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    iconSvg: {
+      type: Boolean,
+      default: false,
     },
     size: {
       type: String,
