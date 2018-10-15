@@ -23,7 +23,7 @@
             <md-icon name="close" />
           </a>
           <div v-if="icon" class="md-dialog-icon">
-            <md-icon :name="icon"/>
+            <md-icon :name="icon" :svg="iconSvg"/>
           </div>
           <h2 class="md-dialog-title" v-if="title" v-text="title"></h2>
           <slot>
@@ -68,6 +68,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    iconSvg: {
+      type: Boolean,
+      default: false,
     },
     closable: {
       type: Boolean,

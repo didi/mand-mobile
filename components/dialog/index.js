@@ -14,12 +14,13 @@ const instances = []
  * @param {Object} props
  * @return {Dialog}
  */
-const generate = function({title = '', icon = '', content = '', closable = false, btns = []}) {
+const generate = function({title = '', icon = '', iconSvg = false, content = '', closable = false, btns = []}) {
   const vm = new DialogConstructor({
     propsData: {
       value: true,
       title,
       icon,
+      iconSvg,
       content,
       closable,
       btns,
@@ -56,6 +57,7 @@ const generate = function({title = '', icon = '', content = '', closable = false
 Dialog.confirm = ({
   title = '',
   icon = '',
+  iconSvg = false,
   content = '',
   cancelText = '取消',
   confirmText = '确定',
@@ -65,6 +67,7 @@ Dialog.confirm = ({
   const vm = generate({
     title,
     icon,
+    iconSvg,
     content,
     closable,
     btns: [
@@ -92,10 +95,19 @@ Dialog.confirm = ({
  * @param {Object} props
  * @return {Dialog}
  */
-Dialog.alert = ({title = '', icon = '', content = '', confirmText = '确定', closable = false, onConfirm = noop}) => {
+Dialog.alert = ({
+  title = '',
+  icon = '',
+  iconSvg = false,
+  content = '',
+  confirmText = '确定',
+  closable = false,
+  onConfirm = noop,
+}) => {
   const vm = generate({
     title,
     icon,
+    iconSvg,
     content,
     closable,
     btns: [

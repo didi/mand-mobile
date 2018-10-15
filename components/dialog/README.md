@@ -23,7 +23,8 @@ Vue.component(Dialog.name, Dialog)
 |----|-----|------|------|------|
 | v-model | 双向绑定是否显示窗口 | Boolean | `false`|-|
 | title | 窗口标题 | String | -|-|
-| icon | Icon组件图标名称 | String | -|如需自定义图标, 请查看`Icon`组件|
+| icon | Icon组件图标名称 | String | -|-|
+| icon-svg | svg图标 | Boolean |false|如需自定义图标, 请查看`Icon`组件|
 | closable | 是否显示关闭按钮 | Boolean | `true`|-|
 | layout | 底部按钮组布局方式, `row, column` | String | `row` | - |
 | btns | 底部操作按钮组 | Array | `[]`|-|
