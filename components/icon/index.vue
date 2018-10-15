@@ -60,27 +60,30 @@ export default {
   font-style normal
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+  &:before
+    position relative
+    z-index 2
 
   // size
   &.xss
     width icon-size-xxs
-    height icon-size-xxs
+    vertical-height(icon-size-xxs)
     font-size icon-size-xxs
   &.xs
     width icon-size-xs
-    height icon-size-xs
+    vertical-height(icon-size-xs)
     font-size icon-size-xs
   &.sm
     width icon-size-sm
-    height icon-size-sm
+    vertical-height(icon-size-sm)
     font-size icon-size-sm
   &.md
     width icon-size-md
-    height icon-size-md
+    vertical-height(icon-size-md)
     font-size icon-size-md
   &.lg
     width icon-size-lg
-    height icon-size-lg
+    vertical-height(icon-size-lg)
     font-size icon-size-lg
 
 // name
