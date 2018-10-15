@@ -28,6 +28,7 @@ Vue.component(NoticeBar.name, NoticeBar)
 |multiRows|Content exceeds line break display|Boolean|`false`|Priority is heigher than scrollable|
 |scrollable|Show scrolling animation when content is exceeded|Boolean|`false``|Priority is less than multiRows|
 |icon|notice bar icon|String|`circle-alert`|***recommended use slot***,will be deleted in the future|
+|icon-svg|use svg icon|Boolean|`false`|-|
 |closable|whether the notice bar is closable or not|Boolean|`false`|***recommended use mode or slot***,will be deleted in the future|
 
 #### InputItem Slots

@@ -12,7 +12,7 @@
         <slot name="left"></slot>
       </template>
       <template v-else-if="icon">
-        <md-icon class="md-notice-icon" :name="icon"></md-icon>
+        <md-icon class="md-notice-icon" :name="icon" :svg="iconSvg"></md-icon>
       </template>
     </div>
     <div
@@ -72,6 +72,10 @@ export default {
       type: String,
       default: '',
     },
+    iconSvg: {
+      type: Boolean,
+      default: false,
+    },
     // will be delete in future
     closable: {
       type: Boolean,
@@ -96,7 +100,7 @@ export default {
     },
 
     rightIcon() {
-      return this.mode === 'link' ? 'arrow-right' : 'cross'
+      return this.mode === 'link' ? 'arrow-right' : 'close'
     },
   },
 
