@@ -44,13 +44,47 @@
     "build:webpack:example": "cross-env NODE_ENV=production node build/webpack/build-example",
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
-    "codecov": "codecov"
+    "codecov": "codecov",
+    "jest": "cross-env NODE_ENV=test jest"
   },
   "license": "Apache",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-mand-mobile-changelog"
     }
+  },
+  "jest": {
+    "testMatch": [
+      "**/jest-test/**/*.spec.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "globals": {
+      "vue-jest": {
+        "babelConfig": {
+          "configFile": "<rootDir>/.babelrc"
+        }
+      }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "components/**/*.{js,vue}"
+    ],
+    "modulePaths": [
+      "<rootDir>/components",
+      "<rootDir>/node_modules"
+    ],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ]
   },
   "lint-staged": {
     "components/**/*.{vue,js,json}": [
@@ -65,15 +99,18 @@
     "@types/babylon": "^6.16.2",
     "@types/eslint-plugin-prettier": "^2.2.0",
     "@types/glob": "^5.0.35",
+    "@types/jest": "^23.3.5",
     "@types/prettier": "^1.8.0",
     "@types/vue": "^2.0.0",
+    "@vue/test-utils": "^1.0.0-beta.25",
     "aesir-cli": "^0.0.5",
     "autoprefixer": "^8.4.1",
     "avoriaz": "^6.0.1",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-generator": "^6.26.0",
-    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-import": "^1.6.2",
     "babel-plugin-istanbul": "^4.1.1",
@@ -137,6 +174,7 @@
     "husky": "^0.14.3",
     "inject-loader": "^3.0.0",
     "inquirer": "^3.3.0",
+    "jest": "^23.6.0",
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
@@ -205,8 +243,10 @@
     "svg-sprite-loader": "^0.3.1",
     "url-loader": "^0.5.8",
     "vue": "^2.4.2",
+    "vue-jest": "2.x",
     "vue-loader": "^13.0.4",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.17",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.4.2",
     "vueify": "^9.4.1",
