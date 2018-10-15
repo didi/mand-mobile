@@ -9,7 +9,7 @@
       <div class="md-example-popup md-example-popup-top">
         Popup Top
         <md-icon
-          name="cross"
+          name="close"
           @click.native="hidePopUp('top')"
         ></md-icon>
       </div>
@@ -28,7 +28,7 @@
         @cancel="hidePopUp('scroll')"
       >
         <md-icon
-          name="cross"
+          name="close"
           size="lg"
           slot="cancel"
         ></md-icon>
