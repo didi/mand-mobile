@@ -11,15 +11,9 @@
       ]"
       @click="$_onChange($event)">
       <div class="md-agree-checked">
-        <md-icon
-          name="circle-right"
-          :size="size">
-        </md-icon>
+        <md-icon name="checked" :size="size"></md-icon>
       </div>
-      <md-icon
-      name="circle"
-      :size="size">
-      </md-icon>
+      <md-icon name="check" :size="size"></md-icon>
     </div>
     <div class="md-agree-content">
       <slot></slot>
@@ -76,24 +70,26 @@ export default {
 
 .md-agree-icon
   position relative
-  margin-right 10px
+  padding-right h-gap-sm
+  align-self flex-start
   flex-shrink 0
-  color agree-fill-inverse
+  color agree-fill
   &.checked
-    color agree-fill
     .md-agree-checked
-      svg
-        transform scale(1)
+      transform scale(1)
+      color agree-fill
+        
 
 .md-agree-checked
   position absolute
   top 0
   left 0
-  width 100%
-  svg
-    transform scale(0)
-    transition transform ease-in-out .1s
+  transform scale(0.4)
+  color transparent
+  transition all 200ms ease
+    
 
 .md-agree-content
   flex 1 1 0%
+  line-height 1.5
 </style>
