@@ -20,10 +20,10 @@
             class="md-dialog-close"
             @click="close"
           >
-            <md-icon name="cross" />
+            <md-icon name="close" />
           </a>
           <div v-if="icon" class="md-dialog-icon">
-            <md-icon :name="icon" />
+            <md-icon :name="icon"/>
           </div>
           <h2 class="md-dialog-title" v-if="title" v-text="title"></h2>
           <slot>
@@ -174,9 +174,28 @@ export default {
   height dialog-icon-size
   margin v-gap-md auto
 .md-dialog .md-dialog-icon .md-icon
+  display flex
+  align-items center
+  justify-content center
+  position absolute
+  top 0
+  left 0
   width dialog-icon-size
   height dialog-icon-size
   fill dialog-icon-fill
+  color dialog-icon-fill
+  font-size dialog-icon-size
+  line-height dialog-icon-size
+  &.md-icon-success, &.md-icon-warn, &.md-icon-fail
+    fill #F3F4F5
+    color #F3F4F5
+    &:after
+      content ""
+      background dialog-icon-fill
+      position absolute
+      width 60%
+      height 60%
+      border-radius radius-circle
 
 .md-dialog-close
   position absolute

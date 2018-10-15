@@ -120,7 +120,7 @@ Dialog.alert = ({title = '', icon = '', content = '', confirmText = '确定', cl
  * @return {Dialog}
  */
 Dialog.succeed = props => {
-  props.icon = 'circle-right'
+  props.icon = 'success'
   return Dialog.confirm(props)
 }
 
@@ -131,7 +131,7 @@ Dialog.succeed = props => {
  * @return {Dialog}
  */
 Dialog.failed = props => {
-  props.icon = 'circle-cross'
+  props.icon = 'fail'
   return Dialog.confirm(props)
 }
 

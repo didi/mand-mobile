@@ -14,7 +14,7 @@
     </md-dialog>
 
     <md-dialog
-      icon="circle-right"
+      icon="success"
       title="窗口标题"
       :closable="true"
       v-model="iconDialog.open"
