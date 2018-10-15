@@ -18,12 +18,13 @@ Toast.succeed('操作成功')
 
 ### API
 
-#### Toast({content, icon, duration, position, hasMask, parentNode})
+#### Toast({content, icon, iconSvg, duration, position, hasMask, parentNode})
 显示自定义提示
 
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 | icon | Icon组件图标名称 | String | - |如需自定义图标, 请查看`Icon`组件 |
+| icon-svg | 使用svg图标 | Boolean | `false` |-|
 | content | 提示内容文本 | String | - |- |
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` | - |
 | position <sup class="version-after">1.3.3+</sup>| 展示位置 | String | `center` | `top/center/bottom` |

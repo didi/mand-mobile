@@ -13,7 +13,7 @@
         :describe="describe"
         @cancel="$_onCancel"
       >
-        <md-icon name="cross" size="lg" slot="cancel" />
+        <md-icon name="close" size="lg" slot="cancel" />
       </md-popup-title-bar>
       <div class="md-tab-picker-content">
         <md-tabs v-model="currentTab">

@@ -7,7 +7,7 @@
       :maskClosable="false"
     >
       <div class="md-toast-content">
-        <md-icon v-if="icon" :name="icon" size="lg" />
+        <md-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/>
         <div class="md-toast-text" v-text="content"></div>
       </div>
     </md-popup>
@@ -29,6 +29,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    iconSvg: {
+      type: Boolean,
+      default: false,
     },
     content: {
       type: [String, Number],

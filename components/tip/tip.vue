@@ -4,7 +4,7 @@
       <template>{{content}}</template>
       <md-icon
         v-if="closable"
-        name="cross"
+        name="close"
         size="md"
         @click.native="$_onClose"
       />
@@ -112,7 +112,7 @@ export default {
       border-width 11px 10px 11px 0
       border-color transparent tip-fill transparent transparent
 
-  .md-icon.md-icon-cross
+  .md-icon.md-icon-close
     position absolute
     right 16px
     top 50%

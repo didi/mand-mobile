@@ -5,6 +5,7 @@ const ToastConstructor = Vue.extend(ToastOptions)
 function Toast({
   content = '',
   icon = '',
+  iconSvg = false,
   duration = 3000,
   position = 'center',
   hasMask = false,
@@ -17,6 +18,7 @@ function Toast({
       propsData: {
         content,
         icon,
+        iconSvg,
         duration,
         position,
         hasMask,
@@ -27,6 +29,7 @@ function Toast({
 
   vm.content = content
   vm.icon = icon
+  vm.iconSvg = iconSvg
   vm.duration = duration
   vm.position = position
   vm.hasMask = hasMask
@@ -77,7 +80,7 @@ Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = docum
 
 Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
   return Toast({
-    icon: 'circle-right',
+    icon: 'success',
     content,
     duration,
     hasMask,
@@ -96,7 +99,7 @@ Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = do
 
 Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
   return Toast({
-    icon: 'circle-cross',
+    icon: 'fail',
     content,
     duration,
     hasMask,
@@ -115,6 +118,7 @@ Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = doc
 Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = document.body) => {
   return Toast({
     icon: 'spinner',
+    iconSvg: true,
     content,
     duration,
     hasMask,
