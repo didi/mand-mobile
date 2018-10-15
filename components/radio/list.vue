@@ -24,6 +24,7 @@
         :size="iconSize"
         :icon="icon"
         :icon-inverse="iconInverse"
+        :icon-svg="iconSvg"
         :slot="iconPosition === 'right' ? 'right' : 'left'"
       />
     </md-cell-item>
@@ -82,11 +83,15 @@ export default {
     },
     icon: {
       type: String,
-      default: 'circle-right',
+      default: 'checked',
     },
     iconInverse: {
       type: String,
-      default: 'circle',
+      default: 'check',
+    },
+    iconSvg: {
+      type: Boolean,
+      default: false,
     },
     iconSize: {
       type: String,

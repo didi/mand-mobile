@@ -26,8 +26,9 @@ Vue.component(Radio.name, Radio)
 |label|description text|String-|-|
 |disabled|whether disable option|Boolean|false|-|
 |inline|whether display as inline block|Boolean|false|-|
-|icon|selected icon name|String|`circle-right`|-|
-|icon-inverse|icon name|String|`circle`|-|
+|icon|selected icon name|String|`checked`|-|
+|icon-inverse|icon name|String|`check`|-|
+|icon-svg|use svg icon|Boolean|`false`|-|
 |size|size of icon|String|`md`|-|
 
 ---
@@ -40,9 +41,10 @@ Vue.component(Radio.name, Radio)
 |has-input|has editable item or not|Boolean|`false`|-|
 |input-label|name of editable item|String|-|only when `has-input` is true|
 |input-placeholder|placeholder of editable item|String|-|only when `has-input` is true|
-|icon|icon of selected option|String|`circle-right`|-|
-|icon-inverse|icon of unselected options|String|`circle`|-|
+|icon|icon of selected option|String|`checked`|-|
+|icon-inverse|icon of unselected options|String|`check`|-|
 |icon-size|the size of icon|String|`lg`|-|
+|icon-svg|use svg icon|Boolean|`false`|-|
 |icon-position|the position of icon|String|`left`|`left`, `right`|
 
 #### Radio List Methods

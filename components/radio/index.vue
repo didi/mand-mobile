@@ -9,7 +9,7 @@
     @click="$_onClick"
   >
     <div class="md-radio-icon">
-      <md-icon :name="currentIcon" :size="size" />
+      <md-icon :name="currentIcon" :size="size" :svg="iconSvg"/>
     </div>
     <div class="md-radio-label" v-if="$slots.default || label">
       <slot>{{ label }}</slot>
@@ -40,11 +40,15 @@ export default {
     },
     icon: {
       type: String,
-      default: 'circle-right',
+      default: 'checked',
     },
     iconInverse: {
       type: String,
-      default: 'circle',
+      default: 'check',
+    },
+    iconSvg: {
+      type: Boolean,
+      default: false,
     },
     label: {
       type: String,
@@ -86,9 +90,8 @@ export default {
   line-height 1.5
   margin-top v-gap-sm
   margin-bottom v-gap-sm
-  &.is-checked
-    .md-radio-icon
-      color radio-color
+  .md-radio-icon
+    color radio-color
   &.is-disabled
     .md-radio-icon
     .md-radio-label

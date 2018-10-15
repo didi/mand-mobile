@@ -27,8 +27,9 @@ Vue.component(RadioList.name, RadioList)
 |label|描述文案|String-|-|
 |disabled|是否禁用选项|Boolean|false|-|
 |inline|是否内联显示|Boolean|false|-|
-|icon|选中项的图标|String|`circle-right`|-|
-|icon-inverse|非选中项的图标|String|`circle`|-|
+|icon|选中项的图标|String|`checked`|-|
+|icon-inverse|非选中项的图标|String|`check`|-|
+|icon-svg|使用svg图标|Boolean|`false`|-|
 |size|图标大小|String|`md`|-|
 
 ---
@@ -41,9 +42,10 @@ Vue.component(RadioList.name, RadioList)
 |has-input|是否具有可编辑项|Boolean|`false`|-|
 |input-label|可编辑项的名称|String|-|仅用于`has-input`为`true`|
 |input-placeholder|可编辑项的占位提示|String|-|仅用于`has-input`为`true`|
-|icon|选中项的图标|String|`circle-right`|-|
-|icon-inverse|非选中项的图标|String|`circle`|-|
+|icon|选中项的图标|String|`checked`|-|
+|icon-inverse|非选中项的图标|String|`check`|-|
 |icon-size|图标大小|String|`lg`|-|
+|icon-svg|使用svg图标|Boolean|`false`|-|
 |icon-position|图标位置|String|`left`|`left`, `right`|
 
 #### Radio List Methods
