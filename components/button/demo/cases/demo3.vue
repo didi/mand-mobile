@@ -1,7 +1,7 @@
 <template>
   <div class="md-example-child  md-example-child-button md-example-child-button-3">
     <div class="md-example-section">
-      <md-button type="primary" inline>Inline Primary</md-button>
+      <md-button type="primary" icon="edit" inline>Inline Primary</md-button>
       <md-button type="primary" inline plain>Inline Plain</md-button>
     </div>
     <div class="md-example-section">
