@@ -2,8 +2,8 @@
   <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-1">
     <md-notice-bar
       mode="closable"
-      icon="right"
-      :scrollable="true"
+      icon="volumn"
+      scrollable
     >
       {{ text }}
     </md-notice-bar>

@@ -2,7 +2,7 @@
   <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-1">
     <md-notice-bar
       mode="closable"
-      icon="right"
+      icon="security"
     >
       为了确保您的资金安全，请设置支付密码
     </md-notice-bar>

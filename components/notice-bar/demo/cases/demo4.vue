@@ -2,8 +2,8 @@
   <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-1">
     <md-notice-bar
       mode="link"
-      icon="right"
-      :multiRows="true"
+      icon="security"
+      multi-rows
     >
       为了确保您的资金安全，请设置支付密码。为了确保您的资金安全，请设置支付密码。为了确保您的资金安全，请设置支付密码。
     </md-notice-bar>

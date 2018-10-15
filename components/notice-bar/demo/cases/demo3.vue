@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-0">
-    <md-notice-bar :isCircle=true>为了确保您的资金安全，请设置支付密码</md-notice-bar>
+    <md-notice-bar is-circle>为了确保您的资金安全，请设置支付密码</md-notice-bar>
   </div>
 </template>
 
