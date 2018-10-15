@@ -10,10 +10,9 @@
   "plugins": ["transform-object-rest-spread", "syntax-dynamic-import"],
   "env": {
     "test": {
-      "presets": [["env", {
-        "modules": false
-      }], "stage-2"],
-      "plugins": ["istanbul"]
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ]
     }
   }
 }

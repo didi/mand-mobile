@@ -15,6 +15,7 @@ site/public
 site/dist
 site/build/bin/algolia-key.js
 lib-vw
+coverage/
 # Editor directories and files
 .idea
 .vscode
