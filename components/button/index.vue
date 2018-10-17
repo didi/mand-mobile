@@ -9,7 +9,8 @@
       plain ? 'plain' : '',
       size === 'small' ? 'small' : ''
     ]"
-    @click="$_onBtnClick"
+    :disabled="inactive || type === 'disabled'"
+    v-on="$listeners"
   >
     <div class="md-button-inner">
       <template v-if="icon">
@@ -62,16 +63,6 @@ export default {
     inactive: {
       type: Boolean,
       default: false,
-    },
-  },
-
-  methods: {
-    $_onBtnClick(event) {
-      if (this.inactive || this.type === 'disabled') {
-        event.stopImmediatePropagation()
-      } else {
-        this.$emit('click', event)
-      }
     },
   },
 }
