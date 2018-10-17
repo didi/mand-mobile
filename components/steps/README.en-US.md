@@ -21,6 +21,7 @@ Vue.component(Steps.name, Steps)
 #### Tabs Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|steps | array of step information | Array | - | each element in the array must contain the `name` attribute as a step name, when the ***direction*** is `'vertical'`, the `description` attribute display|
-|current | current step | Number | `0` | dynamically change the current step by modifying this value|
+|steps | array of step information | Array<{name, text}> |-|-|
+|current | current step | Number | `0` |support for decimal point|
 |direction | to specify the direction of the step bar | String | `'horizontal'` | support `'horizontal'`, `'vertical'`|
+transition | progress change transition | Boolean | `false` |-|

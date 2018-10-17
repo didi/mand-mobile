@@ -2,7 +2,8 @@
   <div class="md-example-child md-example-child-steps md-example-child-steps-5">
     <md-steps
       :steps="steps"
-      :current="currentStep">
+      :current="currentStep"
+    >
     </md-steps>
   </div>
 </template>

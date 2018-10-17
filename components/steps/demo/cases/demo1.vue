@@ -1,7 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-steps md-example-child-steps-1">
-    <md-steps :steps="steps" :current="1">
-    </md-steps>
+    <md-steps :steps="steps" :current="1.2"></md-steps>
   </div>
 </template>
 
@@ -10,7 +9,7 @@
 export default {
   name: 'steps-demo',
   /* DELETE */
-  title: '四个步骤',
+  title: '进度非整数',
   titleEnUS: 'Four steps',
   codeSandBox: 'https://codesandbox.io/s/3vok030m5q',
   height: 150,

@@ -1,8 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-steps md-example-child-steps-0">
-    <md-steps
-      :steps="steps">
-    </md-steps>
+    <md-steps :steps="steps"></md-steps>
   </div>
 </template>
 
@@ -11,8 +9,6 @@
 export default {
   name: 'steps-demo',
   /* DELETE */
-  title: '三个步骤',
-  titleEnUS: 'Three steps',
   codeSandBox: 'https://codesandbox.io/s/38zp7vq22m',
   height: 150,
   /* DELETE */
@@ -23,13 +19,13 @@ export default {
     return {
       steps: [
         {
-          name: '开通理财账户',
+          name: '登录/注册',
         },
         {
-          name: '验证手机号',
+          name: '申请征信报告',
         },
         {
-          name: '开通成功',
+          name: '提取征信报告',
         },
       ],
     }

@@ -6,96 +6,55 @@
       'md-steps-horizontal': direction == 'horizontal'
     }"
   >
-    <div
-      class="md-step"
-      v-for="(step, index) of steps"
-      :key="index"
-    >
-      <div class="horizontal-bar-left horizontal-bar bar"
-        :key="`bar-${index}-horizontal-left`"
-        :class="{
-          'reached-no-delay': index <= cIndex,
-          'delay': !increase,
-          hide: index == 0
-        }"
-        v-if="direction == 'horizontal'"
-      >
-      </div>
-      <div
-        class="icon-wrapper"
-        :key="`icon-${index}`"
-      >
+    <template v-for="(step, index) of steps">
+      <div class="icon-wrapper" :key="`icon-${index}`">
         <div
           class="icon"
           :class="{
-            reached: index <= cIndex,
-            current: index === cIndex
+            reached: index <= currentLength,
+            current: index === currentLength
           }"
         >
-          <div
-            class="vertical-bar-top vertical-bar bar"
-            :key="`bar-${index}-vertical-left`"
-            :class="{
-              'reached-no-delay': index <= cIndex,
-              'delay': !increase,
-              hide: index == 0
-            }"
-            v-if="direction == 'vertical'"
-          >
-          </div>
           <slot
+            v-if="index < currentLength && (($scopedSlots.reached) || $slots.reached)"
             name="reached"
             :index="index"
-            v-if="index < iIndex && ($scopedSlots.reached || $slots.reached)">
-          </slot>
+          ></slot>
           <slot
+            v-else-if="index === currentLength && (($scopedSlots.current) || $slots.current)"
             name="current"
             :index="index"
-            v-else-if="index === iIndex && ($scopedSlots.current || $slots.current)">
-          </slot>
-          <!-- <md-icon
-            name="warn"
-            v-else-if="index < iIndex">
-          </md-icon> -->
+          ></slot>
           <md-icon
+            v-else-if="index === currentLength"
             name="success"
-            v-else-if="index === iIndex">
-          </md-icon>
-          <div
-            class="md-stain-wrap"
-            v-else
-          >
-            <div class="md-stain"></div>
-          </div>
-          <div class="vertical-bar-bottom vertical-bar bar"
-            v-if="direction == 'vertical'"
-            :key="`bar-${index}-vertical-bottom`"
-            :class="{
-              'reached-delay': index <= cIndex,
-              hide: index == steps.length - 1
-            }"
-          >
-          </div>
+          ></md-icon>
+          <div v-else class="step-node-default"></div>
         </div>
         <div class="text-wrapper">
-          <div class="text">
+          <div class="name">
             {{step.name}}
           </div>
-          <div class="desc" v-if="direction == 'vertical' && step.description">
-            {{step.description}}
+          <div class="desc" v-if="step.text">
+            {{step.text}}
           </div>
         </div>
       </div>
-      <div class="horizontal-bar-right horizontal-bar bar"
-        v-if="direction == 'horizontal'"
-        :class="{
-          'reached-delay': index <= cIndex,
-          hide: index == steps.length - 1
-        }"
-        :key="`bar-${index}-horizontal-right`"
+      <div class="bar"
+        v-if="index !== steps.length - 1"
+        :class="[direction === 'horizontal' ? 'horizontal-bar' : 'vertical-bar']"
+        :key="`bar-${index}`"
       >
+        <i
+          class="bar-inner"
+          v-if="progress[index]"
+          :style="{
+            transform: `${progress[index]['translate']}(${(progress[index]['len'] - 1) * 100}%)`,
+            transition: `all ${progress[index]['time']}s linear`
+          }"
+        ></i>
       </div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -108,16 +67,6 @@ export default {
     [Icon.name]: Icon,
   },
 
-  data() {
-    return {
-      cIndex: 0,
-      iIndex: 0,
-      increase: true,
-      timeout: null,
-      delay: 300, // same as steps-transition-delay * 2
-    }
-  },
-
   props: {
     steps: {
       type: Array,
@@ -128,42 +77,109 @@ export default {
     current: {
       type: Number,
       default: 0,
-      validator(currentStep) {
-        return currentStep >= 0
+      validator(val) {
+        return val >= 0
       },
     },
     direction: {
       type: String,
       default: 'horizontal',
     },
+    transition: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  data() {
+    return {
+      initialed: false,
+      progress: [],
+      currentLength: 0,
+      duration: 0.3,
+      timer: null,
+    }
   },
 
   watch: {
     current(val, oldVal) {
-      this.increase = val >= oldVal
-      this.timeout && clearTimeout(this.timeout)
-      this.$nextTick(() => {
-        this.animate(val, val >= oldVal)
-      })
-    },
-  },
-
-  methods: {
-    animate(target, isAdd) {
-      this.timeout = setTimeout(() => {
-        isAdd ? this.cIndex++ : this.cIndex--
-        target !== this.cIndex && this.animate(target, isAdd)
-
-        setTimeout(() => {
-          this.iIndex = this.cIndex
-        }, this.delay / 2)
-      }, this.delay)
+      const currentStep = this.$_formatValue(val)
+      const newProgress = this.$_sliceProgress(currentStep)
+      if (this.transition) {
+        const isAdd = currentStep >= oldVal
+        this.timer && clearTimeout(this.timer)
+        this.timer = setTimeout(() => {
+          this.$_doTransition(newProgress, isAdd, len => {
+            if ((isAdd && len > this.currentLength) || (!isAdd && len < this.currentLength)) {
+              this.currentLength = len
+            }
+          })
+        }, 100)
+      } else {
+        this.progress = newProgress
+        this.currentLength = currentStep
+      }
     },
   },
 
   created() {
-    this.cIndex = this.current
-    this.iIndex = this.current
+    const currentStep = this.$_formatValue(this.current)
+    this.currentLength = currentStep
+    this.progress = this.$_sliceProgress(currentStep)
+  },
+
+  methods: {
+    // MARK: private methods
+    $_formatValue(val) {
+      if (val < 0) {
+        return 0
+      } else if (val > this.steps.length - 1) {
+        return this.steps.length - 1
+      } else {
+        return val
+      }
+    },
+    $_sliceProgress(current) {
+      return this.steps.slice(0, this.steps.length - 1).map((step, index) => {
+        const offset = current - index
+        const progress = this.progress[index]
+        const isNewProgress = progress === undefined
+        let len, time
+        if (offset <= 0) {
+          len = 0
+        } else if (offset >= 1) {
+          len = 1
+        } else {
+          len = offset
+        }
+        time = (isNewProgress ? len : Math.abs(progress.len - len)) * this.duration
+        return {
+          translate: this.direction === 'horizontal' ? 'translateX' : 'translateY',
+          len,
+          time,
+        }
+      })
+    },
+    $_doTransition(progress, isAdd, step) {
+      let currentLength = isAdd ? 0 : this.currentLength
+      const walk = index => {
+        if ((index < progress.length) & (index > -1) && progress[index]) {
+          if (isAdd) {
+            currentLength += progress[index].len
+          } else {
+            currentLength -= this.progress[index].len - progress[index].len
+          }
+
+          setTimeout(() => {
+            index += isAdd ? 1 : -1
+            step(currentLength)
+            walk(index)
+          }, progress[index].time * 1000)
+        }
+        this.$set(this.progress, index, progress[index])
+      }
+      walk(isAdd ? 0 : progress.length - 1)
+    },
   },
 }
 </script>
@@ -172,77 +188,41 @@ export default {
 .md-steps
   display flex
   justify-content space-around
-  align-items center
-  padding 20px 100px 70px
   font-size 28px
+
   &.md-steps-horizontal
-    .md-step
-      flex 1
-      display flex
-      justify-content space-between
-      align-items center
-    .bar
-      flex 1
-      &.delay
-        &:before
-          transition-delay steps-transition-delay
-      &.reached-delay
-        &:before
-          transform translateX(0)
-          transition-delay steps-transition-delay
-      &.reached-no-delay
-        &:before
-          transform translateX(0)
-          transition-delay 0s
+    align-items center
+    padding 40px 100px 100px
     .icon-wrapper
+      margin 0 4px
       justify-content center
       align-items center
       flex-direction column
     .text-wrapper
-      position absolute
-      left 0
-      right 0
-      top 0
-      bottom 0
-      width 0
-      height 0
-      margin auto
-      .text
-        position absolute
-        top 30px
-        white-space nowrap
-        transform translateX(-50%)
-
+      top 100%
+      padding-top steps-text-gap-horizontal
+      text-align center
+      .desc
+        margin-top 10px
+        
   &.md-steps-vertical
-    flex-direction column
     align-items flex-start
+    padding 40px 40px 80px
+    flex-direction column
     .icon-wrapper
+      margin 4px 0
       align-items stretch
       .icon
         position relative
-        align-items center
-        flex-direction column
-        .bar
-          &.delay
-            &:before
-              transition-delay steps-transition-delay
-          &.reached-delay
-            &:before
-              transform translateY(0)
-              transition-delay steps-transition-delay
-          &.reached-no-delay
-            &:before
-              transform translateY(0)
-              transition-delay 0s
-        .vertical-bar-top
-          min-height 40px
-        .vertical-bar-bottom
-          flex 1
-        .md-stain-wrap
-          min-width steps-size-active
-          min-height steps-size-active
+        justify-content flex-start
+        .step-node-default
+          min-width steps-icon-size
+          min-height steps-icon-size
       .text-wrapper
-        padding 40px 40px 24px
+        left 100%
+        padding-left steps-text-gap-vertical
+        .desc
+          margin-top 18px
 
   .icon
     display flex
@@ -254,68 +234,71 @@ export default {
       display flex
       justify-content center
       align-items center
+    &:nth-child(2)
+      display none
 
-    .md-stain
-      width steps-size
-      height steps-size
+    .step-node-default:after
+      content ""
+      width 12px
+      height 12px
       background steps-color
-      border-radius steps-size
+      border-radius 12px
 
     &.reached
-      .md-icon
-        width steps-size-active
-        height steps-size-active
-        font-size steps-size-active
-        line-height steps-size-active
-      .md-stain
+      .step-node-default:after
         background steps-color-active
 
   .icon-wrapper
-    margin 0 4px
     display flex
     position relative
-    min-width steps-size-active
-    min-height steps-size-active
+    min-width steps-icon-size
+    min-height steps-icon-size
     .icon
-      min-width steps-size-active
-      min-height steps-size-active
+      min-width steps-icon-size
+      min-height steps-icon-size
+      .md-icon
+        width steps-icon-size
+        height steps-icon-size
+        font-size steps-icon-size
+        line-height steps-icon-size
     .text-wrapper
-      .text
+      position absolute
+      .name, .desc
+        white-space nowrap
+      .name
         color steps-text-color
         line-height steps-text-font-size
         font-size steps-text-font-size
       .desc
-        margin-top 18px
         color steps-desc-color
         line-height steps-text-font-size
         font-size steps-desc-font-size
 
   .bar
+    position relative
+    flex 1
     background-color steps-color
-    &.hide
-      visibility hidden
-    &.horizontal-bar,
-    &.vertical-bar
-      position relative
-      overflow hidden
-      &:before
-        z-index 10
-        position absolute
-        top 0
-        left 0
-        display block
-        content ''
-        transition all linear steps-transition-delay
+    overflow hidden
+    .bar-inner
+      z-index 10
+      position absolute
+      top 0
+      left 0
+      display block
+      content ''
+      transition all linear 1s
     &.horizontal-bar
-      height 2px
-      &:before
+      height steps-border-size
+      .bar-inner
         width 100%
-        border-top steps-border-active
-        transform translateX(-100%)
+        height steps-border-size
+        background-color steps-color-active
     &.vertical-bar
-      width 2px
-      &:before
+      left 16px
+      width steps-border-size
+      transform translateX(-50%)
+      .bar-inner
+        width steps-border-size
         height 100%
-        border-right steps-border-active
-        transform translateY(-100%)
+        background-color steps-color-active
 </style>
