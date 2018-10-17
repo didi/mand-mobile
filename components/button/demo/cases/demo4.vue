@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child  md-example-child-button md-example-child-button-3">
-    <md-button type="link" icon="hollow-plus">评论</md-button>
+    <md-button type="link" icon="message">评论</md-button>
     <md-button type="link" inactive>去看看<md-icon name="arrow-right" size="md"></md-icon></md-button>
   </div>
 </template>

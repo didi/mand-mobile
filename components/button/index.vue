@@ -1,10 +1,10 @@
 <template>
-  <div
+  <button
     class="md-button"
     :class="[
       type,
       inactive ? 'inactive' : 'active',
-      inline ? 'inline' : '',
+      inline ? 'inline' : 'block',
       round ? 'round' : '',
       plain ? 'plain' : '',
       size === 'small' ? 'small' : ''
@@ -19,7 +19,7 @@
         <slot></slot>
       </p>
     </div>
-  </div>
+  </button>
 </template>
 
 <script>import Icon from '../icon'
@@ -86,9 +86,12 @@ export default {
   font-size button-font-size
   font-weight button-font-weight
   text-align center
+  border none
   border-radius button-radius
   box-sizing border-box
+  outline none
   transition all .3s
+  -webkit-appearance none
   -webkit-user-select none
   -webkit-tap-highlight-color transparent
   overflow visible
@@ -172,6 +175,8 @@ export default {
   &.inline
     display inline-block
     padding 0 h-gap-md
+  &.block
+    width 100%
 
   &.small
     height button-small-height
