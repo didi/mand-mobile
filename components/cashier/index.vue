@@ -15,10 +15,7 @@
       >
         <md-icon name="cross" size="lg" slot="cancel"></md-icon>
       </md-popup-title-bar>
-      <div
-        class="md-cashier-container"
-        :style="{maxHeight: `${sceneHeight}px`}"
-      >
+      <div class="md-cashier-container">
         <!-- Choose pay channel -->
         <div
           v-if="scene === 'choose'"
@@ -165,8 +162,6 @@ import Icon from '../icon'
 import RollerSuccess from '../activity-indicator/roller-success'
 import {noop, extend} from '../_util'
 
-const BLOCK_MAX_HEIGHT = 1000
-
 export default {
   name: 'md-cashier',
 
@@ -231,7 +226,6 @@ export default {
       activeChannelIndex: -1,
       scene: 'choose', // choose, captcha, loading, success, fail
       sceneKey: Date.now(),
-      sceneHeight: BLOCK_MAX_HEIGHT,
       sceneOption: {
         loading: {
           text: '\u652f\u4ed8\u7ed3\u679c\u67e5\u8be2\u4e2d\u002e\u002e\u002e', // 支付结果查询中...
@@ -293,17 +287,9 @@ export default {
     },
     $_resetCashier() {
       this.scene = 'choose'
-      this.sceneHeight = BLOCK_MAX_HEIGHT
       this.isChannelShow = false
       this.isChannelActive = false
     },
-    $_doAnimate() {
-      this.$nextTick(() => {
-        const block = this.$el.querySelector('.md-cashier-block')
-        this.sceneHeight = block ? block.clientHeight : BLOCK_MAX_HEIGHT
-      })
-    },
-
     // MARK: events handler, 如 $_onButtonClick
     $_onChannelItemClick(item, index) {
       this.activeChannelIndex = index
@@ -341,7 +327,6 @@ export default {
       }
       this.scene = scene
       this.sceneKey = Date.now()
-      this.$_doAnimate()
     },
   },
 }
@@ -397,7 +382,7 @@ block()
             block()
             text-align center
             &.choose-title
-              font-size cashier-choose-title-font-size 
+              font-size cashier-choose-title-font-size
               color cashier-choose-title-color
             &.choose-number
               margin-top 35px
