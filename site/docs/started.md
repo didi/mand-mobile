@@ -37,6 +37,7 @@ npm install mand-mobile --save
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
+```
 
 
 #### 引入
