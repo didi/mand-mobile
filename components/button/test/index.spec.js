@@ -62,36 +62,37 @@ describe('Button', () => {
       },
     })
 
-    expect(wrapper.hasClass('disabled')).to.equal(true)
+    expect(wrapper.getAttribute('disabled')).to.equal('disabled')
   })
 
   it('click button', () => {
+    const click = sinon.stub()
     wrapper = mount(Button, {
       propsData: {
         disabled: false,
       },
-    })
-    const spy = sinon.spy(wrapper.vm, '$_onBtnClick')
-    wrapper.setMethods({
-      $_onBtnClick: spy,
-    })
-    wrapper.trigger('click')
-    expect(spy.called).to.be.true
-  })
-
-  it('click disabled button', () => {
-    wrapper = mount(Button, {
-      propsData: {
-        disabled: true,
+      listeners: {
+        click: click,
       },
     })
-    const spy = sinon.spy(wrapper.vm, '$_onBtnClick')
-    wrapper.setMethods({
-      $_onBtnClick: spy,
-    })
     wrapper.trigger('click')
-    expect(spy.called).to.be.true
+    expect(click.called).to.be.true
   })
+
+  // it('click disabled button', () => {
+  //   const click = sinon.stub()
+  //   wrapper = mount(Button, {
+  //     attachToDocument: true,
+  //     propsData: {
+  //       disabled: true,
+  //     },
+  //     listeners: {
+  //       click: click
+  //     }
+  //   })
+  //   wrapper.trigger('click')
+  //   expect(click.called).to.be.false
+  // })
 
   it('create icon button', () => {
     wrapper = mount(Button, {
