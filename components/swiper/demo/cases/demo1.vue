@@ -3,7 +3,6 @@
     <md-swiper
       @before-change="beforeChange"
       @after-change="afterChange"
-      :has-dots="false"
       :default-index="1"
       :dragable="false"
       :autoplay="5000"

@@ -23,8 +23,8 @@ export default {
     '横向轮播 <a href="javascript:window.triggerSwiper0()">Goto 2</a><a href="javascript:window.triggerSwiper1()">Play</a><a href="javascript:window.triggerSwiper2()">Stop</a>',
   titleEnUS:
     'Horizontal rotation <a href="javascript:window.triggerSwiper0()">Goto 2</a><a href="javascript:window.triggerSwiper1()">Play</a><a href="javascript:window.triggerSwiper2()">Stop</a>',
-  describle: '10秒后异步加载更多项，20秒后重置为初始数量',
-  describleEnUs: 'Async load more items in 10s, and reset to origin items in another 10s',
+  describe: '10秒后异步加载更多项，20秒后重置为初始数量',
+  describEnUs: 'Async load more items in 10s, and reset to origin items in another 10s',
   message:
     '@before-change: from: <span id="valueSwiper0">0</span>, to: <span id="valueSwiper1">0</span><br/>@after-change: from: <span id="valueSwiper2">0</span>, to: <span id="valueSwiper3">0</span>',
   codeSandBox: 'https://codesandbox.io/s/jz7p622ryv',

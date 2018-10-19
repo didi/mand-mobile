@@ -672,8 +672,7 @@ export default {
       flex-direction column
     .md-swiper-indicators
       flex-direction column
-      width 6px
-      right 10px
+      right 20px
       left auto
       bottom auto
       top 50%
@@ -681,7 +680,9 @@ export default {
       &.disabled
         visibility hidden
       .md-swiper-indicator
-        margin 5px 0
+        width 4px
+        height 28px
+        margin 2.5px 0
 
 .md-swiper-container
   height 100%
@@ -692,19 +693,17 @@ export default {
 
 .md-swiper-indicators
     position absolute
-    bottom 10px
+    bottom 20px
     left 50%
     display flex
     transform translateX(-50%)
 
 .md-swiper-indicator
-  width 6px
-  height 6px
+  width 28px
+  height 4px
   display inline-block
-  border-radius 100%
-  background #999
-  opacity .5
-  margin 0 5px
+  background #ddd
+  margin 0 2.5px
   &.md-swiper-indicator-active
-    background #333
+    background swiper-indicator-fill
 </style>
