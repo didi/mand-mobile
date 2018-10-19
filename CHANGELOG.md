@@ -3,6 +3,12 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.2
+`2018-10-19`
+-Fix
+  - 移除`Cashier`最大高度限制 [#208](https://github.com/didi/mand-mobile/issues/208)
+  - 修复`Button`在某些旧浏览器下无法响应点击事件
+
 ### 1.6.1
 `2018-09-29`
 - Fix

@@ -3,6 +3,12 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.2
+`2018-10-19`
+-Fix
+  - Remove `Cashier` max height limit [#208](https://github.com/didi/mand-mobile/issues/208)
+  - `Button` click event not working on some old browsers
+
 ### 1.6.1
 `2018-09-29`
 - Fix
