@@ -1,11 +1,11 @@
-<template functional>
-  <transition v-bind="data.attrs" v-on="listeners">
-    <slot></slot>
-  </transition>
-</template>
-
 <script>export default {
   name: 'md-transition',
+
+  functional: true,
+
+  render(h, context) {
+    return h('transition', context.data, context.children)
+  },
 }
 </script>
 
