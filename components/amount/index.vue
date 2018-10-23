@@ -1,7 +1,7 @@
 <template>
   <span class="md-amount" :class="{numerical: !isCapital}">
     <template v-if="!isCapital">
-      {{ formatValue | doPrecision(precision, isRoundUp) | doFormat(hasSeparator, separator) }}
+      {{ formatValue | doPrecision(legalPrecision, isRoundUp) | doFormat(hasSeparator, separator) }}
     </template>
     <template v-else>
       {{ formatValue | doPrecision(4, isRoundUp) | doCapital }}
@@ -32,7 +32,7 @@ export default {
       const integerValue = numberParts[0]
       const decimalValue = numberParts[1] || ''
       const formateValue = formatValueByGapStep(3, integerValue, separator, 'right', 0, 1)
-      return `${formateValue.value}.${decimalValue}`
+      return decimalValue ? `${formateValue.value}.${decimalValue}` : `${formateValue.value}`
     },
     doCapital(value) {
       return numberCapital(value)
@@ -91,6 +91,12 @@ export default {
         }
       },
       immediate: true,
+    },
+  },
+
+  computed: {
+    legalPrecision() {
+      return this.precision > 0 ? this.precision : 0
     },
   },
 

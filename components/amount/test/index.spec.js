@@ -19,6 +19,16 @@ describe('SingleComponent', () => {
     expect(wrapper.text().trim()).to.equal('1234.57')
   })
 
+  it('amount negative precision', () => {
+    wrapper = mount(Amount, {
+      propsData: {
+        value: 1234.123,
+        precision: -1,
+      },
+    })
+    expect(wrapper.text().trim()).to.equal('1234')
+  })
+
   it('amount isRoundUp', () => {
     wrapper = mount(Amount, {
       propsData: {
@@ -41,6 +51,18 @@ describe('SingleComponent', () => {
     })
 
     expect(wrapper.text().trim()).to.equal('1,234.57')
+  })
+
+  it('amount hasSeparator with precision 0', () => {
+    wrapper = mount(Amount, {
+      propsData: {
+        value: 1234.567,
+        precision: 0,
+        hasSeparator: true,
+      },
+    })
+
+    expect(wrapper.text().trim()).to.equal('1,235')
   })
 
   it('amount isCapital 0', () => {
