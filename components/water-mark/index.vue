@@ -32,7 +32,7 @@
           <slot
             v-else-if="!!$scopedSlots.watermark"
             name="watermark"
-            @index="index"
+            :coord="{row: i, col: j}"
           ></slot>
         </li>
       </ul>
