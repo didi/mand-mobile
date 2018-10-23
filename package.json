@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "2.0.0",
+  "version": "2.0.0-beta.1",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -28,7 +28,7 @@
     "create": "node build/component-init.js",
     "cz": "git-cz",
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",
-    "build": "npm run clean && npm run build:components && npm run build:mand-mobile && npm run build:mand-mobile-special && node build/rollup/build-vw-responsive",
+    "build": "npm run clean && npm run build:components && npm run build:mand-mobile && node build/rollup/build-vw-responsive",
     "build:site": "cd site && npm run generate && npm run build",
     "prebuild:example": "npm run build",
     "build:example": "cross-env NODE_ENV=production BUILD_TYPE=example node build/rollup/build-example.rollup",
