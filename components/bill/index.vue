@@ -19,7 +19,7 @@
       </footer>
     </div>
     <div slot="watermark" slot-scope="props" v-if="!!$scopedSlots.watermark">
-      <slot name="watermark" @index="1"></slot>
+      <slot name="watermark" :coord="props.coord"></slot>
     </div>
   </md-water-mark>
 </template>
