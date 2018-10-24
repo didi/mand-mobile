@@ -41,12 +41,12 @@
             <span v-else>English</span>
           </div>
         </div>
-        <!-- <div class="default-header-version default-header-operater">
+        <div class="default-header-version default-header-operater">
           <div class="operater-select" @click.stop="versionTableShow = true">
-            <span>1.x</span>
+            <span>2.x</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
-        </div> -->
+        </div>
         <div class="default-header-nav">
           <ul>
             <template v-if="lang === 'en-US'">
@@ -109,6 +109,9 @@ export default {
       versionTableShow: false,
       versionData: [{
         text: '1.x',
+        path: 'https://1x.mand-mobile.github.io'
+      }, {
+        text: '2.x',
         path: '/home'
       }],
       searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
@@ -401,9 +404,6 @@ export default {
       border-radius 30px
       border solid 1px #ddd
       cursor pointer
-      transition all .3s
-      &:hover
-        opacity .5
       .operater-select
         i
           font-size 12px

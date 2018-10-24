@@ -7,7 +7,7 @@
       v-tooltip.right="{
         content: number,
         classes: 'mfe-git-star-number',
-        show: number > 0,
+        show: !!number,
         trigger: 'manual',
         offset: 5
       }"
@@ -22,7 +22,7 @@
 export default {
   data () {
     return {
-      number: 0,
+      number: '',
     }
   },
   mounted () {
@@ -32,9 +32,9 @@ export default {
   },
   methods: {
     getNumber () {
-      $.get('https://api.github.com/repos/didi/mand-mobile', (data) => {
+      $.get('https://img.shields.io/github/stars/didi/mand-mobile.json', (data) => {
         if (data) {
-          this.number = data.stargazers_count
+          this.number = data.value
         }
       })
     }
@@ -61,6 +61,7 @@ export default {
     box-sizing border-box
     text-decoration none
     justify-content center
+    transition all .3s
     &:hover
       background-image linear-gradient(to bottom, #f0f3f6, #dce3ec)
     em

@@ -17,7 +17,7 @@ const qrcodeTableView = {
 export default {
   'zh-CN': [
     {
-      title: 'Mand Mobile',
+      title: 'Mand Mobile <i>2</i>',
       describe: '面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。',
       buttons: [{
         type: 'link',
@@ -90,7 +90,7 @@ export default {
   ],
   'en-US': [
     {
-      title: 'Mand Mobile',
+      title: 'Mand Mobile <i>2</i>',
       describe: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios. Rich, flexible, practical, quickly build high-quality financial products, making complex financial scenarios easier.',
       buttons: [{
         type: 'link',

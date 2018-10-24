@@ -62,7 +62,7 @@
             :key="`home-box-block-${homeBlockIndex}-0`"
             v-show="blockShow[homeBlockIndex]"
           >
-            <span v-text="homeBlock.title"></span>
+            <span v-html="homeBlock.title"></span>
           </h2>
           <!-- 模块描述 -->
           <p
@@ -252,6 +252,9 @@ export default {
           // transition all .3s
           span
             position relative
+            i
+             font-style normal
+             color #2f86f6
             &:after
               content ""
               position absolute
@@ -289,7 +292,7 @@ export default {
             &:hover
               opacity .8
             &.start
-              background-image linear-gradient(-90deg, #FFD653 0%, #FF8B48 100%)
+              background-image linear-gradient(-90deg, #98c4fd 0%, #2f86f6 100%)
               color #FFF
             &.demo
               background-color #ECF6FF

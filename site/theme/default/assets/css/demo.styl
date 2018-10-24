@@ -154,9 +154,11 @@
   .md-dialog .md-popup-box
     top 30% !important
 .md-landscape
-  .md-popup.with-mask, .md-popup-box, .close
+  .md-popup
+    position static !important
+  .md-popup.with-mask, .md-popup-box, .landscape-close
     position absolute !important
-  .close
+  .landscape-close
     bottom 5% !important
 .md-picker
   .md-popup
