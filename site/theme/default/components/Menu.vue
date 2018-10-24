@@ -112,7 +112,7 @@ export default {
     float left
     width 100%
     font-size 14px
-    font-family DinPro
+    font-family DINAlternate-Bold, AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif
     color #314659
     text-decoration none
     transition all .3s
@@ -130,7 +130,7 @@ export default {
       display none
       content ""
       position absolute
-      right 0
+      left 0
       top 25%
       width 4px
       height 50%

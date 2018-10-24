@@ -455,7 +455,7 @@ export default {
           filter invert(100%)
       .default-header-aside
         padding 0
-      .default-header-search
+      .default-header-search, .default-header-nav
         display none
 @media (max-width: 1400px)
   .default-header-container
