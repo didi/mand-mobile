@@ -1,19 +1,18 @@
 <template>
   <div class="md-example-child md-example-child-scroll-view md-example-child-scroll-view-4">
+    <md-tab-bar
+      v-model="activeBlockIndex"
+      :items="tabBarItems"
+      :max-length="5"
+      ref="tabBar"
+      @change="$_onTabChange"
+    ></md-tab-bar>
     <md-scroll-view
+      class="scroll-view-with-tab-bar"
       ref="scrollView"
       :scrolling-x="false"
       @scroll="$_onScroll"
     >
-      <md-tab-bar
-        slot="header"
-        ref="tabBar"
-        :default-index="activeBlockIndex - 1"
-        :titles="tabBarTitles"
-        :show-ink-bar="true"
-        :key="activeBlockIndex"
-        @indexChanged="$_onTabChange"
-      ></md-tab-bar>
       <div
         v-for="i in category"
         :key="i"
@@ -52,22 +51,14 @@ export default {
       dimensions: [],
       scrollY: 0,
       isManual: false,
+      activeBlockIndex: 0,
     }
   },
   computed: {
-    tabBarTitles() {
+    tabBarItems() {
       return this.dimensions.map((item, index) => {
-        return index + 1
+        return {name: index, label: `Block - ${index + 1}`}
       })
-    },
-    activeBlockIndex() {
-      let activeIndex = 1
-      this.dimensions.forEach((dimension, index) => {
-        if (this.scrollY >= dimension[0] && this.scrollY <= dimension[1]) {
-          activeIndex = index + 1
-        }
-      })
-      return activeIndex
     },
   },
   mounted() {
@@ -85,13 +76,22 @@ export default {
         this.$set(this.dimensions, index, [offset, offset + innerHeight])
         offset += innerHeight
       })
+
+      // setTimeout(() => {
+      //   this.$refs.tabBar.reflow()
+      // }, 1000)
     },
     $_onScroll({scrollTop}) {
       if (!this.isManual) {
-        this.scrollY = scrollTop
+        this.dimensions.some((dimension, index) => {
+          if (scrollTop >= dimension[0] && scrollTop <= dimension[1]) {
+            this.activeBlockIndex = index
+            return true
+          }
+        })
       }
     },
-    $_onTabChange(index) {
+    $_onTabChange(item, index) {
       const offsetTop = this.dimensions[index][0]
       this.isManual = true
       this.$refs.scrollView.scrollTo(0, offsetTop, true)
@@ -109,12 +109,18 @@ export default {
   position relative
   height 800px
   .md-tab-bar
+    position absolute
+    left 0
+    top 0
+    right 0
+    z-index 2
     box-shadow 0 2px 8px #f0f0f0
-  .md-scroll-view
-    padding-top 80px
-  .scroll-view-item
-    padding 30px 0
-    text-align center
-    font-size 32px
-    border-bottom .5px solid #efefef
+  .scroll-view-with-tab-bar
+    & > .scroll-view-container
+      padding-top 80px
+    .scroll-view-item
+      padding 30px 0
+      text-align center
+      font-size 32px
+      border-bottom .5px solid #efefef
 </style>
