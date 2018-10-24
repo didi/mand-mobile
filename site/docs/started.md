@@ -79,8 +79,10 @@ npm install mand-mobile --save
 
 组件使用：
 
+> 如果没有以上配置，会全量引入，需手动引入全部样式， 参考<a href="javascript:jumpAnchor('全量引入')">全量引入</a>
+
 ```javascript
-import { Button } from 'mand-mobile' // 【注意】如果没有以上配置，会全量引入，需手动引入全部样式， 参考#全量引入
+import { Button } from 'mand-mobile'
 ```
 
 ##### 按需引入

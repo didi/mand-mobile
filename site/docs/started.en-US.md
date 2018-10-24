@@ -79,13 +79,10 @@ The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile
 
 and then
 
+> If there is no configuration above, it will be imported in full amount, all styles need to be manually imported, and reference<a href="javascript:jumpAnchor('Totally Import')">Totally Import</a>
+
 ```javascript
 import { Button } from 'mand-mobile'
-
-/**
- * [Note] If there is no configuration above, it will be imported in full amount,
- * all styles need to be manually imported, and reference #Totally Import.
- */
 ```
 
 ##### Manually Import
