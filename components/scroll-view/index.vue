@@ -321,6 +321,7 @@ export default {
     position absolute
     left 0
     right 0
+    z-index 2
   .scroll-view-header
     top 0
   .scroll-view-footer
