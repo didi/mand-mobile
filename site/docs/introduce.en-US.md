@@ -16,7 +16,7 @@ title: Mand Mobile
 
 * <b>Strictly controlled Bundle volume </b> 
 
-    Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and export two format packages, `es` and `umd`. The `es` package size is only `139kb (gzip 34kb)`, and the final size of `umd` is only `135kb (gzip 33kb)`.
+    Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and export two format packages, `es` and `umd`. The `es` package size is only `173kb(gzip 40kb)`, and the final size of `umd` is only `167kb(gzip 39kb)`.
 
 * <b>Flexible style theme</b> 
 
@@ -27,14 +27,26 @@ title: Mand Mobile
 #### Version
 - [![npm package](http://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)
 
+<br>
+
+> Subscribe to this feed for new version notifications: https://github.com/didi/mand-mobile/releases.atom
+
 #### Browser Support
 
+* Modern browsers
 * iOS 6+
 * Android 4.0+
 
 #### Quickstart
 
 Please refer to <a href="#/docs/started">Quickstart</a>
+
+#### Links
+
+* <a href="https://github.com/mand-mobile/palette" target="_blank">🎨 palette</a>
+* <a href="https://github.com/mand-mobile/vue-cli3-example" target="_blank">🍭 vue-cli3-example</a>
+* <a href="https://github.com/mand-mobile/vue-cli-plugin-mand" target="_blank">🍄 vue-cli-plugin-mand</a>
+* <a href="https://github.com/mand-mobile/mand-mobile-template" target="_blank">🛍 mand-mobile-template</a>
 
 #### Users
 

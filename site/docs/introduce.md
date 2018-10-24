@@ -8,7 +8,7 @@ title: Mand Mobile
 
 * <b>丰富的组件</b>
 
-    30+的实用组件，能够满足移动端开发的基本需求，尤其是对金融场景的需求进行了特别支持
+   40+的实用组件，能够满足移动端开发的基本需求，尤其是对金融场景的需求进行了特别支持
 
 * <b>统一的视觉规范</b> 
 
@@ -16,7 +16,7 @@ title: Mand Mobile
 
 * <b>严格控制的Bundle体积 </b> 
 
-    提供按需加载能力，使用灵活，避免引入无用代码，同时导出`es`，`umd`两种格式包，其中`es`打包大小仅为`139kb(gzip 34kb)`，`umd`格式最终大小仅为`135kb(gzip 33kb)`
+    提供按需加载能力，使用灵活，避免引入无用代码，同时导出`es`，`umd`两种格式包，其中`es`打包大小仅为`173kb(gzip 40kb)`，`umd`格式最终大小仅为`167kb(gzip 39kb)`
 
 * <b>灵活转换的样式主题</b> 
 
@@ -27,14 +27,26 @@ title: Mand Mobile
 #### 版本
 - [![npm package](http://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)
 
+<br>
+
+> 订阅稳定版发布的通知：https://github.com/didi/mand-mobile/releases.atom
+
 #### 浏览器支持
 
+* 现代浏览器
 * iOS 6+
 * Android 4.0+
 
 #### 快速上手
 
 请参考<a href="#/docs/started">快速上手</a>
+
+#### 链接
+
+* <a href="https://github.com/mand-mobile" target="_blank">🎨 调色板</a>
+* <a href="https://github.com/mand-mobile/vue-cli3-example" target="_blank">🍭 vue-cli3-example</a>
+* <a href="https://github.com/mand-mobile/vue-cli-plugin-mand" target="_blank">🍄 vue-cli-plugin-mand</a>
+* <a href="https://github.com/mand-mobile/mand-mobile-template" target="_blank">🛍 mand-mobile-template</a>
 
 #### 谁在使用
 

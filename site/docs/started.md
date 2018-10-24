@@ -29,18 +29,11 @@ vue invoke mand
 npm install mand-mobile --save
 ```
 
-##### CDN
+##### 浏览器引入
 
 在浏览器中使用`script`和`link`标签直接引入文件，并使用全局变量 `window['mand-mobile']`
 
 在`npm`发布包内的`mand-mobile/lib`或`mand-mobile/lib-vw`目录下提供了`JS`以及`CSS` bundle，参考<a href="javascript:jumpAnchor('产出包目录')">产出包目录</a>。你也可以通过[UNPKG](https://unpkg.com/mand-mobile/lib/)进行下载
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
-
-<!-- window['mand-mobile'] -->
-<script src="https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js"></script>
-```
 
 #### 引入
 

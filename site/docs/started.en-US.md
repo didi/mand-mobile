@@ -29,7 +29,7 @@ vue invoke mand
 npm install mand-mobile --save
 ```
 
-##### CDN
+##### Import in Browser
 
 Add `script` and `link` tags in your browser and use the global variable `window['mand-mobile']`.
 
