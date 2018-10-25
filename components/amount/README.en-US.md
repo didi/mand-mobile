@@ -27,5 +27,5 @@ Vue.component(Amount.name, Amount)
 |has-separator|insert thousand separators|Boolean|false|-|
 |separator|thousand separator|String|`,`|-|
 |is-capital|convert to chinese capital|Boolean|false|-|
-|is-animated|use animation when number change|Boolean|false|-|
+|transition|use animation when number change|Boolean|false|-|
 |duration|animation duration|Number|`1000`|unit `ms`|

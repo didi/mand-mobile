@@ -27,5 +27,5 @@ Vue.component(Amount.name, Amount)
 |has-separator|数字是否有千位分隔符|Boolean|false|-|
 |separator|数字千位分隔符|String|`,`|-|
 |is-capital|数字是否转换为大写中文|Boolean|false|-|
-|is-animated|数字变化是否使用动画|Boolean|false|-|
+|transition|数字变化是否使用动画|Boolean|false|-|
 |duration|数字变化动画时长|Number|`1000`|单位`ms`|

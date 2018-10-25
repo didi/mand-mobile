@@ -37,7 +37,8 @@ Vue.component(WaterMask.name, WaterMask)
 水印内容scoped插槽
 
 ```html
-<div slot="watermark" slot-scope="props">
-  <!-- 水印内容 -->
+<div slot="watermark" slot-scope="{ coord }">
+  <!-- coord.row 行索引 -->
+  <!-- coord.col 列索引 -->
 </div>
 ```

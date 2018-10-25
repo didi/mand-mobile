@@ -37,7 +37,8 @@ Default slot of content
 scoped slot of watermask content
 
 ```html
-<div slot="watermark" slot-scope="props">
-  <!-- content -->
+<div slot="watermark" slot-scope="{ coord }">
+  <!-- coord.row row index -->
+  <!-- coord.col column index -->
 </div>
 ```

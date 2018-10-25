@@ -18,10 +18,10 @@ Vue.component(Steps.name, Steps)
 
 ### API
 
-#### Tabs Props
-属性 | 说明 | 类型 | 默认值 | 备注
-----|-----|------|------|------
-steps | 步骤信息数组 | Array<{name, text}> |-|-|
-current | 当前步骤/进度 | Number | `0` | 支持小数 |
-direction | 展示方向 | String | `'horizontal'` | 可选`'horizontal'`横向展示，`'vertical'`纵向展示|
-transition | 进度变化动效 | Boolean | `false` |-|
+#### Steps Props
+| 属性 | 说明 | 类型 | 默认值 | 备注 |
+|----|-----|------|------|------|
+|steps | 步骤信息数组 | Array<{name, text}> |-|-|
+|current | 当前步骤/进度 | Number | `0` | 支持小数 |
+|direction | 展示方向 | String | `horizontal` | horizontal/vertical |
+|transition | 进度变化动效 | Boolean | `false` |-|

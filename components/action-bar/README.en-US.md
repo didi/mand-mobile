@@ -23,8 +23,11 @@ Vue.component(ActionBar.name, ActionBar)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |actions|button group|Array<{text, disabled, onClick}>|-|`text` is button text,<br/>`disabled`is whether to disable the button or not,<br/>`onClick`is click event callback function with the same parameters as the `click` event|
-|has-text|whether to show text|Boolean|whether it containss `slot`|text can be passed in `slot`|
 
+#### ActionBar Slots
+
+##### default
+left content
 
 #### ActionBar Events
 

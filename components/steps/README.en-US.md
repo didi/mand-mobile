@@ -18,10 +18,10 @@ Vue.component(Steps.name, Steps)
 
 ### API
 
-#### Tabs Props
+#### Steps Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |steps | array of step information | Array<{name, text}> |-|-|
 |current | current step | Number | `0` |support for decimal point|
-|direction | to specify the direction of the step bar | String | `'horizontal'` | support `'horizontal'`, `'vertical'`|
-transition | progress change transition | Boolean | `false` |-|
+|direction | to specify the direction of the step bar | String | `horizontal` | horizontal/vertical|
+|transition | progress change transition | Boolean | `false` |-|
