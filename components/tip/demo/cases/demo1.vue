@@ -1,7 +1,7 @@
 <template>
   <div class="md-example-child md-example-child-tip md-example-child-tip-1">
     <md-tip content="不错哟" placement="bottom">
-      <md-button type="ghost" size="small">点击我</md-button>
+      <md-button type="default" size="small">点击我</md-button>
     </md-tip>
   </div>
 </template>
