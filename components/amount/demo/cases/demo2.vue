@@ -3,7 +3,7 @@
     <md-amount
       :value="val"
       :duration="800"
-      is-animated
+      transition
     ></md-amount>
 	</div>
 </template>

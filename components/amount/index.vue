@@ -64,6 +64,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    transition: {
+      type: Boolean,
+      default: false,
+    },
     isCapital: {
       type: Boolean,
       default: false,
@@ -84,7 +88,7 @@ export default {
     value: {
       handler(val, oldVal) {
         /* istanbul ignore if  */
-        if (this.isAnimated) {
+        if (this.isAnimated || this.transition) {
           this.$_doAnimateDisplay(oldVal, val)
         } else {
           this.formatValue = val
