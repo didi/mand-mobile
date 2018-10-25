@@ -77,6 +77,12 @@
     "name": "Business",
     "text": "业务相关",
     "list": [
+      {
+        "name": "Amount",
+        "path": "/amount",
+        "icon": "amount",
+        "text": "金融数字"
+      },
       { "name": "Bill", "path": "/bill", "icon": "bill", "text": "票据" },
       {
         "name": "Captcha",
