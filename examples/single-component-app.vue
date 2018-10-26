@@ -8,8 +8,6 @@
 
 <script>
 import './assets/responsive'
-import demo from '../components/radio/demo/'
-
 
 export default {
   name: 'app',
