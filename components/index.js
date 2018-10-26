@@ -121,9 +121,9 @@ const install = function(Vue) {
   })
 
   // 全局服务注入
-  Vue.prototype.$toast = components.Toast
-  Vue.prototype.$dialog = components.Dialog
-  Vue.prototype.$sheet = components.ActionSheet
+  Vue.prototype.$toast = Toast
+  Vue.prototype.$dialog = Dialog
+  Vue.prototype.$actionsheet = ActionSheet
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
