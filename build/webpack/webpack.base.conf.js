@@ -1,7 +1,10 @@
 'use strict'
 const path = require('path')
+const HappyPack = require('happypack')
+const os = require('os')
 const utils = require('./utils')
 const vueLoaderConfig = require('./vue-loader.conf')
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
 
 function resolve (dir) {
   return path.join(__dirname, '../..', dir)
@@ -13,9 +16,9 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js',
       '@examples': resolve('examples'),
+      'mand-mobile$': resolve('components'),
       'mand-mobile/lib': resolve('components'),
-      'mand-mobile/components': resolve('components'),
-      'mand-mobile': resolve('components'),
+      'mand-mobile/components': resolve('components')
     }
   },
   module: {
@@ -36,7 +39,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader?cacheDirectory',
+        loader: 'babel-loader?cacheDirectory=true',
         include: [resolve('components'), resolve('examples'), resolve('test')]
       },
       {
@@ -53,5 +56,15 @@ module.exports = {
         include: [resolve('components'), resolve('examples/assets/images')]
       }
     ]
-  }
+  },
+  plugins: [
+    new HappyPack({
+      id: 'happyBabel',
+      loaders: [{
+        loader: 'babel-loader?cacheDirectory=true',
+      }],
+      verbose: false,
+      threadPool: happyThreadPool,
+    })
+  ]
 }

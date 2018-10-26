@@ -25,6 +25,7 @@ const compiler = webpack(webpackConfig)
 const resolve = file => path.resolve(__dirname, file)
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
+  stats: 'errors-only'
 })
 
 const hotMiddleware = require('webpack-hot-middleware')(compiler, {
