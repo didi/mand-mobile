@@ -52,6 +52,9 @@ tab切换的title支持自定义渲染（通过slot-scope）
 |title|弹窗标题|String|-|-|
 |ok-text|确认按钮文案|String|`确认`|-|
 |cancel-text|取消按钮文案|String|`取消`|-|
+|placeholder<sup class="version-after">1.6.3+</sup>|待选择提示文案|String|`请选择`|-|
+|errorLabel<sup class="version-after">1.6.3+</sup>|数据源错误文案|String|`数据异常`|-|
+|loadingLabel<sup class="version-after">1.6.3+</sup>|异步加载文案|String|`加载中`|-|
 |mask-closable<sup class="version-after">1.3.0+</sup>|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 
 

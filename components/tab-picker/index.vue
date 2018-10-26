@@ -48,8 +48,8 @@
         </md-tabs>
         <div class="slot-wrapper" v-if="isLoading || isDataError">
           <div class="slot-inner">
-            <slot name="error" v-if="isDataError">数据异常</slot>
-            <slot name="loading" v-if="isLoading">loading</slot>
+            <slot name="error" v-if="isDataError">{{errorLabel}}</slot>
+            <slot name="loading" v-if="isLoading">{{loadingLabel}}</slot>
           </div>
         </div>
       </div>
@@ -91,6 +91,18 @@ export default {
     cancelText: {
       type: String,
       default: '取消',
+    },
+    placeholder: {
+      type: String,
+      default: '请选择',
+    },
+    loadingLabel: {
+      type: String,
+      default: '载入中',
+    },
+    errorLabel: {
+      type: String,
+      default: '数据异常',
     },
     maskClosable: {
       type: Boolean,
@@ -304,7 +316,7 @@ export default {
           walk(null, data)
         } else {
           this.$_initTabContent()
-          this.subTitles.push('请选择')
+          this.subTitles.push(this.placeholder)
           if (isAsync) {
             this.renderData.push({
               index: 0,
@@ -349,7 +361,7 @@ export default {
           } else {
             data = []
           }
-          this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, '请选择')
+          this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, this.placeholder)
           this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
             index: this.currentIndex,
             clickedKey: -1,
