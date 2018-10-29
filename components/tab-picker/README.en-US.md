@@ -54,6 +54,9 @@ Asynchronous cascading panel supports passing slots
 |title|the title of tabpicker|String|-|-|
 |ok-text|text of confirmation button|String|`confirm`|-|
 |cancel-text|text of cancellation button|String|`cancel`|-|
+|placeholder<sup class="version-after">1.6.3+</sup>|select placeholder|String|`Select`|-|
+|errorLabel<sup class="version-after">1.6.3+</sup>|text for invalid data source|String|`Data Error`|-|
+|loadingLabel<sup class="version-after">1.6.3+</sup>|text for loading state|String|`Loading`|-|
 |mask-closable<sup class="version-after">1.3.0+</sup>|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
 
 #### TabPicker Methods
@@ -94,7 +97,7 @@ Hide tabPicker
 
 ### Appendix
 
-* Data format of non-cascaded data source 
+* Data format of non-cascaded data source
 
 ```javascript
 [
@@ -117,7 +120,7 @@ Hide tabPicker
 ]
 ```
 
-* Data format of cascaded data source 
+* Data format of cascaded data source
 
 ```javascript
 [

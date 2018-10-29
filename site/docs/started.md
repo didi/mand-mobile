@@ -35,11 +35,6 @@ npm install mand-mobile --save
 
 在`npm`发布包内的`mand-mobile/lib`或`mand-mobile/lib-vw`目录下提供了`JS`以及`CSS` bundle，参考<a href="javascript:jumpAnchor('产出包目录')">产出包目录</a>。你也可以通过[UNPKG](https://unpkg.com/mand-mobile/lib/)进行下载
 
-```html
-<link rel="stylesheet" href="https://unpkg.com/mand-mobile/lib/mand-mobile.css">
-```
-
-
 #### 引入
 
 ##### 按需加载(推荐)
