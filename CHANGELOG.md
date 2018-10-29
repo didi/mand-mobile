@@ -3,6 +3,13 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.3
+`2018-10-29`
+- Feature
+  - `TabPicker`文案可配置[#216](https://github.com/didi/mand-mobile/issues/216)
+- Fix
+  - 静态方法未定义 BUG [#223](https://github.com/didi/mand-mobile/issues/223)
+
 ### 1.6.2
 `2018-10-19`
 -Fix

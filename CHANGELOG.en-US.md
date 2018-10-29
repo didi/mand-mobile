@@ -3,6 +3,13 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.3
+`2018-10-29`
+- Feature
+  - `TabPicker` custom text [#216](https://github.com/didi/mand-mobile/issues/216)
+- Fix
+  - undefined static methods [#223](https://github.com/didi/mand-mobile/issues/223)
+
 ### 1.6.2
 `2018-10-19`
 -Fix
