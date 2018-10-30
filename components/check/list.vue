@@ -24,7 +24,7 @@
         :name="item.value"
         :disabled="item.disabled"
         size="md"
-        icon="right"
+        icon="checked"
         icon-inverse=""
         slot="right"
       />
@@ -55,10 +55,6 @@ export default {
     value: {
       type: Array,
       default: () => [],
-    },
-    hasInput: {
-      type: Boolean,
-      default: false,
     },
     alignCenter: {
       type: Boolean,
