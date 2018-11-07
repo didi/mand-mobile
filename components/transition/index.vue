@@ -110,6 +110,23 @@
   &-leave-active
     transition all 250ms linear
 
+.md-fly
+  &-enter-active
+    animation fly-in 600ms
+    animation-timing-function cubic-bezier(0.215, 0.61, 0.355, 1)
+  &-leave-active
+    animation zoom-out 250ms
+
+@keyframes fly-in
+  0%
+    opacity 0.5
+    transform scale(0.5) translate(0, 50px)
+  45%
+    opacity 1
+    transform scale(1.05) translate(0, -50px)
+  100%
+    transform scale(1) translate(0, 0)
+
 @keyframes bounce-in
   0%
     transform scale(0.5)
