@@ -21,7 +21,7 @@
             v-for="(item, index) in items"
             :key="item.name"
             ref="items"
-            @click="$_onClick(item)"
+            @click="$_onClick(item, index)"
           >
             <slot
               name="item"
@@ -136,7 +136,7 @@ export default {
   created() {
     if (this.currentName === '' && this.items.length) {
       this.currentName = this.items[0].name
-      this.$emit('change', this.items[0], 0)
+      this.$emit('change', this.items[0], 0, 0)
     }
   },
   mounted() {
@@ -162,13 +162,13 @@ export default {
         this.maskEndShown = true
       }
     },
-    $_onClick(item) {
+    $_onClick(item, index) {
       if (item.disabled) {
         return
       }
+      this.$emit('change', item, index, this.currentIndex)
       this.currentName = item.name
       this.$emit('input', item.name)
-      this.$emit('change', item, this.currentIndex)
     },
     // MARK: public methods
     reflow() {

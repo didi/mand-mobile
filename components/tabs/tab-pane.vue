@@ -1,7 +1,9 @@
 <template>
-  <div class="md-tab-pane" v-show="active" role="tabpanel">
-    <slot></slot>
-  </div>
+  <transition :name="transitionName">
+    <div class="md-tab-pane" v-show="active" role="tabpanel">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <script>export default {
@@ -23,6 +25,9 @@
     active() {
       return this.$parent.currentName === this.name
     },
+    transitionName() {
+      return this.$parent.prevIndex > this.$parent.currentIndex ? 'md-tab-slide-right' : 'md-tab-slide-left'
+    },
   },
 
   watch: {
@@ -42,3 +47,33 @@
   },
 }
 </script>
+
+<style lang="stylus">
+.md-tab-pane
+  position relative
+  width 100%
+
+.md-tab-slide-left,
+.md-tab-slide-right
+  &-enter
+    opacity 0.01
+  &-enter-active
+    transition all 300ms
+  &-leave-active
+    position absolute
+    top 0
+    transition all 300ms
+  &-leave-to
+    opacity 0.01
+
+.md-tab-slide-left
+  &-enter
+    transform translateX(100%)
+  &-leave-to
+    transform translateX(-100%)
+.md-tab-slide-right
+  &-enter
+    transform translateX(-100%)
+  &-leave-to
+    transform translateX(100%)
+</style>

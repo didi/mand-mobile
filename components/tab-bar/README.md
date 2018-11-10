@@ -24,7 +24,7 @@ Vue.component(TabBar.name, TabBar)
 |items|标签标题数组|Array<{name: String, label: String, disabled: Boolean}>|-|
 |has-ink|是否显示下划线|Boolean|true|-|
 |ink-length|下划线宽度|Number|`100`|该数值为下划线占标签按钮宽度的百分比，须在0-100之间|
-|v-model|双向绑定的标签对象`key`|String|-|-|
+|v-model|双向绑定的标签对象`name`|String|-|-|
 
 #### Tabbar Methods
 
@@ -33,13 +33,14 @@ Vue.component(TabBar.name, TabBar)
 
 #### Tabbar Events
 
-##### @change(item, index)
+##### @change(item, index, prevIndex)
 标签索引发生变化事件
 
 |属性 | 说明 | 类型|
 |----|-----|------|
 |item|选中的标签对象|Object|
 |index|选中的标签索引|Number|
+|prevIndex|上一标签索引|Number|
 
 #### Tabbar Slot
 ```javascript

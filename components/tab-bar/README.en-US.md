@@ -33,13 +33,14 @@ relayout tabbar
 
 #### Tabbar Events
 
-##### @change(item, index)
+##### @change(item, index, prevIndex)
 selected menu index changes
 
 |Props | Description | Type|
 |----|-----|------|
 | item | object of previous selected menu | Object |
 | index | index of current selected menu | Number |
+| index | index of previous selected menu | Number |
 
 #### Tabbar Slot
 ```javascript

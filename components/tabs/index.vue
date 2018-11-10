@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       currentName: this.value,
+      prevIndex: 0,
       panes: [],
     }
   },
@@ -59,6 +60,14 @@ export default {
         }
       })
     },
+    currentIndex() {
+      for (let i = 0, len = this.menus.length; i < len; i++) {
+        if (this.menus[i].name === this.currentName) {
+          return i
+        }
+      }
+      return 0
+    },
   },
 
   mounted() {
@@ -69,8 +78,9 @@ export default {
 
   methods: {
     // MARK: private events
-    $_handleTabClick(tab) {
+    $_handleTabClick(tab, index, prevIndex) {
       this.currentName = tab.name
+      this.prevIndex = prevIndex
       this.$emit('input', tab.name)
       this.$emit('change', tab)
     },
@@ -89,3 +99,9 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus">
+.md-tabs-content
+  position relative
+  width 100%
+</style>
