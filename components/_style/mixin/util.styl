@@ -53,6 +53,7 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       bottom auto
       width 100%
       height size
+      transform-origin 50% 0
 
   else if direction == bottom
     &::before
@@ -63,6 +64,7 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       top auto
       width 100%
       height size
+      transform-origin 50% 100%
 
   else if direction == left
     &::after
@@ -73,6 +75,7 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       bottom auto
       width size
       height 100%
+      transform-origin 0 50%
 
   else if direction == right
     &::before
@@ -83,6 +86,7 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       bottom auto
       width size
       height 100%
+      transform-origin 100% 50%
 
   else
     &::after
