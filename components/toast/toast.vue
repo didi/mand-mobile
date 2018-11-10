@@ -8,7 +8,7 @@
     >
       <div class="md-toast-content">
         <md-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/>
-        <div class="md-toast-text" v-text="content"></div>
+        <div class="md-toast-text" v-if="content" v-text="content"></div>
       </div>
     </md-popup>
   </div>
@@ -92,16 +92,17 @@ export default {
 
 <style lang="stylus">
 .md-toast
-  .md-popup.with-mask, .md-popup .md-popup-box
-    z-index toast-zindex
+  z-index toast-zindex
   .md-icon
     flex-shrink 0
     color toast-color
-    margin-right 12px
+  .md-icon + .md-toast-text
+    margin-left 12px
   .md-popup
     .md-popup-box
       width 540px
-      text-align center
+      display flex
+      justify-content center
     .md-popup-mask
       background transparent
   &.bottom
