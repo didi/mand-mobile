@@ -228,6 +228,11 @@
     "icon": "radio",
     "text": "单选框"
   }, {
+    "name": "Slider",
+    "path": "/slider",
+    "icon": "slider",
+    "text": "滑块"
+  }, {
     "name": "Switch",
     "path": "/switch",
     "icon": "switch",
