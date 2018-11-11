@@ -96,9 +96,9 @@ body.md-overlay-fixed
   left 0
   right 0
   bottom 0
-  background-color #fff
+  background-color overlay-bg
   overflow hidden
-  z-index 1500
+  z-index overlay-zindex
   &.is-fixed
     position fixed
 

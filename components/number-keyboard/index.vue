@@ -124,8 +124,8 @@ export default {
 
 <style lang="stylus">
 .md-number-keyboard
-  .md-popup, .md-popup-box
-    z-index number-keyboard-zindex !important
+  .md-popup
+    z-index number-keyboard-zindex
   .md-popup-box
     background-color color-bg-base
     padding-bottom constant(safe-area-inset-bottom)

@@ -1,5 +1,6 @@
 <template>
   <button
+    :type="nativeType"
     class="md-button"
     :class="[
       type,
@@ -35,6 +36,10 @@ export default {
     type: {
       type: String,
       default: 'default', // default, primary, warning, disabled, link
+    },
+    nativeType: {
+      type: String,
+      default: 'button',
     },
     icon: {
       type: String,

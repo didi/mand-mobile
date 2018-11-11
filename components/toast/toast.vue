@@ -92,7 +92,8 @@ export default {
 
 <style lang="stylus">
 .md-toast
-  z-index toast-zindex
+  .md-popup
+    z-index toast-zindex
   .md-icon
     flex-shrink 0
     color toast-color

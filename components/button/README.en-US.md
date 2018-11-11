@@ -21,7 +21,8 @@ Vue.component(Button.name, Button)
 #### Button Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------ |------|
-|type|-|String|`default`|`default/primary/warning/disabled/link`|
+|type|theme type|String|`default`|`default/primary/warning/disabled/link`|
+|native-type|button type|String|`button`|-|
 |size|-|String|`large`|`large/small`|
 |plain|-|Boolean|`false`|-|
 |round|-|Boolean|`false`|-|

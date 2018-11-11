@@ -3,7 +3,7 @@
     class="md-picker"
     :class="{'with-popup': !isView}"
   >
-    <template v-if="isView">  
+    <template v-if="isView">
       <md-picker-column
         ref="pickerColumn"
         :data="data"
@@ -15,7 +15,7 @@
         @change="$_onPickerChange"
       ></md-picker-column>
     </template>
-    <template v-else>  
+    <template v-else>
       <md-popup
         v-model="isPickerShow"
         position="bottom"
@@ -297,7 +297,7 @@ export default {
 
     refresh() {
       this.column.isScrollInitialed = false
-      /** 
+      /**
        * Manual call 'column.refresh' only when picker is in-view or popup is show,
        * otherwise 'column.refresh' will be called at popup's 'onBerforeShow' automatically
       */
@@ -312,8 +312,8 @@ export default {
 <style lang="stylus">
 .md-picker
   width 100%
-  &.with-popup .md-popup
-    z-index picker-zindex !important  
+  .md-popup
+    z-index picker-zindex
   .md-popup-box
     background-color color-bg-inverse
 </style>

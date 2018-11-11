@@ -336,9 +336,6 @@ export default {
 </script>
 
 <style lang="stylus">
-block()
-  float left
-  width 100%
 .md-cashier
   .md-popup-title-bar .md-popup-cancel
     .md-icon

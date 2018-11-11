@@ -89,7 +89,7 @@ export default {
       width 100%
       height 100%
 
-  .md-popup.with-mask, .md-popup .md-popup-box
+  .md-popup
     z-index landscape-zindex
 
   .landscape-content

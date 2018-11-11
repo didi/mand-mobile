@@ -156,7 +156,7 @@ export default {
 
 <style lang="stylus">
 .md-dialog
-  .md-popup.with-mask, .md-popup .md-popup-box
+  .md-popup
     z-index dialog-zindex
 
 .md-dialog-content

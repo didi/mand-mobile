@@ -129,6 +129,8 @@ export default {
 .md-action-sheet
   color action-sheet-color
   -webkit-font-smoothing antialiased
+  .md-popup
+    z-index action-sheet-zindex
   .md-popup-box
     background-color color-bg-base
 

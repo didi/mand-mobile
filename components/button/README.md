@@ -21,7 +21,8 @@ Vue.component(Button.name, Button)
 #### Button Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------ |------|
-|type|类型|String|`default`|`default/primary/warning/disabled/link`|
+|type|样式|String|`default`|`default/primary/warning/disabled/link`|
+|native-type|类型|String|`button`|-|
 |size|尺寸|String|`large`|`large/small`|
 |plain|朴素|Boolean|`false`|-|
 |round|圆角|Boolean|`false`|-|
