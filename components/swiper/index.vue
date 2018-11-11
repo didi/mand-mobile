@@ -91,6 +91,7 @@ export default {
       scroller: null,
       isStoped: false,
       $swiper: null,
+      transitionEndHandler: null,
     }
   },
 
@@ -164,21 +165,8 @@ export default {
           bouncing: false,
           // paging: true,
           scrollingComplete: () => {
-            this.$emit('after-change', this.fromIndex, this.toIndex)
-
-            if (this.isLastItem && this.isLoop) {
-              const x = this.isVertical ? 0 : this.firstIndex * this.dimension
-              const y = this.isVertical ? this.firstIndex * this.dimension : 0
-              this.scroller.scrollTo(x, y, false)
-              this.index = this.firstIndex
-            }
-
-            if (this.isFirstItem && this.isLoop) {
-              const x = this.isVertical ? 0 : this.lastIndex * this.dimension
-              const y = this.isVertical ? this.lastIndex * this.dimension : 0
-              this.scroller.scrollTo(x, y, false)
-              this.index = this.lastIndex
-            }
+            this.transitionEndHandler && this.transitionEndHandler()
+            this.transitionEndHandler = null
           },
         },
       )
@@ -412,7 +400,7 @@ export default {
       return index
     },
 
-    $_doAnimate(towards, options) {
+    $_doTransition(towards, options) {
       if (this.oItemCount === 0) {
         return
       }
@@ -463,6 +451,23 @@ export default {
       }
 
       setTimeout(() => {
+        this.transitionEndHandler = () => {
+          if (this.isLastItem && this.isLoop) {
+            const x = this.isVertical ? 0 : this.firstIndex * this.dimension
+            const y = this.isVertical ? this.firstIndex * this.dimension : 0
+            this.scroller.scrollTo(x, y, false)
+            this.index = this.firstIndex
+          }
+
+          if (this.isFirstItem && this.isLoop) {
+            const x = this.isVertical ? 0 : this.lastIndex * this.dimension
+            const y = this.isVertical ? this.lastIndex * this.dimension : 0
+            this.scroller.scrollTo(x, y, false)
+            this.index = this.lastIndex
+          }
+
+          this.$emit('after-change', this.fromIndex, this.toIndex)
+        }
         this.$_translate(this.$swiper, -this.dimension * this.index)
       }, 10)
     },
@@ -566,7 +571,7 @@ export default {
         }
       }
 
-      this.$_doAnimate(towards)
+      this.$_doTransition(towards)
 
       this.dragState = {}
 
@@ -577,11 +582,11 @@ export default {
 
     // MARK: public methods
     next() {
-      this.$_doAnimate('next')
+      this.$_doTransition('next')
     },
 
     prev() {
-      this.$_doAnimate('prev')
+      this.$_doTransition('prev')
     },
 
     goto(index) {
@@ -594,7 +599,7 @@ export default {
       }
       const towards = index > this.index ? 'next' : 'pre'
       this.index = index
-      this.$_doAnimate(towards, {
+      this.$_doTransition(towards, {
         index,
       })
     },
