@@ -44,5 +44,5 @@ export {default as Bill} from '../components/bill/demo'
 export {default as WaterMark} from '../components/water-mark/demo'
 export {default as Transition} from '../components/transition/demo'
 export {default as DetailItem} from '../components/detail-item/demo'
-export {default as Overlay} from '../components/overlay/demo'
-export {default as Slider} from '../components/slider/demo'/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */
+export {default as Slider} from '../components/slider/demo'
+/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */

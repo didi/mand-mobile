@@ -45,4 +45,5 @@ export const Bill =  r => require.ensure([], () => r(require('../components/bill
 export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
 export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')
 export const DetailItem =  r => require.ensure([], () => r(require('../components/detail-item/demo')), 'detail-item')
-export const Overlay =  r => require.ensure([], () => r(require('../components/overlay/demo')), 'overlay')export const Slider =  r => require.ensure([], () => r(require('../components/slider/demo')), 'slider')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const Slider =  r => require.ensure([], () => r(require('../components/slider/demo')), 'slider')
+/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

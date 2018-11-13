@@ -23,8 +23,8 @@ Vue.component(Landscape.name, Landscape)
 |----|-----|------|------|
 |v-model|是否展示|Boolean|`false`|
 |has-mask|是否有蒙层|Boolean|`true`|
-|scroll|内容区域是否可以滚动|Boolean|`false`|
 |mask-closable|是否可以通过点击蒙层关闭|Boolean|`false`|
+|full-screen|是否全屏|Boolean|`false`|
 
 #### Landscape Events
 

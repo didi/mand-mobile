@@ -23,8 +23,8 @@ Vue.component(Landscape.name, Landscape)
 |----|-----|------|------|
 |v-model|display popup layer or not|Boolean|`false`|
 |has-mask|has mask or not|Boolean|`true`|
-|scroll|content area can be scrolled or not|Boolean|`false`|
 |mask-closable|if popup layer can be closed through clicking on the mask|Boolean|`false`|
+|full-screen|whether display as full screen|Boolean|`false`|
 
 #### Landscape Events
 

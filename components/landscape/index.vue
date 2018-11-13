@@ -4,22 +4,24 @@
       v-model="isLandscapeShow"
       :mask-closable="maskClosable"
       prevent-scroll
-      :prevent-scroll-exclude="scroll ? '.landscape-content' : null"
+      prevent-scroll-exclude=".md-landscape-content"
       :has-mask="!fullScreen && hasMask"
-      :transition="fullScreen ? 'md-zoom' : 'md-punch'"
+      :transition="fullScreen ? 'md-fly' : 'md-punch'"
       @input="$emit('input', false)"
       @show="$emit('show')"
       @hide="$emit('hide')">
-      <div class="landscape-content" :class="{scroll}">
-        <slot></slot>
+      <div class="md-landscape-body" :class="{scroll}">
+        <div class="md-landscape-content">
+          <slot></slot>
+        </div>
+        <md-icon
+          class="md-landscape-close"
+          :class="{dark: !hasMask || fullScreen}"
+          @click="$_close"
+          :name="fullScreen ? 'clear' : 'close'"
+        />
       </div>
     </md-popup>
-    <div class="landscape-close"
-      @click="$_close"
-      v-show="isLandscapeShow"
-      :class="{dark: !hasMask || fullScreen}">
-      <md-icon name="close"></md-icon>
-    </div>
   </div>
 </template>
 
@@ -84,41 +86,45 @@ export default {
     .md-popup-box
       position absolute
       absolute-pos()
-      background landscape-fullscreen-bg
-    .landscape-content
+    .md-landscape-body
       width 100%
       height 100%
+      background landscape-fullscreen-bg
+    .md-landscape-content
+      width 100%
+      height 100%
+      overflow auto
+      -webkit-overflow-scrolling touch
+    .md-icon.md-landscape-close
+      position absolute
+      right 25px
+      top 25px
+      margin auto
 
   .md-popup
     z-index landscape-zindex
 
-  .landscape-content
-    display flex
-    justify-content center
-    align-items center
+  .md-icon.md-landscape-close
     position relative
-    width landscape-width
-    font-size font-body-large
+    display block
+    margin 50px auto 20px auto
+    font-size 50px
+    width 50px
+    height 50px
+    line-height 50px
     text-align center
-    border-radius landscape-radius
-    overflow hidden
-    >img
-      width 100%
-      height 100%
-      display block
-    &.scroll
-      max-height 700px
-      overflow-y scroll
-  .landscape-close
-    position fixed
-    z-index landscape-zindex
-    left 0
-    right 0
-    bottom 10%
     color color-text-base-inverse
-    text-align center
     &.dark
       color color-text-base
-    .md-icon
-      font-size 50px
+      opacity 0.5
+
+.md-landscape-content
+  width landscape-width
+  font-size font-body-large
+  overflow auto
+  -webkit-overflow-scrolling touch
+  box-sizing border-box
+  img
+    max-width 100%
+    height auto
 </style>

@@ -148,11 +148,6 @@
     "icon": "dialog",
     "text": "模态窗"
   }, {
-    "name": "Overlay",
-    "path": "/overlay",
-    "icon": "overlay",
-    "text": "全屏窗口"
-  }, {
     "name": "Picker",
     "path": "/picker",
     "icon": "picker",

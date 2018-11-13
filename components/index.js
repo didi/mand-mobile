@@ -56,7 +56,6 @@ import Bill from './bill'
 import WaterMark from './water-mark'
 import Transition from './transition'
 import DetailItem from './detail-item'
-import Overlay from './overlay'
 import Slider from './slider'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
@@ -124,7 +123,6 @@ export const components = {
   TabPane,
   Transition,
   DetailItem,
-  Overlay,
   Slider,
   /* @init<%${componentNameUpper},%> */
 }
@@ -209,7 +207,6 @@ export {
   TabPane,
   Transition,
   DetailItem,
-  Overlay,
   Slider,
   /* @init<%${componentNameUpper},%> */
 }
