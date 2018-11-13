@@ -101,7 +101,7 @@ export default {
       top 25px
       margin auto
 
-  .md-popup
+  .md-popup, .md-popup-box
     z-index landscape-zindex
 
   .md-icon.md-landscape-close
