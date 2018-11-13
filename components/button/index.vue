@@ -166,7 +166,7 @@ export default {
   &.round
     border-radius button-height
     &:after
-      border-radius button-height
+      border-radius button-height !important
 
   &.inline
     display inline-block
@@ -190,6 +190,7 @@ export default {
     font-size button-small-font-size
     font-weight font-weight-normal
     color button-primary-fill
+    background transparent
     &.inactive
       color color-text-disabled
       opacity 1
