@@ -3,39 +3,40 @@
     <div class="water-mark-container">
       <slot></slot>
     </div>
-    <div class="water-mark-list"
-      v-if="!!$scopedSlots.watermark || content"
-      :style="{
-        opacity,
-        transform: `rotate(${rotate}deg)`
-      }"
-    >
-      <ul
-        v-for="i in (repeatY ? 50 : 1)"
-        class="water-mark-line"
+    <div class="water-mark-list" v-if="!!$scopedSlots.watermark || content">
+      <div class="water-mark-list-wrapper"
         :style="{
-          marginBottom: spacing,
+          opacity,
+          transform: `rotate(${rotate}deg)`
         }"
-        :key="`line-${i}`"
       >
-        <li
-          v-for="j in (repeatX ? 50 : 1)"
-          class="water-mark-item"
-          :style="i % 2 === 0 ? {
-            marginLeft: repeatX ? spacing : 0,
-          } : {
-            marginRight: repeatX ? spacing : 0,
+        <ul
+          v-for="i in (repeatY ? 50 : 1)"
+          class="water-mark-line"
+          :style="{
+            marginBottom: spacing,
           }"
-          :key="`item-${j}`"
+          :key="`line-${i}`"
         >
-          <p v-if="content">{{ content }}</p>
-          <slot
-            v-else-if="!!$scopedSlots.watermark"
-            name="watermark"
-            :coord="{row: i, col: j}"
-          ></slot>
-        </li>
-      </ul>
+          <li
+            v-for="j in (repeatX ? 50 : 1)"
+            class="water-mark-item"
+            :style="i % 2 === 0 ? {
+              marginLeft: repeatX ? spacing : 0,
+            } : {
+              marginRight: repeatX ? spacing : 0,
+            }"
+            :key="`item-${j}`"
+          >
+            <p v-if="content">{{ content }}</p>
+            <slot
+              v-else-if="!!$scopedSlots.watermark"
+              name="watermark"
+              :coord="{row: i, col: j}"
+            ></slot>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -88,6 +89,7 @@
   display flex
   flex-direction column
   justify-content center
+  overflow hidden
 
 .water-mark-line
   position relative
