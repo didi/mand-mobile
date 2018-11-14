@@ -30,6 +30,12 @@ Vue.component(Bill.name, Bill)
 ##### default
 默认内容插错
 
+##### header
+头部内容插槽
+
+##### footer
+底部内容插槽
+
 ##### watermask
 水印内容scoped插槽
 

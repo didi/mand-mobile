@@ -30,6 +30,12 @@ Vue.component(Bill.name, Bill)
 ##### default
 Default slot of content
 
+##### header
+Header slot
+
+##### footer
+Footer slot
+
 ##### watermask
 scoped slot of watermask content
 

@@ -4,8 +4,13 @@
     :content="waterMark"
   >
     <header class="md-bill-header">
-      <h4 class="md-bill-title" v-if="title" v-text="title"></h4>
-      <div class="md-bill-no" v-if="no">NO.{{no}}</div>
+      <template v-if="!$slots.header">
+        <h4 class="md-bill-title" v-if="title" v-text="title"></h4>
+        <div class="md-bill-no" v-if="no">NO.{{no}}</div>
+      </template>
+      <template v-else>
+        <slot name="header"></slot>
+      </template>
     </header>
     <div class="md-bill-neck">
       <span></span>
@@ -14,13 +19,13 @@
       <div class="md-bill-detail">
         <slot></slot>
       </div>
-      <footer v-if="$slots.description" class="md-bill-description">
-        <slot name="description"></slot>
+      <footer v-if="$slots.footer" class="md-bill-footer">
+        <slot name="footer"></slot>
       </footer>
     </div>
-    <div slot="watermark" slot-scope="props" v-if="!!$scopedSlots.watermark">
+    <template slot="watermark" slot-scope="props" v-if="!!$scopedSlots.watermark">
       <slot name="watermark" :coord="props.coord"></slot>
-    </div>
+    </template>
   </md-water-mark>
 </template>
 
@@ -55,15 +60,13 @@ export default {
 <style lang="stylus">
 .md-bill
   position relative
-  background none
-  overflow hidden
+  background bill-bg
 
 .md-bill-header
   display flex
   align-items center
   justify-content space-between
   padding 20px 32px 0
-  background-color bill-bg
 
 .md-bill-title
   color bill-name-color
@@ -72,7 +75,7 @@ export default {
   font-family Songti SC
 
 .md-bill-no
-   color bill-no-color
+  color bill-no-color
   font-size bill-no-font-size
 
 .md-bill-neck
@@ -80,7 +83,6 @@ export default {
   height 36px
   padding 10px
   margin 0 18px
-  background-color bill-bg
   box-sizing border-box
   span
     position absolute
@@ -89,35 +91,12 @@ export default {
     left 10px
     right 10px
     height 1px
-    hairline(bottom, field-item-border-color)
-  &::before,
-  &::after
-    content ''
-    display block
-    position absolute
-    top 0
-    width 36px
-    height 36px
-    border-radius 18px
-  &::before
-    left -36px
-    box-shadow 10px 0 0 bill-bg
-  &::after
-    right -36px
-    box-shadow -10px 0 0 bill-bg
+    border-top dashed 1px field-item-border-color
+    transform scaleY(0.5)
 
 .md-bill-content
   padding 0 32px 20px 32px
-  background-color bill-bg
 
 .md-bill-detail
   padding-bottom 40px
-
-.md-bill-description
-  position relative
-  padding-top 40px
-  line-height 1.5
-  color bill-description-color
-  font-size bill-description-font-size
-  hairline(top, field-item-border-color)
 </style>
