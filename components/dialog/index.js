@@ -132,7 +132,7 @@ Dialog.alert = ({
  * @return {Dialog}
  */
 Dialog.succeed = props => {
-  props.icon = 'success'
+  props.icon = 'success-color'
   return Dialog.confirm(props)
 }
 
@@ -143,7 +143,7 @@ Dialog.succeed = props => {
  * @return {Dialog}
  */
 Dialog.failed = props => {
-  props.icon = 'fail'
+  props.icon = 'warn-color'
   return Dialog.confirm(props)
 }
 
