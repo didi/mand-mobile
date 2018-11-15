@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import TipOptions from './tip'
+import {randomId} from '../_util'
 const Tip = Vue.extend(TipOptions)
 
 export default {
@@ -10,9 +11,36 @@ export default {
       type: String,
       default: 'top',
     },
+    name: {
+      type: [String, Number],
+      default() {
+        return randomId('tip')
+      },
+    },
+    icon: {
+      type: String,
+    },
+    iconSvg: {
+      type: Boolean,
+      default: false,
+    },
     content: {
       type: [String, Number],
       default: '',
+    },
+    closable: {
+      type: Boolean,
+      default: true,
+    },
+    fill: {
+      type: Boolean,
+      default: false,
+    },
+    offset: {
+      type: Object,
+      default() {
+        return {top: 0, left: 0}
+      },
     },
   },
 
@@ -41,13 +69,19 @@ export default {
       return this.$slots.default
     }
 
-    const firstNode = this.$slots.default[0]
+    let firstNode = null
+    this.$slots.default.some(node => {
+      firstNode = node
+      return !!node.data
+    })
 
-    const on = (firstNode.data.on = firstNode.data.on || {})
-    const nativeOn = (firstNode.data.nativeOn = firstNode.data.nativeOn || {})
+    if (firstNode) {
+      const on = (firstNode.data.on = firstNode.data.on || {})
+      const nativeOn = (firstNode.data.nativeOn = firstNode.data.nativeOn || {})
 
-    on.click = this.$_addEventHandle(on.click, this.show)
-    nativeOn.click = this.$_addEventHandle(nativeOn.click, this.show)
+      on.click = this.$_addEventHandle(on.click, this.show)
+      nativeOn.click = this.$_addEventHandle(nativeOn.click, this.show)
+    }
 
     return firstNode
   },
@@ -87,6 +121,13 @@ export default {
       }
     },
 
+    $_getSize(node) {
+      return {
+        width: node.offsetWidth,
+        height: node.offsetHeight,
+      }
+    },
+
     /**
      * Get the relative position of an element
      * inside a wrapper
@@ -120,8 +161,12 @@ export default {
 
       const tipVM = (this.$_tipVM = new Tip({
         propsData: {
+          icon: this.icon,
+          iconSvg: this.iconSvg,
           placement: this.placement,
           content: this.content,
+          closable: this.closable,
+          name: this.name,
         },
       }).$mount())
 
@@ -142,30 +187,48 @@ export default {
       const tipEl = this.$_tipVM.$el
       const referenceEl = this.$el
       const delta = this.$_getPosition(this.$el, this.wrapperEl)
+      const size = this.$_getSize(this.$el, this.wrapperEl)
+      const offsetTop = this.offset.top || 0
+      const offsetLeft = this.offset.left || 0
+
+      let tipElWidth = tipEl.offsetWidth
+      let tipElHeight = tipEl.offsetHeight
+      let cssText = ''
+
+      if (this.fill && (this.placement === 'top' || this.placement === 'bottom')) {
+        tipElWidth = size.width
+        cssText += `width: ${tipElWidth}px;`
+      }
+
+      if (this.fill && (this.placement === 'left' || this.placement === 'right')) {
+        tipElHeight = size.height
+        cssText += `height: ${tipElHeight}px;`
+      }
 
       switch (this.placement) {
         case 'left':
-          delta.y += (referenceEl.offsetHeight - tipEl.offsetHeight) / 2
-          delta.x -= tipEl.offsetWidth + 10
+          delta.y += (referenceEl.offsetHeight - tipElHeight) / 2
+          delta.x -= tipElWidth + 10
           break
 
         case 'right':
-          delta.y += (referenceEl.offsetHeight - tipEl.offsetHeight) / 2
+          delta.y += (referenceEl.offsetHeight - tipElHeight) / 2
           delta.x += referenceEl.offsetWidth + 10
           break
 
         case 'bottom':
           delta.y += referenceEl.offsetHeight + 10
-          delta.x += (referenceEl.offsetWidth - tipEl.offsetWidth) / 2
+          delta.x += (referenceEl.offsetWidth - tipElWidth) / 2
           break
 
         default:
-          delta.y -= tipEl.offsetHeight + 10
-          delta.x += (this.$el.offsetWidth - tipEl.offsetWidth) / 2
+          delta.y -= tipElHeight + 10
+          delta.x += (this.$el.offsetWidth - tipElWidth) / 2
           break
       }
 
-      this.$_tipVM.$el.style.cssText = `position: absolute; top: ${delta.y}px; left: ${delta.x}px;`
+      cssText += `position: absolute; top: ${delta.y + offsetTop}px; left: ${delta.x + offsetLeft}px;`
+      this.$_tipVM.$el.style.cssText = cssText
     },
 
     /**
@@ -179,7 +242,7 @@ export default {
       }
 
       this.layout()
-      this.$emit('show')
+      this.$emit('show', this.name)
     },
 
     /**
@@ -188,7 +251,7 @@ export default {
     hide() {
       if (this.$_tipVM && this.$_tipVM.$el.parentNode !== null) {
         this.$_tipVM.$el.parentNode.removeChild(this.$_tipVM.$el)
-        this.$emit('hide')
+        this.$emit('hide', this.name)
       }
     },
   },
