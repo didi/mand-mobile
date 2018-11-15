@@ -14,7 +14,7 @@
     </md-dialog>
 
     <md-dialog
-      icon="alert"
+      icon="location"
       title="窗口标题"
       :closable="true"
       v-model="iconDialog.open"
