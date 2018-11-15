@@ -16,70 +16,24 @@
         <md-icon name="close" size="lg" slot="cancel"></md-icon>
       </md-popup-title-bar>
       <div class="md-cashier-container">
+        <slot name="header" :scene="scene"></slot>
+
         <!-- Choose pay channel -->
         <div
           v-if="scene === 'choose'"
           class="md-cashier-block md-cashier-choose"
           :key="sceneKey">
-          <div class="choose-text">
-            <p class="choose-title" v-if="paymentTitle" v-html="paymentTitle"></p>
-            <p class="choose-number" v-if="paymentAmount" v-html="paymentAmount"></p>
-            <p class="choose-describe" v-if="paymentDescribe" v-html="paymentDescribe"></p>
-          </div>
-          <div class="choose-channel" :class="{active: isChannelActive}">
-            <ul class="choose-channel-list" v-if="isChannelShow">
-              <li class="choose-channel-item"
-                v-for="(item, index) in channels"
-                :class="{default: index === defaultIndex}"
-                :key="index"
-                @click="$_onChannelItemClick(item, index)">
-                <i class="item-icon" :class="item.icon">
-                  <md-icon :name="item.icon" :svg="!!item.iconSvg"></md-icon>
-                </i>
-                <span class="item-label" v-html="item.text || item.label"></span>
-                <template v-if="!isSingle">
-                  <md-icon
-                    v-if="index === activeChannelIndex"
-                    name="checked"
-                    class="item-check"
-                  ></md-icon>
-                  <md-icon
-                    v-else
-                    name="check"
-                    class="item-check"
-                  ></md-icon>
-                </template>
-              </li>
-            </ul>
-            <ul class="choose-channel-list" v-else-if="channels[defaultIndex]">
-              <li class="choose-channel-item default" @click="$_onChannelItemClick(channels[defaultIndex], defaultIndex)">
-                <i class="item-icon" :class="channels[defaultIndex].icon">
-                  <md-icon :name="channels[defaultIndex].icon"></md-icon>
-                </i>
-                <span class="item-label" v-html="channels[defaultIndex].text || channels[defaultIndex].label"></span>
-                <md-icon
-                  v-if="!isSingle"
-                  name="checked"
-                  class="item-check"
-                ></md-icon>
-              </li>
-            </ul>
-            <div
-              v-if="!isSingle"
-              class="choose-channel-more"
-              :class="{disabled: isChannelActive}"
-              v-html="moreButtonText"
-              @click="$_onChannelMore"
-            ></div>
-          </div>
-          <div class="md-cashier-block-btn">
-            <md-button
-              class="md-cashier-pay-button"
-              type="primary"
-              v-html="payButtonText"
-              @click="$_onChannelBtnClick"
-            ></md-button>
-          </div>
+          <md-cashier-channel
+            :payment-title="paymentTitle"
+            :payment-amount="paymentAmount"
+            :payment-describe="paymentDescribe"
+            :more-button-text="moreButtonText"
+            :pay-button-text="payButtonText"
+            :pay-button-disabled="payButtonDisabled"
+            :channels="channels"
+            :default-index="defaultIndex"
+            v-on="$listeners"
+          />
         </div>
 
         <!-- Captcha -->
@@ -94,6 +48,7 @@
             :countNormalText="sceneOption.captcha.countNormalText"
             :countActiveText="sceneOption.captcha.countActiveText"
             :auto-countdown="sceneOption.captcha.autoCountdown"
+            :brief="sceneOption.captcha.brief"
             is-view
             @send="sceneOption.captcha.onSend"
             @submit="sceneOption.captcha.onSubmit"
@@ -137,7 +92,7 @@
           class="md-cashier-block md-cashier-fail"
           :key="sceneKey">
           <div class="md-cashier-block-icon">
-            <md-icon name="warn"></md-icon>
+            <md-icon name="warn-color"></md-icon>
           </div>
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
           <div class="md-cashier-block-btn">
@@ -164,6 +119,7 @@ import Button from '../button'
 import Icon from '../icon'
 import RollerSuccess from '../activity-indicator/roller-success'
 import {noop, extend} from '../_util'
+import Channel from './channel'
 
 export default {
   name: 'md-cashier',
@@ -175,6 +131,7 @@ export default {
     [Button.name]: Button,
     [Icon.name]: Icon,
     [RollerSuccess.name]: RollerSuccess,
+    [Channel.name]: Channel,
   },
 
   props: {
@@ -215,6 +172,10 @@ export default {
       type: String,
       default: '\u786e\u5b9a\u652f\u4ed8', // 确定支付
     },
+    payButtonDisabled: {
+      type: Boolean,
+      default: false,
+    },
     moreButtonText: {
       type: String,
       default: '\u66f4\u591a\u652f\u4ed8\u65b9\u5f0f', // 更多支付方式
@@ -224,9 +185,6 @@ export default {
   data() {
     return {
       isCashierShow: false,
-      isChannelShow: false,
-      isChannelActive: false,
-      activeChannelIndex: -1,
       scene: 'choose', // choose, captcha, loading, success, fail
       sceneKey: Date.now(),
       sceneOption: {
@@ -245,6 +203,7 @@ export default {
         },
         captcha: {
           text: '',
+          brief: '',
           maxlength: 4,
           count: 60,
           autoCountdown: true,
@@ -255,18 +214,9 @@ export default {
     }
   },
 
-  computed: {
-    isSingle() {
-      return !(this.channels.length > 1)
-    },
-  },
-
   watch: {
     value(val) {
       this.isCashierShow = val
-    },
-    defaultIndex(val) {
-      this.activeChannelIndex = val
     },
     isCashierShow(val) {
       this.$emit('input', val)
@@ -285,7 +235,6 @@ export default {
   methods: {
     // MARK: private methods
     $_initialCashier() {
-      this.activeChannelIndex = this.defaultIndex
       this.isCashierShow = this.value
     },
     $_resetCashier() {
@@ -294,23 +243,6 @@ export default {
       this.isChannelActive = false
     },
     // MARK: events handler, 如 $_onButtonClick
-    $_onChannelItemClick(item, index) {
-      this.activeChannelIndex = index
-      this.$emit('select', item)
-    },
-    $_onChannelBtnClick() {
-      const item = this.channels[this.activeChannelIndex]
-      this.$emit('pay', item)
-    },
-    $_onChannelMore() {
-      if (this.isChannelActive) {
-        return
-      }
-      this.isChannelShow = true
-      this.$nextTick(() => {
-        this.isChannelActive = true
-      })
-    },
     $_onPopupShow() {
       this.$emit('show')
     },
@@ -374,81 +306,8 @@ export default {
         block()
         padding 0 20px 20px
         box-sizing border-box
-      &.md-cashier-choose
-        .choose-text
-          clearfix()
-          position relative
-          padding 65px 0
-          hairline(bottom, color-border-minor)
-          p
-            block()
-            text-align center
-            &.choose-title
-              font-size cashier-choose-title-font-size
-              color cashier-choose-title-color
-            &.choose-number
-              margin-top 35px
-              font-size cashier-choose-amount-font-size
-              font-family DINPro-Medium
-              color cashier-choose-amount-color
-            &.choose-describe
-              margin-top 15px
-              font-size cashier-choose-describe-font-size
-              color cashier-choose-describe-color
-        .choose-channel
-          clearfix()
-          max-height 500px
-          padding 40px 120px
-          box-sizing border-box
-          overflow auto
-          .choose-channel-list
-            clearfix()
-            max-height 64px
-            transition all .5s ease-in
-            overflow hidden
-            .choose-channel-item
-              block()
-              position relative
-              padding 15px 40px 15px 0
-              font-size cashier-choose-channel-font-size
-              color cashier-choose-channel-color
-              box-sizing border-box
-              .item-icon
-                float left
-                width 32px
-                height 32px
-              .item-label
-                float left
-                margin-left h-gap-sm
-              .item-check
-                position absolute
-                top 50%
-                right 0
-                transform translateY(-50%)
-                &.md-icon
-                  color cashier-choose-channel-icon-color
-          .choose-channel-more
-            margin-top 10px
-            font-size cashier-choose-more-font-size
-            color cashier-choose-more-color
-            text-align center
-            &:after
-              content ""
-              position relative
-              top 20px
-              width 0
-              height 0
-              margin-left 10px
-              border-left solid 8px transparent
-              border-right solid 8px transparent
-              border-top solid 8px color-text-caption
-            &.disabled
-              visibility hidden
-          &.active
-            .choose-channel-list .choose-channel-item
-              display block
-            .choose-channel-list
-              max-height 1000px !important
+      // &.md-cashier-choose
+        
       &.md-cashier-captcha
         .md-captcha
           block()
@@ -472,17 +331,10 @@ export default {
           position relative
           text-align center
           line-height 100px
-          .md-icon-warn
+          .md-icon-warn-color
             position relative
             z-index 2
             color #FFF6F1
-            font-size 100px
-          &:after
-            content ""
-            position absolute
-            left 20%
-            top 20%
-            width 60%
-            height 60%
-            background #494C5B
+            width 100px
+            height 100px
 </style>

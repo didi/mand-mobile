@@ -46,7 +46,8 @@ To the next step of Cashier
 
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|text|instructions of sending verification code | String |-|support `html fragment`|
+|text|instructions of sending verification code | String |-| - |
+|brief| brief of sending verification code | String |-| - |
 |maxlength|length of verification code | Number  |`4`|`-1` means no restriction of the input length|
 |count|countdown of resending verification code | Number  |`60`|`0` means no resending display |
 |onSend|Callback of sending verification code| Function(countdown: Function) |-|`countdown` is the function of starting counting down|
