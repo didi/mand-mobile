@@ -2,7 +2,8 @@
   <div
     class="md-notice-bar"
     :class="[
-      isCircle && 'md-notice-bar-circle'
+      isCircle && 'md-notice-bar-circle',
+      type
     ]"
     v-if="isShow"
   >
@@ -50,6 +51,10 @@ export default {
     mode: {
       type: String,
       default: '',
+    },
+    type: {
+      type: String,
+      default: 'default', // default/warning
     },
     time: {
       type: Number,
@@ -154,10 +159,13 @@ export default {
   padding-left 32px
   &.md-notice-bar-circle
     border-radius notice-bar-border-radius
+  &.warning
+    background-color notice-bar-fill-warning
+    color notice-bar-color-warning
 
 .md-notice-bar-left,
 .md-notice-bar-right
-  padding-right 24px
+  padding-right 14px
   display flex
   align-items center
 
