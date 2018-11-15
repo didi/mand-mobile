@@ -27,7 +27,8 @@ Vue.component(Captcha.name, Captcha)
 |mask|是否掩码|Boolean|`false`|
 |system|是否使用系统默认键盘|Boolean|`false`|
 |auto-countdown<sup class="version-after">1.3.0+</sup>|是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|
-|title|窗口标题|String|-|
+|title|标题|String|-|
+|brief|描述|String|-|-|
 |appendTo|挂载节点|HTMLElement|`document.body`|
 |count|倒计时时长, 设置为0的时候不显示倒计时按钮|Number|`60`|
 |countNormalText<sup class="version-after">1.3.0+</sup>|发送验证码正常状态文字|String| `发送验证码` |

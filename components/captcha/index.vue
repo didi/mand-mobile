@@ -20,7 +20,8 @@
         :autofocus="false"
       >
         <footer class="md-captcha-footer">
-          <div class="md-captcha-error" v-text="errorMsg"></div>
+          <div class="md-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
+          <div class="md-captcha-brief" v-else v-text="brief"></div>
           <button
             class="md-captcha-btn"
             v-if="count"
@@ -59,7 +60,8 @@
           @submit="$_onSubmit"
         >
           <footer class="md-captcha-footer">
-            <div class="md-captcha-error" v-text="errorMsg"></div>
+            <div class="md-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
+            <div class="md-captcha-brief" v-else v-text="brief"></div>
             <button
               class="md-captcha-btn"
               v-if="count"
@@ -90,6 +92,10 @@ export default {
   props: {
     title: {
       type: String,
+    },
+    brief: {
+      type: String,
+      default: '',
     },
     value: {
       type: Boolean,
@@ -268,9 +274,12 @@ export default {
   align-items center
   overflow hidden
 
-.md-captcha-error
+.md-captcha-error, .md-captcha-brief
   flex 1 1 0%
+.md-captcha-error
   color captcha-error-color
+.md-captcha-brief
+  color captcha-brief-color
 
 .md-captcha-btn
   display inline-block

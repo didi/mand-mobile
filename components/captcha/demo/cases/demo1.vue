@@ -3,6 +3,7 @@
     <md-captcha
       :maxlength="4"
       :isView="true"
+      brief="最新验证码依然有效，请勿重发"
     >
       验证码已发送至186****5407
     </md-captcha>
