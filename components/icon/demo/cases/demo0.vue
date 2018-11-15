@@ -11,10 +11,6 @@
       ></md-icon>
       <p>{{ icon }}</p>
     </div>
-    <div class="md-example-item">
-      <md-icon name="spinner" size="lg" style="-webkit-filter:invert(1)"></md-icon>
-      <p>spinner</p>
-    </div>
   </div>
 </template>
 
@@ -23,7 +19,7 @@
 export default {
   name: 'icon-demo',
   /* DELETE */
-  title: '图标',
+  title: '字体图标',
   codeSandBox: 'https://codesandbox.io/s/84x92qw2rl',
   /* DELETE */
   components: {
@@ -32,6 +28,9 @@ export default {
   data() {
     return {
       iconList: [
+        'rectangle',
+        'right',
+        'wrong',
         'arrow-left',
         'arrow-right',
         'arrow-up',
@@ -48,10 +47,13 @@ export default {
         'question',
         'security',
         'rmb',
+        'wait',
         'check',
         'checked/success',
+        'check-disabled',
         'clear/fail',
         'warn',
+        'info-solid',
         'scan',
         'share',
         'back',

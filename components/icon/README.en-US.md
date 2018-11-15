@@ -28,7 +28,7 @@ Vue.component(Icon.name, Icon)
 
 ### Appendix
 
-As for svg icons, you need to use <a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>, svg file name is the icon name.
+As for custom svg icons, you need to use <a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>, svg file name is the icon name.
 
 1. Install Dependencies
 
