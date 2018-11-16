@@ -6,7 +6,7 @@
       <p class="choose-describe" v-if="paymentDescribe" v-html="paymentDescribe"></p>
     </div>
     <div class="choose-channel" :class="{active: isChannelActive}">
-      <div class="choose-channel-list" v-if="isChannelShow">
+      <div class="choose-channel-list" v-if="isChannelShow || isSingle">
         <template v-for="(item, index) in channels">
           <md-cashier-channel-item
             :class="{default: index === defaultIndex}"
@@ -83,7 +83,7 @@ export default {
 
   computed: {
     isSingle() {
-      return !(this.channels.length > 1)
+      return !(this.channels.length > 2)
     },
   },
 
