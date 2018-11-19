@@ -686,7 +686,7 @@ export default {
         visibility hidden
       .md-swiper-indicator
         width 4px
-        height 28px
+        height 16px
         margin 2.5px 0
 
 .md-swiper-container
@@ -704,11 +704,11 @@ export default {
     transform translateX(-50%)
 
 .md-swiper-indicator
-  width 28px
+  width 16px
   height 4px
   display inline-block
   background #ddd
-  margin 0 2.5px
+  margin 0 3px
   &.md-swiper-indicator-active
     background swiper-indicator-fill
 </style>

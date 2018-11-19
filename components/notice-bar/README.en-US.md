@@ -22,7 +22,8 @@ Vue.component(NoticeBar.name, NoticeBar)
 #### NoticeBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|mode|notice bar mode|String|-|closable/link, priority is less than slot|
+|mode|notice bar mode|String|-|`closable`/link, priority is less than slot|
+|type|theme|-|`default`/`default/warning`|
 |time|display time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
 |isCircle|notice bar is oval display or not|Boolean|`false`|-|
 |multiRows|Content exceeds line break display|Boolean|`false`|Priority is heigher than scrollable|

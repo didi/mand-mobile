@@ -1,24 +1,38 @@
 <template>
-  <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-1">
-    <md-notice-bar>
-      <md-icon slot="left" class="md-notice-demo-icon md-notice-demo-icon-left" name="security"></md-icon>
-      为了确保您的资金安全，请设置支付密码。
+  <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-6">
+    <md-notice-bar
+      mode="closable"
+      icon="volumn"
+      scrollable
+    >
+      {{ text }}
     </md-notice-bar>
   </div>
 </template>
 
-<script>import {NoticeBar, Icon} from 'mand-mobile'
+<script>import {NoticeBar} from 'mand-mobile'
 
 export default {
   name: 'notice-bar-demo',
   /* DELETE */
-  title: '自定义',
+  title: '滚动播放',
   titleEnUS: 'With icon',
   codeSandBox: 'https://codesandbox.io/s/53zlz1nj24',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
-    [Icon.name]: Icon,
+  },
+  /* DELETE */
+  data() {
+    return {
+      text: '就是想证明这是一段很长的文字',
+    }
+  },
+  /* DELETE */
+  mounted() {
+    setTimeout(() => {
+      this.text = '就是想证明这是一段很长的文字，是一段萌萌哒的文字，你看还会滚动呢～'
+    }, 4000)
   },
 }
 </script>

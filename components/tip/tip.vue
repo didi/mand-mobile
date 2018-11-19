@@ -1,7 +1,15 @@
 <template>
   <div class="md-tip" :class="wrapperCls">
     <div class="md-tip-content">
-      <template>{{content}}</template>
+      <template>
+        <md-icon
+          v-if="icon"
+          class="content-icon"
+          :name="icon"
+          :svg="iconSvg"
+        />
+        <div class="content-text" v-text="content"></div>
+      </template>
       <md-icon
         v-if="closable"
         name="close"
@@ -29,7 +37,16 @@ export default {
       type: Boolean,
       default: true,
     },
+    icon: {
+      type: String,
+    },
+    iconSvg: {
+      type: Boolean,
+    },
     content: {
+      type: [String, Number],
+    },
+    name: {
       type: [String, Number],
     },
   },
@@ -39,6 +56,7 @@ export default {
       return {
         'has-close': this.closable,
         [`is-${this.placement}`]: ['left', 'bottom', 'right'].indexOf(this.placement) !== -1,
+        [this.name]: !!this.name,
       }
     },
   },
@@ -56,16 +74,24 @@ export default {
 .md-tip
   position relative
   display inline-block
-  max-width 400px
+  // max-width 400px
   z-index tip-zindex
 
 .md-tip-content
+  clearfix()
   position relative
   padding tip-padding
   color tip-color
   font-size tip-font-size
   line-height 1.2
   z-index 2
+  .content-icon
+    float left
+    margin-right 14px
+  .content-text
+    float left
+    margin-top 2px
+
 
 .md-tip-bg
   position absolute

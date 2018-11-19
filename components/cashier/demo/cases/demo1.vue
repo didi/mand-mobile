@@ -1,30 +1,5 @@
 <template>
   <div class="md-example-child md-example-child-cashier">
-    <md-field
-      title="支付结果"
-    >
-      <md-radio-list
-        v-model="cashierResult"
-        :options="cashierResults"
-      />
-    </md-field>
-    <md-field
-      title="支付配置"
-    >
-      <md-input-item
-        title="支付金额"
-        align="right"
-        type="money"
-        v-model="cashierAmount"
-      >
-      </md-input-item>
-      <md-field-item
-        title="发送验证码"
-        align="right"
-      >
-        <md-switch v-model="isCashierCaptcha"></md-switch>
-      </md-field-item>
-    </md-field>
     <md-button @click="isCashierhow = !isCashierhow">{{ isCashierhow ? '收起收银台' : '唤起收银台' }}</md-button>
     <md-cashier
       ref="cashier"
@@ -35,25 +10,34 @@
       @select="onCashierSelect"
       @pay="onCashierPay"
       @cancel="onCashierCancel"
-    ></md-cashier>
+    >
+      <div slot-scope="{ scene }" slot="header">
+        <md-notice-bar
+          v-if="scene === 'choose'"
+          mode="closable"
+          icon="warn"
+          type="warning"
+        >
+          该银行3:00-12:00系统维护，请更换其他银行卡
+        </md-notice-bar>
+      </div>
+    </md-cashier>
 	</div>
 </template>
 
-<script>import {Button, RadioList, Field, FieldItem, InputItem, Switch, Cashier, Toast} from 'mand-mobile'
+<script>import {Button, Cashier, Toast, NoticeBar} from 'mand-mobile'
 
 export default {
   name: 'cashier-demo',
   /* DELETE */
   height: 700,
+  title: '使用插槽及其他配置',
+  titleEnUs: 'Using slots and other configurations',
   /* DELETE */
   components: {
     [Button.name]: Button,
-    [RadioList.name]: RadioList,
-    [Field.name]: Field,
-    [FieldItem.name]: FieldItem,
-    [InputItem.name]: InputItem,
-    [Switch.name]: Switch,
     [Cashier.name]: Cashier,
+    [NoticeBar.name]: NoticeBar,
   },
   data() {
     return {
@@ -74,28 +58,16 @@ export default {
       cashierChannels: [
         {
           icon: 'cashier-icon-1',
-          text: '招商银行(0056)',
+          text: '自定义银行(xxxx)',
+          desc: '当前银行维护中',
           value: '001',
-        },
-        {
-          icon: 'cashier-icon-2',
-          text: '支付宝支付',
-          value: '002',
-        },
-        {
-          icon: 'cashier-icon-3',
-          text: '微信支付',
-          value: '003',
-        },
-        {
-          icon: 'cashier-icon-4',
-          text: 'QQ钱包支付',
-          value: '004',
-        },
-        {
-          icon: 'cashier-icon-5',
-          text: '一网通支付',
-          value: '005',
+          disabled: true,
+          action: {
+            text: '更换',
+            handler: () => {
+              Toast.info('点击更换银行卡')
+            },
+          },
         },
       ],
     }
@@ -110,7 +82,6 @@ export default {
       if (this.isCashierCaptcha) {
         this.cashier.next('captcha', {
           text: 'Verification code sent to 156 **** 8965',
-          brief: 'The latest verification code is still valid',
           autoCountdown: false,
           countNormalText: 'Send Verification code',
           countActiveText: 'Retransmission after {$1}s',

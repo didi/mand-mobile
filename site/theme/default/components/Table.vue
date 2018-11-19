@@ -80,9 +80,13 @@ export default {
       this.tableShow = false
     },
     jump (item) {
-      this.$router.push({
-        path: `${item.path}?anchor=${item.hash || ''}`,
-      })
+      if (/[a-zA-z]+:\/\/[^\s]*/.test(item.path)) {
+        location.href = item.path
+      } else {
+        this.$router.push({
+          path: `${item.path}?anchor=${item.hash || ''}`,
+        })
+      }
     }
   }
 }

@@ -190,16 +190,6 @@ export default {
   color dialog-icon-fill
   font-size dialog-icon-size
   line-height dialog-icon-size
-  &.md-icon-success, &.md-icon-warn, &.md-icon-fail
-    fill #F3F4F5
-    color #F3F4F5
-    &:after
-      content ""
-      background dialog-icon-fill
-      position absolute
-      width 60%
-      height 60%
-      border-radius radius-circle
 
 .md-dialog-close
   position absolute

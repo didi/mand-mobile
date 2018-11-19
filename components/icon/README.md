@@ -28,7 +28,7 @@ Vue.component(Icon.name, Icon)
 
 ### 附录
 
-svg图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
+自定义svg图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
 
 1. 安装依赖
 

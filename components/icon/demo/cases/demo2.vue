@@ -1,20 +1,20 @@
 <template>
   <div class="md-example-child md-example-child-icon md-example-child-icon-2">
     <div class="md-example-item-s">
-      <md-icon name="security" color="gray"></md-icon>
-      <p>gray</p>
+      <md-icon name="location" size="xs"></md-icon>
+      <p>xs</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="security" color="orange"></md-icon>
-      <p>orange</p>
+      <md-icon name="location" size="sm"></md-icon>
+      <p>sm</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="security" color="blue"></md-icon>
-      <p>blue</p>
+      <md-icon name="location" size="md"></md-icon>
+      <p>md</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="security" color="purple"></md-icon>
-      <p>purple</p>
+      <md-icon name="location" size="lg"></md-icon>
+      <p>lg</p>
     </div>
   </div>
 </template>
@@ -24,9 +24,9 @@
 export default {
   name: 'icon-demo',
   /* DELETE */
-  title: '颜色',
-  titleEnUS: 'Icon color',
-  codeSandBox: 'https://codesandbox.io/s/1y5n8k17q3',
+  title: '大小',
+  titleEnUS: 'Icon size',
+  codeSandBox: 'https://codesandbox.io/s/v6jxn02x90',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

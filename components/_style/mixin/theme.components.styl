@@ -73,7 +73,8 @@ captcha-title-font-size = font-heading-normal
 captcha-color = color-text-caption
 captcha-font-size = font-body-large
 captcha-footer-font-size = font-minor-large
-captcha-error-color = #FF525D
+captcha-error-color = color-text-error
+captcha-brief-color = color-text-caption
 captcha-countbtn-gap = h-gap-lg
 captcha-btn-color = color-primary
 
@@ -85,8 +86,12 @@ cashier-choose-amount-font-size = font-heading-large // 支付金额
 cashier-choose-amount-color = color-text-base
 cashier-choose-describe-font-size = font-minor-normal // 支付描述
 cashier-choose-describe-color = color-text-minor
-cashier-choose-channel-font-size = font-minor-large // 支付渠道
-cashier-choose-channel-color = color-text-minor
+cashier-choose-channel-title-font-size = 30px // 支付渠道标题
+cashier-choose-channel-title-color = color-text-body
+cashier-choose-channel-title-action-font-size = font-body-large // 支付渠道动作标题
+cashier-choose-channel-title-action-color = color-primary
+cashier-choose-channel-desc-font-size = font-minor-large // 支付渠道备注
+cashier-choose-channel-desc-color = color-text-caption 
 cashier-choose-channel-icon-color = color-primary
 cashier-choose-more-font-size = font-minor-large // 更多支付方式
 cashier-choose-more-color = color-text-minor
@@ -235,6 +240,8 @@ notice-bar-font-size = font-body-normal
 notice-bar-color = color-primary
 notice-bar-zindex = 1301
 notice-bar-border-radius = 32px
+notice-bar-fill-warning = #FFEEEF
+notice-bar-color-warning = #FF5B60
 
 // number-keyboard
 number-keyboard-width = 100%
@@ -341,7 +348,7 @@ switch-handle-color = #FFF
 switch-item-color-disabled = opacity-disabled
 
 // swiper
-swiper-indicator-fill = #41485D
+swiper-indicator-fill = color-primary
 
 // tabs
 tab-font-size = font-body-large
@@ -369,14 +376,14 @@ tag-tiny-font-size = 12px
 
 // tip
 tip-fill = #41485D
-tip-fill-opacity = .77
+tip-fill-opacity = .8
 tip-font-size = font-minor-large
 tip-color = color-text-base-inverse
 tip-radius = 1000px
 tip-padding = 15px 32px
 tip-close-size = 32px
 tip-zindex = 1303
-tip-shadow = 0 5px 20px #C5CAD5
+tip-shadow = 0 5px 20px rgba(0, 0, 0, .08)
 
 // toast
 toast-fill = rgba(65, 72, 93, .77)

@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="default-header-github default-header-operater">
-          <a href="https://github.com/didi/mand-mobile" target="_blank"></a>
+          <a href="https://github.com/didi/mand-mobile/tree/2.0" target="_blank"></a>
         </div>
         <div class="default-header-lang default-header-operater">
           <div class="operater-select" @click="changeLang">
@@ -109,7 +109,7 @@ export default {
       versionTableShow: false,
       versionData: [{
         text: '1.x',
-        path: 'https://1x.mand-mobile.github.io'
+        path: 'https://mand-mobile.github.io'
       }, {
         text: '2.x',
         path: '/home'
