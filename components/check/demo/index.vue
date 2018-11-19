@@ -21,6 +21,6 @@ export default createDemoModule('check-group', [Demo0, Demo1, Demo2, Demo3, Demo
 </script>
 
 <style lang="stylus">
-.md-example.single-component
+.md-example.md-example-child-check
   position relative
 </style>

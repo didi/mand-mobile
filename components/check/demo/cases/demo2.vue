@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-single-component">
+  <div class="md-example-child md-example-child-check md-example-child-check-2">
     <md-check-box name="day" v-model="pay" label="日缴" disabled />
     <md-check-box name="month" v-model="pay" label="月付" />
     <md-check-box name="season" v-model="pay" label="季度费" />
@@ -10,7 +10,10 @@
 
 export default {
   name: 'check-demo',
+  /* DELETE */
   title: '复选框',
+  titleEnUs: 'Check box',
+  /* DELETE */
   components: {
     [CheckBox.name]: CheckBox,
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-single-component">
+  <div class="md-example-child md-example-child-check md-example-child-check-0">
     <md-check v-model="checked" label="复选项" />
     <md-check label="禁用" disabled />
 	</div>
