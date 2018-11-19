@@ -176,9 +176,11 @@ export default {
     },
     $_onListHide() {
       /* istanbul ignore next  */
-      this.activeMenuBarIndex = -1
-      /* istanbul ignore next  */
       this.$emit('hide')
+    },
+    $_onListBeforeHide() {
+      /* istanbul ignore next  */
+      this.activeMenuBarIndex = -1
     },
 
     // MARK: public methods

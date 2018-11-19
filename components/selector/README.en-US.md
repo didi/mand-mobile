@@ -28,9 +28,9 @@ Vue.component(Selector.name, Selector)
 |title|the title of selector|String|-|-|
 |ok-text|confirmation text|String|-|if empty, it will be `confirmed mode`, that is, click to select directly|
 |cancel-text|cancellation text|String|`cancel`|-|
-|mask-closable<sup class="version-after">1.3.0+</sup>|if the popup will be closed when clicking mask|Boolean|`true`|-|
+|mask-closable|if the popup will be closed when clicking mask|Boolean|`true`|-|
 |is-check|has a `check` icon or not|Boolean|`false`|only for `confirmed mode`|
-|max-height<sup class="version-after">1.3.0+</sup>|the maximum height of selectable area|Number|`400`|unit `px`|
+|max-height|the maximum height of selectable area|Number|`400`|unit `px`|
 
 #### Selector Events
 

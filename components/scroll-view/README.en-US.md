@@ -30,13 +30,13 @@ Vue.component(ScrollView.name, ScrollView)
 |scrolling-x | horizontal scrolling | Boolean | `true` | -|
 |scrolling-y | vertical scrolling | Boolean | `true` | -|
 |bouncing | - | Boolean | `true` | -|
-|autoReflow <sup class="version-after">1.5.3+</sup> | automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` |
+|autoReflow| automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` |
 |endReachedThreshold | threshold for emitting `endReached`. | Number | 0 | unit `px` |
 
 #### ScrollViewRefresh Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|scroll-top | distance from top | Number | 0 | unit `px` |
+|scroll-top | distance from top | Number | `0` | unit `px` |
 |is-refresh-active | release refreshable state | Boolean | `false` | - |
 |is-refreshing | refreshing state | Boolean | `false` | - |
 |refresh-text | - | String | `下拉刷新` | - |

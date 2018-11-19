@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-popup md-example-child-popup-2" style="height: 1000px;">
+  <div class="md-example-child md-example-child-popup md-example-child-popup-2">
     <md-button @click="showPopUp('top')">无遮罩层</md-button>
     <md-popup
       v-model="isPopupShow.top"
@@ -12,29 +12,6 @@
           name="close"
           @click.native="hidePopUp('top')"
         ></md-icon>
-      </div>
-    </md-popup>
-
-    <md-button @click="showPopUp('scroll')">防止滚动穿透</md-button>
-    <md-popup
-      v-model="isPopupShow.scroll"
-      position="bottom"
-      prevent-scroll
-      prevent-scroll-exclude=".md-example-popup-bottom"
-    >
-      <md-popup-title-bar
-        title="Prevent Scroll"
-        @confirm="hidePopUp('scroll')"
-        @cancel="hidePopUp('scroll')"
-      >
-        <md-icon
-          name="close"
-          size="lg"
-          slot="cancel"
-        ></md-icon>
-      </md-popup-title-bar>
-      <div class="md-example-popup md-example-popup-bottom" style="height: 200px;overflow:auto">
-        <p v-for="n in 50" :key="n">Popup Bottom {{ n }}</p>
       </div>
     </md-popup>
 
@@ -64,9 +41,7 @@ export default {
   name: 'popup-demo',
   /* DELETE */
   title: '其他配置',
-  titleEnUS: 'Other configuration',
-  message: '防止滚动击穿请在移动设备中扫码预览',
-  messageEnUS: 'Preventing rolling breakdown should be previewed on mobile device',
+  titleEnUS: 'Other configurations',
   /* DELETE */
   components: {
     [Popup.name]: Popup,

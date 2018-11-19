@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-single-component">
+  <div class="md-example-child md-example-child-check md-example-child-check-1">
     <md-check-group v-model="favorites">
       <md-check name="watermelon" label="西瓜" />
       <md-check name="apple" label="苹果" />

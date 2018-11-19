@@ -21,11 +21,11 @@ Vue.component(Amount.name, Amount)
 #### Amount Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|value|-|Number|0|-|
-|precision|-|Number|2|length of decimal part|
-|is-round-up|number round off|Boolean|true|-|
-|has-separator|insert thousand separators|Boolean|false|-|
+|value|-|Number|`0`|-|
+|precision|-|Number|`2`|length of decimal part|
+|is-round-up|number round off|Boolean|`true`|-|
+|has-separator|insert thousand separators|Boolean|`false`|-|
 |separator|thousand separator|String|`,`|-|
-|is-capital|convert to chinese capital|Boolean|false|-|
-|transition|use animation when number change|Boolean|false|-|
+|is-capital|convert to chinese capital|Boolean|`false`|-|
+|transition|use animation when number change|Boolean|`false`|-|
 |duration|animation duration|Number|`1000`|unit `ms`|

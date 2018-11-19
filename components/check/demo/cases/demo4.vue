@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-single-component">
+  <div class="md-example-child md-example-child-check md-example-child-check-4">
     <md-field title="复选列表">
       <md-check-list
         :options="fruits"

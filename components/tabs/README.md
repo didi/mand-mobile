@@ -29,7 +29,7 @@ Vue.component(TabPane.name, TabPane)
 |----|-----|------|------|------|
 |name|唯一键名|String|-|必须|
 |label|菜单标题|String|-|必须|
-|disabled|是否禁用|Boolean|false|-|
+|disabled|是否禁用|Boolean|`false`|-|
 
 #### Tabs Events
 
@@ -38,4 +38,4 @@ Vue.component(TabPane.name, TabPane)
 
 |属性 | 说明 | 类型|
 |----|-----|------|
-|tab|选中的标签菜单对象|Object<{name: String, label: String, disabled: Boolean}>|
+|tab|选中的标签菜单对象|Object:{name: String, label: String, disabled: Boolean}|

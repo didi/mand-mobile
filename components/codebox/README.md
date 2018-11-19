@@ -22,7 +22,7 @@ Vue.component(Codebox.name, Codebox)
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 |v-model|验证码字符串|String|-|
-|maxlength|字符最大输入长度, 若为`-1`则不限制输入长度|Number|4|
+|maxlength|字符最大输入长度, 若为`-1`则不限制输入长度|Number|`4`|
 |autofocus|是否直通聚焦拉起键盘, 对系统键盘不生效|Boolean|`false`|
 |mask|是否掩码|Boolean|`false`|
 |disabled|禁用输入|Boolean|`false`|

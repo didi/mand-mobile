@@ -24,9 +24,9 @@ Vue.component(FieldItem.name, FieldItem)
 |----|-----|------|------|------|
 |title|title|String|-|-|
 |brief|description|String|-|-|
-|disabled|disable content operation|Boolean|false|-|
-|solid|	the width of title is fixed or not|Boolean|false|-|
-|plain|plain style|Boolean|false|-|
+|disabled|disable content operation|Boolean|`false`|-|
+|solid|	the width of title is fixed or not|Boolean|`false`|-|
+|plain|plain style|Boolean|`false`|-|
 
 When use `disabled` prop, its descendants can use [inject](https://vuejs.org/v2/api/#provide-inject)to have access of `Field` ancestor.
 

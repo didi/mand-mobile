@@ -25,9 +25,9 @@ Vue.component(Tip.name, Tip)
 |content |the content of tip| String | Number | - |
 |placement | the position of tip | String | `top` | `top`, `left`, `bottom`, `right`|
 |icon|-|String|-|refer to `Icon` for optional values|
-|icon-svg|use svg icon|Boolean|false|-|
-|fill|filled with child elements|Boolean|false|such as button prompts, equal width(top/bottom) or height(left/right) with buttons|
-|offset|-|Object: {left, top}|-|-|
+|icon-svg|use svg icon|Boolean|`false`|-|
+|fill|filled with child elements|Boolean|`false`|such as button prompts, equal width(top/bottom) or height(left/right) with buttons|
+|offset|-|Object:{left, top}|-|-|
 
 #### Tip Instance Events
 

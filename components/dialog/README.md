@@ -24,7 +24,7 @@ Vue.component(Dialog.name, Dialog)
 | v-model | 双向绑定是否显示窗口 | Boolean | `false`|-|
 | title | 窗口标题 | String | -|-|
 | icon | Icon组件图标名称 | String | -|-|
-| icon-svg | svg图标 | Boolean |false|如需自定义图标, 请查看`Icon`组件|
+| icon-svg | svg图标 | Boolean |`false`|如需自定义图标, 请查看`Icon`组件|
 | closable | 是否显示关闭按钮 | Boolean | `true`|-|
 | layout | 底部按钮组布局方式, `row, column` | String | `row` | - |
 | btns | 底部操作按钮组 | Array | `[]`|-|
@@ -32,7 +32,7 @@ Vue.component(Dialog.name, Dialog)
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
 | transition | Popup弹出层过度动画 | String | `fade`|-|
-| prevent-scroll | 是否禁止滚动穿透 | Boolean | false |-|
+| prevent-scroll | 是否禁止滚动穿透 | Boolean | `false` |-|
 | prevent-scroll-exclude | 禁止滚动排除元素  | String | -|-|
 
 #### Dialog Slots

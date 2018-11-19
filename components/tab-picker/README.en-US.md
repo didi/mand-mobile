@@ -26,8 +26,8 @@ Vue.component(TabPicker.name, TabPicker)
 |data|data source|Array|`[]`|refer to `Appendix` for data format|
 |title|the title of tabpicker|String|-|-|
 |describe|the describe of tabpicker|String|-|-|
-|placeholder|default label for each tab pane|String|`Choose`|-|
-|mask-closable<sup class="version-after">1.3.0+</sup>|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
+|placeholder|default label for each tab pane|String|`请选择`|-|
+|mask-closable|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
 
 #### TabPicker Methods
 

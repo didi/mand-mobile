@@ -23,4 +23,4 @@ Vue.component(DetailItem.name, DetailItem)
 |----|-----|------|------|------|
 |title|title|String|-|-|
 |content|content text|String|-|-|
-|bold|whether emphasis content|Boolean|false|-|
+|bold|whether emphasis content|Boolean|`false`|-|

@@ -24,8 +24,8 @@ Vue.component(CellItem.name, CellItem)
 |title|title|String|-|-|
 |brief|description text|String|-|-|
 |addon|help info text|String|-|-|
-|disabled|disable item operation|Boolean|false|-|
-|arrow|arrow indicator|Boolean|false|-|
+|disabled|disable item operation|Boolean|`false`|-|
+|arrow|arrow indicator|Boolean|`false`|-|
 
 #### CellItem Events
 ##### @click(event)
