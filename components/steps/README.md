@@ -23,5 +23,5 @@ Vue.component(Steps.name, Steps)
 |----|-----|------|------|------|
 |steps | 步骤信息数组 | Array<{name, text}> |-|-|
 |current | 当前步骤/进度 | Number | `0` | 支持小数 |
-|direction | 展示方向 | String | `horizontal` | horizontal/vertical |
+|direction | 展示方向 | String | `horizontal` | `horizontal/vertical` |
 |transition | 进度变化动效 | Boolean | `false` |-|

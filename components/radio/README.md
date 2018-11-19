@@ -25,8 +25,8 @@ Vue.component(RadioList.name, RadioList)
 |v-model|选中项的`name`|String|-|
 |name|唯一键值|String|-|-|
 |label|描述文案|String-|-|
-|disabled|是否禁用选项|Boolean|false|-|
-|inline|是否内联显示|Boolean|false|-|
+|disabled|是否禁用选项|Boolean|`false`|-|
+|inline|是否内联显示|Boolean|`false`|-|
 |icon|选中项的图标|String|`checked`|-|
 |icon-inverse|非选中项的图标|String|`check`|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|

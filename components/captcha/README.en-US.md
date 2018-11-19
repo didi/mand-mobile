@@ -25,13 +25,13 @@ Vue.component(Captcha.name, Captcha)
 | maxlength | maxlength of string, set to `-1` as no restriction | Number | 4 |
 | mask | whether to mask code or not | Boolean | `false` |
 | system | Use system keyboard or simulated keyboard | Boolean | `false` |
-| auto-countdown<sup class="version-after">1.3.0+</sup>|start the countdown automatically, otherwise need to manually call `countdown`|Boolean|`true`|
+| auto-countdown>|start the countdown automatically, otherwise need to manually call `countdown`|Boolean|`true`|
 | title|-|String|-|
 | brief|-|String|-|-|
 | append-to | portal node of dialog | HTML Element | `document.body` |
 | count | counter duration, set as `0` to hide resend button | Number | `60` |
-| countNormalText<sup class="version-after">1.3.0+</sup>|text of send verification code button |String| `发送验证码` |
-| countActiveText<sup class="version-after">1.3.0+</sup>|text of send verification code button in countdown state|String| `{$1}秒后重发` |
+| countNormalText>|text of send verification code button |String| `发送验证码` |
+| countActiveText>|text of send verification code button in countdown state|String| `{$1}秒后重发` |
 
 
 

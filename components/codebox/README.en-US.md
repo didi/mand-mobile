@@ -20,7 +20,7 @@ Vue.component(Codebox.name, Codebox)
 | Props | Description | Type | Default |
 |----|-----|------|------|
 | v-model | captcha | String | - |
-| maxlength | maxlength of captacha, set to `-1` as no restriction | Number | 4 |
+| maxlength | maxlength of captacha, set to `-1` as no restriction | Number | `4` |
 | autofocus | immediately open simulated keyboard, not work for system keyboard | Boolean | `false` |
 | mask | whether to mask code or not | Boolean | `false` |
 |disabled|disable input|Boolean|`false`|

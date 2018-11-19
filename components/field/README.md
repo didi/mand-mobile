@@ -24,8 +24,8 @@ Vue.component(FieldItem.name, FieldItem)
 |----|-----|------|------|------|
 |title|标题|String|-|-|
 |brief|描述内容|String|-|-|
-|disabled|是否禁用区域|Boolean|false|-|
-|plain|镂空样式|Boolean|false|-|
+|disabled|是否禁用区域|Boolean|`false`|-|
+|plain|镂空样式|Boolean|`false`|-|
 
 当使用了`disabled`选项时，其后代内容可以通过[inject](https://vuejs.org/v2/api/#provide-inject)的方式获取祖先`Field`的实例属性。
 

@@ -23,4 +23,4 @@ Vue.component(DetailItem.name, DetailItem)
 |----|-----|------|------|------|
 |title|标题|String|-|-|
 |content|描述内容|String|-|-|
-|bold|是否加粗显示|Boolean|false|-|
+|bold|是否加粗显示|Boolean|`false`|-|

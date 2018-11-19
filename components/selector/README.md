@@ -28,9 +28,9 @@ Vue.component(Selector.name, Selector)
 |title|选择器标题|String|-|-|
 |ok-text|选择器确认文案|String|-|若为空则为`确认模式`，即点击选项直接选择|
 |cancel-text|选择器取消文案|String|`取消`|-|
-|mask-closable<sup class="version-after">1.3.0+</sup>|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
+|mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 |is-check|是否有`check`图标|Boolean|`false`|仅`确认模式`|
-|max-height<sup class="version-after">1.3.0+</sup>|选择器内容区域最高高度, 超出后可滚动|Number|400|单位`px`|
+|max-height|选择器内容区域最高高度, 超出后可滚动|Number|`400`|单位`px`|
 
 #### Selector Events
 

@@ -24,8 +24,8 @@ Vue.component(Radio.name, Radio)
 |v-model|selected `name`|String|-|
 |name|unique name|String|-|-|
 |label|description text|String-|-|
-|disabled|whether disable option|Boolean|false|-|
-|inline|whether display as inline block|Boolean|false|-|
+|disabled|whether disable option|Boolean|`false`|-|
+|inline|whether display as inline block|Boolean|`false`|-|
 |icon|selected icon name|String|`checked`|-|
 |icon-inverse|icon name|String|`check`|-|
 |icon-svg|use svg icon|Boolean|`false`|-|

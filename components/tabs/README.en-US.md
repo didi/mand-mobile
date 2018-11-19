@@ -29,7 +29,7 @@ Vue.component(TabPane.name, TabPane)
 |----|-----|------|------|------|
 |name|unique name|String|-|required|
 |label|tab label|String|-|required|
-|disabled|disable pane|Boolean|false|-|
+|disabled|disable pane|Boolean|`false`|-|
 
 #### Tabs Events
 
@@ -38,4 +38,4 @@ when user select tab
 
 |Props | Description | Type|
 |----|-----|------|
-| tab | object of selected tab | Object<{name: String, label: String, disabled: Boolean}>
+| tab | object of selected tab | Object:{name: String, label: String, disabled: Boolean}|

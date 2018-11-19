@@ -24,7 +24,7 @@ Vue.component(Dialog.name, Dialog)
 | v-model | whether to show a dialog or not | Boolean | `false` | - |
 | title | title of dialog | String | - | - |
 | icon | name of icon | String | - |-|
-| icon-svg | svg icon | Boolean |false|Refer to `Icon` component for customized icon|
+| icon-svg | svg icon | Boolean |`false`|Refer to `Icon` component for customized icon|
 | closable | whether the close button is visible or not | Boolean | `true` | - |
 | layout | layout of action buttons, `row, column` | String | `row` | - |
 | btns | action buttons in the footer| Array {text, handler} | `[]` | - |
@@ -33,7 +33,7 @@ Vue.component(Dialog.name, Dialog)
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
 | position | the position of popup, `center/top/bottom/left/right` | String | `center`| - |
 | transition | the animation effect of Popup | String | `fade` | - |
-| prevent-scroll | whether to prevent from scrolling or not| Boolean | false | - |
+| prevent-scroll | whether to prevent from scrolling or not| Boolean | `false` | - |
 | prevent-scroll-exclude | excluded elements of prevented scrolling| String | - | - |
 
 #### Dialog Slots

@@ -26,8 +26,8 @@ Vue.component(TabPicker.name, TabPicker)
 |data|数据源|Array|`[]`|数据格式参考`附录`|
 |title|弹窗标题|String|-|-|
 |describe|弹窗描述文本|String|-|-|
-|placeholder|默认提示文本|String|请选择|-|
-|mask-closable<sup class="version-after">1.3.0+</sup>|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
+|placeholder|默认提示文本|String|`请选择`|-|
+|mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 
 
 #### TabPicker 实例方法

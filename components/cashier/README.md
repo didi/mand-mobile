@@ -39,7 +39,7 @@ Vue.component(Cashier.name, Cashier)
 
 |参数 | 说明 | 类型 | 默认值| 备注|
 |-----|-----|-----|-----|-----|
-| scene | 步骤标识, 'captcha(发送验证码)', 'loading(支付中)', 'success(支付成功)', 'fail(支付失败)' | String |-|-|
+| scene | 步骤标识, `captcha(发送验证码)`, `loading(支付中)`, `success(支付成功)`, `fail(支付失败)` | String |-|-|
 | option | 当前步骤配置 | Object |属性如下所示|-|
 
 * `captcha` option
@@ -51,8 +51,8 @@ Vue.component(Cashier.name, Cashier)
 |maxlength|验证码位数 | Number  |`4`|若为`-1`则不限制输入长度|
 |count|验证码重新发送倒计时 | Number  |`60`|若为`0`则不显示重新发送|
 |auto-countdown|是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|-|
-|countNormalText<sup class="version-after">1.3.0+</sup>|发送验证码正常状态文字|String| `发送验证码` |-|
-|countActiveText<sup class="version-after">1.3.0+</sup>|发送验证码及倒计时按钮文案配置项|String| `{$1}秒后重发` |-|
+|countNormalText|发送验证码正常状态文字|String| `发送验证码` |-|
+|countActiveText|发送验证码及倒计时按钮文案配置项|String| `{$1}秒后重发` |-|
 |onSend|验证码发送回调 | Function(countdown: Function) |-|`countdown`为开始倒计时方法|
 |onSubmit|验证码提交回调 | Function(code: String) |-|`code`为输入的验证码|
 
@@ -67,7 +67,7 @@ Vue.component(Cashier.name, Cashier)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |text|支付成功说明 | String |`支付成功`|支持`html fragment`|
-|buttonText<sup class="version-after">1.3.1+</sup>| 按钮文案 | String |`我知道了`|支持`html fragment`|
+|buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
 |handler| 按钮点击回调 | Function | - | - |
 
 * `fail` option
@@ -75,7 +75,7 @@ Vue.component(Cashier.name, Cashier)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |text|支付失败说明 | String |`支付失败，请稍后重试`|支持`html fragment`|
-|buttonText<sup class="version-after">1.3.1+</sup>| 按钮文案 | String |`我知道了`|支持`html fragment`|
+|buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
 |handler| 按钮点击回调 | Function | - | - |
 
 

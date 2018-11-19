@@ -24,8 +24,8 @@ Vue.component(CellItem.name, CellItem)
 |title|标题|String|-|-|
 |brief|描述文案|String|-|-|
 |addon|附加文案|String|-|-|
-|disabled|是否禁用项目|Boolean|false|-|
-|arrow|动作箭头标识|Boolean|false|-|
+|disabled|是否禁用项目|Boolean|`false`|-|
+|arrow|动作箭头标识|Boolean|`false`|-|
 
 #### CellItem Events
 ##### @click(event)
