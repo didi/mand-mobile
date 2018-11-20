@@ -29,6 +29,7 @@ Vue.component(Picker.name, Picker)
 |is-view|inline display in page, otherwise it shows as `Popup`|Boolean|`false`|-|
 |is-cascade|data in each column is cascaded or not|Boolean|`false`|see #Appendix for the format of cascaded data|
 |title|title of picker|String|-|-|
+|describe|description of picker|String|-|-|
 |ok-text|confirmation text|String|`confirm`|-|
 |cancel-text|cancellation text|String|`cancel`|-|
 

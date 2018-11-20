@@ -16,6 +16,7 @@
     >
       <md-popup-title-bar
         :title="title"
+        :describe="describe"
         :ok-text="okText"
         :cancel-text="cancelText"
         @confirm="$_onSelectorConfirm"
@@ -102,6 +103,10 @@ export default {
       default: '',
     },
     title: {
+      type: String,
+      default: '',
+    },
+    describe: {
       type: String,
       default: '',
     },

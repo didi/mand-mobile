@@ -31,7 +31,8 @@ Vue.component(DatePicker.name, DatePicker)
 |text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|              
 |today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`|           
 |is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-| 
-|title|title of date-picker|String|-|-| 
+|title|title of date-picker|String|-|-|
+|describe|description of date-picker|String|-|-|
 |ok-text|confirmation text|String|`confirm`|-| 
 |cancel-text|cancellation text|String|`cancel`|-| 
 |mask-closable|if popup can be closed through clicking mask|String|`true`|-|

@@ -7,6 +7,7 @@
       :cols="columnData.length"
       :default-value="columnDataDefault"
       :title="title"
+      :describe="describe"
       :ok-text="okText"
       :cancel-text="cancelText"
       :is-view="isView"
@@ -115,6 +116,9 @@ export default {
       default: ''
     },
     title: {
+      type: String
+    },
+    describe: {
       type: String
     },
     okText: {

@@ -25,7 +25,8 @@ Vue.component(Selector.name, Selector)
 |v-model|display selector or not|Boolean|false|-|
 |data|data source|Array<{value,text,...}>|`[]`|`label` can be a `html` fragment|
 |default-value|the value of initially selected item|String|-|-|
-|title|the title of selector|String|-|-|
+|title|title of selector|String|-|-|
+|describe|description of selector|String|-|-|
 |ok-text|confirmation text|String|-|if empty, it will be `confirmed mode`, that is, click to select directly|
 |cancel-text|cancellation text|String|`cancel`|-|
 |mask-closable|if the popup will be closed when clicking mask|Boolean|`true`|-|

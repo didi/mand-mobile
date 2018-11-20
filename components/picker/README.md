@@ -29,6 +29,7 @@ Vue.component(Picker.name, Picker)
 |is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|-|
 |is-cascade|各列数据是否级联|Boolean|`false`|级联数据格式见附录|
 |title|选择器标题|String|-|-|
+|describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|`确认`|-|
 |cancel-text|选择器取消文案|String|`取消`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|

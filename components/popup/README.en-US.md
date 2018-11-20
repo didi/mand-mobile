@@ -31,6 +31,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |title|title of popup|String|-|-|
+|describe|description of popup|String|-|-|
 |ok-text|confirmation text|String|-|no confirmation button if empty|
 |cancel-text|cancellation text|String|-|no cancellation button if empty|
 

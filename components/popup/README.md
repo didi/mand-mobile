@@ -32,6 +32,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |title|标题|String|-|-|
+|describe|描述|String|-|-|
 |ok-text|确认按钮文案|String|-|为空则没有确认按钮|
 |cancel-text|取消按钮文案|String|-|为空则没有取消按钮|
 

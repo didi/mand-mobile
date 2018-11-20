@@ -26,6 +26,7 @@ Vue.component(Selector.name, Selector)
 |data|数据源|Array<{value,text,...}>|`[]`|`label`可为`html`片段|
 |default-value|选择器初始选中项的值|String|-|-|
 |title|选择器标题|String|-|-|
+|describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|-|若为空则为`确认模式`，即点击选项直接选择|
 |cancel-text|选择器取消文案|String|`取消`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
