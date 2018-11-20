@@ -93,7 +93,7 @@ export default {
   .md-radio-icon
     color color-text-disabled
   &.is-checked
-    .md-radio-icon .md-icon
+    .md-radio-icon
       color radio-color
   &.is-disabled
     .md-radio-icon

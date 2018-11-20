@@ -17,7 +17,7 @@
     >
       <slot :option="item"></slot>
       <md-radio
-        v-if="!alignCenter"
+        v-if="!alignCenter && !inputSelected"
         :name="item.value"
         v-model="selectedValue"
         :disabled="item.disabled"
@@ -140,6 +140,7 @@ export default {
     // MARK: private methods
     $_select(option, index) {
       this.selectedValue = option.value
+      this.inputSelected = false
       this.$emit('change', option, index)
     },
     // MARK: public methods
@@ -160,7 +161,8 @@ export default {
 <style lang="stylus">
 .md-radio-item
   &.is-selected
-    .md-cell-item-title
+    .md-cell-item-title,
+    .md-field-item-title
       color radio-color
   .md-radio
     margin-top 0

@@ -24,7 +24,7 @@
         :name="item.value"
         :disabled="item.disabled"
         size="md"
-        icon="checked"
+        icon="right"
         icon-inverse=""
         slot="right"
       />

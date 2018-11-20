@@ -19,7 +19,7 @@ Vue.component(Slider.name, Slider)
 #### Slider Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|the value of slider, when <code>range</code> is false, use <code>number</code>, otherwise, use <code>[number, number]</code>|number | number[]|`0`|-|
+|v-model|the value of slider, when <code>range</code> is false, use <code>number</code>, otherwise, use <code>[number, number]</code>|number , number[]|`0`|-|
 |disabled|whether to disable slider|Boolean|`false`|-|
 |min|the minimum value the slider can slide from|number|`0`|-|
 |max|the maximum value the slider can slide to|number|`100`|-|
