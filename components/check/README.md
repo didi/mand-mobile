@@ -22,8 +22,8 @@ Vue.component(CheckList.name, CheckList)
 #### Check Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
-|name|唯一键值|Boolean|String|`true`|当选中时，双向绑定的值|
-|v-model|选中的值|Boolean|String|`false`|-|
+|name|唯一键值|Boolean/String|`true`|当选中时，双向绑定的值|
+|v-model|选中的值|Boolean/String|`false`|-|
 |disabled|是否禁用选择|Boolean|`false`|-|
 
 ---
@@ -31,8 +31,8 @@ Vue.component(CheckList.name, CheckList)
 #### CheckBox Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
-|name|唯一键值|Boolean|String|`true`|当选中时，双向绑定的值|
-|v-model|选中的值|Boolean|String|`false`|-|
+|name|唯一键值|Boolean/String|`true`|当选中时，双向绑定的值|
+|v-model|选中的值|Boolean/String|`false`|-|
 |disabled|是否禁用选择|Boolean|`false`|-|
 
 ---

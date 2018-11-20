@@ -24,8 +24,8 @@ Vue.component(CheckList.name, CheckList)
 #### Check Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|name|unique name|Boolean|String|`true`|-|
-|v-model|selected name|Boolean|String|`false`|-|
+|name|unique name|Boolean/String|`true`|-|
+|v-model|selected name|Boolean/String|`false`|-|
 |disabled|whether disable selection or not|Boolean|`false`|-|
 
 ---
@@ -33,8 +33,8 @@ Vue.component(CheckList.name, CheckList)
 #### CheckBox Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|name|unique name|Boolean|String|`true`|-|
-|v-model|selected name|Boolean|String|`false`|-|
+|name|unique name|Boolean/String|`true`|-|
+|v-model|selected name|Boolean/String|`false`|-|
 |disabled|whether disable selection or not|Boolean|`false`|-|
 
 ---
