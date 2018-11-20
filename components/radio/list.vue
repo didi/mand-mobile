@@ -95,7 +95,7 @@ export default {
     },
     iconSize: {
       type: String,
-      default: 'lg',
+      default: 'md',
     },
     iconPosition: {
       type: String,

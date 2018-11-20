@@ -216,6 +216,7 @@ export default {
   .md-tab-pane
     padding-left tab-picker-h-gap
     padding-right tab-picker-h-gap
+    box-sizing border-box
   .md-popup-cancel
     width 90px !important
 .md-tab-picker-content
