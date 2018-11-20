@@ -3,6 +3,11 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.4
+`2018-11-20`
+- Fix
+  - `Swiper`抖动触发`afterChange` [#232](https://github.com/didi/mand-mobile/issues/232)
+
 ### 1.6.3
 `2018-10-29`
 - Feature
