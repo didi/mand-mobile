@@ -92,7 +92,8 @@ export default {
   margin-bottom v-gap-sm
   .md-radio-icon
     color color-text-disabled
-    .md-icon-checked
+  &.is-checked
+    .md-radio-icon
       color radio-color
   &.is-disabled
     .md-radio-icon
