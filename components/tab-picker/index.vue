@@ -3,6 +3,8 @@
     <md-popup
       :value="value"
       position="bottom"
+      prevent-scroll
+      prevent-scroll-exclude=".md-tabs-content"
       :mask-closable="maskClosable"
       @input="$_onInput"
       @show="$emit('show')"

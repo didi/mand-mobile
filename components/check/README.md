@@ -6,10 +6,12 @@ preview: https://didi.github.io/mand-mobile/examples/#/check
 ### 引入
 
 ```javascript
-import { Check, CheckGroup } from 'mand-mobile'
+import { Check, CheckBox, CheckGroup, CheckList } from 'mand-mobile'
 
 Vue.component(Check.name, Check)
+Vue.component(CheckBox.name, CheckBox)
 Vue.component(CheckGroup.name, CheckGroup)
+Vue.component(CheckList.name, CheckList)
 ```
 
 ### 代码演示
@@ -20,18 +22,18 @@ Vue.component(CheckGroup.name, CheckGroup)
 #### Check Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
-|name|唯一键值|Boolean|String|true|当选中时，双向绑定的值|
-|v-model|选中的值|Boolean|String|false|-|
-|disabled|是否禁用选择|Boolean|false|-|
+|name|唯一键值|Boolean|String|`true`|当选中时，双向绑定的值|
+|v-model|选中的值|Boolean|String|`false`|-|
+|disabled|是否禁用选择|Boolean|`false`|-|
 
 ---
 
 #### CheckBox Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
-|name|唯一键值|Boolean|String|true|当选中时，双向绑定的值|
-|v-model|选中的值|Boolean|String|false|-|
-|disabled|是否禁用选择|Boolean|false|-|
+|name|唯一键值|Boolean|String|`true`|当选中时，双向绑定的值|
+|v-model|选中的值|Boolean|String|`false`|-|
+|disabled|是否禁用选择|Boolean|`false`|-|
 
 ---
 
@@ -41,7 +43,7 @@ Vue.component(CheckGroup.name, CheckGroup)
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
 |v-model|选中的值|Array|-|-|
-|max|最多选择几个|Number|0|0为不限制|
+|max|最多选择几个|Number|`0`|0为不限制|
 
 #### CheckGroup Methods
 
@@ -71,7 +73,7 @@ Vue.component(CheckGroup.name, CheckGroup)
 |v-model|选中项的`value`|Array|-|
 |options|选项数据源|Array<{text, value, disabled, ...}>|`[]`|`disabled`为选项是否禁用|
 
-#### Radio List Slots
+#### CheckList Slots
 ```html
 <template>
   <md-check-list :options="data">
