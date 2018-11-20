@@ -72,6 +72,7 @@ export default {
     top 45%
     left 0
     font-size font-heading-medium
+    font-family DINAlternate-Bold
     color color-text-base
     text-align center
     // span.word5

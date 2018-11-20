@@ -101,10 +101,11 @@ block()
       padding 0 h-gap-lg
       line-height 120px
       font-size font-heading-normal
+      font-family DINAlternate-Bold
       // font-weight font-weight-medium
       color color-text-base
       box-sizing border-box
-      box-shadow shadow-bottom
+      box-shadow 0 2px 4px rgba(0, 0, 0, .08)
       background color-bg-base
       overflow hidden
       span
@@ -140,7 +141,7 @@ block()
     .cg-category-list
       block()
       background #FCFCFC
-      box-shadow shadow-bottom
+      box-shadow 0 2px 4px rgba(0, 0, 0, .08)
       .cg-category-item
         block()
         padding 0 h-gap-lg
@@ -152,6 +153,7 @@ block()
           height 100px
           line-height 100px
           font-size font-body-normal
+          font-family DINAlternate-Bold
           color color-text-minor
           hairline(bottom, color-border-base)
           .md-icon
