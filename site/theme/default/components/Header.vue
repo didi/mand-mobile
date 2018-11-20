@@ -59,7 +59,7 @@
                 <router-link :to="{path:'/zh-CN/home'}">首页</router-link>
               </li>
             </template>
-            <li class="nav-item" v-for="(item, index) in menu" :key="index">
+            <li class="nav-item" :class="item.name" v-for="(item, index) in menu" :key="index">
               <template v-if="item.src && ~item.src.indexOf('//')">
                 <a :href="item.src" v-html="item.text" target="_blank"></a>
               </template>
@@ -274,6 +274,7 @@ export default {
     padding-left 40px
     box-sizing border-box
     .default-header-logo
+      position relative
       float left
       height 100%
       text-decoration none
@@ -302,11 +303,15 @@ export default {
           font-weight 500
           font-family "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace  !important
       sup
+        display inline-block
+        max-width 40px
         margin-left 10px
         color #999
         font-weight 300
         font-size 12px
         font-family DINAlternate-Bold
+        line-height 1
+        
   .default-header-content
     display inline-block
     width 83%
@@ -468,8 +473,8 @@ export default {
 @media (max-width: 1200px)
   .default-header-container
     width 100% !important
-  .default-header-logo span, .default-header-search
-    display none
+  .default-header-logo span, .default-header-logo sup, .default-header-search
+    display none !important
   .default-header-content
     width 80% !important
 @media (max-width: 750px)
@@ -492,15 +497,21 @@ export default {
       display flex
       justify-content center
       padding 0
-    .default-header-nav li.nav-item a
-      padding 0 10px !important
-      line-height 32px !important
-      font-size 12px !important
-      &:after
-        bottom 0 !important
-      &.router-link-active:after
-        height 2px
-        background #048efa !important
+    .default-header-nav
+      display block !important
+      margin 0 !important
+      li.nav-item
+        &.palette
+          display none
+        a
+          padding 0 10px !important
+          line-height 32px !important
+          font-size 12px !important
+          &:after
+            bottom 0 !important
+          &.router-link-active:after
+            height 2px
+            background #048efa !important
     .default-header-aside .default-header-logo
       height 28px
       line-height 28px !important

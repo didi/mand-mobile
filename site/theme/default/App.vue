@@ -14,6 +14,9 @@
     <div class="default-menu-trigger" v-if="!noMenu" @click="isMenuShow = !isMenuShow">
       <i class="icon-catalog"></i>
     </div>
+    <div class="default-menu-trigger" v-else @click="changeLang">
+      <i class="lang" v-text="lang === 'en-US' ? '中文' : 'English'"></i>
+    </div>
     <mb-footer/>
     <div class="hover-ggs" v-if="hoverAds && hoverAds.length" >
       <a
@@ -38,6 +41,7 @@ import './assets/css/tooltip.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Menu from './components/Menu'
+import { localStore } from './assets/js/util'
 
 export default {
   name: 'mfe-blog-theme-default',
@@ -62,6 +66,9 @@ export default {
     },
   },
   computed: {
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
     noMenu() {
       return this.$route.meta.noMenu
     },
@@ -78,7 +85,16 @@ export default {
         this.hoverAds = data.hoverAds
         this.menuAds = data.menuAds
       })
-    }
+    },
+    changeLang () {
+      const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+      localStore('MAND_MOBILE_LANG', lang)
+      location.href = location.href.replace(this.lang, lang)
+
+      if (~location.href.indexOf('home')) {
+       location.reload()
+      }
+    },
   }
 }
 
@@ -123,7 +139,11 @@ export default {
     border solid 1px #f0f0f0
     i
       color #048efa
-      font-size 24px
+      font-style normal
+      &.icon-catalog
+        font-size 24px
+      &.lang
+        font-size 12px
   .hover-ggs
     position fixed
     z-index 9999

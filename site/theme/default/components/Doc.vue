@@ -389,7 +389,7 @@ export default {
 
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .mfe-blog-theme-default-doc
   position relative
   block()
@@ -510,7 +510,7 @@ export default {
         font-weight 400
   .doc-demo-box
     position relative
-    padding-bottom 44px
+    padding-bottom 24px
     border solid 1px #ebebeb
     border-radius 2px
     transition all .3s
@@ -539,7 +539,7 @@ export default {
     padding 10px 0
     box-sizing border-box
     border-top solid 1px #ebebeb
-    background #f3f4f5
+    background #F9FAFB
     .doc-demo-box-preview-box
       position relative
       width 100%
@@ -569,11 +569,11 @@ export default {
     right 0
     z-index 1102
     width 100%
-    height 44px
+    height 24px
     border-top solid 1px #ebebeb
     cursor pointer
     text-align center
-    line-height 44px
+    line-height 24px
     font-size 12px
     color #ccc
     transition background .3s
@@ -581,6 +581,7 @@ export default {
     overflow hidden
     i
       font-size 24px
+      line-height 24px
     span
       position absolute
       top 0
