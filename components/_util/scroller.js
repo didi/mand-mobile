@@ -664,6 +664,9 @@ export default class Scroller {
       }
     }
 
+    // execute handle
+    this.options.scrollingComplete()
+
     // Fully cleanup list
     this._positions.length = 0
   }
