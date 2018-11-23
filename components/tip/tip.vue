@@ -1,7 +1,7 @@
 <template>
   <div class="md-tip" :class="wrapperCls">
     <div class="md-tip-content">
-      <template>
+      <template v-if="!$slots.default">
         <md-icon
           v-if="icon"
           class="content-icon"
@@ -9,6 +9,9 @@
           :svg="iconSvg"
         />
         <div class="content-text" v-text="content"></div>
+      </template>
+      <template v-else>
+        <slot></slot>
       </template>
       <md-icon
         v-if="closable"
