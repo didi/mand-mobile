@@ -33,7 +33,11 @@
         <slot name="right"></slot>
       </template>
       <template v-else-if="mode || closable">
-        <md-icon :name="rightIcon" class="md-notice-icon md-notice-icon-right" @click.native="$_close"></md-icon>
+        <md-icon
+          class="md-notice-icon md-notice-icon-right"
+          :name="rightIcon"
+          @click.native.stop="$_close"
+        ></md-icon>
       </template>
     </div>
   </div>
@@ -54,7 +58,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'default', // default/warning
+      default: 'default', // default/activity/warning
     },
     time: {
       type: Number,
@@ -131,7 +135,7 @@ export default {
       if (this.mode === 'closable' || this.closable) {
         this.isShow = false
       }
-      this.$emit('click')
+      this.$emit('close')
     },
     $_checkOverflow() {
       if (!this.scrollable) {
@@ -159,6 +163,9 @@ export default {
   padding-left 32px
   &.md-notice-bar-circle
     border-radius notice-bar-border-radius
+  &.activity
+    background-color notice-bar-fill-activity
+    color notice-bar-color-activity
   &.warning
     background-color notice-bar-fill-warning
     color notice-bar-color-warning
