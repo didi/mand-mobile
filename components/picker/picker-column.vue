@@ -210,7 +210,6 @@ export default {
 
       this.$_getColumnIndexByDefault(data, defaultIndex, defaultValue, (columnIndex, itemIndex) => {
         const scroller = scrollers[columnIndex]
-        const offsetTop = this.$_getColumnOffsetByIndex(itemIndex)
 
         /* istanbul ignore if */
         if (!scroller) {
@@ -218,10 +217,17 @@ export default {
           return 1
         }
 
-        scroller.scrollTo(0, offsetTop)
-
-        // save active index of each column
-        this.$set(this.activedIndexs, columnIndex, itemIndex)
+        /**
+         * If the initial selection item is invalid,
+         * then a valid item is automatically selected
+         */
+        if (this.$_isColumnIndexInvalid(columnIndex, itemIndex)) {
+          this.$_scrollToValidIndex(columnIndex, itemIndex)
+        } else {
+          const offsetTop = this.$_getColumnOffsetByIndex(itemIndex)
+          scroller.scrollTo(0, offsetTop)
+          this.$set(this.activedIndexs, columnIndex, itemIndex)
+        }
       })
     },
     $_getColumnIndexByDefault(data, defaultIndex = [], defaultValue = [], fn = noop) {
@@ -267,14 +273,33 @@ export default {
     },
     $_scrollToValidIndex(columnIndex, itemIndex) {
       const scroller = this.scrollers[columnIndex]
-      const dirction = this.scrollDirect
+      const columnData = this.columnValues[columnIndex]
+
+      let dirction = 1 // down 1, up -1
       let count = itemIndex
+
+      /**
+       * The first item is down, the last item is up, 
+       * the other is based on the direction of scrolling
+       */
+      if (itemIndex === 0) {
+        dirction = 1
+      } else if (itemIndex === columnData.length - 1) {
+        dirction = -1
+      } else {
+        dirction = this.scrollDirect
+      }
 
       while (this.$_isColumnIndexInvalid(columnIndex, count)) {
         count += dirction
       }
 
-      let offsetTop = this.$_getColumnOffsetByIndex(count)
+      if (count < 0 || count > columnData.length) {
+        warn(`scrollToValidIndex: no valid items in column ${columnIndex}`)
+        return
+      }
+
+      const offsetTop = this.$_getColumnOffsetByIndex(count)
       scroller.scrollTo(0, this.$_scrollInZoon(scroller, offsetTop), true)
     },
     $_scrollInZoon(scroller, top) {
