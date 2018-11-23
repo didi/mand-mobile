@@ -9,7 +9,8 @@
 export default {
   name: 'notice-bar-demo',
   /* DELETE */
-  title: '椭圆形',
+  title: '圆角',
+  titleEnUS: 'Fillet',
   /* DELETE */
   codeSandBox: 'https://codesandbox.io/s/xl4wrl0194',
   /* DELETE */

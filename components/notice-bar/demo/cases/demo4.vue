@@ -2,9 +2,18 @@
   <div class="md-example-child md-example-child-notice-bar md-example-child-notice-bar-4">
     <md-notice-bar
       icon="warn"
+      mode="closable"
       type="warning"
     >
       为了确保您的资金安全，请设置支付密码。
+    </md-notice-bar>
+    <md-notice-bar
+      icon="coupon"
+      mode="link"
+      type="activity"
+      style="margin-top:10px;"
+    >
+      福利来啦，7日免息券发放中！
     </md-notice-bar>
   </div>
 </template>

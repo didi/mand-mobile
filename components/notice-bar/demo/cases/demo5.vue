@@ -16,8 +16,7 @@ export default {
   name: 'notice-bar-demo',
   /* DELETE */
   title: '多行显示',
-  titleEnUS: 'With icon',
-  codeSandBox: 'https://codesandbox.io/s/53zlz1nj24',
+  titleEnUS: 'Multi-line display',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

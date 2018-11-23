@@ -12,9 +12,8 @@
 export default {
   name: 'notice-bar-demo',
   /* DELETE */
-  title: '自定义',
-  titleEnUS: 'With icon',
-  codeSandBox: 'https://codesandbox.io/s/53zlz1nj24',
+  title: '使用插槽自定义',
+  titleEnUS: 'Customize',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

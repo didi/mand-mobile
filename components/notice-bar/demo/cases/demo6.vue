@@ -16,8 +16,7 @@ export default {
   name: 'notice-bar-demo',
   /* DELETE */
   title: '滚动播放',
-  titleEnUS: 'With icon',
-  codeSandBox: 'https://codesandbox.io/s/53zlz1nj24',
+  titleEnUS: 'Scroll play',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
