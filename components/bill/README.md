@@ -28,7 +28,7 @@ Vue.component(Bill.name, Bill)
 #### Bill Slots
 
 ##### default
-默认内容插错
+默认内容插槽
 
 ##### header
 头部内容插槽
