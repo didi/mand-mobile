@@ -1,6 +1,8 @@
 <template>
   <div class="md-result">
-    <img :src="actualImgUrl" :class="!imgUrl && type"/>
+    <div class="md-result-image">
+      <img :src="actualImgUrl" :class="!imgUrl && type"/>
+    </div>
     <div class="md-result-text">{{actualText}}</div>
     <div class="md-result-subtext" v-if="subtext">{{subtext}}</div>
     <div class="md-result-buttons" v-if="buttons.length">
@@ -53,7 +55,7 @@ export default {
   },
 
   data() {
-    const pre = '//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/'
+    const pre = '//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0'
     const data = {
       actualImgUrl: this.imgUrl || `${pre}${this.type}.png`,
       actualText:
@@ -82,10 +84,11 @@ export default {
   height 100%
   text-align center
 
-  > img
-    width result-page-image-size
-    height result-page-image-size
-    margin 40px
+.md-result-image
+  width result-page-image-size
+  img
+    width 100%
+    margin-bottom 40px
 
 .md-result-text
   margin 20px
