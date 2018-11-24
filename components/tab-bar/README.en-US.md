@@ -18,7 +18,7 @@ Vue.component(TabBar.name, TabBar)
 
 ### API
 
-#### Tabbar Props
+#### TabBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |items|menus data|Array<{name: String, label: String, disabled: Boolean}>|-|-|
@@ -26,12 +26,12 @@ Vue.component(TabBar.name, TabBar)
 | ink-length | the width of ink bar | Number | `80` | the percentage width of ink bar, between `0-100` |
 | v-model | key of selected menu | String | - | - |
 
-#### Tabbar Methods
+#### TabBar Methods
 
 ##### reflow(index)
 relayout tabbar
 
-#### Tabbar Events
+#### TabBar Events
 
 ##### @change(item, index, prevIndex)
 selected menu index changes
@@ -42,11 +42,11 @@ selected menu index changes
 | index | index of current selected menu | Number |
 | index | index of previous selected menu | Number |
 
-#### Tabbar Slot
+#### TabBar Slot
 ```javascript
-<md-tabbar>
+<md-tab-bar>
   <template slot="item" slot-scope="{ item, currentName, index, items }">
 
   </template>
-</md-tabbar>
+</md-tab-bar>
 ```

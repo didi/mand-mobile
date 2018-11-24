@@ -18,7 +18,7 @@ Vue.component(TabBar.name, TabBar)
 
 ### API
 
-#### Tabbar Props
+#### TabBar Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |items|标签标题数组|Array<{name: String, label: String, disabled: Boolean}>|-|-|
@@ -26,12 +26,12 @@ Vue.component(TabBar.name, TabBar)
 |ink-length|下划线宽度|Number|`100`|该数值为下划线占标签按钮宽度的百分比，须在0-100之间|
 |v-model|双向绑定的标签对象`name`|String|-|-|
 
-#### Tabbar Methods
+#### TabBar Methods
 
 ##### reflow()
 重新计算样式布局
 
-#### Tabbar Events
+#### TabBar Events
 
 ##### @change(item, index, prevIndex)
 标签索引发生变化事件
@@ -42,11 +42,11 @@ Vue.component(TabBar.name, TabBar)
 |index|选中的标签索引|Number|
 |prevIndex|上一标签索引|Number|
 
-#### Tabbar Slot
+#### TabBar Slot
 ```javascript
-<md-tabbar>
+<md-tab-bar>
   <template slot="item" slot-scope="{ item, currentName, index, items }">
 
   </template>
-</md-tabbar>
+</md-tab-bar>
 ```

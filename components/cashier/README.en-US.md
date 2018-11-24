@@ -79,6 +79,22 @@ To the next step of Cashier
 |buttonText| button text | String |`我知道了`|support `html fragment`|
 |handler| button clickback | Function | - | - |
 
+#### Captcha Slots
+
+##### header
+Scoped slot of captcha header
+
+```html
+<div slot-scope="{ scene }" slot="header">
+  <md-notice-bar
+    v-if="scene === 'choose'"
+    mode="closable"
+    icon="warn"
+    type="warning"
+  ></md-notice-bar>
+</div>
+```
+
 #### Cashier Events
 
 ##### @select(item: {text, value})

@@ -37,7 +37,7 @@ Header slot
 Footer slot
 
 ##### watermask
-scoped slot of watermask content
+Scoped slot of watermask content
 
 ```html
 <div slot="watermark" slot-scope="props">

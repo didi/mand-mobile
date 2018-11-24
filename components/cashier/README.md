@@ -78,6 +78,21 @@ Vue.component(Cashier.name, Cashier)
 |buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
 |handler| 按钮点击回调 | Function | - | - |
 
+#### Captcha Slots
+
+##### header
+头部内容scoped插槽
+
+```html
+<div slot-scope="{ scene }" slot="header">
+  <md-notice-bar
+    v-if="scene === 'choose'"
+    mode="closable"
+    icon="warn"
+    type="warning"
+  ></md-notice-bar>
+</div>
+```
 
 #### Cashier Events
 

@@ -31,9 +31,7 @@ Vue.component(Dialog.name, Dialog)
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
-| transition | Popup弹出层过度动画 | String | `fade`|-|
-| prevent-scroll | 是否禁止滚动穿透 | Boolean | `false` |-|
-| prevent-scroll-exclude | 禁止滚动排除元素  | String | -|-|
+| transition | 弹出层过度动画 | String | `fade`|`fade/fade-bounce/fade-slide/fade-zoom, slide-up/slide-down/slide-left/slide-right`|
 
 #### Dialog Slots
 组件子元素会被当做默认插槽内容使用，适合于不需要标题的自定义窗口内容的场景。
@@ -53,7 +51,7 @@ Vue.component(Dialog.name, Dialog)
 
 #### Dialog Static Methods
 
-##### confirm(props)
+##### Dialog.confirm(props)
 静态方法创建确认模态窗口, 返回Dialog实例
 
 |属性 | 说明 | 类型 | 默认值|

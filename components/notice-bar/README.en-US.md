@@ -25,7 +25,7 @@ Vue.component(NoticeBar.name, NoticeBar)
 |mode|notice bar mode|String|-|`closable/link`, priority is less than slot|
 |type|theme|String|`default`|`default/activity/warning`|
 |time|display time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
-|is-circle|fillet radius|Boolean|`false`|-|
+|round|fillet radius|Boolean|`false`|-|
 |multi-rows|content exceeds line break display|Boolean|`false`|Priority is heigher than scrollable|
 |scrollable|show scrolling animation when content is exceeded|Boolean|`false``|Priority is less than multiRows|
 |icon|notice bar icon|String|-|-|

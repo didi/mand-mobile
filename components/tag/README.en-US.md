@@ -22,7 +22,7 @@ Vue.component(Tag.name, Tag)
 | Props | Description | Type | Default | Value |
 |----|-----|------|------|------|
 |size| The size of tag  |String|`large`|`tiny`, `small`, `large`|
-|shape| The shape of tag |String|`square`|`square`, `circle`, `fillet`|
+|shape| The shape of tag |String|`square`|`square`, `circle`, `fillet`, `quarter`, `coupon`|
 |type| The style of tag |String|`ghost`|`fill`, `ghost`|
 |fill-color| Background color, `rgba` or `hex number`|String|`rgba(0,0,0,0)`|-|
 |font-weight| Font weight |String|`normal`|`normal`, `bold`, `bolder`|
