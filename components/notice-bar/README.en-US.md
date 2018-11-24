@@ -22,7 +22,7 @@ Vue.component(NoticeBar.name, NoticeBar)
 #### NoticeBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|mode|notice bar mode|String|-|`closable/link`, priority is less than slot|
+|mode|notice bar mode|String|-|`closable/link`|
 |type|theme|String|`default`|`default/activity/warning`|
 |time|display time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
 |round|fillet radius|Boolean|`false`|-|
@@ -31,7 +31,7 @@ Vue.component(NoticeBar.name, NoticeBar)
 |icon|notice bar icon|String|-|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 
-#### InputItem Slots
+#### NoticeBar Slots
 
 #### default
 Default slot of content
