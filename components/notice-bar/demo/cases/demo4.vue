@@ -5,7 +5,7 @@
       mode="closable"
       type="warning"
     >
-      为了确保您的资金安全，请设置支付密码。
+      该银行3:00-12:00系统维护，请更换其他银行卡
     </md-notice-bar>
     <md-notice-bar
       icon="coupon"
@@ -31,3 +31,10 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus">
+.md-example-child-notice-bar-4
+  flex-direction column
+  .md-notice-bar
+    width 100%
+</style>

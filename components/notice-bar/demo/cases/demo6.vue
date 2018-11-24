@@ -5,7 +5,7 @@
       icon="volumn"
       scrollable
     >
-      {{ text }}
+      为了确保您的资金安全，请设置支付密码为了确保您的资金安全，请设置支付密码为了确保您的资金安全，请设置支付密码
     </md-notice-bar>
   </div>
 </template>
@@ -20,18 +20,6 @@ export default {
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
-  },
-  /* DELETE */
-  data() {
-    return {
-      text: '就是想证明这是一段很长的文字',
-    }
-  },
-  /* DELETE */
-  mounted() {
-    setTimeout(() => {
-      this.text = '就是想证明这是一段很长的文字，是一段萌萌哒的文字，你看还会滚动呢～'
-    }, 4000)
   },
 }
 </script>
