@@ -2,7 +2,7 @@
   <div
     class="md-notice-bar"
     :class="[
-      isCircle && 'md-notice-bar-circle',
+      round && 'md-notice-bar-round',
       type
     ]"
     v-if="isShow"
@@ -64,7 +64,7 @@ export default {
       type: Number,
       default: 0,
     },
-    isCircle: {
+    round: {
       type: Boolean,
       default: false,
     },
@@ -161,7 +161,7 @@ export default {
   color notice-bar-color
   position relative
   padding-left 32px
-  &.md-notice-bar-circle
+  &.md-notice-bar-round
     border-radius notice-bar-border-radius
   &.activity
     background-color notice-bar-fill-activity
