@@ -11,6 +11,7 @@
     >
       <md-popup-title-bar
         :title="title"
+        :describe="describe"
         @cancel="$_onPopupCancel"
       >
         <md-icon name="close" size="lg" slot="cancel"></md-icon>
@@ -156,6 +157,10 @@ export default {
       type: String,
       default: '\u652f\u4ed8', // 支付
     },
+    describe: {
+      type: String,
+      default: '',
+    },
     paymentTitle: {
       type: String,
       default: '\u652f\u4ed8\u91d1\u989d', // 支付金额
@@ -273,8 +278,6 @@ export default {
     .md-icon
       align-self flex-start
       margin-left h-gap-lg
-  .md-popup-box
-    background-color color-bg-base
   .md-cashier-container
     block()
     background cashier-bg
