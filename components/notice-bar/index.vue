@@ -161,6 +161,7 @@ export default {
   color notice-bar-color
   position relative
   padding-left 32px
+  box-sizing border-box
   &.md-notice-bar-round
     border-radius notice-bar-border-radius
   &.activity
