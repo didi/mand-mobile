@@ -5,7 +5,9 @@
     </template>
     <template v-else>
       <div class="md-nav">
-        <p class="home" @click="goToCategory"><i></i><i></i><i></i></p>
+        <p class="home" @click="goToCategory">
+          <md-icon name="home" size="lg"></md-icon>
+        </p>
         <p class="name" v-text="navTitle"></p>
         <p class="name-zh" v-text="navSubTitle"></p>
       </div>
@@ -17,9 +19,13 @@
 </template>
 
 <script>
+import Icon from '../components/icon' 
 import './assets/responsive'
 export default {
   name: 'app',
+  components: {
+    [Icon.name]: Icon,
+  },
   computed: {
     navTitle() {
       return this.$route.name
@@ -66,24 +72,9 @@ block()
       display inline-block
       line-height 1
       &.home
-        top 5px
-        width 36px
-        height 32px
-        i
-          position absolute
-          left 0
-          width 100%
-          height .04rem
-          background color-mask
-          border-radius 2px
-          &:nth-of-type(1)
-            top 0
-          &:nth-of-type(2)
-            top 50%
-            width 70%
-            margin-top -.02rem
-          &:nth-of-type(3)
-            bottom 0
+        top 10px
+        .md-icon
+          color color-text-base
       &.name
         margin-left h-gap-lg
         font-size font-heading-large
