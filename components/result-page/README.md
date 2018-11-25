@@ -29,7 +29,7 @@ Vue.component(ResultPage.name, ResultPage)
 |img-url | 图片链接 | String | 空信息图片 | 根据类别不同，组件会拥有不同的默认图片 |
 |text | 主文案 | String | `暂无信息` | 根据类别不同，组件会拥有不同的默认主文案 |
 |subtext | 副文案 | String | - | 以更小的字体和更淡的颜色显示在主文案下方 |
-|buttons | 按钮列表 | Array | - | 按钮对象数组，按钮对象结构可参考Button Props表|
+|buttons | 按钮列表 | Array | - | 按钮对象数组，按钮可参考`Button`|
 
 #### Button Props
 |属性 | 说明 | 类型 | 默认值 | 备注|

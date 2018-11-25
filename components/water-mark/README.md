@@ -23,8 +23,8 @@ Vue.component(WaterMask.name, WaterMask)
 |----|-----|------|------ |------|
 |content|水印内容|String|-|复杂内容使用`scoped slot`|
 |spacing|水印间距|String|`20vw`|-|
-|repeatX|横向重复|Boolean|`true`|-|
-|repeatY|纵向重复|Boolean|`true`|-|
+|repeat-x|横向重复|Boolean|`true`|-|
+|repeat-y|纵向重复|Boolean|`true`|-|
 |rotate|旋转角度|String|`-30`|-|
 |opacity|透明度|String|`0.1`|-|
 

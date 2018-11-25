@@ -29,7 +29,7 @@ It is recommended to set the parent element filled with windows to achieve cente
 |img-url | image link | String |`empty` | the default images of component differ according to the category |
 |text | main copy | String | - | the main texts of component differ according to the category |
 |subtext | assistant copy | String | - | show as a smaller font and lighter color under the main copy|
-|buttons | button list | Array | - | array of button objects, whose structure can be referred to `Button Props` table|
+|buttons | button list | Array | - | array of button objects, whose structure can be referred to `Button`|
 
 #### Button Props
 |Props | Description | Type | Default | Note|

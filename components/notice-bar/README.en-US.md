@@ -22,8 +22,8 @@ Vue.component(NoticeBar.name, NoticeBar)
 #### NoticeBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|mode|notice bar mode|String|-|`closable/link`|
-|type|theme|String|`default`|`default/activity/warning`|
+|mode|notice bar mode|String|-|`closable`, `link`|
+|type|theme|String|`default`|`default`, `activity`, `warning`|
 |time|display time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
 |round|fillet radius|Boolean|`false`|-|
 |multi-rows|content exceeds line break display|Boolean|`false`|Priority is heigher than scrollable|

@@ -29,10 +29,10 @@ Vue.component(Captcha.name, Captcha)
 |auto-countdown|是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|
 |title|标题|String|-|
 |brief|描述|String|-|
-|appendTo|挂载节点|HTMLElement|`document.body`|
+|append-to|挂载节点|HTMLElement|`document.body`|
 |count|倒计时时长, 设置为0的时候不显示倒计时按钮|Number|`60`|
-|countNormalText|发送验证码正常状态文字|String| `发送验证码` |
-|countActiveText|发送验证码及倒计时按钮文案配置项|String| `{$1}秒后重发` |
+|count-normal-text|发送验证码正常状态文字|String| `发送验证码` |
+|count-active-text|发送验证码及倒计时按钮文案配置项|String| `{$1}秒后重发` |
 
 #### Captcha Methods
 

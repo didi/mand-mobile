@@ -22,7 +22,7 @@ Vue.component(DropMenu.name, DropMenu)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |data|data source|Array<{text, disabled, options, ...}>|`[]`|`disabled` is whether to disable a button or not; the type of `options` is `Array<{text, disabled, ...}>`|
-|defaultValue|initial value|Array<String>|`[]`|-|
+|default-value|initial value|Array<String>|`[]`|-|
 |option-render|return rendering contents of each option|Function({text, disabled, ...}):String|-|`vue 2.1.0+` can use `slot-scope`，refer to `Radio`|
 
 #### DropMenu Methods

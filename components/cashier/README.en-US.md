@@ -39,7 +39,7 @@ To the next step of Cashier
 
 |Parameters | Description | Type | Default| Note|
 |-----|-----|-----|-----|-----|
-| scene | step identifier, `captcha(Send verification code)`, `loading(Payment is in process)`, `success(Payment succeeds)`, `fail(Payment fails)` | String |-|-|
+| scene | step identifier | String |-| `captcha`(Send verification code), `loading`(Payment is in process), `success`(Payment succeed), `fail`(Payment failed) |
 | option | the configuration of current step | Object |properties are listed as follows|-|
 
 * `captcha` option
@@ -52,7 +52,7 @@ To the next step of Cashier
 |count|countdown of resending verification code | Number  |`60`|`0` means no resending display |
 |onSend|Callback of sending verification code| Function(countdown: Function) |-|`countdown` is the function of starting counting down|
 |onSubmit|Callback of submitting verification code | Function(code: String) |-|`code` is the verification code|
-|auto-countdown|start the countdown automatically, otherwise need to manually call `countdown`|Boolean|`true`|-|
+|autoCountdown|start the countdown automatically, otherwise need to manually call `countdown`|Boolean|`true`|-|
 |countNormalText|text of send verification code button |String| `发送验证码` |-|
 |countActiveText|text of send verification code button in countdown state|String| `{$1}秒后重发`|-|
 

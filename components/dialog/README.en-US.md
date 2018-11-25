@@ -31,7 +31,7 @@ Vue.component(Dialog.name, Dialog)
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
 | has-mask | has mask or not | Boolean | `true` | - |
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
-| transition | the animation effect of dialog | String | `fade` | `fade/fade-bounce/fade-slide/fade-zoom, slide-up/slide-down/slide-left/slide-right` |
+| transition | the animation effect of dialog | String | `fade` |`fade`, `fade-bounce`, `fade-slide`, `fade-zoom`<br> `slide-up`, `slide-down`, `slide-left`, `slide-right` |
 
 #### Dialog Slots
 Default slots is used as the content of dialog

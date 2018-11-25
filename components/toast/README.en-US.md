@@ -16,20 +16,22 @@ Toast.succeed('Good Job!')
 
 ### API
 
-#### Toast({content, icon, iconSvg, duration, position, hasMask, parentNode})
+#### Toast Static Methods
+
+##### Toast({content, icon, iconSvg, duration, position, hasMask, parentNode})
 Dynamically create a toast
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| icon | name of icon | String | - |Refer to `Icon` component for customized icons|
-| icon-svg | use svg icon | Boolean | `false` |-|
+| icon | name of icon | String | - | refer to `Icon` component for customized icons|
+| iconSvg | use svg icon | Boolean | `false` |-|
 | content | content of message| String/Number | - |- |
 | duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
-| position <sup class="version-after">1.3.3+</sup>| display position | String | `center` | `top/center/bottom` |
+| position | display position | String | `center` | `top/center/bottom` |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking| Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
-#### Toast.info(content, duration, hasMask, parentNode)
+##### Toast.info(content, duration, hasMask, parentNode)
 Dynamically create a text toast
 
 | Props | Description | Type | Default | Note |
@@ -39,7 +41,7 @@ Dynamically create a text toast
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
-#### Toast.succeed(content, duration, hasMask, parentNode)
+##### Toast.succeed(content, duration, hasMask, parentNode)
 Dynamically create a success toast
 
 | Props | Description | Type | Default | Note |
@@ -49,7 +51,7 @@ Dynamically create a success toast
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
-#### Toast.failed(content, duration, hasMask, parentNode)
+##### Toast.failed(content, duration, hasMask, parentNode)
 Dynamically create a failed toast
 
 | Props | Description | Type | Default | Note |
@@ -59,7 +61,7 @@ Dynamically create a failed toast
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
-#### Toast.loading(content, duration, hasMask, parentNode)
+##### Toast.loading(content, duration, hasMask, parentNode)
 Dynamically create a loading toast
 
 | Props | Description | Type | Default | Note |
@@ -69,5 +71,5 @@ Dynamically create a loading toast
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
 
-#### Toast.hide()
+##### Toast.hide()
 Hide current toast

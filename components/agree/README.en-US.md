@@ -20,10 +20,10 @@ Vue.component(Agree.name, Agree)
 
 #### Agree Props
 | Props | Description | Type | Default |
-|----|-----|------|------|
-| v-model | whether it is checked or not | Boolean | `false` |
-| disabled | Whether to disable it or not | Boolean | `false` |
-| size | The size of icon, can be set as `xs`, `sm`, `md`, `lg` | String | `md` |
+|----|-----|------|------|------|
+| v-model | checked | Boolean | `false` |-|
+| disabled | - | Boolean | `false` |-|
+| size | size of icon | String | `md` | refer to `Icon` for optional values |
 
 #### Agree Instance Events
 
@@ -32,5 +32,5 @@ Invoked when checked state is changed
 
 | Props | Description | Type |
 |----|-----|------|
-| name | The unique name of radio button | Number/String |
-| checked | Whether it is checked or not | Boolean |
+| name | unique name of radio button | Number/String |
+| checked | - | Boolean |

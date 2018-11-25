@@ -27,7 +27,7 @@ Vue.component(ActionSheet.name, ActionSheet)
 |default-index|默认选中项| Boolean| `0`|-|
 |invalid-index|禁用选择项索引 |Number|`-1`|-|
 |cancel-text|取消按钮文案 |String |-|-|
-|max-height<sup class="version-after">1.3.0+</sup>|面板最高高度, 超出后可滚动|Number|400|单位`px`|
+|max-height|面板最高高度, 超出后可滚动|Number|400|单位`px`|
 
 #### ActionSheet Events
 

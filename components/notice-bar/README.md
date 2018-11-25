@@ -22,8 +22,8 @@ Vue.component(NoticeBar.name, NoticeBar)
 #### NoticeBar Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|mode|右边提示类型|String|-|`closable/link`|
-|type|主题样式|String|`default`|`default/activity/warning`|
+|mode|右边提示类型|String|-|`closable`, `link`|
+|type|主题样式|String|`default`|`default`, `activity`, `warning`|
 |time|显示时长|Number|`0`|单位为`ms`，不需要自动消失可将其置为`0`|
 |round|圆角展示|Boolean|`false`|-|
 |multi-rows|内容超出多行展示|Boolean|`false`|优先级高于scrollable|

@@ -23,7 +23,7 @@ Vue.component(TabBar.name, TabBar)
 |----|-----|------|------|------|
 |items|标签标题数组|Array<{name: String, label: String, disabled: Boolean}>|-|-|
 |has-ink|是否显示下划线|Boolean|`true`|-|
-|ink-length|下划线宽度|Number|`100`|该数值为下划线占标签按钮宽度的百分比，须在0-100之间|
+|ink-length|下划线宽度|Number|`100`|该数值为下划线占标签按钮宽度的百分比，须在`0-100`之间|
 |v-model|双向绑定的标签对象`name`|String|-|-|
 
 #### TabBar Methods

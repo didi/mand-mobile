@@ -23,7 +23,7 @@ Vue.component(Bill.name, Bill)
 |----|-----|------|------ |------|
 |name|票据抬头|String|-|-|
 |no|票据编号|String|-|-|
-|waterMark|水印内容|String|-|复杂内容使用`scoped slot`|
+|water-mark|水印内容|String|-|复杂内容使用`scoped slot`|
 
 #### Bill Slots
 

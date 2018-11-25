@@ -22,7 +22,7 @@ Vue.component(DropMenu.name, DropMenu)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |data|数据源|Array<{text, disabled, options, ...}>|`[]`|`disabled`为是否禁用，`options`类型为`Array<{text, disabled, ...}>`|
-|defaultValue|初始值|Array<String>|`[]`|-|
+|default-value|初始值|Array<String>|`[]`|-|
 |option-render|返回各选项渲染内容|Function({text, disabled, ...}):String|-|`vue 2.1.0+`可使用`slot-scope`，参考`Radio`|
 
 #### DropMenu Methods

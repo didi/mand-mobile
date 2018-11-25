@@ -23,8 +23,8 @@ Vue.component(WaterMask.name, WaterMask)
 |----|-----|------|------ |------|
 |content|-|String|-|complex content using `scoped slot`|
 |spacing|-|String|`20vw`|-|
-|repeatX|-|Boolean|`true`|-|
-|repeatY|-|Boolean|`true`|-|
+|repeat-x|-|Boolean|`true`|-|
+|repeat-y|-|Boolean|`true`|-|
 |rotate|-|String|`-30`|-|
 |opacity|-|String|`0.1`|-|
 

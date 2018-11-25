@@ -23,7 +23,7 @@ Vue.component(Bill.name, Bill)
 |----|-----|------|------ |------|
 |name|-|String|-|-|
 |no|-|String|-|-|
-|waterMark|-|String|-|complex content using `scoped slot`|
+|water-mark|-|String|-|complex content using `scoped slot`|
 
 #### Bill Slots
 
