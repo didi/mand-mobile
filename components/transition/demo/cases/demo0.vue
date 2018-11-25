@@ -6,7 +6,7 @@
       transition="md-fade"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Fade
       </div>
     </md-popup>
 
@@ -16,7 +16,7 @@
       transition="md-fade-up"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Fade Up
       </div>
     </md-popup>
 
@@ -26,7 +26,7 @@
       transition="md-fade-down"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Fade Down
       </div>
     </md-popup>
 
@@ -36,7 +36,7 @@
       transition="md-fade-left"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Fade Left
       </div>
     </md-popup>
 
@@ -46,7 +46,7 @@
       transition="md-fade-right"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Fade Right
       </div>
     </md-popup>
 
@@ -56,7 +56,7 @@
       transition="md-bounce"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Bounce
       </div>
     </md-popup>
 
@@ -66,7 +66,7 @@
       transition="md-punch"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Punch
       </div>
     </md-popup>
 
@@ -76,7 +76,7 @@
       transition="md-zoom"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Zoom
       </div>
     </md-popup>
 
@@ -86,7 +86,7 @@
       transition="md-slide-up"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Slide Up
       </div>
     </md-popup>
 
@@ -96,7 +96,7 @@
       transition="md-slide-down"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Slide Down
       </div>
     </md-popup>
 
@@ -106,7 +106,7 @@
       transition="md-slide-left"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Slide Left
       </div>
     </md-popup>
 
@@ -116,7 +116,7 @@
       transition="md-slide-right"
     >
       <div class="md-example-popup md-example-popup-center">
-        Popup Center
+        Slide Right
       </div>
     </md-popup>
   </div>
@@ -156,7 +156,7 @@ export default {
   .md-example-popup
     position relative
     font-size 28px
-    font-family DINPro
+    font-family DINAlternate-Bold
     font-weight 500
     box-sizing border-box
     text-align center
