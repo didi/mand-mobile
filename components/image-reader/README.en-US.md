@@ -28,7 +28,7 @@ Vue.component(ImageReader.name, ImageReader)
 |size|image size limit|String/Number|-|unit `kb`|
 |mime|supported image types|Array|`*`|such as `['jpeg','png']`|
 |is-camera-only|only support photographing|Boolean|`false`|-|
-|is-multiple|support selection of multiple sheets|Boolean|`false`|-|
+|is-multiple|support selection of multiple sheets|Boolean|`false`|there is a [compatibility issue](https://caniuse.com/#feat=input-file-multiple)|
 |amount|number of sheets|Number|-|valid only when `is-multiple` is `true`|
 
 #### ImageReader Events

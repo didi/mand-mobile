@@ -11,12 +11,14 @@
           'backgroundRepeat': 'no-repeat',
           'backgroundSize': 'cover'
         }">
-        <md-icon
-          class="image-reader-item-del"
-          name="clear"
-          color="#666"
-          @click.native="onDeleteImage('reader0', index)">
-        </md-icon>
+        <div class="image-reader-item-del" @click="onDeleteImage('reader0', index)">
+          <md-icon
+            name="close"
+            color="white"
+            size="xs"
+          >
+          </md-icon>
+        </div>
       </li>
       <li class="image-reader-item add">
         <md-image-reader
@@ -27,7 +29,7 @@
           is-multiple
         ></md-image-reader>
         <md-icon name="camera" size="md" color="#CCC"></md-icon>
-        <p>上传照片</p>
+        <p>添加图片</p>
       </li>
     </ul>
   </div>
@@ -98,11 +100,10 @@ export default {
       padding-bottom 23.5%
       margin-bottom 2%
       margin-right 2%
-      background color-bg-base
+      background #FFF
       box-sizing border-box
       list-style none
-      border-radius radius-normal
-      hairline(all, color-border-base)
+      border-radius 4px
       background-size cover
       &:nth-of-type(4n)
         margin-right 0
@@ -119,14 +120,20 @@ export default {
           left 0
           width 100%
           margin-top 15px
-          font-size font-minor-normal
-          color color-text-disabled 
+          font-size 22px
+          color #CCC
           text-align center
       .image-reader-item-del
         position absolute
         top 5px
         right 5px
         z-index 3
-        background #EEE
-        border-radius radius-circle
+        display flex
+        align-items center
+        justify-content center
+        width 32px
+        height 32px
+        border-radius 32px
+        background-color #999
+        opacity .8
 </style>
