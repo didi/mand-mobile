@@ -55,7 +55,7 @@ export default {
   },
 
   data() {
-    const pre = '//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0'
+    const pre = '//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/'
     const data = {
       actualImgUrl: this.imgUrl || `${pre}${this.type}.png`,
       actualText:
