@@ -321,4 +321,5 @@ export default {
     z-index picker-zindex
   .md-popup-box
     background-color color-bg-inverse
+    border-radius popup-title-bar-radius popup-title-bar-radius 0 0
 </style>

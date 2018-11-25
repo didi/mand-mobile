@@ -278,6 +278,9 @@ export default {
     .md-icon
       align-self flex-start
       margin-left h-gap-lg
+  .md-popup-box
+    background-color color-bg-inverse
+    border-radius popup-title-bar-radius popup-title-bar-radius 0 0
   .md-cashier-container
     block()
     background cashier-bg
