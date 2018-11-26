@@ -50,7 +50,8 @@
   </div>
 </template>
 
-<script>import Scroller from '../_util/scroller'
+<script>
+import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 import {noop, getDpr, traverse, inArray, warn} from '../_util'
 
@@ -271,35 +272,36 @@ export default {
       const invalidIndex = this.invalidIndex[columnIndex]
       return inArray(invalidIndex, itemIndex)
     },
+    $_hasValidIndex(columnIndex) {
+      for (const key of this.data[columnIndex].keys()) {
+        if (!this.$_isColumnIndexInvalid(columnIndex, key)) {
+          return true
+        }
+      }
+      warn(`hasValidIndex: has no valid items in column index ${columnIndex}`)
+      return false
+    },
+    $_findValidIndex(columnIndex, count) {
+      // has no valid items
+      if (!this.$_hasValidIndex(columnIndex)) {
+        return count
+      }
+      let tempCount = count
+      while (this.$_isColumnIndexInvalid(columnIndex, tempCount)) {
+        tempCount += this.scrollDirect
+      }
+      // invalid tempCount, reverse
+      if (tempCount === -1 || this.data[columnIndex].length === tempCount) {
+        this.scrollDirect = -this.scrollDirect
+        return this.$_findValidIndex(columnIndex, count)
+      }
+      return tempCount
+    },
     $_scrollToValidIndex(columnIndex, itemIndex) {
       const scroller = this.scrollers[columnIndex]
-      const columnData = this.columnValues[columnIndex]
+      let count = this.$_findValidIndex(columnIndex, itemIndex)
 
-      let dirction = 1 // down 1, up -1
-      let count = itemIndex
-
-      /**
-       * The first item is down, the last item is up, 
-       * the other is based on the direction of scrolling
-       */
-      if (itemIndex === 0) {
-        dirction = 1
-      } else if (itemIndex === columnData.length - 1) {
-        dirction = -1
-      } else {
-        dirction = this.scrollDirect
-      }
-
-      while (this.$_isColumnIndexInvalid(columnIndex, count)) {
-        count += dirction
-      }
-
-      if (count < 0 || count > columnData.length) {
-        warn(`scrollToValidIndex: no valid items in column ${columnIndex}`)
-        return
-      }
-
-      const offsetTop = this.$_getColumnOffsetByIndex(count)
+      let offsetTop = this.$_getColumnOffsetByIndex(count)
       scroller.scrollTo(0, this.$_scrollInZoon(scroller, offsetTop), true)
     },
     $_scrollInZoon(scroller, top) {
@@ -442,7 +444,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-picker-column
