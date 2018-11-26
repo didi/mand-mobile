@@ -21,7 +21,7 @@ export default {
   name: 'icon-demo',
   /* DELETE */
   title: 'svg图标',
-  titleEnUS: 'Icon size',
+  titleEnUS: 'Svg Icon',
   /* DELETE */
   components: {
     [Icon.name]: Icon,
