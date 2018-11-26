@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "2.0.0-beta.8",
+  "version": "2.0.0-beta.9",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -53,42 +53,6 @@
       "path": "./node_modules/cz-mand-mobile-changelog"
     }
   },
-  "jest": {
-    "testMatch": [
-      "**/jest-test/**/*.spec.js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
-    },
-    "globals": {
-      "vue-jest": {
-        "babelConfig": {
-          "configFile": "<rootDir>/.babelrc"
-        }
-      }
-    },
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "components/**/*.{js,vue}"
-    ],
-    "modulePaths": [
-      "<rootDir>/components",
-      "<rootDir>/node_modules"
-    ],
-    "coverageReporters": [
-      "html",
-      "text-summary"
-    ],
-    "snapshotSerializers": [
-      "jest-serializer-vue"
-    ]
-  },
   "lint-staged": {
     "components/**/*.{vue,js,json}": [
       "aesir lint -s",
@@ -105,6 +69,7 @@
     "@types/jest": "^23.3.5",
     "@types/prettier": "^1.8.0",
     "@types/vue": "^2.0.0",
+    "@vue/server-test-utils": "^1.0.0-beta.25",
     "@vue/test-utils": "^1.0.0-beta.25",
     "aesir-cli": "^0.0.5",
     "autoprefixer": "^8.4.1",
@@ -179,6 +144,7 @@
     "inquirer": "^3.3.0",
     "jest": "^23.6.0",
     "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^1.0.0",
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",

@@ -10,7 +10,11 @@
   "plugins": [
     "transform-object-rest-spread",
     "syntax-dynamic-import",
-    "transform-vue-jsx"
+    "transform-vue-jsx",
+    ["import", {
+      "libraryName": "mand-mobile",
+      "libraryDirectory": "components"
+    }]
   ],
   "env": {
     "test": {
