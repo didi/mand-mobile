@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Font icon 1`] = `
+<div class="md-example-child md-example-child-icon md-example-child-icon-0">
+  <div class="md-example-item"><i class="md-icon md-icon-rectangle lg" style="color:;"></i>
+    <p>rectangle</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-right lg" style="color:;"></i>
+    <p>right</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-wrong lg" style="color:;"></i>
+    <p>wrong</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-arrow-left lg" style="color:;"></i>
+    <p>arrow-left</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-arrow-right lg" style="color:;"></i>
+    <p>arrow-right</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-arrow-up lg" style="color:;"></i>
+    <p>arrow-up</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-arrow-down lg" style="color:;"></i>
+    <p>arrow-down</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-invisible lg" style="color:;"></i>
+    <p>invisible</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-visible lg" style="color:;"></i>
+    <p>visible</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-service lg" style="color:;"></i>
+    <p>service</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-setting lg" style="color:;"></i>
+    <p>setting</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-close lg" style="color:;"></i>
+    <p>close</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-refresh lg" style="color:;"></i>
+    <p>refresh</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-edit lg" style="color:;"></i>
+    <p>edit</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-sort lg" style="color:;"></i>
+    <p>sort</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-info lg" style="color:;"></i>
+    <p>info</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-question lg" style="color:;"></i>
+    <p>question</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-security lg" style="color:;"></i>
+    <p>security</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-rmb lg" style="color:;"></i>
+    <p>rmb</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-wait lg" style="color:;"></i>
+    <p>wait</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-check lg" style="color:;"></i>
+    <p>check</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-checked lg" style="color:;"></i>
+    <p>checked/success</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-check-disabled lg" style="color:;"></i>
+    <p>check-disabled</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-clear lg" style="color:;"></i>
+    <p>clear/fail</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-warn lg" style="color:;"></i>
+    <p>warn</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-info-solid lg" style="color:;"></i>
+    <p>info-solid</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-scan lg" style="color:;"></i>
+    <p>scan</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-share lg" style="color:;"></i>
+    <p>share</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-back lg" style="color:;"></i>
+    <p>back</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-card-bag lg" style="color:;"></i>
+    <p>card-bag</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-message lg" style="color:;"></i>
+    <p>message</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-order lg" style="color:;"></i>
+    <p>order</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-balance lg" style="color:;"></i>
+    <p>balance</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-coupon lg" style="color:;"></i>
+    <p>coupon</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-address-book lg" style="color:;"></i>
+    <p>address-book</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-mobile-phone lg" style="color:;"></i>
+    <p>mobile-phone</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-calendar lg" style="color:;"></i>
+    <p>calendar</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-home lg" style="color:;"></i>
+    <p>home</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-discovery lg" style="color:;"></i>
+    <p>discovery</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-switch lg" style="color:;"></i>
+    <p>switch</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-time lg" style="color:;"></i>
+    <p>time</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-search lg" style="color:;"></i>
+    <p>search</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-user lg" style="color:;"></i>
+    <p>user</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-camera lg" style="color:;"></i>
+    <p>camera</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-clock lg" style="color:;"></i>
+    <p>clock</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-delete lg" style="color:;"></i>
+    <p>delete</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-profession lg" style="color:;"></i>
+    <p>profession</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-id-card lg" style="color:;"></i>
+    <p>id-card</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-authentication lg" style="color:;"></i>
+    <p>authentication</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-location lg" style="color:;"></i>
+    <p>location</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-filter lg" style="color:;"></i>
+    <p>filter</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-motor-vehicle lg" style="color:;"></i>
+    <p>motor-vehicle</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-phone lg" style="color:;"></i>
+    <p>phone</p>
+  </div>
+  <div class="md-example-item"><i class="md-icon md-icon-volumn lg" style="color:;"></i>
+    <p>volumn</p>
+  </div>
+</div>
+`;
+
+exports[`Button Icon color 1`] = `
+<div class="md-example-child md-example-child-icon md-example-child-icon-3">
+  <div class="md-example-item-s"><i class="md-icon md-icon-security md" style="color:gray;"></i>
+    <p>gray</p>
+  </div>
+  <div class="md-example-item-s"><i class="md-icon md-icon-security md" style="color:orange;"></i>
+    <p>orange</p>
+  </div>
+  <div class="md-example-item-s"><i class="md-icon md-icon-security md" style="color:blue;"></i>
+    <p>blue</p>
+  </div>
+  <div class="md-example-item-s"><i class="md-icon md-icon-security md" style="color:purple;"></i>
+    <p>purple</p>
+  </div>
+</div>
+`;
+
+exports[`Button Icon size 1`] = `
+<div class="md-example-child md-example-child-icon md-example-child-icon-2">
+  <div class="md-example-item-s"><i class="md-icon md-icon-location xs" style="color:;"></i>
+    <p>xs</p>
+  </div>
+  <div class="md-example-item-s"><i class="md-icon md-icon-location sm" style="color:;"></i>
+    <p>sm</p>
+  </div>
+  <div class="md-example-item-s"><i class="md-icon md-icon-location md" style="color:;"></i>
+    <p>md</p>
+  </div>
+  <div class="md-example-item-s"><i class="md-icon md-icon-location lg" style="color:;"></i>
+    <p>lg</p>
+  </div>
+</div>
+`;
+
+exports[`Button Svg icon 1`] = `
+<div class="md-example-child md-example-child-icon md-example-child-icon-1">
+  <div class="md-example-item-s"><svg class="md-icon md-icon-spinner lg" style="fill:;-webkit-filter:invert(1);">
+      <use xlink:href="#spinner"></use>
+    </svg>
+    <p>spinner</p>
+  </div>
+  <div class="md-example-item-s"><svg class="md-icon md-icon-success-color lg" style="fill:;">
+      <use xlink:href="#success-color"></use>
+    </svg>
+    <p>success-color</p>
+  </div>
+  <div class="md-example-item-s"><svg class="md-icon md-icon-warn-color lg" style="fill:;">
+      <use xlink:href="#warn-color"></use>
+    </svg>
+    <p>warn-color</p>
+  </div>
+</div>
+`;

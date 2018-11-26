@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Basic 1`] = `
+<div class="md-example-child md-example-child-button md-example-child-button-0"><button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Default</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button default inactive block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Default Inactive</p>
+    </div>
+  </button> <button type="button" class="md-button primary active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Primary</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button primary inactive block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Primary Inactive</p>
+    </div>
+  </button> <button type="button" class="md-button warning active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Warning</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button warning inactive block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Warning Inactive</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button disabled active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Disabled</p>
+    </div>
+  </button></div>
+`;
+
+exports[`Button Inline 1`] = `
+<div class="md-example-child  md-example-child-button md-example-child-button-3">
+  <div class="md-example-section"><button type="button" class="md-button primary active inline">
+      <div class="md-button-inner"><i class="md-icon md-icon-edit md" style="color:;"></i>
+        <p class="md-button-content">Inline Primary</p>
+      </div>
+    </button> <button type="button" class="md-button primary active inline plain">
+      <div class="md-button-inner">
+        <!---->
+        <p class="md-button-content">Inline Plain</p>
+      </div>
+    </button></div>
+  <div class="md-example-section"><button type="button" class="md-button warning active inline small">
+      <div class="md-button-inner">
+        <!---->
+        <p class="md-button-content">Warning</p>
+      </div>
+    </button> <button type="button" disabled="disabled" class="md-button disabled active inline small">
+      <div class="md-button-inner">
+        <!---->
+        <p class="md-button-content">Disabled</p>
+      </div>
+    </button></div>
+</div>
+`;
+
+exports[`Button Plain 1`] = `
+<div class="md-example-child md-example-child-button md-example-child-button-1"><button type="button" class="md-button default active block plain">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Default &amp; Plain</p>
+    </div>
+  </button> <button type="button" class="md-button primary active block plain">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Primary &amp; Plain</p>
+    </div>
+  </button> <button type="button" class="md-button warning active block plain">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Warning &amp; Plain</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button disabled active block plain">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Disabled &amp; Plain</p>
+    </div>
+  </button> <button type="button" class="md-button primary active block round plain">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Primary &amp; Plain &amp; Round</p>
+    </div>
+  </button></div>
+`;
+
+exports[`Button Round 1`] = `
+<div class="md-example-child md-example-child-button md-example-child-button-2"><button type="button" class="md-button default active block round">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Default &amp; Round</p>
+    </div>
+  </button> <button type="button" class="md-button primary active block round">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Primary &amp; Round</p>
+    </div>
+  </button> <button type="button" class="md-button warning active block round">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Warning &amp; Round</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button disabled active block round">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">Disabled &amp; Round</p>
+    </div>
+  </button></div>
+`;
+
+exports[`Button Text link 1`] = `
+<div class="md-example-child  md-example-child-button md-example-child-button-3"><button type="button" class="md-button link active block">
+    <div class="md-button-inner"><i class="md-icon md-icon-message md" style="color:;"></i>
+      <p class="md-button-content">评论</p>
+    </div>
+  </button> <button type="button" disabled="disabled" class="md-button link inactive block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">去看看<i class="md-icon md-icon-arrow-right md" style="color:;"></i></p>
+    </div>
+  </button></div>
+`;
