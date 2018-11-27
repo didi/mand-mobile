@@ -25,3 +25,37 @@ Vue.component(Steps.name, Steps)
 |current | 当前步骤/进度 | Number | `0` | 支持小数 |
 |direction | 展示方向 | String | `horizontal` | `horizontal`, `vertical` |
 |transition | 进度变化动效 | Boolean | `false` |-|
+
+
+#### Steps Slots
+
+#### reached
+
+已完成步骤图标插槽，用于自定义已完成步骤图标，支持`scoped slot`如下所示：
+
+```html
+<template slot="reached" slot-scope="{ index }">
+  <!-- 如果索引值为1，则自定义 -->
+  <md-icon name="checked" v-if="index === 1"></md-icon>
+  <!-- 默认步骤图标 -->
+  <div class="step-node-default" v-else></div>
+</template>
+```
+
+#### current
+
+当前步骤图标插槽，用于自定义前步骤图标，支持`scoped slot`用法同`reached`
+
+#### content
+
+步骤内容插槽
+
+```html
+<template
+  slot="content"
+  slot-scope="{ index, step }"
+>
+  <!-- index 步骤索引 -->
+  <!-- step 步骤信息 -->
+</template>
+```

@@ -7,9 +7,9 @@
     }"
   >
     <template v-for="(step, index) of steps">
-      <div class="icon-wrapper" :key="`icon-${index}`">
+      <div class="step-wrapper" :key="`step-${index}`">
         <div
-          class="icon"
+          class="icon-wrapper"
           :class="{
             reached: index <= currentLength,
             current: index === currentLength
@@ -32,12 +32,20 @@
           <div v-else class="step-node-default"></div>
         </div>
         <div class="text-wrapper">
-          <div class="name">
-            {{step.name}}
-          </div>
-          <div class="desc" v-if="step.text">
-            {{step.text}}
-          </div>
+          <slot
+            v-if="$scopedSlots.content"
+            name="content"
+            :index="index"
+            :step="step"
+          ></slot>
+          <template v-else>
+            <div class="name">
+              {{step.name}}
+            </div>
+            <div class="desc" v-if="step.text">
+              {{step.text}}
+            </div>
+          </template>
         </div>
       </div>
       <div class="bar"
@@ -193,7 +201,7 @@ export default {
   &.md-steps-horizontal
     align-items center
     padding 40px 100px 100px
-    .icon-wrapper
+    .step-wrapper
       margin 0 4px
       justify-content center
       align-items center
@@ -209,22 +217,25 @@ export default {
     align-items flex-start
     padding 40px 40px 80px
     flex-direction column
-    .icon-wrapper
+    .step-wrapper
+      width 100%
       margin 4px 0
       align-items stretch
-      .icon
+      .icon-wrapper
         position relative
         justify-content flex-start
         .step-node-default
           min-width steps-icon-size
           min-height steps-icon-size
       .text-wrapper
-        left 100%
+        left steps-icon-size
         padding-left steps-text-gap-vertical
+        .name, .desc
+          white-space normal
         .desc
           margin-top 18px
 
-  .icon
+  .icon-wrapper
     display flex
     justify-content center
     align-items center
@@ -248,12 +259,12 @@ export default {
       .step-node-default:after
         background steps-color-active
 
-  .icon-wrapper
+  .step-wrapper
     display flex
     position relative
     min-width steps-icon-size
     min-height steps-icon-size
-    .icon
+    .icon-wrapper
       min-width steps-icon-size
       min-height steps-icon-size
       .md-icon

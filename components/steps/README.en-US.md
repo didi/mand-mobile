@@ -25,3 +25,36 @@ Vue.component(Steps.name, Steps)
 |current | current step | Number | `0` |support for decimal point|
 |direction | to specify the direction of the step bar | String | `horizontal` | `horizontal`, `vertical` |
 |transition | progress change transition | Boolean | `false` |-|
+
+#### Steps Slots
+
+#### reached
+
+Slot of step icon that has been completed,  generally used to customize the completed step icon, and the `scoped slot` is supported as follows:
+
+```html
+<template slot="reached" slot-scope="{ index }">
+  <!-- Custom icon if the index value is 1 -->
+  <md-icon name="checked" v-if="index === 1"></md-icon>
+  <!-- Default step icon -->
+  <div class="step-node-default" v-else></div>
+</template>
+```
+
+#### current
+
+Slot of current step icon, generally used to customize the current step icon, supports `scoped slot` and has the same usage as `reached`
+
+#### content
+
+slot of step content
+
+```html
+<template
+  slot="content"
+  slot-scope="{ index, step }"
+>
+  <!-- index step index -->
+  <!-- step step data -->
+</template>
+```
