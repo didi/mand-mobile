@@ -3,7 +3,8 @@
     class="md-steps"
     :class="{
       'md-steps-vertical': direction == 'vertical',
-      'md-steps-horizontal': direction == 'horizontal'
+      'md-steps-horizontal': direction == 'horizontal',
+      'vertical-adaptive': direction == 'vertical' && verticalAdaptive
     }"
   >
     <template v-for="(step, index) of steps">
@@ -49,8 +50,8 @@
         </div>
       </div>
       <div class="bar"
-        v-if="index !== steps.length - 1"
         :class="[direction === 'horizontal' ? 'horizontal-bar' : 'vertical-bar']"
+        :style="$_getStepSizeForStyle(index)"
         :key="`bar-${index}`"
       >
         <i
@@ -67,6 +68,7 @@
 </template>
 
 <script>import Icon from '../icon'
+import {toArray} from '../_util'
 
 export default {
   name: 'md-steps',
@@ -97,12 +99,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    verticalAdaptive: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
     return {
       initialed: false,
       progress: [],
+      stepsSize: [],
       currentLength: 0,
       duration: 0.3,
       timer: null,
@@ -135,9 +142,48 @@ export default {
     this.currentLength = currentStep
     this.progress = this.$_sliceProgress(currentStep)
   },
+  mounted() {
+    this.$_initStepSize()
+  },
+  updated() {
+    this.$nextTick(() => {
+      this.$_initStepSize()
+    })
+  },
 
   methods: {
     // MARK: private methods
+    $_initStepSize() {
+      if (this.direction !== 'vertical' || this.verticalAdaptive) {
+        return
+      }
+      const iconWrappers = this.$el.querySelectorAll('.icon-wrapper')
+      const textWrappers = this.$el.querySelectorAll('.text-wrapper')
+      const stepsSize = toArray(textWrappers).map((wrapper, index) => {
+        let stepHeight = wrapper.clientHeight
+        const iconHeight = iconWrappers[index].clientHeight
+        if (index === textWrappers.length - 1) {
+          // The last step needs to subtract floated height
+          stepHeight -= iconHeight
+        } else {
+          // Add spacing between steps to prevent distance too close
+          stepHeight += 40
+        }
+        return stepHeight > 0 ? stepHeight : 0
+      })
+
+      if (stepsSize.toString() !== this.stepsSize.toString()) {
+        this.stepsSize = stepsSize
+      }
+    },
+    $_getStepSizeForStyle(index) {
+      const size = this.direction === 'vertical' && !this.verticalAdaptive ? this.stepsSize[index] : 0
+      return size
+        ? {
+            height: `${size}px`,
+          }
+        : null
+    },
     $_formatValue(val) {
       if (val < 0) {
         return 0
@@ -215,8 +261,13 @@ export default {
         
   &.md-steps-vertical
     align-items flex-start
-    padding 40px 40px 80px
+    padding 40px
     flex-direction column
+    &.vertical-adaptive
+      justify-content normal
+      padding 40px 40px 8px
+      .bar.vertical-bar
+        flex 1
     .step-wrapper
       width 100%
       margin 4px 0
@@ -287,7 +338,6 @@ export default {
 
   .bar
     position relative
-    flex 1
     background-color steps-color
     overflow hidden
     .bar-inner
@@ -299,6 +349,7 @@ export default {
       content ''
       transition all linear 1s
     &.horizontal-bar
+      flex 1
       height steps-border-size
       .bar-inner
         width 100%
@@ -312,4 +363,9 @@ export default {
         width steps-border-size
         height 100%
         background-color steps-color-active
+    &:last-of-type
+      &.horizontal-bar
+        display none
+      &.vertical-bar
+        visibility hidden
 </style>

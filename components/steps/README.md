@@ -21,10 +21,11 @@ Vue.component(Steps.name, Steps)
 #### Steps Props
 | 属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
-|steps | 步骤信息数组 | Array<{name, text}> |-|-|
-|current | 当前步骤/进度 | Number | `0` | 支持小数 |
-|direction | 展示方向 | String | `horizontal` | `horizontal`, `vertical` |
-|transition | 进度变化动效 | Boolean | `false` |-|
+|steps|步骤信息数组|Array<{name, text}>|-|-|
+|current|当前步骤/进度|Number|`0`| 支持小数 |
+|direction|展示方向|String|`horizontal`|`horizontal`, `vertical`|
+|transition|进度变化动效|Boolean|`false`|-|
+|vertical-adaptive|步骤高度自适应|Boolean|`false`|仅用于`vertical`, **如果设置为`true`则根据容器高度自适应，需设置`.mfe-steps`高度**|
 
 
 #### Steps Slots

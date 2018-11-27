@@ -21,10 +21,11 @@ Vue.component(Steps.name, Steps)
 #### Steps Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|steps | array of step information | Array<{name, text}> |-|-|
-|current | current step | Number | `0` |support for decimal point|
-|direction | to specify the direction of the step bar | String | `horizontal` | `horizontal`, `vertical` |
-|transition | progress change transition | Boolean | `false` |-|
+|steps|array of step information|Array<{name, text}>|-|-|
+|current|current step|Number|`0`|support for decimal point|
+|direction| to specify the direction of the step bar|String|`horizontal`|`horizontal`, `vertical`|
+|transition|progress change transition|Boolean|`false`|-|
+|vertical-adaptive|step height adaptive|Boolean|`false`|only for `vertical`, ** if set to `true` then adaptive according to container height, setting `.mfe-steps` height is necessary**|
 
 #### Steps Slots
 

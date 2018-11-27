@@ -3,7 +3,9 @@
     <md-steps
       direction="vertical"
       :steps="steps"
-      :current="1">
+      :current="1"
+      vertical-adaptive
+    >
     </md-steps>
   </div>
 </template>
@@ -48,6 +50,5 @@ export default {
 
 <style lang="stylus">
 .md-example-child-steps-7 .md-steps
-  height 400px
+  height 420px
 </style>
-
