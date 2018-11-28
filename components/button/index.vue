@@ -81,6 +81,7 @@ export default {
   line-height button-height
   font-size button-font-size
   font-weight button-font-weight
+  font-family font-family-normal
   text-align center
   border none
   border-radius button-radius
