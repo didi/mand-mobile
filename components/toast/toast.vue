@@ -84,7 +84,9 @@ export default {
       this.$emit('hide')
     },
     hide() {
-      this.visible = false
+      setTimeout(() => {
+        this.visible = false
+      }, 0)
     },
   },
 }
