@@ -30,7 +30,6 @@ block()
   font-size-adjust none
   -webkit-text-size-adjust 100%
   -webkit-overflow-scrolling touch
-  font-family -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif !important
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   background color-primary-background

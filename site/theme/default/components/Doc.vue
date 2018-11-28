@@ -241,7 +241,6 @@
 
 <script>
 import VueQRCodeComponent from 'vue-qrcode-component'
-import { setTimeout } from 'timers';
 
 export default {
   components: {
