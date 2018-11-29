@@ -10,12 +10,14 @@
       :class="{
         'is-selected': selectedValue === item.value && !inputSelected,
       }"
-      :title="$scopedSlots.default ? '' : (item.text || item.label)"
-      :brief="$scopedSlots.default ? '' : item.brief"
+      :title="hasSlot ? '' : (item.text || item.label)"
+      :brief="hasSlot ? '' : item.brief"
       :disabled="item.disabled"
       @click="$_select(item, index)"
     >
-      <slot :option="item"></slot>
+      <template v-if="hasSlot">
+        <slot :option="item"></slot>
+      </template>
       <md-radio
         v-if="!alignCenter && !inputSelected"
         :name="item.value"
@@ -105,6 +107,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isSlotScope: {
+      type: Boolean,
+      default: undefined,
+    },
   },
 
   data() {
@@ -122,6 +128,9 @@ export default {
       } else {
         return this.selectedValue
       }
+    },
+    hasSlot() {
+      return this.isSlotScope !== undefined ? this.isSlotScope : !!this.$scopedSlots.default
     },
   },
 

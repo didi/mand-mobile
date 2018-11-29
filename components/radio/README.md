@@ -47,6 +47,7 @@ Vue.component(RadioList.name, RadioList)
 |icon-size|图标大小|String|`lg`|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 |icon-position|图标位置|String|`left`|`left`, `right`|
+|is-slot-scope|是否强制使用或不使用`slot-scope`|Boolean|-|某些情况下需要根据业务逻辑动态确定是否使用，可避免直接组件上加`if/else`|
 
 #### Radio List Methods
 

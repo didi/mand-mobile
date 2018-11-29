@@ -46,6 +46,7 @@ Vue.component(Radio.name, Radio)
 |icon-size|the size of icon|String|`lg`|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 |icon-position|the position of icon|String|`left`|`left`, `right`|
+|is-slot-scope|if it is mandatory to use `slot-scope`|Boolean|-|it depends on exact cases to determine whether to use it or not, and avoids adding `if/else` to component|
 
 #### Radio List Methods
 
