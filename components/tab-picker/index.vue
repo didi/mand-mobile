@@ -26,9 +26,9 @@
             :label="pane.label"
           >
             <md-radio-list
-              v-if="hasSlot"
               :value="pane.value"
               :options="pane.options"
+              :is-slot-scope="hasSlot"
               @input="$_onSelectPaneItem($event, index)"
               icon="right"
               icon-inverse=""
@@ -38,15 +38,6 @@
                 <slot :option="option"></slot>
               </template>
             </md-radio-list>
-            <md-radio-list
-              v-else
-              :value="pane.value"
-              :options="pane.options"
-              @input="$_onSelectPaneItem($event, index)"
-              icon="right"
-              icon-inverse=""
-              icon-position="right"
-            />
           </md-tab-pane>
         </md-tabs>
       </div>

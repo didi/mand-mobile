@@ -36,12 +36,12 @@
         :style="{maxHeight: `${maxHeight}px`}"
       >
         <md-radio-list
-          v-if="hasSlot"
           class="md-selector-list"
           ref="radio"
           :key="radioKey"
           :value="defaultValue"
           :options="data"
+          :is-slot-scope="hasSlot"
           icon="right"
           icon-inverse=""
           icon-position="right"
@@ -52,19 +52,6 @@
             <slot :option="option"></slot>
           </template>
         </md-radio-list>
-        <md-radio-list
-          v-else
-          class="md-selector-list"
-          ref="radio"
-          :key="radioKey"
-          :value="defaultValue"
-          :options="data"
-          icon="right"
-          icon-inverse=""
-          icon-position="right"
-          icon-size="md"
-          @change="$_onSelectorChoose"
-        />
       </md-scroll-view>
     </md-popup>
   </div>

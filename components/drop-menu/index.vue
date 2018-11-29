@@ -31,14 +31,13 @@
         <md-radio-list
           v-model="selectedMenuListValue[activeMenuBarIndex]"
           :options="activeMenuListData"
+          :is-slot-scope="hasSlot"
           align-center
           @change="$_onListItemClick"
         >
-          <template v-if="hasSlot">
-            <tempalte slot-scope="{ option }">
-              <slot :option="option"></slot>
-            </tempalte>
-          </template>
+          <div slot-scope="{ option }">
+            <slot :option="option"></slot>
+          </div>
         </md-radio-list>
       </div>
     </md-popup>
