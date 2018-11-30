@@ -117,8 +117,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .md-amount
   &.numerical
-    font-family DINPro-Medium
+    font-family font-family-number
 </style>
