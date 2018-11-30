@@ -233,15 +233,15 @@ export default {
         margin-top -4px
         border-left solid 8px transparent
         border-right solid 8px transparent
-        border-top solid 9px color-text-minor
+        border-top solid 9px color-border-element
         transition transform .3s ease-in-out-quint
     &.active
-      span:after
-        transform rotate(180deg)
-    &.selected
       color drop-menu-color
       span:after
+        transform rotate(180deg)
         border-top-color drop-menu-color
+    &.selected
+      color drop-menu-color
     &.disabled
       opacity drop-menu-disabled-opacity
 
@@ -250,4 +250,6 @@ export default {
   padding-top drop-menu-height
   background drop-menu-list-bg
   box-sizing border-box
+  .md-radio-item
+    font-weight font-weight-normal
 </style>
