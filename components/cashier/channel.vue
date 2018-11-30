@@ -123,7 +123,7 @@ export default {
   .choose-text
     clearfix()
     position relative
-    padding 65px 0
+    padding 65px 0 25px
     hairline(bottom, color-border-minor)
     p
       block()
@@ -132,12 +132,12 @@ export default {
         font-size cashier-choose-title-font-size
         color cashier-choose-title-color
       &.choose-number
-        margin-top 25px
+        margin-top 20px
         font-size cashier-choose-amount-font-size
-        font-family DINPro-Medium
+        font-family font-family-number
         color cashier-choose-amount-color
+        letter-spacing -2px
       &.choose-describe
-        margin-top 15px
         font-size cashier-choose-describe-font-size
         color cashier-choose-describe-color
   .choose-channel

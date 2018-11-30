@@ -163,7 +163,7 @@ export default {
     },
     paymentTitle: {
       type: String,
-      default: '\u652f\u4ed8\u91d1\u989d', // 支付金额
+      default: '\u652f\u4ed8\u91d1\u989d\u0028\u5143\u0029', // 支付金额
     },
     paymentAmount: {
       type: String,
