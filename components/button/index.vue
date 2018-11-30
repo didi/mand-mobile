@@ -66,6 +66,7 @@ export default {
     content ''
     position absolute
     box-sizing border-box
+    pointer-events none
   &:active::before
     display block
   .md-button-inner
