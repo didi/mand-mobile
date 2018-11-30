@@ -122,47 +122,47 @@ export default {
   &.default
     background-color button-default-fill
     color button-default-color
-    hairline(all, color-border-element, button-radius, 4px)
+    hairline(all, color-border-element, button-radius, 3px)
     &.active:active
       background-color button-default-active-fill
   &.primary
     background-color button-primary-fill
     color button-primary-color
-    hairline(all, button-primary-fill, button-radius, 4px)
+    hairline(all, button-primary-fill, button-radius, 3px)
     &.active:active
       background-color button-primary-active-fill
   &.warning
     background-color button-warning-fill
     color button-warning-color
-    hairline(all, button-warning-fill, button-radius, 4px)
+    hairline(all, button-warning-fill, button-radius, 3px)
     &.active:active
       background-color button-warning-active-fill
   &.disabled
     background-color button-disabled-fill
     color button-disabled-color
-    hairline(all, button-disabled-fill, button-radius, 4px)
+    hairline(all, button-disabled-fill, button-radius, 3px)
 
   &.plain
     background transparent
 
     &.default
-      color button-default-color
-      hairline(all, color-border-element, button-radius, 4px)
+      color button-default-plain-color
+      hairline(all, color-border-element, button-radius, 3px)
       &.active:active
         background-color button-default-plain-active-fill
     &.primary
-      color button-primary-fill
-      hairline(all, button-primary-fill, button-radius, 4px)
+      color button-primary-plain-color
+      hairline(all, button-primary-fill, button-radius, 3px)
       &.active:active
         background-color button-primary-plain-active-fill
     &.warning
-      color button-warning-fill
-      hairline(all, button-warning-fill, button-radius, 4px)
+      color button-warning-plain-color
+      hairline(all, button-warning-fill, button-radius, 3px)
       &.active:active
         background-color button-warning-plain-active-fill
     &.disabled
-      color button-disabled-fill
-      hairline(all, button-disabled-fill, button-radius, 4px)
+      color button-disabled-plain-color
+      hairline(all, color-border-element, button-radius, 3px)
 
   &.round
     border-radius button-height
