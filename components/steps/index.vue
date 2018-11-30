@@ -4,18 +4,16 @@
     :class="{
       'md-steps-vertical': direction == 'vertical',
       'md-steps-horizontal': direction == 'horizontal',
-      'vertical-adaptive': direction == 'vertical' && verticalAdaptive
+      'vertical-adaptive': direction == 'vertical' && verticalAdaptive,
+      'no-current': currentLength % 1 !== 0
     }"
   >
     <template v-for="(step, index) of steps">
-      <div class="step-wrapper" :key="`step-${index}`">
-        <div
-          class="icon-wrapper"
-          :class="{
-            reached: index <= currentLength,
-            current: index === currentLength
-          }"
-        >
+      <div class="step-wrapper"
+        :class="[$_getStepStatusClass(index)]"
+        :key="`steps-${index}`"
+      >
+        <div class="icon-wrapper">
           <slot
             v-if="index < currentLength && (($scopedSlots.reached) || $slots.reached)"
             name="reached"
@@ -184,6 +182,21 @@ export default {
           }
         : null
     },
+    $_getStepStatusClass(index) {
+      const currentLength = this.currentLength
+
+      let status = []
+
+      if (index < currentLength) {
+        status.push('reached')
+      }
+
+      if (index === Math.floor(currentLength)) {
+        status.push('current')
+      }
+
+      return status.join(' ')
+    },
     $_formatValue(val) {
       if (val < 0) {
         return 0
@@ -252,12 +265,24 @@ export default {
       justify-content center
       align-items center
       flex-direction column
+      &.reached
+        .text-wrapper .name
+          color steps-text-color
+      &.current
+        .text-wrapper .name
+          color steps-color-active
     .text-wrapper
       top 100%
       padding-top steps-text-gap-horizontal
       text-align center
+      .name
+        color steps-desc-color
       .desc
         margin-top 10px
+        color steps-desc-color
+    &.no-current
+      .reached:last-of-type
+        display none !important
         
   &.md-steps-vertical
     align-items flex-start
@@ -283,8 +308,11 @@ export default {
         padding-left steps-text-gap-vertical
         .name, .desc
           white-space normal
+        .name
+          color steps-text-color
         .desc
           margin-top 18px
+          color steps-desc-color
 
   .icon-wrapper
     display flex
@@ -306,10 +334,6 @@ export default {
       background steps-color
       border-radius 12px
 
-    &.reached
-      .step-node-default:after
-        background steps-color-active
-
   .step-wrapper
     display flex
     position relative
@@ -328,13 +352,14 @@ export default {
       .name, .desc
         white-space nowrap
       .name
-        color steps-text-color
         line-height steps-text-font-size
         font-size steps-text-font-size
       .desc
-        color steps-desc-color
         line-height steps-text-font-size
         font-size steps-desc-font-size
+    &.reached
+      .icon-wrapper .step-node-default:after
+        background steps-color-active
 
   .bar
     position relative
