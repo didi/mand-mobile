@@ -63,6 +63,7 @@ Dialog.confirm = ({
   confirmText = '确定',
   closable = false,
   onConfirm = noop,
+  onCancel = noop,
 }) => {
   const vm = generate({
     title,
@@ -73,7 +74,11 @@ Dialog.confirm = ({
     btns: [
       {
         text: cancelText,
-        handler: /* istanbul ignore next */ () => vm.close(),
+        handler: /* istanbul ignore next */ () => {
+          if (onCancel() !== false) {
+            vm.close()
+          }
+        },
       },
       {
         text: confirmText,
