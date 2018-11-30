@@ -151,15 +151,13 @@ export default {
     },
     $_hidePopupBox() {
       this.isAnimation = true
-      setTimeout(() => {
-        this.isPopupBoxShow = false
-        this.preventScroll && this.$_preventScroll(false)
-        this.$emit('input', false)
-        /* istanbul ignore if */
-        if (process.env.NODE_ENV === 'testing') {
-          this.$_onPopupTransitionEnd()
-        }
-      }, 0)
+      this.isPopupBoxShow = false
+      this.preventScroll && this.$_preventScroll(false)
+      this.$emit('input', false)
+      /* istanbul ignore if */
+      if (process.env.NODE_ENV === 'testing') {
+        this.$_onPopupTransitionEnd()
+      }
     },
     $_preventScroll(isBind) {
       const handler = isBind ? 'addEventListener' : 'removeEventListener'
