@@ -212,15 +212,16 @@ export default {
         return
       }
       clearInterval(this.__counter__)
-      let i = this.count - 1
+      const timestamp = Date.now()
+      let i = this.count
       this.isCounting = true
       this.countBtnText = this.countActiveText.replace('{$1}', i)
       /* istanbul ignore next */
       this.__counter__ = setInterval(() => {
-        if (i === 1) {
+        if (i <= 1) {
           this.resetcount()
         } else {
-          i--
+          i = this.count - Math.floor((Date.now() - timestamp) / 1000)
           this.countBtnText = this.countActiveText.replace('{$1}', i)
         }
       }, 1000)
