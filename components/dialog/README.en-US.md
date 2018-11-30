@@ -27,7 +27,7 @@ Vue.component(Dialog.name, Dialog)
 | icon-svg | svg icon | Boolean |`false`|Refer to `Icon` component for customized icon|
 | closable | whether the close button is visible or not | Boolean | `true` | - |
 | layout | layout of action buttons, `row, column` | String | `row` | - |
-| btns | action buttons in the footer| Array {text, handler} | `[]` | - |
+| btns | action buttons in the footer| Array {text, handler, warning} | `[]` | - |
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
 | has-mask | has mask or not | Boolean | `true` | - |
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
@@ -62,6 +62,8 @@ Dynamically create a confirmation dialog
 | content | content of dialog | String | -|
 | cancelText | cancelation button | String | `Cancel` |
 | confirmText | confirmation button | String | `Confirm` |
+| cancelWarning | clicking the Cancel button is a warning action | Boolean | `false` |
+| confirmWarning | clicking the Confirm button is a warning action | Boolean | `false` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 
 ##### Dialog.alert(props)
@@ -73,6 +75,7 @@ Dynamically create an alert dialog
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
+| warning | clicking the Confirm button is a warning action | Boolean | `false` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 
 ##### Dialog.succeed(props)
