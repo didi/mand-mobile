@@ -115,7 +115,9 @@ export default {
           this.$_showPopupBox()
         }
       } else {
-        this.$_hidePopupBox()
+        setTimeout(() => {
+          this.$_hidePopupBox()
+        }, 0)
       }
     },
     preventScrollExclude(val, oldVal) {
@@ -149,13 +151,15 @@ export default {
     },
     $_hidePopupBox() {
       this.isAnimation = true
-      this.isPopupBoxShow = false
-      this.preventScroll && this.$_preventScroll(false)
-      this.$emit('input', false)
-      /* istanbul ignore if */
-      if (process.env.NODE_ENV === 'testing') {
-        this.$_onPopupTransitionEnd()
-      }
+      setTimeout(() => {
+        this.isPopupBoxShow = false
+        this.preventScroll && this.$_preventScroll(false)
+        this.$emit('input', false)
+        /* istanbul ignore if */
+        if (process.env.NODE_ENV === 'testing') {
+          this.$_onPopupTransitionEnd()
+        }
+      }, 0)
     },
     $_preventScroll(isBind) {
       const handler = isBind ? 'addEventListener' : 'removeEventListener'
