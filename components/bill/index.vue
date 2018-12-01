@@ -66,7 +66,7 @@ export default {
   display flex
   align-items center
   justify-content space-between
-  padding 20px 32px 0
+  padding 28px 32px 8px
 
 .md-bill-title
   color bill-name-color
@@ -82,7 +82,7 @@ export default {
   position relative
   height 36px
   padding 10px
-  margin 0 18px
+  margin 0 28px
   box-sizing border-box
   span
     position absolute

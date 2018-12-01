@@ -27,7 +27,7 @@ Vue.component(Dialog.name, Dialog)
 | icon-svg | svg图标 | Boolean |`false`|如需自定义图标, 请查看`Icon`组件|
 | closable | 是否显示关闭按钮 | Boolean | `true`|-|
 | layout | 底部按钮组布局方式, `row, column` | String | `row` | - |
-| btns | 底部操作按钮组 | Array | `[]`|-|
+| btns | 底部操作按钮组 | Array<{text, handler, warning}> | `[]`|`warning` is used to identify the warning action|
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
@@ -61,6 +61,8 @@ Vue.component(Dialog.name, Dialog)
 | content | 正文内容 | String | -|
 | cancelText | 底部取消按钮文字 | String | `取消`|
 | confirmText | 底部确认按钮文字 | String | `确认`|
+| cancelWarning | 点击取消按钮为警示操作 | Boolean | `false` |
+| confirmWarning | 点击确认按钮为警示操作 | Boolean | `false` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 
 ##### Dialog.alert(props)
@@ -72,6 +74,7 @@ Vue.component(Dialog.name, Dialog)
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
+| warning | 点击确认按钮为警示操作 | Boolean | `false` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 
 ##### Dialog.succeed(props)

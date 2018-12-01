@@ -13,7 +13,11 @@
           @click.stop="data.action.handler"
         ></span>
       </p>
-      <p class="desc" v-html="data.desc"></p>
+      <p
+        class="desc"
+        v-if="data.desc"
+        v-html="data.desc"
+      ></p>
     </div>
     <div class="item-check-icon">
       <md-icon
@@ -55,21 +59,22 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .md-cashier-channel-item
   block()
   position relative
-  padding 15px 40px 15px 0
+  padding 20px 40px 20px 0
   box-sizing border-box
   .item-icon
+    position relative
     float left
     width 32px
     height 32px
-    margin-top 4px
   .item-label
     float left
     margin-left h-gap-sm
     .title
+      line-height 1
       font-size cashier-choose-channel-title-font-size
       color cashier-choose-channel-title-color
       .title-active
@@ -77,16 +82,16 @@ export default {
         font-size cashier-choose-channel-title-action-font-size
         color cashier-choose-channel-title-action-color
     .desc
-      margin-top 4px
+      margin-top 8px
       font-size cashier-choose-channel-desc-font-size
       color cashier-choose-channel-desc-color
   .item-check-icon
     position absolute
-    top 50%
+    top 20px
     right 0
-    transform translateY(-50%)
+    // transform translateY(-50%)
     .md-icon
-      color color-text-disabled
+      color color-text-placeholder
       &.md-icon-checked
         color cashier-choose-channel-icon-color
 </style>

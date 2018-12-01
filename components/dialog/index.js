@@ -60,7 +60,9 @@ Dialog.confirm = ({
   iconSvg = false,
   content = '',
   cancelText = '取消',
+  cancelWarning = false,
   confirmText = '确定',
+  confirmWarning = false,
   closable = false,
   onConfirm = noop,
   onCancel = noop,
@@ -74,6 +76,7 @@ Dialog.confirm = ({
     btns: [
       {
         text: cancelText,
+        warning: cancelWarning,
         handler: /* istanbul ignore next */ () => {
           if (onCancel() !== false) {
             vm.close()
@@ -82,6 +85,7 @@ Dialog.confirm = ({
       },
       {
         text: confirmText,
+        warning: confirmWarning,
         handler: /* istanbul ignore next */ () => {
           if (onConfirm() !== false) {
             vm.close()
@@ -107,6 +111,7 @@ Dialog.alert = ({
   content = '',
   confirmText = '确定',
   closable = false,
+  warning = false,
   onConfirm = noop,
 }) => {
   const vm = generate({
@@ -118,6 +123,7 @@ Dialog.alert = ({
     btns: [
       {
         text: confirmText,
+        warning,
         handler: /* istanbul ignore next */ () => {
           if (onConfirm() !== false) {
             vm.close()

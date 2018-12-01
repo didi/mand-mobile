@@ -562,6 +562,6 @@ export default {
   .column-item
     font-size date-picker-font-size !important
     overflow visible !important
-  &.datetime .column-item
-    font-size date-time-picker-font-size !important
+  // &.datetime .column-item
+  //   font-size date-time-picker-font-size !important
 </style>

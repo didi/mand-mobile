@@ -28,8 +28,6 @@ Vue.component(ActionSheet.name, ActionSheet)
 |default-index|default selected index|Boolean|0|-|
 |invalid-index|invalid index|Number| -1|-|
 |cancel-text|cancel text|String|-|-|
-|max-height|the maximum height of actionsheet area|Number|`400`|unit `px`|
-
 
 #### ActionSheet Events
 

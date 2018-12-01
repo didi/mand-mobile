@@ -6,7 +6,7 @@
       prevent-scroll
       prevent-scroll-exclude=".md-landscape-content"
       :has-mask="!fullScreen && hasMask"
-      :transition="fullScreen ? 'md-fly' : 'md-punch'"
+      :transition="fullScreen ? 'md-fade' : 'md-punch'"
       @input="$emit('input', false)"
       @show="$emit('show')"
       @hide="$emit('hide')">

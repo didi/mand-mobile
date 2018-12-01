@@ -25,7 +25,7 @@ Vue.component(Cashier.name, Cashier)
 |channels|支付渠道数据源|Array<{text, value, icon, iconSvg, action}>|`[]`|`icon`可作为`className`或组件`Icon`的`name`属性, `iconSvg`为是否使用svg图标, `action`为特殊动作|
 |default-index|默认选中支付渠道索引|Number|`0`|-|
 |title|收银台弹窗标题|String|`支付`|-|
-|payment-title|支付金额标题|String|`支付金额`|支持`html fragment`|
+|payment-title|支付金额标题|String|`支付金额(元)`|支持`html fragment`|
 |payment-amount|支付金额|String|`0.00`|支持`html fragment`|
 |payment-describe|支付金额说明|String|-|支持`html fragment`|
 |pay-button-text|确认支付按钮文案|String|`确认支付`|支持`html fragment`|

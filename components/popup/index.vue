@@ -115,7 +115,9 @@ export default {
           this.$_showPopupBox()
         }
       } else {
-        this.$_hidePopupBox()
+        setTimeout(() => {
+          this.$_hidePopupBox()
+        }, 0)
       }
     },
     preventScrollExclude(val, oldVal) {

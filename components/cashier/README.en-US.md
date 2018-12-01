@@ -25,7 +25,7 @@ Vue.component(Cashier.name, Cashier)
 |channels|data source of payment channel |Array<{text, value, icon, iconSvg}>|`[]`|`icon` can be used as the `name` attribute of `className` or component `Icon`, `iconSvg` for using svg icon|
 |default-index|default selected index of payment channel |Number|`0`|-|
 |title|cashier title|String|`pay	`|-|
-|payment-title|payment amount title|String|`payment amount`|support `html fragment`|
+|payment-title|payment amount title|String|`支付金额(元)`|support `html fragment`|
 |payment-amount|payment amount|String|`0.00`|support `html fragment`|
 |payment-describe|the description of payment amount |String|-|support `html fragment`|
 |pay-button-text|confirm payment button text|String|`确认支付`|support `html fragment`|

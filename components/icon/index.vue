@@ -65,6 +65,9 @@ export default {
   font-style normal
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
+  display flex
+  align-items center
+  justify-content center
   &:before
     position relative
     z-index 2
@@ -205,7 +208,7 @@ export default {
   font-family Mand-Mobile-Icon
   /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
   /* Version is required */
-  src url("//manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0/iconfont.ttf") format("truetype")
+  src url("//manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0.1/iconfont.ttf") format("truetype")
   font-style normal
   font-weight normal
 </style>

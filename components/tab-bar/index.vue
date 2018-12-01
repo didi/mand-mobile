@@ -6,10 +6,11 @@
         <div class="md-tab-bar-end" v-show="maskEndShown"></div>
       </template>
       <md-scroll-view
-        :scrolling-x="true"
-        :scrolling-y="false"
-        @scroll="$_onScroll"
         ref="scroller"
+        :scrolling-x="scrollable"
+        :scrolling-y="false"
+        :key="scrollerTmpKey"
+        @scroll="$_onScroll"
       >
         <div class="md-tab-bar-list" :style="{width: contentW + 'px'}">
           <a
@@ -83,6 +84,7 @@ export default {
       contentW: 0,
       inkWidth: 0,
       inkPos: 0,
+      scrollerTmpKey: Date.now(),
       maskStartShown: false,
       maskEndShown: true,
     }
@@ -130,6 +132,9 @@ export default {
       this.$nextTick(function() {
         this.reflow()
       })
+    },
+    scrollable() {
+      this.scrollerTmpKey = Date.now()
     },
   },
 
@@ -237,6 +242,7 @@ export default {
   justify-content center
   color tab-text-color
   font-size tab-font-size
+  font-weight tab-font-weight
   height tab-height
   padding 0 tab-item-gap
   margin 0 auto

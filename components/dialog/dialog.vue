@@ -31,14 +31,19 @@
           </slot>
         </div>
         <footer class="md-dialog-actions" :class="{ 'is-column': layout === 'column' }">
-          <a
-            role="button"
-            class="md-dialog-btn"
-            v-for="(btn, index) in btns"
-            :key="index"
-            v-text="btn.text"
-            @click="$_onClick(btn)"
-          ></a>
+          <template v-for="(btn, index) in btns">
+            <a
+              role="button"
+              class="md-dialog-btn"
+              :class="{
+                warning: !!btn.warning
+              }"
+              :key="index"
+              v-text="btn.text"
+              @click="$_onClick(btn)"
+              @touchmove.prevent
+            ></a>
+          </template>
         </footer>
       </div>
     </md-popup>
@@ -162,21 +167,21 @@ export default {
 .md-dialog-content
   width dialog-width
   border-radius dialog-radius
-  background-color color-bg-base
+  background-color color-bg-inverse
   overflow hidden
 
 .md-dialog-body
   color dialog-text-color
   font-size dialog-text-font-size
   text-align left
-  padding v-gap-sl h-gap-sl
+  padding dialog-body-padding
 
 .md-dialog-icon
   position relative
   display block
   width dialog-icon-size
   height dialog-icon-size
-  margin v-gap-md auto
+  margin v-gap-md auto 28px
 .md-dialog .md-dialog-icon .md-icon
   display flex
   align-items center
@@ -202,6 +207,7 @@ export default {
   color dialog-title-color
   text-align center
   font-size dialog-title-font-size
+  font-weight font-weight-normal
   line-height 1.2
   margin 0 0 28px 0
 
@@ -221,7 +227,7 @@ export default {
       &:not(:first-child)
         hairline(top, dialog-action-border-color)
       &:last-child
-        color color-text-caption
+        color color-text-minor
       &:first-child
         color dialog-action-highlight-color
 
@@ -233,10 +239,18 @@ export default {
   justify-content center
   height dialog-action-height
   font-size dialog-action-font-size
-  color color-text-caption
+  font-weight dialog-action-font-weight
+  color color-text-minor
   text-align center
   hairline(right, dialog-action-border-color)
+  transition background-color .3s
+  -webkit-user-select none
+  -webkit-tap-highlight-color transparent
+  &.warning
+    color color-text-error !important
   &:last-child
     color dialog-action-highlight-color
     remove-hairline(right)
+  &:active
+    background-color color-bg-tap
 </style>

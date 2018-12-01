@@ -4,11 +4,10 @@
       v-model="isActionSheetShow"
       position="bottom"
       prevent-scroll
-      :prevent-scroll-exclude="scroller"
       @show="$_onShow"
       @hide="$_onHide"
     >
-      <div class="md-action-sheet-content" :style="{maxHeight: `${maxHeight}px`}">
+      <div class="md-action-sheet-content">
         <header class="md-action-sheet-header" v-if="title">{{ title }}</header>
         <ul class="md-action-sheet-list">
           <template v-for="(item, index) in options">
@@ -20,8 +19,11 @@
                 'md-action-sheet-item': true
               }"
               @click="$_onSelect(item, index)"
-              v-html="item.text || item.label"
-            ></li>
+            >
+              <div class="md-action-sheet-item-wrapper">
+                <div class="md-action-sheet-item-section" v-html="item.text || item.label"></div>
+              </div>
+            </li>
           </template>
           <li class="md-action-sheet-cancel" @click="$_onCancel">{{ cancelText }}</li>
         </ul>
@@ -67,10 +69,6 @@ export default {
       type: String,
       default: '取消',
     },
-    maxHeight: {
-      type: Number,
-      default: 400,
-    },
   },
 
   data() {
@@ -92,17 +90,8 @@ export default {
   },
 
   methods: {
-    $_setScroller() {
-      const boxer = this.$el ? this.$el.querySelector('.md-action-sheet-content') : null
-      if (boxer && boxer.clientHeight >= this.maxHeight) {
-        this.scroller = '.md-action-sheet-content'
-      } else {
-        this.scroller = ''
-      }
-    },
     // MARK: events handler, 如 $_onButtonClick
     $_onShow() {
-      this.$_setScroller()
       this.$emit('show')
     },
     $_onHide() {
@@ -143,22 +132,35 @@ export default {
   overflow auto
 
 .md-action-sheet-header
+  position relative
   vertical-height(action-sheet-height)
+  hairline(bottom, color-border-base)
   word-ellipsis()
-
-.md-action-sheet-list
-  padding 0 action-sheet-padding-h
+  overflow visible
 
 .md-action-sheet-item
   position relative
   vertical-height(action-sheet-height)
-  hairline(top, color-border-base)
+  padding 0 action-sheet-padding-h
   box-sizing border-box
   font-size action-sheet-font-size
+  transition background-color .3s
+  -webkit-user-select none
   &.active
     color action-sheet-color-highlight
-  &.disabled
+  &.disabled .md-action-sheet-item-section
     opacity action-sheet-disabled-opacity
+  &:first-of-type
+    .md-action-sheet-item-wrapper:after
+      display none
+  &:active
+    background-color color-bg-tap
+    &.disabled
+      background-color transparent
+
+.md-action-sheet-item-wrapper
+  position relative
+  hairline(top, color-border-base)
 
 .md-action-sheet-cancel
   height 132px

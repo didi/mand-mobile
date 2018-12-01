@@ -173,10 +173,13 @@ export default {
 
 .md-notice-bar-left,
 .md-notice-bar-right
-  padding-right 14px
   display flex
   align-items center
 
+.md-notice-bar-left
+  padding-right 12px
+.md-notice-bar-right
+  padding-right 32px
 .md-notice-bar-empty
   padding-right 0
 
@@ -194,7 +197,7 @@ export default {
   .md-notice-bar-content-animate
     padding-left 100%
     display inline-block
-    animation md-notice-bar-animation linear 9s infinite both
+    animation md-notice-bar-animation linear 16s infinite both
 
 @keyframes md-notice-bar-animation {
   0% {
