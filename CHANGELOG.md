@@ -3,6 +3,15 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.5
+`2018-12-01`
+- Fix
+  - `Popup` 异步隐藏 [#242](https://github.com/didi/mand-mobile/issues/242)
+  - `Button` 蒙层点击击穿 [#244](https://github.com/didi/mand-mobile/issues/244)
+  - `Toast` 异步隐藏 [#238](https://github.com/didi/mand-mobile/issues/242)
+  - `Picker` 双向查找有效值 [#238](https://github.com/didi/mand-mobile/issues/238)
+  - `DatePicker` BUG 修复 [#241](https://github.com/didi/mand-mobile/issues/241)
+
 ### 1.6.4
 `2018-11-20`
 - Fix

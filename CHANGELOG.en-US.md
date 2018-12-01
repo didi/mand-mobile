@@ -3,6 +3,15 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.5
+`2018-12-01`
+- Fix
+  - `Popup` hide asynchronously [#242](https://github.com/didi/mand-mobile/issues/242)
+  - `Button` prevent feedback layer swallowing click event [#244](https://github.com/didi/mand-mobile/issues/244)
+  - `Toast` hide asynchronously [#238](https://github.com/didi/mand-mobile/issues/242)
+  - `Picker` look for valid items in both directions [#238](https://github.com/didi/mand-mobile/issues/238)
+  - `DatePicker` increate fault tolerance of data recovery in "cancel" [#241](https://github.com/didi/mand-mobile/issues/241)
+
 ### 1.6.4
 `2018-11-20`
 - Fix
