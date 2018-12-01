@@ -80,8 +80,10 @@ describe('Popup', () => {
     setTimeout(() => {
       const popupMask = wrapper.find('.md-popup-mask')[0]
       popupMask.trigger('click')
-      expect(wrapper.vm.isPopupBoxShow).to.be.false
-      done()
+      setTimeout(() => {
+        expect(wrapper.vm.isPopupBoxShow).to.be.false
+        done()
+      }, 50)
     }, 300)
   })
 

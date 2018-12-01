@@ -525,7 +525,9 @@ export default {
     },
     $_onPickerCancel () {
       this.$emit('cancel')
-      this.columnData = [...this.oldColumnData]
+      if (this.oldColumnData) {
+        this.columnData = [...this.oldColumnData]
+      }
     },
 
     getFormatDate (format = 'yyyy-MM-dd hh:mm') {

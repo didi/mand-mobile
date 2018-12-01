@@ -210,7 +210,6 @@ export default {
 
       this.$_getColumnIndexByDefault(data, defaultIndex, defaultValue, (columnIndex, itemIndex) => {
         const scroller = scrollers[columnIndex]
-        const offsetTop = this.$_getColumnOffsetByIndex(itemIndex)
 
         /* istanbul ignore if */
         if (!scroller) {
@@ -218,10 +217,17 @@ export default {
           return 1
         }
 
-        scroller.scrollTo(0, offsetTop)
-
-        // save active index of each column
-        this.$set(this.activedIndexs, columnIndex, itemIndex)
+        /**
+         * If the initial selection item is invalid,
+         * then a valid item is automatically selected
+         */
+        if (this.$_isColumnIndexInvalid(columnIndex, itemIndex)) {
+          this.$_scrollToValidIndex(columnIndex, itemIndex)
+        } else {
+          const offsetTop = this.$_getColumnOffsetByIndex(itemIndex)
+          scroller.scrollTo(0, offsetTop)
+          this.$set(this.activedIndexs, columnIndex, itemIndex)
+        }
       })
     },
     $_getColumnIndexByDefault(data, defaultIndex = [], defaultValue = [], fn = noop) {
@@ -265,16 +271,38 @@ export default {
       const invalidIndex = this.invalidIndex[columnIndex]
       return inArray(invalidIndex, itemIndex)
     },
+    $_hasValidIndex(columnIndex) {
+      for (const key of this.data[columnIndex].keys()) {
+        if (!this.$_isColumnIndexInvalid(columnIndex, key)) {
+          return true
+        }
+      }
+      warn(`hasValidIndex: has no valid items in column index ${columnIndex}`)
+      return false
+    },
+    $_findValidIndex(columnIndex, count) {
+      // Has no valid items
+      if (!this.$_hasValidIndex(columnIndex)) {
+        return count
+      }
+      let tempCount = count
+      while (this.$_isColumnIndexInvalid(columnIndex, tempCount)) {
+        tempCount += this.scrollDirect
+      }
+      /**
+       * No valid item in this direction,
+       * find valid item in another direction
+       */
+      if (tempCount < 0 || tempCount > this.data[columnIndex].length - 1) {
+        this.scrollDirect = -this.scrollDirect
+        return this.$_findValidIndex(columnIndex, count)
+      }
+      return tempCount
+    },
     $_scrollToValidIndex(columnIndex, itemIndex) {
       const scroller = this.scrollers[columnIndex]
-      const dirction = this.scrollDirect
-      let count = itemIndex
-
-      while (this.$_isColumnIndexInvalid(columnIndex, count)) {
-        count += dirction
-      }
-
-      let offsetTop = this.$_getColumnOffsetByIndex(count)
+      const count = this.$_findValidIndex(columnIndex, itemIndex)
+      const offsetTop = this.$_getColumnOffsetByIndex(count)
       scroller.scrollTo(0, this.$_scrollInZoon(scroller, offsetTop), true)
     },
     $_scrollInZoon(scroller, top) {
