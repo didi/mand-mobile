@@ -1,3 +1,5 @@
+import {root} from './env'
+
 /* istanbul ignore file */
 const Animate = (global => {
   /* istanbul ignore next */
@@ -201,7 +203,7 @@ const Animate = (global => {
       return id
     },
   }
-})(window)
+})(root)
 
 export const easeOutCubic = pos => {
   return Math.pow(pos - 1, 3) + 1

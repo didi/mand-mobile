@@ -1,4 +1,6 @@
 /* istanbul ignore file */
+import {inBrowser} from './env'
+
 export function noop() {}
 
 /**
@@ -42,7 +44,7 @@ export function getDpr() {
     return null
   }
 
-  const viewPort = document.querySelector('meta[name=viewport]')
+  const viewPort = inBrowser ? document.querySelector('meta[name=viewport]') : null
 
   if (!viewPort) {
     return 1
