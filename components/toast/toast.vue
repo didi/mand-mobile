@@ -98,7 +98,7 @@ export default {
     flex-shrink 0
     color toast-color
   .md-icon + .md-toast-text
-    margin-left 12px
+    margin-left h-gap-ssm
   .md-popup
     .md-popup-box
       width 540px
