@@ -127,7 +127,7 @@
       font-size popup-title-bar-font-size-title
       color popup-title-bar-color-title
     p.describe
-      margin-top v-gap-sm
+      margin-top 4px
       font-size popup-title-bar-font-size-describe
       color popup-title-bar-color-describe
   .title-bar-left
