@@ -127,6 +127,7 @@ export default {
   .md-popup
     z-index number-keyboard-zindex
   .md-popup-box
+    padding-top 1px
     background-color color-bg-base
     padding-bottom constant(safe-area-inset-bottom)
 </style>

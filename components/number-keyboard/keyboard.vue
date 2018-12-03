@@ -127,7 +127,7 @@ export default {
   display flex
   width number-keyboard-width
   height number-keyboard-height
-  hairline(top, number-keyboard-key-bordr-color)
+  hairline(top, number-keyboard-key-border-color)
   .keyboard-number, .keyboard-operate
     display flex
     clearfix()
@@ -142,16 +142,18 @@ export default {
         float left
         width 33.3%
         height number-keyboard-key-height
-        hairline(right, number-keyboard-key-bordr-color)
-        hairline(top, number-keyboard-key-bordr-color)
+        padding-top 5px
+        hairline(right, number-keyboard-key-border-color)
+        hairline(top, number-keyboard-key-border-color)
         text-align center
         line-height number-keyboard-key-height
         font-size number-keyboard-key-font-size
         font-weight number-keyboard-key-font-weight
-        font-family DINPro-Medium
+        font-family font-family-number
         color number-keyboard-key-color
         transition background .3s
         background number-keyboard-key-bg
+        box-sizing border-box
         &.no-bg
           background transparent
         &:after
