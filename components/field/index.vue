@@ -72,6 +72,7 @@
   flex-shrink 0
   display inline-flex
   align-items center
+  align-self flex-start
   justify-content flex-end
   margin-left h-gap-sm
   color field-action-color
@@ -81,8 +82,10 @@
   color field-title-color
   font-size field-title-font-size
   font-weight field-title-font-weight
+  line-height 1
 
 .md-field-brief
+  margin-top v-gap-ssm
   color field-brief-color
   font-size field-brief-font-size
   line-height 1.4
