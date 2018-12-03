@@ -1,6 +1,6 @@
 {
   "name": "province",
-  "label": "省",
+  "label": "请选择",
   "options": [
     {
       "value": "pk",
@@ -25,11 +25,11 @@
       }
     },
     {
-      "value": "sx",
+      "value": "sc",
       "label": "四川",
       "children": {
         "name": "city",
-        "label": "市",
+        "label": "请选择",
         "options": [
           {
             "value": "cd",
@@ -54,7 +54,7 @@
             "label": "绵阳市",
             "children": {
               "name": "block",
-              "label": "区",
+              "label": "请选择",
               "options": [
                 {
                   "value": "jn",
