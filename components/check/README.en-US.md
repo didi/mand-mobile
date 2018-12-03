@@ -70,10 +70,11 @@ Check multiple checks. Combine with `Check` or `CheckBox`.
 ---
 
 #### CheckList Props
-| Arg | Description | Type | Default |
+| Arg | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|v-model|selected names|Array|-|
+|v-model|selected names|Array|-|-|
 |options|data otpions|Array<{text, value, disabled, ...}>|`[]`|-|
+|is-slot-scope|if it is mandatory to use `slot-scope`|Boolean|-|it depends on exact cases to determine whether to use it or not, and avoids adding `if/else` to component|
 
 #### CheckList Slots
 `CheckGroup` default slot will be used as template, and it will receive `{option}` from `slot-scope`.

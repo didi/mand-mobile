@@ -13,12 +13,14 @@
       :class="{
         'is-checked': value.indexOf(item.value) !== -1,
       }"
-      :title="$scopedSlots.default ? '' : (item.text || item.label)"
-      :brief="$scopedSlots.default ? '' : item.brief"
+      :title="hasSlot ? '' : (item.text || item.label)"
+      :brief="hasSlot ? '' : item.brief"
       :disabled="item.disabled"
       @click="$_check(item, index)"
     >
-      <slot :option="item"></slot>
+      <template v-if="hasSlot">
+        <slot :option="item"></slot>
+      </template>
       <md-check
         v-if="!alignCenter"
         :name="item.value"
@@ -26,6 +28,7 @@
         size="md"
         icon="right"
         icon-inverse=""
+        icon-disabled=""
         slot="right"
       />
     </md-cell-item>
@@ -60,6 +63,16 @@ export default {
       type: Boolean,
       default: false,
     },
+    isSlotScope: {
+      type: Boolean,
+      default: undefined,
+    },
+  },
+
+  computed: {
+    hasSlot() {
+      return this.isSlotScope !== undefined ? this.isSlotScope : !!this.$scopedSlots.default
+    },
   },
 
   methods: {
@@ -77,12 +90,11 @@ export default {
 
 <style lang="stylus">
 .md-check-item
-  &.is-checked
-    .md-cell-item-title
-      color check-color
   .md-check
     margin-top 0
     margin-bottom 0
+  .md-cell-item-body.multilines .md-cell-item-title
+    font-weight font-weight-medium
 
 .md-check-list.is-align-center
   .md-cell-item-content

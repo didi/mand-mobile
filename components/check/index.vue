@@ -45,6 +45,10 @@ export default {
       type: String,
       default: 'check',
     },
+    iconDisabled: {
+      type: String,
+      default: 'check-disabled',
+    },
     label: {
       type: String,
       default: '',
@@ -60,7 +64,7 @@ export default {
       return this.value === this.name || (this.rootGroup && this.rootGroup.value.indexOf(this.name) !== -1)
     },
     currentIcon() {
-      return this.isChecked ? this.icon : this.iconInverse
+      return this.disabled ? this.iconDisabled : this.isChecked ? this.icon : this.iconInverse
     },
   },
 
@@ -99,6 +103,9 @@ export default {
   line-height 1.5
   margin-top v-gap-sm
   margin-bottom v-gap-sm
+  &.is-checked
+    .md-check-icon
+      color check-color
   &.is-disabled
     .md-check-icon
     .md-check-label
@@ -109,7 +116,7 @@ export default {
   flex-shrink 0
   top 0.75em
   line-height 0
-  color check-color
+  color color-text-placeholder
   transform translateY(-50%)
 
 .md-check-label

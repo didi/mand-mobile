@@ -77,19 +77,16 @@
   border 1px solid checkbox-border-color
   border-radius checkbox-border-radius
   box-sizing border-box
-  &:before
-    position absolute
-    absolute-pos()
-    content ""
-    opacity checkbox-active-bg-opacity
-    z-index -1
   &.is-checked
     color checkbox-active-color
     border-color checkbox-active-border-color
     &:before
       background-color checkbox-active-bg
+    &.is-disabled
+      color checkbox-active-color
+      border-color checkbox-active-border-color
+      opacity 0.6
   &.is-disabled
     color checkbox-disabled-color
     border-color checkbox-disabled-color
-    background-color none
 </style>
