@@ -2,6 +2,7 @@
   <div class="md-example-child md-example-child-dialog md-example-child-dialog-0">
     <md-button @click="basicDialog.open = true">基本</md-button>
     <md-button @click="iconDialog.open = true">带图标</md-button>
+    <md-button @click="warnDialog.open = true">警示操作</md-button>
     <md-button @click="actDialog.open = true">多操作</md-button>
 
     <md-dialog
@@ -15,12 +16,20 @@
 
     <md-dialog
       icon="location"
-      title="窗口标题"
       :closable="true"
       v-model="iconDialog.open"
       :btns="iconDialog.btns"
     >
       围在城里的人想逃出来，城外的人想冲进去，对婚姻也罢，职业也罢，人生的愿望大都如此。
+    </md-dialog>
+
+    <md-dialog
+      title="警示操作"
+      :closable="false"
+      v-model="warnDialog.open"
+      :btns="warnDialog.btns"
+    >
+      或是因为习惯了孤独，我们渴望被爱；又或是害怕爱而不得，我们最后仍然选择孤独。
     </md-dialog>
 
     <md-dialog
@@ -64,6 +73,18 @@ export default {
           {
             text: '确认操作',
             handler: this.onIconConfirm,
+          },
+        ],
+      },
+      warnDialog: {
+        open: false,
+        btns: [
+          {
+            text: '取消',
+          },
+          {
+            text: '警示操作',
+            warning: true,
           },
         ],
       },

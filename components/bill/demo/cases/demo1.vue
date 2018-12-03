@@ -5,15 +5,25 @@
         <h1 class="title">借款单据</h1>
         <p class="desc">仔细阅读，关注您的利益、义务</p>
       </div>
-      <md-detail-item title="借款金额" content="￥30,000" />
+      <md-detail-item title="借款金额">
+        &yen;30,000
+      </md-detail-item>
       <md-detail-item title="收款账户">
         <md-icon name="bank-zs" style="margin-right:10px;"></md-icon>招商银行(尾号xxxx)
       </md-detail-item>
       <md-detail-item title="借款期数" content="12期" />
-      <md-detail-item title="正常还款总息" content="￥140.50" />
+      <md-detail-item title="正常还款总息">
+        &yen;140.50
+      </md-detail-item>
       <md-detail-item title="还款">
-        <md-tag size="tiny" shape="fillet" type="fill" style="margin-right:10px;">首次</md-tag>
-        ￥404.50(9月22日)
+        <md-tag
+          size="small"
+          shape="fillet"
+          type="fill"
+          fill-color="#858B9C"
+          style="margin-right:4px;"
+        >首次</md-tag>
+        &yen;404.50&nbsp;(9月22日)
       </md-detail-item>
       <div class="footer-slot" slot="footer">
         1 账单生成后显示在滴水贷首页，请按时还款避免逾期。 <br>
@@ -59,9 +69,9 @@ export default {
         border-radius 18px
         background-color #F3F4F5
       &:before
-        left -36px
+        left -46px
       &:after
-        right -36px
+        right -46px
     .header-slot
       padding 40px 0 20px 0
       .title
@@ -70,11 +80,11 @@ export default {
         font-family Songti SC
         line-height 1
       .desc
-        margin-top 25px
+        margin-top 16px
         color #858B9C
         font-size 26px
     .footer-slot
-      padding 25px 0
+      padding 32px 0
       color #858B9C
       font-size 22px
       line-height 1.5

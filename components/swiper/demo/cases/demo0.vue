@@ -3,7 +3,9 @@
     <md-swiper
       @before-change="beforeChange"
       @after-change="afterChange"
-      ref="swiper">
+      ref="swiper"
+      :useNativeDriver="false"
+    >
       <md-swiper-item :key="$index" v-for="(item, $index) in simple">
         <a href="javascript:void(0)"
           class="banner-item"
@@ -85,8 +87,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.md-example-child
+<style lang="stylus">
+.md-example-child-swiper-0
   height 250px
   .banner-item
     float left

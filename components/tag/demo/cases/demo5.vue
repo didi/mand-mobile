@@ -1,6 +1,8 @@
 <template>
   <div class="md-example-child md-example-child-tag md-example-child-tag-3">
-    <tag size="large" shape="coupon" fill-color="#FC9153" type="fill" font-weight="bolder" font-color="#fff">免息券</tag>
+    <tag size="large" shape="coupon" fill-color="#FC9153" type="fill" font-color="#fff">免息券70.1</tag>
+    <tag size="small" shape="coupon" fill-color="#FC9153" type="fill" font-color="#fff">免息券70.1</tag>
+    <tag size="tiny" shape="coupon" fill-color="#FC9153" type="fill" font-color="#fff">免息券70.1</tag>
   </div>
 </template>
 

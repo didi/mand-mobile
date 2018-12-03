@@ -12,9 +12,9 @@
       <md-cell-item title="招商银行" brief="展示摘要描述" addon="禁用的项目" disabled arrow>
         <span class="holder" slot="left"></span>
       </md-cell-item>
-      <md-cell-item title="建设银行" brief="摘要描述" arrow>
-        <p slot="children" style="font-size:18px;">
-          中国建设银行，在全球范围内为台湾、香港、美国、澳大利亚等国家或地区提供全面金融服务，主要经营公司银行业务、个人银行业务和资金业务，包括居民储蓄存款、信贷资金贷款、住房类贷款、外汇、信用卡，以及投资理财等多种业务。
+      <md-cell-item title="Mand Mobile" brief="A mobile UI toolkit" arrow>
+        <p slot="children" style="font-size:0.24rem;color:#858B9C;">
+          面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。基于「合理、好用」设计价值观，从交互操作、视觉抽象、图形可视等角度共同解决问题。
         </p>
       </md-cell-item>
     </md-field>

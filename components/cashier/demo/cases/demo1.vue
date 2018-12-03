@@ -58,7 +58,7 @@ export default {
       cashierChannels: [
         {
           icon: 'cashier-icon-1',
-          text: '自定义银行(xxxx)',
+          text: 'XX银行(1234)',
           desc: '当前银行维护中',
           value: '001',
           disabled: true,

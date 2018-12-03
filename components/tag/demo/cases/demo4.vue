@@ -1,20 +1,35 @@
 <template>
   <div class="md-example-child md-example-child-tag md-example-child-tag-3">
-    <tag size="large" shape="quarter" fill-color="#FC9153" type="fill" font-weight="bolder" font-color="#fff">HOT</tag>
+    <md-tag
+      size="large"
+      shape="coupon"
+      fill-color="#FC9153"
+      type="fill"
+      font-color="#fff"
+      style="margin-right:20px;"
+    >免息券70.1</md-tag>
+    <md-tag
+      size="large"
+      shape="quarter"
+      fill-color="#FC9153"
+      type="fill"
+      font-color="#fff"
+      style="margin-right:20px;"
+    >HOT</md-tag>
   </div>
 </template>
 
-<script>import {Tag} from 'mand-mobile'
+<script>import {Tag, Icon} from 'mand-mobile'
 
 export default {
   name: 'tag-demo',
   /* DELETE */
-  title: '四分之一圆',
-  titleEnUS: 'Characters cut in relief',
-  codeSandBox: 'https://codesandbox.io/s/n3o1w6vx2m',
+  title: '特殊标签',
+  titleEnUS: 'Special tags',
   /* DELETE */
   components: {
-    Tag,
+    [Tag.name]: Tag,
+    [Icon.name]: Icon,
   },
 }
 </script>

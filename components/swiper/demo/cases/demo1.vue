@@ -56,8 +56,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.md-example-child
+<style lang="stylus">
+.md-example-child-swiper-1
   height 250px
   .banner-item
     float left
