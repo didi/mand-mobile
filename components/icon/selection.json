@@ -12,7 +12,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["rectangle"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -38,7 +41,10 @@
         "defaultCode": 58881,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -64,7 +70,10 @@
         "defaultCode": 58882,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -90,7 +99,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["right"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -115,7 +127,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["wrong"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -141,7 +156,10 @@
         "defaultCode": 58885,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -167,7 +185,10 @@
         "defaultCode": 58886,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -193,7 +214,10 @@
         "defaultCode": 58887,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -219,7 +243,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["refresh"],
-        "colorPermutations": {}
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -245,7 +272,10 @@
         "defaultCode": 58888,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -271,7 +301,10 @@
         "defaultCode": 58889,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -296,7 +329,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["wait"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -321,7 +357,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["check"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -346,7 +385,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["check-disabled"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -364,24 +406,22 @@
     {
       "icon": {
         "paths": [
-          "M496 96c-247.424 0-448 200.576-448 448s200.576 448 448 448 448-200.576 448-448-200.576-448-448-448zM489.376 683.648l-45.248 45.248-213.024-213.008 45.248-45.248 167.76 167.76 287.536-287.536 45.248 45.248-287.52 287.536z"
+          "M512 64c-247.424 0-448 200.576-448 448s200.576 448 448 448 448-200.576 448-448c0-247.424-200.576-448-448-448zM489.376 683.648l-45.248 45.248-213.024-213.008 45.248-45.248 167.76 167.76 287.536-287.536 45.248 45.248-287.52 287.536z"
         ],
+        "attrs": [],
         "isMulticolor": false,
         "isMulticolor2": false,
-        "tags": ["checked"],
-        "defaultCode": 58893,
         "grid": 16,
-        "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "tags": ["checked"],
+        "colorPermutations": {}
       },
       "attrs": [],
       "properties": {
-        "id": 13,
-        "order": 79,
-        "ligatures": "checked, success",
+        "order": 136,
+        "id": 59,
+        "name": "checked",
         "prevSize": 32,
-        "code": 58893,
-        "name": "checked"
+        "code": 59656
       },
       "setIdx": 0,
       "setId": 4,
@@ -398,7 +438,10 @@
         "defaultCode": 58894,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -423,7 +466,10 @@
         "isMulticolor2": false,
         "grid": 16,
         "tags": ["info-solid"],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -449,7 +495,10 @@
         "defaultCode": 58891,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -475,7 +524,10 @@
         "defaultCode": 58895,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -501,7 +553,10 @@
         "defaultCode": 58896,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -527,7 +582,10 @@
         "defaultCode": 58897,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -553,7 +611,10 @@
         "defaultCode": 58898,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -579,7 +640,10 @@
         "defaultCode": 58899,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -605,7 +669,10 @@
         "defaultCode": 58900,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -631,7 +698,10 @@
         "defaultCode": 58901,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -657,7 +727,10 @@
         "defaultCode": 58902,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -683,7 +756,10 @@
         "defaultCode": 58903,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -709,7 +785,10 @@
         "defaultCode": 58904,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -735,7 +814,10 @@
         "defaultCode": 58905,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -761,7 +843,10 @@
         "defaultCode": 58906,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -787,7 +872,10 @@
         "defaultCode": 58907,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -813,7 +901,10 @@
         "defaultCode": 58908,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -839,7 +930,10 @@
         "defaultCode": 58909,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -865,7 +959,10 @@
         "defaultCode": 58910,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -891,7 +988,10 @@
         "defaultCode": 58911,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -917,7 +1017,10 @@
         "defaultCode": 58912,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -943,7 +1046,10 @@
         "defaultCode": 58913,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -969,7 +1075,10 @@
         "defaultCode": 58914,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -995,7 +1104,10 @@
         "defaultCode": 58915,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1021,7 +1133,10 @@
         "defaultCode": 58916,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1047,7 +1162,10 @@
         "defaultCode": 58917,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1073,7 +1191,10 @@
         "defaultCode": 58918,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1099,7 +1220,10 @@
         "defaultCode": 58919,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1125,7 +1249,10 @@
         "defaultCode": 58920,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1151,7 +1278,10 @@
         "defaultCode": 58921,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1177,7 +1307,10 @@
         "defaultCode": 58922,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1203,7 +1336,10 @@
         "defaultCode": 58923,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1229,7 +1365,10 @@
         "defaultCode": 58924,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1255,7 +1394,10 @@
         "defaultCode": 58925,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1281,7 +1423,10 @@
         "defaultCode": 58883,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1307,7 +1452,10 @@
         "defaultCode": 58928,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1333,7 +1481,10 @@
         "defaultCode": 58931,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1359,7 +1510,10 @@
         "defaultCode": 58932,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
@@ -1385,7 +1539,10 @@
         "defaultCode": 58884,
         "grid": 16,
         "attrs": [],
-        "colorPermutations": { "21822122812552552551": [] }
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
       },
       "attrs": [],
       "properties": {
