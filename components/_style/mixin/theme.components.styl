@@ -43,7 +43,7 @@ button-disabled-fill = color-bg-disabled
 button-warning-fill = color-text-error
 
 button-primary-active-fill = #2A78DC
-button-default-active-fill = rgba(0, 0, 0, .08)
+button-default-active-fill = color-bg-base
 button-warning-active-fill = #E9424F
 
 button-primary-plain-active-fill = #E1E9F6
@@ -54,6 +54,11 @@ button-default-color = color-text-body
 button-primary-color = color-text-base-inverse
 button-disabled-color = color-text-base-inverse
 button-warning-color = color-text-base-inverse
+
+button-default-plain-color = button-default-color
+button-primary-plain-color = button-primary-fill
+button-warning-plain-color = button-warning-fill
+button-disabled-plain-color = color-text-disabled 
 
 button-height = 100px
 button-font-size = font-caption-large
@@ -80,7 +85,7 @@ captcha-btn-color = color-primary
 cashier-bg = color-bg-inverse
 cashier-choose-title-font-size = font-body-large // 支付标题
 cashier-choose-title-color = color-text-minor
-cashier-choose-amount-font-size = font-heading-large // 支付金额
+cashier-choose-amount-font-size = 80px // 支付金额
 cashier-choose-amount-color = color-text-base
 cashier-choose-describe-font-size = font-minor-normal // 支付描述
 cashier-choose-describe-color = color-text-minor
@@ -100,6 +105,33 @@ chart-path-color = color-primary
 chart-text-color = color-text-minor
 chart-label-size = 22px
 chart-value-size = 20px
+
+// cell-item
+cell-item-min-height = 100px
+cell-item-padding-v = 26px
+cell-item-multilines-padding-v = 36px
+cell-item-title-color = color-text-base
+cell-item-title-font-size = font-caption-normal
+cell-item-brief-color = color-text-caption
+cell-item-brief-font-size = font-minor-large
+cell-item-right-color = color-text-caption
+cell-item-right-font-size = font-body-large
+cell-item-border-color = color-border-base
+
+// check
+check-color = color-text-highlight
+
+// checkbox
+checkbox-color = color-text-base
+checkbox-font-size = font-caption-normal
+checkbox-disabled-color = color-text-disabled
+checkbox-active-color = color-primary
+checkbox-active-border-color = color-primary
+checkbox-border-color = color-border-element
+checkbox-border-radius = radius-normal
+
+// checklist
+checklist-active-color = color-primary
 
 // codebox
 codebox-font-size = 50px
@@ -122,9 +154,11 @@ date-time-picker-font-size = font-body-large
 // dialog
 dialog-width = 606px
 dialog-radius = 8px
+dialog-body-padding = 52px
 dialog-title-font-size = 40px
 dialog-title-color = color-text-base
 dialog-text-font-size = font-body-large
+dialog-action-font-weight = font-weight-medium
 dialog-text-color = color-text-minor
 dialog-action-height = 100px
 dialog-action-font-size = font-caption-large
@@ -134,10 +168,6 @@ dialog-action-highlight-color = color-primary
 dialog-icon-size = 100px
 dialog-icon-fill = color-text-caption
 dialog-zindex = 1500
-
-// overlay
-overlay-bg = color-bg-inverse
-overlay-zindex = 1501
 
 // drop-menu
 drop-menu-height = 110px
@@ -158,14 +188,14 @@ field-header-gap = v-gap-lg
 field-footer-gap = v-gap-md
 field-title-color = color-text-base
 field-title-font-size = font-caption-large
-field-title-font-weight = font-weight-normal
+field-title-font-weight = font-weight-medium
 field-brief-color = color-text-caption
-field-brief-font-size = font-body-large
-field-action-color = color-text-minor
-field-action-font-size = font-body-large
+field-brief-font-size = font-minor-large
+field-action-color = color-text-caption
+field-action-font-size = font-minor-large
 
 // field-item
-field-item-min-height = 108px
+field-item-min-height = 100px
 field-item-padding-v = 30px
 field-item-title-width = 160px
 field-item-title-gap = 10px
@@ -177,15 +207,6 @@ field-item-addon-color = color-text-caption
 field-item-addon-font-size = font-body-large
 field-item-border-color = color-border-base
 field-item-children-font-size = font-minor-large
-
-// cell-item
-cell-item-min-height = 108px
-cell-item-padding-v = 30px
-cell-item-color = color-text-base
-cell-item-font-size = font-caption-normal
-cell-item-right-color = color-text-caption
-cell-item-right-font-size = font-body-large
-cell-item-border-color = color-border-base
 
 // detail-item
 detail-item-font-size = font-body-large
@@ -209,16 +230,16 @@ input-item-height = 100px
 input-item-font-size = font-caption-normal
 input-item-font-weight = font-weight-medium
 input-item-title-latent-font-size = font-body-normal
-input-item-font-size-large = font-heading-large
+input-item-font-size-large = 80px
 input-item-font-size-error = font-minor-large
 input-item-font-size-brief = font-minor-large
 input-item-color = color-text-base
 input-item-title-latent-color = color-text-minor
-input-item-color-disabled = opacity-disabled
+input-item-color-disabled = color-text-caption
 input-item-color-error = color-text-error
-input-item-color-brief = color-text-minor
+input-item-color-brief = color-text-caption
 input-item-placeholder = color-text-placeholder
-input-item-placeholder-highlight = color-primary
+input-item-color-highlight = color-text-base 
 input-item-icon = color-text-placeholder // delete icon
 
 // slider
@@ -256,8 +277,12 @@ number-keyboard-key-font-size = font-heading-medium
 number-keyboard-key-font-weight = font-weight-medium
 number-keyboard-key-color = color-text-base
 number-keyboard-key-confirm-color = color-text-base-inverse
-number-keyboard-key-bordr-color = color-border-base
+number-keyboard-key-border-color = color-border-base
 number-keyboard-zindex = 1302
+
+// overlay
+overlay-bg = color-bg-inverse
+overlay-zindex = 1501
 
 // picker
 picker-padding-h = h-gap-sl
@@ -288,23 +313,6 @@ popup-zindex = 1000
 // radio
 radio-color = color-text-highlight
 
-// check
-check-color = color-text-highlight
-
-// checkbox
-checkbox-color = color-text-base
-checkbox-font-size = font-caption-normal
-checkbox-disabled-color = color-text-disabled
-checkbox-active-color = color-primary
-checkbox-active-border-color = color-primary
-checkbox-active-bg = color-primary
-checkbox-active-bg-opacity = 0.05
-checkbox-border-color = color-border-element
-checkbox-border-radius = radius-normal
-
-// checklist
-checklist-active-color = color-primary
-
 // result-page
 result-page-image-size = 260px
 result-page-title-font-size = font-caption-normal
@@ -330,9 +338,9 @@ stepper-radius-button = 0
 stepper-radius-input = 0
 
 // steps
-steps-color = #ccc
+steps-color = color-border-base
 steps-color-active = color-primary
-steps-border-size = 2px
+steps-border-size = 1px
 steps-icon-size = 32px // icon size
 steps-text-color = color-text-body
 steps-desc-color = color-text-caption
@@ -353,24 +361,25 @@ swiper-indicator-fill = color-primary
 
 // tabs
 tab-font-size = font-body-large
+tab-font-weight = font-weight-medium
 tab-text-color = color-text-minor
 tab-active-color = color-primary
 tab-disabled-color = color-text-disabled
 tab-bg = color-bg-base
-tab-height = 80px
+tab-height = 100px
 tab-ink-height = 3px
 tab-offset = h-gap-sl
 tab-item-gap = h-gap-md
 
 //tab-picker
-tab-picker-height = 400px
+tab-picker-height = 500px
 tab-picker-h-gap = h-gap-sl
 tab-picker-bg = color-bg-inverse
 tab-picker-zindex = 1102
 
 // tag
 tag-color = color-primary
-tag-fillet-radius = radius-normal
+tag-fillet-radius = 2px
 tag-large-font-size = font-body-normal
 tag-small-font-size = font-minor-normal
 tag-tiny-font-size = 12px
