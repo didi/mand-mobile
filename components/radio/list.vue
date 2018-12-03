@@ -26,6 +26,7 @@
         :size="iconSize"
         :icon="icon"
         :icon-inverse="iconInverse"
+        :icon-disabled="iconDisabled"
         :icon-svg="iconSvg"
         :slot="iconPosition === 'right' ? 'right' : 'left'"
       />
@@ -90,6 +91,10 @@ export default {
     iconInverse: {
       type: String,
       default: 'check',
+    },
+    iconDisabled: {
+      type: String,
+      default: 'check-disabled',
     },
     iconSvg: {
       type: Boolean,
@@ -169,19 +174,18 @@ export default {
 
 <style lang="stylus">
 .md-radio-item
-  &.is-selected
-    .md-cell-item-title,
-    .md-field-item-title
-      color radio-color
   .md-radio
     margin-top 0
     margin-bottom 0
 
-.md-radio-list.is-align-center
-  .md-cell-item-content
-    text-align center
-  .md-cell-left,
-  .md-cell-right
-    display none
+.md-radio-list
+  .md-cell-item-body.multilines .md-cell-item-title
+    font-weight font-weight-medium
+  &.is-align-center
+    .md-cell-item-content
+      text-align center
+    .md-cell-left,
+    .md-cell-right
+      display none
 </style>
 

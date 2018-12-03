@@ -28,6 +28,7 @@ Vue.component(Radio.name, Radio)
 |inline|whether display as inline block|Boolean|`false`|-|
 |icon|selected icon name|String|`checked`|-|
 |icon-inverse|icon name|String|`check`|-|
+|icon-disabled|icon of disabled options|String|`check-disabled`|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 |size|size of icon|String|`md`|-|
 
@@ -43,6 +44,7 @@ Vue.component(Radio.name, Radio)
 |input-placeholder|placeholder of editable item|String|-|only when `has-input` is true|
 |icon|icon of selected option|String|`checked`|-|
 |icon-inverse|icon of unselected options|String|`check`|-|
+|icon-disabled|icon of disabled options|String|`check-disabled`|-|
 |icon-size|the size of icon|String|`lg`|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 |icon-position|the position of icon|String|`left`|`left`, `right`|
