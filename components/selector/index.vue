@@ -33,7 +33,10 @@
         ref="scroll"
         class="md-selector-container"
         :scrolling-x="false"
-        :style="{maxHeight: `${maxHeight}px`}"
+        :style="{
+          maxHeight: `${maxHeight}`,
+          minHeight: `${minHeight}`
+        }"
       >
         <md-radio-list
           class="md-selector-list"
@@ -116,8 +119,12 @@ export default {
       default: false,
     },
     maxHeight: {
-      type: Number,
-      default: 400,
+      type: [Number, String],
+      default: 'auto',
+    },
+    minHeight: {
+      type: [Number, String],
+      default: 'auto',
     },
   },
 
@@ -204,10 +211,19 @@ export default {
     .md-icon
       align-self flex-start
       margin-left h-gap-lg
+  .md-radio-item
+    padding-left h-gap-sl
+    padding-right h-gap-sl
+    transition background-color .3s
+    .md-cell-item-body.multilines .md-cell-item-title
+      font-weight font-weight-normal
+    &.is-selected
+      .md-cell-item-title
+        color color-primary
+    &:active
+      background-color color-bg-tap
 
 .md-selector-container
-  padding-left h-gap-sl
-  padding-right h-gap-sl
   padding-bottom constant(safe-area-inset-bottom)
   overflow hidden
 
