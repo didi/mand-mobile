@@ -10,10 +10,10 @@
         value ? 'checked' : ''
       ]"
       @click="$_onChange($event)">
-      <div class="md-agree-checked">
+      <div class="md-agree-icon-container">
         <md-icon name="checked" :size="size"></md-icon>
+        <md-icon name="check" :size="size"></md-icon>
       </div>
-      <md-icon name="check" :size="size"></md-icon>
     </div>
     <div class="md-agree-content">
       <slot></slot>
@@ -69,25 +69,37 @@ export default {
     opacity agree-disabled-opacity
 
 .md-agree-icon
-  position relative
-  padding-right h-gap-sm
+  display flex
+  justify-content center
+  align-items center
   align-self flex-start
   flex-shrink 0
+  position relative
+  margin-right h-gap-sm
   color agree-fill
-  &.checked
-    .md-agree-checked
-      transform scale(1)
+  width 50px
+  height 50px
+  .md-agree-icon-container
+    position relative
+    .md-icon
+      width auto 
+      height auto
+      line-height 1
+      &.md-icon-checked
+        position absolute
+        top 0
+        left 0
+        transform scale(0.6)
+        color transparent
+        transition all .2s
+      &.md-icon-check
+        color agree-fill
+  &.checked .md-agree-icon-container
+    .md-icon-checked
+      transform scale(1.1)
       color agree-fill
-        
-
-.md-agree-checked
-  position absolute
-  top 0
-  left 0
-  transform scale(0.4)
-  color transparent
-  transition all 200ms ease
-    
+    .md-icon-check
+      color transparent
 
 .md-agree-content
   flex 1 1 0%
