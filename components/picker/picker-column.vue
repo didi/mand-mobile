@@ -106,8 +106,8 @@ export default {
   data() {
     return {
       style: {
-        maskerHeight: 81 * dpr,
-        indicatorHeight: 36 * dpr,
+        maskerHeight: 110 * dpr,
+        indicatorHeight: 50 * dpr,
       },
       columnValues: [],
       scrollers: [],
@@ -480,7 +480,7 @@ export default {
     // border-bottom solid 1px picker-border-color
   &.bottom
     bottom 0
-    bottom constant(safe-area-inset-bottom)
+    // bottom constant(safe-area-inset-bottom)
     // background -webkit-gradient(linear,left top,left bottom,from(hsla(0, 0%,100%,.2)),to(hsla(0,0%,100%,1)))
     hairline(top, picker-border-color)
     // border-top solid 1px picker-border-color
@@ -490,6 +490,7 @@ export default {
   position absolute
   z-index 3
   absolute-pos()
+  padding 0 picker-padding-h
 
 .md-picker-column-hook
   display flex
