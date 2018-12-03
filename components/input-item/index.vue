@@ -9,6 +9,7 @@
       isInputError ? 'is-error' : '',
       isInputBrief ? 'with-brief' : '',
       isDisabled ? 'is-disabled': '',
+      isAmount ? 'is-amount': '',
       clearable ? 'is-clear' : '',
       inputEnv,
       align,
@@ -219,6 +220,10 @@ export default {
       },
     },
     isHighlight: {
+      type: Boolean,
+      default: false,
+    },
+    isAmount: {
       type: Boolean,
       default: false,
     },
@@ -524,7 +529,8 @@ export default {
   color input-item-color
   font-size input-item-font-size
   font-weight input-item-font-weight
-  font-family DINPro-Medium
+  font-family font-family-normal
+  line-height 1
   -webkit-appearance none
   border none
   background transparent
@@ -535,7 +541,7 @@ export default {
 
 .md-input-item-input
   &:disabled, &[disabled]
-    opacity input-item-color-disabled
+    opacity 1
   &::-webkit-input-placeholder
     color input-item-placeholder
     font-weight font-weight-normal
@@ -556,8 +562,6 @@ export default {
     animation keyboard-cursor infinite 1s step-start
   &.is-focus:after
     display inline
-  &.disabled
-    opacity input-item-color-disabled
 
 .md-input-item-fake-placeholder
   position absolute
@@ -609,32 +613,57 @@ export default {
       transition all .3s ease
       opacity 0
       will-change auto
-    .md-field-item-control
-      top 15px
+    .md-field-item-content
+      min-height 115px
+    .md-field-item-content,
+    .md-field-item-right,
+    .md-input-item-input,
+    .md-input-item-fake
+      padding-top 20px
     &.is-active
       .md-field-item-title
         opacity 1
-        top 10px
+        top 20px
         transform translate3d(0, 0, 0)
-      // .md-input-item-input::-webkit-input-placeholder, .md-input-item-fake-placeholder
-      //   color transparent
 
   &.is-highlight
-    .md-input-item-input::-webkit-input-placeholder,
+    &.is-focus
+      .md-field-item-content
+        hairline(bottom, input-item-color-highlight, 0, 4px)
+
+  &.is-disabled
+    .md-input-item-input,
     .md-input-item-fake-placeholder
-      color input-item-placeholder-highlight
+      -webkit-text-fill-color input-item-color-disabled
+      color input-item-color-disabled
 
-  &.large .md-input-item-input
-    font-size input-item-font-size-large
+  &.is-amount
+    .md-input-item-input,
+    .md-input-item-fake
+      padding-top 5px
+      font-family font-family-number
+    &.large
+      .md-input-item-input,
+      .md-input-item-fake
+        padding-top 8px
 
+  &.large
+    .md-input-item-input,
+    .md-input-item-fake
+      padding-bottom 15px
+      font-size input-item-font-size-large
+    .md-input-item-input::-webkit-input-placeholder
+        font-size 60px
+        line-height 100px
+      
   &.is-error
-    .md-field-item-content::before
-      background-color input-item-color-error
+    .md-field-item-content
+      hairline(bottom, input-item-color-error, 0, 4px)
 
   &.is-ios
     .md-input-item-input::-webkit-input-placeholder
       position relative
-      top -3px
+      top 3px
       overflow visible
     .md-input-item-fake::after
       border-right solid 6px #2C6CF5
