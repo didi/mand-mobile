@@ -99,7 +99,7 @@ export default {
 <style lang="stylus">
 .md-check
   display flex
-  align-items flex-start
+  align-items center
   line-height 1.5
   margin-top v-gap-sm
   margin-bottom v-gap-sm
@@ -113,11 +113,7 @@ export default {
 
 .md-check-icon
   position relative
-  flex-shrink 0
-  top 0.75em
-  line-height 0
   color color-text-placeholder
-  transform translateY(-50%)
 
 .md-check-label
   margin-left h-gap-sm
