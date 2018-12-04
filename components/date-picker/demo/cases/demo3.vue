@@ -6,7 +6,7 @@
         title="出险时间"
         arrow="arrow-right"
         align="right"
-        :value="datePickerValue"
+        :content="datePickerValue"
         @click.native="isDatePickerShow = true">
       </md-field-item>
     </md-field>
