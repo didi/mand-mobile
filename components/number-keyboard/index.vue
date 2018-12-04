@@ -33,6 +33,7 @@
           @delete="$_onDelete"
           @confirm="$_onConfirm"
           @hide="isKeyboardShow = false"
+          @touchmove.native.prevent
         ></md-number-keyboard-container>
       </md-popup>
     </template>
