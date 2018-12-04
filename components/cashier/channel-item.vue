@@ -82,7 +82,7 @@ export default {
         font-size cashier-choose-channel-title-action-font-size
         color cashier-choose-channel-title-action-color
     .desc
-      margin-top 8px
+      margin-top v-gap-xs
       font-size cashier-choose-channel-desc-font-size
       color cashier-choose-channel-desc-color
   .item-check-icon

@@ -65,6 +65,7 @@ export default {
     'payButtonText',
     'payButtonDisabled',
     'channels',
+    'channelLimit',
     'defaultIndex',
   ],
 
@@ -83,7 +84,10 @@ export default {
 
   computed: {
     isSingle() {
-      return !(this.channels.length > 2)
+      if (this.channelLimit < 1) {
+        return true
+      }
+      return !(this.channels.length > this.channelLimit)
     },
   },
 

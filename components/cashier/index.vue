@@ -32,6 +32,7 @@
             :pay-button-text="payButtonText"
             :pay-button-disabled="payButtonDisabled"
             :channels="channels"
+            :channelLimit="channelLimit"
             :default-index="defaultIndex"
             v-on="$listeners"
           />
@@ -148,6 +149,10 @@ export default {
       validator(val) {
         return !!val.length
       },
+    },
+    channelLimit: {
+      type: Number,
+      default: 2,
     },
     defaultIndex: {
       type: Number,

@@ -23,6 +23,7 @@ Vue.component(Cashier.name, Cashier)
 |----|-----|------|------|------|
 |v-model| display cashier or not|Boolean|`false`|-|
 |channels|data source of payment channel |Array<{text, value, icon, iconSvg}>|`[]`|`icon` can be used as the `name` attribute of `className` or component `Icon`, `iconSvg` for using svg icon|
+|channel-limit|show more payment channels button when the payment channels exceeds the limit|Number|`2`|-|
 |default-index|default selected index of payment channel |Number|`0`|-|
 |title|cashier title|String|`pay	`|-|
 |payment-title|payment amount title|String|`支付金额(元)`|support `html fragment`|
