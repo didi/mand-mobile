@@ -1,7 +1,7 @@
 <template>
   <svg
     v-if="svg || isInnerSvg"
-    class="md-icon"
+    class="md-icon icon-svg"
     :class="[`md-icon-${name}`, size]"
     :style="{fill: color}"
     @click="$emit('click', $event)"
@@ -10,7 +10,7 @@
   </svg>
   <i
     v-else-if="name"
-    class="md-icon"
+    class="md-icon icon-font"
     :class="[`md-icon-${name}`, size]"
     :style="{color}"
     @click="$emit('click', $event)"
@@ -60,39 +60,53 @@ export default {
   fill currentColor
   -webkit-backface-visibility hidden
   transform translateZ(0) scale(1.0, 1.0)
-  font-family  "Mand-Mobile-Icon" !important
-  font-size 16px
-  font-style normal
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
   display flex
   align-items center
   justify-content center
-  &:before
-    position relative
-    z-index 2
 
   // size
-  &.xss
-    width icon-size-xxs
-    vertical-height(icon-size-xxs)
-    font-size icon-size-xxs
-  &.xs
-    width icon-size-xs
-    vertical-height(icon-size-xs)
-    font-size icon-size-xs
-  &.sm
-    width icon-size-sm
-    vertical-height(icon-size-sm)
-    font-size icon-size-sm
-  &.md
-    width icon-size-md
-    vertical-height(icon-size-md)
-    font-size icon-size-md
-  &.lg
-    width icon-size-lg
-    vertical-height(icon-size-lg)
-    font-size icon-size-lg
+  &.icon-font
+    font-family  "Mand-Mobile-Icon" !important
+    font-size 16px
+    font-style normal
+    font-weight normal
+    font-variant normal
+    text-transform none
+    line-height 1
+    letter-spacing 0
+    speak none
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    &.xss
+      font-size icon-size-xxs
+    &.xs
+      font-size icon-size-xs
+    &.sm
+      font-size icon-size-sm
+    &.md
+      font-size icon-size-md
+    &.lg
+      font-size icon-size-lg
+    &:before
+      position relative
+      z-index 2
+  
+  &.icon-svg
+    &.xss
+      width icon-size-xxs
+      vertical-height(icon-size-xxs)
+    &.xs
+      width icon-size-xs
+      vertical-height(icon-size-xs)
+    &.sm
+      width icon-size-sm
+      vertical-height(icon-size-sm)
+    &.md
+      width icon-size-md
+      vertical-height(icon-size-md)
+    &.lg
+      width icon-size-lg
+      vertical-height(icon-size-lg)
 
 // name
 .md-icon-rectangle:before
