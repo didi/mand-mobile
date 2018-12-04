@@ -645,7 +645,7 @@ export default {
     &.large
       .md-input-item-input,
       .md-input-item-fake
-        padding-top 8px
+        padding-top v-gap-xs
 
   &.large
     .md-input-item-input,
