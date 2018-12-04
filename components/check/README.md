@@ -70,8 +70,9 @@ Vue.component(CheckList.name, CheckList)
 #### CheckList Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|选中项的`value`|Array|-|
+|v-model|选中项的`value`|Array|-|-|
 |options|选项数据源|Array<{text, value, disabled, ...}>|`[]`|`disabled`为选项是否禁用|
+|is-slot-scope|是否强制使用或不使用`slot-scope`|Boolean|-|某些情况下需要根据业务逻辑动态确定是否使用，可避免直接组件上加`if/else`|
 
 #### CheckList Slots
 ```html

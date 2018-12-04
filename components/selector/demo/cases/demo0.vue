@@ -6,13 +6,14 @@
         :content="selectorValue"
         @click="showSelector"
         arrow
-        align-right
+        solid
       />
     </md-field>
     <md-selector
       v-model="isSelectorShow"
       default-value="2"
       :data="data[0]"
+      max-height="400px"
       title="普通模式"
       @choose="onSelectorChoose"
     ></md-selector>

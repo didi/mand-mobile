@@ -14,6 +14,8 @@
         brief="理财提示文案，字符超出10个自动变小"
         placeholder="最多30万元"
         :size="size"
+        is-amount
+        is-highlight
       >
         <div class="input-operator" slot="right" @click="takeAll">全部取出</div>
       </md-input-item>
@@ -70,9 +72,9 @@ export default {
         .field-operator
           display flex
           align-items center
+    .md-field-item-content::before
+      background-color #C5CAD5
     .input-operator
       font-size 28px
-      color #2F86F6
-    .md-input-item-input
-      padding-right 140px
+      color #5878B4
 </style>

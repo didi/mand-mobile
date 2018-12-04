@@ -27,6 +27,8 @@ export default {...createDemoModule('icon', [Demo0, Demo1, Demo2])}
     padding 15px 0
     color #333
     text-align center
+    .md-icon
+      margin 0 auto
     p
       text-align center
       font-size font-body-normal

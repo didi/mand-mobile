@@ -12,7 +12,11 @@
         <span
           v-for="i in num"
           :key="i"
-          :class="['md-codebox-box', (i === code.length + 1) && focused && 'is-active']"
+          :class="[
+            'md-codebox-box', 
+            (i === code.length + 1) && focused && 'is-active',
+            code.charAt(i-1) !== '' && 'is-filled'
+          ]"
         >
           <template v-if="code.charAt(i-1)">
             <template v-if="mask">
@@ -267,7 +271,7 @@ export default {
     margin-left 0
   &:last-child
     margin-right 0
-  &.is-active
+  &.is-active, &.is-filled
     border-color codebox-border-active-color
 
 .md-codebox-blink
@@ -303,6 +307,7 @@ export default {
   box-shadow none
   box-sizing border-box
   -webkit-appearance none
+  -webkit-text-fill-color codebox-color
   &[disabled],
   &[readonly]
     opacity 1

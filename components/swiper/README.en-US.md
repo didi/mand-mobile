@@ -27,10 +27,11 @@ Vue.component(SwiperItem.name, SwiperItem)
 |autoplay|the interval (ms) of autoplay; set `0` to disable autoplay|Number|`3000`|`0`, `[500, +Int.Max)`|
 |transition|animation effects|String|`slide`|`slide`, `slideY`, `fade`, `fade`|
 |default-index|default selected index|Number|`0`|`[0, length - 1]`|
-|has-dots|whether to display the indication dots|Boolean|`true`|-|
-|is-prevent|whether to prevent the default event|Boolean|`true`|set it to `false` when binding click event to `swiper-item`|
-|is-loop|whether is infinite loop|Boolean|`true`|-|
-|dragable|whether is dragable|Boolean|`true`|-|
+|has-dots|display the indication dots|Boolean|`true`|-|
+|is-prevent|prevent the default event|Boolean|`true`|set it to `false` when binding click event to `swiper-item`|
+|is-loop|infinite loop|Boolean|`true`|-|
+|dragable|-|Boolean|`true`|-|
+|use-native-driver|enable 3D acceleration|Boolean|`true`|-|
 
 #### Swiper Methods
 

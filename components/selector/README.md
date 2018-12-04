@@ -31,7 +31,8 @@ Vue.component(Selector.name, Selector)
 |cancel-text|选择器取消文案|String|`取消`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 |is-check|是否有`check`图标|Boolean|`false`|仅`确认模式`|
-|max-height|选择器内容区域最高高度, 超出后可滚动|Number|`400`|单位`px`|
+|max-height|选择器内容区域最高高度, 超出后可滚动|Number/String|`auto`|-|
+|min-height|选择器内容区域最小高度, 超出后可滚动|Number/String|`auto`|-|
 
 #### Selector Events
 

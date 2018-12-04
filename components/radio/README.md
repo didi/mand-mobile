@@ -29,6 +29,7 @@ Vue.component(RadioList.name, RadioList)
 |inline|是否内联显示|Boolean|`false`|-|
 |icon|选中项的图标|String|`checked`|-|
 |icon-inverse|非选中项的图标|String|`check`|-|
+|icon-disabled|禁用项的图标|String|`check-disabled`|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 |size|图标大小|String|`md`|-|
 
@@ -44,6 +45,7 @@ Vue.component(RadioList.name, RadioList)
 |input-placeholder|可编辑项的占位提示|String|-|仅用于`has-input`为`true`|
 |icon|选中项的图标|String|`checked`|-|
 |icon-inverse|非选中项的图标|String|`check`|-|
+|icon-disabled|禁用项的图标|String|`check-disabled`|-|
 |icon-size|图标大小|String|`lg`|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 |icon-position|图标位置|String|`left`|`left`, `right`|

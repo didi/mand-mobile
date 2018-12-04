@@ -2,11 +2,11 @@
   <div class="md-example-child md-example-child-selector md-example-child-selector-1">
     <md-field>
       <md-field-item
-        title="自定义选项"
+        title="自定义"
         :content="selectorValue"
         @click="showSelector"
         arrow
-        align-right
+        solid
       />
     </md-field>
     <md-selector
@@ -16,8 +16,7 @@
       @choose="onSelectorChoose"
     >
       <template slot-scope="{ option }">
-        <div class="md-selector-custom-title" v-text="option.text"></div>
-        <div class="md-selector-custom-brief">{{ option.text }}使用slot-scooped的自定义描述</div>
+        <div class="md-selector-custom-brief">{{ option.text }}使用slot-scope</div>
       </template>
     </md-selector>
   </div>
@@ -76,8 +75,6 @@ export default {
 
 <style lang="stylus">
 .md-example-child-selector-1
-  .md-selector-custom-title
-    font-size 28px
   .md-selector-custom-brief
     font-size 20px
     color #999

@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       value: false,
-      title: '操作说明的title',
+      title: '操作说明的标题',
       options: [
         {
           label: '选项1',

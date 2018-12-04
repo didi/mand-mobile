@@ -1,6 +1,7 @@
 <template>
   <div class="md-tabs">
     <md-tab-bar
+      ref="tabBar"
       :items="menus"
       :value="currentName"
       @change="$_handleTabClick"
@@ -95,6 +96,9 @@ export default {
       if (index >= 0) {
         this.panes.splice(index, 1)
       }
+    },
+    reflowTabBar() {
+      this.$refs.tabBar.reflow()
     },
   },
 }

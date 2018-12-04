@@ -1,6 +1,6 @@
 ---
-title: WaterMask 水印
-preview: https://didi.github.io/mand-mobile/examples/#/water-mask
+title: WaterMark 水印
+preview: https://didi.github.io/mand-mobile/examples/#/water-mark
 ---
 
 自带水印背景的容器
@@ -8,9 +8,9 @@ preview: https://didi.github.io/mand-mobile/examples/#/water-mask
 ### 引入
 
 ```javascript
-import { WaterMask } from 'mand-mobile'
+import { WaterMark } from 'mand-mobile'
 
-Vue.component(WaterMask.name, WaterMask)
+Vue.component(WaterMask.name, WaterMark)
 ```
 
 ### 代码演示
@@ -28,12 +28,12 @@ Vue.component(WaterMask.name, WaterMask)
 |rotate|旋转角度|String|`-30`|-|
 |opacity|透明度|String|`0.1`|-|
 
-#### WaterMask Slots
+#### WaterMark Slots
 
 ##### default
 默认内容插错
 
-##### watermask
+##### watermark
 水印内容scoped插槽
 
 ```html

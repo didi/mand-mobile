@@ -28,7 +28,7 @@ export default {
       agreeConf: {
         checked: true,
         name: 'agree0',
-        size: 'lg',
+        size: 'md',
         disabled: false,
         introduction: '选中状态',
       },

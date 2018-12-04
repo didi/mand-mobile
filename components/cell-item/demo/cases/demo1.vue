@@ -1,12 +1,14 @@
 <template>
   <div class="md-example-child md-example-child-cell-item md-example-child-cell-item-1">
     <md-field>
-      <md-cell-item title="滴水贷" arrow />
+      <md-cell-item title="滴水贷" addon="可用8000.34" arrow />
+      <md-cell-item title="滴水贷" addon="可用8000.34" />
       <md-cell-item title="信用付">
         <md-switch slot="right" v-model="open" />
       </md-cell-item>
-      <md-cell-item title="滴水贷" addon="可用8000.34" arrow />
-      <md-cell-item title="信用付" addon="可用8000.34" />
+      <md-cell-item title="信用付" disabled>
+        <md-switch slot="right" :value="true" disabled/>
+      </md-cell-item>
       <md-cell-item title="滴水贷" addon="可用8000.34" arrow>
         <div class="holder" slot="left"></div>
       </md-cell-item>

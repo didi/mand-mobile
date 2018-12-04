@@ -31,6 +31,11 @@ Vue.component(TabPane.name, TabPane)
 |label|菜单标题|String|-|必须|
 |disabled|是否禁用|Boolean|`false`|-|
 
+#### Tabs Methods
+
+##### reflowTabBar()
+重新计算`TabBar`样式布局
+
 #### Tabs Events
 
 ##### @change(tab)

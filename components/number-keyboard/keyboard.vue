@@ -127,10 +127,9 @@ export default {
   display flex
   width number-keyboard-width
   height number-keyboard-height
-  hairline(top, number-keyboard-key-bordr-color)
+  hairline(top, number-keyboard-key-border-color)
   .keyboard-number, .keyboard-operate
     display flex
-    clearfix()
   .keyboard-number
     flex 3
     background number-keyboard-bg
@@ -142,24 +141,24 @@ export default {
         float left
         width 33.3%
         height number-keyboard-key-height
-        hairline(right, number-keyboard-key-bordr-color)
-        hairline(top, number-keyboard-key-bordr-color)
+        padding-top 5px
+        hairline(right, number-keyboard-key-border-color)
+        hairline(top, number-keyboard-key-border-color)
         text-align center
         line-height number-keyboard-key-height
         font-size number-keyboard-key-font-size
         font-weight number-keyboard-key-font-weight
-        font-family DINPro-Medium
+        font-family font-family-number
         color number-keyboard-key-color
         transition background .3s
         background number-keyboard-key-bg
+        box-sizing border-box
         &.no-bg
           background transparent
-        &:after
-            display none
-        &:nth-of-type(n+4):after
-            display inline
-        // &:nth-of-type(3n):before
-        //     display none
+        &:nth-of-type(-n+3)
+          remove-hairline(top)
+        &:nth-of-type(3n)
+          width 33.4%
         &.delete
           background url(../_style/images/keyboard-del.png) center no-repeat
           background-size 46px
@@ -174,7 +173,6 @@ export default {
     flex 1
     .keyboard-operate-list
       position relative
-      left -1px
       float left
       width 100%
       display flex
@@ -194,8 +192,7 @@ export default {
           &:active
             background-color number-keyboard-key-bg-tap
         &.confirm
-          top -2px
-          overflow hidden
+          padding-top 5px
           color number-keyboard-key-confirm-color
           font-size number-keyboard-key-font-size
           background number-keyboard-key-confirm-bg

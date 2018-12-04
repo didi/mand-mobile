@@ -2,8 +2,9 @@
   <div class="md-example-child md-example-child-radio md-example-child-radio-2">
     <md-field title="简单选择列表" class="radio-field">
       <md-radio-list
-        :options="banks"
         v-model="myBank"
+        :options="banks"
+        icon-size="lg"
       />
     </md-field>
     <md-field title="输入项" class="radio-field">
@@ -12,6 +13,7 @@
         v-model="myReason"
         icon="right"
         icon-inverse=""
+        icon-disabled=""
         icon-position="right"
         has-input
         input-label="其他"
@@ -46,6 +48,12 @@ export default {
           value: '1',
           text: '招商银行(尾号2342)',
           brief: '选项摘要描述',
+        },
+        {
+          value: '2',
+          text: '建设银行(尾号4321)',
+          brief: '选项摘要描述',
+          disabled: true,
         },
       ],
       myReason: '',

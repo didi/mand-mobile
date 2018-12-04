@@ -33,6 +33,7 @@
           @delete="$_onDelete"
           @confirm="$_onConfirm"
           @hide="isKeyboardShow = false"
+          @touchmove.native.prevent
         ></md-number-keyboard-container>
       </md-popup>
     </template>
@@ -127,6 +128,7 @@ export default {
   .md-popup
     z-index number-keyboard-zindex
   .md-popup-box
+    padding-top 1px
     background-color color-bg-base
     padding-bottom constant(safe-area-inset-bottom)
 </style>

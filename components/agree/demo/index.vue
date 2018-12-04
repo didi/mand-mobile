@@ -24,4 +24,8 @@ export default {...createDemoModule('action-sheet', [Demo0, Demo1, Demo2, Demo3]
     padding v-gap-md h-gap-lg
     font-size font-minor-large
     background color-bg-base
+    .md-agree-content
+      color #858B9C
+      a
+        color #5878B4
 </style>

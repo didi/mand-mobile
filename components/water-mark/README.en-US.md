@@ -1,6 +1,6 @@
 ---
-title: WaterMask
-preview: https://didi.github.io/mand-mobile/examples/#/water-mask
+title: WaterMark
+preview: https://didi.github.io/mand-mobile/examples/#/water-mark
 ---
 
 Container with watermark background
@@ -8,9 +8,9 @@ Container with watermark background
 ### 引入
 
 ```javascript
-import { WaterMask } from 'mand-mobile'
+import { WaterMark } from 'mand-mobile'
 
-Vue.component(WaterMask.name, WaterMask)
+Vue.component(WaterMark.name, WaterMark)
 ```
 
 ### 代码演示
@@ -18,7 +18,7 @@ Vue.component(WaterMask.name, WaterMask)
 
 ### API
 
-#### WaterMask Props
+#### WaterMark Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------ |------|
 |content|-|String|-|complex content using `scoped slot`|
@@ -28,13 +28,13 @@ Vue.component(WaterMask.name, WaterMask)
 |rotate|-|String|`-30`|-|
 |opacity|-|String|`0.1`|-|
 
-#### WaterMask Slots
+#### WaterMark Slots
 
 ##### default
 Default slot of content
 
-##### watermask
-scoped slot of watermask content
+##### watermark
+scoped slot of watermark content
 
 ```html
 <div slot="watermark" slot-scope="{ coord }">

@@ -46,6 +46,10 @@ export default {
       type: String,
       default: 'check',
     },
+    iconDisabled: {
+      type: String,
+      default: 'check-disabled',
+    },
     iconSvg: {
       type: Boolean,
       default: false,
@@ -69,7 +73,7 @@ export default {
       return this.value === this.name
     },
     currentIcon() {
-      return this.value === this.name ? this.icon : this.iconInverse
+      return this.disabled ? this.iconDisabled : this.value === this.name ? this.icon : this.iconInverse
     },
   },
 
@@ -86,12 +90,12 @@ export default {
 <style lang="stylus">
 .md-radio
   display flex
-  align-items flex-start
+  align-items center
   line-height 1.5
   margin-top v-gap-sm
   margin-bottom v-gap-sm
   .md-radio-icon
-    color color-text-disabled
+    color color-text-placeholder
   &.is-checked
     .md-radio-icon
       color radio-color
@@ -107,12 +111,10 @@ export default {
 .md-radio-icon
   position relative
   flex-shrink 0
-  top 0.75em
-  line-height 0
-  transform translateY(-50%)
 
 .md-radio-label
   margin-left h-gap-sm
   font-size inherit
+  font-weight font-weight-normal
 </style>
 

@@ -31,7 +31,8 @@ Vue.component(Selector.name, Selector)
 |cancel-text|cancellation text|String|`cancel`|-|
 |mask-closable|if the popup will be closed when clicking mask|Boolean|`true`|-|
 |is-check|has a `check` icon or not|Boolean|`false`|only for `confirmed mode`|
-|max-height|the maximum height of selectable area|Number|`400`|unit `px`|
+|max-height|the maximum height of selectable area|Number/String|`auto`|-|
+|min-height|the minimum height of selectable area|Number/String|`auto`|-|
 
 #### Selector Events
 

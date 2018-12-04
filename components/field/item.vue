@@ -140,6 +140,7 @@ export default {
   font-weight font-weight-normal
 
 .md-field-item-right
+  position relative
   flex-shrink 0
   margin-left h-gap-sm
   display inline-flex
@@ -149,12 +150,11 @@ export default {
   font-size field-item-addon-font-size
   .md-icon-arrow-right
     margin-right -6px
-    color color-text-disabled
+    color color-text-placeholder
 
 .md-field-item-children
   font-size field-item-children-font-size
-  margin-top v-gap-sm
-  margin-bottom v-gap-sm
+  margin-top v-gap-md
 
 .md-field-item
   &.is-solid

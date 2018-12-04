@@ -23,6 +23,7 @@ Vue.component(Cashier.name, Cashier)
 |----|-----|------|------|------|
 |v-model|收银台是否显示|Boolean|`false`|-|
 |channels|支付渠道数据源|Array<{text, value, icon, iconSvg, action}>|`[]`|`icon`可作为`className`或组件`Icon`的`name`属性, `iconSvg`为是否使用svg图标, `action`为特殊动作|
+|channel-limit|支付渠道超出限制数目时展示更多支付渠道按钮|Number|`2`|-|
 |default-index|默认选中支付渠道索引|Number|`0`|-|
 |title|收银台弹窗标题|String|`支付`|-|
 |payment-title|支付金额标题|String|`支付金额(元)`|支持`html fragment`|

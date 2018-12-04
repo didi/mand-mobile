@@ -6,13 +6,13 @@
         :content="selectorValue"
         @click="showSelector"
         arrow
-        align-right
       />
     </md-field>
     <md-selector
       v-model="isSelectorShow"
       :data="data[0]"
       title="Check模式"
+      min-height="320px"
       okText="确认"
       cancelText="取消"
       @confirm="onSelectorConfirm"

@@ -2,6 +2,9 @@
   <div class="md-cg">
     <h1 class="md-cg-title">Mand Mobile</h1>
     <h1 class="md-cg-subtitle">面向金融场景的移动端Vue组件库</h1>
+    <div class="md-cg-logo">
+      <img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="">
+    </div>
     <section
       v-for="(category, i) in components" :key="i"
       class="cg-category"
@@ -82,6 +85,16 @@ block()
     font-size font-body-normal
     font-weight 300
     color color-text-minor
+  .md-cg-logo
+    position fixed
+    top -.3rem
+    right -.3rem
+    width 2rem
+    height 2rem
+    opacity .05
+    z-index -1
+    img
+      width 100%
   .cg-category
     block()
     position relative

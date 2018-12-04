@@ -62,8 +62,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.md-example-child
+<style lang="stylus">
+.md-example-child-swiper-3
   height 250px
   li
     list-style none

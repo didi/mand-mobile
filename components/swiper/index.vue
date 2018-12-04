@@ -68,6 +68,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    useNativeDriver: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -156,7 +160,7 @@ export default {
     $_initScroller() {
       const scroller = new Scroller(
         (left, top) => {
-          render(this.$swiper, left, top)
+          render(this.$swiper, left, top, this.useNativeDriver)
         },
         {
           scrollingY: this.isVertical,
@@ -655,12 +659,11 @@ export default {
 <style lang="stylus">
 .md-swiper-box
   overflow hidden
-
+  will-change tranform
 .md-swiper, .md-swiper-box
   width 100%
   height 100%
   position relative
-  will-change transform
   &.disabled
     visibility hidden
   &.md-swiper-fade

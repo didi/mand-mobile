@@ -31,6 +31,11 @@ Vue.component(TabPane.name, TabPane)
 |label|tab label|String|-|required|
 |disabled|disable pane|Boolean|`false`|-|
 
+#### Tabs Methods
+
+##### reflowTabBar()
+relayout tabbar
+
 #### Tabs Events
 
 ##### @change(tab)

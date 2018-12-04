@@ -3,14 +3,13 @@
     <md-field>
       <md-input-item
         ref="input9"
-        title="带清空按钮"
+        title="清空按钮"
         placeholder="normal text"
-        value="with clear button"
         clearable
       ></md-input-item>
       <md-input-item
         ref="input10"
-        title="带金融键盘"
+        title="金融键盘"
         placeholder="financial number keyboard"
         is-virtual-keyboard
         clearable
