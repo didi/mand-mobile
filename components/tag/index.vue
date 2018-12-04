@@ -1,14 +1,16 @@
 <template>
   <div class="md-tag">
-    <div :class="computedClass" :style="[computedStyle, jsStyle]">
-      <template v-if="shape === 'quarter'">
+    <template v-if="shape === 'quarter'">
+      <div :class="computedClass">
         <div class="quarter-content">
           <slot></slot>
         </div>
-        <div class="quarter-bg" :style="computedStyle"></div>
-      </template>
-      <template v-else>
-        <div class="coupon-container" :style="computedStyle">
+        <div class="quarter-bg" :style="colorStyle"></div>
+      </div>
+    </template>
+    <template v-else-if="shape === 'coupon'">
+      <div :class="computedClass">
+        <div class="coupon-container" :style="colorStyle">
           <div
             class="left-coupon"
             :style="{ background: fillColor ? 'radial-gradient(circle at left, transparent 33%, ' + fillColor + ' 33%)' : ''}"
@@ -23,12 +25,18 @@
           >
           </div>
         </div>
-      </template>
-    </div>
+      </div>
+    </template>
+    <template v-else>
+      <div :class="computedClass" :style="[colorStyle, sizeStyle]">
+        <slot></slot>
+      </div>
+    </template>
   </div>
 </template>
 
-<script>export default {
+<script>import {transformCamelCase} from '../_util'
+export default {
   name: 'md-tag',
   props: {
     size: {
@@ -36,9 +44,14 @@
       default: 'large',
     },
     shape: {
-      // square, circle, fillet, quarter, coupon
+      // square, circle, fillet, quarter, coupon, bubble
       type: String,
       default: 'square',
+    },
+    sharp: {
+      // top-left, top-right, bottom-left, bottom-right
+      type: String,
+      default: '',
     },
     type: {
       // fill ghost
@@ -61,7 +74,7 @@
   },
   data() {
     return {
-      jsStyle: {},
+      sizeStyle: {},
     }
   },
   computed: {
@@ -74,11 +87,11 @@
         `font-weight-${this.fontWeight}`,
       ]
     },
-    computedStyle() {
+    colorStyle() {
       let style = {}
       if (this.type === 'fill') {
         // eslint-disable-next-line
-        this.fillColor && (style.backgroundColor = this.fillColor)
+        this.fillColor && (style.background = this.fillColor)
       }
       if (this.fontColor) {
         if (this.type === 'ghost') {
@@ -90,19 +103,16 @@
     },
   },
   mounted() {
-    // const padding = Math.max(this.$el.offsetHeight * 0.15, 3)
-    // this.$set(this.jsStyle, 'paddingTop', padding + 'px')
-    // this.$set(this.jsStyle, 'paddingBottom', padding + 'px')
     this.$nextTick(() => {
       if (this.shape === 'circle') {
-        const height = this.$el.offsetHeight / 2
-        this.$set(this.jsStyle, 'paddingLeft', height + 'px')
-        this.$set(this.jsStyle, 'paddingRight', height + 'px')
-        this.$set(this.jsStyle, 'borderRadius', height + 'px')
+        const radius = this.$el.offsetHeight / 2
+        this.$set(this.sizeStyle, 'paddingLeft', radius + 'px')
+        this.$set(this.sizeStyle, 'paddingRight', radius + 'px')
+        this.$set(this.sizeStyle, 'borderRadius', radius + 'px')
+        if (this.sharp) {
+          this.$set(this.sizeStyle, transformCamelCase(`border-${this.sharp}-radius`), 0)
+        }
       }
-      // if (this.shape === 'quarter') {
-      //   this.$set(this.jsStyle, 'padding', '0 0 100% 0')
-      // }
     })
   },
 }
@@ -114,10 +124,15 @@
   font-size 28px
   text-align center
   display inline-block
+  -webkit-user-select none
+
   .default
     background rgba(0,0,0,0)
     color tag-color
     border-color tag-color
+  .shape-square
+    padding 0 12px
+    border-radius 50%
   .shape-square
     padding 0 12px
     border-radius 0
@@ -127,22 +142,24 @@
   .shape-quarter
     position relative
     display flex
-    width 86px
-    height 86px
+    width 56px
+    height 56px
     background transparent !important
     overflow hidden
     .quarter-content
       position relative
+      left 10%
+      bottom 10%
       display flex
-      justify-content center
       flex 1
       z-index 2
-      padding-left 10%
-      padding-top 24%
-      box-sizing border-box
+      justify-content center
+      align-items center
+      // transform translate(-50%, -75%)
     .quarter-bg
       position absolute
       top -100%
+      left 0
       width 200%
       height 200%
       border-radius radius-circle
@@ -155,11 +172,11 @@
       padding 16px 12px 10px 26px
     
     &.size-small
-      width 66px
-      height 66px
+      width 40px
+      height 40px
     &.size-tiny
-      width 46px
-      height 46px
+      width 24px
+      height 24px
 
   .shape-coupon
     position relative
@@ -189,6 +206,20 @@
       .right-coupon
         width 5px
 
+  .shape-bubble
+    width 53px
+    padding 6px 0
+    border-radius radius-circle
+    border-bottom-left-radius 0
+    box-sizing border-box
+
+    &.size-small
+      width 38px
+      padding 3px 0
+    &.size-tiny
+      width 24px
+      padding 2px 0
+
   .size-large
     font-size tag-large-font-size
   .size-small
@@ -208,4 +239,8 @@
     font-weight bold
   .font-weight-bolder
     font-weight bolder
+
+  .md-icon.icon-font
+    font-size inherit
+    transform scale(1.2)
 </style>
