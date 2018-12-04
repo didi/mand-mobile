@@ -85,7 +85,7 @@
   line-height 1
 
 .md-field-brief
-  margin-top v-gap-ssm
+  margin-top v-gap-xs
   color field-brief-color
   font-size field-brief-font-size
   line-height 1.4

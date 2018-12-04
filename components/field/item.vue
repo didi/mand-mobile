@@ -155,7 +155,6 @@ export default {
 .md-field-item-children
   font-size field-item-children-font-size
   margin-top v-gap-md
-  margin-bottom v-gap-sm
 
 .md-field-item
   &.is-solid
