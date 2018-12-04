@@ -70,3 +70,13 @@ export function functionToUrl(fn) {
 export function randomId(prefix = '', length = 8) {
   return `${prefix}-${parseInt(Math.pow(Math.random() * 10, length))}`
 }
+
+/**
+ * kebab-case -> camelCase
+ */
+export function transformCamelCase(str) {
+  var re = /-(\w)/g
+  return str.replace(re, function($0, $1) {
+    return $1.toUpperCase()
+  })
+}
