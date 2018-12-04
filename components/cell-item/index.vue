@@ -118,10 +118,10 @@ export default {
   color cell-item-brief-color
   font-size cell-item-brief-font-size
   line-height 1.4
-  margin-top v-gap-ssm
+  margin-top v-gap-xs
 
 .md-cell-item-children
-  padding-bottom cell-item-padding-v
+  padding cell-item-padding-v 0
 
 .md-cell-item
   &.is-disabled
