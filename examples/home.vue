@@ -82,7 +82,7 @@ export default {
     //     color color-text-base
     span.word7
         color color-primary
-        font-family DINPro-Medium
+        font-family DINAlternate-Bold
   .md-home-time
     position absolute
     width 100%
