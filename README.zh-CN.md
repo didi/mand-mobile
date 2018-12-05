@@ -116,5 +116,9 @@ npm run dev
 
 如有任何的意见或建议，欢迎您通过创建Issue或Pull Request的方式告知我们，请先阅读[贡献指南](CONTRIBUTING.md)。
 
+## 社区
+
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
+
 ## 证书
 Mand Mobile使用Apache License 2.0，查看[证书](LICENSE)。
