@@ -36,7 +36,7 @@ A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios.
 * [Change Log](CHANGELOG.md)
 * [Examples](https://didi.github.io/mand-mobile/examples/)
 * [Palette](https://github.com/mand-mobile/palette)
-* [More](https://github.com/mand-mobile)
+* [Mand Mobile Organization](https://github.com/mand-mobile)
 
 ## Preview
 
@@ -113,6 +113,10 @@ Open your browser and visit http://127.0.0.1:4000. Find more details in [Develop
 
 ## Contributing [![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/didi/mand-mobile/pulls)
 Welcome to contribute by creating issues or sending pull requests. See [Contributing Guide](CONTRIBUTING.md) for guidelines.
+
+## Community
+
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
 
 ## License
 Mand Mobile is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
