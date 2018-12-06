@@ -4,7 +4,7 @@
   </span>
 </template>
 
-<script>import {noop} from '../_util'
+<script>import {noop, inBrowser} from '../_util'
 import Animate from '../_util/animate'
 import {formatValueByGapStep} from '../_util/formate-value'
 import numberCapital from './number-capital'
@@ -76,6 +76,7 @@ export default {
   data() {
     return {
       formatValue: 0,
+      isMounted: false,
     }
   },
 
@@ -83,6 +84,10 @@ export default {
     value: {
       handler(val, oldVal) {
         /* istanbul ignore if  */
+        if (!inBrowser && !this.isMounted) {
+          this.formatValue = val
+          return
+        }
         if (this.isAnimated || this.transition) {
           this.$_doAnimateDisplay(oldVal, val)
         } else {
@@ -99,7 +104,9 @@ export default {
     },
   },
 
-  mounted() {},
+  mounted() {
+    this.isMounted = true
+  },
 
   methods: {
     // MARK: private methods

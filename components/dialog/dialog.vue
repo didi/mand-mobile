@@ -1,7 +1,7 @@
 <template>
   <div class="md-dialog">
     <md-popup
-      :value="value"
+      v-model="value"
       :hasMask="hasMask"
       :maskClosable="maskClosable"
       position="center"
@@ -52,6 +52,7 @@
 
 <script>import Popup from '../popup'
 import Icon from '../icon'
+import {mdDocument} from '../_util'
 
 export default {
   name: 'md-dialog',
@@ -95,7 +96,7 @@ export default {
       default: 'row',
     },
     appendTo: {
-      default: () => document.body,
+      default: () => mdDocument.body,
     },
     hasMask: {
       type: Boolean,

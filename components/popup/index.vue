@@ -85,7 +85,7 @@ export default {
       default: false,
     },
     preventScrollExclude: {
-      type: [String, HTMLElement],
+      type: [String, Function],
       default() {
         return ''
       },
