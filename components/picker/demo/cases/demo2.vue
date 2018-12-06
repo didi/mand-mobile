@@ -42,7 +42,7 @@ export default {
   /* DELETE */
   title: '弹出展示',
   titleEnUS: 'Display in Popup',
-  height: 350,
+  height: 500,
   /* DELETE */
   components: {
     [Picker.name]: Picker,

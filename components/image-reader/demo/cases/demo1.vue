@@ -11,14 +11,17 @@
           'backgroundRepeat': 'no-repeat',
           'backgroundSize': 'cover'
         }">
-        <div class="image-reader-item-del" @click="onDeleteImage('reader1', index)">
-          <md-icon
-            name="close"
-            color="white"
-            size="xs"
-          >
-          </md-icon>
-        </div>
+        <md-tag
+          class="image-reader-item-del"
+          size="small"
+          shape="quarter"
+          fill-color="#111A34"
+          type="fill"
+          font-color="#fff"
+          @click.native="onDeleteImage('reader1', index)"
+        >
+          <md-icon name="close"></md-icon>
+        </md-tag>
       </li>
       <li class="image-reader-item add">
         <md-image-reader
@@ -105,6 +108,7 @@ export default {
       margin-bottom 2%
       margin-right 2%
       background #FFF
+      box-shadow 0 5px 20px rgba(197, 202, 213, .25)
       box-sizing border-box
       list-style none
       border-radius 4px
@@ -129,15 +133,8 @@ export default {
           text-align center
       .image-reader-item-del
         position absolute
-        top 5px
-        right 5px
+        top 0
+        right 0
         z-index 3
-        display flex
-        align-items center
-        justify-content center
-        width 32px
-        height 32px
-        border-radius 32px
-        background-color #999
         opacity .8
 </style>

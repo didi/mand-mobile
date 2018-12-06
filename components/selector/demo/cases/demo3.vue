@@ -28,7 +28,7 @@ export default {
   /* DELETE */
   title: 'Check模式',
   titleEnUS: 'Check mode',
-  height: 400,
+  height: 500,
   /* DELETE */
   components: {
     [Selector.name]: Selector,
