@@ -79,6 +79,7 @@
 <script>import Dialog from '../dialog'
 import Codebox from '../codebox'
 import Button from '../button'
+import {mdDocument} from '../_util'
 
 export default {
   name: 'md-captcha',
@@ -118,7 +119,7 @@ export default {
       default: true,
     },
     appendTo: {
-      default: () => document.body,
+      default: () => mdDocument.body,
     },
     count: {
       type: Number,

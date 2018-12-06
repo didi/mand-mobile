@@ -1,5 +1,14 @@
+import {root, inBrowser} from './env'
+
 /* istanbul ignore file */
 export const render = (function(global) {
+  // for ssr
+  if (!inBrowser) {
+    return function(content, left, top) {
+      content.style.marginLeft = left ? `${-left}px` : ''
+      content.style.marginTop = top ? `${-top}px` : ''
+    }
+  }
   const docStyle = document.documentElement.style
 
   let engine
@@ -43,4 +52,4 @@ export const render = (function(global) {
       content.style.marginTop = top ? `${-top}px` : ''
     }
   }
-})(window)
+})(root)

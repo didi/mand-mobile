@@ -19,7 +19,7 @@
 
 <script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
-import {warn} from '../_util'
+import {warn, inBrowser} from '../_util'
 
 export default {
   name: 'md-swiper',
@@ -80,7 +80,7 @@ export default {
       dragging: false,
       userScrolling: false,
       isInitial: false,
-      hasTouch: 'ontouchstart' in window,
+      hasTouch: inBrowser ? 'ontouchstart' in window : false,
       index: 0,
       fromIndex: 0,
       toIndex: 0,
