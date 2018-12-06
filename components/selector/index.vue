@@ -7,6 +7,7 @@
     }"
   >
     <md-popup
+      class="inner-popup"
       v-model="isSelectorShow"
       position="bottom"
       :mask-closable="maskClosable"
@@ -29,33 +30,33 @@
           slot="cancel"
         ></md-icon>
       </md-popup-title-bar>
-      <md-scroll-view
-        ref="scroll"
+      <div
         class="md-selector-container"
-        :scrolling-x="false"
         :style="{
           maxHeight: `${maxHeight}`,
           minHeight: `${minHeight}`
         }"
       >
-        <md-radio-list
-          class="md-selector-list"
-          ref="radio"
-          :key="radioKey"
-          :value="defaultValue"
-          :options="data"
-          :is-slot-scope="hasSlot"
-          icon="right"
-          icon-inverse=""
-          icon-position="right"
-          icon-size="md"
-          @change="$_onSelectorChoose"
-        >
-          <template slot-scope="{ option }">
-            <slot :option="option"></slot>
-          </template>
-        </md-radio-list>
-      </md-scroll-view>
+        <md-scroll-view ref="scroll" :scrolling-x="false">
+          <md-radio-list
+            class="md-selector-list"
+            ref="radio"
+            :key="radioKey"
+            :value="defaultValue"
+            :options="data"
+            :is-slot-scope="hasSlot"
+            icon="right"
+            icon-inverse=""
+            icon-position="right"
+            icon-size="md"
+            @change="$_onSelectorChoose"
+          >
+            <template slot-scope="{ option }">
+              <slot :option="option"></slot>
+            </template>
+          </md-radio-list>
+        </md-scroll-view>
+      </div>
     </md-popup>
   </div>
 </template>

@@ -257,6 +257,10 @@ export default {
     .md-popup-box
       height 100%
 
+  &.inner-popup .md-popup-box
+    background-color color-bg-inverse
+    border-radius popup-title-bar-radius popup-title-bar-radius 0 0
+
 .md-popup-mask
   absolute-pos()
   position absolute
