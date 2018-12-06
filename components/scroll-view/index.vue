@@ -13,11 +13,19 @@
     <div class="scroll-view-header" v-if="$slots.header">
       <slot name="header"></slot>
     </div>
-    <div class="scroll-view-container">
+    <div
+      class="scroll-view-container"
+      :class="{
+        'horizon': scrollingX && !scrollingY
+      }"
+    >
       <div
         v-if="hasRefresher"
         class="scroll-view-refresh"
-        :class="{'refreshing': isRefreshing, 'refresh-active': isRefreshActive}"
+        :class="{
+          'refreshing': isRefreshing,
+          'refresh-active': isRefreshActive,
+        }"
         :style="{top: `-${refreshOffsetY}px`}"
       >
         <slot
@@ -339,4 +347,6 @@ export default {
       visibility hidden
       &.active
         visibility visible
+    &.horizon
+      display inline-block
 </style>
