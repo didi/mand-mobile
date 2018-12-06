@@ -32,12 +32,15 @@
       </md-popup-title-bar>
       <div
         class="md-selector-container"
-        :style="{
-          maxHeight: `${maxHeight}`,
-          minHeight: `${minHeight}`
-        }"
       >
-        <md-scroll-view ref="scroll" :scrolling-x="false">
+        <md-scroll-view
+          ref="scroll"
+          :scrolling-x="false"
+          :style="{
+            maxHeight: `${maxHeight}`,
+            minHeight: `${minHeight}`
+          }"
+        >
           <md-radio-list
             class="md-selector-list"
             ref="radio"
