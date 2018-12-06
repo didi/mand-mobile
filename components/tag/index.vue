@@ -207,7 +207,7 @@ export default {
         width 5px
 
   .shape-bubble
-    width 53px
+    width 50px
     padding 6px 0
     border-radius radius-circle
     border-bottom-left-radius 0
