@@ -38,7 +38,7 @@
   </div>
 </template>
 
-<script>import {Icon, ImageReader, Toast} from 'mand-mobile'
+<script>import {Icon, ImageReader, Tag, Toast} from 'mand-mobile'
 import imageProcessor from 'mand-mobile/components/image-reader/image-processor'
 
 export default {
@@ -52,6 +52,7 @@ export default {
   components: {
     [Icon.name]: Icon,
     [ImageReader.name]: ImageReader,
+    [Tag.name]: Tag,
   },
   data() {
     return {

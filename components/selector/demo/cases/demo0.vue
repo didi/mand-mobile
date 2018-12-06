@@ -13,7 +13,7 @@
       v-model="isSelectorShow"
       default-value="2"
       :data="data[0]"
-      max-height="400px"
+      max-height="320px"
       title="普通模式"
       @choose="onSelectorChoose"
     ></md-selector>
