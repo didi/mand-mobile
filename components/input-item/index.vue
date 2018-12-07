@@ -289,7 +289,10 @@ export default {
 
   watch: {
     value(val) {
-      this.inputValue = this.$_formateValue(this.$_subValue(val + '')).value
+      // Filter out two-way binding
+      if (val !== this.$_trimValue(this.inputValue)) {
+        this.inputValue = this.$_formateValue(this.$_subValue(val + '')).value
+      }
     },
     inputValue(val) {
       this.inputBindValue = val
