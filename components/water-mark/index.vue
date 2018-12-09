@@ -73,7 +73,7 @@
 
   data() {
     return {
-      repetition: process.env.NODE_ENV === 'testing' ? 2 : 50,
+      repetition: process.env.NODE_ENV === 'test' ? 2 : 50,
     }
   },
 }

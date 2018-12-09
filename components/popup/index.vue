@@ -142,7 +142,7 @@ export default {
       this.$nextTick(() => {
         this.isPopupBoxShow = true
         /* istanbul ignore if */
-        if (process.env.NODE_ENV === 'testing') {
+        if (process.env.NODE_ENV === 'test') {
           this.$_onPopupTransitionEnd()
         }
       })
@@ -155,7 +155,7 @@ export default {
       this.preventScroll && this.$_preventScroll(false)
       this.$emit('input', false)
       /* istanbul ignore if */
-      if (process.env.NODE_ENV === 'testing') {
+      if (process.env.NODE_ENV === 'test') {
         this.$_onPopupTransitionEnd()
       }
     },
