@@ -11,7 +11,7 @@
         }"
       >
         <ul
-          v-for="i in (repeatY ? 50 : 1)"
+          v-for="i in (repeatY ? repetition : 1)"
           class="water-mark-line"
           :style="{
             marginBottom: spacing,
@@ -19,7 +19,7 @@
           :key="`line-${i}`"
         >
           <li
-            v-for="j in (repeatX ? 50 : 1)"
+            v-for="j in (repeatX ? repetition : 1)"
             class="water-mark-item"
             :style="i % 2 === 0 ? {
               marginLeft: repeatX ? spacing : 0,
@@ -69,6 +69,12 @@
       type: [String, Number],
       default: 0.1,
     },
+  },
+
+  data() {
+    return {
+      repetition: process.env.NODE_ENV === 'testing' ? 2 : 50,
+    }
   },
 }
 </script>
