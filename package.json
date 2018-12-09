@@ -36,8 +36,6 @@
     "build:mand-mobile-special": "cross-env NODE_ENV=production BUILD_TYPE=special node build/rollup/build-mand-mobile.rollup",
     "build:components": "cross-env NODE_ENV=production && node build/rollup/build-component.rollup",
     "build:analysis": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile --analysis",
-    "test": "cross-env NODE_ENV=testing BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test:rollup": "cross-env NODE_ENV=testing BABEL_ENV=test karma start test/unit/rollup.karma.conf.js --auto-watch",
     "lint": "eslint --ext .js,.vue components test/unit/specs test/e2e/specs",
     "precommit": "lint-staged",
     "build:webpack": "rm -rf ./lib && npm run build:webpack:mand-mobile && npm run build:webpack:components",
@@ -45,7 +43,7 @@
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
-    "jest": "cross-env NODE_ENV=test jest"
+    "test": "cross-env NODE_ENV=testing jest --no-cache"
   },
   "license": "Apache",
   "config": {
@@ -144,6 +142,7 @@
     "inquirer": "^3.3.0",
     "jest": "^23.6.0",
     "jest-serializer-vue": "^2.0.2",
+    "jest-svg-sprite-loader": "^1.0.1",
     "jest-transform-stub": "^1.0.0",
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.2.0",
