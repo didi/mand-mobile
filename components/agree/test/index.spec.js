@@ -1,49 +1,20 @@
-import Agree from '../index'
-import {mount} from 'avoriaz'
+import Demo0 from './cases/demo0'
+import Demo1 from './cases/demo1'
+import Demo2 from './cases/demo2'
+import Demo3 from './cases/demo3'
+import {renderToString} from '@vue/server-test-utils'
 
 describe('Agree', () => {
-  let wrapper
-
-  afterEach(() => {
-    wrapper && wrapper.destroy()
+  test(`Selected`, () => {
+    expect(renderToString(Demo0)).toMatchSnapshot()
   })
-
-  it('create a simple agree', () => {
-    wrapper = mount(Agree)
-    expect(wrapper.hasClass('md-agree')).to.be.true
+  test(`Unselected`, () => {
+    expect(renderToString(Demo1)).toMatchSnapshot()
   })
-
-  it('create a simple checked agree and then uncheck it', () => {
-    wrapper = mount(Agree, {
-      propsData: {
-        value: true,
-      },
-    })
-    expect(wrapper.vm.iconName).to.equal('circle-right')
-
-    const eventStub = sinon.stub(wrapper.vm, '$emit')
-    wrapper.find('.md-agree-icon')[0].trigger('click')
-    expect(eventStub.calledWith('change')).to.be.true
+  test(`Disabled selected`, () => {
+    expect(renderToString(Demo2)).toMatchSnapshot()
   })
-
-  it('create a simple unchecked agree and then check it', () => {
-    wrapper = mount(Agree, {
-      propsData: {
-        value: false,
-      },
-    })
-    expect(wrapper.vm.iconName).to.equal('circle')
-
-    wrapper.vm.value = true
-    expect(wrapper.vm.iconName).to.equal('circle-right')
-  })
-
-  it('create a disabled agree', () => {
-    wrapper = mount(Agree, {
-      propsData: {
-        disabled: true,
-      },
-    })
-    expect(wrapper.hasClass('disabled')).to.be.true
+  test(`Disabled unselected`, () => {
+    expect(renderToString(Demo3)).toMatchSnapshot()
   })
 })

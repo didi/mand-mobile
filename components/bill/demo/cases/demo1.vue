@@ -9,7 +9,7 @@
         &yen;30,000
       </md-detail-item>
       <md-detail-item title="收款账户">
-        <md-icon name="bank-zs" style="margin-right:10px;"></md-icon>招商银行(尾号xxxx)
+        <md-icon name="bank-zs" svg style="margin-right:10px;"></md-icon>招商银行(尾号xxxx)
       </md-detail-item>
       <md-detail-item title="借款期数" content="12期" />
       <md-detail-item title="正常还款总息">

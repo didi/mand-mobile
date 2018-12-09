@@ -12,10 +12,6 @@
 
 export default {
   name: 'amount-demo',
-  /* DELETE */
-  title: '变化动效',
-  titleEnUS: 'Transition',
-  /* DELETE */
   components: {
     [Amount.name]: Amount,
   },

@@ -1,86 +1,20 @@
-import ActionBar from '../index'
-import sinon from 'sinon'
-import {mount} from 'avoriaz'
+import Demo0 from './cases/demo0'
+import Demo1 from './cases/demo1'
+import Demo2 from './cases/demo2'
+import Demo3 from './cases/demo3'
+import {renderToString} from '@vue/server-test-utils'
 
 describe('ActionBar', () => {
-  let wrapper
-
-  afterEach(() => {
-    wrapper && wrapper.destroy()
+  test(`Basic`, () => {
+    expect(renderToString(Demo0)).toMatchSnapshot()
   })
-
-  it('create a action-bar', () => {
-    const spy = sinon.spy()
-    wrapper = mount(ActionBar, {
-      propsData: {
-        actions: [
-          {
-            text: '1',
-            onClick: spy,
-          },
-          {
-            text: '2',
-          },
-        ],
-      },
-    })
-    const buttons = wrapper.find('.button-item')
-    const button = wrapper.find('.button-item')[0]
-    const eventStub = sinon.stub(wrapper.vm, '$emit')
-    button.trigger('click')
-    expect(buttons.length).to.equal(2)
-    expect(eventStub.calledOnce).to.be.true
-    expect(eventStub.calledWith('click')).to.be.true
-    expect(spy.called).to.be.true
+  test(`Multiple buttons`, () => {
+    expect(renderToString(Demo1)).toMatchSnapshot()
   })
-
-  it('create a action-bar with disabled button', () => {
-    wrapper = mount(ActionBar, {
-      propsData: {
-        actions: [
-          {
-            text: '1',
-            disabled: true,
-          },
-          {
-            text: '2',
-          },
-        ],
-      },
-    })
-    const button0 = wrapper.find('.button-item')[0]
-    expect(button0.hasClass('disabled')).to.equal(true)
+  test(`Multiple buttons and disabled button`, () => {
+    expect(renderToString(Demo2)).toMatchSnapshot()
   })
-
-  it('create a action-bar with text', () => {
-    wrapper = mount(ActionBar, {
-      propsData: {
-        actions: [
-          {
-            text: '1',
-          },
-        ],
-        hasText: true,
-      },
-    })
-    const text = wrapper.find('.md-action-bar-text')
-    expect(text.length > 0).to.equal(true)
-  })
-
-  it('click disabled action bar', () => {
-    wrapper = mount(ActionBar, {
-      propsData: {
-        actions: [
-          {
-            text: '1',
-            disabled: true,
-          },
-        ],
-        hasText: true,
-      },
-    })
-    const spy = sinon.spy(wrapper.vm, '$_onBtnClick')
-    wrapper.first('.button-item').trigger('click')
-    expect(spy.called).to.be.true
+  test(`With slot`, () => {
+    expect(renderToString(Demo3)).toMatchSnapshot()
   })
 })

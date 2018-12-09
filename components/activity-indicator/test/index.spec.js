@@ -1,59 +1,16 @@
-import ActivityIndicator from '../index'
-import ActivityIndicatorRollerSuccess from '../roller-success'
-import {mount} from 'avoriaz'
+import Demo0 from './cases/demo0'
+import Demo1 from './cases/demo1'
+import Demo2 from './cases/demo2'
+import {renderToString} from '@vue/server-test-utils'
 
 describe('ActivityIndicator', () => {
-  let wrapper
-
-  afterEach(() => {
-    wrapper && wrapper.destroy()
+  test(`Roller`, () => {
+    expect(renderToString(Demo0)).toMatchSnapshot()
   })
-
-  it('roller', () => {
-    wrapper = mount(ActivityIndicator, {
-      propsData: {
-        size: 30,
-      },
-    })
-
-    expect(wrapper.hasClass('roller')).to.be.true
+  test(`Spinner`, () => {
+    expect(renderToString(Demo1)).toMatchSnapshot()
   })
-
-  it('spinner', () => {
-    wrapper = mount(ActivityIndicator, {
-      propsData: {
-        type: 'spinner',
-        size: 30,
-      },
-    })
-
-    expect(wrapper.hasClass('spinner')).to.be.true
-  })
-
-  it('carousel', () => {
-    wrapper = mount(ActivityIndicator, {
-      propsData: {
-        type: 'carousel',
-        size: 30,
-      },
-    })
-
-    expect(wrapper.hasClass('carousel')).to.be.true
-  })
-
-  it('roller-success', done => {
-    wrapper = mount(ActivityIndicatorRollerSuccess, {
-      propsData: {
-        size: 30,
-        isSuccess: false,
-      },
-    })
-
-    expect(wrapper.hasClass('md-activity-indicator-rolling-success')).to.be.true
-    wrapper.vm.isSuccess = true
-    wrapper.vm.$nextTick(() => {
-      wrapper.vm.isSuccess = false
-      done()
-    })
+  test(`Carousel`, () => {
+    expect(renderToString(Demo2)).toMatchSnapshot()
   })
 })

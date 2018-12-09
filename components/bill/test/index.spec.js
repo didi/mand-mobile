@@ -1,16 +1,12 @@
-import Bill from '../index'
-import {mount} from 'avoriaz'
+import Demo0 from './cases/demo0'
+import Demo1 from './cases/demo1'
+import {renderToString} from '@vue/server-test-utils'
 
 describe('Bill', () => {
-  let wrapper
-
-  afterEach(() => {
-    wrapper && wrapper.destroy()
+  test(`Basic`, () => {
+    expect(renderToString(Demo0)).toMatchSnapshot()
   })
-
-  it('create a simple bill', () => {
-    wrapper = mount(Bill)
-
-    expect(wrapper.hasClass('md-bill')).to.be.true
+  test(`Using slots`, () => {
+    expect(renderToString(Demo1)).toMatchSnapshot()
   })
 })
