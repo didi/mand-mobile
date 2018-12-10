@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Amount Basic 1`] = `
+exports[`Progress Basic 1`] = `
 <div class="md-example-child md-example-child-progress">
   <div class="md-activity-indicator-rolling md-progress">
-    <div class="rolling-container"><svg viewBox="0 0 110 110" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;">
+    <div class="rolling-container"><svg viewBox="0 0 110 110" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;transform:rotateZ(0deg);">
         <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="5" cx="55" cy="55" r="50"></circle>
         <g class="circle">
           <circle cx="55" cy="55" fill="transparent" stroke="#2F86F6" stroke-width="5" stroke-dasharray="62.83000000000001 251.32000000000005" stroke-linecap="round" r="50" class="stroke">
@@ -16,7 +16,7 @@ exports[`Amount Basic 1`] = `
     </div>
   </div>
   <div class="md-activity-indicator-rolling md-progress">
-    <div class="rolling-container"><svg viewBox="0 0 110 110" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;">
+    <div class="rolling-container"><svg viewBox="0 0 110 110" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;transform:rotateZ(0deg);">
         <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="5" cx="55" cy="55" r="50"></circle>
         <g class="circle">
           <circle cx="55" cy="55" fill="transparent" stroke="#2F86F6" stroke-width="5" stroke-dasharray="157.07500000000002 157.07500000000002" stroke-linecap="round" r="50" class="stroke">
@@ -29,7 +29,7 @@ exports[`Amount Basic 1`] = `
     </div>
   </div>
   <div class="md-activity-indicator-rolling md-progress">
-    <div class="rolling-container"><svg viewBox="0 0 110 110" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;">
+    <div class="rolling-container"><svg viewBox="0 0 110 110" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;transform:rotateZ(0deg);">
         <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="5" cx="55" cy="55" r="50"></circle>
         <g class="circle">
           <circle cx="55" cy="55" fill="transparent" stroke="#2F86F6" stroke-width="5" stroke-dasharray="314.15000000000003 0" stroke-linecap="round" r="50" class="stroke">
@@ -44,10 +44,10 @@ exports[`Amount Basic 1`] = `
 </div>
 `;
 
-exports[`Amount Other configurations 1`] = `
+exports[`Progress Other configurations 1`] = `
 <div class="md-example-child md-example-child-progress">
   <div class="md-activity-indicator-rolling md-progress">
-    <div class="rolling-container"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;">
+    <div class="rolling-container"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;transform:rotateZ(0deg);">
         <circle fill="none" stroke="#FFF" stroke-width="10" cx="60" cy="60" r="50"></circle>
         <g class="circle">
           <circle cx="60" cy="60" fill="transparent" stroke="url(#linear)" stroke-width="10" stroke-dasharray="251.32000000000005 62.82999999999999" stroke-linecap="butt" r="50" class="stroke">
@@ -66,7 +66,7 @@ exports[`Amount Other configurations 1`] = `
     </div>
   </div>
   <div class="md-activity-indicator-rolling md-progress">
-    <div class="rolling-container"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;">
+    <div class="rolling-container"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:100px;height:100px;transform:rotateZ(-90deg);">
         <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="10" cx="60" cy="60" r="50"></circle>
         <g class="circle">
           <circle cx="60" cy="60" fill="transparent" stroke="#FF5257" stroke-width="10" stroke-dasharray="0 314.15000000000003" stroke-linecap="round" r="50" class="stroke">

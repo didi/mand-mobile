@@ -8,6 +8,7 @@
     :border-color="borderColor"
     :fill="fill"
     :linecap="linecap"
+    :rotate="rotate"
   >
     <slot></slot>
     <template slot="defs">
@@ -51,6 +52,10 @@ export default {
       // butt | round
       type: String,
       default: 'round',
+    },
+    rotate: {
+      type: Number,
+      default: 0,
     },
     value: {
       // progress control 0-1

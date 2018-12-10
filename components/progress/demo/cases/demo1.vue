@@ -20,6 +20,7 @@
       :value="0.8"
       :width="10"
       :size="100"
+      :rotate="-90"
       color="#FF5257"
       transition
     >

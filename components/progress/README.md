@@ -28,6 +28,7 @@ Vue.component(Progress.name, Progress)
 |border-color|圆环颜色|String|`rgba(0, 0, 0, .1)`|-|
 |fill|圆环内部填充|String|`transparent`|-|
 |linecap|圆环两端形状|String|`round`|`round`, `butt`|
+|rotate|圆环旋转|Number|`0`|-|
 |transition|进度变化是否使用动效|Boolean|`false`|-|
 |duration|进度变化动效时长|Number|`1000`|单位`ms`|
 

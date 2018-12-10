@@ -3,7 +3,7 @@
     <div class="rolling-container">
       <svg
         :viewBox="`0 0 ${viewBoxSize} ${viewBoxSize}`"
-        :style="{width: `${size}px`, height: `${size}px`}"
+        :style="{width: `${size}px`, height: `${size}px`, transform: `rotateZ(${rotate}deg)`}"
         preserveAspectRatio="xMidYMid"
         class="md-activity-indicator-svg rolling"
       >
@@ -90,6 +90,10 @@
       // butt | round | square | inherit
       type: String,
       default: 'round',
+    },
+    rotate: {
+      type: Number,
+      default: 0,
     },
     process: {
       // process control 0-1

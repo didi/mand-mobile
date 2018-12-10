@@ -28,6 +28,7 @@ Vue.component(Progress.name, Progress)
 |border-color|circle stroke color|String|`rgba(0, 0, 0, .1)`|-|
 |fill|circle fill color|String|`transparent`|-|
 |linecap|shape of end|String|`round`|`round`, `butt`|
+|rotate|-|Number|`0`|-|
 |transition|use transition when value changes|Boolean|`false`|-|
 |duration|transition duration|Number|`1000`|unit `ms`|
 

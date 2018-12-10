@@ -20,6 +20,7 @@
       :value="0.8"
       :width="10"
       :size="100"
+      :rotate="-90"
       color="#FF5257"
       transition
     >
@@ -38,10 +39,6 @@
 
 export default {
   name: 'progress-demo',
-  /* DELETE */
-  title: '其他配置',
-  titleEnUS: 'Other configurations',
-  /* DELETE */
   components: {
     [Amount.name]: Amount,
     [Progress.name]: Progress,
