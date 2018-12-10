@@ -34,13 +34,13 @@ $ npm run test [component name] # Test a single component
 New major version development will be carried out in the unified development branch. Other individual components will follow the following process to add new functionalities or repair problems.
 
 ```shell
-$ git checkout -b [feature_xxx/fix_xxx]
+$ git checkout -b [feature_xxx/fix_xxx] origin/dev
 
 # Development
 
 $ git add --all
 $ git commit -am "describe" # refer to [Commit Specification] git cz
-$ git pull --rebase origin master
+$ git pull --rebase origin dev
 
 # Conflicts resolution
 
@@ -48,7 +48,7 @@ $ git push origin [feature_xxx/fix_xxx]
 
 # Submit pull request, specify the corresponding person review, and submit further modifications based on feedback
 
-$ git checkout master
+$ git checkout dev
 $ git pull
 
 ```
@@ -203,13 +203,13 @@ export default {
 ```
 ##### Component Unit Test Code
 
-Use `karma` + `avoriaz`, and the coverage of each indicator should be greater than `50%`.
+Use `Jest` + `vue-test-utils`, and the coverage of each indicator should be greater than `50%`.
 
 Reference Documents:
 
 <a href="https://vuejs.org/v2/guide/unit-testing.html" target="_blank">https://vuejs.org/v2/guide/unit-testing.html</a><br>
-<a href="http://karma-runner.github.io/1.0/index.html" target="_blank">http://karma-runner.github.io/1.0/index.html</a><br>
-<a href="https://eddyerburgh.gitbooks.io/avoriaz/content/" target="_blank">https://eddyerburgh.gitbooks.io/avoriaz/content/</a>
+<a href="https://jestjs.io/docs/getting-started.html" target="_blank">https://jestjs.io</a><br>
+<a href="https://vue-test-utils.vuejs.org" target="_blank">https://vue-test-utils.vuejs.org</a>
 
 #### Commit Specification
 

@@ -31,23 +31,25 @@ $ npm test # 全部测试
 $ npm run test [component name] # 测试单个组件
 ```
 #### feature/bugfix
-新的大版本开发会在统一的开发分支中进行，其他单个组件增加新功能或问题修复流程如下
+
+新的大版本开发会在统一的开发分支中进行，其他单个组件增加新功能或问题修复流程如下:
+
 ```shell
-$ git checkout -b [feature_xxx/fix_xxx]
+$ git checkout -b [feature_xxx/fix_xxx] origin/dev
 
 # 开发
 
 $ git add --all
 $ git commit -am "描述" # 描述参考【Commit规范】git cz
-$ git pull --rebase origin master
+$ git pull --rebase origin dev
 
 # 解决冲突
 
 $ git push origin [feature_xxx/fix_xxx]
 
-# 提交 mr, 指定相应人员 review, 根据反馈进一步修改提交
+# 提交 PR, 指定相应人员 review, 根据反馈进一步修改提交
 
-$ git checkout master
+$ git checkout dev
 $ git pull
 
 ```
@@ -201,13 +203,13 @@ export default {
 ```
 ##### 组件单元测试代码
 
-测试工具使用`karma` + `avoriaz`, 原则上各项指标覆盖率要大于`50%`
+测试工具使用`Jest` + `vue-test-utils`, 原则上各项指标覆盖率要大于`50%`
 
 工具参考文档:
 
 <a href="https://vuejs.org/v2/guide/unit-testing.html" target="_blank">https://vuejs.org/v2/guide/unit-testing.html</a><br>
-<a href="http://karma-runner.github.io/1.0/index.html" target="_blank">http://karma-runner.github.io/1.0/index.html</a><br>
-<a href="https://eddyerburgh.gitbooks.io/avoriaz/content/" target="_blank">https://eddyerburgh.gitbooks.io/avoriaz/content/</a>
+<a href="https://jestjs.io/docs/getting-started.html" target="_blank">https://jestjs.io</a><br>
+<a href="https://vue-test-utils.vuejs.org" target="_blank">https://vue-test-utils.vuejs.org</a>
 
 #### Commit规范
 
