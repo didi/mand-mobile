@@ -252,4 +252,7 @@ export default {
   box-sizing border-box
   .md-radio-item
     font-weight font-weight-normal
+    &.is-selected .md-cell-item-title
+      color color-primary
+      
 </style>
