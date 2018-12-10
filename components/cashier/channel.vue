@@ -6,6 +6,7 @@
       <p class="choose-describe" v-if="paymentDescribe" v-html="paymentDescribe"></p>
     </div>
     <div class="choose-channel" :class="{active: isChannelActive}">
+      <slot></slot>
       <div class="choose-channel-list" v-if="isChannelShow || isSingle">
         <template v-for="(item, index) in channels">
           <md-cashier-channel-item

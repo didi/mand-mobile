@@ -35,7 +35,9 @@
             :channelLimit="channelLimit"
             :default-index="defaultIndex"
             v-on="$listeners"
-          />
+          >
+            <slot name="channel"></slot>
+          </md-cashier-channel>
         </div>
 
         <!-- Captcha -->

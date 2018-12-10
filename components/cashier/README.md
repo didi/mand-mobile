@@ -95,6 +95,9 @@ Vue.component(Cashier.name, Cashier)
 </div>
 ```
 
+##### channel
+支付渠道区域插槽，可用于添加支付渠道特殊操作，如添加银行卡
+
 #### Cashier Events
 
 ##### @select(item: {text, value})

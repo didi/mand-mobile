@@ -96,6 +96,9 @@ Scoped slot of captcha header
 </div>
 ```
 
+##### channel
+Payment channel area slot, which can be used to add payment channel special operations, such as adding a bank card
+
 #### Cashier Events
 
 ##### @select(item: {text, value})
