@@ -1,39 +1,15 @@
 import DropMenu from '../index'
-import {mount} from 'avoriaz'
+import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
-describe('DropMenu', () => {
+describe('DropMenu - Click & Events', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
   })
 
-  it('create a simple drop-menu', done => {
-    wrapper = mount(DropMenu)
-    expect(wrapper.hasClass('md-drop-menu')).to.be.true
-    expect(wrapper.vm.data.length).to.equal(0)
-
-    wrapper.vm.data = [
-      {
-        text: 'hello',
-        options: [
-          {
-            value: 'world',
-            text: 'world',
-          },
-        ],
-      },
-    ]
-
-    wrapper.vm.$nextTick(() => {
-      const barItem = wrapper.find('.bar-item')
-      expect(barItem.length).to.equal(1)
-      expect(barItem[0].text()).to.equal('hello')
-      done()
-    })
-  })
-
-  it('drop-menu bar item click', done => {
+  test('drop-menu bar item click', done => {
     wrapper = mount(DropMenu, {
       propsData: {
         data: [
@@ -52,20 +28,19 @@ describe('DropMenu', () => {
     const barItem = wrapper.find('.bar-item')
     const mockData = [{value: 'world', text: 'world'}]
 
-    barItem[0].trigger('click')
-    expect(barItem[0].hasClass('active')).to.true
-    expect(wrapper.instance().isPopupShow).to.true
-    expect(JSON.stringify(wrapper.instance().activeMenuListData)).to.equal(JSON.stringify(mockData))
-
+    barItem.trigger('click')
     wrapper.vm.$nextTick(() => {
-      const listItem = wrapper.find('.md-radio-item')
-      expect(listItem.length).to.equal(1)
-      barItem[0].trigger('click')
+      expect(barItem.classes('active')).toBeTruthy()
+      expect(wrapper.vm.isPopupShow).toBeTruthy()
+      expect(JSON.stringify(wrapper.vm.activeMenuListData)).toBe(JSON.stringify(mockData))
+
+      const listItem = wrapper.findAll('.md-radio-item')
+      expect(listItem.length).toBe(1)
       done()
     })
   })
 
-  it('drop-menu list item click', done => {
+  test('drop-menu list item click', done => {
     wrapper = mount(DropMenu, {
       propsData: {
         data: [
@@ -84,20 +59,20 @@ describe('DropMenu', () => {
     const barItem = wrapper.find('.bar-item')
     const mockData = [{value: 'world', text: 'world'}]
 
-    barItem[0].trigger('click')
+    barItem.trigger('click')
     setTimeout(() => {
       const listItem = wrapper.find('.md-radio-item')
-      listItem[0].trigger('click')
+      listItem.trigger('click')
 
-      expect(JSON.stringify(wrapper.instance().selectedMenuListItem)).to.equal(JSON.stringify(mockData))
-      expect(barItem[0].text()).to.equal('world')
-      expect(wrapper.instance().getSelectedValue(0).text).to.equal('world')
-      expect(wrapper.instance().getSelectedValues()[0].text).to.equal('world')
+      expect(JSON.stringify(wrapper.vm.selectedMenuListItem)).toBe(JSON.stringify(mockData))
+      expect(barItem.text()).toBe('world')
+      expect(wrapper.vm.getSelectedValue(0).text).toBe('world')
+      expect(wrapper.vm.getSelectedValues()[0].text).toBe('world')
       done()
     }, 350)
   })
 
-  it('drop-menu events', done => {
+  test('drop-menu events', done => {
     wrapper = mount(DropMenu, {
       propsData: {
         data: [
@@ -115,86 +90,18 @@ describe('DropMenu', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const barItem = wrapper.find('.bar-item')[0]
+    const barItem = wrapper.find('.bar-item')
 
     barItem.trigger('click')
-    expect(wrapper.vm.isPopupShow).to.equal(true)
-    expect(wrapper.vm.activeMenuBarIndex).to.equal(0)
+    expect(wrapper.vm.isPopupShow).toBeTruthy()
+    expect(wrapper.vm.activeMenuBarIndex).toBe(0)
     setTimeout(() => {
-      const listItem = wrapper.find('.md-radio-item')[0]
+      const listItem = wrapper.find('.md-radio-item')
       listItem.trigger('click')
-      expect(eventStub.calledWith('change')).to.be.true
+      expect(eventStub.calledWith('change')).toBeTruthy()
       setTimeout(() => {
         done()
       }, 500)
     }, 500)
-  })
-
-  it('create a disabled drop-menu', done => {
-    wrapper = mount(DropMenu, {
-      propsData: {
-        data: [
-          {
-            text: 'hello',
-            disabled: true,
-          },
-          {
-            text: 'hello',
-            options: [
-              {
-                value: 'hello',
-                text: 'hello',
-                disabled: true,
-              },
-            ],
-          },
-        ],
-      },
-    })
-    const barItem = wrapper.find('.bar-item')
-    expect(barItem[0].hasClass('disabled')).to.true
-
-    barItem[1].trigger('click')
-    setTimeout(() => {
-      const listItem = wrapper.find('.md-radio-item')
-      expect(listItem[0].hasClass('is-disabled')).to.true
-      done()
-    }, 500)
-  })
-
-  it('create a drop-menu with defult value', done => {
-    wrapper = mount(DropMenu, {
-      propsData: {
-        data: [
-          {
-            text: 'hello',
-            options: [
-              {
-                value: 'word',
-                text: 'world',
-              },
-              {
-                value: 'space',
-                text: 'space',
-              },
-            ],
-          },
-        ],
-        defaultValue: ['space'],
-      },
-    })
-
-    wrapper.vm.$nextTick(() => {
-      const barItem = wrapper.find('.bar-item')
-      expect(barItem[0].hasClass('selected')).to.true
-      expect(barItem[0].text()).to.equal('space')
-
-      barItem[0].trigger('click')
-      setTimeout(() => {
-        const listItem = wrapper.find('.md-radio-item')
-        expect(listItem[1].hasClass('is-selected')).to.true
-        done()
-      }, 300)
-    })
   })
 })

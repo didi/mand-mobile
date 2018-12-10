@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropMenu - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-0">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item"><span>一级选项1</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu - Demo Custom menu options 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-3">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item"><span>一级选项1</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu - Demo Disabled item 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-2">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item selected"><span>排量</span></div>
+      <div class="bar-item selected disabled"><span>变速箱</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu - Demo Initial selection 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-1">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item selected"><span>排量</span></div>
+      <div class="bar-item selected"><span>变速箱</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu Basic 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-0">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item"><span>一级选项1</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu Custom menu options 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-3">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item"><span>一级选项1</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu Disabled item 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-2">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item selected"><span>排量</span></div>
+      <div class="bar-item selected disabled"><span>变速箱</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
+
+exports[`DropMenu Initial selection 1`] = `
+<div class="md-example-child md-example-child-drop-menu md-example-child-drop-menu-1">
+  <div class="md-drop-menu">
+    <div class="md-drop-menu-bar">
+      <div class="bar-item selected"><span>排量</span></div>
+      <div class="bar-item selected"><span>变速箱</span></div>
+    </div>
+    <div class="md-popup with-mask top" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+        <div class="md-drop-menu-list">
+          <div class="md-radio-list is-align-center">
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">正文区域</div>
+</div>
+`;
