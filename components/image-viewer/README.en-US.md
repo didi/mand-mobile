@@ -22,7 +22,7 @@ Vue.component(ImageViewer.name, ImageViewer)
 #### ImageViewer Props
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-| v-model<sup class="version-after">1.1.0+</sup> | viewer display | Boolean | `false` |
+| v-model | viewer display | Boolean | `false` |
 | list |show picture list | Array<String> | `[]` | -|
 | initial-index | initialize the index of displayed image | Number | `0` | - |
 | has-dots | display the index of picture| Boolean | `true` | - |

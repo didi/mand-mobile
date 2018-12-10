@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CellItem Customize 1`] = `
+<div class="md-example-child md-example-child-captcha">
+  <div class="md-captcha">
+    <div position="center" class="md-dialog">
+      <div class="md-popup with-mask center" style="display:none;">
+        <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+        <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
+          <div class="md-dialog-content">
+            <div class="md-dialog-body"><a role="button" class="md-dialog-close"><i class="md-icon icon-font md-icon-close md" style="color:;"></i></a>
+              <!---->
+              <!---->
+              <div class="md-captcha-content">
+                <h2 class="md-captcha-title">输入验证码</h2>
+                <div class="md-captcha-message">
+                  验证码已发送至 186****5407
+                </div>
+              </div>
+              <div class="md-codebox-wrapper">
+                <div class="md-codebox is-justify"><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
+                <footer class="md-captcha-footer">
+                  <div class="md-captcha-brief"></div> <button class="md-captcha-btn">发送验证码</button>
+                </footer>
+                <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
+                <div class="md-number-keyboard md-codebox-keyboard">
+                  <div class="md-popup bottom" style="display:none;">
+                    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+                    <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+                      <div class="md-number-keyboard-container simple">
+                        <div class="keyboard-number">
+                          <ul class="keyboard-number-list">
+                            <li class="keyboard-number-item">1</li>
+                            <li class="keyboard-number-item">2</li>
+                            <li class="keyboard-number-item">3</li>
+                            <li class="keyboard-number-item">4</li>
+                            <li class="keyboard-number-item">5</li>
+                            <li class="keyboard-number-item">6</li>
+                            <li class="keyboard-number-item">7</li>
+                            <li class="keyboard-number-item">8</li>
+                            <li class="keyboard-number-item">9</li>
+                            <li class="keyboard-number-item no-bg"></li>
+                            <li class="keyboard-number-item">0</li>
+                            <li class="keyboard-number-item no-bg delete"></li>
+                          </ul>
+                        </div>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="md-dialog-actions"></footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CellItem Inline display 1`] = `
+<div class="md-example-child md-example-child-captcha-1">
+  <div class="md-captcha">
+    <div class="md-captcha-content">
+      <!---->
+      <div class="md-captcha-message">
+        验证码已发送至186****5407
+      </div>
+    </div>
+    <div class="md-codebox-wrapper">
+      <div class="md-codebox is-justify"><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
+      <footer class="md-captcha-footer">
+        <div class="md-captcha-brief">最新验证码依然有效，请勿重发</div> <button class="md-captcha-btn">发送验证码</button>
+      </footer>
+      <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
+      <div class="md-number-keyboard md-codebox-keyboard in-view">
+        <div class="md-number-keyboard-container simple">
+          <div class="keyboard-number">
+            <ul class="keyboard-number-list">
+              <li class="keyboard-number-item">1</li>
+              <li class="keyboard-number-item">2</li>
+              <li class="keyboard-number-item">3</li>
+              <li class="keyboard-number-item">4</li>
+              <li class="keyboard-number-item">5</li>
+              <li class="keyboard-number-item">6</li>
+              <li class="keyboard-number-item">7</li>
+              <li class="keyboard-number-item">8</li>
+              <li class="keyboard-number-item">9</li>
+              <li class="keyboard-number-item no-bg"></li>
+              <li class="keyboard-number-item">0</li>
+              <li class="keyboard-number-item no-bg delete"></li>
+            </ul>
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CellItem Basic 1`] = `
+<div class="md-example-child md-example-child-cell-item md-example-child-cell-item-0">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">普通条目</p>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">动作条目</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item is-disabled">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">禁用条目</p>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`CellItem Content List 1`] = `
+<div class="md-example-child md-example-child-cell-item md-example-child-cell-item-2">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-cell-item">
+        <div class="md-cell-item-body multilines">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">交通银行(尾号3089)</p>
+            <p class="md-cell-item-brief">展示摘要描述</p>
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body multilines">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">招商银行(尾号2342)</p>
+            <p class="md-cell-item-brief">展示摘要描述</p>
+          </div>
+          <div class="md-cell-item-right">
+            <div class="md-switch"></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body multilines">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">交通银行(尾号3089)</p>
+            <p class="md-cell-item-brief">展示摘要描述</p>
+          </div>
+          <div class="md-cell-item-right">
+            附加文案
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body multilines">
+          <div class="md-cell-item-left"><span class="holder"></span></div>
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">交通银行</p>
+            <p class="md-cell-item-brief">展示摘要描述</p>
+          </div>
+          <div class="md-cell-item-right">
+            附加文案
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item is-disabled">
+        <div class="md-cell-item-body multilines">
+          <div class="md-cell-item-left"><span class="holder"></span></div>
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">招商银行</p>
+            <p class="md-cell-item-brief">展示摘要描述</p>
+          </div>
+          <div class="md-cell-item-right">
+            禁用的项目
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body multilines">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">Mand Mobile</p>
+            <p class="md-cell-item-brief">A mobile UI toolkit</p>
+          </div>
+          <div class="md-cell-item-right">
+
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <div class="md-cell-item-children">
+          <p style="font-size:0.24rem;color:#858B9C;">
+            面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。基于「合理、好用」设计价值观，从交互操作、视觉抽象、图形可视等角度共同解决问题。
+          </p>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`CellItem Simple List 1`] = `
+<div class="md-example-child md-example-child-cell-item md-example-child-cell-item-1">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">滴水贷</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+            可用8000.34
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">滴水贷</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+            可用8000.34
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">信用付</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+            <div class="md-switch"></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item is-disabled">
+        <div class="md-cell-item-body">
+          <!---->
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">信用付</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+            <div class="md-switch disabled active"></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <div class="md-cell-item-left">
+            <div class="holder"></div>
+          </div>
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">滴水贷</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+            可用8000.34
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-cell-item">
+        <div class="md-cell-item-body">
+          <div class="md-cell-item-left">
+            <div class="holder"></div>
+          </div>
+          <div class="md-cell-item-content">
+            <p class="md-cell-item-title">信用付</p>
+            <!---->
+          </div>
+          <div class="md-cell-item-right">
+            可用8000.34
+            <i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;

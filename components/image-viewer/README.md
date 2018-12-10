@@ -22,7 +22,7 @@ Vue.component(ImageViewer.name, ImageViewer)
 #### ImageViewer Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-| v-model<sup class="version-after">1.1.0+</sup> | 是否显示查看器 | Boolean | `false` |
+| v-model | 是否显示查看器 | Boolean | `false` |
 | list |展示图片列表 | Array<String> | `[]` | -|
 | initial-index | 初始索引值 | Number | `0` | - |
 | has-dots | 是否展示图片索引值 | Boolean | `true` | - |

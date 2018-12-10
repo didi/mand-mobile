@@ -1,8 +1,7 @@
+const scope = process.argv[2] || ''
+
 module.exports = {
   setupFiles: ['<rootDir>/test/jest.init.js'],
-  testMatch: [
-    '**/jest-test/**/*.spec.js'
-  ],
   moduleFileExtensions: [
     'js',
     'json',
@@ -11,8 +10,9 @@ module.exports = {
   transform: {
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'jest-transform-stub',
-    '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
-    '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
+    '^.+\\.js$': 'babel-jest',
+    '.*\\.vue$': 'vue-jest',
+    '^.+\\.svg$': 'jest-svg-sprite-loader'
   },
   globals: {
     'vue-jest': {
@@ -21,23 +21,24 @@ module.exports = {
       }
     }
   },
-  collectCoverage: true,
-  collectCoverageFrom: [
-    'components/*/*.{js,vue}'
-  ],
   modulePaths: [
     '<rootDir>/components',
     '<rootDir>/node_modules'
   ],
   moduleNameMapper: {
+    '@examples(.*)': '<rootDir>/examples/$1',
     'mand-mobile(.*)': '<rootDir>/$1',
     'mand-mobile/lib(.*)': '<rootDir>/components$1'
   },
+  snapshotSerializers: [
+    'jest-serializer-vue'
+  ],
+  collectCoverage: !scope,
+  collectCoverageFrom: [
+    'components/*/*.{js,vue}'
+  ],
   coverageReporters: [
     'html',
     'text-summary'
-  ],
-  snapshotSerializers: [
-    'jest-serializer-vue'
   ]
 }

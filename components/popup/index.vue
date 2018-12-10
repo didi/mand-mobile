@@ -142,7 +142,7 @@ export default {
       this.$nextTick(() => {
         this.isPopupBoxShow = true
         /* istanbul ignore if */
-        if (process.env.NODE_ENV === 'testing') {
+        if (process.env.NODE_ENV === 'test') {
           this.$_onPopupTransitionEnd()
         }
       })
@@ -155,7 +155,7 @@ export default {
       this.preventScroll && this.$_preventScroll(false)
       this.$emit('input', false)
       /* istanbul ignore if */
-      if (process.env.NODE_ENV === 'testing') {
+      if (process.env.NODE_ENV === 'test') {
         this.$_onPopupTransitionEnd()
       }
     },
@@ -256,6 +256,10 @@ export default {
     justify-content flex-end
     .md-popup-box
       height 100%
+
+  &.inner-popup .md-popup-box
+    background-color color-bg-inverse
+    border-radius popup-title-bar-radius popup-title-bar-radius 0 0
 
 .md-popup-mask
   absolute-pos()

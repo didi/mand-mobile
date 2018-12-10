@@ -85,21 +85,22 @@ export default {
       width auto 
       height auto
       line-height 1
+      will-change auto
       &.md-icon-checked
         position absolute
         top 0
         left 0
         transform scale(0.6)
         color transparent
-        transition all .2s
+        transition all .3s ease-in-out-quint
       &.md-icon-check
         color agree-fill
   &.checked .md-agree-icon-container
     .md-icon-checked
-      transform scale(1.1)
+      transform scale(1)
       color agree-fill
     .md-icon-check
-      color transparent
+      opacity 0.8
 
 .md-agree-content
   flex 1 1 0%

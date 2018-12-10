@@ -17,6 +17,7 @@
     </template>
     <template v-else>
       <md-popup
+        class="inner-popup"
         v-model="isPickerShow"
         position="bottom"
         :mask-closable="maskClosable"
@@ -319,7 +320,4 @@ export default {
   width 100%
   .md-popup
     z-index picker-zindex
-  .md-popup-box
-    background-color color-bg-inverse
-    border-radius popup-title-bar-radius popup-title-bar-radius 0 0
 </style>
