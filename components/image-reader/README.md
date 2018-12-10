@@ -37,7 +37,7 @@ Vue.component(ImageReader.name, ImageReader)
 |属性 | 说明 | 类型| 备注|
 |-----|-----|-----|-----|
 |name|选择器标识|String|-|
-|files<sup class="version-after">1.3.1+</sup>|图片对象集合|Array<File>|-|
+|files|图片对象集合|Array<File>|-|
 
 ##### @complete(name, { dataUrl, blob, file })
 图片选择读取完成事件
@@ -47,7 +47,7 @@ Vue.component(ImageReader.name, ImageReader)
 |name|选择器标识|String|-|
 |dataUrl|图片Base64|String|-|
 |blob|图片Blob对象，可用于`formData`|Blob|-|
-|file<sup class="version-after">1.3.1+</sup>|图片对象|File|-|
+|file|图片对象|File|-|
 
 ##### @error(name, { code, msg })
 图片选择读取失败事件

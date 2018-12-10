@@ -3,7 +3,7 @@ title: ActivityIndicator
 preview: https://didi.github.io/mand-mobile/examples/#/activity-indicator
 ---
 
-Activity indicator, generally used for ongoing tasks <sup class="version-after">1.4.0+</sup>
+Activity indicator, generally used for ongoing tasks
 
 ### Import
 
