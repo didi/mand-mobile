@@ -25,7 +25,7 @@ export default {...createDemoModule('captcha', [Demo0, Demo1])}
     margin-bottom 10px
     h1
       margin-bottom 10px
-      color color-gray-1
+      color #111A34
       font-size font-heading-normal
       font-weight normal
     .md-example-box
