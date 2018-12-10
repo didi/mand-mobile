@@ -29,16 +29,21 @@
             </ul>
           </div>
         </template>
-        <template v-for="n in (cols - columnValues.length)">
-          <div class="md-picker-column-item" :key="n + columnValues.length - 1">
+        <template v-if="cols">
+          <div
+            class="md-picker-column-item"
+            v-for="n in (cols - columnValues.length)"
+            :key="n + columnValues.length - 1"
+          >
             <ul class="column-list" :style="{ 'padding-top': `${style.maskerHeight}px` }"></ul>
           </div>
         </template>
       </div>
       <div class="md-picker-column-hooks">
-        <template v-for="n in cols">
+        <template v-if="cols">
           <div
             class="md-picker-column-hook"
+            v-for="n in cols"
             :key="n - 1"
             @touchstart="$_onColumnTouchStart($event, n - 1)"
             @mousedown="$_onColumnTouchStart($event, n - 1, true)"

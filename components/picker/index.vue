@@ -89,6 +89,9 @@ export default {
     defaultIndex: {
       type: Array,
       default() {
+        if (this.cols < 1) {
+          return []
+        }
         const arr = new Array(this.cols)
         for (let i = 0, len = arr.length; i < len; i++) {
           arr[i] = 0
