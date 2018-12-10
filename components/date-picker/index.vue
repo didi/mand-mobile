@@ -221,10 +221,13 @@ export default {
         // Collect parameters for columnDataGenerator
         const columnDataGeneratorParams = []
         const generator = columnDataGenerator[i]
-
         for (let j = 0; j < i; j++) {
-          if (defaultDate[j]) {
-            columnDataGeneratorParams.push(defaultDate[j])
+          const _generator = columnDataGenerator[j]
+          if (defaultDate[j] && _generator) {
+            columnDataGeneratorParams.push({
+              type: _generator.type,
+              value: defaultDate[j]
+            })
             continue
           }
 
@@ -236,6 +239,7 @@ export default {
             warn(`DatePicker columnData of index ${j} is void`)
           }
         }
+
         // Generator colume data with columnDataGeneratorParams
         const curColumnData = generator ? generator.apply(this, columnDataGeneratorParams) : ''
 
@@ -248,7 +252,13 @@ export default {
 
       isSetColumn && this.picker.refresh(null, columnIndex)
     },
-    $_initColumnDataGenerator () { 
+    $_initColumnDataGenerator () {
+      this.$_generateYearData.type = 'Year'
+      this.$_generateMonthData.type = 'Month'
+      this.$_generateDateData.type = 'Date'
+      this.$_generateHourData.type = 'Hour'
+      this.$_generateMinuteData.type = 'Minute'
+    
       const defaultDate = this.$_getDefaultDate()     
       switch (this.type) {
         case 'date':
@@ -365,6 +375,7 @@ export default {
     },
     $_generateDateData () {
       const args = this.$_getGeneratorArguments(toArray(arguments))
+      
       let start, end
 
       if (this.$_isDateTimeEqual(this.minDate, args.Year, args.Month)) {
