@@ -98,4 +98,4 @@ Vue.component(Dialog.name, Dialog)
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 
 ##### Dialog.closeAll()
-静态方法关闭所有动态创建的全局Dialog <sup class="version-after">1.4.0+</sup>
+静态方法关闭所有动态创建的全局Dialog

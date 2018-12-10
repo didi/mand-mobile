@@ -4,8 +4,10 @@
       <div class="default-header-aside">
         <a class="default-header-logo" href="/mand-mobile">
           <img :src="logo" alt="logo">
-          <span v-html="title"></span>
-          <sup>v{{version}}</sup>
+          <p>
+            <span class="name" v-html="title"></span>
+            <!-- <span class="version">v{{version}}</span> -->
+          </p>
         </a>
       </div>
       <div class="default-header-content">
@@ -43,9 +45,9 @@
         </div>
         <div class="default-header-version default-header-operater">
           <div class="operater-select" @click.stop="versionTableShow = true">
-            <span>2.x</span>
+            <span>{{version}}</span>
           </div>
-          <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:auto !important;right:-8px;"></mfe-table>
+          <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:50%;transform:translateX(-50%)"></mfe-table>
         </div>
         <div class="default-header-nav">
           <ul>
@@ -279,38 +281,34 @@ export default {
       height 100%
       text-decoration none
       overflow hidden
-      line-height 64px
+      display inline-flex
+      align-items center
       img
         display inline-block
         margin-right 10px
         width auto
-        height 28px
+        height 34px
         vertical-align middle
         transition all .3s
-      span
-        position relative
-        top 2px
+      p
+        display inline-flex
+        flex-direction column
+        justify-content center
         height 100%
+      span
+        line-height 1
+      span.name
+        position relative
         color #333
         font-size 16px
-        line-height 64px
         font-family DINAlternate-Bold, AvenirNext-Medium,"Microsoft Yahei","Lato","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif  !important
         transition all .3s
-        i
-          color #048EFA
-          font-size 13px
-          font-style normal
-          font-weight 500
-          font-family "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace  !important
-      sup
-        display inline-block
-        max-width 40px
-        margin-left 10px
+      span.version
+        margin-top 3px
         color #999
         font-weight 300
-        font-size 12px
-        font-family DINAlternate-Bold
-        line-height 1
+        font-size 10px
+        // font-family DINAlternate-Bold
         
   .default-header-content
     display inline-block
@@ -400,10 +398,11 @@ export default {
     .default-header-operater
       position relative
       float right
-      width 80px
+      min-width 80px
       height 30px
       margin-left 10px
       margin-top 17px
+      padding 0 10px
       line-height 30px
       text-align center
       border-radius 30px
@@ -436,13 +435,13 @@ export default {
     .default-header-container
       width 1280px
       .default-header-logo
-        line-height 100px
         img
           height 48px
         span
-          top 4px
-          line-height 100px
-          font-size 24px
+          &.name
+            font-size 24px
+          &.version
+            display none
       .default-header-nav
         li.nav-item a
           color #FFF

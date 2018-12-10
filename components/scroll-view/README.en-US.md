@@ -3,7 +3,7 @@ title: ScrollView
 preview: https://didi.github.io/mand-mobile/examples/#/scroll-view
 ---
 
-Used to simulate native scrolling areas and support pull-down refresh and load more <sup class="version-after">1.5.0+</sup>
+Used to simulate native scrolling areas and support pull-down refresh and load more
 
 ### Import
 
