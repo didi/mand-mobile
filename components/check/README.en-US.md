@@ -3,7 +3,7 @@ title: Check
 preview: https://didi.github.io/mand-mobile/examples/#/check
 ---
 
-UI renderless check group component. <sup class="version-after">2.0.0+</sup>
+UI renderless check group component
 
 ### Import
 

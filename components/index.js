@@ -57,6 +57,7 @@ import WaterMark from './water-mark'
 import Transition from './transition'
 import DetailItem from './detail-item'
 import Slider from './slider'
+import Progress from './progress'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // 全量引入提醒
@@ -124,6 +125,7 @@ export const components = {
   Transition,
   DetailItem,
   Slider,
+  Progress,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -208,6 +210,7 @@ export {
   Transition,
   DetailItem,
   Slider,
+  Progress,
   /* @init<%${componentNameUpper},%> */
 }
 

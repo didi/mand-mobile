@@ -3,7 +3,7 @@ title: Amount
 preview: https://didi.github.io/mand-mobile/examples/#/amount
 ---
 
-Financial figures, generally used for amounts, quantities, etc. <sup class="version-after">1.4.0+</sup>
+Financial figures, generally used for amounts, quantities, etc
 
 ### Import
 
@@ -27,5 +27,5 @@ Vue.component(Amount.name, Amount)
 |has-separator|insert thousand separators|Boolean|`false`|-|
 |separator|thousand separator|String|`,`|-|
 |is-capital|convert to chinese capital|Boolean|`false`|-|
-|transition|use animation when number change|Boolean|`false`|-|
-|duration|animation duration|Number|`1000`|unit `ms`|
+|transition|use transition when value changes|Boolean|`false`|-|
+|duration|transition duration|Number|`1000`|unit `ms`|

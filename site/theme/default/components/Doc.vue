@@ -510,7 +510,8 @@ export default {
   .doc-demo-box
     position relative
     padding-bottom 24px
-    border solid 1px #ebebeb
+    border-top solid 1px #efefef
+    box-shadow 0px 2px 1px -1px rgba(0,0,0,0.08), 0px 1px 1px 0px rgba(0,0,0,0.1), 0px 1px 3px 0px rgba(0,0,0,0.1)
     border-radius 2px
     transition all .3s
     overflow hidden
@@ -609,8 +610,6 @@ export default {
       font-size 16px
       color #ccc
       transition all .3s
-      &:hover
-        transform scale(1.2)
       &:active, &:visited, &:focus
         box-shadow none
         outline none

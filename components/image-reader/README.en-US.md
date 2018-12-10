@@ -39,7 +39,7 @@ Picture selection completed, while reading hasn't been started yet
 |Parameters | Description | Type| Note|
 |-----|-----|-----|-----|
 |name|identifier|String|-|
-|files<sup class="version-after">1.3.1+</sup>|image file objects set|Array<File>|-|
+|files|image file objects set|Array<File>|-|
 
 ##### @complete(name, { dataUrl, blob, file })
 Picture reading completed
@@ -49,7 +49,7 @@ Picture reading completed
 |name|identifier|String|-|
 |dataUrl|base64|String|-|
 |blob|image Blob object for `formData`|Blob|-|
-|file<sup class="version-after">1.3.1+</sup>|image file object|File|-|
+|file|image file object|File|-|
 
 ##### @error(name, { code, msg })
 Picture selection and reading failed

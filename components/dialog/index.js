@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Dialog from './dialog'
-const DialogConstructor = Vue.extend(Dialog)
 
 /* istanbul ignore next */
 const noop = function() {}
@@ -15,6 +14,7 @@ const instances = []
  * @return {Dialog}
  */
 const generate = function({title = '', icon = '', iconSvg = false, content = '', closable = false, btns = []}) {
+  const DialogConstructor = Vue.extend(Dialog)
   const vm = new DialogConstructor({
     propsData: {
       value: true,

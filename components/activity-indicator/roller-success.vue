@@ -1,41 +1,43 @@
 <template>
   <div class="md-activity-indicator-rolling-success">
     <md-activity-indicator-rolling
-      :stroke-width="strokeWidth"
+      :width="strokeWidth"
       :radius="radius"
       fill="#FFF6F1"
       border-color="transparent"
     >
-      <g v-if="isSuccess">
-        <circle class="success"
-          :cx="viewBoxSize/2"
-          :cy="viewBoxSize/2"
-          fill="#FFF6F1"
-          stroke="none"
-          :r="radius"
-        ></circle>
-      </g>
+      <template v-if="isSuccess">
+        <g name="circle" slot="circle">
+          <circle class="success"
+            :cx="viewBoxSize/2"
+            :cy="viewBoxSize/2"
+            fill="#FFF6F1"
+            stroke="none"
+            :r="radius"
+          ></circle>
+        </g>
+      </template>
+      <svg
+        v-if="isSuccess"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+        class="right"
+        :style="{transform: `translate(-50%, -50%) scale(${size/70})`}"
+      >
+        <g>
+          <line
+            x1="32" y1="47" x2="45" y2="62"
+            :style="{'strokeWidth':strokeWidth, 'stroke': color}"
+            stroke-dasharray="20"
+          />
+          <line
+            x1="42" y1="62" x2="68.4" y2="40"
+            :style="{'strokeWidth':strokeWidth, 'stroke': color}"
+            stroke-dasharray="35"
+          />
+        </g>
+      </svg>
     </md-activity-indicator-rolling>
-    <svg
-      v-if="isSuccess"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="xMidYMid"
-      class="right"
-      :style="{transform: `translate(-50%, -50%) scale(${size/70})`}"
-    >
-      <g>
-        <line
-          x1="32" y1="47" x2="45" y2="62"
-          :style="{'strokeWidth':strokeWidth, 'stroke': color}"
-          stroke-dasharray="20"
-        />
-        <line
-          x1="42" y1="62" x2="68.4" y2="40"
-          :style="{'strokeWidth':strokeWidth, 'stroke': color}"
-          stroke-dasharray="35"
-        />
-      </g>
-    </svg>
   </div>
 </template>
 

@@ -1,8 +1,13 @@
 import Vue from 'vue'
-import ToastOptions from './toast'
-const ToastConstructor = Vue.extend(ToastOptions)
+import Toast from './toast'
 
-function Toast({
+/**
+ * Toast factory
+ *
+ * @param {Object} props
+ * @return {Toast}
+ */
+const generate = function({
   content = '',
   icon = '',
   iconSvg = false,
@@ -14,6 +19,7 @@ function Toast({
   let vm = Toast._instance
 
   if (!vm) {
+    const ToastConstructor = Vue.extend(Toast)
     vm = Toast._instance = new ToastConstructor({
       propsData: {
         content,
@@ -45,6 +51,7 @@ Toast._instance = null
  * Hide toast
  */
 Toast.hide = () => {
+  const ToastConstructor = Vue.extend(Toast)
   if (Toast._instance instanceof ToastConstructor && Toast._instance.visible) {
     Toast._instance.hide()
   }
@@ -60,7 +67,7 @@ Toast.hide = () => {
  */
 
 Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
-  return Toast({
+  return generate({
     icon: '',
     content,
     duration,
@@ -79,7 +86,7 @@ Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = docum
  */
 
 Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
-  return Toast({
+  return generate({
     icon: 'success',
     content,
     duration,
@@ -98,7 +105,7 @@ Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = do
  */
 
 Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
-  return Toast({
+  return generate({
     icon: 'fail',
     content,
     duration,
@@ -116,7 +123,7 @@ Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = doc
  * @returns {Toast}
  */
 Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = document.body) => {
-  return Toast({
+  return generate({
     icon: 'spinner',
     iconSvg: true,
     content,

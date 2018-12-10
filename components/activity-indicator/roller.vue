@@ -1,61 +1,65 @@
 <template>
   <div class="md-activity-indicator-rolling">
-    <svg
-      :viewBox="`0 0 ${viewBoxSize} ${viewBoxSize}`"
-      :style="{width: `${size}px`, height: `${size}px`}"
-      preserveAspectRatio="xMidYMid"
-      class="md-activity-indicator-svg rolling"
-    >
-      <circle
-        fill="none"
-        :stroke="borderColor"
-        :stroke-width="strokeWidth"
-        :cx="viewBoxSize/2"
-        :cy="viewBoxSize/2"
-        :r="radius"
-      />
-      <g
-        v-if="!$slots.default"
-        class="circle"
+    <div class="rolling-container">
+      <svg
+        :viewBox="`0 0 ${viewBoxSize} ${viewBoxSize}`"
+        :style="{width: `${size}px`, height: `${size}px`}"
+        preserveAspectRatio="xMidYMid"
+        class="md-activity-indicator-svg rolling"
       >
         <circle
-          class="stroke"
+          fill="none"
+          :stroke="borderColor"
+          :stroke-width="strokeWidth"
           :cx="viewBoxSize/2"
           :cy="viewBoxSize/2"
-          :fill="fill"
-          :stroke="color"
-          :stroke-width="strokeWidth"
-          :stroke-dasharray="isAutoAnimation ? `${110 * circlePerimeter / 125}` : strokeDasharray"
-          stroke-linecap="round"
           :r="radius"
+        />
+        <g
+          v-if="!$slots.circle"
+          class="circle"
         >
-          <animate
-            v-if="isAutoAnimation"
-            attributeName="stroke-dashoffset"
-            :values="`${360 * circlePerimeter / 125};${140 * circlePerimeter / 125}`"
-            dur="2.2s"
-            keyTimes="0;1"
-            calcMode="spline"
-            fill="freeze"
-            keySplines="0.41,0.314,0.8,0.54"
-            repeatCount="indefinite"
-            begin="0"
-          />
-          <animateTransform
-            v-if="isAutoAnimation"
-            :dur="`${duration}s`"
-            :values="`0 ${viewBoxSize/2} ${viewBoxSize/2};360 ${viewBoxSize/2} ${viewBoxSize/2}`"
-            attributeName="transform"
-            type="rotate"
-            calcMode="linear"
-            keyTimes="0;1"
-            begin="0"
-            repeatCount="indefinite"
-          ></animateTransform>
-        </circle>
-      </g>
-      <slot v-else></slot>
-    </svg>
+          <circle
+            class="stroke"
+            :cx="viewBoxSize/2"
+            :cy="viewBoxSize/2"
+            :fill="fill"
+            :stroke="color"
+            :stroke-width="strokeWidth"
+            :stroke-dasharray="isAutoAnimation ? `${110 * circlePerimeter / 125}` : strokeDasharray"
+            :stroke-linecap="linecap"
+            :r="radius"
+          >
+            <animate
+              v-if="isAutoAnimation"
+              attributeName="stroke-dashoffset"
+              :values="`${360 * circlePerimeter / 125};${140 * circlePerimeter / 125}`"
+              dur="2.2s"
+              keyTimes="0;1"
+              calcMode="spline"
+              fill="freeze"
+              keySplines="0.41,0.314,0.8,0.54"
+              repeatCount="indefinite"
+              begin="0"
+            />
+            <animateTransform
+              v-if="isAutoAnimation"
+              :dur="`${duration}s`"
+              :values="`0 ${viewBoxSize/2} ${viewBoxSize/2};360 ${viewBoxSize/2} ${viewBoxSize/2}`"
+              attributeName="transform"
+              type="rotate"
+              calcMode="linear"
+              keyTimes="0;1"
+              begin="0"
+              repeatCount="indefinite"
+            ></animateTransform>
+          </circle>
+        </g>
+        <slot name="circle" v-else></slot>
+        <slot name="defs"></slot>
+      </svg>
+      <div class="content"><slot></slot></div>
+    </div>
   </div>
 </template>
 
@@ -81,6 +85,11 @@
     fill: {
       type: String,
       default: 'transparent',
+    },
+    linecap: {
+      // butt | round | square | inherit
+      type: String,
+      default: 'round',
     },
     process: {
       // process control 0-1
@@ -120,8 +129,17 @@
 <style lang="stylus">
 .md-activity-indicator-rolling
   clearfix()
+  .rolling-container
+    position relative
+    display inline-block
   .rolling
     float left
     circle.stroke
       will-change auto
+  .content
+    position absolute
+    absolute-pos()
+    display flex
+    justify-content center
+    align-items center
 </style>

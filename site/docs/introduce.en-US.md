@@ -12,7 +12,7 @@ title: Mand Mobile
 
 * <b>Unified visual specification</b> 
 
-    Designed and maintained by designers of DiDi Strategic Business Department to ensure a high\-level visual consistency within and among projects.
+    Designed and maintained by designers of DiDi Finance Department to ensure a high\-level visual consistency within and among projects.
 
 * <b>Strictly controlled Bundle volume </b> 
 
@@ -23,6 +23,8 @@ title: Mand Mobile
     UI style is configurable, flexible and easy to adapt to different design styles.
 
 * <b>Support TypeScript</b> 
+
+* <b>Support server-side rendering</b> 
 
 #### Version
 

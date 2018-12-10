@@ -46,4 +46,4 @@ export const WaterMark =  r => require.ensure([], () => r(require('../components
 export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')
 export const DetailItem =  r => require.ensure([], () => r(require('../components/detail-item/demo')), 'detail-item')
 export const Slider =  r => require.ensure([], () => r(require('../components/slider/demo')), 'slider')
-/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export const Progress =  r => require.ensure([], () => r(require('../components/progress/demo')), 'progress')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */

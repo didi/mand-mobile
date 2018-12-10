@@ -99,4 +99,4 @@ Dynamically create a fail dialog
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
 
 ##### Dialog.closeAll()
-Close all global dialogs <sup class="version-after">1.4.0+</sup>
+Close all global dialogs
