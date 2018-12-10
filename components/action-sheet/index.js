@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import ActionSheet from './action-sheet'
-const ActionSheetCtor = Vue.extend(ActionSheet)
 
 const noop = function() {}
 
@@ -25,6 +24,7 @@ ActionSheet.create = function({
   onHide = noop,
   onSelected = noop,
 }) {
+  const ActionSheetCtor = Vue.extend(ActionSheet)
   const vm = new ActionSheetCtor({
     propsData: {
       value,
