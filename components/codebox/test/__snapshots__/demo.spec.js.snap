@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Codebox Basic 1`] = `
+<div class="md-example-child md-example-child-codebox md-example-child-codebox-0">
+  <div class="md-codebox-wrapper">
+    <div class="md-codebox"><span class="md-codebox-box is-active"><!----> <i class="md-codebox-blink"></i></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
+    <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
+    <div class="md-number-keyboard md-codebox-keyboard">
+      <div class="md-popup bottom" style="display:none;">
+        <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+        <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <div class="md-number-keyboard-container simple">
+            <div class="keyboard-number">
+              <ul class="keyboard-number-list">
+                <li class="keyboard-number-item">1</li>
+                <li class="keyboard-number-item">2</li>
+                <li class="keyboard-number-item">3</li>
+                <li class="keyboard-number-item">4</li>
+                <li class="keyboard-number-item">5</li>
+                <li class="keyboard-number-item">6</li>
+                <li class="keyboard-number-item">7</li>
+                <li class="keyboard-number-item">8</li>
+                <li class="keyboard-number-item">9</li>
+                <li class="keyboard-number-item no-bg"></li>
+                <li class="keyboard-number-item">0</li>
+                <li class="keyboard-number-item no-bg delete"></li>
+              </ul>
+            </div>
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Codebox Character mask 1`] = `
+<div class="md-example-child md-example-child-codebox md-example-child-codebox-1">
+  <div class="md-codebox-wrapper">
+    <div class="md-codebox"><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
+    <form action="" style="display:none;"><input type="password" maxlength="6" value="" class="md-codebox-input"></form>
+    <div class="md-number-keyboard md-codebox-keyboard">
+      <div class="md-popup bottom" style="display:none;">
+        <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+        <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <div class="md-number-keyboard-container simple">
+            <div class="keyboard-number">
+              <ul class="keyboard-number-list">
+                <li class="keyboard-number-item">1</li>
+                <li class="keyboard-number-item">2</li>
+                <li class="keyboard-number-item">3</li>
+                <li class="keyboard-number-item">4</li>
+                <li class="keyboard-number-item">5</li>
+                <li class="keyboard-number-item">6</li>
+                <li class="keyboard-number-item">7</li>
+                <li class="keyboard-number-item">8</li>
+                <li class="keyboard-number-item">9</li>
+                <li class="keyboard-number-item no-bg"></li>
+                <li class="keyboard-number-item">0</li>
+                <li class="keyboard-number-item no-bg delete"></li>
+              </ul>
+            </div>
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Codebox System keyboard 1`] = `
+<div class="md-example-child md-example-child-codebox md-example-child-codebox-3">
+  <div class="md-codebox-wrapper">
+    <div class="md-codebox"><input type="text" maxlength="-1" readonly="readonly" disabled="disabled" value="" class="md-codebox-holder"></div>
+    <form action=""><input type="text" maxlength="-1" value="" class="md-codebox-input"></form>
+    <div class="md-number-keyboard md-codebox-keyboard" style="display:none;">
+      <div class="md-popup bottom" style="display:none;">
+        <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+        <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <div class="md-number-keyboard-container professional">
+            <div class="keyboard-number">
+              <ul class="keyboard-number-list">
+                <li class="keyboard-number-item">1</li>
+                <li class="keyboard-number-item">2</li>
+                <li class="keyboard-number-item">3</li>
+                <li class="keyboard-number-item">4</li>
+                <li class="keyboard-number-item">5</li>
+                <li class="keyboard-number-item">6</li>
+                <li class="keyboard-number-item">7</li>
+                <li class="keyboard-number-item">8</li>
+                <li class="keyboard-number-item">9</li>
+                <li class="keyboard-number-item">.</li>
+                <li class="keyboard-number-item">
+                  0
+                </li>
+                <li class="keyboard-number-item slidedown"></li>
+              </ul>
+            </div>
+            <div class="keyboard-operate">
+              <ul class="keyboard-operate-list">
+                <li class="keyboard-operate-item delete"></li>
+                <li class="keyboard-operate-item confirm">确定</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Codebox Unlimited length 1`] = `
+<div class="md-example-child md-example-child-codebox md-example-child-codebox-2">
+  <div class="md-codebox-wrapper">
+    <div class="md-codebox"><input type="text" maxlength="-1" readonly="readonly" disabled="disabled" value="" class="md-codebox-holder"></div>
+    <form action="" style="display:none;"><input type="text" maxlength="-1" value="" class="md-codebox-input"></form>
+    <div class="md-number-keyboard md-codebox-keyboard">
+      <div class="md-popup bottom" style="display:none;">
+        <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+        <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <div class="md-number-keyboard-container professional">
+            <div class="keyboard-number">
+              <ul class="keyboard-number-list">
+                <li class="keyboard-number-item">1</li>
+                <li class="keyboard-number-item">2</li>
+                <li class="keyboard-number-item">3</li>
+                <li class="keyboard-number-item">4</li>
+                <li class="keyboard-number-item">5</li>
+                <li class="keyboard-number-item">6</li>
+                <li class="keyboard-number-item">7</li>
+                <li class="keyboard-number-item">8</li>
+                <li class="keyboard-number-item">9</li>
+                <li class="keyboard-number-item">.</li>
+                <li class="keyboard-number-item">
+                  0
+                </li>
+                <li class="keyboard-number-item slidedown"></li>
+              </ul>
+            </div>
+            <div class="keyboard-operate">
+              <ul class="keyboard-operate-list">
+                <li class="keyboard-operate-item delete"></li>
+                <li class="keyboard-operate-item confirm">确定</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

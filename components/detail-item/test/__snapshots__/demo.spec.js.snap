@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Codebox Basic 1`] = `
+<div class="md-example-child md-example-child-detail-item md-example-child-detail-item-0">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-detail-item is-bold">
+        <div class="md-detail-title">承保公司</div>
+        <div class="md-detail-content">众安</div>
+      </div>
+      <div class="md-detail-item">
+        <div class="md-detail-title">投保人</div>
+        <div class="md-detail-content">张三</div>
+      </div>
+      <div class="md-detail-item">
+        <div class="md-detail-title">被保人</div>
+        <div class="md-detail-content">李四</div>
+      </div>
+      <div class="md-detail-item">
+        <div class="md-detail-title">保险费用</div>
+        <div class="md-detail-content">0.1元/日</div>
+      </div>
+      <div class="md-detail-item">
+        <div class="md-detail-title">保障日期</div>
+        <div class="md-detail-content">2018/08/08 ~ 2019/08/08</div>
+      </div>
+      <div class="md-detail-item">
+        <div class="md-detail-title">保单号</div>
+        <div class="md-detail-content">123456789</div>
+      </div>
+      <div class="md-detail-item">
+        <div class="md-detail-title">保单协议</div>
+        <div class="md-detail-content"><a href="#" style="color:#5878B4;text-decoration:none;">查看</a></div>
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;

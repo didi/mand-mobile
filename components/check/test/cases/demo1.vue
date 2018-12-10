@@ -14,10 +14,7 @@
 
 export default {
   name: 'check-demo',
-  /* DELETE */
   title: '复选项组',
-  titleEnUS: 'Check options group',
-  /* DELETE */
   components: {
     [Check.name]: Check,
     [CheckGroup.name]: CheckGroup,

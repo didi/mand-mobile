@@ -9,10 +9,7 @@
 
 export default {
   name: 'check-demo',
-  /* DELETE */
   title: '复选项',
-  titleEnUS: 'Check options',
-  /* DELETE */
   components: {
     [Check.name]: Check,
   },
