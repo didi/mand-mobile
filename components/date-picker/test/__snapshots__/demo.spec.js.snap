@@ -271,7 +271,9 @@ exports[`DatePicker Date & Time selection 1`] = `
           </div>
           <div class="md-picker-column-item">
             <ul class="column-list" style="padding-top: 110px;">
-              <li class="column-item active" style="height: 50px; line-height: 50px;">12月</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">10月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">11月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12月</li>
             </ul>
           </div>
           <div class="md-picker-column-item">
@@ -302,7 +304,24 @@ exports[`DatePicker Date & Time selection 1`] = `
           </div>
           <div class="md-picker-column-item">
             <ul class="column-list" style="padding-top: 110px;">
-              <li class="column-item active" style="height: 50px; line-height: 50px;">17时</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">0时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">1时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">3时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">4时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">5时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">6时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">7时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">8时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">9时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">10时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">11时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">13时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">14时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">15时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">16时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">17时</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">18时</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">19时</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">20时</li>
@@ -313,7 +332,32 @@ exports[`DatePicker Date & Time selection 1`] = `
           </div>
           <div class="md-picker-column-item">
             <ul class="column-list" style="padding-top: 110px;">
-              <li class="column-item active" style="height: 50px; line-height: 50px;">25分</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">0分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">1分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">3分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">4分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">5分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">6分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">7分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">8分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">9分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">10分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">11分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">13分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">14分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">15分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">16分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">17分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">18分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">19分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">20分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">21分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">22分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">23分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">24分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">25分</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">26分</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">27分</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">28分</li>
@@ -385,9 +429,9 @@ exports[`DatePicker Date selection 1`] = `
             </ul>
           </div>
           <div class="md-picker-column-item">
-            <ul class="column-list" style="padding-top: 110px; margin-top: -110px;">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -50px;">
               <li class="column-item" style="height: 50px; line-height: 50px;">1月</li>
-              <li class="column-item" style="height: 50px; line-height: 50px;">2月</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">2月</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">3月</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">4月</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">5月</li>
@@ -397,7 +441,7 @@ exports[`DatePicker Date selection 1`] = `
               <li class="column-item" style="height: 50px; line-height: 50px;">9月</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">10月</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">11月</li>
-              <li class="column-item active" style="height: 50px; line-height: 50px;">12月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12月</li>
             </ul>
           </div>
           <div class="md-picker-column-item">
@@ -406,12 +450,12 @@ exports[`DatePicker Date selection 1`] = `
               <li class="column-item" style="height: 50px; line-height: 50px;">2日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">3日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">4日</li>
-              <li class="column-item" style="height: 50px; line-height: 50px;">5日</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">5日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">6日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">7日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">8日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">9日</li>
-              <li class="column-item active" style="height: 50px; line-height: 50px;">今天</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">10日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">11日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">12日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">13日</li>
@@ -430,9 +474,6 @@ exports[`DatePicker Date selection 1`] = `
               <li class="column-item" style="height: 50px; line-height: 50px;">26日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">27日</li>
               <li class="column-item" style="height: 50px; line-height: 50px;">28日</li>
-              <li class="column-item" style="height: 50px; line-height: 50px;">29日</li>
-              <li class="column-item" style="height: 50px; line-height: 50px;">30日</li>
-              <li class="column-item" style="height: 50px; line-height: 50px;">31日</li>
             </ul>
           </div>
         </div>

@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      currentDate: new Date(),
+      currentDate: new Date('2018/10/10'),
       isDatePickerShow: true,
       datePickerValue: '',
     }

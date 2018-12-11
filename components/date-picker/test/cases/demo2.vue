@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      currentDate: new Date(),
+      currentDate: new Date('2018/10/10'),
       minDate: new Date('2018/8/30 11:30'),
     }
   },

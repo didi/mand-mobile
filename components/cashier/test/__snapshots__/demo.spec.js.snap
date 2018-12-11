@@ -149,17 +149,21 @@ exports[`Cashier Baisc-success 1`] = `
         <div class="md-cashier-block md-cashier-success">
           <div class="md-cashier-block-icon">
             <div class="md-activity-indicator-rolling-success">
-              <div class="md-activity-indicator-rolling" stroke-width="4.375" radius="35"><svg viewBox="0 0 81.66666666666667 81.66666666666667" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width: 70px; height: 70px;">
-                  <circle fill="none" stroke="transparent" stroke-width="5.833333333333333" cx="40.833333333333336" cy="40.833333333333336" r="35"></circle>
-                  <g>
-                    <circle cx="39.375" cy="39.375" fill="#FFF6F1" stroke="none" r="35" class="success"></circle>
-                  </g>
-                </svg></div> <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="right" style="transform: translate(-50%, -50%) scale(1);">
-                <g>
-                  <line x1="32" y1="47" x2="45" y2="62" stroke-dasharray="20" style="stroke-width: 4.375; stroke: #2F86F6;"></line>
-                  <line x1="42" y1="62" x2="68.4" y2="40" stroke-dasharray="35" style="stroke-width: 4.375; stroke: #2F86F6;"></line>
-                </g>
-              </svg>
+              <div class="md-activity-indicator-rolling" radius="35">
+                <div class="rolling-container"><svg viewBox="0 0 78.75 78.75" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width: 70px; height: 70px; transform: rotateZ(0deg);">
+                    <circle fill="none" stroke="transparent" stroke-width="4.375" cx="39.375" cy="39.375" r="35"></circle>
+                    <g name="circle">
+                      <circle cx="39.375" cy="39.375" fill="#FFF6F1" stroke="none" r="35" class="success"></circle>
+                    </g>
+                  </svg>
+                  <div class="content"> <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="right" style="transform: translate(-50%, -50%) scale(1);">
+                      <g>
+                        <line x1="32" y1="47" x2="45" y2="62" stroke-dasharray="20" style="stroke-width: 4.375; stroke: #2F86F6;"></line>
+                        <line x1="42" y1="62" x2="68.4" y2="40" stroke-dasharray="35" style="stroke-width: 4.375; stroke: #2F86F6;"></line>
+                      </g>
+                    </svg></div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="md-cashier-block-text">支付成功</div>
