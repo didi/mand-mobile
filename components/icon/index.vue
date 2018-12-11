@@ -60,9 +60,9 @@ export default {
   fill currentColor
   -webkit-backface-visibility hidden
   transform translateZ(0) scale(1.0, 1.0)
-  display flex
-  align-items center
-  justify-content center
+  // display flex
+  // align-items center
+  // justify-content center
 
   // size
   &.icon-font
