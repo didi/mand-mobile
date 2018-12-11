@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast - Demo Continuous call 1`] = `
+<div class="md-toast center">
+  <div class="md-popup with-mask center" style="">
+    <div class="md-popup-mask" style=""></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content"><svg class="md-icon icon-svg md-icon-spinner lg">
+          <use xlink:href="#spinner"></use>
+        </svg>
+        <div class="md-toast-text">载入中</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast - Demo Continuous call 2`] = `
+<div class="md-toast center">
+  <div class="md-popup center" style="">
+    <div class="md-popup-mask" style="display: none;"></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content"><i class="md-icon icon-font md-icon-fail lg"></i>
+        <div class="md-toast-text">载入失败</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast - Demo Customize location 1`] = `
+<div class="md-toast bottom">
+  <div class="md-popup center" style="">
+    <div class="md-popup-mask" style="display: none;"></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content">
+        <!---->
+        <div class="md-toast-text">自定义位置</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast - Demo Failure 1`] = `
+<div class="md-toast center">
+  <div class="md-popup center" style="">
+    <div class="md-popup-mask" style="display: none;"></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content"><i class="md-icon icon-font md-icon-fail lg"></i>
+        <div class="md-toast-text">操作失败</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast - Demo Loading 1`] = `
+<div class="md-toast center">
+  <div class="md-popup with-mask center" style="">
+    <div class="md-popup-mask" style=""></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content"><svg class="md-icon icon-svg md-icon-spinner lg">
+          <use xlink:href="#spinner"></use>
+        </svg>
+        <div class="md-toast-text">加载中...</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast - Demo Plain text 1`] = `
+<div class="md-toast center">
+  <div class="md-popup center" style="">
+    <div class="md-popup-mask" style="display: none;"></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content">
+        <!---->
+        <div class="md-toast-text">一段文字</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Toast - Demo Success 1`] = `
+<div class="md-toast center">
+  <div class="md-popup center" style="">
+    <div class="md-popup-mask" style="display: none;"></div>
+    <div class="md-popup-box md-fade" style="">
+      <div class="md-toast-content"><i class="md-icon icon-font md-icon-success lg"></i>
+        <div class="md-toast-text">操作成功</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

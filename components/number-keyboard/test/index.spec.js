@@ -1,7 +1,8 @@
 import NumberKeyboard from '../index'
-import {mount} from 'avoriaz'
+import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
-describe('NumberKeyboard', () => {
+describe('NumberKeyboard - Operation', () => {
   let wrapper
 
   afterEach(() => {
@@ -12,16 +13,16 @@ describe('NumberKeyboard', () => {
     wrapper = mount(NumberKeyboard)
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const numberBtn = wrapper.find('.keyboard-number-item')[1]
+    const numberBtn = wrapper.findAll('.keyboard-number-item').at(1)
 
     wrapper.vm.disorder = true
     wrapper.vm.value = true
     setTimeout(() => {
       numberBtn.trigger('click')
-      expect(eventStub.calledWith('enter')).to.be.true
+      expect(eventStub.calledWith('enter')).toBe(true)
 
       wrapper.vm.isKeyboardShow = false
-      expect(eventStub.calledWith('input')).to.be.true
+      expect(eventStub.calledWith('input')).toBe(true)
       done()
     }, 300)
   })
@@ -30,12 +31,12 @@ describe('NumberKeyboard', () => {
     wrapper = mount(NumberKeyboard)
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const deleteBtn = wrapper.find('.keyboard-operate-item')[0]
+    const deleteBtn = wrapper.find('.delete')
 
     wrapper.vm.value = true
     setTimeout(() => {
       deleteBtn.trigger('click')
-      expect(eventStub.calledWith('delete')).to.be.true
+      expect(eventStub.calledWith('delete')).toBe(true)
       done()
     }, 300)
   })
@@ -44,12 +45,12 @@ describe('NumberKeyboard', () => {
     wrapper = mount(NumberKeyboard)
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const confirmBtn = wrapper.find('.keyboard-operate-item')[1]
+    const confirmBtn = wrapper.find('.confirm')
 
     wrapper.vm.value = true
     setTimeout(() => {
       confirmBtn.trigger('click')
-      expect(eventStub.calledWith('confirm')).to.be.true
+      expect(eventStub.calledWith('confirm')).toBe(true)
       done()
     }, 300)
   })

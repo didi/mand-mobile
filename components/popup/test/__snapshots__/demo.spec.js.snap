@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup - Demo Different positions 1`] = `
+<div class="md-example-child md-example-child-popup md-example-child-popup-0">
+  <div class="md-popup with-mask center" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
+      <div class="md-example-popup md-example-popup-center">
+        Popup Center
+      </div>
+    </div>
+  </div>
+
+  ] <div class="md-popup with-mask bottom" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+      <div class="md-popup-title-bar large">
+        <div class="title-bar-left md-popup-cancel">cancel</div>
+        <div class="title-bar-title">
+          <p class="title">Popup Title</p>
+          <p class="describe">Popup Description</p>
+        </div>
+        <div class="title-bar-right md-popup-confirm">ok</div>
+      </div>
+      <div class="md-example-popup md-example-popup-bottom">
+        Popup Bottom
+      </div>
+    </div>
+  </div>
+  <div class="md-popup top" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+      <div class="md-example-popup md-example-popup-top">
+        Popup Top
+        <md-icon name="close"></md-icon>
+      </div>
+    </div>
+  </div>
+  <div class="md-popup with-mask left" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-slide-right" class="md-popup-box md-slide-right" style="display:none;">
+      <div class="md-example-popup md-example-popup-left">
+        Popup Left
+      </div>
+    </div>
+  </div>
+  <div class="md-popup with-mask right" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-slide-left" class="md-popup-box md-slide-left" style="display:none;">
+      <div class="md-example-popup md-example-popup-right">
+        Popup Right
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Popup - Demo Other configurations 1`] = `
+<div class="md-example-child md-example-child-popup md-example-child-popup-2">
+  <div class="md-popup top" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-slide-down" class="md-popup-box md-slide-down" style="display:none;">
+      <div class="md-example-popup md-example-popup-top">
+        Popup Top
+        <md-icon name="close"></md-icon>
+      </div>
+    </div>
+  </div>
+  <div class="md-popup with-mask bottom" style="display:none;">
+    <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+    <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+      <div class="md-popup-title-bar">
+        <div class="title-bar-left md-popup-cancel">cancel</div>
+        <div class="title-bar-title">
+          <p class="title">Prevent Mask Click</p>
+          <!---->
+        </div>
+        <div class="title-bar-right md-popup-confirm">ok</div>
+      </div>
+      <div class="md-example-popup md-example-popup-bottom">
+        Popup Bottom
+      </div>
+    </div>
+  </div>
+</div>
+`;

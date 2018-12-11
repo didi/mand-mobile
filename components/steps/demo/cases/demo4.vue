@@ -15,8 +15,7 @@ export default {
   name: 'steps-demo',
   /* DELETE */
   title: '进度变化动效 <a href="javascript:window.triggerSteps0()">current = 2</a>',
-  titleEnUS: 'Dynamically modify the current step <a href="javascript:window.triggerSteps0()">current = 2</a>',
-  codeSandBox: 'https://codesandbox.io/s/wmz776wq5',
+  titleEnUS: 'Transition of rogress changes <a href="javascript:window.triggerSteps0()">current = 2</a>',
   height: 150,
   /* DELETE */
   components: {

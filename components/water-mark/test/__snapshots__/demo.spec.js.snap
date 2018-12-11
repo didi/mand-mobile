@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-water-mark-0">
+  <div class="md-water-mark text-container">
+    <div class="water-mark-container">
+      <p class="text">
+        每个人都有属于自己的一片森林，也许我们从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。
+      </p>
+      <p class="text">
+        希望你可以记住我，记住我这样活过，这样在你身边待过。
+      </p>
+      <p class="text">
+        少年时我们追求激情，成熟后却迷恋平庸。在我们寻找、伤害、背离之后，还能一如既往地相信爱情，这是一种勇气。
+      </p>
+    </div>
+    <div class="water-mark-list">
+      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);">
+        <ul class="water-mark-line" style="margin-bottom:10vw;">
+          <li class="water-mark-item" style="margin-right:10vw;">
+            <p>MAND MOBILE</p>
+          </li>
+          <li class="water-mark-item" style="margin-right:10vw;">
+            <p>MAND MOBILE</p>
+          </li>
+        </ul>
+        <ul class="water-mark-line" style="margin-bottom:10vw;">
+          <li class="water-mark-item" style="margin-left:10vw;">
+            <p>MAND MOBILE</p>
+          </li>
+          <li class="water-mark-item" style="margin-left:10vw;">
+            <p>MAND MOBILE</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs - Demo Using slots 1`] = `
+<div class="md-example-child md-example-child-water-mark-0">
+  <div class="md-water-mark text-container">
+    <div class="water-mark-container">
+      <p class="text">
+        通过<b>作用域插槽</b>的坐标属性(coord)可以对水印行列进行定制
+      </p>
+      <p class="text">
+        通过<b>作用域插槽</b>的坐标属性(coord)可以对水印行列进行定制
+      </p>
+      <p class="text">
+        通过<b>作用域插槽</b>的坐标属性(coord)可以对水印行列进行定制
+      </p>
+    </div>
+    <div class="water-mark-list">
+      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);">
+        <ul class="water-mark-line" style="margin-bottom:10vw;">
+          <li class="water-mark-item" style="margin-right:10vw;">
+            <div><span> 奇数行</span></div>
+          </li>
+          <li class="water-mark-item" style="margin-right:10vw;">
+            <div><span> 奇数行</span></div>
+          </li>
+        </ul>
+        <ul class="water-mark-line" style="margin-bottom:10vw;">
+          <li class="water-mark-item" style="margin-left:10vw;">
+            <div><span>偶数行</span></div>
+          </li>
+          <li class="water-mark-item" style="margin-left:10vw;">
+            <div><span>偶数行</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,43 +1,15 @@
 import Selector from '../index'
-import {mount} from 'avoriaz'
+import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
-describe('Selector', () => {
+describe('Selector - Operation', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
   })
 
-  it('create a selector', () => {
-    wrapper = mount(Selector, {
-      propsData: {
-        value: true,
-        data: [
-          {
-            value: '1',
-            text: '选项一',
-          },
-          {
-            value: '2',
-            text: '选项二',
-          },
-          {
-            value: '3',
-            text: '选项三',
-          },
-          {
-            value: '4',
-            text: '选项四',
-          },
-        ],
-      },
-    })
-
-    expect(wrapper.hasClass('md-selector')).to.be.true
-    expect(wrapper.find('.md-radio-item').length).to.equal(4)
-  })
-
-  it('create a selector as check mode', () => {
+  test('create a selector as check mode', () => {
     wrapper = mount(Selector, {
       propsData: {
         okText: '确认',
@@ -45,42 +17,10 @@ describe('Selector', () => {
       },
     })
 
-    expect(wrapper.hasClass('is-check')).to.be.true
-    expect(wrapper.vm.isNeedConfirm).to.equal(true)
+    expect(wrapper.vm.isNeedConfirm).toBe(true)
   })
 
-  it('create a selector with default value', () => {
-    wrapper = mount(Selector, {
-      propsData: {
-        value: true,
-        defaultValue: '2',
-        data: [
-          {
-            value: '1',
-            text: '选项一',
-          },
-          {
-            value: '2',
-            text: '选项二',
-          },
-          {
-            value: '3',
-            disabled: true,
-            text: '选项三',
-          },
-          {
-            value: '4',
-            text: '选项四',
-          },
-        ],
-      },
-    })
-
-    expect(wrapper.find('.md-radio-item')[1].hasClass('is-selected')).to.equal(true)
-    expect(wrapper.find('.md-radio-item')[2].hasClass('is-disabled')).to.equal(true)
-  })
-
-  it('selector events choose', done => {
+  test('selector events choose', done => {
     wrapper = mount(Selector, {
       propsData: {
         value: true,
@@ -109,15 +49,15 @@ describe('Selector', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit')
 
     wrapper.vm.$nextTick(() => {
-      wrapper.find('.md-radio-item')[0].trigger('click')
-      expect(wrapper.vm.tmpActiveIndex).equal(0)
-      expect(wrapper.vm.activeIndex).equal(0)
-      expect(eventStub.calledWith('choose')).to.be.true
+      wrapper.find('.md-radio-item').trigger('click')
+      expect(wrapper.vm.tmpActiveIndex).toBe(0)
+      expect(wrapper.vm.activeIndex).toBe(0)
+      expect(eventStub.calledWith('choose')).toBe(true)
       done()
     })
   })
 
-  it('selector events confirm', done => {
+  test('selector events confirm', done => {
     wrapper = mount(Selector, {
       propsData: {
         value: true,
@@ -147,19 +87,19 @@ describe('Selector', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit')
 
     wrapper.vm.$nextTick(() => {
-      const item = wrapper.find('.md-radio-item')[0]
-      const confirmBtn = wrapper.find('.md-popup-confirm')[0]
+      const item = wrapper.find('.md-radio-item')
+      const confirmBtn = wrapper.find('.md-popup-confirm')
       item.trigger('click')
-      expect(wrapper.vm.tmpActiveIndex).equal(0)
+      expect(wrapper.vm.tmpActiveIndex).toBe(0)
 
       confirmBtn.trigger('click')
-      expect(wrapper.vm.activeIndex).equal(0)
-      expect(eventStub.calledWith('confirm')).to.be.true
+      expect(wrapper.vm.activeIndex).toBe(0)
+      expect(eventStub.calledWith('confirm')).toBe(true)
       done()
     })
   })
 
-  it('selector events cancel', done => {
+  test('selector events cancel', done => {
     wrapper = mount(Selector, {
       propsData: {
         value: true,
@@ -192,9 +132,9 @@ describe('Selector', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit')
 
     wrapper.vm.$nextTick(() => {
-      const cancelBtn = wrapper.find('.md-popup-cancel')[0]
+      const cancelBtn = wrapper.find('.md-popup-cancel')
       cancelBtn.trigger('click')
-      expect(eventStub.calledWith('cancel')).to.be.true
+      expect(eventStub.calledWith('cancel')).toBe(true)
       done()
     })
   })

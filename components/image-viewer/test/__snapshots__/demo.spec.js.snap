@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageViewer - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-image-reader">
+  <div>
+    <ul>
+      <li>
+        <div class="img" style="background:url(http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/27fb7f097ca218d743f816836bc7ea4a) center no-repeat;background-size:cover;"></div>
+      </li>
+      <li>
+        <div class="img" style="background:url(http://manhattan.didistatic.com/static/manhattan/insurancePlatform_spu/uploads/c2912793a222eb24b606a582fd849ab7) center no-repeat;background-size:cover;"></div>
+      </li>
+      <li>
+        <div class="img" style="background:url(http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/6ee5a0ba9340ca452cbc827902e76be0) center no-repeat;background-size:cover;"></div>
+      </li>
+      <li>
+        <div class="img" style="background:url(http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/d751dd4487e265de3b8587f504eee2c3) center no-repeat;background-size:cover;"></div>
+      </li>
+    </ul>
+  </div>
+  <div class="md-image-viewer" style="display:none;">
+    <div class="viewer-container">
+      <!---->
+      <div class="viewer-index">1/4</div>
+    </div>
+  </div>
+</div>
+`;

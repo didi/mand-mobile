@@ -2,8 +2,8 @@ import ScrollView from '../index'
 import ScrollViewRefresh from '../refresh'
 import ScrollViewMore from '../more'
 import ScrollViewContent from './scroll-view-content'
-import triggerTouch from '../../popup/test/touch-trigger'
-import {mount} from 'avoriaz'
+import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
 describe('ScrollView', () => {
   let wrapper
@@ -31,11 +31,11 @@ describe('ScrollView', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    expect(wrapper.find('.scroll-view-refresh').length > 0).to.be.true
+    expect(wrapper.findAll('.scroll-view-refresh').length > 0).toBe(true)
 
     wrapper.vm.triggerRefresh()
     setTimeout(() => {
-      expect(eventStub.calledWith('refreshing')).to.be.true
+      expect(eventStub.calledWith('refreshing')).toBe(true)
       done()
     }, 500)
   })
@@ -49,6 +49,6 @@ describe('ScrollView', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    expect(wrapper.find('.scroll-view-more').length > 0).to.be.true
+    expect(wrapper.findAll('.scroll-view-more').length > 0).toBe(true)
   })
 })

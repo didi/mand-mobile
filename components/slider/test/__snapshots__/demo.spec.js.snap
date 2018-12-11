@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-slider">
+  <div class="md-slider">
+    <div class="md-slider-bar" style="width:25%;"></div>
+    <div data-hint="25" class="md-slider-handle" style="left:25%;"><span></span></div>
+  </div>
+</div>
+`;
+
+exports[`Slider - Demo Disabled 1`] = `
+<div class="md-example-child md-example-child-slider">
+  <div class="md-slider is-disabled">
+    <div class="md-slider-bar" style="width:50%;"></div>
+    <div data-hint="50" class="md-slider-handle" style="left:50%;"><span></span></div>
+  </div>
+</div>
+`;
+
+exports[`Slider - Demo Format 1`] = `
+<div class="md-example-child md-example-child-slider">
+  <div class="md-slider">
+    <div class="md-slider-bar" style="width:50%;"></div>
+    <div data-hint="￥50" class="md-slider-handle" style="left:50%;"><span></span></div>
+  </div>
+</div>
+`;
+
+exports[`Slider - Demo Min & Max 1`] = `
+<div class="md-example-child md-example-child-slider">
+  <div class="md-slider">
+    <div class="md-slider-bar" style="width:38.46153846153847%;left:15.384615384615385%;"></div>
+    <div data-hint="25" class="md-slider-handle is-lower" style="left:15.384615384615385%;"><span></span></div>
+    <div data-hint="50" class="md-slider-handle is-higher" style="left:53.84615384615385%;"><span></span></div>
+  </div>
+</div>
+`;
+
+exports[`Slider - Demo Range 1`] = `
+<div class="md-example-child md-example-child-slider">
+  <div class="md-slider">
+    <div class="md-slider-bar" style="width:25%;left:25%;"></div>
+    <div data-hint="25" class="md-slider-handle is-lower" style="left:25%;"><span></span></div>
+    <div data-hint="50" class="md-slider-handle is-higher" style="left:50%;"><span></span></div>
+  </div>
+</div>
+`;
+
+exports[`Slider - Demo Steps 1`] = `
+<div class="md-example-child md-example-child-slider">
+  <div class="md-slider">
+    <div class="md-slider-bar" style="width:10%;"></div>
+    <div data-hint="10" class="md-slider-handle" style="left:10%;"><span></span></div>
+  </div>
+</div>
+`;

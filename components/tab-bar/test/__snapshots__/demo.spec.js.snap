@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabBar - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-tabs md-example-child-tab-bar-0">
+  <nav class="md-tab-bar">
+    <div class="md-tab-bar-inner">
+      <!---->
+      <div class="md-scroll-view">
+        <!---->
+        <div class="scroll-view-container">
+          <!---->
+          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active">标签1</a><a class="md-tab-bar-item">标签2</a></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`TabBar - Demo Custom Item 1`] = `
+<div class="md-example-child md-example-child-tabs md-example-child-tab-bar-4">
+  <nav class="md-tab-bar">
+    <div class="md-tab-bar-inner">
+      <!---->
+      <div class="md-scroll-view">
+        <!---->
+        <div class="scroll-view-container">
+          <!---->
+          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active"><i class="md-icon icon-font md-icon-arrow-up md" style="color:;"></i> <span>标签1</span></a><a class="md-tab-bar-item"><i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i> <span>标签2</span></a><a class="md-tab-bar-item"><i class="md-icon icon-font md-icon-arrow-down md" style="color:;"></i> <span>标签3</span></a><a class="md-tab-bar-item"><i class="md-icon icon-font md-icon-arrow-left md" style="color:;"></i> <span>标签4</span></a></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`TabBar - Demo Max length 1`] = `
+<div class="md-example-child md-example-child-tabs md-example-child-tab-bar-1">
+  <nav maxLength="5" class="md-tab-bar">
+    <div class="md-tab-bar-inner">
+      <!---->
+      <div class="md-scroll-view">
+        <!---->
+        <div class="scroll-view-container">
+          <!---->
+          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active">标签1</a><a class="md-tab-bar-item">标签2</a><a class="md-tab-bar-item">标签3</a><a class="md-tab-bar-item">标签4</a><a class="md-tab-bar-item">标签5</a></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`TabBar - Demo No ink 1`] = `
+<div class="md-example-child md-example-child-tabs md-example-child-tab-bar-3">
+  <nav class="md-tab-bar">
+    <div class="md-tab-bar-inner">
+      <!---->
+      <div class="md-scroll-view">
+        <!---->
+        <div class="scroll-view-container">
+          <!---->
+          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active">标签1</a><a class="md-tab-bar-item">标签2</a><a class="md-tab-bar-item">标签3</a></div>
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`TabBar - Demo Scroll 1`] = `
+<div class="md-example-child md-example-child-tabs md-example-child-tab-bar-2">
+  <nav maxLength="5" class="md-tab-bar">
+    <div class="md-tab-bar-inner">
+      <!---->
+      <div class="md-scroll-view">
+        <!---->
+        <div class="scroll-view-container">
+          <!---->
+          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active">精选</a><a class="md-tab-bar-item">全部</a><a class="md-tab-bar-item">满减券</a><a class="md-tab-bar-item">立减券</a><a class="md-tab-bar-item">免息券</a><a class="md-tab-bar-item">校园专享</a><a class="md-tab-bar-item">夜间优惠</a><a class="md-tab-bar-item">红包</a></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+  </nav>
+</div>
+`;

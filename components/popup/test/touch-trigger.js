@@ -18,6 +18,10 @@ export default function(element, eventName, x, y, keyCode) {
   event.targetTouches = [touch]
   event.changedTouches = [touch]
   event.keyCode = keyCode
+  event.clientX = x
+  event.clientY = y
+  event.pageX = x
+  event.pageY = y
 
   element.dispatchEvent(event)
 }

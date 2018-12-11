@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag - Demo Characters cut in relief 1`] = `
+<div class="md-example-child md-example-child-tag md-example-child-tag-3">
+  <div class="md-tag">
+    <div class="default size-large shape-square type-fill font-weight-bolder" style="background:rgba(0,0,0,0);color:#333;">￥3600</div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-small shape-square type-fill font-weight-bolder" style="background:rgba(0,0,0,0);color:#333;">￥300</div>
+  </div>
+</div>
+`;
+
+exports[`Tag - Demo Fillet 1`] = `
+<div class="md-example-child md-example-child-tag md-example-child-tag-1">
+  <div class="md-tag">
+    <div class="default size-large shape-fillet type-fill font-weight-normal" style="background:rgba(255, 91, 96, .1);color:#FF5B60;">逾期23天</div>
+  </div>
+</div>
+`;
+
+exports[`Tag - Demo Semicircle 1`] = `
+<div class="md-example-child md-example-child-tag md-example-child-tag-0">
+  <div class="md-tag">
+    <div class="default size-tiny shape-circle type-fill font-weight-normal" style="background:#FC7353;color:#000;"></div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-small shape-circle type-fill font-weight-normal" style="background:#FC7353;color:#fff;">特惠</div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-large shape-circle type-fill font-weight-normal" style="background:#FC7353;color:#fff;">返5000</div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-small shape-circle type-ghost font-weight-normal" style="border-color:#FC7353;color:#FC7353;">特惠</div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-small shape-circle type-fill font-weight-normal" style="background:linear-gradient(90deg, #FC7353 0%, #FC9153 100%);color:#fff;">续保3折起</div>
+  </div>
+</div>
+`;
+
+exports[`Tag - Demo Special tags 1`] = `
+<div class="md-example-child md-example-child-tag md-example-child-tag-3">
+  <div class="md-tag" style="margin-right:20px;">
+    <div class="default size-large shape-coupon type-fill font-weight-normal">
+      <div class="coupon-container" style="background:#FC9153;color:#fff;">
+        <div class="left-coupon" style="background:radial-gradient(circle at left, transparent 33%, #FC9153 33%);"></div> 免息券70.1 <div class="right-coupon" style="background:radial-gradient(circle at right, transparent 33%, #FC9153 33%);"></div>
+      </div>
+    </div>
+  </div>
+  <div class="md-tag" style="margin-right:20px;">
+    <div class="default size-large shape-quarter type-fill font-weight-normal">
+      <div class="quarter-content"><i class="md-icon icon-font md-icon-right md" style="color:;"></i></div>
+      <div class="quarter-bg" style="background:#FC9153;color:#fff;"></div>
+    </div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-large shape-bubble type-fill font-weight-normal" style="background:linear-gradient(90deg, #FF5B60 0%, #F98472 100%);">99</div>
+  </div>
+</div>
+`;
+
+exports[`Tag - Demo Square 1`] = `
+<div class="md-example-child md-example-child-tag md-example-child-tag-2">
+  <div class="md-tag">
+    <div class="default size-large shape-square type-ghost font-weight-normal" style="border-color:#FF8843;color:#FF8843;">可选</div>
+  </div>
+  <div class="md-tag">
+    <div class="default size-small shape-square type-ghost font-weight-normal" style="border-color:#28AA91;color:#28AA91;">可选</div>
+  </div>
+</div>
+`;

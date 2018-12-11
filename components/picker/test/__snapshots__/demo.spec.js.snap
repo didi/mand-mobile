@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picker - Demo Cascade 1`] = `
+<div class="md-example-child md-example-child-picker md-example-child-picker-1">
+  <div class="md-picker">
+    <div class="md-picker-column" style="height: 270px;">
+      <div class="md-picker-column-container">
+        <div class="md-picker-column-masker top" style="height: 110px;"></div>
+        <div class="md-picker-column-masker bottom" style="height: 110px;"></div>
+        <div class="md-picker-column-list">
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -110px;">
+              <li class="column-item" style="height: 50px; line-height: 50px;">安徽省</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">澳门特别行政区</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">北京</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">广西壮族自治区</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">香港特别行政区</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">浙江省</li>
+            </ul>
+          </div>
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -100px;">
+              <li class="column-item" style="height: 50px; line-height: 50px;">北海市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">百色市</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">崇左市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">防城港市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">贵港市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">桂林市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">河池市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">贺州市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">来宾市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">柳州市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">南宁市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">钦州市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">梧州市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">玉林市</li>
+            </ul>
+          </div>
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -50px;">
+              <li class="column-item" style="height: 50px; line-height: 50px;">大新县</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">扶绥县</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">江州区</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">龙州县</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">宁明县</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">凭祥市</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">其它区</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">天等县</li>
+            </ul>
+          </div>
+        </div>
+        <div class="md-picker-column-hooks">
+          <div class="md-picker-column-hook"></div>
+          <div class="md-picker-column-hook"></div>
+          <div class="md-picker-column-hook"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Picker - Demo Display in Popup 1`] = `
+<div class="md-example-child md-example-child-picker md-example-child-picker-2">
+  <div class="md-picker with-popup">
+    <div class="md-popup inner-popup with-mask bottom" style="">
+      <div class="md-popup-mask" style="" name="md-mask-fade"></div>
+      <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
+        <div class="md-popup-title-bar">
+          <div class="title-bar-left md-popup-cancel">取消</div>
+          <div class="title-bar-title">
+            <p class="title">选择年份</p>
+            <!---->
+          </div>
+          <div class="title-bar-right md-popup-confirm">确认</div>
+        </div>
+        <div class="md-picker-column" style="height: 270px;">
+          <div class="md-picker-column-container">
+            <div class="md-picker-column-masker top" style="height: 110px;"></div>
+            <div class="md-picker-column-masker bottom" style="height: 110px;"></div>
+            <div class="md-picker-column-list">
+              <div class="md-picker-column-item">
+                <ul class="column-list" style="padding-top: 110px;">
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2015</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2016</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2017</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2018</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2019</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2020</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2021</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2022</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2023</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2024</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2025</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2026</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2027</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2028</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2029</li>
+                  <li class="column-item" style="height: 50px; line-height: 50px;">2030</li>
+                </ul>
+              </div>
+            </div>
+            <div class="md-picker-column-hooks">
+              <div class="md-picker-column-hook"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Picker - Demo Single column 1`] = `
+<div class="md-example-child md-example-child-picker md-example-child-picker-0">
+  <div class="md-picker">
+    <div class="md-picker-column" style="height: 270px;">
+      <div class="md-picker-column-container">
+        <div class="md-picker-column-masker top" style="height: 110px;"></div>
+        <div class="md-picker-column-masker bottom" style="height: 110px;"></div>
+        <div class="md-picker-column-list">
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px;">
+              <li class="column-item active" style="height: 50px; line-height: 50px;">2015</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2016</li>
+              <li class="column-item disabled" style="height: 50px; line-height: 50px;">2017</li>
+              <li class="column-item disabled" style="height: 50px; line-height: 50px;">2018</li>
+              <li class="column-item disabled" style="height: 50px; line-height: 50px;">2019</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2020</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2021</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2022</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2023</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2024</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2025</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2026</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2027</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2028</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2029</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2030</li>
+            </ul>
+          </div>
+        </div>
+        <div class="md-picker-column-hooks">
+          <div class="md-picker-column-hook"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

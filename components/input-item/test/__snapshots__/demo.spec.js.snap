@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputItem - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-input-item-0">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-input-item is-solid is-amount is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">普通文本</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-1580439" placeholder="普通文本" maxlength="5" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-active is-disabled is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">禁用表单</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-1665314" placeholder="" disabled="disabled" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-active is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">只读表单</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-16798583" placeholder="" readonly="readonly" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-highlight is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">高亮表单</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-12051" placeholder="高亮表单" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser center normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">文本居中</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-19852549" placeholder="文本居中" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser right normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">文本居右</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-36842604" placeholder="文本居右" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`InputItem - Demo Business scenario input 1`] = `
+<div class="md-example-child md-example-child-input-item-2">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-input-item is-solid is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">银行卡</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-881510" placeholder="bankCard xxxx xxxx xxxx xxxx" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-active is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">手机号</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-10285581" placeholder="phone xxx xxxx xxxx" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">金额</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-1554361" placeholder="money xx, xxx.xxxx" maxlength="" autocomplete="off" type="money" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">数字</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-542696" placeholder="digit 0123456789" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">密码</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-1625138" placeholder="password *********" maxlength="" autocomplete="off" type="password" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">邮箱</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-3708300" placeholder="其他标准 html input 类型" maxlength="" autocomplete="off" type="email" value="" class="md-input-item-input"> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`InputItem - Demo Floating title input 1`] = `
+<div class="md-example-child md-example-child-input-item-1">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-input-item is-solid is-title-latent is-clear is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">真实姓名</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-59466924" placeholder="投保人姓名" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-title-latent is-clear is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">身份证号</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-0" placeholder="投保人身份证号" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`InputItem - Demo Large size financial input 1`] = `
+<div class="md-example-child md-example-child-input-item-3">
+  <fieldset class="md-field">
+    <header class="md-field-header">
+      <div class="md-field-heading">
+        <legend class="md-field-title">转出金额(元)</legend>
+        <!---->
+      </div>
+      <div class="md-field-action">
+        <div class="field-operator"><i class="md-icon icon-font md-icon-info md" style="color:;"></i></div>
+      </div>
+    </header>
+    <div class="md-field-content">
+      <div class="md-field-item md-input-item is-solid is-highlight with-brief is-amount is-browser left large">
+        <div class="md-field-item-content">
+          <!---->
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-4292673" placeholder="最多30万元" maxlength="" autocomplete="off" type="money" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <!---->
+            <div class="input-operator">全部取出</div>
+            <!---->
+          </div>
+        </div>
+        <div class="md-field-item-children">
+          <!---->
+          <div class="md-input-item-brief">
+            <p>理财提示文案，字符超出10个自动变小</p>
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`InputItem - Demo input with controls 1`] = `
+<div class="md-example-child md-example-child-input-item-4">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-input-item is-solid is-clear is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">清空按钮</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-193127" placeholder="normal text" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-input-item is-solid is-clear is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">金融键盘</label>
+          <!---->
+          <div class="md-field-item-control">
+            <div class="md-input-item-fake"><span></span> <span class="md-input-item-fake-placeholder">financial number keyboard</span></div>
+          </div>
+          <div class="md-field-item-right">
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <!---->
+          </div>
+        </div>
+        <div class="md-field-item-children">
+          <!---->
+          <!---->
+          <div id="input-item-95289-number-keyboard" class="md-number-keyboard md-input-item-number-keyboard">
+            <div class="md-popup bottom" style="display:none;">
+              <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+              <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+                <div class="md-number-keyboard-container professional">
+                  <div class="keyboard-number">
+                    <ul class="keyboard-number-list">
+                      <li class="keyboard-number-item">1</li>
+                      <li class="keyboard-number-item">2</li>
+                      <li class="keyboard-number-item">3</li>
+                      <li class="keyboard-number-item">4</li>
+                      <li class="keyboard-number-item">5</li>
+                      <li class="keyboard-number-item">6</li>
+                      <li class="keyboard-number-item">7</li>
+                      <li class="keyboard-number-item">8</li>
+                      <li class="keyboard-number-item">9</li>
+                      <li class="keyboard-number-item">.</li>
+                      <li class="keyboard-number-item">
+                        0
+                      </li>
+                      <li class="keyboard-number-item slidedown"></li>
+                    </ul>
+                  </div>
+                  <div class="keyboard-operate">
+                    <ul class="keyboard-operate-list">
+                      <li class="keyboard-operate-item delete"></li>
+                      <li class="keyboard-operate-item confirm">确定</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md-field-item md-input-item is-solid is-browser left normal">
+        <div class="md-field-item-content">
+          <!---->
+          <div class="md-field-item-left"><svg class="md-icon icon-svg md-icon-bank-zs md" style="fill:;">
+              <use xlink:href="#bank-zs"></use>
+            </svg></div>
+          <div class="md-field-item-control"> <input name="input-item-79945" placeholder="left/right slots" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <!----> <i class="md-icon icon-font md-icon-info md" style="color:;"></i>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`InputItem - Demo input with error message 1`] = `
+<div class="md-example-child md-example-child-input-item-5">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-input-item is-solid is-active is-error is-clear is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">手机号码</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-12859143" placeholder="" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <!---->
+          </div>
+        </div>
+        <div class="md-field-item-children">
+          <div class="md-input-item-msg">
+            <p>手机号码无效</p>
+          </div>
+          <!---->
+          <!---->
+        </div>
+      </div>
+      <div class="md-field-item md-input-item is-solid is-clear is-browser left normal">
+        <div class="md-field-item-content"><label class="md-field-item-title">储蓄卡号</label>
+          <!---->
+          <div class="md-field-item-control"> <input name="input-item-2282943" placeholder="" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-right">
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <!---->
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;

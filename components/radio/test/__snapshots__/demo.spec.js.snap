@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress Basic 1`] = `
+<div class="md-example-child md-example-child-radio md-example-child-radio-0"><label class="md-radio is-checked">
+    <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+    <div class="md-radio-label">单选项1</div>
+  </label> <label class="md-radio">
+    <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    <div class="md-radio-label">单选项2</div>
+  </label></div>
+`;
+
+exports[`Progress List 1`] = `
+<div class="md-example-child md-example-child-radio md-example-child-radio-2">
+  <fieldset class="md-field radio-field">
+    <header class="md-field-header">
+      <div class="md-field-heading">
+        <legend class="md-field-title">简单选择列表</legend>
+        <!---->
+      </div>
+      <div class="md-field-action"></div>
+    </header>
+    <div class="md-field-content">
+      <div class="md-radio-list">
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body multilines">
+            <div class="md-cell-item-left"><label class="md-radio">
+                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check lg" style="color:;"></i></div>
+                <!---->
+              </label></div>
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">交通银行(尾号3089)</p>
+              <p class="md-cell-item-brief">选项摘要描述</p>
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body multilines">
+            <div class="md-cell-item-left"><label class="md-radio">
+                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check lg" style="color:;"></i></div>
+                <!---->
+              </label></div>
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">招商银行(尾号2342)</p>
+              <p class="md-cell-item-brief">选项摘要描述</p>
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="md-cell-item md-radio-item is-disabled">
+          <div class="md-cell-item-body multilines">
+            <div class="md-cell-item-left"><label class="md-radio is-disabled">
+                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check-disabled lg" style="color:;"></i></div>
+                <!---->
+              </label></div>
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">建设银行(尾号4321)</p>
+              <p class="md-cell-item-brief">选项摘要描述</p>
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+  <fieldset class="md-field radio-field">
+    <header class="md-field-header">
+      <div class="md-field-heading">
+        <legend class="md-field-title">输入项</legend>
+        <!---->
+      </div>
+      <div class="md-field-action"></div>
+    </header>
+    <div class="md-field-content">
+      <div class="md-radio-list">
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body">
+            <!---->
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">我有其他保险</p>
+              <!---->
+            </div>
+            <div class="md-cell-item-right"><label class="md-radio">
+                <div class="md-radio-icon">
+                  <!---->
+                </div>
+                <!---->
+              </label>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body">
+            <!---->
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">每单都扣，我担心扣太多</p>
+              <!---->
+            </div>
+            <div class="md-cell-item-right"><label class="md-radio">
+                <div class="md-radio-icon">
+                  <!---->
+                </div>
+                <!---->
+              </label>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body">
+            <!---->
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">我身体好，不需要重疾险</p>
+              <!---->
+            </div>
+            <div class="md-cell-item-right"><label class="md-radio">
+                <div class="md-radio-icon">
+                  <!---->
+                </div>
+                <!---->
+              </label>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body">
+            <!---->
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">接单少，加入这个没什么用</p>
+              <!---->
+            </div>
+            <div class="md-cell-item-right"><label class="md-radio">
+                <div class="md-radio-icon">
+                  <!---->
+                </div>
+                <!---->
+              </label>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="md-cell-item md-radio-item">
+          <div class="md-cell-item-body">
+            <!---->
+            <div class="md-cell-item-content">
+              <p class="md-cell-item-title">我不了解这是什么计划</p>
+              <!---->
+            </div>
+            <div class="md-cell-item-right"><label class="md-radio">
+                <div class="md-radio-icon">
+                  <!---->
+                </div>
+                <!---->
+              </label>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="md-field-item md-input-item md-radio-item is-solid is-browser left normal">
+          <div class="md-field-item-content"><label class="md-field-item-title">其他</label>
+            <!---->
+            <div class="md-field-item-control"> <input name="input-item-34624303" placeholder="请输入原因" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`Progress With Field 1`] = `
+<div class="md-example-child md-example-child-radio md-example-child-radio-1">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item is-solid">
+        <div class="md-field-item-content"><label class="md-field-item-title">婚姻状况</label>
+          <!---->
+          <div class="md-field-item-control"><label class="md-radio is-checked is-inline">
+              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+              <div class="md-radio-label">已婚</div>
+            </label> <label class="md-radio is-inline">
+              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+              <div class="md-radio-label">未婚</div>
+            </label> <label class="md-radio is-inline">
+              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+              <div class="md-radio-label">保密</div>
+            </label></div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;

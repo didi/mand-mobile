@@ -1,43 +1,16 @@
 import InputItem from '../index'
 import triggerEvent from '../../popup/test/touch-trigger'
-import {mount} from 'avoriaz'
+import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
-describe('InputItem', () => {
+describe('InputItem - Operation', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
   })
 
-  it('create a input-item', () => {
-    wrapper = mount(InputItem, {
-      propsData: {
-        value: 'test',
-      },
-    })
-
-    const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const input = wrapper.find('.md-input-item-input')[0]
-    wrapper.vm.inputValue = '123'
-    // expect(eventStub.calledWith('change')).to.be.true
-
-    input.trigger('focus')
-    expect(eventStub.calledWith('focus')).to.be.true
-    input.trigger('blur')
-    expect(eventStub.calledWith('blur')).to.be.true
-
-    wrapper.vm.focus()
-    triggerEvent(input.element, 'keydown', 0, 0, 49)
-    triggerEvent(input.element, 'keyup', 0, 0, 49)
-
-    wrapper.vm.blur()
-    expect(wrapper.vm.getValue()).to.equal('123')
-
-    wrapper.setProps({value: '456'})
-    expect(wrapper.vm.getValue()).to.equal('456')
-  })
-
-  it('input-item keyup/down', () => {
+  test('input-item keyup/down', () => {
     wrapper = mount(InputItem, {
       propsData: {
         type: 'bankCard',
@@ -46,7 +19,7 @@ describe('InputItem', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const input = wrapper.find('.md-input-item-input')[0]
+    const input = wrapper.find('.md-input-item-input')
 
     wrapper.vm.focus()
     triggerEvent(input.element, 'keydown', 0, 0, 49)
@@ -57,11 +30,10 @@ describe('InputItem', () => {
 
     triggerEvent(input.element, 'keydown', 0, 0, 13)
     triggerEvent(input.element, 'keyup', 0, 0, 13)
-    expect(eventStub.calledWith('confirm')).to.be.true
-    // wrapper.vm.blur()
+    expect(eventStub.calledWith('confirm')).toBe(true)
   })
 
-  it('phone input-item', () => {
+  test('phone input-item', () => {
     wrapper = mount(InputItem, {
       propsData: {
         type: 'phone',
@@ -69,23 +41,23 @@ describe('InputItem', () => {
       },
     })
 
-    expect(wrapper.vm.inputValue.length).to.equal(13)
+    expect(wrapper.vm.inputValue.length).toBe(13)
   })
 
-  it('input-item with clear btn', () => {
+  test('input-item with clear btn', () => {
     wrapper = mount(InputItem, {
       propsData: {
         value: 'test',
         clearable: true,
       },
     })
-    expect(wrapper.vm.isInputEmpty).to.be.false
-    const clearBtn = wrapper.find('.md-input-item-clear')[0]
+    expect(wrapper.vm.isInputEmpty).toBe(false)
+    const clearBtn = wrapper.find('.md-input-item-clear')
     clearBtn.trigger('click')
-    expect(wrapper.vm.isInputEmpty).to.be.true
+    expect(wrapper.vm.isInputEmpty).toBe(true)
   })
 
-  it('input-item with number-keyborad', done => {
+  test('input-item with number-keyborad', done => {
     wrapper = mount(InputItem, {
       propsData: {
         type: 'money',
@@ -94,30 +66,30 @@ describe('InputItem', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    const input = wrapper.find('.md-input-item-fake')[0]
-
-    // input.trigger('click')
 
     wrapper.vm.focus()
     setTimeout(() => {
-      const keyborad = wrapper.find('.md-number-keyboard')[0]
-      keyborad.find('.delete')[0].trigger('click')
-      keyborad.find('.keyboard-number-item')[1].trigger('click')
-      keyborad.find('.keyboard-number-item')[9].trigger('click')
-      keyborad.find('.keyboard-number-item')[9].trigger('click')
-      keyborad.find('.keyboard-number-item')[2].trigger('click')
-      keyborad.find('.keyboard-number-item')[2].trigger('click')
-      keyborad.find('.delete')[0].trigger('click')
-      expect(wrapper.vm.inputValue).to.equal('2.3')
-      keyborad.find('.confirm')[0].trigger('click')
-      expect(eventStub.calledWith('confirm')).to.be.true
+      const keyborad = wrapper.find('.md-number-keyboard')
+      const deleteBtn = keyborad.find('.delete')
+      const confirmBtn = keyborad.find('.confirm')
+      const keys = keyborad.findAll('.keyboard-number-item')
+
+      deleteBtn.trigger('click')
+      keys.at(1).trigger('click')
+      keys.at(9).trigger('click')
+      keys.at(9).trigger('click')
+      keys.at(2).trigger('click')
+      keys.at(2).trigger('click')
+      deleteBtn.trigger('click')
+      expect(wrapper.vm.inputValue).toBe('2.3')
+      confirmBtn.trigger('click')
+      expect(eventStub.calledWith('confirm')).toBe(true)
       wrapper.vm.blur()
       done()
     }, 500)
-    // wrapper.vm.blur()
   })
 
-  it('input-item disabled', () => {
+  test('input-item disabled', () => {
     wrapper = mount(InputItem, {
       propsData: {
         disabled: true,
@@ -132,7 +104,7 @@ describe('InputItem', () => {
       },
     })
 
-    const input = wrapper.find('.md-input-item-fake')[0]
+    const input = wrapper.find('.md-input-item-fake')
 
     input.trigger('click')
   })

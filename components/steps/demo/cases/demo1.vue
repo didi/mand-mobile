@@ -10,8 +10,7 @@ export default {
   name: 'steps-demo',
   /* DELETE */
   title: '进度非整数',
-  titleEnUS: 'Four steps',
-  codeSandBox: 'https://codesandbox.io/s/3vok030m5q',
+  titleEnUS: 'Non-integer progress',
   height: 150,
   /* DELETE */
   components: {

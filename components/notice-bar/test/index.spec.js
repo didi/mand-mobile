@@ -1,23 +1,11 @@
 import NoticeBar from '../index'
-import {mount} from 'avoriaz'
+import {mount} from '@vue/test-utils'
 
-describe('NoticeBar', () => {
+describe('NoticeBar - Operation', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
-  })
-
-  it('create a simple notice-bar', () => {
-    wrapper = mount(NoticeBar)
-
-    expect(wrapper.hasClass('md-notice-bar')).to.be.true
-    expect(wrapper.vm.closable).to.equal(false)
-    expect(wrapper.vm.time).to.equal(0)
-    expect(wrapper.vm.icon).to.equal('')
-    expect(wrapper.vm.mode).to.equal('')
-    expect(wrapper.vm.isCircle).to.equal(false)
-    expect(wrapper.vm.scrollable).to.equal(false)
   })
 
   it('mount time is not null', done => {
@@ -27,7 +15,7 @@ describe('NoticeBar', () => {
       },
     })
     setTimeout(() => {
-      expect(wrapper.vm.isShow).to.equal(false)
+      expect(wrapper.vm.isShow).toBe(false)
       done()
     }, 1000)
   })
@@ -42,7 +30,7 @@ describe('NoticeBar', () => {
       },
     })
     setTimeout(() => {
-      expect(wrapper.vm.overflow).to.equal(false)
+      expect(wrapper.vm.overflow).toBe(false)
       done()
     }, 1000)
   })
@@ -51,7 +39,7 @@ describe('NoticeBar', () => {
     wrapper = mount(NoticeBar)
     wrapper.vm.$_hide(500)
     setTimeout(() => {
-      expect(wrapper.vm.isShow).to.equal(false)
+      expect(wrapper.vm.isShow).toBe(false)
       done()
     }, 1000)
   })
@@ -63,6 +51,6 @@ describe('NoticeBar', () => {
       },
     })
     wrapper.vm.$_close()
-    expect(wrapper.vm.isShow).to.equal(false)
+    expect(wrapper.vm.isShow).toBe(false)
   })
 })

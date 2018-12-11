@@ -1,16 +1,39 @@
+import Vue from 'vue'
 import Tabs from '../index'
-import {mount} from 'avoriaz'
+import TabPane from '../tab-pane'
+import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
-describe('Tabs', () => {
+describe('Tabs - Operation', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
   })
 
-  it('create a simple tabs', () => {
-    wrapper = mount(Tabs)
+  test(`Switch tab`, done => {
+    Vue.component(TabPane.name, TabPane)
+    wrapper = mount(Tabs, {
+      slots: {
+        default: [
+          '<md-tab-pane class="content" name="p0" label="xxx">xxx</md-tab-pane>',
+          '<md-tab-pane class="content" name="p1" label="yyy">yyy</md-tab-pane>',
+          '<md-tab-pane class="content" name="p2" label="zzz">zzz</md-tab-pane>',
+        ],
+      },
+      sync: false,
+    })
 
-    expect(wrapper.has('.md-tabs')).to.be.true
+    expect(wrapper.vm.currentName).toBe('p0')
+
+    wrapper.vm.$nextTick(() => {
+      const eventSpy = sinon.spy(wrapper.vm, '$emit')
+      const tab = wrapper.findAll('.md-tab-bar-item').at(1)
+      tab.trigger('click')
+
+      expect(eventSpy.calledWith('change')).toBe(true)
+      expect(wrapper.vm.currentName).toBe('p1')
+      done()
+    })
   })
 })
