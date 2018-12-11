@@ -1,6 +1,11 @@
 <template>
   <transition :name="transitionName">
-    <div class="md-tab-pane" v-show="active" role="tabpanel">
+    <div
+      class="md-tab-pane"
+      v-show="active"
+      role="tabpanel"
+      :tab="name"
+    >
       <slot></slot>
     </div>
   </transition>
