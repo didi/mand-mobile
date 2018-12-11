@@ -129,7 +129,7 @@ export default {
   */
   mounted() {
     this.ready = true
-    this.hasTouch = 'ontouchstart' in window
+    this.hasTouch = 'ontouchstart' in window || process.env.NODE_ENV === 'test'
     this.$swiper = this.$el.querySelector('.md-swiper-container')
     this.$nextTick(() => {
       this.$_reInitItems()
@@ -498,6 +498,7 @@ export default {
       if (this.noDrag) {
         return
       }
+
       const point = this.hasTouch ? event.touches[0] : event
       let dragState = this.dragState
 
