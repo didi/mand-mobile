@@ -96,6 +96,8 @@ export default {
   margin-bottom v-gap-sm
   .md-radio-icon
     color color-text-placeholder
+    .md-icon
+      display flex
   &.is-checked
     .md-radio-icon
       color radio-color
