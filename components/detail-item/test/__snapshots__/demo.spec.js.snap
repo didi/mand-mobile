@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Codebox Basic 1`] = `
+exports[`DetailItem Basic 1`] = `
 <div class="md-example-child md-example-child-detail-item md-example-child-detail-item-0">
   <fieldset class="md-field">
     <!---->

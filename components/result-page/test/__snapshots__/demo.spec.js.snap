@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Progress 404 1`] = `
+exports[`ResultPage 404 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-0">
   <div class="md-result">
     <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/lost.png" class="lost"></div>
@@ -11,7 +11,7 @@ exports[`Progress 404 1`] = `
 </div>
 `;
 
-exports[`Progress Custom pattern 1`] = `
+exports[`ResultPage Custom pattern 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-3">
   <div class="md-result customized">
     <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/do1_JX7bcfXqLpStKRv31xlp"></div>
@@ -22,7 +22,7 @@ exports[`Progress Custom pattern 1`] = `
 </div>
 `;
 
-exports[`Progress Network anomaly 1`] = `
+exports[`ResultPage Network anomaly 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-1">
   <div class="md-result">
     <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/network.png" class="network"></div>
@@ -33,7 +33,7 @@ exports[`Progress Network anomaly 1`] = `
 </div>
 `;
 
-exports[`Progress With button 1`] = `
+exports[`ResultPage With button 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-2">
   <div class="md-result">
     <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/empty.png" class="empty"></div>

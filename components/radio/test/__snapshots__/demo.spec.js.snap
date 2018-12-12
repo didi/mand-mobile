@@ -172,7 +172,7 @@ exports[`Progress List 1`] = `
         <div class="md-field-item md-input-item md-radio-item is-solid is-browser left normal">
           <div class="md-field-item-content"><label class="md-field-item-title">其他</label>
             <!---->
-            <div class="md-field-item-control"> <input name="input-item-34624303" placeholder="请输入原因" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
+            <div class="md-field-item-control"> <input name="" placeholder="请输入原因" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
             <!---->
           </div>
           <!---->

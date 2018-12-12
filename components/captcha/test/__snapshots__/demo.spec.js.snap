@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CellItem Customize 1`] = `
+exports[`Captcha Customize 1`] = `
 <div class="md-example-child md-example-child-captcha">
   <div class="md-captcha">
     <div position="center" class="md-dialog">
@@ -60,7 +60,7 @@ exports[`CellItem Customize 1`] = `
 </div>
 `;
 
-exports[`CellItem Inline display 1`] = `
+exports[`Captcha Inline display 1`] = `
 <div class="md-example-child md-example-child-captcha-1">
   <div class="md-captcha">
     <div class="md-captcha-content">

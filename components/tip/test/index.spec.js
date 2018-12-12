@@ -1,7 +1,6 @@
 import TipContent from '../tip.vue'
-import Button from '../../button/index.vue'
 import sinon from 'sinon'
-import {mount} from 'avoriaz'
+import {mount} from '@vue/test-utils'
 
 describe('Tip', () => {
   let wrapper
@@ -18,7 +17,7 @@ describe('Tip', () => {
       },
     })
 
-    expect(wrapper.hasClass('is-left')).to.be.true
+    expect(wrapper.classes('is-left')).toBe(true)
   })
 
   it('create a tip float over bottom', () => {
@@ -29,7 +28,7 @@ describe('Tip', () => {
       },
     })
 
-    expect(wrapper.hasClass('is-bottom')).to.be.true
+    expect(wrapper.classes('is-bottom')).toBe(true)
   })
 
   it('create a tip float over right', () => {
@@ -40,7 +39,7 @@ describe('Tip', () => {
       },
     })
 
-    expect(wrapper.hasClass('is-right')).to.be.true
+    expect(wrapper.classes('is-right')).toBe(true)
   })
 
   it('click close to hide', () => {
@@ -52,7 +51,7 @@ describe('Tip', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
 
-    wrapper.first('.md-icon-cross').trigger('click')
-    expect(eventStub.calledWith('close')).to.be.true
+    wrapper.find('.md-icon-close').trigger('click')
+    expect(eventStub.calledWith('close')).toBe(true)
   })
 })

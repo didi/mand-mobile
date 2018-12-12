@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActivityIndicator Carousel 1`] = `
+<div class="md-example-child md-example-child-md-activity-indicator md-example-child-md-activity-indicator-2">
+  <div class="md-activity-indicator carousel">
+    <div class="indicator-container">
+      <div class="indicator-loading">
+        <div class="md-activity-indicator-carousel"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 15" fill="#2F86F6" class="md-activity-indicator-svg carouseling" style="width:60px;height:15px;">
+            <circle cx="7.5" cy="7.5" r="7.5">
+              <animate attributeName="fill-opacity" attributeType="XML" begin="0s" dur="1s" values="1;0.8;0.6;0.6;0.6;0.8;1" calcMode="linear" repeatCount="indefinite"></animate>
+              <animate attributeName="r" attributeType="XML" begin="0s" dur="1s" values="7.5;6;4.5;4.5;4.5;6;7.5" calcMode="linear" repeatCount="indefinite"></animate>
+            </circle>
+            <circle cx="30" cy="7.5" r="7.5">
+              <animate attributeName="fill-opacity" attributeType="XML" begin="0s" dur="1s" values="0.6;0.8;1;0.8;0.6;0.6;0.6" calcMode="linear" repeatCount="indefinite"></animate>
+              <animate attributeName="r" attributeType="XML" begin="0s" dur="1s" values="4.5;6;7.5;6;4.5;4.5;4.5" calcMode="linear" repeatCount="indefinite"></animate>
+            </circle>
+            <circle cx="52.5" cy="7.5" r="7.5">
+              <animate attributeName="fill-opacity" attributeType="XML" begin="0s" dur="1s" values="0.6;0.6;0.6;0.8;1;0.8;0.6" calcMode="linear" repeatCount="indefinite"></animate>
+              <animate attributeName="r" attributeType="XML" begin="0s" dur="1s" values="4.5;4.5;4.5;6;7.5;6;4.5" calcMode="linear" repeatCount="indefinite"></animate>
+            </circle>
+          </svg></div>
+      </div>
+      <!---->
+    </div>
+  </div> <button type="button" class="md-button primary active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content"><span>确认支付</span></p>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`ActivityIndicator Roller 1`] = `
+<div class="md-example-child md-example-child-md-activity-indicator md-example-child-md-activity-indicator-0">
+  <div class="md-activity-indicator roller">
+    <div class="indicator-container">
+      <div class="indicator-loading">
+        <div class="md-activity-indicator-rolling">
+          <div class="rolling-container"><svg viewBox="0 0 23.333333333333332 23.333333333333332" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:20px;height:20px;transform:rotateZ(0deg);">
+              <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="1.6666666666666667" cx="11.666666666666666" cy="11.666666666666666" r="10"></circle>
+              <g class="circle">
+                <circle cx="11.666666666666666" cy="11.666666666666666" fill="transparent" stroke="#2F86F6" stroke-width="1.6666666666666667" stroke-dasharray="55.2904" stroke-linecap="round" r="10" class="stroke">
+                  <animate attributeName="stroke-dashoffset" values="180.95040000000003;70.3696" dur="2.2s" keyTimes="0;1" calcMode="spline" fill="freeze" keySplines="0.41,0.314,0.8,0.54" repeatCount="indefinite" begin="0"></animate>
+                  <animateTransform dur="2s" values="0 11.666666666666666 11.666666666666666;360 11.666666666666666 11.666666666666666" attributeName="transform" type="rotate" calcMode="linear" keyTimes="0;1" begin="0" repeatCount="indefinite"></animateTransform>
+                </circle>
+              </g>
+            </svg>
+            <div class="content"></div>
+          </div>
+        </div>
+      </div>
+      <div class="md-activity-indicator-text indicator-text" style="font-size:16px;color:#999;">加载中...</div>
+    </div>
+  </div>
+  <div class="md-activity-indicator roller">
+    <div class="indicator-container vertical">
+      <div class="indicator-loading">
+        <div class="md-activity-indicator-rolling">
+          <div class="rolling-container"><svg viewBox="0 0 23.333333333333332 23.333333333333332" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:20px;height:20px;transform:rotateZ(0deg);">
+              <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="1.6666666666666667" cx="11.666666666666666" cy="11.666666666666666" r="10"></circle>
+              <g class="circle">
+                <circle cx="11.666666666666666" cy="11.666666666666666" fill="transparent" stroke="#2F86F6" stroke-width="1.6666666666666667" stroke-dasharray="55.2904" stroke-linecap="round" r="10" class="stroke">
+                  <animate attributeName="stroke-dashoffset" values="180.95040000000003;70.3696" dur="2.2s" keyTimes="0;1" calcMode="spline" fill="freeze" keySplines="0.41,0.314,0.8,0.54" repeatCount="indefinite" begin="0"></animate>
+                  <animateTransform dur="2s" values="0 11.666666666666666 11.666666666666666;360 11.666666666666666 11.666666666666666" attributeName="transform" type="rotate" calcMode="linear" keyTimes="0;1" begin="0" repeatCount="indefinite"></animateTransform>
+                </circle>
+              </g>
+            </svg>
+            <div class="content"></div>
+          </div>
+        </div>
+      </div>
+      <div class="md-activity-indicator-text indicator-text" style="font-size:16px;color:#999;">vertical loading</div>
+    </div>
+  </div>
+  <div class="md-activity-indicator md-activity-indicator-css roller">
+    <div class="indicator-container">
+      <div class="indicator-loading">
+        <div class="md-activity-indicator-rolling">
+          <div class="rolling-container"><svg viewBox="0 0 81.66666666666667 81.66666666666667" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:70px;height:70px;transform:rotateZ(0deg);">
+              <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="5.833333333333333" cx="40.833333333333336" cy="40.833333333333336" r="35"></circle>
+              <g class="circle">
+                <circle cx="40.833333333333336" cy="40.833333333333336" fill="transparent" stroke="#2F86F6" stroke-width="5.833333333333333" stroke-dasharray="193.5164" stroke-linecap="round" r="35" class="stroke">
+                  <animate attributeName="stroke-dashoffset" values="633.3264;246.2936" dur="2.2s" keyTimes="0;1" calcMode="spline" fill="freeze" keySplines="0.41,0.314,0.8,0.54" repeatCount="indefinite" begin="0"></animate>
+                  <animateTransform dur="2s" values="0 40.833333333333336 40.833333333333336;360 40.833333333333336 40.833333333333336" attributeName="transform" type="rotate" calcMode="linear" keyTimes="0;1" begin="0" repeatCount="indefinite"></animateTransform>
+                </circle>
+              </g>
+            </svg>
+            <div class="content"></div>
+          </div>
+        </div>
+      </div>
+      <div class="md-activity-indicator-text indicator-text" style="font-size:undefinedpx;color:#999;">loading...</div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ActivityIndicator Spinner 1`] = `
+<div class="md-example-child md-example-child-md-activity-indicator md-example-child-md-activity-indicator-1">
+  <div class="md-activity-indicator spinner">
+    <div class="indicator-container">
+      <div class="indicator-loading">
+        <div class="md-activity-indicator-spinning dark"><svg class="md-icon icon-svg md-activity-indicator-svg md-icon-spinner md" style="fill:;width:30px;height:30px;">
+            <use xlink:href="#spinner"></use>
+          </svg></div>
+      </div>
+      <div class="md-activity-indicator-text indicator-text" style="font-size:20px;color:#999;">加载中...</div>
+    </div>
+  </div>
+  <div class="activity-indicator-container">
+    <div class="md-activity-indicator md-activity-indicator-css spinner">
+      <div class="indicator-container">
+        <div class="indicator-loading">
+          <div class="md-activity-indicator-spinning"><svg class="md-icon icon-svg md-activity-indicator-svg md-icon-spinner md" style="fill:;width:30px;height:30px;">
+              <use xlink:href="#spinner"></use>
+            </svg></div>
+        </div>
+        <div class="md-activity-indicator-text indicator-text" style="font-size:20px;color:#999;">加载中...</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

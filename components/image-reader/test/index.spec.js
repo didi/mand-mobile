@@ -2,9 +2,6 @@ import ImageReader from '../index'
 import {mount} from '@vue/test-utils'
 import imageProcessor from '../image-processor'
 import {dataUrl} from './file.mock'
-import Promise from 'es6-promise'
-
-Promise.polyfill()
 
 describe('ImageReader', () => {
   let wrapper

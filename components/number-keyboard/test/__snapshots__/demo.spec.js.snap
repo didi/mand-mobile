@@ -1,43 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NumberKeyboard - Demo Number keys out of order 1`] = `
-<div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-1">
-  <div class="md-number-keyboard">
-    <div class="md-popup bottom" style="display:none;">
-      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
-      <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-number-keyboard-container professional">
-          <div class="keyboard-number">
-            <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">0</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">.</li>
-              <li class="keyboard-number-item">
-                9
-              </li>
-              <li class="keyboard-number-item slidedown"></li>
-            </ul>
-          </div>
-          <div class="keyboard-operate">
-            <ul class="keyboard-operate-list">
-              <li class="keyboard-operate-item delete"></li>
-              <li class="keyboard-operate-item confirm">支付</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`NumberKeyboard - Demo Simple type 1`] = `
 <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-1">
   <div class="md-number-keyboard">
