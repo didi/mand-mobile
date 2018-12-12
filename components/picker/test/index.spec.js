@@ -14,7 +14,9 @@ describe('Picker - Operation', () => {
   })
 
   test('create a picker', done => {
-    wrapper = mount(Picker)
+    wrapper = mount(Picker, {
+      sync: false,
+    })
     expect(wrapper.vm.data.length).toBe(0)
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
