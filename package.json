@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "2.0.0-beta.11",
+  "version": "2.0.0-beta.12",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -43,7 +43,7 @@
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
-    "test": "jest --no-cache --verbose"
+    "test": "jest --no-cache --verbose --runInBand --silent"
   },
   "license": "Apache",
   "config": {

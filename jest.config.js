@@ -1,5 +1,3 @@
-const scope = process.argv[2] || ''
-
 module.exports = {
   setupFiles: ['<rootDir>/test/jest.init.js'],
   moduleFileExtensions: [
@@ -33,12 +31,10 @@ module.exports = {
   snapshotSerializers: [
     'jest-serializer-vue'
   ],
-  collectCoverage: !scope,
+  collectCoverage: true,
   collectCoverageFrom: [
     'components/*/*.{js,vue}'
   ],
-  coverageReporters: [
-    'html',
-    'text-summary'
-  ]
+  coverageReporters: ['html', 'lcov', 'text-summary'],
+  coverageDirectory: './test/coverage'
 }
