@@ -53,11 +53,14 @@
 <script>import Popup from '../popup'
 import PopTitleBar from '../popup/title-bar'
 import PickerColumn from './picker-column'
+import pickerMixin from './mixins'
 import cascadePicker from './cascade'
 import {compareObjects, extend} from '../_util'
 
 export default {
   name: 'md-picker',
+
+  mixins: [pickerMixin],
 
   components: {
     [Popup.name]: Popup,
@@ -66,10 +69,6 @@ export default {
   },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
     data: {
       type: Array,
       default() {
@@ -109,30 +108,36 @@ export default {
       type: Boolean,
       default: false,
     },
-    isView: {
-      type: Boolean,
-      default: false,
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    describe: {
-      type: String,
-      default: '',
-    },
-    okText: {
-      type: String,
-      default: '确认',
-    },
-    cancelText: {
-      type: String,
-      default: '取消',
-    },
-    maskClosable: {
-      type: Boolean,
-      default: true,
-    },
+
+    // Mixin Props
+    // value: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // isView: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // title: {
+    //   type: String,
+    //   default: '',
+    // },
+    // describe: {
+    //   type: String,
+    //   default: '',
+    // },
+    // okText: {
+    //   type: String,
+    //   default: '确认',
+    // },
+    // cancelText: {
+    //   type: String,
+    //   default: '取消',
+    // },
+    // maskClosable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
   },
 
   data() {
@@ -186,7 +191,7 @@ export default {
 
     if (this.isView) {
       this.$nextTick(() => {
-        this.column.refresh()
+        this.column.refresh(null, 0, true)
       })
     }
   },
@@ -267,7 +272,7 @@ export default {
       // reset picker by snapshot
       this.$nextTick(() => {
         this.$_resetPickerColumn()
-        this.refresh()
+        this.column.refresh(null, 0, true)
       })
     },
     $_onPickerChange(columnIndex, itemIndex, values) {
@@ -293,7 +298,7 @@ export default {
       /* istanbul ignore next */
       if (!this.isScrollInitialed) {
         this.$nextTick(() => {
-          this.column.refresh()
+          this.column.refresh(null, 0, true)
         })
       }
     },

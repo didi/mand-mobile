@@ -67,11 +67,15 @@
 <script>import Icon from '../icon'
 import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
+import popupMixin from '../popup/mixins'
+import popupTitleBarMixin from '../popup/mixins/title-bar'
 import RadioList from '../radio-list'
 import ScrollView from '../scroll-view'
 
 export default {
   name: 'md-selector',
+
+  mixins: [popupMixin, popupTitleBarMixin],
 
   components: {
     [Icon.name]: Icon,
@@ -82,10 +86,6 @@ export default {
   },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
     data: {
       type: Array,
       default() {
@@ -95,28 +95,6 @@ export default {
     defaultValue: {
       type: String,
       default: '',
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    describe: {
-      type: String,
-      default: '',
-    },
-    okText: {
-      type: String,
-      default: '',
-    },
-    cancelText: {
-      type: String,
-      default() {
-        return this.okText ? '取消' : ''
-      },
-    },
-    maskClosable: {
-      type: Boolean,
-      default: true,
     },
     isCheck: {
       type: Boolean,
@@ -130,6 +108,33 @@ export default {
       type: [Number, String],
       default: 'auto',
     },
+    cancelText: {
+      default() {
+        return this.okText ? '取消' : ''
+      },
+    },
+
+    // Mixin Props
+    // value: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // title: {
+    //   type: String,
+    //   default: '',
+    // },
+    // describe: {
+    //   type: String,
+    //   default: '',
+    // },
+    // okText: {
+    //   type: String,
+    //   default: '',
+    // },
+    // maskClosable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
   },
 
   data() {

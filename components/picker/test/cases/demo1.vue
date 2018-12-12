@@ -5,6 +5,7 @@
       :data="pickerData"
       :cols="3"
       :default-index="pickerDefaultIndex"
+      :key="tmp"
       is-view
       is-cascade
     ></md-picker>
@@ -28,6 +29,7 @@ export default {
   mounted() {
     this.pickerData = district
     this.pickerDefaultIndex = [3, 2, 1]
+    this.$refs.picker.refresh()
   },
 }
 </script>

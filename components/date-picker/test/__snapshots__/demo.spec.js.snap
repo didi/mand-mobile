@@ -1,234 +1,208 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DatePicker Custom type and option textual values 1`] = `
-<fieldset class="md-field">
-  <!---->
-  <div class="md-field-content">
-    <div class="md-field-item" name="name" align="right">
-      <div class="md-field-item-content"><label class="md-field-item-title">出险时间</label>
-        <!---->
-        <div class="md-field-item-control">
-          <!---->
-        </div>
-        <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right md"></i></div>
-      </div>
-      <!---->
-    </div>
-  </div>
-  <!---->
-</fieldset>
 <div class="md-date-picker custom">
-  <div class="md-picker with-popup">
-    <div class="md-popup inner-popup with-mask bottom" style="">
-      <div class="md-popup-mask" style="display: none;" name="md-mask-fade"></div>
-      <div class="md-popup-box md-slide-up" style="display: none;" name="md-slide-up">
-        <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel">取消</div>
-          <div class="title-bar-title">
-            <p class="title">选择出险时间</p>
-            <!---->
+  <div class="md-picker">
+    <div class="md-picker-column" style="height: 270px;">
+      <div class="md-picker-column-container">
+        <div class="md-picker-column-masker top" style="height: 110px;"></div>
+        <div class="md-picker-column-masker bottom" style="height: 110px;"></div>
+        <div class="md-picker-column-list">
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -110px;">
+              <li class="column-item" style="height: 50px; line-height: 50px;">1998年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">1999年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2000年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2001年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2002年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2003年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2004年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2005年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2006年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2007年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2008年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2009年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2010年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2011年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2012年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2013年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2014年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2015年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2016年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2017年</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">2018年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2019年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2020年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2021年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2022年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2023年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2024年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2025年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2026年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2027年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2028年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2029年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2030年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2031年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2032年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2033年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2034年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2035年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2036年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2037年</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2038年</li>
+            </ul>
           </div>
-          <div class="title-bar-right md-popup-confirm">确认</div>
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -110px;">
+              <li class="column-item" style="height: 50px; line-height: 50px;">1月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">3月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">4月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">5月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">6月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">7月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">8月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">9月</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">10月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">11月</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12月</li>
+            </ul>
+          </div>
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px; margin-top: -110px;">
+              <li class="column-item" style="height: 50px; line-height: 50px;">*1日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*2日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*3日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*4日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*5日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*6日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*7日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*8日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*9日</li>
+              <li class="column-item active" style="height: 50px; line-height: 50px;">*10日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*11日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*12日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*13日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*14日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*15日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*16日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*17日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*18日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*19日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*20日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*21日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*22日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*23日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*24日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*25日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*26日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*27日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*28日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*29日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*30日</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">*31日</li>
+            </ul>
+          </div>
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px;">
+              <li class="column-item active" style="height: 50px; line-height: 50px;">0时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">1时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">3时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">4时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">5时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">6时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">7时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">8时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">9时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">10时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">11时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">13时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">14时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">15时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">16时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">17时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">18时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">19时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">20时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">21时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">22时</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">23时</li>
+            </ul>
+          </div>
+          <div class="md-picker-column-item">
+            <ul class="column-list" style="padding-top: 110px;">
+              <li class="column-item active" style="height: 50px; line-height: 50px;">0分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">1分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">2分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">3分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">4分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">5分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">6分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">7分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">8分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">9分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">10分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">11分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">12分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">13分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">14分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">15分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">16分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">17分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">18分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">19分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">20分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">21分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">22分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">23分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">24分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">25分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">26分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">27分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">28分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">29分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">30分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">31分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">32分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">33分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">34分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">35分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">36分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">37分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">38分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">39分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">40分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">41分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">42分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">43分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">44分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">45分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">46分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">47分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">48分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">49分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">50分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">51分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">52分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">53分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">54分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">55分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">56分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">57分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">58分</li>
+              <li class="column-item" style="height: 50px; line-height: 50px;">59分</li>
+            </ul>
+          </div>
         </div>
-        <div class="md-picker-column" style="height: 270px;">
-          <div class="md-picker-column-container">
-            <div class="md-picker-column-masker top" style="height: 110px;"></div>
-            <div class="md-picker-column-masker bottom" style="height: 110px;"></div>
-            <div class="md-picker-column-list">
-              <div class="md-picker-column-item">
-                <ul class="column-list" style="padding-top: 110px;">
-                  <li class="column-item active" style="height: 50px; line-height: 50px;">1998年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">1999年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2000年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2001年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2002年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2003年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2004年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2005年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2006年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2007年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2008年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2009年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2010年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2011年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2012年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2013年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2014年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2015年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2016年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2017年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2018年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2019年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2020年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2021年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2022年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2023年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2024年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2025年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2026年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2027年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2028年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2029年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2030年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2031年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2032年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2033年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2034年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2035年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2036年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2037年</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2038年</li>
-                </ul>
-              </div>
-              <div class="md-picker-column-item">
-                <ul class="column-list" style="padding-top: 110px;">
-                  <li class="column-item active" style="height: 50px; line-height: 50px;">1月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">3月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">4月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">5月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">6月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">7月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">8月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">9月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">10月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">11月</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">12月</li>
-                </ul>
-              </div>
-              <div class="md-picker-column-item">
-                <ul class="column-list" style="padding-top: 110px;">
-                  <li class="column-item active" style="height: 50px; line-height: 50px;">*1日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*2日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*3日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*4日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*5日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*6日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*7日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*8日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*9日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*10日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*11日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*12日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*13日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*14日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*15日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*16日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*17日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*18日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*19日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*20日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*21日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*22日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*23日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*24日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*25日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*26日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*27日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*28日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*29日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*30日</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">*31日</li>
-                </ul>
-              </div>
-              <div class="md-picker-column-item">
-                <ul class="column-list" style="padding-top: 110px;">
-                  <li class="column-item active" style="height: 50px; line-height: 50px;">0时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">1时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">3时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">4时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">5时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">6时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">7时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">8时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">9时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">10时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">11时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">12时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">13时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">14时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">15时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">16时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">17时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">18时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">19时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">20时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">21时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">22时</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">23时</li>
-                </ul>
-              </div>
-              <div class="md-picker-column-item">
-                <ul class="column-list" style="padding-top: 110px;">
-                  <li class="column-item active" style="height: 50px; line-height: 50px;">0分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">1分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">2分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">3分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">4分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">5分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">6分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">7分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">8分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">9分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">10分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">11分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">12分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">13分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">14分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">15分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">16分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">17分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">18分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">19分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">20分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">21分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">22分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">23分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">24分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">25分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">26分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">27分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">28分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">29分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">30分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">31分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">32分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">33分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">34分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">35分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">36分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">37分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">38分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">39分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">40分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">41分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">42分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">43分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">44分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">45分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">46分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">47分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">48分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">49分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">50分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">51分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">52分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">53分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">54分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">55分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">56分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">57分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">58分</li>
-                  <li class="column-item" style="height: 50px; line-height: 50px;">59分</li>
-                </ul>
-              </div>
-              <!---->
-            </div>
-            <div class="md-picker-column-hooks">
-              <!---->
-            </div>
-          </div>
+        <div class="md-picker-column-hooks">
+          <div class="md-picker-column-hook"></div>
+          <div class="md-picker-column-hook"></div>
+          <div class="md-picker-column-hook"></div>
+          <div class="md-picker-column-hook"></div>
+          <div class="md-picker-column-hook"></div>
         </div>
       </div>
     </div>

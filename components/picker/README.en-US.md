@@ -36,7 +36,7 @@ Vue.component(Picker.name, Picker)
 #### Picker Methods
 
 ##### refresh(callback, startColumnIndex)
-Reinitialized picker, like updating `data`, `default-index` or `invalid-index`
+Reinitialized picker, like updating `data`、`default-index`、`invalid-index` or call `setColumnValues`，it can also be replaced with [key](https://vuejs.org/v2/api/#key)
 
 |Parameters | Description | Type|
 |----|-----|------|

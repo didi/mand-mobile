@@ -126,6 +126,17 @@ export default {
     }
   },
 
+  computed: {
+    hooks() {
+      const _hooks = this.$el.querySelectorAll('.md-picker-column-hook')
+      /* istanbul ignore if */
+      if (!_hooks) {
+        return []
+      }
+      return Array.isArray(_hooks) ? _hooks : Array.prototype.slice.call(_hooks)
+    },
+  },
+
   watch: {
     data: {
       handler(val) {
@@ -143,17 +154,8 @@ export default {
     // MARK: private methods
     // initial scroller for each column
     $_initColumnsScroller(startIndex = 0) {
-      let hooks = this.$el.querySelectorAll('.md-picker-column-hook')
-
-      /* istanbul ignore if */
-      if (!hooks) {
-        return
-      }
-
-      hooks = Array.isArray(hooks) ? hooks : Array.prototype.slice.call(hooks)
-
-      for (let i = startIndex, len = hooks.length; i < len; i++) {
-        const container = hooks[i]
+      for (let i = startIndex, len = this.hooks.length; i < len; i++) {
+        const container = this.hooks[i]
         container && this.$_initSingleColumnScroller(container, i)
       }
 
@@ -444,16 +446,19 @@ export default {
       this.$set(this.activedIndexs, index, 0) // reset active index
       this.$set(this.columnValues, index, values)
       this.$nextTick(() => {
-        this.$_initSingleColumnScroller(index)
-        callback()
+        callback(this)
       })
     },
-    refresh(callback, startIndex = 0) {
-      // this.activedIndexs = []
-      this.$nextTick(() => {
+    refresh(callback, startIndex = 0, microTask = false) {
+      const _callback = () => {
         this.$_initColumnsScroller(startIndex)
-        callback && callback()
-      })
+        callback && callback(this)
+      }
+      if (microTask) {
+        this.$nextTick(_callback)
+      } else {
+        setTimeout(_callback, 0)
+      }
     },
   },
 }

@@ -52,6 +52,8 @@
 
 <script>import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
+import popupMixin from '../popup/mixins'
+import popupTitleBarMixin from '../popup/mixins/title-bar'
 import Icon from '../icon'
 import Tabs from '../tabs'
 import TabPane from '../tab-pane'
@@ -60,6 +62,8 @@ import {extend} from '../_util'
 
 export default {
   name: 'md-tab-picker',
+
+  mixins: [popupMixin, popupTitleBarMixin],
 
   components: {
     [Popup.name]: Popup,
@@ -71,34 +75,36 @@ export default {
   },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false,
+    data: {
+      type: Object,
+      default: () => ({}),
     },
     defaultValue: {
       type: Array,
       default: () => [],
     },
-    title: {
-      type: String,
-      default: '',
-    },
-    describe: {
-      type: String,
-      default: '',
-    },
     placeholder: {
       type: String,
       default: '请选择',
     },
-    maskClosable: {
-      type: Boolean,
-      default: true,
-    },
-    data: {
-      type: Object,
-      default: () => ({}),
-    },
+
+    // Mixin Props
+    // value: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // title: {
+    //   type: String,
+    //   default: '',
+    // },
+    // describe: {
+    //   type: String,
+    //   default: '',
+    // },
+    // maskClosable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
   },
 
   data() {
