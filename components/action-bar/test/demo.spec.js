@@ -4,7 +4,7 @@ import Demo2 from './cases/demo2'
 import Demo3 from './cases/demo3'
 import {renderToString} from '@vue/server-test-utils'
 
-describe('ActionBar', () => {
+describe('ActionBar Demo', () => {
   test(`Basic`, () => {
     expect(renderToString(Demo0)).toMatchSnapshot()
   })

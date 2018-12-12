@@ -48,9 +48,6 @@ export default {
   methods: {
     // MARK: events handler
     $_onBtnClick(event, action) {
-      if (action.disabled) {
-        return
-      }
       action.onClick && action.onClick(event, action)
       this.$emit('click', event, action)
     },
