@@ -37,7 +37,7 @@ Vue.component(Picker.name, Picker)
 #### Picker Methods
 
 ##### refresh(callback, startColumnIndex)
-重新初始化选择器，如更新`data`, `default-index`或`invalid-index`
+重新初始化选择器，如更新`data`、`default-index`、`invalid-index`或调用`setColumnValues`，该方法也可以使用[key](https://cn.vuejs.org/v2/api/#key)代替
 
 |参数 | 说明 | 类型|
 |----|-----|------|

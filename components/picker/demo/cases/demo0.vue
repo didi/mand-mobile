@@ -18,9 +18,9 @@ export default {
   name: 'picker-demo',
   /* DELETE */
   title:
-    '单列数据 <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a>',
+    '单列数据 <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a><a href="javascript:window.PickerTrigger2()">setColumnValues</a>',
   titleEnUS:
-    'Single column <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a>',
+    'Single column <a href="javascript:window.PickerTrigger0()">getColumnValues</a><a href="javascript:window.PickerTrigger1()">getColumnIndexs</a><a href="javascript:window.PickerTrigger2()">setColumnValues</a>',
   describe: '禁用2-4项',
   describeEnUS: 'Disable 2-4 items',
   /* DELETE */
@@ -30,6 +30,12 @@ export default {
   data() {
     return {
       pickerData: simple,
+      pickerDataNew: [
+        {
+          text: 'Hello World',
+          value: 9999,
+        },
+      ],
       pickerValue: '',
     }
   },
@@ -39,6 +45,9 @@ export default {
     }
     window.PickerTrigger1 = () => {
       this.getColumnIndexs('picker')
+    }
+    window.PickerTrigger2 = () => {
+      this.setColumnValues('picker')
     }
   },
   methods: {
@@ -61,6 +70,11 @@ export default {
       const value = this.$refs[picker].getColumnIndexs()
       Dialog.alert({
         content: `<pre>${JSON.stringify(value)}</pre>`,
+      })
+    },
+    setColumnValues(picker) {
+      this.$refs[picker].setColumnValues(0, this.pickerDataNew, vm => {
+        vm.refresh(null, 0)
       })
     },
   },

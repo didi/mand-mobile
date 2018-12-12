@@ -20,9 +20,9 @@ export default {
   name: 'picker-demo',
   /* DELETE */
   title:
-    '联动数据 <a href="javascript:window.PickerTrigger2()">getColumnValue(0)</a><a href="javascript:window.PickerTrigger3()">getColumnIndex(0)</a>',
+    '联动数据 <a href="javascript:window.PickerTrigger3()">getColumnValue(0)</a><a href="javascript:window.PickerTrigger4()">getColumnIndex(0)</a><a href="javascript:window.PickerTrigger5()">changeDefaultIndex(0)</a>',
   titleEnUS:
-    'Cascade <a href="javascript:window.PickerTrigger2()">getColumnValue(0)</a><a href="javascript:window.PickerTrigger3()">getColumnIndex(0)</a>',
+    'Cascade <a href="javascript:window.PickerTrigger3()">getColumnValue(0)</a><a href="javascript:window.PickerTrigger4()">getColumnIndex(0)</a><a href="javascript:window.PickerTrigger5()">changeDefaultIndex(0)</a>',
   describe: '默认选中3, 2, 1项',
   describeEnUS: '"3, 2, 1" item selected by default',
   /* DELETE */
@@ -40,11 +40,15 @@ export default {
     this.pickerData = district
     this.pickerDefaultIndex = [3, 2, 1]
 
-    window.PickerTrigger2 = () => {
+    window.PickerTrigger3 = () => {
       this.getColumnValue('picker', 0)
     }
-    window.PickerTrigger3 = () => {
+    window.PickerTrigger4 = () => {
       this.getColumnIndex('picker', 0)
+    }
+    window.PickerTrigger5 = () => {
+      this.pickerDefaultIndex = [4, 1, 1]
+      this.$refs.picker.refresh()
     }
   },
   methods: {
