@@ -59,26 +59,31 @@
   </div>
 </template>
 
-<script>export default {
+<script>import titleBarMixin from './mixins/title-bar'
+
+export default {
   name: 'md-popup-title-bar',
 
+  mixins: [titleBarMixin],
+
   props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    describe: {
-      type: String,
-      default: '',
-    },
-    okText: {
-      type: String,
-      default: '',
-    },
-    cancelText: {
-      type: String,
-      default: '',
-    },
+    // Mixin Props
+    // title: {
+    //   type: String,
+    //   default: '',
+    // },
+    // describe: {
+    //   type: String,
+    //   default: '',
+    // },
+    // okText: {
+    //   type: String,
+    //   default: '',
+    // },
+    // cancelText: {
+    //   type: String,
+    //   default: '',
+    // },
   },
 
   methods: {

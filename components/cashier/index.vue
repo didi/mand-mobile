@@ -118,6 +118,8 @@
 
 <script>import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
+import popupMixin from '../popup/mixins'
+import popupTitleBarMixin from '../popup/mixins/title-bar'
 import Captcha from '../captcha'
 import Button from '../button'
 import Icon from '../icon'
@@ -127,6 +129,8 @@ import Channel from './channel'
 
 export default {
   name: 'md-cashier',
+
+  mixins: [popupMixin, popupTitleBarMixin],
 
   components: {
     [Popup.name]: Popup,
@@ -139,10 +143,6 @@ export default {
   },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
     channels: {
       type: Array,
       default() {
@@ -159,14 +159,6 @@ export default {
     defaultIndex: {
       type: Number,
       default: 0,
-    },
-    title: {
-      type: String,
-      default: '\u652f\u4ed8', // 支付
-    },
-    describe: {
-      type: String,
-      default: '',
     },
     paymentTitle: {
       type: String,
@@ -192,6 +184,19 @@ export default {
       type: String,
       default: '\u66f4\u591a\u652f\u4ed8\u65b9\u5f0f', // 更多支付方式
     },
+    title: {
+      default: '\u652f\u4ed8', // 支付
+    },
+
+    // Mixin Props
+    // value: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // describe: {
+    //   type: String,
+    //   default: '',
+    // },
   },
 
   data() {

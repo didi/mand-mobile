@@ -24,6 +24,7 @@
 
 <script>
 import Picker from '../picker'
+import pickerMixin from '../picker/mixins'
 import {
   toObject,
   toArray,
@@ -58,15 +59,13 @@ const TYPE_METHODS = {
 export default {
   name: 'md-date-picker',
 
+  mixins: [pickerMixin],
+
   components: {
     [Picker.name]: Picker
   },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false
-    },
     type: { // date, time, datetime， custom
       type: String,
       default: 'date'
@@ -115,26 +114,32 @@ export default {
       type: [Function, String],
       default: ''
     },
-    title: {
-      type: String
-    },
-    describe: {
-      type: String
-    },
-    okText: {
-      type: String
-    },
-    cancelText: {
-      type: String
-    },
-    isView: {
-      type: Boolean,
-      default: false
-    },
-    maskClosable: {
-      type: Boolean,
-      default: true,
-    }
+
+    // Mixin Props
+    // value: {
+    //   type: Boolean,
+    //   default: false
+    // },
+    // title: {
+    //   type: String
+    // },
+    // describe: {
+    //   type: String
+    // },
+    // okText: {
+    //   type: String
+    // },
+    // cancelText: {
+    //   type: String
+    // },
+    // isView: {
+    //   type: Boolean,
+    //   default: false
+    // },
+    // maskClosable: {
+    //   type: Boolean,
+    //   default: true,
+    // }
   },
 
   data () {

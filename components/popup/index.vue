@@ -35,27 +35,18 @@
 </template>
 
 <script>import Transition from '../transition'
+import popupMixin from './mixins'
 
 export default {
   name: 'md-popup',
+
+  mixins: [popupMixin],
 
   components: {
     'md-transition': Transition,
   },
 
   props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
-    hasMask: {
-      type: Boolean,
-      default: true,
-    },
-    maskClosable: {
-      type: Boolean,
-      default: true,
-    },
     position: {
       type: String,
       default: 'center',
@@ -90,6 +81,19 @@ export default {
         return ''
       },
     },
+    // Mixin Props
+    // value: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // hasMask: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // maskClosable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
   },
 
   data() {
