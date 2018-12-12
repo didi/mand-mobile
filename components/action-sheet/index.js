@@ -23,6 +23,7 @@ ActionSheet.create = function({
   onShow = noop,
   onHide = noop,
   onSelected = noop,
+  onCancel = noop,
 }) {
   const ActionSheetCtor = Vue.extend(ActionSheet)
   const vm = new ActionSheetCtor({
@@ -90,7 +91,16 @@ ActionSheet.create = function({
       }
     },
   )
+  vm.$on(
+    'cancel',
+    /* istanbul ignore next */ item => {
+      if (typeof onCancel === 'function') {
+        onCancel.call(null, item)
+      }
+    },
+  )
 
+  /* istanbul ignore next */
   vm.$on('hook:beforeDestroy', () => {
     const parent = vm.$el.parentNode
     const index = instances.indexOf(vm)

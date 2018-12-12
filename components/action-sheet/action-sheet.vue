@@ -96,7 +96,7 @@ export default {
     },
     $_onHide() {
       this.$emit('hide')
-      this.$emit('input', false)
+      this.$_hideSheet()
     },
     $_onSelect(item, index) {
       if (index === this.invalidIndex || inArray(this.invalidIndex, index)) {
@@ -104,10 +104,14 @@ export default {
       }
       this.clickIndex = index
       this.$emit('selected', item)
-      this.$emit('input', false)
+      this.$_hideSheet()
     },
     $_onCancel() {
       this.$emit('cancel')
+      this.$_hideSheet()
+    },
+    $_hideSheet() {
+      this.isActionSheetShow = false
       this.$emit('input', false)
     },
   },

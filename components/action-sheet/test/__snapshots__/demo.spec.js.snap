@@ -32,3 +32,34 @@ exports[`ActionSheet Basic 1`] = `
   </div>
 </div>
 `;
+
+exports[`ActionSheet Singleton pattern 1`] = `
+<div class="md-action-sheet">
+  <div class="md-popup with-mask bottom" style="">
+    <div class="md-popup-mask" style=""></div>
+    <div class="md-popup-box md-slide-up" style="">
+      <div class="md-action-sheet-content">
+        <header class="md-action-sheet-header">操作说明的标题</header>
+        <ul class="md-action-sheet-list">
+          <li class="md-action-sheet-item">
+            <div class="md-action-sheet-item-wrapper">
+              <div class="md-action-sheet-item-section">选项1</div>
+            </div>
+          </li>
+          <li class="active md-action-sheet-item">
+            <div class="md-action-sheet-item-wrapper">
+              <div class="md-action-sheet-item-section">选项2</div>
+            </div>
+          </li>
+          <li class="disabled md-action-sheet-item">
+            <div class="md-action-sheet-item-wrapper">
+              <div class="md-action-sheet-item-section">选项3</div>
+            </div>
+          </li>
+          <li class="md-action-sheet-cancel">取消</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
