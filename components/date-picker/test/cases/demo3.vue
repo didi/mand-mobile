@@ -1,41 +1,27 @@
 <template>
   <div class="md-example-child md-example-child-date-picker md-example-child-date-picker-3">
-    <md-field>
-      <md-field-item
-        name="name"
-        title="出险时间"
-        arrow="arrow-right"
-        align="right"
-        :content="datePickerValue"
-        @click.native="isDatePickerShow = true">
-      </md-field-item>
-    </md-field>
     <md-date-picker
       ref="datePicker"
-      v-model="isDatePickerShow"
       type="custom"
       title="选择出险时间"
       :text-render="textRender"
       :custom-types="['yyyy', 'MM','dd', 'hh', 'mm']"
       :default-date="currentDate"
+      is-view
     ></md-date-picker>
   </div>
 </template>
 
-<script>import {DatePicker, Field, FieldItem} from 'mand-mobile'
+<script>import {DatePicker} from 'mand-mobile'
 
 export default {
   name: 'date-picker-demo',
   components: {
     [DatePicker.name]: DatePicker,
-    [Field.name]: Field,
-    [FieldItem.name]: FieldItem,
   },
   data() {
     return {
       currentDate: new Date('2018/10/10'),
-      isDatePickerShow: true,
-      datePickerValue: '',
     }
   },
   methods: {

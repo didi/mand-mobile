@@ -7,30 +7,30 @@ import {mount} from '@vue/test-utils'
 describe('DatePicker', () => {
   test(`Date selection`, done => {
     const wrapper = mount(Demo0)
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.vm.$el.innerHTML).toMatchSnapshot()
       done()
-    })
+    }, 0)
   })
   test(`Time selection`, done => {
     const wrapper = mount(Demo1)
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.vm.$el.innerHTML).toMatchSnapshot()
       done()
-    })
+    }, 0)
   })
   test(`Date & Time selection`, done => {
     const wrapper = mount(Demo2)
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.vm.$el.innerHTML).toMatchSnapshot()
       done()
-    })
+    }, 0)
   })
   test(`Custom type and option textual values`, done => {
     const wrapper = mount(Demo3)
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.vm.$el.innerHTML).toMatchSnapshot()
       done()
-    })
+    }, 0)
   })
 })
