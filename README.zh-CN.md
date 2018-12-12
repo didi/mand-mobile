@@ -1,5 +1,4 @@
-
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/MlH4zHFmJT1544606418467.jpg">
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/4bJIa4DLYE1544607705566.jpg">
 
 # mand-mobile
 
