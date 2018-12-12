@@ -13,8 +13,8 @@
             <div class="home-animation-bg">
               <img :src="homeBlock.animations.bg" alt="">
             </div>
-            <div class="home-animation-content">
-              <img :src="homeBlock.animations.content" alt="">
+            <div class="home-animation-content" v-if="homeBlock.animations.content">
+              <component :is="homeBlock.animations.content"></component>
             </div>
           </template>
           <template v-else>
@@ -140,7 +140,6 @@
 <script>
 import MfeTable from './components/Table'
 import homeConfig from './assets/js/home.config'
-import { setTimeout } from 'timers';
 
 export default {
   name: 'mfe-blog-theme-default-home',
@@ -152,19 +151,9 @@ export default {
   data () {
     return {
       qrcodeTableShow: false,
-      blockShow: []
+      blockShow: [],
     }
   },
-
-  // directives: {
-  //   dynamicShow: {
-  //     bind (el) {
-  //       setTimeout(() => {
-  //         el.style.display = 'block'
-  //       }, 800)
-  //     },
-  //   }
-  // },
 
   mounted() {
     if ($(window).width() < 750) {
@@ -210,13 +199,14 @@ export default {
       }, delay)
     },
     scrollBlockView () {
-      const bottomOffset = $(document).scrollTop() + $(window).height()
+      const scrollTop = $(document).scrollTop()
+      const bottomOffset = scrollTop + $(window).height()
       $('.home-box-block').each((index, item) => {
         const hh = $(item).height()
-        if (bottomOffset >= index * hh  + hh/2 + 100) {
+        // const topPos = index < 1 ? 0 : (index - 1) * hh  + hh/2 + 100
+        const bottomPos = index * hh  + hh/2 + 100
+        if (bottomOffset >= bottomPos) {
           this.$set(this.blockShow, index, true)
-        // } else {
-        //   this.$set(this.blockShow, index, false)
         }
       })
     },
@@ -355,9 +345,6 @@ export default {
         .home-animation-content
           left 220px
           top 247px
-          img
-            width 614px
-            height 410px
       &.home-box-block-1
         // height 830px
         .home-text
@@ -371,9 +358,6 @@ export default {
         .home-animation-content
           right 0
           top 143px
-          img
-            width 544px
-            height 503px
         .home-decorate
           right -400px
           top 500px
@@ -398,9 +382,6 @@ export default {
         .home-animation-content
           bottom 0
           left 0
-          img
-            width 536px
-            height 381px
         .home-decorate
           top 0
           left -300px

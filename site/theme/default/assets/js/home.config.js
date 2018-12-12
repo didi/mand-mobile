@@ -1,5 +1,8 @@
 import MfeTable from '../../components/Table'
 import MfeGitStar from '../../components/GitStar'
+import MfeAnimation0 from '../../components/home/Animation0'
+import MfeAnimation1 from '../../components/home/Animation1'
+import MfeAnimation2 from '../../components/home/Animation2'
 
 const qrcodeTableView = {
   name: 'qrcodeTable',
@@ -39,7 +42,7 @@ export default {
       }],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
-        content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'
+        content: MfeAnimation0
       }
     },
     {
@@ -47,7 +50,7 @@ export default {
       describe: '基于「合理、好用」设计价值观，从交互操作、视觉抽象、图形可视等角度共同解决问题。 ',
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.svg',
-        content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.png'
+        content: MfeAnimation1
       },
       decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-cirlce.svg'
     },
@@ -58,7 +61,7 @@ export default {
         {
           icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-0.svg',
           title: '丰富的组件',
-          describe: '30+的基础组件，覆盖金融场景',
+          describe: '40+的基础组件，覆盖金融场景',
         },
         {
           icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-1.svg',
@@ -83,7 +86,7 @@ export default {
       }],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.svg',
-        content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.png'
+        content: MfeAnimation2
       },
       decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-rectangle.svg'
     },
