@@ -191,7 +191,7 @@ export default {
 
     if (this.isView) {
       this.$nextTick(() => {
-        this.column.refresh()
+        this.column.refresh(null, 0, true)
       })
     }
   },
@@ -272,7 +272,7 @@ export default {
       // reset picker by snapshot
       this.$nextTick(() => {
         this.$_resetPickerColumn()
-        this.column.refresh()
+        this.column.refresh(null, 0, true)
       })
     },
     $_onPickerChange(columnIndex, itemIndex, values) {
@@ -298,7 +298,7 @@ export default {
       /* istanbul ignore next */
       if (!this.isScrollInitialed) {
         this.$nextTick(() => {
-          this.column.refresh()
+          this.column.refresh(null, 0, true)
         })
       }
     },

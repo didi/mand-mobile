@@ -449,12 +449,16 @@ export default {
         callback(this)
       })
     },
-    refresh(callback, startIndex = 0) {
-      // this.activedIndexs = []
-      setTimeout(() => {
+    refresh(callback, startIndex = 0, microTask = false) {
+      const _callback = () => {
         this.$_initColumnsScroller(startIndex)
         callback && callback(this)
-      }, 0)
+      }
+      if (microTask) {
+        this.$nextTick(_callback)
+      } else {
+        setTimeout(_callback, 0)
+      }
     },
   },
 }
