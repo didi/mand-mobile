@@ -59,10 +59,14 @@ Static create a global ActionSheet, and return instance. You can change instance
 |value|display actionsheet or not|Boolean|`true`|-|
 |title|title of actionsheet|String|-|-|
 |options|options of actionsheet|Array<{text, value}>| [] |-|
-|default-index|default selected index|Boolean|0|-|
-|invalid-index|invalid index|Number| -1|-|
-|cancel-text|cancel text|String|-|-|
-|max-height|the maximum height of actionsheet area|Number|`400`|unit `px`|
+|defaultIndex|default selected index|Boolean|0|-|
+|invalidIndex|invalid index|Number| -1|-|
+|cancelText|cancel text|String|-|-|
+|maxHeight|the maximum height of actionsheet area|Number|`400`|unit `px`|
+|onShow|actionsheet show callback|Function|-|-|
+|onHide|actionsheet hide callback|Function|-|-|
+|onCancel|cancel selection callback|Function|-|-|
+|onSelected|selection callback|Function(item: {text, value})|-|-|
 
 ##### closeAll()
 Close all global ActionSheets

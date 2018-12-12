@@ -56,10 +56,14 @@ Vue.component(ActionSheet.name, ActionSheet)
 |value|面板是否立即可见|Boolean| `true`|-|
 |title|面板标题|String|-|-|
 |options|面板选项| Array<{text, value}>| `[]`|-|
-|default-index|默认选中项| Boolean| `0`|-|
-|invalid-index|禁用选择项索引 |Number|`-1`|-|
-|cancel-text|取消按钮文案 |String |-|-|
-|max-height|面板最高高度, 超出后可滚动|Number|400|单位`px`|
+|defaultIndex|默认选中项| Boolean| `0`|-|
+|invalidIndex|禁用选择项索引 |Number|`-1`|-|
+|cancelText|取消按钮文案 |String |-|-|
+|maxHeight|面板最高高度, 超出后可滚动|Number|400|单位`px`|
+|onShow|面板展示回调|Function|-|-|
+|onHide|面板隐藏回调|Function|-|-|
+|onCancel|取消选择回调|Function|-|-|
+|onSelected|选择回调|Function(item: {text, value})|-|-|
 
 ##### closeAll()
 关闭所有全局操作菜单
