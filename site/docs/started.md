@@ -12,7 +12,7 @@ title: 快速上手
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* Vue CLI 3([插件](https://github.com/mand-mobile/vue-cli-plugin-mand))
+* Vue CLI 3([插件](https://github.com/mand-mobile/vue-cli-plugin-mand)/[示例](https://github.com/mand-mobile/vue-cli3-example))
 
 ```shell
 vue create my-project
@@ -21,19 +21,27 @@ npm install --save-dev vue-cli-plugin-mand
 vue invoke mand
 ```
 
+* Nuxt([示例](https://github.com/mand-mobile/nuxt-example))
+
 #### 安装
 
-##### NPM
+##### **NPM or Yarn**
 
 ```shell
 npm install mand-mobile --save
+
+# or 
+
+yarn add mand-mobile
 ```
 
-##### 浏览器引入
+##### **浏览器引入**
 
 在浏览器中使用`script`和`link`标签直接引入文件，并使用全局变量 `window['mand-mobile']`
 
-在`npm`发布包内的`mand-mobile/lib`或`mand-mobile/lib-vw`目录下提供了`JS`以及`CSS` bundle，参考<a href="javascript:jumpAnchor('产出包目录')">产出包目录</a>。你也可以通过[UNPKG](https://unpkg.com/mand-mobile/lib/)进行下载
+在`npm`发布包内的`mand-mobile/lib`或`mand-mobile/lib-vw`目录下提供了`JS`以及`CSS` bundle，参考<a href="javascript:jumpAnchor('产出包目录')">产出包目录</a>。   
+
+你也可以通过[![](https://data.jsdelivr.com/v1/package/npm/mand-mobile/badge)](https://www.jsdelivr.com/package/npm/mand-mobile)或者[UNPKG](https://unpkg.com/mand-mobile/lib/)进行下载。
 
 #### 引入
 

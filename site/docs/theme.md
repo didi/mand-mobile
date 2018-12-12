@@ -21,7 +21,7 @@ title: 主题定制
 
 可以通过引入**组件源码**(`components`目录下)，并覆盖`样式变量`的方式来实现主题定制
 
-* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`，完整`rules`可参考[配置](https://github.com/didi/mand-mobile/blob/master/build/webpack/webpack.base.conf.js)
+* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`，完整`rules`可参考[配置](https://github.com/didi/mand-mobile/blob/2.0/build/webpack/webpack.base.conf.js)
 
 ```shell
 npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
@@ -41,7 +41,8 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 ```stylus
 @import '~mand-mobile/components/_style/global'
 @import '~mand-mobile/components/_style/mixin/util'
-@import '~mand-mobile/components/_style/mixin/theme'
+@import '~mand-mobile/components/_style/mixin/theme.components'
+@import '~mand-mobile/components/_style/mixin/theme.basic'
 
 // 安装并引入css拓展nib(可选)
 @import '~nib/lib/nib/vendor'

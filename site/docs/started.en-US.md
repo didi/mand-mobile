@@ -12,7 +12,7 @@ title: Quickstart
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand))
+* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand)/[Example](https://github.com/mand-mobile/vue-cli3-example))
 
 ```shell
 vue create my-project
@@ -21,19 +21,27 @@ npm install --save-dev vue-cli-plugin-mand
 vue invoke mand
 ```
 
+* Nuxt([Example](https://github.com/mand-mobile/nuxt-example))
+
 #### Installation
 
-##### NPM
+##### **NPM or Yarn**
 
-```bash
+```shell
 npm install mand-mobile --save
+
+# or 
+
+yarn add mand-mobile
 ```
 
-##### Import in Browser
+##### **Import in Browser**
 
 Add `script` and `link` tags in your browser and use the global variable `window['mand-mobile']`.
 
-The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>. You can also download it via [UNPKG](https://unpkg.com/mand-mobile/lib/)
+The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>.    
+
+You can also download it via [![](https://data.jsdelivr.com/v1/package/npm/mand-mobile/badge)](https://www.jsdelivr.com/package/npm/mand-mobile) or [UNPKG](https://unpkg.com/mand-mobile/lib/).
 
 #### Import
 

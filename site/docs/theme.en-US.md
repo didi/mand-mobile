@@ -13,7 +13,7 @@ title: Theme Customization
 
 `Mand Mobile` style is based on <a href="http://stylus-lang.com/" target="_blank">Stylus</a> and can adjust theme styles through global and component style variables.
 
-A complete list of variables can be found in <a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.styl" target="_blank">Default Style Variables</a>
+A complete list of variables can be found in <a href="https://github.com/didi/mand-mobile/blob/2.0/components/_style/mixin/theme.styl" target="_blank">Default Style Variables</a>
 
 ### Variable Coverage
 
@@ -39,7 +39,8 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 ```stylus
 @import '~mand-mobile/components/_style/global'
 @import '~mand-mobile/components/_style/mixin/util'
-@import '~mand-mobile/components/_style/mixin/theme'
+@import '~mand-mobile/components/_style/mixin/theme.components'
+@import '~mand-mobile/components/_style/mixin/theme.basic'
 
 // Import nib (Optional)
 @import '~nib/lib/nib/vendor'

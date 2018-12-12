@@ -16,7 +16,7 @@ title: Mand Mobile
 
 * <b>Strictly controlled Bundle volume </b> 
 
-    Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and export two format packages, `es` and `umd`. The `es` package size is only `173kb(gzip 40kb)`, and the final size of `umd` is only `167kb(gzip 39kb)`.
+    Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and exporting `es`, `umd` formats and `px`, `vh/vw` two style units
 
 * <b>Flexible style theme</b> 
 
@@ -57,5 +57,9 @@ Please refer to <a href="#/docs/started">Quickstart</a>
 
 Please read our <a href="#/docs/development">Development Guide</a> first. If you'd like to help us improve Mand Mobile, please create <a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a> or <a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>.
 
+#### Community
 
+If you have problems during use, you can scan the QR code below to join the official group for help and it's expected that you share your personal experience to help others.  
+
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
 

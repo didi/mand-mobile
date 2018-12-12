@@ -14,9 +14,9 @@ title: Mand Mobile
 
     由滴滴金融设计师设计并维护，保证了应用的项目内部、项目之间都能保持高度的视觉一致性
 
-* <b>严格控制的Bundle体积 </b> 
+* <b>适用于多场景的产生</b> 
 
-    提供按需加载能力，使用灵活，避免引入无用代码，同时导出`es`，`umd`两种格式包，其中`es`打包大小仅为`173kb(gzip 40kb)`，`umd`格式最终大小仅为`167kb(gzip 39kb)`
+    提供按需加载能力，使用灵活，避免引入无用代码，导出`es`，`umd`两种格式以及`px`, `vh/vw`两种样式单位
 
 * <b>灵活转换的样式主题</b> 
 
@@ -24,7 +24,7 @@ title: Mand Mobile
 
 * <b>支持TypeScript</b> 
 
-* <b>支持f服务端渲染</b> 
+* <b>支持服务端渲染</b> 
 
 #### 版本
 
@@ -57,5 +57,8 @@ title: Mand Mobile
 
 在以任何形式的参与前，请先阅读<a href="#/docs/development">开发指南</a>。如有任何的意见或建议，欢迎您通过创建<a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a>或<a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>的方式告知我们。
 
+#### 社区互助
 
+如果您在使用的过程中碰到问题，可以扫描下方二维码加入官方群寻求帮助，同时期待您能够分享个人使用经验给予他人帮助。   
 
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
