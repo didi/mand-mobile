@@ -14,7 +14,9 @@
 import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
 
-export default createDemoModule('single-component', [Demo0, Demo1])
+export default {
+  ...createDemoModule('bill', [Demo0, Demo1]),
+}
 </script>
 
 <style lang="stylus">

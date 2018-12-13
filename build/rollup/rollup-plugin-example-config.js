@@ -45,15 +45,18 @@ function vueWarpper() {
 const vue = vueWarpper()
 // const css = cssWarpper()
 
-
+const rollupSvgAlias = {
+  '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg'),
+  '@examples/assets/images/tip-package.svg': resolve('examples/assets/images/tip-package.svg')
+}
 const rollupPlugin = [
   // resolve
   aliasPlugin({
-    resolve: ['.js', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
+    resolve: ['.js', '.json', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
     'mand-mobile/components': resolve('components'),
     'mand-mobile/lib': resolve('lib'),
     'mand-mobile': resolve('components'),
-    '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg')
+    ...rollupSvgAlias
   }),
   nodeResolvePlugin({
     extensions: [ '.js', '.json', '.vue' ],

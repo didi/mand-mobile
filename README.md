@@ -27,7 +27,7 @@ A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios.
 
 You can scan the following QR code to access the examples:
 
-<img src="https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png?v=2" alt="Mand Mobile Examples" width="200"/>
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/SAIwaauzcT1544673319125.png" alt="Mand Mobile Examples" width="200"/>
 
 ## Install & Usage
 
