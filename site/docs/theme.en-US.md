@@ -13,7 +13,7 @@ title: Theme Customization
 
 `Mand Mobile` style is based on <a href="http://stylus-lang.com/" target="_blank">Stylus</a> and can adjust theme styles through global and component style variables.
 
-A complete list of variables can be found in <a href="https://github.com/didi/mand-mobile/blob/2.0/components/_style/mixin/theme.styl" target="_blank">Default Style Variables</a>
+A complete list of variables can be found in built-in variables <a href="https://github.com/didi/mand-mobile/blob/2.0/components/_style/mixin/theme.basic.styl" target="_blank">Global Variables</a>、<a href="https://github.com/didi/mand-mobile/blob/2.0/components/_style/mixin/theme.components.styl" target="_blank">Components Variables</a>
 
 ### Variable Coverage
 
