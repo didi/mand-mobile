@@ -1,6 +1,9 @@
 <template>
   <div class="md-cell-item"
-    :class="{ 'is-disabled': disabled }"
+    :class="{
+      'is-disabled': disabled,
+      'no-border': noBorder,
+    }"
     @click="$_onClick"
   >
     <div
@@ -58,6 +61,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    noBorder: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   methods: {
@@ -73,6 +80,9 @@ export default {
 <style lang="stylus">
 .md-cell-item
   position relative
+  &.no-border .md-cell-item-body
+    remove-hairline(bottom)
+
 
 .md-cell-item-body
   position relative

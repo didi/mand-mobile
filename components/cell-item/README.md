@@ -26,6 +26,7 @@ Vue.component(CellItem.name, CellItem)
 |addon|附加文案|String|-|-|
 |disabled|是否禁用项目|Boolean|`false`|-|
 |arrow|动作箭头标识|Boolean|`false`|-|
+|no-border|去除边框|Boolean|`false`|-|
 
 #### CellItem Events
 ##### @click(event)

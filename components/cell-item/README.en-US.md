@@ -26,6 +26,7 @@ Vue.component(CellItem.name, CellItem)
 |addon|help info text|String|-|-|
 |disabled|disable item operation|Boolean|`false`|-|
 |arrow|arrow indicator|Boolean|`false`|-|
+|no-border|remove border|Boolean|`false`|-|
 
 #### CellItem Events
 ##### @click(event)

@@ -3,7 +3,7 @@
     <md-field>
       <md-cell-item title="普通条目" />
       <md-cell-item title="动作条目" arrow @click="onClick" />
-      <md-cell-item title="禁用条目" disabled />
+      <md-cell-item title="禁用条目" disabled no-border/>
     </md-field>
   </div>
 </template>

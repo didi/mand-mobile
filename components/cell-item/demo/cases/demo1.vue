@@ -12,7 +12,7 @@
       <md-cell-item title="滴水贷" addon="可用8000.34" arrow>
         <div class="holder" slot="left"></div>
       </md-cell-item>
-      <md-cell-item title="信用付" addon="可用8000.34" arrow>
+      <md-cell-item title="信用付" addon="可用8000.34" arrow no-border>
         <div class="holder" slot="left"></div>
       </md-cell-item>
     </md-field>
