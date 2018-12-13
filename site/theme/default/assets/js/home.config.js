@@ -14,7 +14,7 @@ const qrcodeTableView = {
       qrcodeTableShow: false
     }
   },
-  template: '<mfe-table v-model="qrcodeTableShow" style="width:160px;height:160px;top:65px;left:-10px;overflow:hidden;"><img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-qrcode.png" alt=""></mfe-table>'
+  template: '<mfe-table v-model="qrcodeTableShow" style="width:160px;height:160px;top:65px;left:-10px;overflow:hidden;"><img src="//pt-starimg.didistatic.com/static/starimg/img/yFIIdKkZ1U1544692152996.png" alt=""></mfe-table>'
 }
 
 export default {
@@ -134,7 +134,7 @@ export default {
         {
           icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-0.svg',
           title: 'Rich components',
-          describe: '30+ basic components covering financial scenarios',
+          describe: '40+ basic components covering financial scenarios',
         },
         {
           icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-1.svg',

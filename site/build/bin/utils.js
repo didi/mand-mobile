@@ -1,4 +1,5 @@
 const colors = require('colors')
+const chalk = require('chalk')
 const defaultMbConfig = require('./default.mfe.blog.config')
 
 // Mfe template blog config info
@@ -11,6 +12,12 @@ colors.setTheme({
   bold: 'bold',
 })
 
+function stdout(title, msg) {
+  process.stdout.clearLine()
+  process.stdout.cursorTo(0)
+  process.stdout.write(`${chalk.yellow.bold(title)} ${msg}`)
+}
+
 function log(msg) {
   if (process.argv.indexOf('--log') >= 0) {
     console.log(msg)
@@ -18,15 +25,15 @@ function log(msg) {
 }
 
 function info(msg) {
-  log('[MTB INFO]'.info.bold + ` ${msg}`)
+  log('[DOC SITE INFO]'.info.bold + ` ${msg}`)
 }
 
 function warn(msg) {
-  log('[MTB WARN]'.warn.bold + ` ${msg}`)
+  log('[DOC SITE WARN]'.warn.bold + ` ${msg}`)
 }
 
 function error(msg) {
-  log('[MTB ERROR]'.error.bold + ` ${msg}`)
+  log('[DOC SITE ERROR]'.error.bold + ` ${msg}`)
 }
 
 // Traverse "source" and do sth with each item
@@ -63,4 +70,4 @@ function kebabToCamel (str) {
   return newStr
 }
 
-module.exports = {mbConfig, traverseSource, kebabToCamel, info, warn, error}
+module.exports = {mbConfig, traverseSource, kebabToCamel, info, warn, error, stdout}

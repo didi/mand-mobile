@@ -6,7 +6,7 @@ import { localStore } from '../assets/js/util'
 import Routes from '../../../public/route'
 
 Vue.use(Router)
-let routeIndex = 0
+// let routeIndex = 0
 const routeCategoryByLang = {
   'zh-CN': [],
   'en-US': [],

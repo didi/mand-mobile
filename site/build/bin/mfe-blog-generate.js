@@ -3,7 +3,7 @@ const path = require('path')
 const mkdirp = require('mkdirp')
 const highlight = require('./markdown').highlight
 const markdown = require('./markdown').markdown
-const {mbConfig, traverseSource, kebabToCamel, info, warn, error} = require('./utils')
+const {mbConfig, traverseSource, kebabToCamel, info, warn, error, stdout} = require('./utils')
 
 let views, routes
 
@@ -185,6 +185,8 @@ function startGenerate() {
   const source = mbConfig.source
   const startTmp = Date.now()
 
+  let count = 0
+
   views = []
   routes = []
 
@@ -214,7 +216,13 @@ function startGenerate() {
       generateSourceData(markdownPath, outputPath)
       generateDemoVue(outputPath, demoPath)
       generateDocVue(templatePath, outputPath)
-      info(`${markdownPath}`)
+
+      count++
+
+      stdout(
+        `(${parseInt(count)})`,
+        markdownPath
+      )
     }
     saveRoutepath(item, `/${path.join('/')}`, views, routes)
   }
