@@ -70,24 +70,28 @@ function conditionHelper(condition, plugins) {
   return condition ? plugins : []
 }
 
+const rollupSvgAlias = {
+  '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg'),
+  '@examples/assets/images/tip-package.svg': resolve('examples/assets/images/tip-package.svg')
+}
 const rollupPlugin = [
   // resolve
   ...(conditionHelper(!isDev, [
     aliasPlugin({
-      resolve: ['.js', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
+      resolve: ['.js', '.json', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
       'mand-mobile/components': resolve('components'),
       'mand-mobile/lib': resolve('lib'),
       'mand-mobile': resolve('lib/mand-mobile.esm.js'),
-      '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg')
+      ...rollupSvgAlias
     }),
   ])),
   ...(conditionHelper(isDev, [
     aliasPlugin({
-      resolve: ['.js', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
+      resolve: ['.js', '.json', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
       'mand-mobile/components': resolve('components'),
       'mand-mobile/lib': resolve('lib'),
       'mand-mobile': resolve('components'),
-      '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg')
+      ...rollupSvgAlias
     }),
   ])),
   nodeResolvePlugin({
@@ -96,7 +100,7 @@ const rollupPlugin = [
   ...(conditionHelper(isTest, [
     common({
       exclude: ['components/_util/*.js'],
-      namedExports: { 'avoriaz': ['mount', 'shallow'] },
+      namedExports: { '@vue/test-utils': ['mount', 'shallow'] },
     }),
     glob(),
   ])),
