@@ -51,6 +51,7 @@ export default {
           {
             value: '3',
             text: '选项三',
+            disabled: true,
           },
           {
             value: '4',

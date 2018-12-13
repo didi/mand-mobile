@@ -48,10 +48,12 @@
             :value="defaultValue"
             :options="data"
             :is-slot-scope="hasSlot"
-            icon="right"
-            icon-inverse=""
-            icon-position="right"
-            icon-size="md"
+            :icon="icon"
+            :icon-disabled="iconDisabled"
+            :icon-inverse="iconInverse"
+            :icon-position="iconPosition"
+            :icon-size="iconSize"
+            :icon-svg="iconSvg"
             @change="$_onSelectorChoose"
           >
             <template slot-scope="{ option }">
@@ -70,12 +72,13 @@ import PopupTitlebar from '../popup/title-bar'
 import popupMixin from '../popup/mixins'
 import popupTitleBarMixin from '../popup/mixins/title-bar'
 import RadioList from '../radio-list'
+import radioMixin from '../radio/mixins'
 import ScrollView from '../scroll-view'
 
 export default {
   name: 'md-selector',
 
-  mixins: [popupMixin, popupTitleBarMixin],
+  mixins: [popupMixin, popupTitleBarMixin, radioMixin],
 
   components: {
     [Icon.name]: Icon,
@@ -113,6 +116,9 @@ export default {
         return this.okText ? '取消' : ''
       },
     },
+    iconPosition: {
+      default: 'right',
+    },
 
     // Mixin Props
     // value: {
@@ -134,6 +140,30 @@ export default {
     // maskClosable: {
     //   type: Boolean,
     //   default: true,
+    // },
+    // icon: {
+    //   type: String,
+    //   default: 'checked',
+    // },
+    // iconInverse: {
+    //   type: String,
+    //   default: 'check',
+    // },
+    // iconDisabled: {
+    //   type: String,
+    //   default: 'check-disabled',
+    // },
+    // iconSvg: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // iconSize: {
+    //   type: String,
+    //   default: 'md',
+    // },
+    // iconPosition: {
+    //   type: String,
+    //   default: 'left',
     // },
   },
 
@@ -231,6 +261,11 @@ export default {
         color color-primary
     &:active
       background-color color-bg-tap
+  &.is-check
+    .md-radio-item.is-selected
+      .md-cell-item-title
+        color inherit
+
 
 .md-selector-container
   padding-bottom constant(safe-area-inset-bottom)
