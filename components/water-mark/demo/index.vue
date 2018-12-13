@@ -13,7 +13,9 @@
 import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
 
-export default createDemoModule('water-mark', [Demo0, Demo1])
+export default {
+  ...createDemoModule('water-mark', [Demo0, Demo1]),
+}
 </script>
 
 <style lang="stylus">

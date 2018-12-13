@@ -39,7 +39,6 @@
 </template>
 
 <script>import {Icon, ImageReader, Tag, Toast} from 'mand-mobile'
-import {setTimeout} from 'timers'
 
 export default {
   name: 'image-reader-demo',
