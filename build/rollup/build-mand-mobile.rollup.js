@@ -15,28 +15,27 @@ const inputOptions = {
 
 function build() {
   return rollup.rollup(inputOptions)
-          .then(bundle => {
-            return Promise.all([
-              isSpecial
-              ? bundle.write({
-                  file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
-                  format: 'es',
-                }).then(() => {
-                  console.info('Build ES Module & Variable Css Success')
-                })
-              : bundle.write({
-                  file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
-                  format: 'umd',
-                  name: 'mand-mobile'
-                }).then(() => {
-                  console.info('Build UMD Module Success')
-                })
-            ])
-          })
-          .catch(err => {
-            console.info(err)
-            console.info('build error')
-          })
+  .then(bundle => {
+    return Promise.all([
+      bundle.write({
+        file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
+        format: 'es',
+      }).then(() => {
+        console.info('Build ES Module')
+      }),
+      bundle.write({
+        file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
+        format: 'umd',
+        name: 'mand-mobile'
+      }).then(() => {
+        console.info('Build UMD Module Success')
+      })
+    ])
+  })
+  .catch(err => {
+    console.info(err)
+    console.info('build error')
+  })
 }
 
 build()

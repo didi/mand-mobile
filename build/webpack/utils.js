@@ -3,7 +3,7 @@ const path = require('path')
 const config = require('../../config')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const resolve = file => path.resolve(__dirname, file)
-const isProd = process.env.NODE_ENV === 'production'
+// const isProd = process.env.NODE_ENV === 'production'
 
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
@@ -53,13 +53,9 @@ exports.cssLoaders = function (options) {
     resolve('../../components/_style/mixin/util.styl')
   ]
 
-  if (isProd) {
-    stylusMixins.push(resolve('../../components/_style/mixin/theme.variable.styl'))
-  } else {
-    stylusMixins.push(resolve('../../components/_style/mixin/theme.components.styl'))
-    stylusMixins.push(resolve('../../components/_style/mixin/theme.basic.styl'))
-    stylusMixins.push(resolve('../../examples/theme.custom.styl'))
-  }
+  stylusMixins.push(resolve('../../components/_style/mixin/theme.components.styl'))
+  stylusMixins.push(resolve('../../components/_style/mixin/theme.basic.styl'))
+  stylusMixins.push(resolve('../../examples/theme.custom.styl'))
 
   return {
     css: generateLoaders(),

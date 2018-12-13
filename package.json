@@ -28,12 +28,11 @@
     "create": "node build/component-init.js",
     "cz": "npx git-cz",
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",
-    "build": "npm run clean && npm run build:components && npm run build:mand-mobile && npm run build:mand-mobile-special && node build/rollup/build-vw-responsive",
+    "build": "npm run clean && npm run build:components && npm run build:mand-mobile && node build/rollup/build-vw-responsive && node build/rollup/build-css-variables",
     "build:site": "cd site && npm run generate && npm run build",
     "prebuild:example": "npm run build",
     "build:example": "cross-env NODE_ENV=production BUILD_TYPE=example node build/rollup/build-example.rollup",
     "build:mand-mobile": "cross-env NODE_ENV=production node build/rollup/build-mand-mobile.rollup",
-    "build:mand-mobile-special": "cross-env NODE_ENV=production BUILD_TYPE=special node build/rollup/build-mand-mobile.rollup",
     "build:components": "cross-env NODE_ENV=production && node build/rollup/build-component.rollup",
     "build:analysis": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile --analysis",
     "lint": "eslint --ext .js,.vue components test/unit/specs test/e2e/specs",
@@ -43,7 +42,7 @@
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
-    "test": "jest --no-cache --verbose --runInBand --silent"
+    "test": "jest --no-cache --runInBand"
   },
   "license": "Apache",
   "config": {
