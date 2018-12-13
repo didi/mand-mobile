@@ -1,9 +1,7 @@
 <template>
   <div class="md-example-child md-example-child-action-bar md-example-child-3">
     <md-action-bar :actions="data" @click="onBtnClick">
-      <span class="price">
-        &yen;128.00<small>起</small>
-      </span>
+      <span class="price">&yen;128.00<small>起</small></span>
     </md-action-bar>
   </div>
 </template>

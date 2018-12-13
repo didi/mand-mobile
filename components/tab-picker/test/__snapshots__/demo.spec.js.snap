@@ -51,7 +51,7 @@ exports[`TabPicker - Demo Basic 1`] = `
                     </div>
                     <!---->
                   </div>
-                  <div class="md-cell-item md-radio-item">
+                  <div class="md-cell-item md-radio-item no-border">
                     <div class="md-cell-item-body">
                       <!---->
                       <div class="md-cell-item-content">
