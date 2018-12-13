@@ -1,6 +1,6 @@
 const rollup = require('rollup')
 const path = require('path')
-const chalk = require('chalk')
+const { resultLog } = require('../utils')
 const {
   LIB_DIR,
   PROJECT_DIR,
@@ -32,20 +32,20 @@ function build() {
         file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
         format: 'es',
       }).then(() => {
-        console.log('\n' + chalk.green.bold('BUILD ') + chalk.bgGreen.bold('ES BUNDLE') + chalk.green.bold(' SUCCESS'))
+        resultLog('success', 'Build **ES BUNDLE** Complete!')
       }),
       bundle.write({
         file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
         format: 'umd',
         name: 'mand-mobile'
       }).then(() => {
-        console.log('\n' + chalk.green.bold('BUILD ') + chalk.bgGreen.bold('UMD BUNDLE') + chalk.green.bold(' SUCCESS'))
+        resultLog('success', 'Build **UMD BUNDLE** Complete!')
       })
     ])
   })
   .catch(err => {
     console.info(err)
-    console.log('\n' + chalk.red.bold('BUILD ') + chalk.bgRed.bold('BUNDLE') + chalk.red.bold(' FAIL'))
+    resultLog('error', 'Build BUNDLE Fail!')
   })
 }
 

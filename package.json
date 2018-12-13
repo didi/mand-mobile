@@ -30,7 +30,6 @@
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",
     "build": "npm run clean && npm run build:components && npm run build:mand-mobile && node build/rollup/build-vw-responsive && node build/rollup/build-css-variables",
     "build:site": "cd site && npm run generate && npm run build",
-    "prebuild:example": "npm run build",
     "build:example": "cross-env NODE_ENV=production BUILD_TYPE=example node build/rollup/build-example.rollup",
     "build:mand-mobile": "cross-env NODE_ENV=production node build/rollup/build-mand-mobile.rollup",
     "build:components": "cross-env NODE_ENV=production && node build/rollup/build-component.rollup",
@@ -42,7 +41,7 @@
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
-    "test": "jest --no-cache --runInBand"
+    "test": "jest --no-cache --runInBand --verbose --silent"
   },
   "license": "Apache",
   "config": {

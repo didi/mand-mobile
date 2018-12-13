@@ -4,7 +4,7 @@ const postcss = require('postcss')
 const px2vw = require('postcss-pixel-to-viewport')
 const fs = require('fs')
 const path = require('path')
-const chalk = require('chalk')
+const { resultLog } = require('../utils')
 const TARGET_LIB_BASE = 'lib'
 const TARGET_VW_LIB_BASE = 'lib-vw'
 
@@ -57,11 +57,11 @@ function main() {
   copyLib()
   .then(compilePxToVwAll)
   .then(() => {
-    console.log('\n' + chalk.green.bold('BUILD ') + chalk.bgYellow.bold('VM/VW') + chalk.green.bold(' SUCCESS'))
+    resultLog('success', 'Build **VM/VW** Complete!')
   })
   .catch(err => {
     console.info(err)
-    console.log('\n' + chalk.red.bold('BUILD ') + chalk.bgRed.bold('VM/VW') + chalk.red.bold(' FAIL'))
+    resultLog('error', 'Build **VM/VW** Fail!')
   })
 }
 

@@ -1,7 +1,7 @@
 const path = require('path')
 const bluebird = require('bluebird')
 const fs = bluebird.promisifyAll(require('fs'))
-
+const { resultLog } = require('../utils')
 const styleDir = path.resolve(__dirname, '../../components/_style/mixin')
 const outputLibDir = path.resolve(__dirname, '../../lib')
 const outputLibVwDir = path.resolve(__dirname, '../../lib-vw')
@@ -44,11 +44,17 @@ function getStyleJson(filename) {
 
 const files = ['theme.basic.styl', 'theme.components.styl']
 
-files.forEach(file => {
-  const content = getStyleJson(file)
-  const fileLibDir = path.resolve(outputLibDir, file.replace('styl', 'json'))
-  fs.createWriteStream(fileLibDir).write(JSON.stringify(content))
-
-  const fileLibVwDir = path.resolve(outputLibVwDir, file.replace('styl', 'json'))
-  fs.createWriteStream(fileLibVwDir).write(JSON.stringify(content))
-})
+try {
+  files.forEach(file => {
+    const content = getStyleJson(file)
+    const fileLibDir = path.resolve(outputLibDir, file.replace('styl', 'json'))
+    fs.createWriteStream(fileLibDir).write(JSON.stringify(content))
+  
+    const fileLibVwDir = path.resolve(outputLibVwDir, file.replace('styl', 'json'))
+    fs.createWriteStream(fileLibVwDir).write(JSON.stringify(content))
+  })
+  resultLog('success', 'Build **Css Variables** Complete!')
+} catch (error) {
+  console.info(error)
+  resultLog('error', 'Build **Css Variables** Fail!')
+}

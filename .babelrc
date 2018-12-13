@@ -16,6 +16,12 @@
     "test": {
       "presets": [
         ["env", { "targets": { "node": "current" }}]
+      ],
+      "plugins": [
+        ["import", {
+          "libraryName": "mand-mobile",
+          "libraryDirectory": "components"
+        }]
       ]
     }
   }
