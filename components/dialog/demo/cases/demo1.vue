@@ -13,7 +13,7 @@ export default {
   name: 'dialog-demo',
   /* DELETE */
   title: '单例模式',
-  titleEnUS: 'Singleton mode',
+  titleEnUS: 'Singleton',
   /* DELETE */
   components: {
     [Dialog.name]: Dialog,

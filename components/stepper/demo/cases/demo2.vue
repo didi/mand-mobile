@@ -15,7 +15,6 @@ export default {
   /* DELETE */
   title: '最小值-12，最大值18',
   titleEnUS: 'Minimum is -12 and maximum is 18',
-  codeSandBox: 'https://codesandbox.io/s/3q8nvzq90q',
   /* DELETE */
   components: {
     [Field.name]: Field,

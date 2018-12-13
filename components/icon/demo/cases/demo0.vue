@@ -20,7 +20,7 @@ export default {
   name: 'icon-demo',
   /* DELETE */
   title: '字体图标',
-  codeSandBox: 'https://codesandbox.io/s/84x92qw2rl',
+  titleEnUS: 'Icon Font',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

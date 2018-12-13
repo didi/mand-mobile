@@ -18,7 +18,6 @@ export default {
   /* DELETE */
   title: '行内按钮',
   titleEnUS: 'Inline buttons',
-  codeSandBox: 'https://codesandbox.io/s/7zy8yp8zy6',
   /* DELETE */
   components: {
     [Button.name]: Button,

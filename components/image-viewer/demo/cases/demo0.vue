@@ -27,7 +27,6 @@ export default {
   /* DELETE */
   message: '请在移动设备中扫码预览',
   messageEnUS: 'Please scan QR code and preview on mobile device',
-  codeSandBox: 'https://codesandbox.io/s/0v1630294n',
   height: 500,
   /* DELETE */
   components: {

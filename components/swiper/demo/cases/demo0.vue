@@ -29,7 +29,6 @@ export default {
   describEnUs: 'Async load more items in 10s, and reset to origin items in another 10s',
   message:
     '@before-change: from: <span id="valueSwiper0">0</span>, to: <span id="valueSwiper1">0</span><br/>@after-change: from: <span id="valueSwiper2">0</span>, to: <span id="valueSwiper3">0</span>',
-  codeSandBox: 'https://codesandbox.io/s/jz7p622ryv',
   /* DELETE */
   components: {
     [Swiper.name]: Swiper,

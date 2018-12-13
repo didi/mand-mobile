@@ -25,7 +25,10 @@
 
 export default {
   name: 'water-mark-demo',
+  /* DELETE */
   title: '使用插槽',
+  titleEnUS: 'Using slots',
+  /* DELETE */
   components: {
     [WaterMark.name]: WaterMark,
   },

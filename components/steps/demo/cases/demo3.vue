@@ -15,7 +15,6 @@ export default {
   /* DELETE */
   title: '指定当前步骤',
   titleEnUS: 'Specify the current step',
-  codeSandBox: 'https://codesandbox.io/s/zwvk8l3053',
   height: 150,
   /* DELETE */
   components: {

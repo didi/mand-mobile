@@ -12,7 +12,6 @@ export default {
   title: '多按钮',
   titleEnUS: 'Multiple buttons',
   height: 150,
-  codeSandBox: 'https://codesandbox.io/s/qvk465q29j',
   /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,

@@ -16,7 +16,6 @@ export default {
   title: '使用插槽',
   titleEnUS: 'With slot',
   height: 150,
-  codeSandBox: 'https://codesandbox.io/s/48kj4x289x',
   /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,

@@ -12,7 +12,6 @@ export default {
   /* DELETE */
   title: '禁用下拉菜单',
   titleEnUS: 'Drop-down menu with disabled item',
-  codeSandBox: 'https://codesandbox.io/s/o546n0912q',
   height: 500,
   /* DELETE */
   components: {

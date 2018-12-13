@@ -32,7 +32,7 @@ export default {
   /* DELETE */
   height: 700,
   title: '使用插槽及其他配置',
-  titleEnUs: 'Using slots and other configurations',
+  titleEnUS: 'Using slots and other configurations',
   /* DELETE */
   components: {
     [Button.name]: Button,

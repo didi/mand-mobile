@@ -9,7 +9,6 @@
 export default {
   name: 'steps-demo',
   /* DELETE */
-  codeSandBox: 'https://codesandbox.io/s/38zp7vq22m',
   height: 150,
   /* DELETE */
   components: {

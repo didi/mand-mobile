@@ -14,9 +14,6 @@
 
 export default {
   name: 'button-demo',
-  /* DELETE */
-  codeSandBox: 'https://codesandbox.io/s/kkzq4mylp5',
-  /* DELETE */
   components: {
     [Button.name]: Button,
   },

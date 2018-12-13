@@ -12,7 +12,7 @@ export default {
   name: 'check-demo',
   /* DELETE */
   title: '复选框',
-  titleEnUs: 'Check box',
+  titleEnUS: 'Check box',
   /* DELETE */
   components: {
     [CheckBox.name]: CheckBox,

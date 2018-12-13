@@ -15,7 +15,7 @@ export default {
   name: 'check-demo',
   /* DELETE */
   title: '复选框组',
-  titleEnUs: 'Check box group',
+  titleEnUS: 'Check box group',
   /* DELETE */
   components: {
     [CheckBox.name]: CheckBox,

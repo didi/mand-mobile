@@ -10,7 +10,7 @@ export default {
   name: 'action-sheet-demo',
   /* DELETE */
   title: '单例模式',
-  titleEnUS: 'Singleton pattern',
+  titleEnUS: 'Singleton',
   height: 500,
   /* DELETE */
   components: {

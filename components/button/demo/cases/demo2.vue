@@ -14,7 +14,6 @@ export default {
   /* DELETE */
   title: '圆角按钮',
   titleEnUS: 'Round Buttons',
-  codeSandBox: 'https://codesandbox.io/s/jlv69qoq8v',
   /* DELETE */
   components: {
     [Button.name]: Button,

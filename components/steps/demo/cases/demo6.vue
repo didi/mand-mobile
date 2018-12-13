@@ -15,7 +15,6 @@ export default {
   /* DELETE */
   title: '完成全部步骤',
   titleEnUS: 'Complete all steps',
-  codeSandBox: 'https://codesandbox.io/s/xl9mykwp3w',
   height: 150,
   /* DELETE */
   components: {

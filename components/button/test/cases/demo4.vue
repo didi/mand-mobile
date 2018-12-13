@@ -12,7 +12,6 @@ export default {
   /* DELETE */
   title: '文字链接按钮',
   titleEnUS: 'Text link buttons',
-  codeSandBox: 'https://codesandbox.io/s/7zy8yp8zy6',
   /* DELETE */
   components: {
     [Button.name]: Button,

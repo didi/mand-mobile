@@ -47,7 +47,6 @@ export default {
   title: '图片选择并轴向修正，压缩处理',
   titleEnUS: 'Picture selection and axial correction, compression processing',
   describe: 'width: 200&nbsp;&nbsp;height: 200&nbsp;&nbsp;quality: 0.1',
-  codeSandBox: 'https://codesandbox.io/s/xjq2ylrzyq',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

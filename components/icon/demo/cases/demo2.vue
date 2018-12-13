@@ -26,7 +26,6 @@ export default {
   /* DELETE */
   title: '大小',
   titleEnUS: 'Icon size',
-  codeSandBox: 'https://codesandbox.io/s/v6jxn02x90',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

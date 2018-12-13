@@ -34,7 +34,7 @@ export default {
   name: 'input-item-demo',
   /* DELETE */
   title: '错误提示',
-  titleEnUS: 'input with error message',
+  titleEnUS: 'Input with error message',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,

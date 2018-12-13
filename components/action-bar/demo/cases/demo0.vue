@@ -10,7 +10,6 @@ export default {
   name: 'action-bar-demo',
   /* DELETE */
   height: 150,
-  codeSandBox: 'https://codesandbox.io/s/qvk465q29j',
   /* DELETE */
   components: {
     [ActionBar.name]: ActionBar,

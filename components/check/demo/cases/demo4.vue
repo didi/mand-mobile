@@ -15,7 +15,7 @@ export default {
   name: 'check-demo',
   /* DELETE */
   title: '复选列表',
-  titleEnUs: 'Check list',
+  titleEnUS: 'Check list',
   /* DELETE */
   components: {
     [Field.name]: Field,

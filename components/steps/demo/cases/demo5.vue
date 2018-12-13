@@ -15,7 +15,6 @@ export default {
   /* DELETE */
   title: '利用current类增加自定义样式',
   titleEnUS: 'Add custom styles through by class named "current"',
-  codeSandBox: 'https://codesandbox.io/s/po5847q2j',
   height: 150,
   /* DELETE */
   components: {

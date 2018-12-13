@@ -18,7 +18,6 @@ export default {
   /* DELETE */
   title: '圆角',
   titleEnUS: 'Fillet',
-  codeSandBox: 'https://codesandbox.io/s/m5vn1rpmny',
   /* DELETE */
   components: {
     [Tag.name]: Tag,

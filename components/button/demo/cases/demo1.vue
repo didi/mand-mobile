@@ -15,7 +15,6 @@ export default {
   /* DELETE */
   title: '线性按钮',
   titleEnUS: 'Plain buttons',
-  codeSandBox: 'https://codesandbox.io/s/m398mjvx89',
   /* DELETE */
   components: {
     [Button.name]: Button,

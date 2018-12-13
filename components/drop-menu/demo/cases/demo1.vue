@@ -12,7 +12,6 @@ export default {
   /* DELETE */
   title: '初始下拉菜单',
   titleEnUS: 'Drop-down menu with initial selection',
-  codeSandBox: 'https://codesandbox.io/s/m3llp95x7x',
   height: 500,
   /* DELETE */
   components: {
