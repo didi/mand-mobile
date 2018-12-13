@@ -36,8 +36,9 @@ function watch() {
     if (e.code === 'END') {
       resultLog('success', 'Dev Server Ready!')
     }
-    if (e.code === 'ERROR') {
-      resultLog('error', e.message)
+    if (e.code === 'ERROR' || e.code === 'FATAL') {
+      console.log('\n')
+      resultLog('error', e.error.stack)
     }
   })
 }
