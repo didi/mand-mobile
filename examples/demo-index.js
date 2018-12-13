@@ -1,49 +1,49 @@
-export {default as Home} from './home.vue'
+export {default as Home} from './home'
+export {default as Category} from './category'
 
-export const Category = r => require.ensure([], () => r(require('./category')), 'category')
-export const Button = r => require.ensure([], () => r(require('../components/button/demo')), 'button')
-export const Icon = r => require.ensure([], () => r(require('../components/icon/demo')), 'icon')
-export const Popup = r => require.ensure([], () => r(require('../components/popup/demo')), 'popup')
-export const ActionBar = r => require.ensure([], () => r(require('../components/action-bar/demo')), 'action-bar')
-export const DropMenu = r => require.ensure([], () => r(require('../components/drop-menu/demo')), 'drop-menu')
-export const Picker = r => require.ensure([], () => r(require('../components/picker/demo')), 'picker')
-export const TabBar = r => require.ensure([], () => r(require('../components/tab-bar/demo')), 'tab-bar')
-export const Swiper = r => require.ensure([], () => r(require('../components/swiper/demo')), 'swiper')
-export const Toast = r => require.ensure([], () => r(require('../components/toast/demo')), 'toast')
-export const Dialog = r => require.ensure([], () => r(require('../components/dialog/demo')), 'dialog')
-export const Tip = r => require.ensure([], () => r(require('../components/tip/demo')), 'tip')
-export const Tabs = r => require.ensure([], () => r(require('../components/tabs/demo')), 'tabs')
-export const Tag = r => require.ensure([], () => r(require('../components/tag/demo')), 'tag')
-export const InputItem = r => require.ensure([], () => r(require('../components/input-item/demo')), 'input-item')
-export const NumberKeyboard = r =>
-  require.ensure([], () => r(require('../components/number-keyboard/demo')), 'number-keyboard')
-export const Stepper = r => require.ensure([], () => r(require('../components/stepper/demo')), 'stepper')
-export const Steps = r => require.ensure([], () => r(require('../components/steps/demo')), 'steps')
-export const NoticeBar = r => require.ensure([], () => r(require('../components/notice-bar/demo')), 'notice-bar')
-export const ResultPage = r => require.ensure([], () => r(require('../components/result-page/demo')), 'result-page')
-export const ActionSheet = r => require.ensure([], () => r(require('../components/action-sheet/demo')), 'action-sheet')
-export const Selector = r => require.ensure([], () => r(require('../components/selector/demo')), 'selector')
-export const Landscape = r => require.ensure([], () => r(require('../components/landscape/demo')), 'landscape')
-export const ImageViewer = r => require.ensure([], () => r(require('../components/image-viewer/demo')), 'image-viewer')
-export const ImageReader = r => require.ensure([], () => r(require('../components/image-reader/demo')), 'image-reader')
-export const TabPicker = r => require.ensure([], () => r(require('../components/tab-picker/demo')), 'tab-picker')
-export const Field = r => require.ensure([], () => r(require('../components/field/demo')), 'field')
-export const CellItem = r => require.ensure([], () => r(require('../components/cell-item/demo')), 'cell-item')
-export const Switch = r => require.ensure([], () => r(require('../components/switch/demo')), 'switch')
-export const Agree = r => require.ensure([], () => r(require('../components/agree/demo')), 'agree')
-export const Radio = r => require.ensure([], () => r(require('../components/radio/demo')), 'radio')
-export const DatePicker = r => require.ensure([], () => r(require('../components/date-picker/demo')), 'date-picker')
-export const Captcha = r => require.ensure([], () => r(require('../components/captcha/demo')), 'captcha')
-export const Codebox =  r => require.ensure([], () => r(require('../components/codebox/demo')), 'codebox')
-export const Cashier =  r => require.ensure([], () => r(require('../components/cashier/demo')), 'cashier')
-export const Chart =  r => require.ensure([], () => r(require('../components/chart/demo')), 'chart')
-export const Amount =  r => require.ensure([], () => r(require('../components/amount/demo')), 'amount')
-export const ActivityIndicator =  r => require.ensure([], () => r(require('../components/activity-indicator/demo')), 'activity-indicator')
-export const Check =  r => require.ensure([], () => r(require('../components/check/demo')), 'check')
-export const ScrollView =  r => require.ensure([], () => r(require('../components/scroll-view/demo')), 'scroll-view')
-export const Bill =  r => require.ensure([], () => r(require('../components/bill/demo')), 'bill')
-export const WaterMark =  r => require.ensure([], () => r(require('../components/water-mark/demo')), 'water-mark')
-export const Transition =  r => require.ensure([], () => r(require('../components/transition/demo')), 'transition')
-export const DetailItem =  r => require.ensure([], () => r(require('../components/detail-item/demo')), 'detail-item')
-export const Slider =  r => require.ensure([], () => r(require('../components/slider/demo')), 'slider')
-export const Progress =  r => require.ensure([], () => r(require('../components/progress/demo')), 'progress')/* @init<%export const ${componentNameUpper} =  r => require.ensure([], () => r(require('../components/${componentName}/demo')), '${componentName}')%> */
+export {default as Button} from '../components/button/demo'
+export {default as Icon} from '../components/icon/demo'
+export {default as Popup} from '../components/popup/demo'
+export {default as ActionBar} from '../components/action-bar/demo'
+export {default as DropMenu} from '../components/drop-menu/demo'
+export {default as Picker} from '../components/picker/demo'
+export {default as TabBar} from '../components/tab-bar/demo'
+export {default as Swiper} from '../components/swiper/demo'
+export {default as Toast} from '../components/toast/demo'
+export {default as Dialog} from '../components/dialog/demo'
+export {default as Tip} from '../components/tip/demo'
+export {default as Tabs} from '../components/tabs/demo'
+export {default as Tag} from '../components/tag/demo'
+export {default as InputItem} from '../components/input-item/demo'
+export {default as NumberKeyboard} from '../components/number-keyboard/demo'
+export {default as Stepper} from '../components/stepper/demo'
+export {default as Steps} from '../components/steps/demo'
+export {default as NoticeBar} from '../components/notice-bar/demo'
+export {default as ResultPage} from '../components/result-page/demo'
+export {default as ActionSheet} from '../components/action-sheet/demo'
+export {default as Selector} from '../components/selector/demo'
+export {default as Landscape} from '../components/landscape/demo'
+export {default as ImageViewer} from '../components/image-viewer/demo'
+export {default as ImageReader} from '../components/image-reader/demo'
+export {default as TabPicker} from '../components/tab-picker/demo'
+export {default as Field} from '../components/field/demo'
+export {default as CellItem} from '../components/cell-item/demo'
+export {default as Switch} from '../components/switch/demo'
+export {default as Agree} from '../components/agree/demo'
+export {default as Radio} from '../components/radio/demo'
+export {default as DatePicker} from '../components/date-picker/demo'
+export {default as Captcha} from '../components/captcha/demo'
+export {default as Codebox} from '../components/codebox/demo'
+export {default as Cashier} from '../components/cashier/demo'
+export {default as Chart} from '../components/chart/demo'
+export {default as Amount} from '../components/amount/demo'
+export {default as ActivityIndicator} from '../components/activity-indicator/demo'
+export {default as Check} from '../components/check/demo'
+export {default as ScrollView} from '../components/scroll-view/demo'
+export {default as Bill} from '../components/bill/demo'
+export {default as WaterMark} from '../components/water-mark/demo'
+export {default as Transition} from '../components/transition/demo'
+export {default as DetailItem} from '../components/detail-item/demo'
+export {default as Slider} from '../components/slider/demo'
+export {default as Progress} from '../components/progress/demo'
+/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */

@@ -4,12 +4,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './route'
 import App from './App'
-import FastClick from 'fastclick'
+import FastClickDefault, {FastClick} from 'fastclick'
 import '../components/_style/global.styl'
 import './theme.custom.styl'
 
+const _attach = FastClickDefault.attach || FastClick.attach
 if ('ontouchstart' in window) {
-  FastClick.attach(document.body)
+  _attach(document.body)
 }
 
 Vue.config.productionTip = false
