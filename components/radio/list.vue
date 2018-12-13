@@ -13,6 +13,7 @@
       :title="hasSlot ? '' : (item.text || item.label)"
       :brief="hasSlot ? '' : item.brief"
       :disabled="item.disabled"
+      :noBorder="index === options.length - 1"
       @click="$_select(item, index)"
     >
       <template v-if="hasSlot">
@@ -50,9 +51,12 @@
 import Field from '../field'
 import CellItem from '../cell-item'
 import InputItem from '../input-item'
+import radioMixin from './mixins'
 
 export default {
   name: 'md-radio-list',
+
+  mixins: [radioMixin],
 
   components: {
     [Radio.name]: Radio,
@@ -84,30 +88,6 @@ export default {
       type: String,
       default: '',
     },
-    icon: {
-      type: String,
-      default: 'checked',
-    },
-    iconInverse: {
-      type: String,
-      default: 'check',
-    },
-    iconDisabled: {
-      type: String,
-      default: 'check-disabled',
-    },
-    iconSvg: {
-      type: Boolean,
-      default: false,
-    },
-    iconSize: {
-      type: String,
-      default: 'md',
-    },
-    iconPosition: {
-      type: String,
-      default: 'left',
-    },
     alignCenter: {
       type: Boolean,
       default: false,
@@ -116,6 +96,31 @@ export default {
       type: Boolean,
       default: undefined,
     },
+    // Mixin Props
+    // icon: {
+    //   type: String,
+    //   default: 'checked',
+    // },
+    // iconInverse: {
+    //   type: String,
+    //   default: 'check',
+    // },
+    // iconDisabled: {
+    //   type: String,
+    //   default: 'check-disabled',
+    // },
+    // iconSvg: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // iconSize: {
+    //   type: String,
+    //   default: 'md',
+    // },
+    // iconPosition: {
+    //   type: String,
+    //   default: 'left',
+    // },
   },
 
   data() {

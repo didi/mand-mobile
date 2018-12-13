@@ -18,8 +18,12 @@
 </template>
 
 <script>import Icon from '../icon'
+import radioMixin from './mixins'
+
 export default {
   name: 'md-radio',
+
+  mixins: [radioMixin],
 
   components: {
     [Icon.name]: Icon,
@@ -38,22 +42,6 @@ export default {
       type: String,
       default: 'md',
     },
-    icon: {
-      type: String,
-      default: 'checked',
-    },
-    iconInverse: {
-      type: String,
-      default: 'check',
-    },
-    iconDisabled: {
-      type: String,
-      default: 'check-disabled',
-    },
-    iconSvg: {
-      type: Boolean,
-      default: false,
-    },
     label: {
       type: String,
       default: '',
@@ -66,6 +54,23 @@ export default {
       type: Boolean,
       default: false,
     },
+    // Mixins Props
+    // icon: {
+    //   type: String,
+    //   default: 'checked',
+    // },
+    // iconInverse: {
+    //   type: String,
+    //   default: 'check',
+    // },
+    // iconDisabled: {
+    //   type: String,
+    //   default: 'check-disabled',
+    // },
+    // iconSvg: {
+    //   type: Boolean,
+    //   default: false,
+    // },
   },
 
   computed: {
