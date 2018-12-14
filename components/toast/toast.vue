@@ -1,7 +1,7 @@
 <template>
   <div class="md-toast" :class="[position]">
     <md-popup
-      v-model="visible"
+      :value="visible"
       @hide="$_onHide"
       :hasMask="hasMask"
       :maskClosable="false"
@@ -59,29 +59,25 @@ export default {
     }
   },
 
-  mounted() {
-    this.$_update()
-  },
-  updated() {
-    this.$_update()
-  },
   beforeDestroy() {
-    if (this.duration) {
+    if (this.$_timer) {
       clearTimeout(this.$_timer)
     }
   },
 
   methods: {
-    $_update() {
-      clearTimeout(this.$_timer)
+    $_onHide() {
+      this.$emit('hide')
+    },
+    fire() {
+      if (this.$_timer) {
+        clearTimeout(this.$_timer)
+      }
       if (this.visible && this.duration) {
         this.$_timer = setTimeout(() => {
           this.hide()
         }, this.duration)
       }
-    },
-    $_onHide() {
-      this.$emit('hide')
     },
     hide() {
       this.visible = false
