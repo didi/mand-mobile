@@ -455,8 +455,10 @@ export default {
       this.$emit('focus', this.name)
     },
     $_onBlur() {
-      this.isInputFocus = false
-      this.$emit('blur', this.name)
+      setTimeout(() => {
+        this.isInputFocus = false
+        this.$emit('blur', this.name)
+      }, 100)
     },
     $_onFakeInputClick(event) {
       if (this.isDisabled || this.readonly) {
@@ -519,6 +521,7 @@ export default {
     align-items center
 
 .md-input-item-clear
+  padding 5px
   color input-item-icon
   .md-icon
     background color-bg-base
