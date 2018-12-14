@@ -110,28 +110,28 @@ module.exports = {
           text: '设计资源',
           markdown: resolve('site/docs/design/resource.md'),
         },
-        {
-          name: 'color',
-          text: '颜色',
-          markdown: resolve('site/docs/design/color.md'),
-        },
-        {
-          name: 'font',
-          text: '字体',
-          markdown: resolve('site/docs/design/font.md'),
-        },
-        {
-          name: 'other',
-          text: '其他',
-          markdown: resolve('site/docs/design/other.md'),
-        }
+        // {
+        //   name: 'color',
+        //   text: '颜色',
+        //   markdown: resolve('site/docs/design/color.md'),
+        // },
+        // {
+        //   name: 'font',
+        //   text: '字体',
+        //   markdown: resolve('site/docs/design/font.md'),
+        // },
+        // {
+        //   name: 'other',
+        //   text: '其他',
+        //   markdown: resolve('site/docs/design/other.md'),
+        // }
       ]
     },
     {
       name: 'palette',
       text: '调色板',
       src: 'https://mand-mobile.github.io/palette',
-      dot: true
+      // dot: true
     }]
   }, {
     name: 'en-US',
@@ -190,28 +190,27 @@ module.exports = {
           text: 'Resource',
           markdown: resolve('site/docs/design/resource.en-US.md'),
         },
-        {
-          name: 'color',
-          text: 'Color',
-          markdown: resolve('site/docs/design/color.en-US.md'),
-        },
-        {
-          name: 'font',
-          text: 'Font',
-          markdown: resolve('site/docs/design/font.en-US.md'),
-        },
-        {
-          name: 'other',
-          text: 'Other',
-          markdown: resolve('site/docs/design/other.en-US.md'),
-        }
+        // {
+        //   name: 'color',
+        //   text: 'Color',
+        //   markdown: resolve('site/docs/design/color.en-US.md'),
+        // },
+        // {
+        //   name: 'font',
+        //   text: 'Font',
+        //   markdown: resolve('site/docs/design/font.en-US.md'),
+        // },
+        // {
+        //   name: 'other',
+        //   text: 'Other',
+        //   markdown: resolve('site/docs/design/other.en-US.md'),
+        // }
       ]
     },
     {
       name: 'palette',
       text: 'Palette',
       src: 'https://mand-mobile.github.io/palette',
-      dot: true
     }]
   }],
   components: generateSource(),
@@ -227,11 +226,11 @@ module.exports = {
         link: [
           {
             text: 'GitHub',
-            src: 'https://github.com/didi/mand-mobile',
+            src: 'https://github.com/mand-mobile',
           },
           {
             text: '更新日志',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
+            src: 'https://github.com/didi/mand-mobile/blob/2.0/CHANGELOG.md',
           },
           {
             text: '常见问题',
@@ -245,10 +244,6 @@ module.exports = {
             text: '调色板',
             src: 'https://mand-mobile.github.io/palette'
           },
-          {
-            text: '国内镜像 🇨🇳',
-            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
-          }
         ],
       },
       {
@@ -280,12 +275,16 @@ module.exports = {
             src: 'https://github.com/didi/pile.js',
           },
           {
-            text: 'VirtualAPK <span>- Android插件化框架</span>',
-            src: 'https://didi.github.io/virtual-apk.html',
+            text: 'MPX <span>- 增强型小程序框架</span>',
+            src: 'https://github.com/didi/mpx/',
           },
           {
-            text: 'Gendry <span>- Go数据库操作工具集</span>',
-            src: 'https://github.com/didi/gendry/',
+            text: 'DoraemonKit <span>- iOS开发助手</span>',
+            src: 'https://github.com/didi/doraemonKit/',
+          },
+          {
+            text: 'VirtualAPK <span>- Android插件化框架</span>',
+            src: 'https://didi.github.io/virtual-apk.html',
           }
         ],
       },
@@ -296,11 +295,11 @@ module.exports = {
         link: [
           {
             text: 'GitHub',
-            src: 'https://github.com/didi/mand-mobile',
+            src: 'https://github.com/mand-mobile',
           },
           {
             text: 'Change Log',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
+            src: 'https://github.com/didi/mand-mobile/blob/2.0/CHANGELOG.md',
           },
           {
             text: 'FAQ',
@@ -314,10 +313,6 @@ module.exports = {
             text: 'Palette',
             src: 'https://mand-mobile.github.io/palette'
           },
-          {
-            text: 'China Mirror 🇨🇳',
-            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html',
-          }
         ],
       },
       {
@@ -349,12 +344,16 @@ module.exports = {
             src: 'https://github.com/didi/pile.js',
           },
           {
+            text: 'MPX <span>- Enhanced Miniprogram Framework</span>',
+            src: 'https://github.com/didi/mpx/',
+          },
+          {
             text: 'VirtualAPK <span>- Android Plugin Framework</span>',
             src: 'https://didi.github.io/virtual-apk.html',
           },
           {
-            text: 'Gendry <span>- Golang SQL Build Library</span>',
-            src: 'https://github.com/didi/gendry/',
+            text: 'DoraemonKit <span>- iOS Development Assistant</span>',
+            src: 'https://github.com/didi/doraemonKit/',
           }
         ],
       },

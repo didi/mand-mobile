@@ -88,4 +88,9 @@ export default {
   @keyframes rotation
     to
       transform rotate(1turn)
+  
+  @media (max-width: 750px)
+    .home-animation-1
+      .animation-container
+        display none
 </style>

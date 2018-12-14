@@ -112,9 +112,6 @@ export default {
       versionData: [{
         text: '1.x',
         path: 'https://mand-mobile.github.io'
-      }, {
-        text: '2.x',
-        path: '/home'
       }],
       searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
       searchHandler: null

@@ -343,7 +343,7 @@ export default {
           left 380px
           top -100px
         .home-animation-content
-          left 220px
+          left 221px
           top 247px
       &.home-box-block-1
         // height 830px

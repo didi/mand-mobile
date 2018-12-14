@@ -115,7 +115,8 @@ export default {
       }],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
-        content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'
+        // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'
+        content: MfeAnimation0,
       }
     },
     {
@@ -123,7 +124,8 @@ export default {
       describe: 'Based on the "reasonable and easy to use" design values, we will jointly solve problems from the perspective of interactive operation, visual abstraction, and graphic visualization.',
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.svg',
-        content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.png'
+        // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.png'
+        content: MfeAnimation1,
       },
       decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-cirlce.svg'
     },
@@ -159,7 +161,8 @@ export default {
       }],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.svg',
-        content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.png'
+        // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.png'
+        content: MfeAnimation2,
       },
       decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-rectangle.svg'
     },
