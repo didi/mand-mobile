@@ -361,6 +361,14 @@ export default {
           } else {
             data = []
           }
+
+          if (!data || data.length === 0) {
+            this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1)
+            this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1)
+            this.currentColumnLock = false
+            return
+          }
+
           this.subTitles.splice(this.currentIndex + 1, this.subTitles.length - 1, this.placeholder)
           this.renderData.splice(this.currentIndex + 1, this.renderData.length - 1, {
             index: this.currentIndex,
@@ -368,6 +376,7 @@ export default {
             data,
             asyncFunc,
           })
+
           if (this.renderData.length > 1) {
             this.$nextTick(() => {
               this.$refs.tabs.selectTab(++this.currentIndex)
@@ -428,13 +437,15 @@ export default {
       this.subTitles[this.currentIndex] = value.label
       const currentColumn = this.renderData[this.currentIndex]
       currentColumn.clickedKey = index
+
       this.$emit('change', {
         selectTab: this.currentIndex,
         selectIndex: index,
         selectItem: value,
       })
+
       if (this.dataStruct === 'cascade') {
-        if (value && value.children && Array.isArray(value.children) && value.children.length > 0) {
+        if (value && value.children && Array.isArray(value.children)) {
           this.$_renderNextTabContent(value.children)()
           return
         }
