@@ -29,7 +29,7 @@ Vue.component(Cashier.name, Cashier)
 |payment-title|支付金额标题|String|`支付金额(元)`|支持`html fragment`|
 |payment-amount|支付金额|String|`0.00`|支持`html fragment`|
 |payment-describe|支付金额说明|String|-|支持`html fragment`|
-|pay-button-text|确认支付按钮文案|String|`确认支付`|支持`html fragment`|
+|pay-button-text|确认支付按钮文案|String|`确认支付`|-|
 |pay-button-disabled|禁用支付按钮|Boolean|`false`|-|
 |more-button-text|更多支付渠道按钮文案|String|`更多支付方式`|支持`html fragment`|
 
@@ -40,7 +40,7 @@ Vue.component(Cashier.name, Cashier)
 
 |参数 | 说明 | 类型 | 默认值| 备注|
 |-----|-----|-----|-----|-----|
-| scene | 步骤场景标识 | String | - | `captcha`(发送验证码), `loading`(支付中), `success`(支付成功), `fail`(支付失败) |
+| scene | 步骤场景标识 | String | - | `choose`(支付渠道选择), `captcha`(发送验证码), `loading`(支付中), `success`(支付成功), `fail`(支付失败) |
 | option | 当前步骤场景配置 | Object |属性如下所示|-|
 
 * `captcha` option
@@ -70,6 +70,7 @@ Vue.component(Cashier.name, Cashier)
 |text|支付成功说明 | String |`支付成功`|支持`html fragment`|
 |buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
 |handler| 按钮点击回调 | Function | - | - |
+|actions| 按钮组 | Array<{buttonText, handler}> | - | 有两个按钮时使用 |
 
 * `fail` option
 
@@ -78,6 +79,7 @@ Vue.component(Cashier.name, Cashier)
 |text|支付失败说明 | String |`支付失败，请稍后重试`|支持`html fragment`|
 |buttonText| 按钮文案 | String |`我知道了`|支持`html fragment`|
 |handler| 按钮点击回调 | Function | - | - |
+|actions| 按钮组 | Array<{buttonText, handler}> | - | 有两个按钮时使用 |
 
 #### Captcha Slots
 
@@ -97,6 +99,9 @@ Vue.component(Cashier.name, Cashier)
 
 ##### channel
 支付渠道区域插槽，可用于添加支付渠道特殊操作，如添加银行卡
+
+##### payButton
+发起支付插槽
 
 #### Cashier Events
 

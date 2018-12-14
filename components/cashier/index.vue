@@ -37,6 +37,9 @@
             v-on="$listeners"
           >
             <slot name="channel"></slot>
+            <template slot="button">
+              <slot name="payButton"></slot>
+            </template>
           </md-cashier-channel>
         </div>
 
@@ -77,17 +80,16 @@
             ></md-activity-indicator-rolling-success>
           </div>
           <div class="md-cashier-block-text">{{ scene === 'success' ? sceneOption.success.text : sceneOption.loading.text }}</div>
-          <div class="md-cashier-block-btn" v-if="scene === 'success'">
-            <md-button
-              type="primary"
-              v-html="sceneOption.success.buttonText"
-              @click="() => {
-                isCashierShow = false
-                sceneOption.success.handler && sceneOption.success.handler()
-              }"
-            >
-            </md-button>
-          </div>
+          <md-cashier-channel-button
+            v-if="scene === 'success'"
+            :actions="
+              sceneOption.success.actions ||
+              [{
+                buttonText: sceneOption.success.buttonText,
+                handler: sceneOption.success.handler
+              }]
+            "
+          />
         </div>
 
         <!-- Fail -->
@@ -99,17 +101,15 @@
             <md-icon name="warn-color"></md-icon>
           </div>
           <div class="md-cashier-block-text" v-text="sceneOption.fail.text"></div>
-          <div class="md-cashier-block-btn">
-            <md-button
-              type="primary"
-              v-html="sceneOption.fail.buttonText"
-              @click="() => {
-                isCashierShow = false
-                sceneOption.fail.handler && sceneOption.fail.handler()
-              }"
-            >
-            </md-button>
-          </div>
+          <md-cashier-channel-button
+            :actions="
+              sceneOption.fail.actions ||
+              [{
+                buttonText: sceneOption.fail.buttonText,
+                handler: sceneOption.fail.handler
+              }]
+            "
+          />
         </div>
       </div>
     </md-popup>
@@ -121,11 +121,11 @@ import PopupTitlebar from '../popup/title-bar'
 import popupMixin from '../popup/mixins'
 import popupTitleBarMixin from '../popup/mixins/title-bar'
 import Captcha from '../captcha'
-import Button from '../button'
 import Icon from '../icon'
 import RollerSuccess from '../activity-indicator/roller-success'
 import {noop, extend} from '../_util'
 import Channel from './channel'
+import ChannelButton from './channel-button'
 
 export default {
   name: 'md-cashier',
@@ -136,10 +136,10 @@ export default {
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
     [Captcha.name]: Captcha,
-    [Button.name]: Button,
     [Icon.name]: Icon,
     [RollerSuccess.name]: RollerSuccess,
     [Channel.name]: Channel,
+    [ChannelButton.name]: ChannelButton,
   },
 
   props: {
@@ -322,7 +322,7 @@ export default {
         text-align center
       .md-cashier-block-btn
         block()
-        padding 0 20px 20px
+        padding 0 40px 40px
         box-sizing border-box
       // &.md-cashier-choose
         

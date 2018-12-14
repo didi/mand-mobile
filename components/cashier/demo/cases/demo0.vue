@@ -137,6 +137,7 @@ export default {
           this.cashier.next(this.cashierResult, {
             buttonText: '好的',
             handler: () => {
+              this.isCashierhow = false
               Toast.info(`${this.cashierResult}点击`)
             },
           })

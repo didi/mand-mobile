@@ -29,7 +29,8 @@ Vue.component(Cashier.name, Cashier)
 |payment-title|payment amount title|String|`支付金额(元)`|support `html fragment`|
 |payment-amount|payment amount|String|`0.00`|support `html fragment`|
 |payment-describe|the description of payment amount |String|-|support `html fragment`|
-|pay-button-text|confirm payment button text|String|`确认支付`|support `html fragment`|
+|pay-button-text|confirm payment button text|String|`确认支付`|-|
+|pay-button-disabled|disable payment button|Boolean|`false`|-|
 |more-button-text|more payment channels button text|String|`更多支付方式`|support `html fragment`|
 
 
@@ -40,7 +41,7 @@ To the next step of Cashier
 
 |Parameters | Description | Type | Default| Note|
 |-----|-----|-----|-----|-----|
-| scene | step identifier | String |-| `captcha`(Send verification code), `loading`(Payment is in process), `success`(Payment succeed), `fail`(Payment failed) |
+| scene | step identifier | String |-| `choose`(payment channel selection), `captcha`(Send verification code), `loading`(Payment is in process), `success`(Payment succeed), `fail`(Payment failed) |
 | option | the configuration of current step | Object |properties are listed as follows|-|
 
 * `captcha` option
@@ -70,6 +71,7 @@ To the next step of Cashier
 |text|The introduction of successful payment | String |`payment succeeds`|support `html fragment`|
 |buttonText| button text | String |`我知道了`|support `html fragment`|
 |handler| button clickback | Function | - | - |
+|actions| buttons group | Array<{buttonText, handler}> | - | used when there are two buttons |
 
 
 * `fail` option
@@ -79,6 +81,7 @@ To the next step of Cashier
 |text|The introduction of unsuccessful payment | String |`payment fails, please try again later`|support `html fragment`|
 |buttonText| button text | String |`我知道了`|support `html fragment`|
 |handler| button clickback | Function | - | - |
+|actions| buttons group | Array<{buttonText, handler}> | - | used when there are two buttons |
 
 #### Captcha Slots
 
@@ -98,6 +101,9 @@ Scoped slot of captcha header
 
 ##### channel
 Payment channel area slot, which can be used to add payment channel special operations, such as adding a bank card
+
+##### payButton
+Payment button slot
 
 #### Cashier Events
 

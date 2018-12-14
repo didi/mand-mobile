@@ -21,11 +21,14 @@
           该银行3:00-12:00系统维护，请更换其他银行卡
         </md-notice-bar>
       </div>
+      <div slot="payButton" style="display:flex;">
+        <md-icon name="checked"></md-icon>发起支付
+      </div>
     </md-cashier>
 	</div>
 </template>
 
-<script>import {Button, Cashier, Toast, NoticeBar} from 'mand-mobile'
+<script>import {Button, Icon, Cashier, Toast, NoticeBar} from 'mand-mobile'
 
 export default {
   name: 'cashier-demo',
@@ -37,6 +40,7 @@ export default {
   components: {
     [Button.name]: Button,
     [Cashier.name]: Cashier,
+    [Icon.name]: Icon,
     [NoticeBar.name]: NoticeBar,
   },
   data() {
@@ -105,10 +109,20 @@ export default {
       } else {
         this.createPay().then(() => {
           this.cashier.next(this.cashierResult, {
-            buttonText: '好的',
-            handler: () => {
-              Toast.info(`${this.cashierResult}点击`)
-            },
+            actions: [
+              {
+                buttonText: '返回',
+                handler: () => {
+                  this.cashier.next('choose')
+                },
+              },
+              {
+                buttonText: '重试',
+                handler: () => {
+                  Toast.info(`${this.cashierResult}重试`)
+                },
+              },
+            ],
           })
         })
       }

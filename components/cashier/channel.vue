@@ -38,9 +38,10 @@
       <md-button
         class="md-cashier-pay-button"
         :type="payButtonDisabled ? 'disabled': 'primary'"
-        v-html="payButtonText"
         @click="$_onChannelBtnClick"
-      ></md-button>
+      >
+        <slot name="button">{{ payButtonText }}</slot>
+      </md-button>
     </div>
   </div>
 </template>
