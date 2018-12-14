@@ -87,11 +87,16 @@ module.exports = {
           text: '主题定制',
           markdown: resolve('site/docs/theme.md'),
         },
+        // {
+        //   name: 'preview',
+        //   text: '组件概览',
+        //   template: resolve('site/theme/default/Preview.vue'),
+        //   markdown: resolve('README.md'),
+        // },
         {
-          name: 'preview',
-          text: '组件概览',
-          template: resolve('site/theme/default/Preview.vue'),
-          markdown: resolve('README.md'),
+          name: 'migration',
+          text: '从1.x迁移',
+          markdown: resolve('site/docs/migration.md'),
         },
         {
           name: 'components',
@@ -167,11 +172,16 @@ module.exports = {
           text: 'Custom Theme',
           markdown: resolve('site/docs/theme.en-US.md'),
         },
+        // {
+        //   name: 'preview',
+        //   text: 'Component Preview',
+        //   template: resolve('site/theme/default/Preview.vue'),
+        //   markdown: resolve('README.md'),
+        // },
         {
-          name: 'preview',
-          text: 'Component Preview',
-          template: resolve('site/theme/default/Preview.vue'),
-          markdown: resolve('README.md'),
+          name: 'migration',
+          text: 'Migration from 1.x',
+          markdown: resolve('site/docs/migration.en-US.md'),
         },
         {
           name: 'components',

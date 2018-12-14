@@ -92,7 +92,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .default-table
   position absolute
   z-index 2
