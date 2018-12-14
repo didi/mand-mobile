@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import ToastOptions from './toast'
 
-const ToastConstructor = Vue.extend(ToastOptions)
-
 /**
  * Toast factory
  *
@@ -21,6 +19,7 @@ const Toast = function({
   let vm = Toast._instance
 
   if (!vm) {
+    const ToastConstructor = Vue.extend(ToastOptions)
     vm = Toast._instance = new ToastConstructor({
       propsData: {
         content,
@@ -56,6 +55,7 @@ Toast._instance = null
  * Hide toast
  */
 Toast.hide = () => {
+  const ToastConstructor = Vue.extend(ToastOptions)
   if (Toast._instance instanceof ToastConstructor && Toast._instance.visible) {
     Toast._instance.hide()
   }
