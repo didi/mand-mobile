@@ -19,6 +19,7 @@ describe('Toast - Operation', () => {
     })
     setTimeout(() => {
       wrapper.setProps({icon: 'circle-right'})
+      wrapper.vm.fire()
       setTimeout(function() {
         expect(wrapper.vm.visible).toBe(true)
         done()
@@ -34,6 +35,8 @@ describe('Toast - Operation', () => {
         duration: 1000,
       },
     })
+
+    wrapper.vm.fire()
     setTimeout(() => {
       expect(wrapper.vm.visible).toBe(false)
       done()
