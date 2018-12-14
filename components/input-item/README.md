@@ -39,7 +39,7 @@ Vue.component(InputItem.name, InputItem)
 |readonly|表单是否只读|Boolean|`false`|-|
 |disabled|表单是否禁用|Boolean|`false`|-|
 |is-title-latent|表单标题是否隐藏|Boolean|`false`|表单获得焦点或内容不为空时展示|
-|is-highlight|表单是否高亮|Boolean|`false`|只影响`placeholder`字体颜色|
+|is-highlight|表单是否高亮|Boolean|`false`|表单获得焦点边框高亮|
 |is-formative|表单文本是否根据类型自动格式化|Boolean|`type`为`bankCard`,`phone`, `money`默认为`true`，否则为`false`|-|
 |is-amount|表单内容为金融数字|Boolean|`false`|-|
 |formation|表单文本格式化回调方法|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|传入参数`name`为表单名称，`curValue`为表单值，`curPos`为表单光标当前所在位置<br/>返回参数`value`格式化值, `range`表单光标格式化后所在位置|

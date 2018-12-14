@@ -38,7 +38,7 @@ Vue.component(InputItem.name, InputItem)
 |readonly|readonly|Boolean|`false`|-|
 |disabled|disabled|Boolean|`false`|-|
 |is-title-latent|hide title or not|Boolean|`false`|title will be displayed when input is focused or content is not empty|
-|is-highlight|the input is highlighted or not|Boolean|`false`|only affect the font color of `placeholder`|
+|is-highlight|the input is highlighted or not|Boolean|`false`|highlight focused item border|
 |is-formative|if the input text is automatically formatted according to the type|Boolean|the default value is `true` when `type` is `bankCard`, `phone` or `money`, otherwise `false`|-|
 |is-amount|the input is financial figures|Boolean|`false`|-|
 |formation|input text formatting callback function|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|passing parameter `name` is the name of input, `curValue` is input value, `curPos` is the current position of input cursor, and returned `value` is formatted value. `range` is the position of input cursor after formatting|
