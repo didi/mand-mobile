@@ -91,7 +91,8 @@ const rollupPlugin = [
   }),
   fillHtmlPlugin({
     template: resolve('examples/index.html'),
-    publicPath: '/mand-mobile/examples/',
+    // publicPath: '/mand-mobile/examples/',
+    publicPath: '/2x-doc/examples/',
     destFile: path.resolve(EXAMPLE_OUTPUT_DIR, 'index.html')
   }),
   // cli

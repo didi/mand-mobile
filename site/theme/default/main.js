@@ -9,10 +9,17 @@ import { setScale } from './assets/js/util'
 
 if (process.env.NODE_ENV === 'production') {
   const hostname = location.hostname
+  const pathname = location.pathname
   if (hostname === 'didi.github.io') {
     __webpack_public_path__ = '/mand-mobile/'
   } else if (hostname === 'mand-mobile.gitee.io') {
-    __webpack_public_path__ = '/docs/'
+    if (~pathname.indexOf('/1x-doc')) {
+      __webpack_public_path__ = '/1x-doc/'
+    } else if (~pathname.indexOf('/2x-doc')) {
+      __webpack_public_path__ = '/2x-doc/'
+    } else {
+      __webpack_public_path__ = '/docs/'
+    }
   }
 }
 
