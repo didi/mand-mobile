@@ -27,7 +27,7 @@
 
 扫描下方二维码，打开示例集合进行预览:
 
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/yFIIdKkZ1U1544692152996.png" alt="Mand Mobile Examples" width="200"/>
+<img src="https://manhattan.didistatic.com/static/manhattan/mand-mobile/2.0/docs/mand-doc-home-qrcode.png" alt="Mand Mobile Examples" width="200"/>
 
 ## 安装 & 使用
 
