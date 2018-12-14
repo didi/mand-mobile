@@ -3,7 +3,7 @@ title: Change Log
 toc: hidden
 ---
 
-### 2.0.0-rc.1
+### 2.0.0-rc.3
 
 `2018-12-14`      
 
