@@ -98,7 +98,7 @@ exports[`Cashier Baisc-channel 1`] = `
               <div class="md-cashier-block-btn"><button type="button" class="md-button md-cashier-pay-button primary active block">
                   <div class="md-button-inner">
                     <!---->
-                    <p class="md-button-content"></p>
+                    <p class="md-button-content">确定支付</p>
                   </div>
                 </button></div>
             </div>
@@ -229,7 +229,7 @@ exports[`Cashier Using slots and other configurations 1`] = `
               <div class="md-cashier-block-btn"><button type="button" class="md-button md-cashier-pay-button primary active block">
                   <div class="md-button-inner">
                     <!---->
-                    <p class="md-button-content"></p>
+                    <p class="md-button-content">确定支付</p>
                   </div>
                 </button></div>
             </div>
