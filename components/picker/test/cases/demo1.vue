@@ -14,6 +14,7 @@
 
 <script>import {Picker} from 'mand-mobile'
 import district from 'mand-mobile/components/picker/demo/data/district'
+import {setTimeout} from 'timers'
 
 export default {
   name: 'picker-demo',
@@ -29,7 +30,9 @@ export default {
   mounted() {
     this.pickerData = district
     this.pickerDefaultIndex = [3, 2, 1]
-    this.$refs.picker.refresh()
+    setTimeout(() => {
+      this.$refs.picker.refresh()
+    }, 0)
   },
 }
 </script>

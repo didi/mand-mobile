@@ -2,10 +2,9 @@
   <div class="md-example-child md-example-child-tip md-example-child-tip-4">
     <md-tip
       name="md-tip-4"
-      icon="tip-package"
+      icon="security"
       content="完善信息，领取5元免息券"
       :offset="{top: -10}"
-      icon-svg
       fill
       @show="onShow"
       @hide="onHide"
@@ -16,7 +15,6 @@
 </template>
 
 <script>import {Tip, Button, Toast} from 'mand-mobile'
-import '@examples/assets/images/tip-package.svg'
 export default {
   name: 'tips-demo',
   /* DELETE */
@@ -50,14 +48,15 @@ export default {
       border-width 10px 11px 0 11px
       border-color #FFEBDF transparent transparent transparent
   .md-tip-content
-    padding-left 96px
+    padding-left 80px
     color #C37447
-    .md-icon-tip-package
+    .md-icon-security
       position absolute
       left 32px
-      bottom 10px
-      width 64px
-      height 64px
-
+      width 64px !important
+      height 64px !important
+  .md-tip-bg
+    box-shadow none
+    opacity 1
 </style>
 

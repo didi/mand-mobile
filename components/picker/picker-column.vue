@@ -446,19 +446,24 @@ export default {
       this.$set(this.activedIndexs, index, 0) // reset active index
       this.$set(this.columnValues, index, values)
       this.$nextTick(() => {
+        // this.$_initSingleColumnScroller(index)
         callback(this)
       })
     },
-    refresh(callback, startIndex = 0, microTask = false) {
-      const _callback = () => {
+    refresh(callback, startIndex = 0) {
+      // const _callback = () => {
+      //   this.$_initColumnsScroller(startIndex)
+      //   callback && callback(this)
+      // }
+      // if (microTask) {
+      //   this.$nextTick(_callback)
+      // } else {
+      //   setTimeout(_callback, 0)
+      // }
+      this.$nextTick(() => {
         this.$_initColumnsScroller(startIndex)
-        callback && callback(this)
-      }
-      if (microTask) {
-        this.$nextTick(_callback)
-      } else {
-        setTimeout(_callback, 0)
-      }
+        callback && callback()
+      })
     },
   },
 }

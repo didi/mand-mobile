@@ -48,7 +48,9 @@ export default {
     }
     window.PickerTrigger5 = () => {
       this.pickerDefaultIndex = [4, 1, 1]
-      this.$refs.picker.refresh()
+      setTimeout(() => {
+        this.$refs.picker.refresh()
+      }, 0)
     }
   },
   methods: {
