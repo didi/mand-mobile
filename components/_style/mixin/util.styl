@@ -107,8 +107,10 @@ hairline(direction = all, color = color-border-base, radius = 0, size = border-w
       transform-origin 0 0
       transform scale(0.5)
       z-index 2
-      if radius
+      if radius is a 'unit'
         border-radius radius * 2
+      else
+        border-radius "calc(%s * 2)" % radius
 
 remove-hairline(direction = all)
   if direction == top
