@@ -179,6 +179,8 @@ export default {
       const invalidIndex = this.invalidIndex
       const item = this.options[defaultIndex]
 
+      this.selectedIndex = defaultIndex
+
       /* istanbul ignore next */
       if (defaultIndex === -1) {
         return

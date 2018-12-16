@@ -1,5 +1,6 @@
 <template>
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
+    <mb-notice-bar :lang="lang"></mb-notice-bar>
     <mb-header :is-active="isHome"/>
     <div class="default-content">
       <mb-menu
@@ -38,6 +39,7 @@ import './assets/css/tooltip.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Menu from './components/Menu'
+import NoticeBar from './components/NoticeBar'
 
 export default {
   name: 'mfe-blog-theme-default',
@@ -45,6 +47,7 @@ export default {
     MbHeader: Header,
     MbMenu: Menu,
     MbFooter: Footer,
+    MbNoticeBar: NoticeBar
   },
   data() {
     return {
@@ -67,7 +70,10 @@ export default {
     },
     isHome() {
       return !!~this.$route.path.indexOf('/home')
-    }
+    },
+    lang() {
+      return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
+    },
   },
   mounted () {
     this.getConfig()

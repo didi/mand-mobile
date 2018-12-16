@@ -29,6 +29,8 @@
 
 A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios.
 
+### 🎉🎉🎉 Mand Mobile 2.0, [experience immediately](https://mand-mobile.github.io/2x-doc/)
+
 ## Links
 
 * [Home](https://didi.github.io/mand-mobile/)

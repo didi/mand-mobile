@@ -3,14 +3,12 @@ title: Change Log
 toc: hidden
 ---
 
-### 1.6.5
-`2018-12-01`
+### 1.6.6
+`2018-12-16`
 - Fix
-  - `Popup` hide asynchronously [#242](https://github.com/didi/mand-mobile/issues/242)
-  - `Button` prevent feedback layer swallowing click event [#244](https://github.com/didi/mand-mobile/issues/244)
-  - `Toast` hide asynchronously [#238](https://github.com/didi/mand-mobile/issues/242)
-  - `Picker` look for valid items in both directions [#238](https://github.com/didi/mand-mobile/issues/238)
-  - `DatePicker` increate fault tolerance of data recovery in "cancel" [#241](https://github.com/didi/mand-mobile/issues/241)
+  - Fix `InputItem` repeated formatting triggered by two-way binding
+  - Fix `Radio` errors caused by `selectedIndex` not reset after updating the data source [#251](https://github.com/didi/mand-mobile/issues/251)
+  - Fix `TabPicker` problem that `TabBar` option cannot be cleared when updating [#252](https://github.com/didi/mand-mobile/issues/252)
 
 ### 1.6.4
 `2018-11-20`
@@ -215,5 +213,4 @@ toc: hidden
 ### 1.0.0
 `2018-04-11`
 - Initial release
-
 

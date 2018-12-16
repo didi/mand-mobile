@@ -3,6 +3,13 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.6
+`2018-12-16`
+- Fix
+  - 修复`InputItem`双向绑定触发的重复格式化
+  - 修复`Radio`更新数据源后未重置`selectedIndex`导致的错误选中 [#251](https://github.com/didi/mand-mobile/issues/251)
+  - 修复`TabPicker`中`TabBar`更新时无法清除的问题[#252](https://github.com/didi/mand-mobile/issues/252)
+  
 ### 1.6.5
 `2018-12-01`
 - Fix
@@ -215,4 +222,3 @@ toc: hidden
 ### 1.0.0
 `2018-04-11`
 - 正式公开发布
-

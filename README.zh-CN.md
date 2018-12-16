@@ -29,6 +29,8 @@
 
 面向金融场景的移动端UI组件库，基于Vue.js实现。
 
+### 🎉🎉🎉 Mand Mobile 2.0, [立即体验](https://mand-mobile.github.io/2x-doc/)
+
 ## 链接
 
 * [首页](https://didi.github.io/mand-mobile/)
