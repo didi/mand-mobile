@@ -3,6 +3,36 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.6
+`2018-12-16`
+- Fix
+  - Fix `InputItem` repeated formatting triggered by two-way binding
+  - Fix `Radio` errors caused by `selectedIndex` not reset after updating the data source [#251](https://github.com/didi/mand-mobile/issues/251)
+  - Fix `TabPicker` problem that `TabBar` option cannot be cleared when updating [#252](https://github.com/didi/mand-mobile/issues/252)
+
+### 1.6.4
+`2018-11-20`
+- Fix
+  - `Swiper` slight movement trigger `afterChange` [#232](https://github.com/didi/mand-mobile/issues/232)
+
+### 1.6.3
+`2018-10-29`
+- Feature
+  - `TabPicker` custom text [#216](https://github.com/didi/mand-mobile/issues/216)
+- Fix
+  - undefined static methods [#223](https://github.com/didi/mand-mobile/issues/223)
+
+### 1.6.2
+`2018-10-19`
+-Fix
+  - Remove `Cashier` max height limit [#208](https://github.com/didi/mand-mobile/issues/208)
+  - `Button` click event not working on some old browsers
+
+### 1.6.1
+`2018-09-29`
+- Fix
+  - max content overflow [#200](https://github.com/didi/mand-mobile/issues/200)
+
 ### 1.6.0
 `2018-09-03`
 - Feature
@@ -183,5 +213,4 @@ toc: hidden
 ### 1.0.0
 `2018-04-11`
 - Initial release
-
 

@@ -3,6 +3,45 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.6
+`2018-12-16`
+- Fix
+  - 修复`InputItem`双向绑定触发的重复格式化
+  - 修复`Radio`更新数据源后未重置`selectedIndex`导致的错误选中 [#251](https://github.com/didi/mand-mobile/issues/251)
+  - 修复`TabPicker`中`TabBar`更新时无法清除的问题[#252](https://github.com/didi/mand-mobile/issues/252)
+  
+### 1.6.5
+`2018-12-01`
+- Fix
+  - `Popup` 异步隐藏 [#242](https://github.com/didi/mand-mobile/issues/242)
+  - `Button` 蒙层点击击穿 [#244](https://github.com/didi/mand-mobile/issues/244)
+  - `Toast` 异步隐藏 [#238](https://github.com/didi/mand-mobile/issues/242)
+  - `Picker` 双向查找有效值 [#238](https://github.com/didi/mand-mobile/issues/238)
+  - `DatePicker` BUG 修复 [#241](https://github.com/didi/mand-mobile/issues/241)
+
+### 1.6.4
+`2018-11-20`
+- Fix
+  - `Swiper`抖动触发`afterChange` [#232](https://github.com/didi/mand-mobile/issues/232)
+
+### 1.6.3
+`2018-10-29`
+- Feature
+  - `TabPicker`文案可配置[#216](https://github.com/didi/mand-mobile/issues/216)
+- Fix
+  - 静态方法未定义 BUG [#223](https://github.com/didi/mand-mobile/issues/223)
+
+### 1.6.2
+`2018-10-19`
+-Fix
+  - 移除`Cashier`最大高度限制 [#208](https://github.com/didi/mand-mobile/issues/208)
+  - 修复`Button`在某些旧浏览器下无法响应点击事件
+
+### 1.6.1
+`2018-09-29`
+- Fix
+  - 内容产出最大宽度 [#200](https://github.com/didi/mand-mobile/issues/200)
+
 ### 1.6.0
 `2018-09-03`
 - Feature
@@ -183,4 +222,3 @@ toc: hidden
 ### 1.0.0
 `2018-04-11`
 - 正式公开发布
-
