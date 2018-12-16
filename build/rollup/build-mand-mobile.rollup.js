@@ -6,7 +6,7 @@ const {
   PROJECT_DIR,
   rollupPlugin
 } = require('./rollup-plugin-config')
-// const isSpecial = process.env.BUILD_TYPE === 'special'
+const isSpecial = process.env.BUILD_TYPE === 'special'
 
 const inputOptions = {
   input: path.resolve(PROJECT_DIR, 'components/index.js'),
@@ -24,24 +24,33 @@ const inputOptions = {
   }
 }
 
-function build() {
-  return rollup.rollup(inputOptions)
-  .then(bundle => {
-    return Promise.all([
-      bundle.write({
+function ouputBundle(bundle) {
+  switch (process.env.BUILD_TYPE) {
+    case 'esm':
+      return bundle.write({
         file: path.resolve(LIB_DIR, 'mand-mobile.esm.js'),
         format: 'es',
       }).then(() => {
         resultLog('success', 'Build **ES BUNDLE** Complete!')
-      }),
-      bundle.write({
+      })
+    case 'umd':
+    case 'variables':
+      return bundle.write({
         file: path.resolve(LIB_DIR, 'mand-mobile.umd.js'),
         format: 'umd',
-        name: 'mand-mobile'
+        name: 'mand-mobile',
       }).then(() => {
         resultLog('success', 'Build **UMD BUNDLE** Complete!')
       })
-    ])
+    default:
+      return null
+  }
+}
+
+function build() {
+  return rollup.rollup(inputOptions)
+  .then(bundle => {
+    return Promise.all([ouputBundle(bundle)])
   })
   .catch(err => {
     console.info(err)

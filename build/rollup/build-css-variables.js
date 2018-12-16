@@ -4,7 +4,8 @@ const fs = bluebird.promisifyAll(require('fs'))
 const { resultLog } = require('../utils')
 const styleDir = path.resolve(__dirname, '../../components/_style/mixin')
 const outputLibDir = path.resolve(__dirname, '../../lib')
-const outputLibVwDir = path.resolve(__dirname, '../../lib-vw')
+// const outputLibVwDir = path.resolve(__dirname, '../../lib-vw')
+const outputVariablesStylDir = path.resolve(__dirname, '../../components/_style/mixin')
 
 function getFile(filename) {
   const fileDir = path.resolve(styleDir, filename)
@@ -42,17 +43,34 @@ function getStyleJson(filename) {
   return matchContent(content)
 }
 
+function generateVariablesStyl(variables) {
+  let stylContent = '/**\r\n  Automatically generated when running script \'build:variables\'\r\n  Do not edit or delete manually\r\n**/\r\n'
+
+  for (const variable in variables) {
+    if (variables.hasOwnProperty(variable)) {
+      stylContent += `${variable} = var(--${variable})\n`
+    }
+  }
+  return stylContent
+}
+
 const files = ['theme.basic.styl', 'theme.components.styl']
 
 try {
+  const variablesAll = {}
   files.forEach(file => {
-    const content = getStyleJson(file)
+    const variablesJson = getStyleJson(file)
+
     const fileLibDir = path.resolve(outputLibDir, file.replace('styl', 'json'))
-    fs.createWriteStream(fileLibDir).write(JSON.stringify(content))
-  
-    const fileLibVwDir = path.resolve(outputLibVwDir, file.replace('styl', 'json'))
-    fs.createWriteStream(fileLibVwDir).write(JSON.stringify(content))
+    fs.createWriteStream(fileLibDir).write(JSON.stringify(variablesJson))
+    // const fileLibVwDir = path.resolve(outputLibVwDir, file.replace('styl', 'json'))
+    // fs.createWriteStream(fileLibVwDir).write(JSON.stringify(variablesJson))
+
+    Object.assign(variablesAll, variablesJson)
   })
+
+  const variablesStyl = generateVariablesStyl(variablesAll)
+  fs.createWriteStream(path.resolve(outputVariablesStylDir, 'theme.variables.styl')).write(variablesStyl)
   resultLog('success', 'Build **Css Variables** Complete!')
 } catch (error) {
   console.info(error)
