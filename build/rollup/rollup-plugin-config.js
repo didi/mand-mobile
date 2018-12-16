@@ -49,7 +49,7 @@ function vueWarpper() {
     distDir = DEV_OUTPUT_DIR
     fileName = 'mand-mobile-dev.css'
   } else if (isProduction) {
-    fileName = process.env.BUILD_TYPE !== 'variables' ? 'mand-mobile.css' : 'mand-mobile.variables.css'
+    fileName = process.env.BUILD_TYPE !== 'variables' ? 'mand-mobile.css' : 'mand-mobile.variable.css'
     distDir = LIB_DIR
   } else if (isTest) {
     distDir = TEST_OUTPUT_DIR

@@ -60,7 +60,10 @@ try {
   const variablesAll = {}
   files.forEach(file => {
     const variablesJson = getStyleJson(file)
-
+    
+    if (!fs.existsSync(outputLibDir)) {
+      fs.mkdirSync(outputLibDir)
+    }
     const fileLibDir = path.resolve(outputLibDir, file.replace('styl', 'json'))
     fs.createWriteStream(fileLibDir).write(JSON.stringify(variablesJson))
     // const fileLibVwDir = path.resolve(outputLibVwDir, file.replace('styl', 'json'))
@@ -70,7 +73,7 @@ try {
   })
 
   const variablesStyl = generateVariablesStyl(variablesAll)
-  fs.createWriteStream(path.resolve(outputVariablesStylDir, 'theme.variables.styl')).write(variablesStyl)
+  fs.createWriteStream(path.resolve(outputVariablesStylDir, 'theme.variable.styl')).write(variablesStyl)
   resultLog('success', 'Build **Css Variables** Complete!')
 } catch (error) {
   console.info(error)
