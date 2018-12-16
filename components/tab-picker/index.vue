@@ -515,6 +515,8 @@ export default {
       top 50%
       left 50%
       transform translate(-50%, -50%)
+      font-size font-body-normal
+      color color-text-minor
   .md-popup-box
     background-color color-bg-base
 </style>
