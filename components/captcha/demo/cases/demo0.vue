@@ -101,16 +101,18 @@ export default {
     },
     submit(val) {
       const max = parseFloat(this.maxlength)
-      if (!this.limit || max < 0 || val.length === max) {
-        if (val !== '1234') {
-          this.$refs.captcha.setError('验证码错误，请重新输入')
-        } else {
-          this.show = false
-          Toast({
-            content: `你输入了${val}`,
-          })
+      setTimeout(() => {
+        if (!this.limit || max < 0 || val.length === max) {
+          if (val !== '1234') {
+            this.$refs.captcha.setError('验证码错误，请重新输入')
+          } else {
+            this.show = false
+            Toast({
+              content: `你输入了${val}`,
+            })
+          }
         }
-      }
+      }, 300)
     },
     onSend() {
       console.log('click resend button.')
