@@ -236,7 +236,6 @@ export default {
         }
         time = (isNewProgress ? len : Math.abs(progress.len - len)) * this.duration
         return {
-          translate: this.direction === 'horizontal' ? 'translate3d' : 'translateY',
           len,
           time,
         }
