@@ -235,7 +235,7 @@ export default {
     setError(msg) {
       this.$nextTick(() => {
         this.errorMsg = msg
-        this.code = ''
+        // this.code = ''
       })
     },
   },
