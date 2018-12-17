@@ -28,7 +28,9 @@
             v-else-if="index === currentLength"
             name="success"
           ></md-icon>
-          <div v-else class="step-node-default"></div>
+          <div v-else class="step-node-default">
+            <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
+          </div>
         </div>
         <div class="text-wrapper">
           <slot
@@ -55,10 +57,7 @@
         <i
           class="bar-inner"
           v-if="progress[index]"
-          :style="{
-            transform: `${progress[index]['translate']}(${(progress[index]['len'] - 1) * 100}%)`,
-            transition: `all ${progress[index]['time']}s linear`
-          }"
+          :style="$_barInnerStyle(index)"
         ></i>
       </div>
     </template>
@@ -112,6 +111,22 @@ export default {
       duration: 0.3,
       timer: null,
     }
+  },
+
+  computed: {
+    $_barInnerStyle() {
+      return index => {
+        const {progress} = this
+        const transform =
+          this.direction === 'horizontal'
+            ? `(${(progress[index]['len'] - 1) * 100}%, 0, 0)`
+            : `(0, ${(progress[index]['len'] - 1) * 100}%, 0)`
+        return {
+          transform: `translate3d${transform}`,
+          transition: `all ${progress[index]['time']}s linear`,
+        }
+      }
+    },
   },
 
   watch: {
@@ -221,7 +236,7 @@ export default {
         }
         time = (isNewProgress ? len : Math.abs(progress.len - len)) * this.duration
         return {
-          translate: this.direction === 'horizontal' ? 'translateX' : 'translateY',
+          translate: this.direction === 'horizontal' ? 'translate3d' : 'translateY',
           len,
           time,
         }
@@ -283,7 +298,7 @@ export default {
     &.no-current
       .reached:last-of-type
         display none !important
-        
+
   &.md-steps-vertical
     align-items flex-start
     padding 40px
@@ -327,12 +342,8 @@ export default {
     &:nth-child(2)
       display none
 
-    .step-node-default:after
-      content ""
-      width 12px
-      height 12px
+    .step-node-default-icon
       background steps-color
-      border-radius 12px
 
   .step-wrapper
     display flex
@@ -358,7 +369,7 @@ export default {
         line-height steps-text-font-size
         font-size steps-desc-font-size
     &.reached
-      .icon-wrapper .step-node-default:after
+      .icon-wrapper .step-node-default-icon
         background steps-color-active
 
   .bar
