@@ -41,7 +41,7 @@
 </template>
 
 <script>import Popup from '../popup'
-import Keyborad from './keyboard'
+import Keyborad from './board'
 
 export default {
   name: 'md-number-keyboard',

@@ -2,48 +2,74 @@
   <div class="md-number-keyboard-container" :class="type">
     <div class="keyboard-number">
       <ul class="keyboard-number-list">
-        <li
+        <md-number-key
+          class="keyboard-number-item"
           v-for="n in 9"
           :key="n-1"
-          v-text="keyNumberList[n-1]"
-          class="keyboard-number-item"
-          @click="$_onNumberKeyClick($event, keyNumberList[n-1])">
-        </li>
+          :value="keyNumberList[n-1]"
+          @press="$_onNumberKeyClick"
+        ></md-number-key>
         <template v-if="type === 'professional'">
-          <li class="keyboard-number-item"
+          <md-number-key
+            class="keyboard-number-item"
             v-if="!hideDot"
-            v-text="dotText"
-            @click="$_onNumberKeyClick($event, dotText)"
-          ></li>
-          <li
+            :value="dotText"
+            @press="$_onNumberKeyClick"
+          ></md-number-key>
+          <md-number-key
             class="keyboard-number-item"
             :class="{'large-item': hideDot}"
-            @click="$_onNumberKeyClick($event, keyNumberList[9])"
-          >
-            {{ keyNumberList[9] }}
-          </li>
+            :value="keyNumberList[9]"
+            @press="$_onNumberKeyClick"
+          ></md-number-key>
           <li class="keyboard-number-item" v-if="isView"></li>
-          <li class="keyboard-number-item slidedown" @click="$_onSlideDoneClick()" v-else></li>
+          <md-number-key
+            v-else
+            class="keyboard-number-item slidedown"
+            no-touch
+            @press="$_onSlideDoneClick"
+          ></md-number-key>
         </template>
         <template v-else>
           <li class="keyboard-number-item no-bg"></li>
-          <li class="keyboard-number-item" @click="$_onNumberKeyClick($event, keyNumberList[9])">{{ keyNumberList[9] }}</li>
-          <li class="keyboard-number-item no-bg delete" @click="$_onDeleteClick($event)"></li>
+          <md-number-key
+            class="keyboard-number-item"
+            :value="keyNumberList[9]"
+            @press="$_onNumberKeyClick"
+          ></md-number-key>
+          <md-number-key
+            class="keyboard-number-item no-bg delete"
+            @press="$_onDeleteClick"
+          ></md-number-key>
         </template>
       </ul>
     </div>
     <div class="keyboard-operate" v-if="type === 'professional'">
       <ul class="keyboard-operate-list">
-        <li class="keyboard-operate-item delete" @click="$_onDeleteClick($event)"></li>
-        <li class="keyboard-operate-item confirm" @click="$_onConfirmeClick()" v-text="okText"></li>
+        <md-number-key
+          class="keyboard-operate-item delete"
+          @press="$_onDeleteClick"
+        ></md-number-key>
+        <md-number-key
+          class="keyboard-operate-item confirm"
+          :value="okText"
+          no-touch
+          @press="$_onConfirmeClick"
+        ></md-number-key>
       </ul>
     </div>
   </div>
 </template>
 
 <script>import {noop} from '../_util'
+import Key from './key'
+
 export default {
   name: 'md-number-keyboard-container',
+
+  components: {
+    [Key.name]: Key,
+  },
 
   props: {
     type: {
@@ -101,12 +127,10 @@ export default {
     },
 
     // MARK: events handler, 如 $_onButtonClick
-    $_onNumberKeyClick(event, val) {
-      event.stopImmediatePropagation()
+    $_onNumberKeyClick(val) {
       this.$emit('enter', val)
     },
-    $_onDeleteClick(event) {
-      event.stopImmediatePropagation()
+    $_onDeleteClick() {
       this.$emit('delete')
     },
     $_onConfirmeClick() {
@@ -167,7 +191,7 @@ export default {
           background-size 54px
         &.large-item
           width 66.6%
-        &:active
+        &:active, &.active
           background-color number-keyboard-key-bg-tap
   .keyboard-operate
     flex 1
