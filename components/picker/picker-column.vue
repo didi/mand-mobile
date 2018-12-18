@@ -111,8 +111,8 @@ export default {
   data() {
     return {
       style: {
-        maskerHeight: 110 * dpr,
-        indicatorHeight: 50 * dpr,
+        maskerHeight: 100 * dpr,
+        indicatorHeight: 45 * dpr,
       },
       columnValues: [],
       scrollers: [],
@@ -191,6 +191,8 @@ export default {
         {
           scrollingX: false,
           snapping: true,
+          snappingVelocity: 1,
+          animationDuration: 350,
           scrollingComplete: () => {
             this.$_onColumnScrollEnd(index)
           },
