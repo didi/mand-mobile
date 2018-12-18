@@ -12,6 +12,8 @@
       ref="scrollView"
       :scrolling-x="false"
       @scroll="$_onScroll"
+      @mousedown.native="$_onScrollStart"
+      @touchstart.native="$_onScrollStart"
     >
       <div
         v-for="i in category"
@@ -32,6 +34,17 @@
 
 <script>import {ScrollView, TabBar} from 'mand-mobile'
 
+const debounce = function(fn, delay) {
+  let timer
+  return function() {
+    const context = this
+    timer && clearTimeout(timer)
+
+    timer = setTimeout(function() {
+      fn.apply(context, arguments)
+    }, delay)
+  }
+}
 export default {
   name: 'scroll-view-demo-3',
   /* DELETE */
@@ -81,6 +94,9 @@ export default {
       //   this.$refs.tabBar.reflow()
       // }, 1000)
     },
+    $_onScrollStart() {
+      this.isManual = false
+    },
     $_onScroll({scrollTop}) {
       if (!this.isManual) {
         this.dimensions.some((dimension, index) => {
@@ -92,13 +108,12 @@ export default {
       }
     },
     $_onTabChange(item, index) {
-      const offsetTop = this.dimensions[index][0]
       this.isManual = true
-      this.$refs.scrollView.scrollTo(0, offsetTop, true)
-      setTimeout(() => {
+      debounce(() => {
+        const offsetTop = this.dimensions[index][0]
+        this.$refs.scrollView.scrollTo(0, offsetTop, true)
         this.scrollY = offsetTop
-        this.isManual = false
-      }, 500)
+      }, 100)()
     },
   },
 }
