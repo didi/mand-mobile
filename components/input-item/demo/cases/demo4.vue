@@ -49,7 +49,6 @@ export default {
       })
     },
     onFakeInputFocus() {
-      console.log('xxxxxxx')
       function getElementPosition(element) {
         const defaultRect = {top: 0, left: 0}
         const rect = element
