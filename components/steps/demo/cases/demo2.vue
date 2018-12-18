@@ -7,7 +7,9 @@
       <template slot="reached" slot-scope="props">
         <!-- props.index -->
         <md-icon name="checked" v-if="props.index === 1"></md-icon>
-        <div class="step-node-default" v-else></div>
+        <div class="step-node-default" v-else>
+          <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
+        </div>
       </template>
       <template slot="current" slot-scope="props">
         <md-icon name="location"></md-icon>
