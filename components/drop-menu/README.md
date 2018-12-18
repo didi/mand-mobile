@@ -1,6 +1,6 @@
 ---
 title: DropMenu 下拉菜单
-preview: https://didi.github.io/mand-mobile/examples/#/drop-menu
+preview: https://mand-mobile.github.io/2x-doc/examples/#/drop-menu
 ---
 
 下拉菜单可用于列表筛选

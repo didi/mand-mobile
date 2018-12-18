@@ -1,6 +1,6 @@
 ---
 title: ActionBar 操作栏
-preview: https://didi.github.io/mand-mobile/examples/#/action-bar
+preview: https://mand-mobile.github.io/2x-doc/examples/#/action-bar
 ---
 
 汇集若干文案或操作按钮的吸底边栏，可用于展示表单信息与提交按钮

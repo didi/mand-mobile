@@ -1,6 +1,6 @@
 ---
 title: CodeBox 验证码输入框
-preview: https://didi.github.io/mand-mobile/examples/#/codebox
+preview: https://mand-mobile.github.io/2x-doc/examples/#/codebox
 ---
 
 验证码输入框

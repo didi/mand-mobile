@@ -1,6 +1,6 @@
 ---
 title: ActionBar
-preview: https://didi.github.io/mand-mobile/examples/#/action-bar
+preview: https://mand-mobile.github.io/2x-doc/examples/#/action-bar
 ---
 
 Bottom sidebar with a number of texts or action buttons that can be used to present form information and submit buttons

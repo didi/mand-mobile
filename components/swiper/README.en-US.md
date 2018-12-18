@@ -1,6 +1,6 @@
 ---
 title: Swiper
-preview: https://didi.github.io/mand-mobile/examples/#/swiper
+preview: https://mand-mobile.github.io/2x-doc/examples/#/swiper
 ---
 
 Carousel, used to cycle through a set of pictures or cards

@@ -1,6 +1,6 @@
 ---
 title: NoticeBar
-preview: https://didi.github.io/mand-mobile/examples/#/notice-bar
+preview: https://mand-mobile.github.io/2x-doc/examples/#/notice-bar
 ---
 
 Mostly for system alerts, event reminders, etc

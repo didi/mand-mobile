@@ -1,6 +1,6 @@
 ---
 title: Stepper 步进器
-preview: https://didi.github.io/mand-mobile/examples/#/stepper
+preview: https://mand-mobile.github.io/2x-doc/examples/#/stepper
 ---
 
 增加，减少或修改当前数值

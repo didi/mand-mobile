@@ -1,6 +1,6 @@
 ---
 title: Dialog 模态窗
-preview: https://didi.github.io/mand-mobile/examples/#/dialog
+preview: https://mand-mobile.github.io/2x-doc/examples/#/dialog
 ---
 
 交互式模态窗口

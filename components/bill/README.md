@@ -1,6 +1,6 @@
 ---
 title: Bill 票据
-preview: https://didi.github.io/mand-mobile/examples/#/bill
+preview: https://mand-mobile.github.io/2x-doc/examples/#/bill
 ---
 
 电子账单或票据

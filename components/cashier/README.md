@@ -1,6 +1,6 @@
 ---
 title: Cashier 收银台
-preview: https://didi.github.io/mand-mobile/examples/#/cashier
+preview: https://mand-mobile.github.io/2x-doc/examples/#/cashier
 ---
 
 业务支付弹窗，支持支付渠道选择和支付验证码发送

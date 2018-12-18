@@ -1,6 +1,6 @@
 ---
 title: Steps
-preview: https://didi.github.io/mand-mobile/examples/#/steps
+preview: https://mand-mobile.github.io/2x-doc/examples/#/steps
 ---
 
 A navigation bar helps users complete tasks through the process and displays the current step

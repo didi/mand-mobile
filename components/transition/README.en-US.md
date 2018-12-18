@@ -1,6 +1,6 @@
 ---
 title: Transition
-preview: https://didi.github.io/mand-mobile/examples/#/transition
+preview: https://mand-mobile.github.io/2x-doc/examples/#/transition
 ---
 
 复用动画切换组件

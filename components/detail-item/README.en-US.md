@@ -1,6 +1,6 @@
 ---
 title: DetailItem
-preview: https://didi.github.io/mand-mobile/examples/#/detail-item
+preview: https://mand-mobile.github.io/2x-doc/examples/#/detail-item
 ---
 
 Detail list usually used as bill details, inventory details and so on.
