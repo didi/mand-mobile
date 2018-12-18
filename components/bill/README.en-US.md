@@ -1,6 +1,6 @@
 ---
 title: Bill
-preview: https://didi.github.io/mand-mobile/examples/#/water-mask
+preview: https://mand-mobile.github.io/2x-doc/examples/#/water-mask
 ---
 
 Electronic bill

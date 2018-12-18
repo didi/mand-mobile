@@ -1,6 +1,6 @@
 ---
 title: TabBar
-preview: https://didi.github.io/mand-mobile/examples/#/tab-bar
+preview: https://mand-mobile.github.io/2x-doc/examples/#/tab-bar
 ---
 
 To create a tab bar without a content area

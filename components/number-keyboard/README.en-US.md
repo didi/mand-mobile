@@ -1,6 +1,6 @@
 ---
 title: NumberKeyboard
-preview: https://didi.github.io/mand-mobile/examples/#/number-keyboard
+preview: https://mand-mobile.github.io/2x-doc/examples/#/number-keyboard
 ---
 
 Generally used for financial scenarios such as password, verification code or payment amount input

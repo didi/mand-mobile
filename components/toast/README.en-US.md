@@ -1,6 +1,6 @@
 ---
 title: Toast
-preview: https://didi.github.io/mand-mobile/examples/#/toast
+preview: https://mand-mobile.github.io/2x-doc/examples/#/toast
 ---
 
 ### Import

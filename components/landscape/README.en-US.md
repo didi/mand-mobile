@@ -1,6 +1,6 @@
 ---
 title: Landscape
-preview: https://didi.github.io/mand-mobile/examples/#/landscape
+preview: https://mand-mobile.github.io/2x-doc/examples/#/landscape
 ---
 
 To display ads or descriptions in a floating layer

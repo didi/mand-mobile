@@ -1,6 +1,6 @@
 ---
 title: Tabs
-preview: https://didi.github.io/mand-mobile/examples/#/tabs
+preview: https://mand-mobile.github.io/2x-doc/examples/#/tabs
 ---
 
 To create a tab page with a content area

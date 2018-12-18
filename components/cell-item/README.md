@@ -1,6 +1,6 @@
 ---
 title: CellItem 单元格
-preview: https://didi.github.io/mand-mobile/examples/#/cell-item
+preview: https://mand-mobile.github.io/2x-doc/examples/#/cell-item
 ---
 
 列表用于展现并列层级的信息内容，列表可承载功能入口、功能操作、信息展示等功能。

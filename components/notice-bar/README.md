@@ -1,6 +1,6 @@
 ---
 title: Notice 通告栏
-preview: https://didi.github.io/mand-mobile/examples/#/notice-bar
+preview: https://mand-mobile.github.io/2x-doc/examples/#/notice-bar
 ---
 
 通常用于系统提醒、活动提醒等通知

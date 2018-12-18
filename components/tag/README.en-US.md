@@ -1,6 +1,6 @@
 ---
 title: Tag
-preview: https://didi.github.io/mand-mobile/examples/#/tag
+preview: https://mand-mobile.github.io/2x-doc/examples/#/tag
 ---
 
 For showing the area status 

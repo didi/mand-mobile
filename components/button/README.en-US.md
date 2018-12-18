@@ -1,6 +1,6 @@
 ---
 title: Button
-preview: https://didi.github.io/mand-mobile/examples/#/button
+preview: https://mand-mobile.github.io/2x-doc/examples/#/button
 ---
 
 Button components for configuring different button styles

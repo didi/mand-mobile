@@ -1,6 +1,6 @@
 ---
 title: ActionSheet
-preview: https://didi.github.io/mand-mobile/examples/#/action-sheet
+preview: https://mand-mobile.github.io/2x-doc/examples/#/action-sheet
 ---
 
 Support scenario-relevent operations

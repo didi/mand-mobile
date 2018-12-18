@@ -1,6 +1,6 @@
 ---
 title: Cashier
-preview: https://didi.github.io/mand-mobile/examples/#/cashier
+preview: https://mand-mobile.github.io/2x-doc/examples/#/cashier
 ---
 
 Business payment pop-up window, supports payment channel selecting and payment verification code sending

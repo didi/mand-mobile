@@ -1,6 +1,6 @@
 ---
 title: Button 按钮
-preview: https://didi.github.io/mand-mobile/examples/#/button
+preview: https://mand-mobile.github.io/2x-doc/examples/#/button
 ---
 
 按钮组件，可配置多种不同的按钮样式

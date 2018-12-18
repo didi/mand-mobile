@@ -1,6 +1,6 @@
 ---
 title: Field
-preview: https://didi.github.io/mand-mobile/examples/#/field
+preview: https://mand-mobile.github.io/2x-doc/examples/#/field
 ---
 
 Arrange vertically and display current contents, status and other allowable operations.
