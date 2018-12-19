@@ -64,6 +64,13 @@ export default {
       },
       deep: true
     },
+    lang: {
+      handler (val) {
+        document.documentElement.setAttribute('lang', val === 'en-US' ? 'en' : val)
+      },
+      immediate: true,
+      deep: true
+    },
   },
   computed: {
     lang() {

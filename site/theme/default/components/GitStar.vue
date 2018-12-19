@@ -4,6 +4,7 @@
       href="https://github.com/didi/mand-mobile"
       target="_blank"
       class="mfe-git-star-button"
+      :key="tmp"
       v-tooltip.right="{
         content: number,
         classes: 'mfe-git-star-number',
@@ -23,6 +24,12 @@ export default {
   data () {
     return {
       number: '',
+      tmp: Date.now()
+    }
+  },
+  watch: {
+    '$route' (val) {
+      this.tmp = Date.now()
     }
   },
   mounted () {

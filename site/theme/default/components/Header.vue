@@ -16,10 +16,13 @@
           <a href="https://github.com/didi/mand-mobile/tree/2.0" target="_blank"></a>
         </div>
         <div class="default-header-lang default-header-operater">
-          <div class="operater-select" @click="changeLang">
+          <router-link
+            class="operater-select"
+            :to="langSwitchPath"
+          >
             <span v-if="lang === 'en-US'">中文</span>
             <span v-else>English</span>
-          </div>
+          </router-link>
         </div>
         <div class="default-header-version default-header-operater">
           <div class="operater-select" @click.stop="versionTableShow = true">
@@ -89,6 +92,7 @@ export default {
         text: '1.x',
         path: 'https://mand-mobile.github.io'
       }],
+      langSwitchPath: ''
     }
   },
 
@@ -100,21 +104,37 @@ export default {
     lang() {
       return ~this.$route.path.indexOf('zh-CN') ? 'zh-CN' : 'en-US'
     },
+    switchLang() {
+      return this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+    },
     version() {
       return mandMobileInfo ? mandMobileInfo.version : ''
     }
   },
 
-  methods: {
-    changeLang () {
-      const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
-      localStore('MAND_MOBILE_LANG', lang)
-      location.href = location.href.replace(this.lang, lang)
+  mounted () {
+    localStore('MAND_MOBILE_LANG', this.switchLang)
+  },
 
-      if (~location.href.indexOf('home')) {
-       location.reload()
-      }
-    },
+  watch: {
+    '$route': {
+      handler (val) {
+        this.langSwitchPath = val.path.replace(this.lang, this.switchLang)
+      },
+      immediate: true
+    }
+  },
+
+  methods: {
+    // changeLang () {
+    //   const lang = this.lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+    //   localStore('MAND_MOBILE_LANG', lang)
+    //   location.href = location.href.replace(this.lang, lang)
+
+    //   if (~location.href.indexOf('home')) {
+    //    location.reload()
+    //   }
+    // },
   },
 }
 
@@ -243,6 +263,12 @@ export default {
         i
           font-size 12px
           color #048EFA
+      &.default-header-lang a
+        display inline-block
+        width 100%
+        height 100%
+        text-decoration none
+        color #314659
       &.default-header-github
         width 30px
         border none
@@ -288,6 +314,8 @@ export default {
         &.default-header-github a
           -webkit-filter invert(100%)
           filter invert(100%)
+        &.default-header-lang a
+          color #FFF
       .default-header-aside
         padding 0
       .default-header-search, .default-header-nav
