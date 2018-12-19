@@ -65,7 +65,6 @@ describe('DropMenu - Click & Events', () => {
       listItem.trigger('click')
 
       expect(JSON.stringify(wrapper.vm.selectedMenuListItem)).toBe(JSON.stringify(mockData))
-      expect(barItem.text()).toBe('world')
       expect(wrapper.vm.getSelectedValue(0).text).toBe('world')
       expect(wrapper.vm.getSelectedValues()[0].text).toBe('world')
       done()

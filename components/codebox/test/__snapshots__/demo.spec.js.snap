@@ -92,9 +92,7 @@ exports[`Codebox System keyboard 1`] = `
                 <li class="keyboard-number-item">8</li>
                 <li class="keyboard-number-item">9</li>
                 <li class="keyboard-number-item">.</li>
-                <li class="keyboard-number-item">
-                  0
-                </li>
+                <li class="keyboard-number-item">0</li>
                 <li class="keyboard-number-item slidedown"></li>
               </ul>
             </div>
@@ -134,9 +132,7 @@ exports[`Codebox Unlimited length 1`] = `
                 <li class="keyboard-number-item">8</li>
                 <li class="keyboard-number-item">9</li>
                 <li class="keyboard-number-item">.</li>
-                <li class="keyboard-number-item">
-                  0
-                </li>
+                <li class="keyboard-number-item">0</li>
                 <li class="keyboard-number-item slidedown"></li>
               </ul>
             </div>
