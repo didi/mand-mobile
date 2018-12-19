@@ -41,7 +41,7 @@ To the next step of Cashier
 
 |Parameters | Description | Type | Default| Note|
 |-----|-----|-----|-----|-----|
-| scene | step identifier | String |-| `choose`(payment channel selection), `captcha`(Send verification code), `loading`(Payment is in process), `success`(Payment succeed), `fail`(Payment failed) |
+| scene | step identifier | String |-| `choose`(payment channel selection)<br/>`captcha`(Send verification code)<br/>`loading`(Payment is in process)<br/>`success`(Payment succeed)<br/>`fail`(Payment failed)<br/>`custom`(fill content using slot `scene`) |
 | option | the configuration of current step | Object |properties are listed as follows|-|
 
 * `captcha` option
@@ -104,6 +104,9 @@ Payment channel area slot, which can be used to add payment channel special oper
 
 ##### payButton
 Payment button slot
+
+##### scene
+Custom scene slot, open with `next('custom')`
 
 #### Cashier Events
 

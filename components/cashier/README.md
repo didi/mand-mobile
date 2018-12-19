@@ -40,7 +40,7 @@ Vue.component(Cashier.name, Cashier)
 
 |参数 | 说明 | 类型 | 默认值| 备注|
 |-----|-----|-----|-----|-----|
-| scene | 步骤场景标识 | String | - | `choose`(支付渠道选择), `captcha`(发送验证码), `loading`(支付中), `success`(支付成功), `fail`(支付失败) |
+| scene | 步骤场景标识 | String | - | `choose`(支付渠道选择)<br/>`captcha`(发送验证码)<br/>`loading`(支付中)<br/>`success`(支付成功)<br/>`fail`(支付失败)<br/>`custom`(自定义，使用插槽`scene`填充内容) |
 | option | 当前步骤场景配置 | Object |属性如下所示|-|
 
 * `captcha` option
@@ -102,6 +102,9 @@ Vue.component(Cashier.name, Cashier)
 
 ##### payButton
 发起支付插槽
+
+##### scene
+自定义场景插槽，使用`next('custom')`打开
 
 #### Cashier Events
 

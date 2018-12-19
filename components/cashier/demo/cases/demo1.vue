@@ -24,6 +24,9 @@
       <div slot="payButton" style="display:flex;">
         <md-icon name="checked"></md-icon>发起支付
       </div>
+      <div slot="scene" class="custom-scene">
+        Custom Scene
+      </div>
     </md-cashier>
 	</div>
 </template>
@@ -119,7 +122,7 @@ export default {
               {
                 buttonText: '重试',
                 handler: () => {
-                  Toast.info(`${this.cashierResult}重试`)
+                  this.cashier.next('custom')
                 },
               },
             ],
@@ -187,4 +190,10 @@ export default {
     .item-icon.cashier-icon-5
       background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAABPlBMVEUAAAC/AEDIFS3GFS3HFS3HFS3HFS3MADPGFC7GFS3FFSvHFS3GFS3HFS3HFS3KIjnooKnmmKPJHDTMLELqqLHmlaDIGjHONEnssLjkjJjHFi7////hgI3rqrLdcoDwwsjUS17KITjed4T44+XIGC/LJz3++fr119vQPFD//v7NMEXgf43ca3r78PLZX3DVUWPpoavut77IGTD44+bxxszmlqHxw8nHFy/44OPttr3LJjz99/jaZXXXWWrhgY7+/P3//f3XV2jzzdPgf4zut7/nmqTxxMrllJ/yyM7dcH/++vvMK0HWUmTQO0/ZYXHba3r77vDJHTTts7v22Nzxxcv55OffdoXed4XRP1PedIPaZHThg5D11dnVTmDJHzb77e/55+rLJj377/Hqp7DkjprTRlnlkZzRPlLNL0TXVmdZnHwTAAAAD3RSTlMABEqUzPH/BXDmMNZV+P145yZGAAABMklEQVR4AXTQ02KcARCG4Z/v2t5vVdv2to1t2/d/BcnEfE7H45xxPT8IIQx8z3WuikRjnItFI5dj8QRXJOIXsWSKa1LJ81iaG9Kn0XiKW6TiFoskuFXCtopyh+jRfTFMJpvLA4ViqQxUqrU6MdfxwJSkBtCUWkBb6oDn+Jh796UHD3n0WHoCT6Vnz8F3AsyLl6+k1zQk6Q1vpXdA4IQWe//h4yfp85evFvz2/YdlQOhgfkq/nkm/pT9S96/1NifBf9L/HpnePql/QIMYa0tHGhoekRkdk16NT0yCtQ2AKalIfVrSDO9npbl5TGCnPO9KC7AoaQmWpRUwvj1hVWoDa+vaKMPmlrbBePa+LzvVCsDu3j7AweEyxSAJghFfwOONMnyRjS+Z4Etg+JIm4USNNzsAAPHdK2mIKv4bAAAAAElFTkSuQmCC') center no-repeat
       background-size 26px
+  .custom-scene
+    min-height 300px
+    display flex
+    justify-content center
+    align-items center
+    font-size 32px
 </style>

@@ -111,6 +111,14 @@
             "
           />
         </div>
+
+        <!-- Custom -->
+        <div
+          v-else-if="scene === 'custom'"
+          class="md-cashier-block md-cashier-custom"
+          :key="sceneKey">
+          <slot name="scene"></slot>
+        </div>
       </div>
     </md-popup>
   </div>
