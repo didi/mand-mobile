@@ -286,7 +286,7 @@ export default {
               color #FFF
             &.demo
               background-color #ECF6FF
-              color #048EFA
+              color #2F86F6
               box-shadow none
               img
                 width 120px
@@ -330,7 +330,7 @@ export default {
             color #555
             text-align center
           a
-            color #048efa
+            color #2F86F6
             text-decoration none
       &.home-box-block-0
         // height 700px

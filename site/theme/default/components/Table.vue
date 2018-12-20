@@ -165,6 +165,6 @@ export default {
   .table-item
     a
       em
-        color #048efa
+        color #2F86F6
         font-style normal
 </style>

@@ -458,7 +458,7 @@ export default {
         font-style normal
       p
         margin-top 5px
-        color #048EFA
+        color #2F86F6
         font-size 14px
     a.prev
       float left
@@ -500,7 +500,7 @@ export default {
         display inline-block
         width 100%
         box-sizing border-box
-        border-left .3em solid #048EFA
+        border-left .3em solid #2F86F6
         padding  1em
         margin-left 0
         margin-top 10px

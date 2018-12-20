@@ -11,7 +11,7 @@
         </a>
       </div>
       <div class="default-header-content">
-        <!-- <mfe-search :lang="lang" :menu="menu"></mfe-search> -->
+        <mfe-search :lang="lang" :menu="menu"></mfe-search>
         <div class="default-header-github default-header-operater">
           <a href="https://github.com/didi/mand-mobile/tree/2.0" target="_blank"></a>
         </div>
@@ -66,7 +66,7 @@ import mandMobileInfo from 'mand-mobile/package.json'
 import MfeTable from './Table'
 import MfeSearch from './Search'
 import { localStore } from '../assets/js/util'
-import algoliasearch from 'algoliasearch'
+// import algoliasearch from 'algoliasearch'
 
 export default {
   name: 'mfe-blog-theme-default-header',
@@ -230,11 +230,11 @@ export default {
             left 30%
             width 40%
             height 4px
-            background-color #048EFA
+            background-color #2F86F6
           &:hover
             color #333
           &.router-link-active
-            color #048EFA
+            color #2F86F6
             &:after
               display block
         i.dot
@@ -262,7 +262,7 @@ export default {
       .operater-select
         i
           font-size 12px
-          color #048EFA
+          color #2F86F6
       &.default-header-lang a
         display inline-block
         width 100%
@@ -369,7 +369,7 @@ export default {
             bottom 0 !important
           &.router-link-active:after
             height 2px
-            background #048efa !important
+            background #2F86F6 !important
     .default-header-aside .default-header-logo
       height 28px
       line-height 28px !important
@@ -383,7 +383,7 @@ export default {
     &.active .default-header-nav li.nav-item a
       color #666 !important
       &.router-link-active
-        color #048efa !important
+        color #2F86F6 !important
     .default-header-operater
       display none
 </style>

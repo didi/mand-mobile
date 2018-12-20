@@ -1,32 +1,19 @@
 <template>
-  <div class="default-header-search">
+  <div class="default-header-search" id="">
     <div class="default-header-search-input">
-      <i class="icon-magnifier" :class="{active: searchFocus}"></i>
+      <i class="search-icon icon-magnifier" :class="{active: searchFocus}"></i>
       <input
+        id="search-query-nav"
+        class="search-input"
         type="text"
         :placeholder="lang === 'en-US' ? 'Search' : '搜索'"
         autocomplete="off"
-        v-model="searchValue"
-        @click.stop
-        @focus="onInputFocus($event)"
-        @blur="onInputBlur"
-        @keyup="onInputKeyup($event)">
-      <mfe-table v-model="searchTableShow" :data="searchData" style="top:45px;">
-        <a
-          target="_blank"
-          href="https://www.algolia.com/docsearch"
-          class="algolia-search-link"
-          slot="footer"
-        >
-          <img src="../assets/images/algolia.png" alt="algolia-logo" class="algolia-search-logo"></a>
-      </mfe-table>
+      />
     </div>
   </div>
 </template>
 
 <script>
-import algoliasearch from 'algoliasearch'
-import MfeTable from './Table'
 export default {
   props: {
     lang: {
@@ -36,123 +23,37 @@ export default {
       type: Array,
     }
   },
-  components: {
-    MfeTable
-  },
   data () {
     return {
-      searchValue: '',
       searchFocus: false,
-      searchTableShow: false,
-      searchData: [],
-      searcher: algoliasearch('4GDUUWIAWB', 'd58846e82b7f4adfc81a0ada6346343f').initIndex('mand'),
-      searchHandler: null
+      docsearchIns: null,
     }
   },
+  watch: {
+    lang(val) {
+      this.docsearchIns.algoliaOptions.facetFilters = [`lang:${val === 'en-US' ? 'en' : val}`]
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.initDocSearch(this.lang === 'en-US' ? 'en' : this.lang)
+    }, 100)
+  },
   methods: {
-    onInputFocus(event) {
-      const word = event.target.value.trim()
-      if (word) {
-        setTimeout(() => {
-          this.searchTableShow = true
-        }, 300)
-      }
+    initDocSearch(lang) {
+      this.docsearchIns = docsearch({ 
+        apiKey: 'f6464cd4e62607a36f03b4cd59d2141b', 
+        indexName: 'mand-mobile', 
+        inputSelector: '#search-query-nav',
+        algoliaOptions: { 'facetFilters': [`lang:${lang}`] },
+        debug: process.env.NODE_ENV !== 'production'
+      })
+    },
+    onInputFocus() {
       this.searchFocus = true
     },
     onInputBlur() {
       this.searchFocus = false
-    },
-    onInputKeyup(event) {
-      const word = event.target.value.trim()
-
-      if (this.searchHandler) {
-        clearTimeout(this.searchHandler)
-      }
-
-      this.searchHandler = setTimeout(() => {
-        this.preSearch(word)
-        this.searchHandler = null
-      }, 500)
-    },
-    preSearch(word) {
-      if (word) {
-        this.searchData = []
-        this.createSearchData(word, this.menu)
-        this.searchTableShow = true
-      } else {
-        this.searchTableShow = false
-      }
-    },
-    matchIndex(index) {
-      let matched
-      if (index.component) {
-        matched= this.traverseSource(index.component)
-      } else {
-        matched= this.traverseSource(index.name)
-      }
-      return {
-        ...index,
-        ...matched
-      }
-    },
-    createSearchData(word) {
-      if (word) {
-        this.searcher.search({
-          query: word,
-          hitsPerPage: 10
-        }, (err, res) => {
-          console.log(res)
-          if (err) {
-            return
-          }
-          this.searchData = res.hits.map(this.matchIndex).map(this.handleSearchData)
-        })
-      }
-    },
-    handleSearchData(hit) {
-      let content = hit._highlightResult.content.value.replace(/\s+/g, ' ')
-      const highlightStart = content.indexOf('<em>')
-      if (highlightStart > -1) {
-        const startEllipsis = highlightStart - 25 > 0
-        content = (startEllipsis ? '...' : '') +
-          content.slice(Math.max(0, highlightStart - 15), content.length)
-      } else if (content.indexOf('|') > -1) {
-        content = ''
-      }
-      hit.content = content
-
-      const matchedWord = hit._highlightResult.component.matchedWords[0]
-      const componentNameMatchStart = (matchedWord && hit.text) ? hit.text.toLowerCase().indexOf(matchedWord.toLowerCase()) : -1
-
-      if (componentNameMatchStart >= 0) {
-        const myMatchedWord = hit.text.substr(componentNameMatchStart, matchedWord.length)
-        hit.text = hit.text.replace(myMatchedWord, `<em>${myMatchedWord}</em>`)
-      }
-
-      return hit
-    },
-    traverseSource(word, source = this.menu, path = [], level = 0) {
-      for (let i = 0, len = source.length; i < len; i++) {
-        const item = source[i]
-        const name = item.name
-
-        path[level] = name
-        if (item.menu && Array.isArray(item.menu)) {
-          const tmpPath = [...path]
-          level++
-          const subItem = this.traverseSource(word, item.menu, path, level)
-          if (subItem) {
-            return subItem
-          }
-          path = [...tmpPath]
-          level--
-        }
-
-        if (word === item.name) {
-          item.path = `/${this.lang}/${path.join('/')}`
-          return item
-        }
-      }
     },
   }
 }
@@ -165,33 +66,82 @@ export default {
     height 22px
     padding-left 16px
     line-height 22px
+    a
+      text-decoration none
     // border-left 1px solid #ebedee
-    i
+    .search-icon
       color #ccc
       &.active
-        color #048efa
-    input
+        color #2F86F6
+    .search-input
       margin 0 10px
       width 200px
       outline none
       border none
       color #666
       font-size 14px
-    .default-table
-      padding-bottom 38px
-      .algolia-search-link
-        position absolute
-        bottom 0
-        left 0
-        width 100%
-        padding 10px 15px
-        box-sizing border-box
-        background #f0f0f0
-        display flex
-        align-items center
-        justify-content flex-end
-        text-decoration none
-        color #333
-        img
-          height 18px
+      vertical-align baseline !important
+    .algolia-autocomplete
+      .ds-dropdown-menu
+        top 110% !important
+        box-shadow 0 2px 10px rgba(0,0,0,0.08)
+        border none
+        transition all .3s
+        &:before
+          display none
+        & [class^=ds-dataset-]
+          margin 0
+          padding 5px
+          border none
+      .ds-suggestions, .algolia-docsearch-suggestion
+        margin 0
+        padding 0
+      .ds-suggestion
+        border-top solid 1px #E2E4EA
+        &:last-of-type
+          border-bottom solid 1px #E2E4EA
+      .algolia-docsearch-suggestion--category-header
+        padding 5px 10px
+        background #2F86F6
+        color #FFF
+        margin-top 0
+        border none
+        font-family DINAlternate-Bold
+      .algolia-docsearch-suggestion--wrapper
+        padding 0
+        background #F9FAFB
+        &:last-of-type
+          border none
+      .algolia-docsearch-suggestion--subcategory-column
+        &:before
+          background #E2E4EA
+      .algolia-docsearch-suggestion--subcategory-column-text
+        color #41485D
+      .algolia-docsearch-suggestion--content
+        background #FFF
+        transition all .3s
+        &:before
+          background #E2E4EA
+      .algolia-docsearch-suggestion--title
+        color #111A34
+        font-weight 500
+      .algolia-docsearch-suggestion--no-results
+        padding 30px 0
+    // .default-table
+    //   padding-bottom 38px
+    //   .algolia-search-link
+    //     position absolute
+    //     bottom 0
+    //     left 0
+    //     width 100%
+    //     padding 10px 15px
+    //     box-sizing border-box
+    //     background #f0f0f0
+    //     display flex
+    //     align-items center
+    //     justify-content flex-end
+    //     text-decoration none
+    //     color #333
+    //     img
+    //       height 18px
 </style>

@@ -145,7 +145,7 @@ export default {
     box-shadow 0 0 10px #f0f0f0
     border solid 1px #f0f0f0
     i
-      color #048efa
+      color #2F86F6
       font-style normal
       &.icon-catalog
         font-size 24px
