@@ -25,11 +25,6 @@
         >首次</md-tag>
         &yen;404.50&nbsp;(9月22日)
       </md-detail-item>
-      <template slot="description">
-        1 账单生成后显示在滴水贷首页，请按时还款避免逾期。 <br>
-        2 整笔账单还款完成后，额度将恢复。暂不支持额度实时恢复。<br>
-        3 还款日将自动扣款，扣款顺序优先余额，其次还款账户：工商银行 (尾号xxxx)。
-      </template>
     </md-bill>
 	</div>
 </template>
