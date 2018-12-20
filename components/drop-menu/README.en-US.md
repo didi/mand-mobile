@@ -1,5 +1,5 @@
 ---
-title: Drop-down Menu
+title: DropMenu
 preview: https://mand-mobile.github.io/2x-doc/examples/#/drop-menu
 ---
 
