@@ -22,10 +22,3 @@ export default {
   },
 }
 </script>
-
-<style lang="stylus">
-.md-result-page.customized
-  img
-    width auto
-    height 131px
-</style>

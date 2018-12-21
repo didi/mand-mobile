@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.md-result-page.customized
-  img
-    height 131px
+.md-example-child-result-page-1
+  background #FFF
 </style>
