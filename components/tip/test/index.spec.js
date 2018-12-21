@@ -1,4 +1,4 @@
-import TipContent from '../tip.vue'
+import TipContent from 'mand-mobile/components/tip/tip'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

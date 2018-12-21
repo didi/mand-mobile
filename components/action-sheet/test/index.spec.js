@@ -1,4 +1,4 @@
-import ActionSheet from '../index'
+import {ActionSheet} from 'mand-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

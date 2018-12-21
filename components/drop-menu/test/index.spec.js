@@ -1,4 +1,4 @@
-import DropMenu from '../index'
+import {DropMenu} from 'mand-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

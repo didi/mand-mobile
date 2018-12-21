@@ -1,4 +1,4 @@
-import Stepper from '../index'
+import {Stepper} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
 
 describe('Stepper Operation', () => {

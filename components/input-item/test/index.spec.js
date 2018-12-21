@@ -1,4 +1,4 @@
-import InputItem from '../index'
+import {InputItem} from 'mand-mobile'
 import triggerEvent from '../../popup/test/touch-trigger'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'

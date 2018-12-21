@@ -1,4 +1,4 @@
-import Dialog from '../index'
+import {Dialog} from 'mand-mobile'
 import sinon from 'sinon'
 
 describe('Dialog - Static Methods', () => {

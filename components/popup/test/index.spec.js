@@ -1,4 +1,4 @@
-import Popup from '../index'
+import {Popup} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
 import triggerTouch from './touch-trigger'
 

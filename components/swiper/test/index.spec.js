@@ -1,5 +1,4 @@
-import Swiper from '../index'
-import SwiperItem from '../swiper-item'
+import { Swiper, SwiperItem } from 'mand-mobile'
 import triggerTouch from '../../popup/test/touch-trigger'
 import sinon from 'sinon'
 import { mount } from '@vue/test-utils'

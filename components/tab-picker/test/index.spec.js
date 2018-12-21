@@ -1,4 +1,4 @@
-import TabPicker from '../index'
+import {TabPicker} from 'mand-mobile'
 import data from '../demo/data'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'

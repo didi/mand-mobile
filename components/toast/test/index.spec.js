@@ -1,4 +1,4 @@
-import Toast from '../toast.vue'
+import Toast from 'mand-mobile/components/toast/toast'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

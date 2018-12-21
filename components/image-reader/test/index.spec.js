@@ -1,4 +1,4 @@
-import ImageReader from '../index'
+import {ImageReader} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
 import imageProcessor from '../image-processor'
 import {dataUrl} from './file.mock'

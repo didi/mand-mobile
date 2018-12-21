@@ -1,4 +1,4 @@
-import ImageViewer from '../index'
+import {ImageViewer} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
 
 describe('ImageViewer - Method', () => {

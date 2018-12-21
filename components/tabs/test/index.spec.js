@@ -1,6 +1,5 @@
 import Vue from 'vue'
-import Tabs from '../index'
-import TabPane from '../tab-pane'
+import {Tabs, TabPane} from 'mand-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

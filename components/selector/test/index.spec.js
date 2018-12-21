@@ -1,4 +1,4 @@
-import Selector from '../index'
+import {Selector} from 'mand-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 

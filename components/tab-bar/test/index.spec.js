@@ -1,4 +1,4 @@
-import TabBar from '../index'
+import {TabBar} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
 
 describe('TabBar', () => {

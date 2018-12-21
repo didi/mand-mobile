@@ -1,5 +1,5 @@
-import Picker from '../index'
-import PickerColumn from '../picker-column'
+import {Picker} from 'mand-mobile'
+import PickerColumn from 'mand-mobile/components/picker/picker-column'
 import triggerTouch from '../../popup/test/touch-trigger'
 import simple from '../demo/data/simple'
 import district from '../demo/data/district'
