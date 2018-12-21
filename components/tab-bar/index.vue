@@ -227,7 +227,7 @@ export default {
 .md-tab-bar-inner
   position relative
   width 100%
-  line-height 0
+  // line-height 0
 
 .md-tab-bar-list
   display flex
@@ -243,7 +243,7 @@ export default {
   color tab-text-color
   font-size tab-font-size
   font-weight tab-font-weight
-  height tab-height
+  min-height tab-height
   padding 0 tab-item-gap
   margin 0 auto
   box-sizing border-box

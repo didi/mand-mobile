@@ -108,4 +108,5 @@ export default {
 .md-tabs-content
   position relative
   width 100%
+  overflow hidden
 </style>
