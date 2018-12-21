@@ -28,9 +28,17 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.content
-  padding 12px 0
-  font-size 28px
+<style lang="stylus">
+.md-example-child-tabs
+  .content
+    padding 12px 0
+    font-size 28px
+    background #FFF
+    padding 20px
+    line-height 1.5
+    box-sizing border-box
+  .md-tabs-content
+    min-height 200px
+    background #FFF
 </style>
 
