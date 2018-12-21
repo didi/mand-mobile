@@ -1,20 +1,22 @@
 <template>
   <div class="md-action-bar">
-    <div class="md-action-bar-text" v-if="hasSlots">
-      <slot></slot>
-    </div>
-    <div class="md-action-bar-group">
-      <template v-for="(item, index) in coerceActions">
-        <md-button
-          class="md-action-bar-button"
-          :type="!!item.disabled ? 'disabled' : 'primary'"
-          :plain="index !== coerceActions.length - 1"
-          :key="index"
-          @click="$_onBtnClick($event, item)"
-        >
-          {{ item.text }}
-        </md-button>
-      </template>
+    <div class="md-action-bar-container">
+      <div class="md-action-bar-text" v-if="hasSlots">
+        <slot></slot>
+      </div>
+      <div class="md-action-bar-group">
+        <template v-for="(item, index) in coerceActions">
+          <md-button
+            class="md-action-bar-button"
+            :type="!!item.disabled ? 'disabled' : 'primary'"
+            :plain="index !== coerceActions.length - 1"
+            :key="index"
+            @click="$_onBtnClick($event, item)"
+          >
+            {{ item.text }}
+          </md-button>
+        </template>
+      </div>
     </div>
   </div>
 </template>
@@ -64,10 +66,14 @@ export default {
   right 0
   display flex
   padding action-bar-padding-v action-bar-padding-h
-  padding-bottom constant(safe-area-inset-bottom)
   background color-bg-inverse
   clearfix()
 
+.md-action-bar-container
+  display flex
+  flex 1
+  padding-bottom constant(safe-area-inset-bottom)
+  
 .md-action-bar-text
   display flex
   flex 1
