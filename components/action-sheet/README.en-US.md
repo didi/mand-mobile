@@ -11,6 +11,8 @@ Support scenario-relevent operations
 import { ActionSheet } from 'mand-mobile'
 
 Vue.component(ActionSheet.name, ActionSheet)
+
+this.$actionsheet.create({ /* ... */ }) // Totally Import
 ```
 
 ### Code Examples

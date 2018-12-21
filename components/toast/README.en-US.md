@@ -9,7 +9,11 @@ preview: https://mand-mobile.github.io/2x-doc/examples/#/toast
 import { Toast } from 'mand-mobile'
 
 Toast.succeed('Good Job!')
+
+this.$toast.info('hint') // Totally Import
 ```
+
+### Instruction
 
 ### Code Examples
 <!-- DEMO -->

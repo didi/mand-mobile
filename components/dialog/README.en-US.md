@@ -10,7 +10,9 @@ A floating layer to get users' feedback or display information.
 ```javascript
 import { Dialog } from 'mand-mobile'
 
-Vue.component(Dialog.name, Dialog)
+Dialog.alert({ content: '' })
+
+this.$dialog.alert({ content: '' }) // Totally Import
 ```
 
 ### Code Examples

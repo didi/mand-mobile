@@ -11,6 +11,8 @@ preview: https://mand-mobile.github.io/2x-doc/examples/#/action-sheet
 import { ActionSheet } from 'mand-mobile'
 
 Vue.component(ActionSheet.name, ActionSheet)
+
+this.$actionsheet.create({ /* ... */ }) // 全量引入
 ```
 
 ### 代码演示

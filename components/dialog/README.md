@@ -10,7 +10,9 @@ preview: https://mand-mobile.github.io/2x-doc/examples/#/dialog
 ```javascript
 import { Dialog } from 'mand-mobile'
 
-Vue.component(Dialog.name, Dialog)
+Dialog.alert({ content: '' })
+
+this.$dialog.alert({ content: '' }) // 全量引入
 ```
 
 ### 代码演示

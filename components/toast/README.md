@@ -11,6 +11,8 @@ preview: https://mand-mobile.github.io/2x-doc/examples/#/toast
 import { Toast } from 'mand-mobile'
 
 Toast.succeed('操作成功')
+
+this.$toast.info('提示') // 全量引入
 ```
 
 ### 代码演示
