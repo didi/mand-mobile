@@ -1,6 +1,6 @@
 /* eslint comma-dangle: ["error", "always-multiline"] */
 
-// 组件引入
+// Import components core
 import './_style/global.styl'
 import {warn} from './_util'
 import Button from './button'
@@ -60,7 +60,7 @@ import Slider from './slider'
 import Progress from './progress'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
-// 全量引入提醒
+// Totally importing reminder
 warn(
   'You are using a whole package of mand-mobile, ' +
     'please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.',
@@ -70,7 +70,6 @@ warn(
 /* global MAN_VERSION */
 const version = /* @echo MAN_VERSION */ MAN_VERSION
 
-// 单个组件暴露
 export const components = {
   Button,
   Icon,
@@ -129,11 +128,13 @@ export const components = {
   /* @init<%${componentNameUpper},%> */
 }
 
-// 定义插件安装方法
+// Define plugin installation method
 const install = function(Vue) {
   if (!Vue || install.installed) {
     return
   }
+
+  // Register global components
   const componentsNames = Object.keys(components)
   componentsNames.forEach(name => {
     const component = components[name]
@@ -142,7 +143,7 @@ const install = function(Vue) {
     }
   })
 
-  // 全局服务注入
+  // Mount to prototype
   Vue.prototype.$toast = Toast
   Vue.prototype.$dialog = Dialog
   Vue.prototype.$actionsheet = ActionSheet
@@ -152,7 +153,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-// 集合组件暴露
+// xport components
 export {
   install,
   version,
