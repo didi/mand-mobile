@@ -622,6 +622,7 @@ export default {
     .md-field-item-content
       min-height 115px
     .md-field-item-content,
+    .md-field-item-left,
     .md-field-item-right,
     .md-input-item-input,
     .md-input-item-fake
