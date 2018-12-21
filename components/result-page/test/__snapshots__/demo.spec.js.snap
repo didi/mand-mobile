@@ -3,7 +3,7 @@
 exports[`ResultPage 404 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-0">
   <div class="md-result">
-    <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/lost.png" class="lost"></div>
+    <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.1/lost.png" class="lost"></div>
     <!---->
     <div class="md-result-subtext">您要访问的页面已丢失</div>
     <!---->
@@ -25,7 +25,7 @@ exports[`ResultPage Custom pattern 1`] = `
 exports[`ResultPage Network anomaly 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-1">
   <div class="md-result">
-    <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/network.png" class="network"></div>
+    <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.1/network.png" class="network"></div>
     <div class="md-result-text">网络连接异常</div>
     <div class="md-result-subtext">点击屏幕，重新加载</div>
     <!---->
@@ -36,7 +36,7 @@ exports[`ResultPage Network anomaly 1`] = `
 exports[`ResultPage With button 1`] = `
 <div class="md-example-child md-example-child-result-page md-example-child-result-page-2">
   <div class="md-result">
-    <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.0/empty.png" class="empty"></div>
+    <div class="md-result-image"><img src="//manhattan.didistatic.com/static/manhattan/mand-mobile/result-page/2.1/empty.png" class="empty"></div>
     <div class="md-result-text">暂无信息</div>
     <!---->
     <div class="md-result-buttons"><button type="button" class="md-button default active inline plain small">
