@@ -3,15 +3,17 @@
 exports[`ActionBar Demo Basic 1`] = `
 <div class="md-example-child md-example-child-action-bar md-example-child-0">
   <div class="md-action-bar">
-    <!---->
-    <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block">
-        <div class="md-button-inner">
-          <!---->
-          <p class="md-button-content">
-            主要按钮
-          </p>
-        </div>
-      </button></div>
+    <div class="md-action-bar-container">
+      <!---->
+      <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block">
+          <div class="md-button-inner">
+            <!---->
+            <p class="md-button-content">
+              主要按钮
+            </p>
+          </div>
+        </button></div>
+    </div>
   </div>
 </div>
 `;
@@ -19,22 +21,24 @@ exports[`ActionBar Demo Basic 1`] = `
 exports[`ActionBar Demo Multiple buttons 1`] = `
 <div class="md-example-child md-example-child-action-bar md-example-child-0">
   <div class="md-action-bar">
-    <!---->
-    <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block plain">
-        <div class="md-button-inner">
-          <!---->
-          <p class="md-button-content">
-            次要按钮
-          </p>
-        </div>
-      </button><button type="button" class="md-button md-action-bar-button primary active block">
-        <div class="md-button-inner">
-          <!---->
-          <p class="md-button-content">
-            主要按钮
-          </p>
-        </div>
-      </button></div>
+    <div class="md-action-bar-container">
+      <!---->
+      <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block plain">
+          <div class="md-button-inner">
+            <!---->
+            <p class="md-button-content">
+              次要按钮
+            </p>
+          </div>
+        </button><button type="button" class="md-button md-action-bar-button primary active block">
+          <div class="md-button-inner">
+            <!---->
+            <p class="md-button-content">
+              主要按钮
+            </p>
+          </div>
+        </button></div>
+    </div>
   </div>
 </div>
 `;
@@ -42,22 +46,24 @@ exports[`ActionBar Demo Multiple buttons 1`] = `
 exports[`ActionBar Demo Multiple buttons and disabled button 1`] = `
 <div class="md-example-child md-example-child-action-bar md-example-child-1">
   <div class="md-action-bar">
-    <!---->
-    <div class="md-action-bar-group"><button type="button" disabled="disabled" class="md-button md-action-bar-button disabled active block plain">
-        <div class="md-button-inner">
-          <!---->
-          <p class="md-button-content">
-            次要按钮
-          </p>
-        </div>
-      </button><button type="button" disabled="disabled" class="md-button md-action-bar-button disabled active block">
-        <div class="md-button-inner">
-          <!---->
-          <p class="md-button-content">
-            主要按钮
-          </p>
-        </div>
-      </button></div>
+    <div class="md-action-bar-container">
+      <!---->
+      <div class="md-action-bar-group"><button type="button" disabled="disabled" class="md-button md-action-bar-button disabled active block plain">
+          <div class="md-button-inner">
+            <!---->
+            <p class="md-button-content">
+              次要按钮
+            </p>
+          </div>
+        </button><button type="button" disabled="disabled" class="md-button md-action-bar-button disabled active block">
+          <div class="md-button-inner">
+            <!---->
+            <p class="md-button-content">
+              主要按钮
+            </p>
+          </div>
+        </button></div>
+    </div>
   </div>
 </div>
 `;
@@ -65,15 +71,17 @@ exports[`ActionBar Demo Multiple buttons and disabled button 1`] = `
 exports[`ActionBar Demo With slot 1`] = `
 <div class="md-example-child md-example-child-action-bar md-example-child-3">
   <div class="md-action-bar">
-    <div class="md-action-bar-text"><span class="price">¥128.00<small>起</small></span></div>
-    <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block">
-        <div class="md-button-inner">
-          <!---->
-          <p class="md-button-content">
-            主要按钮
-          </p>
-        </div>
-      </button></div>
+    <div class="md-action-bar-container">
+      <div class="md-action-bar-text"><span class="price">¥128.00<small>起</small></span></div>
+      <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block">
+          <div class="md-button-inner">
+            <!---->
+            <p class="md-button-content">
+              主要按钮
+            </p>
+          </div>
+        </button></div>
+    </div>
   </div>
 </div>
 `;
