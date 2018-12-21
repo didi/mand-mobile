@@ -36,7 +36,7 @@
 
 .md-slide-up
   &-enter, &-leave-to
-    transform translate(0, 100%)
+    transform translate3d(0, 100%, 0)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -44,7 +44,7 @@
 
 .md-slide-right
   &-enter, &-leave-to
-    transform translate(-100%, 0)
+    transform translate3d(-100%, 0, 0)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -52,7 +52,7 @@
 
 .md-slide-left
   &-enter, &-leave-to
-    transform translate(100%, 0)
+    transform translate3d(100%, 0, 0)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -60,7 +60,7 @@
 
 .md-slide-down
   &-enter, &-leave-to
-    transform translate(0, -100%)
+    transform translate3d(0, -100%, 0)
   &-enter-active
     transition transform 300ms cubic-bezier(0.165, 0.84, 0.44, 1)
   &-leave-active
@@ -77,7 +77,7 @@
 .md-fade-up
   &-enter, &-leave-to
     opacity 0.01
-    transform translate(0, 20%)
+    transform translate3d(0, 20%, 0)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -86,7 +86,7 @@
 .md-fade-down
   &-enter, &-leave-to
     opacity 0.01
-    transform translate(0, -20%)
+    transform translate3d(0, -20%, 0)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -95,7 +95,7 @@
 .md-fade-right
   &-enter, &-leave-to
     opacity 0.01
-    transform translate(-20%, 0)
+    transform translate3d(-20%, 0, 0)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -104,7 +104,7 @@
 .md-fade-left
   &-enter, &-leave-to
     opacity 0.01
-    transform translate(20%, 0)
+    transform translate3d(20%, 0, 0)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active
@@ -120,12 +120,12 @@
 @keyframes fly-in
   0%
     opacity 0.5
-    transform scale(0.5) translate(0, 50px)
+    transform scale(0.5) translate3d(0, 50px, 0)
   45%
     opacity 1
-    transform scale(1.05) translate(0, -50px)
+    transform scale(1.05) translate3d(0, -50px, 0)
   100%
-    transform scale(1) translate(0, 0)
+    transform scale(1) translate3d(0, 0, 0)
 
 @keyframes bounce-in
   0%
