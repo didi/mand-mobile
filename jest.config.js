@@ -1,3 +1,6 @@
+const TEST_TYPE = process.env.TEST_TYPE || 'components'
+// const TEST_BUNDLE = TEST_TYPE === 'bundle' ? 'lib/mand-mobile.umd' : ''
+
 module.exports = {
   setupFiles: ['<rootDir>/test/jest.init.js'],
   moduleFileExtensions: [
@@ -25,8 +28,8 @@ module.exports = {
   ],
   moduleNameMapper: {
     '@examples(.*)': '<rootDir>/examples/$1',
-    'mand-mobile(.*)': '<rootDir>/$1',
-    'mand-mobile/lib(.*)': '<rootDir>/components$1'
+    'mand-mobile/lib(.*)': `<rootDir>/${TEST_TYPE}$1`,
+    'mand-mobile/components(.*)': `<rootDir>/${TEST_TYPE}$1`
   },
   snapshotSerializers: [
     'jest-serializer-vue'
