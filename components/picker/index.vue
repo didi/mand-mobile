@@ -88,14 +88,15 @@ export default {
     defaultIndex: {
       type: Array,
       default() {
-        if (this.cols < 1) {
-          return []
-        }
-        const arr = new Array(this.cols)
-        for (let i = 0, len = arr.length; i < len; i++) {
-          arr[i] = 0
-        }
-        return arr
+        // if (this.cols < 1) {
+        //   return []
+        // }
+        // const arr = new Array(this.cols)
+        // for (let i = 0, len = arr.length; i < len; i++) {
+        //   arr[i] = 0
+        // }
+        // return arr
+        return []
       },
     },
     invalidIndex: {
@@ -221,13 +222,15 @@ export default {
       }
 
       const defaultIndex = this.$_getDefaultIndex()
-      const defaultIndexOfFirstColumn = defaultIndex[0] || 0
+      const defaultValue = this.$_getDefaultValue()
+      // const defaultIndexOfFirstColumn = defaultIndex[0] || 0
       this.$nextTick(() => {
         cascadePicker(this.column, {
-          currentLevel: 0,
+          currentLevel: -1,
           maxLevel: this.cols,
-          values: this.data[0] ? this.data[0][defaultIndexOfFirstColumn] || [] : [],
+          values: this.data || [],
           defaultIndex,
+          defaultValue,
         })
       })
     },

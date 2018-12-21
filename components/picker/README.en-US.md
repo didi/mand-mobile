@@ -25,6 +25,7 @@ Vue.component(Picker.name, Picker)
 |data|data source|Array<{value, lable, ...}>[]|`[]`|-|
 |cols|number of columns|Number|`1`|-|
 |default-index|indexes of initially selected items in each column|Array|`[]`|-|
+|default-value|values of initially selected items in each column|Array|`[]`|Available key `text/lable/value`|
 |invalid-index|indexes of disabled items in each column|Array|`[]`|array of multiple disabled items, such as `[[1,2], 2]`|
 |is-view|inline display in page, otherwise it shows as `Popup`|Boolean|`false`|-|
 |is-cascade|data in each column is cascaded or not|Boolean|`false`|see #Appendix for the format of cascaded data|
