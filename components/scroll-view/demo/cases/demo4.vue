@@ -82,6 +82,7 @@ export default {
 .md-example-child-scroll-view-4
   position relative
   height 800px
+  background #FFF
   .scroll-view-striky-title
     position absolute
     top 0

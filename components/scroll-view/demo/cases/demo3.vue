@@ -62,6 +62,7 @@ export default {
 <style lang="stylus">
 .md-example-child-scroll-view-3
   height 800px
+  background #FFF
   .scroll-view-item
     padding 30px 0
     text-align center

@@ -123,6 +123,7 @@ export default {
 .md-example-child-scroll-view-5
   position relative
   height 800px
+  background #FFF
   .md-tab-bar
     position absolute
     left 0
@@ -132,7 +133,7 @@ export default {
     box-shadow 0 2px 8px #f0f0f0
   .scroll-view-with-tab-bar
     & > .scroll-view-container
-      padding-top 80px
+      padding-top 100px
     .scroll-view-item
       padding 30px 0
       text-align center

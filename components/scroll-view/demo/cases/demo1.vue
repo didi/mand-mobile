@@ -37,6 +37,7 @@ export default {
 <style lang="stylus">
 .md-example-child-scroll-view-1
   height 100px
+  background #FFF
   .md-scroll-view
     display flex
     align-items center
