@@ -320,9 +320,7 @@ export default {
 .md-scroll-view
   position relative
   display block
-  // width 100%
   height 100%
-  background #fff
   overflow hidden
   user-select none
   .scroll-view-header, .scroll-view-footer
