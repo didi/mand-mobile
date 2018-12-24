@@ -3,10 +3,17 @@
     <div class="default-header-container">
       <div class="default-header-aside">
         <a class="default-header-logo" href="/2x-doc">
-          <img :src="logo" alt="logo">
+          <img class="logo-img" :src="logo" alt="logo">
           <p>
             <span class="name" v-html="title"></span>
-            <!-- <span class="version">v{{version}}</span> -->
+            <span class="ads-img" v-if="logoAds.images">
+              <img v-for="(img, index) in logoAds.images"
+                :src="img"
+                :key="index"
+                alt=""
+              >
+            </span>
+            <span class="ads-text" v-if="logoAds.slogan" v-html="logoAds.slogan"></span>
           </p>
         </a>
       </div>
@@ -80,6 +87,12 @@ export default {
     isActive: {
       type: Boolean,
       default: false
+    },
+    logoAds: {
+      type: Object,
+      default () {
+        return {}
+      }
     }
   },
 
@@ -168,7 +181,7 @@ export default {
       overflow hidden
       display inline-flex
       align-items center
-      img
+      img.logo-img
         display inline-block
         margin-right 10px
         width auto
@@ -188,11 +201,17 @@ export default {
         font-size 16px
         font-family DINAlternate-Bold, AvenirNext-Medium,"Microsoft Yahei","Lato","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif  !important
         transition all .3s
-      span.version
+      span.ads-text
         margin-top 3px
         color #999
         font-weight 300
         font-size 10px
+      span.ads-img
+        margin-top 3px
+        height 15px
+        img
+          margin-right 2px
+          height 100%
         // font-family DINAlternate-Bold
         
   .default-header-content
@@ -373,7 +392,7 @@ export default {
     .default-header-aside .default-header-logo
       height 28px
       line-height 28px !important
-      img
+      img.logo-img
         height 24px !important
         margin 0
       sup

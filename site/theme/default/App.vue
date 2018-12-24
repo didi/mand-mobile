@@ -1,11 +1,11 @@
 <template>
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
-    <mb-header :is-active="isHome"/>
+    <mb-header :is-active="isHome" :logo-ads="logoAds"/>
     <div class="default-content">
       <mb-menu
         v-if="!noMenu"
         v-model="isMenuShow"
-        menua-ads="menuAds"
+        :menua-ads="menuAds"
       />
       <div class="default-content-wrapper">
         <router-view></router-view>
@@ -53,8 +53,9 @@ export default {
   data() {
     return {
       isMenuShow: false,
-      hoverAds: [],
-      menuAds: [],
+      hoverAds: [], // {image: string, link: string}
+      menuAds: [], // {image: string, link: string}
+      logoAds: {}, // images: Array logo下方图片集合，text: string logo下方slogan
     }
   },
   watch: {
@@ -88,9 +89,10 @@ export default {
   },
   methods: {
     getConfig () {
-      $.get(`//static.galileo.xiaojukeji.com/static/tms/api/mand_mobile_config.json?${Date.now()}`).then(data => {
-        this.hoverAds = data.hoverAds
-        this.menuAds = data.menuAds
+      $.get(`//star.xiaojukeji.com/config/get.node?city=-1&name=mand_mobile_ads&${Date.now()}`).then(({ data }) => {
+        this.hoverAds = data.mand_mobile_ads.hoverAds
+        this.menuAds = data.mand_mobile_ads.menuAds
+        this.logoAds = data.mand_mobile_ads.logoAds
       })
     },
     changeLang () {
