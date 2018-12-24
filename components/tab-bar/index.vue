@@ -289,8 +289,7 @@ export default {
 
 .md-tab-bar
   .md-scroll-view
-    background none
+    display block
   .scroll-view-container
-    display inline-flex
     min-width 100%
 </style>
