@@ -4,12 +4,13 @@
       @before-change="beforeChange"
       @after-change="afterChange"
       ref="swiper"
-      :useNativeDriver="false"
+      :is-prevent="false"
+      :useNative-driver="false"
     >
       <md-swiper-item :key="$index" v-for="(item, $index) in simple">
-        <a href="javascript:void(0)"
+        <div
           class="banner-item"
-          :style="{'background': `${item.color}`}">{{item.text}}</a>
+          :style="{'background': `${item.color}`}">{{item.text}}</div>
       </md-swiper-item>
     </md-swiper>
   </div>
