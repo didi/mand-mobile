@@ -169,7 +169,11 @@ title: 从 1.x 迁移
 - 新增功能
 	- 🔅 新增属性`direction`，用于设置步骤条展示方向，默认为`horizontal`
 	- 🔅 新增属性`transition`，用于进度变化动效
-	
+
+#### Swiper
+- 新增功能
+	- 🔅 新增属性`transition-duration`
+
 #### TabBar
 
 - 不兼容改动

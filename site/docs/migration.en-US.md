@@ -169,7 +169,11 @@ title: Migration from 1.x
 - Features and Improvements
 	- 🔅 New prop `direction`, used to set the step bar display direction and default value is `horizontal`.
 	- 🔅 New prop `transition`, used for progress change effects.
-	
+
+#### Swiper
+- Features and Improvements
+	- 🔅 New prop `transition-duration`
+  
 #### TabBar
 
 - Breaking Changes

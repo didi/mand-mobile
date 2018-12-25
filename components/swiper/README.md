@@ -25,6 +25,7 @@ Vue.component(SwiperItem.name, SwiperItem)
 |---|---|---|---|---|
 |autoplay|自动切换间隔时长(毫秒), 禁用可设置为`0`|Number|`3000`|`0`, `[500, +Int.Max)`|
 |transition|面板切换动画效果|String|`slide`|`slide`, `slideY`, `fade`, `fade`|
+|transition-duration|面板切换动画时长|Number|`250`|单位`ms`|
 |default-index|第一屏面板索引值|Number|`0`|`[0, length - 1]`|
 |has-dots|控制面板指示点|Boolean|`true`|-|
 |is-prevent|阻止默认的事件，如页面滚动事件|Boolean|`true`|为`swiper-item`绑定点击事件需将其设置为`false`|
