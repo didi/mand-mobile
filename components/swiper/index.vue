@@ -45,6 +45,10 @@ export default {
         return ['slide', 'slideY', 'fade'].indexOf(value) > -1
       },
     },
+    transitionDuration: {
+      type: Number,
+      default: 250,
+    },
     defaultIndex: {
       type: Number,
       default: 0,
@@ -79,6 +83,7 @@ export default {
       ready: false,
       dragging: false,
       userScrolling: false,
+      isFirstLastAnimating: false,
       isInitial: false,
       hasTouch: inBrowser ? 'ontouchstart' in window : false,
       index: 0,
@@ -167,10 +172,10 @@ export default {
           scrollingX: !this.isVertical,
           snapping: false,
           bouncing: false,
+          animationDuration: this.transitionDuration,
           // paging: true,
           scrollingComplete: () => {
             this.transitionEndHandler && this.transitionEndHandler()
-            this.transitionEndHandler = null
           },
         },
       )
@@ -324,6 +329,9 @@ export default {
 
       let isTouchEvent
       const _onTouchStart = event => {
+        if (this.isFirstLastAnimating) {
+          return
+        }
         if (event.originalEvent) {
           event = event.originalEvent
         }
@@ -372,10 +380,12 @@ export default {
         element.addEventListener('mousedown', _onTouchStart)
         element.addEventListener('mousemove', _onTouchMove)
         element.addEventListener('mouseup', _onTouchEnd)
+        element.addEventListener('mouseleave', _onTouchEnd)
       } else {
         element.addEventListener('touchstart', _onTouchStart)
         element.addEventListener('touchmove', _onTouchMove)
         element.addEventListener('touchend', _onTouchEnd)
+        element.addEventListener('touchcancel', _onTouchEnd)
       }
     },
 
@@ -455,24 +465,42 @@ export default {
       }
 
       setTimeout(() => {
+        const isFirstItem = this.isFirstItem && this.isLoop
+        const isLastItem = this.isLastItem && this.isLoop
+
         this.transitionEndHandler = () => {
-          if (this.isLastItem && this.isLoop) {
-            const x = this.isVertical ? 0 : this.firstIndex * this.dimension
-            const y = this.isVertical ? this.firstIndex * this.dimension : 0
-            this.scroller.scrollTo(x, y, false)
-            this.index = this.firstIndex
-          }
-
-          if (this.isFirstItem && this.isLoop) {
-            const x = this.isVertical ? 0 : this.lastIndex * this.dimension
-            const y = this.isVertical ? this.lastIndex * this.dimension : 0
-            this.scroller.scrollTo(x, y, false)
-            this.index = this.lastIndex
-          }
-
+          this.isFirstLastAnimating = false
           this.$emit('after-change', this.fromIndex, this.toIndex)
+          this.transitionEndHandler = null
         }
         this.$_translate(this.$swiper, -this.dimension * this.index)
+
+        if (!isFirstItem && !isLastItem) {
+          return
+        }
+        /**
+         * Recover first and last page
+         * before the end of triansition,
+         * otherwise the page turning will be disordered
+         */
+        setTimeout(() => {
+          const x = isLastItem
+            ? this.isVertical ? 0 : this.firstIndex * this.dimension
+            : this.isVertical ? 0 : this.lastIndex * this.dimension
+          const y = isLastItem
+            ? this.isVertical ? this.firstIndex * this.dimension : 0
+            : this.isVertical ? this.lastIndex * this.dimension : 0
+
+          this.scroller.scrollTo(x, y, false)
+          this.transitionEndHandler && this.transitionEndHandler()
+        }, this.transitionDuration * 0.8)
+
+        /**
+         * Recover first and last indicator
+         * otherwise the highlighting of first and last indicator will be delay
+         */
+        this.index = isLastItem ? this.firstIndex : this.lastIndex
+        this.isFirstLastAnimating = true
       }, 10)
     },
 
@@ -553,13 +581,13 @@ export default {
       }
 
       if (this.isVertical) {
-        if (Math.abs(offsetTop) > itemHeight / 6) {
+        if (Math.abs(offsetTop) > itemHeight / 10) {
           towards = offsetTop < 0 ? 'next' : 'prev'
         } else {
           this.$_translate(this.$swiper, -this.dimension * index, true)
         }
       } else {
-        if (Math.abs(offsetLeft) > itemWidth / 6) {
+        if (Math.abs(offsetLeft) > itemWidth / 10) {
           towards = offsetLeft < 0 ? 'next' : 'prev'
         } else {
           if (this.isSlide) {
