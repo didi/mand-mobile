@@ -135,7 +135,7 @@
   clearfix()
   .rolling-container
     position relative
-    display inline-block
+    float left
   .rolling
     float left
     circle.stroke
