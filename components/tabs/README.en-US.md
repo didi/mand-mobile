@@ -22,7 +22,8 @@ Vue.component(TabPane.name, TabPane)
 #### Tabs Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-| v-model | name of selected tab | String | - | - |
+|v-model|name of selected tab|String|-|-|
+|immediate|trigger a `change` event immediately after initialization|Boolean|`false`|-|
 
 #### TabPane Props
 |Props | Description | Type | Default | Note|

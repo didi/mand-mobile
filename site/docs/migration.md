@@ -157,6 +157,12 @@ title: 从 1.x 迁移
 	- 🔅 新增属性`icon-disabled`，用于设置禁用项图标，默认为`check-disabled`
 	- 🔅 新增属性`icon-svg`，用于使用SVG类型图标，默认为`false`
 
+#### ScrollView
+
+- 新增功能
+	- 🔅 新增属性`manual-init`，用于设置手动初始化滚动区域
+	- 🔅 新增方法`init`，用于手动初始化滚动区域
+
 #### Selector
 
 - 新增功能
@@ -273,6 +279,7 @@ title: 从 1.x 迁移
 
 - 新增功能
 	- 🔅 新增属性`v-model`，用于双向绑定的标签对象`name`
+	- 🔅 新增属性`immediate`, 用于初始化完成后立刻触发一次`change`事件
 	- 🔅 新增子组件`TabPane`
 	
 #### Tag

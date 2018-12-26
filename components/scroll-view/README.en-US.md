@@ -30,7 +30,8 @@ Vue.component(ScrollView.name, ScrollView)
 |scrolling-x | horizontal scrolling | Boolean | `true` | -|
 |scrolling-y | vertical scrolling | Boolean | `true` | -|
 |bouncing | - | Boolean | `true` | -|
-|autoReflow| automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` |
+|auto-reflow| automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` |
+|manual-init | manual initialization | Boolean | `false` | generally used for asynchronous initialization scenarios, you need to manually call the `init` method to complete the initialization |
 |endReachedThreshold | threshold for emitting `endReached`. | Number | 0 | unit `px` |
 
 #### ScrollViewRefresh Props
@@ -77,6 +78,9 @@ header slot
 footer slot
 
 #### ScrollView Methods
+
+##### init()
+Initialize the scroll area, used when `manual-init` is set to `true`.
 
 ##### reflowScroller()
 Reset the scroll area, which needs to be called after the content in the general scroll area changes.

@@ -157,6 +157,12 @@ title: Migration from 1.x
 	- 🔅 New prop `icon-disabled`, used to set the disable item icon and default value is `check-disabled`.
 	- 🔅 New prop `icon-svg`, used to use SVG type icons and default value is `false`.
 
+#### ScrollView
+
+- Features and Improvements
+	- 🔅 New prop `manual-init`, used to set the manual initialization scroll area.
+	- 🔅 New method `init`, used to manually initialize the scroll area.
+
 #### Selector
 
 - Features and Improvements
@@ -273,6 +279,7 @@ title: Migration from 1.x
 
 - Features and Improvements
 	- 🔅 New prop `v-model`, used to identify the label object `name`.
+	- 🔅 New prop `immediate`, used to trigger a `change` event immediately after initialization`.
 	- 🔅 New child component `TabPane`.
 	
 #### Tag

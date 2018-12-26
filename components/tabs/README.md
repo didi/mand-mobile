@@ -23,6 +23,7 @@ Vue.component(TabPane.name, TabPane)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |v-model|双向绑定的标签对象`name`|String|-|-|
+|immediate|初始化后立即就触发一次`change`事件|Boolean|`false`|-|
 
 #### TabPane Props
 |属性 | 说明 | 类型 | 默认值 | 备注|

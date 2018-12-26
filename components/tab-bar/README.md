@@ -21,10 +21,11 @@ Vue.component(TabBar.name, TabBar)
 #### TabBar Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
+|v-model|双向绑定的标签对象`name`|String|-|-|
 |items|标签标题数组|Array<{name: String, label: String, disabled: Boolean}>|-|-|
 |has-ink|是否显示下划线|Boolean|`true`|-|
 |ink-length|下划线宽度|Number|`100`|该数值为下划线占标签按钮宽度的百分比，须在`0-100`之间|
-|v-model|双向绑定的标签对象`name`|String|-|-|
+|immediate|初始化后立即就触发一次`change`事件|Boolean|`false`|-|
 
 #### TabBar Methods
 
