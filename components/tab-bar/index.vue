@@ -75,6 +75,10 @@ export default {
       type: Number,
       default: 100,
     },
+    immediate: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -147,6 +151,12 @@ export default {
   mounted() {
     window.addEventListener('resize', this.reflow)
     this.reflow()
+
+    if (this.immediate) {
+      this.$nextTick(() => {
+        this.$emit('change', this.items[this.currentIndex], this.currentIndex)
+      })
+    }
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.reflow)

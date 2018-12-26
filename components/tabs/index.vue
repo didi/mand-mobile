@@ -4,9 +4,10 @@
       ref="tabBar"
       :items="menus"
       :value="currentName"
-      @change="$_handleTabClick"
       :has-ink="hasInk"
       :ink-length="inkLength"
+      :immediate="immediate"
+      @change="$_handleTabClick"
     />
     <div class="md-tabs-content">
       <slot></slot>
@@ -33,6 +34,7 @@ export default {
       type: Number,
       default: 80,
     },
+    immediate: Boolean,
   },
 
   data() {
