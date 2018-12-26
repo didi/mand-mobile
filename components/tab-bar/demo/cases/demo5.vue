@@ -26,8 +26,8 @@ export default {
     }
   },
   methods: {
-    onChange(item, index) {
-      Toast.info(`index: ${index}, label: ${item.label}`)
+    onChange(item, index, prevIndex) {
+      Toast.info(`index: ${index}, prevIndex: ${prevIndex}, label: ${item.label}`)
     },
   },
 }
