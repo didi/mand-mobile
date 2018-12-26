@@ -83,7 +83,6 @@ export default {
       ready: false,
       dragging: false,
       userScrolling: false,
-      isFirstLastAnimating: false,
       isInitial: false,
       hasTouch: inBrowser ? 'ontouchstart' in window : false,
       index: 0,
@@ -329,9 +328,12 @@ export default {
 
       let isTouchEvent
       const _onTouchStart = event => {
-        if (this.isFirstLastAnimating) {
-          return
-        }
+        /**
+         * Consume unfinished transition handler first
+         * Otherwise the offset calculation will be abnormal
+         */
+        this.transitionEndHandler && this.transitionEndHandler()
+
         if (event.originalEvent) {
           event = event.originalEvent
         }
@@ -469,38 +471,29 @@ export default {
         const isLastItem = this.isLastItem && this.isLoop
 
         this.transitionEndHandler = () => {
-          this.isFirstLastAnimating = false
+          // Recover first and last page
+          if (isLastItem) {
+            const x = this.isVertical ? 0 : this.firstIndex * this.dimension
+            const y = this.isVertical ? this.firstIndex * this.dimension : 0
+            this.scroller.scrollTo(x, y, false)
+          }
+          if (isFirstItem) {
+            const x = this.isVertical ? 0 : this.lastIndex * this.dimension
+            const y = this.isVertical ? this.lastIndex * this.dimension : 0
+            this.scroller.scrollTo(x, y, false)
+          }
+
           this.$emit('after-change', this.fromIndex, this.toIndex)
           this.transitionEndHandler = null
         }
         this.$_translate(this.$swiper, -this.dimension * this.index)
 
-        if (!isFirstItem && !isLastItem) {
-          return
+        // Recover first and last indicator
+        if (isFirstItem) {
+          this.index = this.lastIndex
+        } else if (isLastItem) {
+          this.index = this.firstIndex
         }
-        /**
-         * Recover first and last page
-         * before the end of triansition,
-         * otherwise the page turning will be disordered
-         */
-        setTimeout(() => {
-          const x = isLastItem
-            ? this.isVertical ? 0 : this.firstIndex * this.dimension
-            : this.isVertical ? 0 : this.lastIndex * this.dimension
-          const y = isLastItem
-            ? this.isVertical ? this.firstIndex * this.dimension : 0
-            : this.isVertical ? this.lastIndex * this.dimension : 0
-
-          this.scroller.scrollTo(x, y, false)
-          this.transitionEndHandler && this.transitionEndHandler()
-        }, this.transitionDuration * 0.8)
-
-        /**
-         * Recover first and last indicator
-         * otherwise the highlighting of first and last indicator will be delay
-         */
-        this.index = isLastItem ? this.firstIndex : this.lastIndex
-        this.isFirstLastAnimating = true
       }, 10)
     },
 
