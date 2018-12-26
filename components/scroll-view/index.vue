@@ -26,7 +26,6 @@
           'refreshing': isRefreshing,
           'refresh-active': isRefreshActive,
         }"
-        :style="{top: `-${refreshOffsetY}px`}"
       >
         <slot
           name="refresh"
@@ -73,6 +72,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    manualInit: {
+      type: Boolean,
+      default: false,
+    },
     endReachedThreshold: {
       type: Number,
       default: 0,
@@ -109,14 +112,18 @@ export default {
     },
   },
   mounted() {
-    this.$_initScroller()
-    this.autoReflow && this.$_initAutoReflow()
+    if (!this.manualInit) {
+      this.$_initScroller()
+    }
   },
   destroyed() {
     this.reflowTimer && clearInterval(this.reflowTimer)
   },
   methods: {
     $_initScroller() {
+      if (this.isInitialed) {
+        return
+      }
       this.container = this.$el
       this.refresher = this.$el.querySelector('.scroll-view-refresh')
       this.more = this.$el.querySelector('.scroll-view-more')
@@ -164,6 +171,7 @@ export default {
       }
       this.scroller = scroller
       this.reflowScroller(true)
+      this.autoReflow && this.$_initAutoReflow()
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
@@ -254,6 +262,11 @@ export default {
       }
       this.$emit('scroll', {scrollLeft: left, scrollTop: top})
     },
+    init() {
+      this.$nextTick(() => {
+        this.$_initScroller()
+      })
+    },
     scrollTo(left, top, animate = false) {
       if (!this.scroller) {
         return
@@ -341,6 +354,7 @@ export default {
       position absolute
       left 0
       right 0
+      transform translate3d(0, -100%, 0)
     .scroll-view-more
       visibility hidden
       &.active
