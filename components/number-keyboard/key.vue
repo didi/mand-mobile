@@ -3,17 +3,17 @@
     v-if="noTouch"
     v-text="value"
     :class="[active ? 'active' : '']"
-    @click.stop.prevent="$_onFocus"
+    @click="$_onFocus"
   ></li>
   <li
     v-else
     v-text="value"
     :class="[active ? 'active' : '']"
-    @touchstart.stop.prevent="$_onFocus"
+    @touchstart="$_onFocus"
     @touchmove="$_onBlur"
     @touchend="$_onBlur"
     @touchcancel="$_onBlur"
-    @click.stop.prevent="$_onFocus"
+    @click="$_onFocus"
   ></li>
 </template>
 
@@ -29,6 +29,10 @@
       type: Boolean,
       default: false,
     },
+    noPrevent: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -38,7 +42,11 @@
   },
 
   methods: {
-    $_onFocus() {
+    $_onFocus(event) {
+      if (!this.noPrevent) {
+        event.preventDefault()
+        event.stopImmediatePropagation()
+      }
       if (!this.noTouch) {
         this.active = true
       }

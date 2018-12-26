@@ -27,6 +27,7 @@
             v-else
             class="keyboard-number-item slidedown"
             no-touch
+            no-prevent
             @press="$_onSlideDoneClick"
           ></md-number-key>
         </template>
@@ -54,6 +55,7 @@
           class="keyboard-operate-item confirm"
           :value="okText"
           no-touch
+          no-prevent
           @press="$_onConfirmeClick"
         ></md-number-key>
       </ul>
