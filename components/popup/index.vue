@@ -109,9 +109,7 @@
           this.$_showPopupBox()
         }
       } else {
-        setTimeout(() => {
-          this.$_hidePopupBox()
-        }, 0)
+        this.$_hidePopupBox()
       }
     },
     preventScrollExclude(val, oldVal) {
