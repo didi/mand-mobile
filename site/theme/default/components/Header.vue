@@ -288,21 +288,28 @@ export default {
         height 100%
         text-decoration none
         color #314659
-      &.default-header-github
-        width 30px
-        border none
-        border-radius 0
-        opacity .8
-        a
-          display inline-block
-          width 100%
-          height 100%
-          background url('../assets/images/github.png') no-repeat
-          background-size contain
-          -webkit-filter invert(70%)
-          filter invert(70%)
-        &:hover
-          opacity .5
+    .default-header-github
+      float right
+      width 32px
+      height 32px
+      min-width auto
+      margin-left 10px
+      margin-top 17px
+      padding 0
+      border none
+      border-radius 0
+      opacity .8
+      box-sizing border-box
+      a
+        display inline-block
+        width 100%
+        height 100%
+        background url('../assets/images/github.png') no-repeat
+        background-size contain
+        -webkit-filter invert(70%)
+        filter invert(70%)
+      &:hover
+        opacity .5
 
   &.active
     height 100px
@@ -341,20 +348,31 @@ export default {
         display none
 @media (max-width: 1400px)
   .default-header-container
-    width 1080px !important
+    // width 1300px !important
     .default-header-aside
       width 20% !important
     .default-header-content
       width 79% !important
-      padding 0 !important
+    .default-header-search
+      .search-input
+        width 150px
 @media (max-width: 1200px)
   .default-header-container
-    width 100% !important
-  .default-header-logo span, .default-header-logo sup, .default-header-search
-    display none !important
-  .default-header-content
-    width 80% !important
-@media (max-width: 750px)
+    width 100%
+    .default-header-aside
+      width 10% !important
+    .default-header-logo span, .default-header-logo sup, .default-header-search
+      display none !important
+    .default-header-content
+      width 89% !important
+      .default-header-nav li.nav-item a
+        padding 0 10px
+  .mfe-blog-theme-default-header.active
+    .default-header-container
+      width 800px
+  .doc-content-top
+    margin-top 30px
+@media (max-width: 850px)
   .mfe-blog-theme-default-header
     position fixed
     top 0
@@ -405,4 +423,6 @@ export default {
         color #2F86F6 !important
     .default-header-operater
       display none
+  .doc-content-top
+    margin-top 0
 </style>

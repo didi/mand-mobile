@@ -48,6 +48,12 @@ export default {
     {
       title: '用户体验',
       describe: '基于「合理、好用」设计价值观，从交互操作、视觉抽象、图形可视等角度共同解决问题。 ',
+      buttons: [{
+        type: 'link',
+        text: '设计原则',
+        src: '/zh-CN/design/principle/intuition',
+        theme: 'demo'
+      }],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.svg',
         content: MfeAnimation1
@@ -122,6 +128,12 @@ export default {
     {
       title: 'User Experience',
       describe: 'Based on the "reasonable and easy to use" design values, we will jointly solve problems from the perspective of interactive operation, visual abstraction, and graphic visualization.',
+      buttons: [{
+        type: 'link',
+        text: 'Principles',
+        src: '/en-US/design/principle/intuition',
+        theme: 'demo'
+      }],
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.svg',
         // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.png'

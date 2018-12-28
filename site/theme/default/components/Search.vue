@@ -31,7 +31,9 @@ export default {
   },
   watch: {
     lang(val) {
-      this.docsearchIns.algoliaOptions.facetFilters = [`lang:${val === 'en-US' ? 'en' : val}`]
+      if (this.docsearchIns) {
+        this.docsearchIns.algoliaOptions.facetFilters = [`lang:${val === 'en-US' ? 'en' : val}`]
+      }
     }
   },
   mounted() {

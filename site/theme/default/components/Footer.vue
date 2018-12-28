@@ -139,11 +139,9 @@ clearfix()
         font-size 12px
 
 @media (max-width: 1400px)
-  .default-footer-container
-    width 1080px !important
-  .default-footer-copyright-container
-    width 1080px !important
-@media (max-width: 750px)
+  .default-footer-container, .default-footer-copyright-container
+    width 900px !important
+@media (max-width: 850px)
   .mfe-blog-theme-default-footer
     display block
     height auto !important
