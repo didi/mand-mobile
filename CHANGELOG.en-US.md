@@ -3,6 +3,11 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.7
+`2018-12-28`
+- Fix
+  - `Toast` execute timing
+
 ### 1.6.6
 `2018-12-16`
 - Fix
