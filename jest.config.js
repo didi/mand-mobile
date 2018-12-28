@@ -29,6 +29,8 @@ module.exports = {
   moduleNameMapper: {
     '@examples(.*)': '<rootDir>/examples/$1',
     'mand-mobile/lib(.*)': `<rootDir>/${TEST_TYPE}$1`,
+    'mand-mobile/components/picker/demo/data(.*)': '<rootDir>/components/picker/demo/data/$1',
+    'mand-mobile/components/tab-picker/demo/data(.*)': '<rootDir>/components/tab-picker/demo/data/$1',
     'mand-mobile/components(.*)': `<rootDir>/${TEST_TYPE}$1`
   },
   snapshotSerializers: [
