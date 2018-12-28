@@ -2,7 +2,7 @@
 
 // Import components core
 import './_style/global.styl'
-import {warn} from './_util'
+import {transformCamelCase, warn} from './_util'
 import Button from './button'
 import Icon from './icon'
 import Popup from './popup'
@@ -139,7 +139,8 @@ const install = function(Vue) {
   componentsNames.forEach(name => {
     const component = components[name]
     if (component.name) {
-      Vue.component(component.name, component)
+      Vue.component(component.name, component) // kebab-case
+      Vue.component(transformCamelCase(`-${component.name}`), component) // PascalCase
     }
   })
 
