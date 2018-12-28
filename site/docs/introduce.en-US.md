@@ -8,7 +8,7 @@ title: Mand Mobile
 
 * <b>Rich Components</b>
 
-    30+ practical components can meet the basic needs of the mobile development, especially for financial scenarios.
+    40+ practical components can meet the basic needs of the mobile development, especially for financial scenarios.
 
 * <b>Unified visual specification</b> 
 

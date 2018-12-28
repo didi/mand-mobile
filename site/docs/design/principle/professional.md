@@ -1,0 +1,97 @@
+---
+title: 体贴专业
+---
+
+<style>
+.doc-cutline-wrapper{
+  display: flex;
+}
+.doc-cutline{
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 42px;
+  padding: 20px;
+  background: #F9FAFB;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  max-width: 45%;
+}
+.doc-cutline:after{
+  position: absolute;
+  bottom: -32px;
+  left: 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+.doc-cutline.do{
+  margin-right: 40px;
+  border-bottom: solid 4px #2F86F6;
+}
+.doc-cutline.do:after{
+  content: "Do";
+  color: #2F86F6;
+}
+.doc-cutline.donot{
+  border-bottom: solid 4px #FF5257;
+}
+.doc-cutline.donot:after{
+  content: "Don't";
+  color: #FF5257;
+}
+.doc-cutline-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doc-cutline-item.horizon img{
+  width: 100%;
+}
+.doc-cutline-item.vertical img{
+  width: auto;
+  height: 100%;
+}
+
+@media (max-width: 750px) {
+  .doc-cutline-wrapper{
+    flex-direction: column;
+  }
+  .doc-cutline{
+    max-width: 100%;
+  }
+  .doc-cutline.do{
+    margin-right: 0;
+  }
+}
+</style>
+
+## 进度清晰
+
+对于资金流转、业务办理，需要通过合理的进度节点设计，清晰的向用户传达时间概念，避免用户焦虑。【理财规则进度/还款进度】
+
+
+<div class="doc-cutline-wrapper">
+  <div class="doc-cutline do">
+    <div class="doc-cutline-item">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/NGwne2FMQv1545911061860.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/N6fHIqY5PO1545911064113.png">
+    </div>
+  </div>
+</div>
+
+## 还原差异
+
+不同银行、不同供应商存在物理差异，在体验基本统一的前提下，也要保持个体的差异度，让用户感受到金融的专业。【供应商信息浮层/银行卡类型】
+
+<div class="doc-cutline-wrapper">
+  <div class="doc-cutline do">
+    <div class="doc-cutline-item">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/j1hfoR4axj1545911194083.png">
+    </div>
+  </div>
+</div>

@@ -188,7 +188,7 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
 ```vue
 <template>
   <div id="app">
-    <md-field title="投保人" class="block">
+    <md-field class="block" title="投保人">
       <md-input-item
         title="投保人姓名"
         placeholder="请填写投保人姓名"
@@ -198,15 +198,15 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
         placeholder="请填写投保人身份证号"
       ></md-input-item>
     </md-field>
-    <md-field title="被保人" class="block">
+    <md-field class="block" title="被保人">
       <md-input-item
         title="被保人姓名"
         placeholder="请填写被保人姓名"
       ></md-input-item>
       <md-field-item
         title="与投保人关系"
-        arrow="arrow-right"
-        :value="relation"
+        :content="relation"
+        arrow
         @click="isPickerShow = true"
         solid
       ></md-field-item>
