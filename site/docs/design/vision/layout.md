@@ -3,47 +3,14 @@ title: 布局
 ---
 
 <style>
-.doc-cutline-wrapper{
-  display: flex;
-  margin-top: 16px;
-}
-.doc-cutline{
-  position: relative;
-  display: inline-flex;
-  margin-bottom: 42px;
-  box-sizing: border-box;
-  flex: 1;
-  flex-direction: column;
-}
-.doc-cutline:first-of-type{
-  margin-right: 40px;
-}
-.doc-cutline-item{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 16px;
-  padding: 20px;
-  background: #F9FAFB;
-}
-.doc-cutline-title{
-  font-size: 14px;
-  color: #111A34;
-}
-.doc-cutline-desc{
-  margin-top: 12px;
-  margin-bottom: 8px;
-  font-size: 12px;
-  color: #41485D;
-}
-
-@media (max-width: 750px) {
-  .doc-cutline-wrapper{
-    flex-direction: column;
-  }
-  .doc-cutline{
-    max-width: 100%;
-  }
+.doc-cutline-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;margin-top:16px}
+.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.doc-cutline:first-of-type{margin-right:40px}
+.doc-cutline-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:16px;padding:20px;background:#F9FAFB}
+.doc-cutline-title{font-size:14px;color:#111A34}
+.doc-cutline-desc{margin-top:12px;margin-bottom:8px;font-size:12px;color:#41485D}
+@media (max-width:750px){.doc-cutline-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.doc-cutline{max-width:100%}
 }
 </style>
 

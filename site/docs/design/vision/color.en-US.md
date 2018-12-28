@@ -3,17 +3,15 @@ title: Color
 ---
 
 <style>
-.color-list{float:left;width:100%;margin-bottom:50px;}
-.color-list.inline{float:left;width:auto;margin-bottom:50px;}
-.color-title{float:left;width:100%;font-size:14px;color;#111A34;}
-.color-item{float:left;width:140px;min-height:148px;margin-top:16px;margin-right:20px;margin-bottom:20px;
-padding-bottom:20px;border:solid 1px #E4E5E7;border-radius:4px 4px 0 0;overflow:hidden;}
-.color-item.no-gap{margin-right:0;}
-/* .color-item-box{border-radius:2px;} */
-.color-item-box.large{width:140px;height:84px;}
-.color-item-box.small{width:60px;height:60px;margin-bottom:10px;font-size:12px;font-weight:100;color:#fff;text-align:center;line-height:60px;}
-.color-item-text{margin:10px 0 0 !important;padding:0 10px !important;font-size:14px !important;color:#666F83;line-height:1 !important;}
-.color-item-text span{color:#ccc;}
+.color-list{float:left;width:100%;margin-bottom:50px}
+.color-list.inline{float:left;width:auto;margin-bottom:50px}
+.color-title{float:left;width:100%;font-size:14px;color:#111A34}
+.color-item{float:left;width:140px;min-height:148px;margin-top:16px;margin-right:20px;margin-bottom:20px;padding-bottom:20px;border:solid 1px #E4E5E7;border-radius:4px 4px 0 0;overflow:hidden}
+.color-item.no-gap{margin-right:0}
+.color-item-box.large{width:140px;height:84px}
+.color-item-box.small{width:60px;height:60px;margin-bottom:10px;font-size:12px;font-weight:100;color:#fff;text-align:center;line-height:60px}
+.color-item-text{margin:10px 0 0!important;padding:0 10px!important;font-size:14px!important;color:#666F83;line-height:1!important}
+.color-item-text span{color:#ccc}
 </style>
 
 Color is a good way to convey the brand. To ensure the consistency of the style of the product experience, it is recommended to use a palette and other tools to build brand-specific palettes and usage rules.    

@@ -5,55 +5,17 @@ title: Font
 The design drawing uses the system default font, and the Android system has more custom fonts, which are subject to the system default font;
 
 <style>
-.doc-font-list{
-  display: flex;
-}
-.doc-font-item{
-  flex: 1;
-  margin-right: 40px;
-  padding-bottom: 20px;
-  border: solid 1px #E2E4EA;
-}
-.doc-font-item:last-of-type{
-  margin-right: 0;
-}
-.doc-font-title{
-  padding: 12px 24px;
-  background: #F4F5F7;
-  font-size: 14px;
-  color: #111A34;
-  font-weight: 500;
-}
-.doc-font-text{
-  float: left;
-  width: 100%;
-  margin-top: 12px;
-  padding: 0 24px;
-  font-size: 14px;
-  color: #41485D;
-  box-sizing: border-box;
-}
-.doc-font-text span.l{
-  float: left;
-}
-.doc-font-text span.r{
-  float: right;
-}
-.font-weight-img{
-  max-width: 80% !important;
-}
-@media (max-width: 750px) {
-  .doc-font-list{
-    flex-direction: column;
-  }
-  .doc-font-item{
-    max-width: none !important;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-  .font-weight-img{
-    max-width: 100% !important;
-  }
+.doc-font-list{display:-webkit-box;display:-ms-flexbox;display:flex}
+.doc-font-item{-webkit-box-flex:1;-ms-flex:1;flex:1;margin-right:40px;padding-bottom:20px;border:solid 1px #E2E4EA}
+.doc-font-item:last-of-type{margin-right:0}
+.doc-font-title{padding:12px 24px;background:#F4F5F7;font-size:14px;color:#111A34;font-weight:500}
+.doc-font-text{float:left;width:100%;margin-top:12px;padding:0 24px;font-size:14px;color:#41485D;-webkit-box-sizing:border-box;box-sizing:border-box}
+.doc-font-text span.l{float:left}
+.doc-font-text span.r{float:right}
+.font-weight-img{max-width:80%!important}
+@media (max-width:750px){.doc-font-list{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.doc-font-item{max-width:none!important;margin-right:0;margin-bottom:20px}
+.font-weight-img{max-width:100%!important}
 }
 </style>
 

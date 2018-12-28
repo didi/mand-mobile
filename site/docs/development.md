@@ -71,7 +71,7 @@ $ git pull
         ├── README.md  组件说明文档
     ├── ...
 ├── examples           组件库示例
-├── docs               组件库文档
+├── site               组件库文档站点
 ├── ...
 ```
 
