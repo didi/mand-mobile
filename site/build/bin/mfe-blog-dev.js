@@ -1,6 +1,6 @@
 const path = require('path')
 const nodemon = require('nodemon')
-const {mbConfig, traverseSource, info} = require('./utils')
+const {mbConfig, traverseSource} = require('./utils')
 
 /**
  * Get path of files which should be monitored by nodemon
@@ -27,21 +27,20 @@ function getWatchPath() {
  * Start Parsing
  */
 function startDev() {
+  let timmer
   nodemon({
     script: path.join(__dirname, 'mfe-blog-generate.js'),
+    restartable: false,
     ext: 'js vue md css styl',
     stdout: true,
+    required: true,
     watch: getWatchPath(),
-    ignore: ['public/*', 'build/*', 'node_modules/*'],
+    ignore: ['public/*', 'build/*', 'node_modules/*']
+  }).on('quit', function() {
+    process.exit()
   })
-
-  nodemon
-    .on('quit', function() {
-      process.exit()
-    })
-    .on('restart', function(files) {
-      info(`Parsing ${files}`)
-    })
+  // .on('restart', function(file) {
+  // })
 }
 
 startDev()

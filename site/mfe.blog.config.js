@@ -108,29 +108,48 @@ module.exports = {
     {
       name: 'design',
       text: '设计',
-      src: '/zh-CN/design/resource',
-      menu: [
-        {
+      src: '/zh-CN/design/principle/intuition',
+      menu: [{
+        name: 'principle',
+        text: '原则',
+        menu: [{
+          name: 'intuition',
+          text: '直观简单',
+          markdown: resolve('site/docs/design/principle/intuition.md'),
+        }, {
+          name: 'security',
+          text: '安全可控',
+          markdown: resolve('site/docs/design/principle/security.md'),
+        }, {
+          name: 'professional',
+          text: '体贴专业',
+          markdown: resolve('site/docs/design/principle/professional.md'),
+        }],
+      }, {
+        name: 'vision',
+        text: '视觉',
+        menu: [{
+          name: 'color',
+          text: '色彩',
+          markdown: resolve('site/docs/design/vision/color.md'),
+        }, {
+          name: 'layout',
+          text: '布局',
+          markdown: resolve('site/docs/design/vision/layout.md'),
+        }, {
+          name: 'font',
+          text: '字体',
+          markdown: resolve('site/docs/design/vision/font.md'),
+        }],
+      }, {
+        name: 'other',
+        text: '其它',
+        menu: [{
           name: 'resource',
-          text: '设计资源',
-          markdown: resolve('site/docs/design/resource.md'),
-        },
-        // {
-        //   name: 'color',
-        //   text: '颜色',
-        //   markdown: resolve('site/docs/design/color.md'),
-        // },
-        // {
-        //   name: 'font',
-        //   text: '字体',
-        //   markdown: resolve('site/docs/design/font.md'),
-        // },
-        // {
-        //   name: 'other',
-        //   text: '其他',
-        //   markdown: resolve('site/docs/design/other.md'),
-        // }
-      ]
+          text: '资源',
+          markdown: resolve('site/docs/design/other/resource.md'),
+        }],
+      }]
     },
     {
       name: 'palette',
@@ -193,29 +212,48 @@ module.exports = {
     {
       name: 'design',
       text: 'Design',
-      src: '/en-US/design/resource',
-      menu: [
-        {
+      src: '/en-US/design/principle/intuition',
+      menu: [{
+        name: 'principle',
+        text: 'Principle',
+        menu: [{
+          name: 'intuition',
+          text: 'Intuitive and simple',
+          markdown: resolve('site/docs/design/principle/intuition.en-US.md'),
+        }, {
+          name: 'security',
+          text: 'Safe and controllable',
+          markdown: resolve('site/docs/design/principle/security.en-US.md'),
+        }, {
+          name: 'professional',
+          text: 'Thoughtful and professional',
+          markdown: resolve('site/docs/design/principle/professional.en-US.md'),
+        }],
+      }, {
+        name: 'vision',
+        text: 'Vision',
+        menu: [{
+          name: 'color',
+          text: 'Color',
+          markdown: resolve('site/docs/design/vision/color.en-US.md'),
+        }, {
+          name: 'layout',
+          text: 'Layout',
+          markdown: resolve('site/docs/design/vision/layout.en-US.md'),
+        }, {
+          name: 'font',
+          text: 'Font',
+          markdown: resolve('site/docs/design/vision/font.en-US.md'),
+        }],
+      }, {
+        name: 'other',
+        text: 'Other',
+        menu: [{
           name: 'resource',
           text: 'Resource',
-          markdown: resolve('site/docs/design/resource.en-US.md'),
-        },
-        // {
-        //   name: 'color',
-        //   text: 'Color',
-        //   markdown: resolve('site/docs/design/color.en-US.md'),
-        // },
-        // {
-        //   name: 'font',
-        //   text: 'Font',
-        //   markdown: resolve('site/docs/design/font.en-US.md'),
-        // },
-        // {
-        //   name: 'other',
-        //   text: 'Other',
-        //   markdown: resolve('site/docs/design/other.en-US.md'),
-        // }
-      ]
+          markdown: resolve('site/docs/design/other/resource.en-US.md'),
+        }],
+      }]
     },
     {
       name: 'palette',

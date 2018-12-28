@@ -184,7 +184,7 @@ function makeJavascriptModule(imports = {}, exports = {}) {
 function startGenerate() {
   const source = mbConfig.source
   const startTmp = Date.now()
-
+  const specFile = process.env.BUILD_FILE
   let count = 0
 
   views = []
@@ -210,6 +210,19 @@ function startGenerate() {
     const demoPath = item.demo
     const outputPath = `${mbConfig.output}/${path.join('/')}`
 
+    let needBreak = false
+    
+    if (specFile) {
+      if (markdownPath === specFile ||
+          templatePath === specFile ||
+          demoPath === specFile
+      ) {
+        needBreak = true
+      } else {
+        return 1 // continue
+      }
+    }
+    
     mkdirp.sync(outputPath)
 
     if (markdownPath) {
@@ -225,6 +238,11 @@ function startGenerate() {
       )
     }
     saveRoutepath(item, `/${path.join('/')}`, views, routes)
+
+    if (needBreak) {
+      process.env.BUILD_FILE = ''
+      return 2 // break
+    }
   }
 
   traverseSource(source, handlerSingleSource)
