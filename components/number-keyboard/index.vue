@@ -2,6 +2,7 @@
   <div class="md-number-keyboard" :class="{'in-view': isView}">
     <template v-if="isView">
       <md-number-keyboard-container
+        ref="keyborad"
         :type="type"
         :disorder="disorder"
         :ok-text="okText"
@@ -16,6 +17,7 @@
     </template>
     <template v-else>
       <md-popup
+        ref="popup"
         v-model="isKeyboardShow"
         position="bottom"
         @show="$emit('show')"
@@ -23,6 +25,7 @@
         :has-mask="false"
       >
         <md-number-keyboard-container
+          ref="keyborad"
           :type="type"
           :disorder="disorder"
           :ok-text="okText"

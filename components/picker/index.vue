@@ -17,6 +17,7 @@
     </template>
     <template v-else>
       <md-popup
+        ref="popup"
         class="inner-popup"
         v-model="isPickerShow"
         position="bottom"
