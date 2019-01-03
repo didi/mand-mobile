@@ -82,6 +82,7 @@ export default {
   .md-agree-icon-container
     position relative
     .md-icon
+      display flex
       width auto 
       height auto
       line-height 1
