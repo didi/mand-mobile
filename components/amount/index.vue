@@ -116,8 +116,8 @@ export default {
         this.formatValue = fromValue + (toValue - fromValue) * percent
       }
 
-      const verify = id => id
       /* istanbul ignore next  */
+      const verify = id => id
       Animate.start(step, verify, noop, this.duration)
     },
   },
