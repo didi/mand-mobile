@@ -3,6 +3,19 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.0.0-rc.5
+
+`2019-01-04`      
+
+- Feature
+  - 全量引入时的注册全局组件名增加`PascalCase`[#261](https://github.com/didi/mand-mobile/issues/261)
+  - `ScrollView`增加属性`manual-init`和方法`init`
+  - `TabBar`, `Tabs`增加属性`immediate`
+  - `Swiper`增加属性`transition-duration`
+
+- Fix
+  - 修复部分组件样式问题
+
 ### 2.0.0-rc.4
 
 `2018-12-21`      

@@ -3,6 +3,19 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.0.0-rc.5
+
+`2019-01-04`      
+
+- Feature
+  - Add `PascalCase` name to global components[#261](https://github.com/didi/mand-mobile/issues/261)
+  - `ScrollView` add prop `manual-init` and method `init`
+  - `TabBar`, `Tabs` add prop `immediate`
+  - `Swiper` add prop `transition-duration`
+
+- Fix
+  - fix part of components style issues
+
 ### 2.0.0-rc.4
 
 `2018-12-21`      

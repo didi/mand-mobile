@@ -38,7 +38,10 @@ Vue.component(Captcha.name, Captcha)
 #### Captcha Methods
 
 #### countdown()
-Manually reset the time counter
+Start the time counter
+
+##### resetcount()
+Reset the time counter
 
 #### setError(message)
 Set and show error message

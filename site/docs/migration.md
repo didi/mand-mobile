@@ -32,6 +32,11 @@ title: 从 1.x 迁移
 	- 🔅 新增属性`icon-svg`，用于按钮使用SVG类型图标，默认为`false`
 	- 🔅 新增属性`inactive`，用于展示按钮未激活状态，默认为`false`
 
+#### Captcha
+
+- 新增功能
+	- 🔅 新增方法`resetcount`，用于重置倒计时
+
 #### Cashier
 
 - 新增功能

@@ -32,6 +32,11 @@ title: Migration from 1.x
 	- 🔅 New Prop `icon-svg`, used for buttons using SVG type icons and default value is `false`.
 	- 🔅 New Prop `inactive`, used to show the button is not activated and default value is `false`.
 
+#### Captcha
+
+- Features and Improvements
+	- 🔅 New method `resetcount`, used to reset the time counter
+
 #### Cashier
 
 - Features and Improvements

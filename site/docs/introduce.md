@@ -28,7 +28,7 @@ title: Mand Mobile
 
 #### 版本
 
-[![npm package](http://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)
+[![npm package](http://img.shields.io/npm/v/mand-mobile/next.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)
 
 > 订阅稳定版发布的通知：https://github.com/didi/mand-mobile/releases.atom
 

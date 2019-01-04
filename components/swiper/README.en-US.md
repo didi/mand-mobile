@@ -25,7 +25,7 @@ Vue.component(SwiperItem.name, SwiperItem)
 | Props | Description | Type | Default | Options/Note |
 |---|---|---|---|---|
 |autoplay|the interval (ms) of autoplay; set `0` to disable autoplay|Number|`3000`|`0`, `[500, +Int.Max)`|
-|transition|animation effects|String|`slide`|`slide`, `slideY`, `fade`, `fade`|
+|transition|animation effects|String|`slide`|`slide`, `slideY`, `fade`|
 |transition-duration|animation effects duration|Number|`250`|unit `ms`|
 |default-index|default selected index|Number|`0`|`[0, length - 1]`|
 |has-dots|display the indication dots|Boolean|`true`|-|
