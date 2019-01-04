@@ -25,6 +25,7 @@
           class="md-cashier-block md-cashier-choose"
           :key="sceneKey">
           <md-cashier-channel
+            ref="channel"
             :payment-title="paymentTitle"
             :payment-amount="paymentAmount"
             :payment-describe="paymentDescribe"
