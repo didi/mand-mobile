@@ -91,8 +91,7 @@ export default {
     left 10px
     right 10px
     height 1px
-    border-top dashed 1px field-item-border-color
-    transform scaleY(0.5)
+    border-top dashed 1px color-border-element
 
 .md-bill-content
   padding 0 32px 20px 32px
