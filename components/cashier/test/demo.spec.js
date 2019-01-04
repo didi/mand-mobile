@@ -6,7 +6,7 @@ import Demo4 from './cases/demo4'
 import {renderToString} from '@vue/server-test-utils'
 import {mount} from '@vue/test-utils'
 
-describe('Cashier', () => {
+describe('Cashier - Demo', () => {
   test(`Baisc-channel`, () => {
     expect(renderToString(Demo0)).toMatchSnapshot()
   })

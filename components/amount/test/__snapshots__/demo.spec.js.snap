@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Amount -Demo Basic 1`] = `
+<div class="md-example-child md-example-child-amount">
+  <p><span class="describe">Original</span> <span class="md-amount numerical">1234.125</span></p>
+  <p><span class="describe">Round</span> <span class="md-amount numerical">1234.13</span></p>
+  <p><span class="describe">Floor</span> <span class="md-amount numerical">1234.12</span></p>
+</div>
+`;
+
+exports[`Amount -Demo Disabled unselected 1`] = `<div class="md-example-child md-example-child-amount"><span class="md-amount"> 壹仟贰佰叁拾肆元整 </span> <span class="md-amount"> 壹拾贰元叁角肆分 </span> <span class="md-amount"> 壹仟贰佰元整 </span> <span class="md-amount"> 壹仟贰佰零壹元整 </span></div>`;
+
+exports[`Amount -Demo Thousands Separator 1`] = `<div class="md-example-child md-example-child-amount"><span class="md-amount numerical">1,234.00</span></div>`;
+
+exports[`Amount -Demo Transition 1`] = `<div class="md-example-child md-example-child-amount"><span class="md-amount numerical">0.00</span></div>`;
+
 exports[`Amount Basic 1`] = `
 <div class="md-example-child md-example-child-amount">
   <p><span class="describe">Original</span> <span class="md-amount numerical">1234.125</span></p>
@@ -8,7 +22,7 @@ exports[`Amount Basic 1`] = `
 </div>
 `;
 
-exports[`Amount Disabled unselected 1`] = `<div class="md-example-child md-example-child-amount"><span class="md-amount"> 壹仟贰佰叁拾肆元整 </span></div>`;
+exports[`Amount Disabled unselected 1`] = `<div class="md-example-child md-example-child-amount"><span class="md-amount"> 壹仟贰佰叁拾肆元整 </span> <span class="md-amount"> 壹拾贰元叁角肆分 </span> <span class="md-amount"> 壹仟贰佰元整 </span> <span class="md-amount"> 壹仟贰佰零壹元整 </span></div>`;
 
 exports[`Amount Thousands Separator 1`] = `<div class="md-example-child md-example-child-amount"><span class="md-amount numerical">1,234.00</span></div>`;
 

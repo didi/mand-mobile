@@ -10,7 +10,6 @@ exports[`DatePicker Custom type and option textual values 1`] = `
         <div class="md-picker-column-list">
           <div class="md-picker-column-item">
             <ul class="column-list" style="padding-top: 100px; margin-top: -100px;">
-              <li class="column-item" style="height: 45px; line-height: 45px;">1998年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">1999年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2000年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2001年</li>
@@ -51,6 +50,7 @@ exports[`DatePicker Custom type and option textual values 1`] = `
               <li class="column-item" style="height: 45px; line-height: 45px;">2036年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2037年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2038年</li>
+              <li class="column-item" style="height: 45px; line-height: 45px;">2039年</li>
             </ul>
           </div>
           <div class="md-picker-column-item">
@@ -241,6 +241,7 @@ exports[`DatePicker Date & Time selection 1`] = `
               <li class="column-item" style="height: 45px; line-height: 45px;">2036年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2037年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2038年</li>
+              <li class="column-item" style="height: 45px; line-height: 45px;">2039年</li>
             </ul>
           </div>
           <div class="md-picker-column-item">

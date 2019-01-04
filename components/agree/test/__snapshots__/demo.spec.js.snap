@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Agree - Demo Disabled selected 1`] = `
+<div class="md-example-child md-example-child-agree md-example-child-2">
+  <div class="md-agree disabled">
+    <div class="md-agree-icon checked">
+      <div class="md-agree-icon-container"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i> <i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    </div>
+    <div class="md-agree-content">
+      本人承诺投保人已充分了解本保险产品，并保证投保信息的真实性，理解并同意
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Agree - Demo Disabled unselected 1`] = `
+<div class="md-example-child md-example-child-agree md-example-child-3">
+  <div class="md-agree disabled">
+    <div class="md-agree-icon">
+      <div class="md-agree-icon-container"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i> <i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    </div>
+    <div class="md-agree-content">
+      本人承诺投保人已充分了解本保险产品，并保证投保信息的真实性，理解并同意
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Agree - Demo Selected 1`] = `
+<div class="md-example-child md-example-child-agree md-example-child-0">
+  <div class="md-agree">
+    <div class="md-agree-icon checked">
+      <div class="md-agree-icon-container"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i> <i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    </div>
+    <div class="md-agree-content">
+      本人承诺投保人已充分了解本保险产品，并保证投保信息的真实性，理解并同意<a>《投保须知》</a>, <a>《保险条款》</a></div>
+  </div>
+</div>
+`;
+
+exports[`Agree - Demo Unselected 1`] = `
+<div class="md-example-child md-example-child-agree md-example-child-1">
+  <div class="md-agree">
+    <div class="md-agree-icon">
+      <div class="md-agree-icon-container"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i> <i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    </div>
+    <div class="md-agree-content">
+      本人承诺投保人已充分了解本保险产品，并保证投保信息的真实性，理解并同意
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Agree Disabled selected 1`] = `
 <div class="md-example-child md-example-child-agree md-example-child-2">
   <div class="md-agree disabled">

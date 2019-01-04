@@ -4,6 +4,18 @@
       :value="1234"
       is-capital
     ></md-amount>
+    <md-amount
+      :value="12.34"
+      is-capital
+    ></md-amount>
+    <md-amount
+      :value="1200"
+      is-capital
+    ></md-amount>
+    <md-amount
+      :value="1201"
+      is-capital
+    ></md-amount>
 	</div>
 </template>
 
