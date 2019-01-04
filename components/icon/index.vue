@@ -220,9 +220,10 @@ export default {
 
 @font-face
   font-family Mand-Mobile-Icon
-  /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
-  /* Version is required */
-  src url("//manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0.2/iconfont.ttf") format("truetype")
   font-style normal
   font-weight normal
+  /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+  /* Version is required */
+  src url("https://manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0.2/iconfont.woff") format('woff'),
+      url("https://manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0.2/iconfont.ttf") format("truetype")
 </style>
