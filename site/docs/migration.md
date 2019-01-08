@@ -43,7 +43,7 @@ title: 从 1.x 迁移
 	- 🔅 属性`channels`数组元素增加字段`iconSvg`、`action`，可用于使用SVG类型图标和为支付渠道增加特殊操作动作，如“更换银行卡”
 	- 🔅 新增属性`pay-button-disabled`，用于禁用支付按钮
 	- 🔅 场景`captcha`配置，新字段`brief `，用于发送验证码简要描述
-	- 🔅 新增scoped插槽`header`，用于各个场景自定义头部内容
+	- 🔅 新增scoped插槽`header`、`footer`，用于各个场景自定义头部底部内容
 	
 	```html
 		<div slot-scope="{ scene }" slot="header">

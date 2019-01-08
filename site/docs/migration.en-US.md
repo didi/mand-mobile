@@ -43,7 +43,7 @@ title: Migration from 1.x
 	- 🔅 Prop `channels` elements add fields `iconSvg`, `action`, which can be used to use SVG type icons and add special actions for payment channels, such as "replace bank card".
 	- 🔅 New Prop `pay-button-disabled`, sed to disable the payment button.
 	- 🔅 Scene `captcha` configuration add `brief `, used to send a brief description of the verification code.
-	- 🔅 New scoped slot `header`, used to customize head content of all scenes.
+	- 🔅 New scoped slot `header`、`footer`, used to customize head and foot content of all scenes.
 	
 	```html
 		<div slot-scope="{ scene }" slot="header">
