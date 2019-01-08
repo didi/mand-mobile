@@ -430,7 +430,10 @@ export default {
 
     // MARK: events handler
     $_onInput(event) {
-      const formateValue = this.$_formateValue(event.target.value, getCursorsPosition(event.target))
+      const formateValue = this.$_formateValue(
+        event.target.value,
+        this.isFormative ? getCursorsPosition(event.target) : 0,
+      )
 
       this.inputValue = formateValue.value
       this.inputBindValue = formateValue.value
