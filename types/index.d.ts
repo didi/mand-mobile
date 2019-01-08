@@ -13,6 +13,7 @@ export class Agree extends MandComponent { }
 export class Button extends MandComponent { }
 export class Captcha extends MandComponent { }
 export class Cashier extends MandComponent { }
+export class CellItem extends MandComponent { }
 export class Chart extends MandComponent { }
 export class Codebox extends MandComponent { }
 export class CheckGroup extends MandComponent { }
