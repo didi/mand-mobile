@@ -22,7 +22,7 @@ Vue.component(Cashier.name, Cashier)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |v-model|收银台是否显示|Boolean|`false`|-|
-|channels|支付渠道数据源|Array<{text, value, icon, iconSvg, action}>|`[]`|`icon`可作为`className`或组件`Icon`的`name`属性, `iconSvg`为是否使用svg图标, `action`为特殊动作|
+|channels|支付渠道数据源|Array<{text, value, icon, iconSvg, img, action}>|`[]`|`icon`可作为`className`或组件`Icon`的`name`属性, `iconSvg`为是否使用svg图标, `img`为图标链接(与`icon`二选一), `action`为特殊动作回调|
 |channel-limit|支付渠道超出限制数目时展示更多支付渠道按钮|Number|`2`|-|
 |default-index|默认选中支付渠道索引|Number|`0`|-|
 |title|收银台弹窗标题|String|`支付`|-|
@@ -96,6 +96,9 @@ Vue.component(Cashier.name, Cashier)
   ></md-notice-bar>
 </div>
 ```
+
+##### footer
+底部内容scoped插槽
 
 ##### channel
 支付渠道区域插槽，可用于添加支付渠道特殊操作，如添加银行卡

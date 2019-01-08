@@ -120,6 +120,8 @@
           :key="sceneKey">
           <slot name="scene"></slot>
         </div>
+
+        <slot name="footer" :scene="scene"></slot>
       </div>
     </md-popup>
   </div>
@@ -156,9 +158,6 @@ export default {
       type: Array,
       default() {
         return []
-      },
-      validator(val) {
-        return !!val.length
       },
     },
     channelLimit: {
@@ -304,6 +303,7 @@ export default {
     border-radius popup-title-bar-radius popup-title-bar-radius 0 0
   .md-cashier-container
     block()
+    position relative
     background cashier-bg
     -webkit-touch-callout none
     -webkit-user-select none

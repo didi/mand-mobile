@@ -1,7 +1,10 @@
 <template>
   <div class="md-cashier-channel-item">
-    <div class="item-icon" :class="data.icon">
+    <div class="item-icon" :class="data.icon" v-if="data.icon">
       <md-icon :name="data.icon" size="lg"></md-icon>
+    </div>
+    <div class="item-image" v-else-if="data.img">
+      <img :src="data.img">
     </div>
     <div class="item-label">
       <p class="title">
@@ -65,11 +68,13 @@ export default {
   position relative
   padding 20px 40px 20px 0
   box-sizing border-box
-  .item-icon
+  .item-icon, .item-image
     position relative
     float left
     width 32px
     height 32px
+  .item-image img
+    block() 
   .item-label
     float left
     margin-left h-gap-sm

@@ -22,7 +22,7 @@ Vue.component(Cashier.name, Cashier)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |v-model| display cashier or not|Boolean|`false`|-|
-|channels|data source of payment channel |Array<{text, value, icon, iconSvg}>|`[]`|`icon` can be used as the `name` attribute of `className` or component `Icon`, `iconSvg` for using svg icon|
+|channels|data source of payment channel |Array<{text, value, icon, iconSvg, img, action}>|`[]`|`icon` can be used as the `name` attribute of `className` or component `Icon`, `iconSvg` for using svg icon, `img` is an icon link (choose one with `icon`), `action` is a special action handler|
 |channel-limit|show more payment channels button when the payment channels exceeds the limit|Number|`2`|-|
 |default-index|default selected index of payment channel |Number|`0`|-|
 |title|cashier title|String|`pay	`|-|
@@ -98,6 +98,8 @@ Scoped slot of captcha header
   ></md-notice-bar>
 </div>
 ```
+##### header
+Scoped slot of captcha footer
 
 ##### channel
 Payment channel area slot, which can be used to add payment channel special operations, such as adding a bank card
