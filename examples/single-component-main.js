@@ -2,12 +2,20 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import FastClick from 'fastclick'
+import vConsole from 'vconsole'
 import App from './single-component-app'
 import '../components/_style/global.styl'
 
-if ('ontouchstart' in window) {
-  FastClick.attach(document.body)
+if ('addEventListener' in document && 'ontouchstart' in window) {
+  FastClick.prototype.focus = function (targetElement) {
+    targetElement.focus()
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    FastClick.attach(document.body)
+  }, false)
 }
+
+new vConsole()
 
 Vue.config.productionTip = false
 

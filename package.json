@@ -201,6 +201,7 @@
     "stylus-loader": "^3.0.1",
     "svg-sprite-loader": "^0.3.1",
     "url-loader": "^0.5.8",
+    "vconsole": "^3.2.0",
     "vue": "^2.4.2",
     "vue-jest": "2.x",
     "vue-loader": "^13.0.4",
