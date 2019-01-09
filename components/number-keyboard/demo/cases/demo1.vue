@@ -3,7 +3,6 @@
     <md-button @click="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</md-button>
     <md-number-keyboard
       v-model="isKeyBoardShow"
-      ok-text="支付"
       type="simple"
       @enter="onNumberEnter"
       @delete="onNumberDelete"
