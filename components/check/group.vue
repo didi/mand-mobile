@@ -16,7 +16,10 @@ export default {
   props: {
     value: {
       type: Array,
-      default: () => [],
+      default: () => {
+        /* istanbul ignore next */
+        return []
+      },
     },
     max: {
       type: Number,

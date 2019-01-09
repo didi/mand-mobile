@@ -3,7 +3,7 @@ import Demo1 from './cases/demo1'
 import Demo2 from './cases/demo2'
 import {renderToString} from '@vue/server-test-utils'
 
-describe('Chart', () => {
+describe('Chart - Demo', () => {
   test(`Multiple fold lines`, () => {
     expect(renderToString(Demo0)).toMatchSnapshot()
   })

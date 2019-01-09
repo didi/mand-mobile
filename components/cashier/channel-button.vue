@@ -26,6 +26,7 @@ export default {
     actions: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },

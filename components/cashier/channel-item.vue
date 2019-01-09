@@ -51,6 +51,7 @@ export default {
     data: {
       type: Object,
       default() {
+        /* istanbul ignore next */
         return {}
       },
     },

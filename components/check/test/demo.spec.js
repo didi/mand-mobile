@@ -5,7 +5,7 @@ import Demo3 from './cases/demo3'
 import Demo4 from './cases/demo4'
 import {renderToString} from '@vue/server-test-utils'
 
-describe('Check', () => {
+describe('Check - Demo', () => {
   test(`Check options`, () => {
     expect(renderToString(Demo0)).toMatchSnapshot()
   })

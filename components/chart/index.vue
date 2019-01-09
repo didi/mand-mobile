@@ -58,11 +58,17 @@
   props: {
     labels: {
       type: Array,
-      default: () => [],
+      default() {
+        /* istanbul ignore next */
+        return []
+      },
     },
     datasets: {
       type: Array,
-      default: () => [],
+      default() {
+        /* istanbul ignore next */
+        return []
+      },
     },
     size: {
       type: Array,

@@ -52,12 +52,16 @@ export default {
     options: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
     value: {
       type: Array,
-      default: () => [],
+      default() {
+        /* istanbul ignore next */
+        return []
+      },
     },
     alignCenter: {
       type: Boolean,
