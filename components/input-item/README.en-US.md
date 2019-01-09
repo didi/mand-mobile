@@ -43,9 +43,10 @@ Vue.component(InputItem.name, InputItem)
 |is-amount|the input is financial figures|Boolean|`false`|-|
 |formation|input text formatting callback function|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|passing parameter `name` is the name of input, `curValue` is input value, `curPos` is the current position of input cursor, and returned `value` is formatted value. `range` is the position of input cursor after formatting|
 |clearable|use clear control or not|Boolean|`false`|-|
-|is-virtual-keyboard|if use financial numeric keypad control|Boolean|`false`|-|
-|virtual-keyboard-disorder|if number keys of financial numeric keypad is out of order|Boolean|`false`|-|
-|virtual-keyboard-ok-text|confirmation key texts of financial numeric keypad|String|`confirm`|-|
+|is-virtual-keyboard|use financial number keyboard control|Boolean|`false`|-|
+|virtual-keyboard-disorder|if number keys of financial number keyboard is out of order|Boolean|`false`|-|
+|virtual-keyboard-ok-text|confirmation key texts of financial number keyboard|String|`confirm`|-|
+|virtual-keyboard-vm|financial number keyboard instance|Object|-|generally used for custom number keyboard|
 
 #### InputItem Slots
 

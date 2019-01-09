@@ -7,6 +7,7 @@
         placeholder="normal text"
         clearable
       ></md-input-item>
+
       <md-input-item
         ref="input10"
         title="金融键盘"
@@ -16,6 +17,17 @@
         @focus="onFakeInputFocus"
         @blur="onFakeInputBlur"
       ></md-input-item>
+
+      <md-input-item
+        ref="input11"
+        title="自定义键盘"
+        placeholder="custom number keyboard"
+        is-virtual-keyboard
+        :virtual-keyboard-vm="$refs.myNumberKeyBoard"
+        clearable
+      ></md-input-item>
+      <md-number-keyboard type="simple" ref="myNumberKeyBoard"></md-number-keyboard>
+
       <md-input-item
         ref="input11"
         placeholder="left/right slots"
@@ -27,7 +39,7 @@
   </div>
 </template>
 
-<script>import {InputItem, Field, Icon, Toast} from 'mand-mobile'
+<script>import {InputItem, NumberKeyboard, Field, Icon, Toast} from 'mand-mobile'
 import '@examples/assets/images/bank-zs.svg'
 
 export default {
@@ -38,6 +50,7 @@ export default {
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,
+    [NumberKeyboard.name]: NumberKeyboard,
     [Field.name]: Field,
     [Icon.name]: Icon,
   },
@@ -49,46 +62,42 @@ export default {
       })
     },
     onFakeInputFocus() {
-      function getElementPosition(element) {
-        const defaultRect = {top: 0, left: 0}
-        const rect = element
-          ? (element.getBoundingClientRect && element.getBoundingClientRect()) || defaultRect
-          : defaultRect
-        const ret = {
-          top: rect.top,
-          left: rect.left,
-        }
-        return ret
-      }
-
-      setTimeout(() => {
-        const wrapper = this.$el
-        const inputer = this.$refs['input10']
-        const inputEl = inputer.$el
-        const keyboardEl = document
-          .querySelector(`#${inputer.name}-number-keyboard`)
-          .querySelector('.md-number-keyboard-container')
-        const offset =
-          keyboardEl.clientHeight +
-          inputEl.clientHeight -
-          document.documentElement.clientHeight +
-          getElementPosition(inputEl).top +
-          30
-
-        const oldPaddingBottom = +wrapper.style.paddingBottom.replace(/px|rem|em/gi, '')
-        const oldScrollTop = document.body.scrollTop
-        const newPaddingBottom = oldPaddingBottom + offset
-        const newScrollTop = oldScrollTop + offset
-
-        wrapper.style.paddingBottom = `${newPaddingBottom}px`
-        document.body.scrollTop = newScrollTop
-
-        this.scrollInputBack = () => {
-          wrapper.style.paddingBottom = `${oldPaddingBottom}px`
-          document.body.scrollTop = oldScrollTop
-          this.scrollInputBack = null
-        }
-      }, 300)
+      // function getElementPosition(element) {
+      //   const defaultRect = {top: 0, left: 0}
+      //   const rect = element
+      //     ? (element.getBoundingClientRect && element.getBoundingClientRect()) || defaultRect
+      //     : defaultRect
+      //   const ret = {
+      //     top: rect.top,
+      //     left: rect.left,
+      //   }
+      //   return ret
+      // }
+      // setTimeout(() => {
+      //   const wrapper = this.$el
+      //   const inputer = this.$refs['input10']
+      //   const inputEl = inputer.$el
+      //   const keyboardEl = document
+      //     .querySelector(`#${inputer.name}-number-keyboard`)
+      //     .querySelector('.md-number-keyboard-container')
+      //   const offset =
+      //     keyboardEl.clientHeight +
+      //     inputEl.clientHeight -
+      //     document.documentElement.clientHeight +
+      //     getElementPosition(inputEl).top +
+      //     30
+      //   const oldPaddingBottom = +wrapper.style.paddingBottom.replace(/px|rem|em/gi, '')
+      //   const oldScrollTop = document.body.scrollTop
+      //   const newPaddingBottom = oldPaddingBottom + offset
+      //   const newScrollTop = oldScrollTop + offset
+      //   wrapper.style.paddingBottom = `${newPaddingBottom}px`
+      //   document.body.scrollTop = newScrollTop
+      //   this.scrollInputBack = () => {
+      //     wrapper.style.paddingBottom = `${oldPaddingBottom}px`
+      //     document.body.scrollTop = oldScrollTop
+      //     this.scrollInputBack = null
+      //   }
+      // }, 300)
     },
     onFakeInputBlur() {
       this.scrollInputBack && this.scrollInputBack()

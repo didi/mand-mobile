@@ -103,15 +103,12 @@
       <!--   KEYBORARD  -->
       <!-- ------------ -->
       <md-number-keyboard
-        v-if="isVirtualKeyboard"
+        v-if="isVirtualKeyboard && !virtualKeyboardVm"
         ref="number-keyboard"
         :id="`${name}-number-keyboard`"
         class="md-input-item-number-keyboard"
         :ok-text="virtualKeyboardOkText"
         :disorder="virtualKeyboardDisorder"
-        @enter="$_onNumberKeyBoardEnter"
-        @delete="$_onNumberKeyBoardDelete"
-        @confirm="$_onNumberKeyBoardConfirm"
       ></md-number-keyboard>
     </template>
   </md-field-item>
@@ -208,6 +205,9 @@ export default {
     virtualKeyboardOkText: {
       type: String,
     },
+    virtualKeyboardVm: {
+      type: Object,
+    },
     isTitleLatent: {
       type: Boolean,
       default: false,
@@ -301,7 +301,7 @@ export default {
       this.$emit('change', this.name, val)
     },
     isInputFocus(val) {
-      if (!this.isVirtualKeyboard) {
+      if (!this.isVirtualKeyboard || !this.inputNumberKeyboard) {
         return
       }
       if (val) {
@@ -318,7 +318,10 @@ export default {
     this.inputValue = this.$_formateValue(this.$_subValue(this.value + '')).value
   },
   mounted() {
-    this.isVirtualKeyboard && this.$_initNumberKeyBoard()
+    this.isVirtualKeyboard &&
+      this.$nextTick(() => {
+        this.$_initNumberKeyBoard()
+      })
   },
   beforeDestroy() {
     const keyboard = this.inputNumberKeyboard
@@ -423,7 +426,10 @@ export default {
       document.removeEventListener('click', this.$_blurFakeInput, false)
     },
     $_initNumberKeyBoard() {
-      const keyboard = this.$refs['number-keyboard']
+      const keyboard = this.virtualKeyboardVm || this.$refs['number-keyboard']
+      keyboard.$on('enter', this.$_onNumberKeyBoardEnter)
+      keyboard.$on('delete', this.$_onNumberKeyBoardDelete)
+      keyboard.$on('confirm', this.$_onNumberKeyBoardConfirm)
       this.inputNumberKeyboard = keyboard
       document.body.appendChild(keyboard.$el)
     },
@@ -524,9 +530,10 @@ export default {
     align-items center
 
 .md-input-item-clear
-  padding 5px
+  padding 10px 0
   color input-item-icon
   .md-icon
+    display flex
     background color-bg-base
     border-radius radius-circle
 
@@ -643,6 +650,7 @@ export default {
 
   &.is-disabled
     .md-input-item-input,
+    .md-input-item-fake,
     .md-input-item-fake-placeholder
       -webkit-text-fill-color input-item-color-disabled
       color input-item-color-disabled
