@@ -1,4 +1,4 @@
-export default function(element, eventName, x, y, keyCode) {
+export default function(element, eventName, x, y, keyCodeOrValue) {
   const touch = {
     identifier: Date.now(),
     target: element,
@@ -17,11 +17,13 @@ export default function(element, eventName, x, y, keyCode) {
   event.touches = [touch]
   event.targetTouches = [touch]
   event.changedTouches = [touch]
-  event.keyCode = keyCode
+  event.keyCode = keyCodeOrValue
   event.clientX = x
   event.clientY = y
   event.pageX = x
   event.pageY = y
+
+  element.value += keyCodeOrValue
 
   element.dispatchEvent(event)
 }
