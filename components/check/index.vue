@@ -100,7 +100,6 @@ export default {
 .md-check
   display flex
   align-items center
-  line-height 1.5
   margin-top v-gap-sm
   margin-bottom v-gap-sm
   &.is-checked
@@ -114,6 +113,8 @@ export default {
 .md-check-icon
   position relative
   color color-text-placeholder
+  .md-icon
+    display flex
 
 .md-check-label
   margin-left h-gap-sm
