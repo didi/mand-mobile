@@ -23,7 +23,7 @@ export default {
   },
   mounted() {
     window.triggerSteps0 = () => {
-      this.currentStep = 1.5
+      this.currentStep = 2
     }
   },
   data() {
