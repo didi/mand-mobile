@@ -1,30 +1,44 @@
 import {Dialog} from 'mand-mobile'
 import sinon from 'sinon'
+import {mount} from '@vue/test-utils'
 
-describe('Dialog - Static Methods', () => {
+describe('Dialog - Operation', () => {
   let wrapper, vm
 
   afterEach(() => {
-    wrapper && wrapper.destroy()
+    // wrapper && wrapper.destroy()
     vm && vm.$destroy()
   })
 
-  test('generate a confirm dialog', () => {
+  it('basic dialog', () => {
+    let show = true
+    wrapper = mount(Dialog, {
+      propsData: {
+        value: show,
+        appendTo: null,
+        btns: [{text: '123'}],
+      },
+    })
+    wrapper.find('.md-dialog-btn').trigger('click')
+  })
+
+  it('generate a confirm dialog', () => {
     vm = Dialog.confirm({})
     expect(vm.btns.length).toBe(2)
   })
 
-  test('generate a alert dialog', () => {
+  it('generate a alert dialog', () => {
     vm = Dialog.alert({})
     expect(vm.btns.length).toBe(1)
   })
 
-  test('generate a succeed dialog', () => {
+  it('generate a succeed dialog', () => {
     vm = Dialog.succeed({})
     expect(vm.icon).toBe('success-color')
+    vm.$el.querySelector('.md-dialog-btn').click()
   })
 
-  test('generate a failed dialog', done => {
+  it('generate a failed dialog', done => {
     vm = Dialog.failed({})
     const eventSpy = sinon.spy(vm, '$emit')
     vm.value = false
@@ -35,7 +49,7 @@ describe('Dialog - Static Methods', () => {
     }, 300)
   })
 
-  test('close all dialogs', done => {
+  it('close all dialogs', done => {
     const d1 = Dialog.confirm({})
     const d2 = Dialog.succeed({})
     const eventStub1 = sinon.stub(d1, '$emit')

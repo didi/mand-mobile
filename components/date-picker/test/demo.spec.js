@@ -4,7 +4,7 @@ import Demo2 from './cases/demo2'
 import Demo3 from './cases/demo3'
 import {mount} from '@vue/test-utils'
 
-describe('DatePicker', () => {
+describe('DatePicker - Demo', () => {
   test(`Date selection`, done => {
     const wrapper = mount(Demo0)
     setTimeout(() => {

@@ -2,14 +2,14 @@ import {DropMenu} from 'mand-mobile'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
-describe('DropMenu - Click & Events', () => {
+describe('DropMenu - Operation', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
   })
 
-  test('drop-menu bar item click', done => {
+  it('drop-menu bar item click', done => {
     wrapper = mount(DropMenu, {
       propsData: {
         data: [
@@ -23,6 +23,7 @@ describe('DropMenu - Click & Events', () => {
             ],
           },
         ],
+        defaultValue: ['world'],
       },
     })
     const barItem = wrapper.find('.bar-item')
@@ -36,11 +37,13 @@ describe('DropMenu - Click & Events', () => {
 
       const listItem = wrapper.findAll('.md-radio-item')
       expect(listItem.length).toBe(1)
+      barItem.trigger('click')
+      wrapper.setProps({data: []})
       done()
     })
   })
 
-  test('drop-menu list item click', done => {
+  it('drop-menu list item click', done => {
     wrapper = mount(DropMenu, {
       propsData: {
         data: [
@@ -71,7 +74,7 @@ describe('DropMenu - Click & Events', () => {
     }, 350)
   })
 
-  test('drop-menu events', done => {
+  it('drop-menu events', done => {
     wrapper = mount(DropMenu, {
       propsData: {
         data: [

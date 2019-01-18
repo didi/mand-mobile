@@ -4,7 +4,7 @@ import Demo2 from './cases/demo2'
 import Demo3 from './cases/demo3'
 import {renderToString} from '@vue/server-test-utils'
 
-describe('Icon', () => {
+describe('Icon - Demo', () => {
   test(`Font icon`, () => {
     expect(renderToString(Demo0)).toMatchSnapshot()
   })
