@@ -26,6 +26,7 @@ const renderSvgSprite = () => {
 }
 
 const loadSprite = () => {
+  /* istanbul ignore if */
   if (!document) {
     return
   }

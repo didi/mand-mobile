@@ -42,7 +42,10 @@ export default {
   inject: {
     rootField: {
       from: 'rootField',
-      default: () => ({}),
+      default() {
+        /* istanbul ignore next */
+        return {}
+      },
     },
   },
 

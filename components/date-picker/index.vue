@@ -237,6 +237,7 @@ export default {
           }
 
           const itemIndex = this.picker.getColumnIndex(j) || 0
+          /* istanbul ignore else */
           if (columnData[j]) {
             columnDataGeneratorParams.push(columnData[j][itemIndex])
           } else {
@@ -355,6 +356,7 @@ export default {
     $_generateYearData () {
       const start = this.minDate ? this.minDate.getFullYear() : this.currentYear - 20
       const end = this.maxDate ? this.maxDate.getFullYear() : this.currentYear + 20
+      /* istanbul ignore if */
       if (start > end) {
         warn('MinDate Year should be earlier than MaxDate')
         return
@@ -423,10 +425,11 @@ export default {
         end = 23
       }
 
+      /* istanbul ignore if */
       if (end < start) {
         end = 23
       }
-      
+      /* istanbul ignore if */
       if (start > end) {
         warn('MinDate Hour should be earlier than MaxDate')
         return
@@ -508,19 +511,6 @@ export default {
       }
 
       return res
-    },
-    $_transHourTo12 (hour) {
-      if (hour < 12) {
-        return {
-          hour,
-          ap: 0 // 0 a.m, 1 p.m
-        }
-      } else {
-        return {
-          hour: hour - 12,
-          ap: 1 // 0 a.m, 1 p.m
-        }
-      }
     },
 
     // MARK: events handler

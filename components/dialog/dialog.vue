@@ -89,7 +89,10 @@ export default {
     },
     btns: {
       type: Array,
-      default: () => [],
+      default() {
+        /* istanbul ignore next */
+        return []
+      },
     },
     layout: {
       type: String,

@@ -60,6 +60,7 @@ export default {
     data: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
@@ -87,7 +88,7 @@ export default {
       return !!this.$scopedSlots.default
     },
     activeMenuListData() {
-      if (this.activeMenuBarIndex < 0) {
+      if (this.activeMenuBarIndex < 0 || !this.data[this.activeMenuBarIndex]) {
         return []
       }
 
@@ -139,6 +140,7 @@ export default {
     },
     $_setScroller() {
       const boxer = this.$el ? this.$el.querySelector('.md-popup-box') : null
+      /* istanbul ignore else */
       if (boxer && boxer.clientHeight >= this.$el.clientHeight) {
         this.scroller = '.md-drop-menu-list'
       } else {
