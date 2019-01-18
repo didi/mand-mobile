@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePicker Custom type and option textual values 1`] = `
+exports[`DatePicker - Demo Custom type and option textual values 1`] = `
 <div class="md-date-picker custom">
   <div class="md-picker">
     <div class="md-picker-column" style="height: 245px;">
@@ -210,7 +210,7 @@ exports[`DatePicker Custom type and option textual values 1`] = `
 </div>
 `;
 
-exports[`DatePicker Date & Time selection 1`] = `
+exports[`DatePicker - Demo Date & Time selection 1`] = `
 <div class="md-date-picker datetime">
   <div class="md-picker">
     <div class="md-picker-column" style="height: 245px;">
@@ -383,7 +383,7 @@ exports[`DatePicker Date & Time selection 1`] = `
 </div>
 `;
 
-exports[`DatePicker Date selection 1`] = `
+exports[`DatePicker - Demo Date selection 1`] = `
 <div class="md-date-picker date">
   <div class="md-picker">
     <div class="md-picker-column" style="height: 245px;">
@@ -463,7 +463,7 @@ exports[`DatePicker Date selection 1`] = `
 </div>
 `;
 
-exports[`DatePicker Time selection 1`] = `
+exports[`DatePicker - Demo Time selection 1`] = `
 <div class="md-date-picker time">
   <div class="md-picker">
     <div class="md-picker-column" style="height: 245px;">

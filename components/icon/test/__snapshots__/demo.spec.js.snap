@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon Font icon 1`] = `
+exports[`Icon - Demo Font icon 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-0">
   <div class="md-example-item"><i class="md-icon icon-font md-icon-rectangle lg" style="color:;"></i>
     <p>rectangle</p>
@@ -167,7 +167,7 @@ exports[`Icon Font icon 1`] = `
 </div>
 `;
 
-exports[`Icon Icon color 1`] = `
+exports[`Icon - Demo Icon color 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-3">
   <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security md" style="color:gray;"></i>
     <p>gray</p>
@@ -184,7 +184,7 @@ exports[`Icon Icon color 1`] = `
 </div>
 `;
 
-exports[`Icon Icon size 1`] = `
+exports[`Icon - Demo Icon size 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-2">
   <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location xs" style="color:;"></i>
     <p>xs</p>
@@ -201,7 +201,7 @@ exports[`Icon Icon size 1`] = `
 </div>
 `;
 
-exports[`Icon Svg icon 1`] = `
+exports[`Icon - Demo Svg icon 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-1">
   <div class="md-example-item-s"><svg class="md-icon icon-svg md-icon-spinner lg" style="fill:;-webkit-filter:invert(1);">
       <use xlink:href="#spinner"></use>
