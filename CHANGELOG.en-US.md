@@ -3,6 +3,11 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.8
+`2019-01-19`
+- Fix
+  - `InputItem` remove setting cursor for native type [#268](https://github.com/didi/mand-mobile/issues/268)
+
 ### 1.6.7
 `2018-12-28`
 - Fix
@@ -218,4 +223,3 @@ toc: hidden
 ### 1.0.0
 `2018-04-11`
 - Initial release
-

@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -90,7 +90,7 @@
     "bluebird": "^3.5.1",
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
-    "chromedriver": "^2.27.2",
+    "chromedriver": "^2.45.0",
     "codecov": "^3.0.0",
     "commander": "^2.12.2",
     "commitizen": "^2.9.6",
