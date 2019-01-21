@@ -25,6 +25,7 @@ const generate = function({title = '', icon = '', iconSvg = false, content = '',
       closable,
       btns,
       transition: 'md-bounce',
+      preventScroll: true,
     },
   }).$mount()
 
