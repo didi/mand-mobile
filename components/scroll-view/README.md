@@ -32,7 +32,7 @@ Vue.component(ScrollView.name, ScrollView)
 |bouncing | 可回弹 | Boolean | `true` | -|
 |auto-reflow | 内容发生变化时自动重置滚动区域尺寸 | Boolean | `false` | 当设置为`false`时，内容发生变化需手动调用`reflowScroller` |
 |manual-init | 手动初始化 | Boolean | `false` | 一般用于异步初始化的场景，需手动调用`init`方法完成初始化 |
-|endReachedThreshold | 触发到达底部的提前量 | Number | 0 | 单位`px` |
+|end-reached-threshold | 触发到达底部的提前量 | Number | 0 | 单位`px` |
 
 #### ScrollViewRefresh Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
