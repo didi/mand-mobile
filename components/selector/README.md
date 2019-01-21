@@ -23,7 +23,7 @@ Vue.component(Selector.name, Selector)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |v-model|选择器是否可见|Boolean|false|-|
-|data|数据源|Array<{value,text,...}>|`[]`|`text`可为`html`片段|
+|data|数据源|Array<{value,text,disabled,...}>|`[]`|`text`可为`html`片段|
 |default-value|选择器初始选中项的值|String|-|-|
 |title|选择器标题|String|-|-|
 |describe|选择器描述|String|-|-|

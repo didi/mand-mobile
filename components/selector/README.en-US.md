@@ -23,7 +23,7 @@ Vue.component(Selector.name, Selector)
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |v-model|display selector or not|Boolean|false|-|
-|data|data source|Array<{value,text,...}>|`[]`|`text` can be a `html` fragment|
+|data|data source|Array<{value,text,disabled,...}>|`[]`|`text` can be a `html` fragment|
 |default-value|the value of initially selected item|String|-|-|
 |title|title of selector|String|-|-|
 |describe|description of selector|String|-|-|
