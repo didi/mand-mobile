@@ -16,7 +16,7 @@
       default: '',
     },
     content: {
-      type: String,
+      type: [String, Number],
       default: '',
     },
     bold: {
