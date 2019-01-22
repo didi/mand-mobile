@@ -14,6 +14,7 @@ describe('ImageReader', () => {
     wrapper = mount(ImageReader, {
       propsData: {
         size: 10,
+        mime: ['jpeg', 'png'],
       },
     })
 

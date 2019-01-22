@@ -15,6 +15,9 @@ describe('Picker - Operation', () => {
 
   test('create a picker', done => {
     wrapper = mount(Picker, {
+      propsData: {
+        defaultIndex: [1],
+      },
       sync: false,
     })
     expect(wrapper.vm.data.length).toBe(0)
@@ -77,5 +80,22 @@ describe('Picker - Operation', () => {
       expect(wrapper.findAll('.column-item').length).toBe(16)
       done()
     })
+  })
+
+  test('picker invalid index', () => {
+    wrapper = mount(Picker, {
+      propsData: {
+        data: simple,
+        invalidIndex: [0],
+        isView: true,
+      },
+      sync: false,
+    })
+    expect(
+      wrapper
+        .findAll('.column-item')
+        .at(0)
+        .classes('disabled'),
+    ).toBe(true)
   })
 })

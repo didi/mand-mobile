@@ -10,7 +10,7 @@ describe('InputItem - Operation', () => {
     wrapper && wrapper.destroy()
   })
 
-  test('input-item keyup/down', () => {
+  test('input-item keyup/down/input', () => {
     wrapper = mount(InputItem, {
       propsData: {
         type: 'bankCard',
@@ -30,7 +30,10 @@ describe('InputItem - Operation', () => {
 
     triggerEvent(input.element, 'keydown', 0, 0, 13)
     triggerEvent(input.element, 'keyup', 0, 0, 13)
+    triggerEvent(input.element, 'input', 0, 0, '123')
     expect(eventStub.calledWith('confirm')).toBe(true)
+    expect(wrapper.vm.getValue()).toEqual('4949 1111 1313 123')
+    wrapper.vm.blur()
   })
 
   test('phone input-item', () => {
@@ -42,6 +45,8 @@ describe('InputItem - Operation', () => {
     })
 
     expect(wrapper.vm.inputValue.length).toBe(13)
+    wrapper.setProps({value: '123'})
+    expect(wrapper.vm.inputValue).toEqual('123')
   })
 
   test('input-item with clear btn', () => {
@@ -57,6 +62,22 @@ describe('InputItem - Operation', () => {
     expect(wrapper.vm.isInputEmpty).toBe(true)
   })
 
+  test('input-item formation', () => {
+    wrapper = mount(InputItem, {
+      propsData: {
+        isFormative: true,
+        formation(name, curValue, curPos) {
+          return {
+            value: curValue + 'xxx',
+            range: curPos + 3,
+          }
+        },
+      },
+    })
+    wrapper.setProps({value: '123'})
+    expect(wrapper.vm.inputValue).toEqual('123xxx')
+  })
+
   test('input-item with number-keyborad', done => {
     wrapper = mount(InputItem, {
       propsData: {
@@ -66,7 +87,6 @@ describe('InputItem - Operation', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-
     wrapper.vm.focus()
     setTimeout(() => {
       const keyborad = wrapper.find('.md-number-keyboard')

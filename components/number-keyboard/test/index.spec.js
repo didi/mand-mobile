@@ -14,14 +14,16 @@ describe('NumberKeyboard - Operation', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
     const numberBtn = wrapper.findAll('.keyboard-number-item').at(1)
+    const slideDownBtn = wrapper.find('.slidedown')
 
     wrapper.vm.disorder = true
     wrapper.vm.value = true
     setTimeout(() => {
       numberBtn.trigger('click')
       expect(eventStub.calledWith('enter')).toBe(true)
-
-      wrapper.vm.isKeyboardShow = false
+      numberBtn.trigger('touchstart')
+      numberBtn.trigger('touchcancel')
+      slideDownBtn.trigger('click')
       expect(eventStub.calledWith('input')).toBe(true)
       done()
     }, 300)

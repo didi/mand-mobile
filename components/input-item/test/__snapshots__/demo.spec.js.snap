@@ -88,7 +88,7 @@ exports[`InputItem - Demo Business scenario input 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-active is-browser left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">数字</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="digit 0123456789" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>

@@ -40,6 +40,7 @@ export default {
     mime: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
@@ -65,6 +66,7 @@ export default {
 
   computed: {
     mimeType() {
+      /* istanbul ignore else */
       if (this.mime.length) {
         let mimeStr = ''
         this.mime.forEach(type => {
@@ -133,6 +135,7 @@ export default {
 
     // MARK: events handler
     $_onFileChange(event) {
+      /* istanbul ignore next */
       const fileElement = event.target
 
       /* istanbul ignore next */

@@ -387,6 +387,7 @@ export default {
           curValue = this.$_subValue(trimValue(curValue.replace(/\D/g, '')))
           formateValue.value = curValue
           break
+        /* istanbul ignore next */
         default:
           break
       }

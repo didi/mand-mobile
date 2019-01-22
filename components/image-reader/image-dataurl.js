@@ -27,6 +27,7 @@ export function dataURItoBlob(dataURI) {
   // convert base64/URLEncoded data component to raw binary data held in a string
   let byteString
 
+  /* istanbul ignore else */
   if (dataURI.split(',')[0].indexOf('base64') >= 0) {
     byteString = atob(dataURI.split(',')[1])
   } else {
