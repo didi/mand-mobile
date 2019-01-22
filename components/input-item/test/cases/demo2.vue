@@ -50,7 +50,7 @@ export default {
     return {
       phone: '13321234431',
       money: '',
-      digit: '',
+      digit: '123',
     }
   },
 }
