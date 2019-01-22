@@ -81,6 +81,7 @@ export default {
     data: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
@@ -91,18 +92,21 @@ export default {
     defaultValue: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
     defaultIndex: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
     invalidIndex: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
@@ -293,6 +297,7 @@ export default {
           return true
         }
       }
+      /* istanbul ignore next */
       warn(`hasValidIndex: has no valid items in column index ${columnIndex}`)
       return false
     },
