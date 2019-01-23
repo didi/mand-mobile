@@ -21,8 +21,8 @@ Vue.component(Radio.name, Radio)
 #### Radio Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|selected `name`|String|-|
-|name|unique name|String|-|-|
+|v-model|selected `name`|String/Number|-|
+|name|unique name|String/Number|-|-|
 |label|description text|String-|-|
 |disabled|whether disable option|Boolean|`false`|-|
 |inline|whether display as inline block|Boolean|`false`|-|

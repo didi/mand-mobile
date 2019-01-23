@@ -31,11 +31,11 @@ export default {
 
   props: {
     name: {
-      type: String,
+      type: [String, Number],
       required: true,
     },
     value: {
-      type: String,
+      type: [String, Number],
       default: '',
     },
     size: {

@@ -22,8 +22,8 @@ Vue.component(RadioList.name, RadioList)
 #### Radio Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|选中项的`name`|String|-|
-|name|唯一键值|String|-|-|
+|v-model|选中项的`name`|String/Number|-|
+|name|唯一键值|String/Number|-|-|
 |label|描述文案|String-|-|
 |disabled|是否禁用选项|Boolean|`false`|-|
 |inline|是否内联显示|Boolean|`false`|-|
