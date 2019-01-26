@@ -1,16 +1,38 @@
 import {Popup} from 'mand-mobile'
-import {mount} from '@vue/test-utils'
+import sinon from 'sinon'
+import {shallowMount} from '@vue/test-utils'
 import triggerTouch from './touch-trigger'
 
-describe('Popup', () => {
+describe('Popup - Operation', () => {
   let wrapper
 
   afterEach(() => {
     wrapper && wrapper.destroy()
   })
 
+  it('popup show/hide', done => {
+    wrapper = shallowMount(Popup, {
+      propsData: {
+        value: false,
+      },
+    })
+    const eventSpy = sinon.spy(wrapper.vm, '$emit')
+    wrapper.setProps({value: true})
+    setTimeout(() => {
+      expect(eventSpy.calledWith('beforeShow')).toBe(true)
+
+      const mask = wrapper.find('.md-popup-mask')
+      mask.trigger('click')
+      expect(eventSpy.calledWith('maskClick')).toBe(true)
+      expect(eventSpy.calledWith('input')).toBe(true)
+      expect(eventSpy.calledWith('beforeHide')).toBe(true)
+      done()
+    }, 50)
+    // expect(eventSpy.calledWith('before-show')).toBe(true)
+  })
+
   it('popup prevent scroll', done => {
-    wrapper = mount(Popup, {
+    wrapper = shallowMount(Popup, {
       propsData: {
         preventScroll: true,
         value: true,

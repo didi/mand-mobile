@@ -2,7 +2,7 @@
   <div class="md-example-child md-example-child-steps md-example-child-steps-3">
     <md-steps
       :steps="steps"
-      :current="2"
+      :current="current"
     >
     </md-steps>
   </div>
@@ -31,7 +31,11 @@ export default {
           name: '成功',
         },
       ],
+      current: 0,
     }
+  },
+  mounted() {
+    this.current = 2
   },
 }
 </script>

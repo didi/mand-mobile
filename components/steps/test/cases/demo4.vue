@@ -32,8 +32,11 @@ export default {
           name: '成功',
         },
       ],
-      currentStep: 1.5,
+      currentStep: 0,
     }
+  },
+  mounted() {
+    this.currentStep = 1.5
   },
 }
 </script>

@@ -21,7 +21,8 @@ describe('Steps - Demo', () => {
     expect(renderToString(Demo2)).toMatchSnapshot()
   })
   test(`Specify the current step`, () => {
-    expect(renderToString(Demo3)).toMatchSnapshot()
+    const wrapper = mount(Demo3)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Transition of rogress changes`, done => {
     const wrapper = mount(Demo4)
@@ -40,6 +41,7 @@ describe('Steps - Demo', () => {
     expect(renderToString(Demo7)).toMatchSnapshot()
   })
   test(`Custom content`, () => {
-    expect(renderToString(Demo8)).toMatchSnapshot()
+    const wrapper = mount(Demo8)
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
