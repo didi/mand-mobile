@@ -145,6 +145,7 @@ export default {
         this.isPopupBoxShow = true
         /* istanbul ignore if */
         if (process.env.NODE_ENV === 'test') {
+          this.$_onPopupTransitionStart()
           this.$_onPopupTransitionEnd()
         }
       })
@@ -158,6 +159,7 @@ export default {
       this.$emit('input', false)
       /* istanbul ignore if */
       if (process.env.NODE_ENV === 'test') {
+        this.$_onPopupTransitionStart()
         this.$_onPopupTransitionEnd()
       }
     },

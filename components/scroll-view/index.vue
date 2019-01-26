@@ -121,6 +121,7 @@ export default {
   },
   methods: {
     $_initScroller() {
+      /* istanbul ignore if */
       if (this.isInitialed) {
         return
       }
@@ -184,12 +185,14 @@ export default {
     // MARK: events handler
     $_onScollerTouchStart(event) {
       // event.target.tagName && event.target.tagName.match(/input|textarea|select/i)
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
       this.scroller.doTouchStart(event.touches, event.timeStamp)
     },
     $_onScollerTouchMove(event) {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
@@ -197,12 +200,14 @@ export default {
       this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
     },
     $_onScollerTouchEnd(event) {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
       this.scroller.doTouchEnd(event.timeStamp)
     },
     $_onScollerMouseDown(event) {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
@@ -218,6 +223,7 @@ export default {
       this.isMouseDown = true
     },
     $_onScollerMouseMove(event) {
+      /* istanbul ignore if */
       if (!this.scroller || !this.isMouseDown) {
         return
       }
@@ -233,6 +239,7 @@ export default {
       this.isMouseDown = true
     },
     $_onScollerMouseUp(event) {
+      /* istanbul ignore if */
       if (!this.scroller || !this.isMouseDown) {
         return
       }
@@ -268,6 +275,7 @@ export default {
       })
     },
     scrollTo(left, top, animate = false) {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
@@ -276,6 +284,7 @@ export default {
     reflowScroller(force = false) {
       const container = this.container
       const content = this.content
+      /* istanbul ignore if */
       if (!this.scroller || !container || !content) {
         return
       }
@@ -306,12 +315,14 @@ export default {
       })
     },
     triggerRefresh() {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
       this.scroller.triggerPullToRefresh()
     },
     finishRefresh() {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
@@ -319,6 +330,7 @@ export default {
       this.reflowScroller()
     },
     finishLoadMore() {
+      /* istanbul ignore if */
       if (!this.scroller) {
         return
       }
