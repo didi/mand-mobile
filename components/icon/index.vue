@@ -11,7 +11,7 @@
   <i
     v-else-if="name"
     class="md-icon icon-font"
-    :class="[`md-icon-${name}`, size]"
+    :class="[`md-icon-${name}`, name, size]"
     :style="{color}"
     @click="$emit('click', $event)"
   ></i>
