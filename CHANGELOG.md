@@ -39,4 +39,4 @@ toc: hidden
 
 ### 1.x 
 
-去[GitHub](https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md)查看`1.x`的 Change Log。
+去[GitHub](https://github.com/didi/mand-mobile/blob/1.x/CHANGELOG.md)查看`1.x`的 Change Log。
