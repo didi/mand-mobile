@@ -1,6 +1,6 @@
 ---
 title: Selector 列表选择器
-preview: https://mand-mobile.github.io/2x-doc/examples/#/selector
+preview: https://didi.github.io/mand-mobile/examples/#/selector
 ---
 
 用于弹出列表中选择一项

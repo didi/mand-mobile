@@ -1,6 +1,6 @@
 ---
 title: Agree
-preview: https://mand-mobile.github.io/2x-doc/examples/#/agree
+preview: https://didi.github.io/mand-mobile/examples/#/agree
 ---
 
 For toggling states

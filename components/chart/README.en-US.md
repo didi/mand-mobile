@@ -1,6 +1,6 @@
 ---
 title: Chart
-preview: https://mand-mobile.github.io/2x-doc/examples/#/chart
+preview: https://didi.github.io/mand-mobile/examples/#/chart
 ---
 
 Chart made with SVG, supports polylines printing and display specification setting.

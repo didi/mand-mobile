@@ -1,6 +1,6 @@
 ---
 title: DatePicker
-preview: https://mand-mobile.github.io/2x-doc/examples/#/date-picker
+preview: https://didi.github.io/mand-mobile/examples/#/date-picker
 ---
 
 Date or time selecting, supports year/month/day/hour/minute and range selecting

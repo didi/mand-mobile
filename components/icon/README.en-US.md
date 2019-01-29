@@ -1,6 +1,6 @@
 ---
 title: Icon
-preview: https://mand-mobile.github.io/2x-doc/examples/#/icon
+preview: https://didi.github.io/mand-mobile/examples/#/icon
 ---
 
 SVG Icons

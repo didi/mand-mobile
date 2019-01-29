@@ -1,6 +1,6 @@
 ---
 title: CellItem
-preview: https://mand-mobile.github.io/2x-doc/examples/#/cell-item
+preview: https://didi.github.io/mand-mobile/examples/#/cell-item
 ---
 
 Arrange vertically and display current contents, status and other allowable operations.

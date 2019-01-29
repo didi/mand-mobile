@@ -1,6 +1,6 @@
 ---
 title: Check
-preview: https://mand-mobile.github.io/2x-doc/examples/#/check
+preview: https://didi.github.io/mand-mobile/examples/#/check
 ---
 
 UI renderless check group component

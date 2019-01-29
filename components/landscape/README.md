@@ -1,6 +1,6 @@
 ---
 title: Landscape 输入框
-preview: https://mand-mobile.github.io/2x-doc/examples/#/landscape
+preview: https://didi.github.io/mand-mobile/examples/#/landscape
 ---
 
 用于在浮层中显示广告或说明

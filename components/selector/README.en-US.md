@@ -1,6 +1,6 @@
 ---
 title: Selector
-preview: https://mand-mobile.github.io/2x-doc/examples/#/selector
+preview: https://didi.github.io/mand-mobile/examples/#/selector
 ---
 
 For selecting an item from the popup list

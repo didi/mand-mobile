@@ -1,6 +1,6 @@
 ---
 title: Captcha
-preview: https://mand-mobile.github.io/2x-doc/examples/#/captcha
+preview: https://didi.github.io/mand-mobile/examples/#/captcha
 ---
 SMS code confirming dialog
 

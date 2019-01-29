@@ -1,6 +1,6 @@
 ---
 title: Switch
-preview: https://mand-mobile.github.io/2x-doc/examples/#/switch
+preview: https://didi.github.io/mand-mobile/examples/#/switch
 ---
 
 Switch between two status

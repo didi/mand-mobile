@@ -1,6 +1,6 @@
 ---
 title: Popup
-preview: https://mand-mobile.github.io/2x-doc/examples/#/popup
+preview: https://didi.github.io/mand-mobile/examples/#/popup
 ---
 
 A customized content area slides out or pops up on the screen, triggered by other controls.

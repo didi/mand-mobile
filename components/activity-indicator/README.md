@@ -1,6 +1,6 @@
 ---
 title: ActivityIndicator 活动指示器
-preview: https://mand-mobile.github.io/2x-doc/examples/#/activity-indicator
+preview: https://didi.github.io/mand-mobile/examples/#/activity-indicator
 ---
 
 活动指示器，一般用于正在进行中的任务示意

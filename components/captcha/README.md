@@ -1,6 +1,6 @@
 ---
 title: Captcha 验证码
-preview: https://mand-mobile.github.io/2x-doc/examples/#/captcha
+preview: https://didi.github.io/mand-mobile/examples/#/captcha
 ---
 
 验证码校验窗口

@@ -1,6 +1,6 @@
 ---
 title: DropMenu
-preview: https://mand-mobile.github.io/2x-doc/examples/#/drop-menu
+preview: https://didi.github.io/mand-mobile/examples/#/drop-menu
 ---
 
 Drop-down menu is for list filtering

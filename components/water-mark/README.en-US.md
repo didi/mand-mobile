@@ -1,6 +1,6 @@
 ---
 title: WaterMark
-preview: https://mand-mobile.github.io/2x-doc/examples/#/water-mark
+preview: https://didi.github.io/mand-mobile/examples/#/water-mark
 ---
 
 Container with watermark background

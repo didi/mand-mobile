@@ -1,6 +1,6 @@
 ---
 title: Switch 开关
-preview: https://mand-mobile.github.io/2x-doc/examples/#/switch
+preview: https://didi.github.io/mand-mobile/examples/#/switch
 ---
 
 开关按钮，用于表示开关状态/两种状态之间的切换

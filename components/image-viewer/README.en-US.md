@@ -1,6 +1,6 @@
 ---
 title: ImageViewer
-preview: https://mand-mobile.github.io/2x-doc/examples/#/image-viewer
+preview: https://didi.github.io/mand-mobile/examples/#/image-viewer
 ---
 
 For	 browsing multiple pictures and swiping to switch pictures

@@ -1,6 +1,6 @@
 ---
 title: ScrollView
-preview: https://mand-mobile.github.io/2x-doc/examples/#/scroll-view
+preview: https://didi.github.io/mand-mobile/examples/#/scroll-view
 ---
 
 Used to simulate native scrolling areas and support pull-down refresh and load more
