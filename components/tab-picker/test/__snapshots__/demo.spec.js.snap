@@ -7,7 +7,7 @@ exports[`TabPicker - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
         <div class="md-popup-title-bar large">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
           <div class="title-bar-title">
             <p class="title">请选择</p>
             <p class="describe">请选择您所在的省份、城市、区县</p>

@@ -128,7 +128,7 @@ exports[`InputItem - Demo Floating title input 1`] = `
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="投保人姓名" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
-            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
             <!---->
           </div>
         </div>
@@ -139,7 +139,7 @@ exports[`InputItem - Demo Floating title input 1`] = `
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="投保人身份证号" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
-            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
             <!---->
           </div>
         </div>
@@ -160,7 +160,7 @@ exports[`InputItem - Demo Large size financial input 1`] = `
         <!---->
       </div>
       <div class="md-field-action">
-        <div class="field-operator"><i class="md-icon icon-font md-icon-info md" style="color:;"></i></div>
+        <div class="field-operator"><i class="md-icon icon-font md-icon-info info md" style="color:;"></i></div>
       </div>
     </header>
     <div class="md-field-content">
@@ -199,7 +199,7 @@ exports[`InputItem - Demo input with controls 1`] = `
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="normal text" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
-            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
             <!---->
           </div>
         </div>
@@ -212,7 +212,7 @@ exports[`InputItem - Demo input with controls 1`] = `
             <div class="md-input-item-fake"><span></span> <span class="md-input-item-fake-placeholder">financial number keyboard</span></div>
           </div>
           <div class="md-field-item-right">
-            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
             <!---->
           </div>
         </div>
@@ -260,7 +260,7 @@ exports[`InputItem - Demo input with controls 1`] = `
             </svg></div>
           <div class="md-field-item-control"> <input name="" placeholder="left/right slots" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
-            <!----> <i class="md-icon icon-font md-icon-info md" style="color:;"></i>
+            <!----> <i class="md-icon icon-font md-icon-info info md" style="color:;"></i>
             <!---->
           </div>
         </div>
@@ -282,7 +282,7 @@ exports[`InputItem - Demo input with error message 1`] = `
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
-            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
             <!---->
           </div>
         </div>
@@ -299,7 +299,7 @@ exports[`InputItem - Demo input with error message 1`] = `
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
-            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear md" style="color:;"></i></div>
+            <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
             <!---->
           </div>
         </div>

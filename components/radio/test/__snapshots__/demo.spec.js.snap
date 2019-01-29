@@ -2,10 +2,10 @@
 
 exports[`Radio Basic 1`] = `
 <div class="md-example-child md-example-child-radio md-example-child-radio-0"><label class="md-radio is-checked">
-    <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+    <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
     <div class="md-radio-label">单选项1</div>
   </label> <label class="md-radio">
-    <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
     <div class="md-radio-label">单选项2</div>
   </label></div>
 `;
@@ -25,7 +25,7 @@ exports[`Radio List 1`] = `
         <div class="md-cell-item md-radio-item">
           <div class="md-cell-item-body multilines">
             <div class="md-cell-item-left"><label class="md-radio">
-                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check lg" style="color:;"></i></div>
+                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check lg" style="color:;"></i></div>
                 <!---->
               </label></div>
             <div class="md-cell-item-content">
@@ -39,7 +39,7 @@ exports[`Radio List 1`] = `
         <div class="md-cell-item md-radio-item">
           <div class="md-cell-item-body multilines">
             <div class="md-cell-item-left"><label class="md-radio">
-                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check lg" style="color:;"></i></div>
+                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check lg" style="color:;"></i></div>
                 <!---->
               </label></div>
             <div class="md-cell-item-content">
@@ -53,7 +53,7 @@ exports[`Radio List 1`] = `
         <div class="md-cell-item md-radio-item is-disabled no-border">
           <div class="md-cell-item-body multilines">
             <div class="md-cell-item-left"><label class="md-radio is-disabled">
-                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check-disabled lg" style="color:;"></i></div>
+                <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled lg" style="color:;"></i></div>
                 <!---->
               </label></div>
             <div class="md-cell-item-content">
@@ -193,13 +193,13 @@ exports[`Radio With Field 1`] = `
         <div class="md-field-item-content"><label class="md-field-item-title">婚姻状况</label>
           <!---->
           <div class="md-field-item-control"><label class="md-radio is-checked is-inline">
-              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
               <div class="md-radio-label">已婚</div>
             </label> <label class="md-radio is-inline">
-              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
               <div class="md-radio-label">未婚</div>
             </label> <label class="md-radio is-inline">
-              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+              <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
               <div class="md-radio-label">保密</div>
             </label></div>
           <!---->

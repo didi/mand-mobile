@@ -7,7 +7,7 @@ exports[`Landscape - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-punch" class="md-popup-box md-punch" style="display:none;">
         <div class="md-landscape-body">
-          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close md" style="color:;"></i>
+          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close close md" style="color:;"></i>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@ exports[`Landscape - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-punch" class="md-popup-box md-punch" style="display:none;">
         <div class="md-landscape-body">
-          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close md" style="color:;"></i>
+          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close close md" style="color:;"></i>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ exports[`Landscape - Demo Basic 1`] = `
             <p>
               前几天，狼子村的佃户来告荒，对我大哥说，他们村里的一个大恶人，给大家打死了；几个人便挖出他的心肝来，用油煎炒了吃，可以壮壮胆子。我插了一句嘴，佃户和大哥便都看我几眼。今天才晓得他们的眼光，全同外面的那伙人一模一样。
             </p>
-          </div> <i class="md-icon icon-font md-landscape-close md-icon-clear md dark" style="color:;"></i>
+          </div> <i class="md-icon icon-font md-landscape-close md-icon-clear clear md dark" style="color:;"></i>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ exports[`Landscape - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-punch" class="md-popup-box md-punch" style="display:none;">
         <div class="md-landscape-body">
-          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close md dark" style="color:;"></i>
+          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close close md dark" style="color:;"></i>
         </div>
       </div>
     </div>
@@ -84,7 +84,7 @@ exports[`Landscape - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-punch" class="md-popup-box md-punch" style="display:none;">
         <div class="md-landscape-body">
-          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close md" style="color:;"></i>
+          <div class="md-landscape-content"><img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz"></div> <i class="md-icon icon-font md-landscape-close md-icon-close close md" style="color:;"></i>
         </div>
       </div>
     </div>
