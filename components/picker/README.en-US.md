@@ -1,6 +1,6 @@
 ---
 title: Picker
-preview: https://didi.github.io/mand-mobile/examples/#/picker
+preview: https://mand-mobile.github.io/1x-doc/examples/#/picker
 ---
 
 Scrollable multi-column selector

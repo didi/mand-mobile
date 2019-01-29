@@ -1,6 +1,6 @@
 ---
 title: Stepper
-preview: https://didi.github.io/mand-mobile/examples/#/stepper
+preview: https://mand-mobile.github.io/1x-doc/examples/#/stepper
 ---
 
 Increase, decrease or modify the current value

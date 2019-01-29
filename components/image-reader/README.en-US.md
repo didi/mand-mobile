@@ -1,6 +1,6 @@
 ---
 title: ImageReader
-preview: https://didi.github.io/mand-mobile/examples/#/image-reader
+preview: https://mand-mobile.github.io/1x-doc/examples/#/image-reader
 ---
 
 For photo album reading or photos taking

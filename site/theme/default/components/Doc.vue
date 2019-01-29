@@ -374,7 +374,7 @@ export default {
     goToDemo (index) {
       const component = this.info.preview.split('#')[1]
       if (component) {
-        window.open(`https://github.com/didi/mand-mobile/edit/master/components/${component}/demo/cases/demo${index}.vue`)
+        window.open(`https://github.com/didi/mand-mobile/edit/1.x/components/${component}/demo/cases/demo${index}.vue`)
       }
       console.log(this.info.preview, index)
     },

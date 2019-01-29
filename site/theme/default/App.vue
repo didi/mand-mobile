@@ -1,6 +1,5 @@
 <template>
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
-    <mb-notice-bar :lang="lang"></mb-notice-bar>
     <mb-header :is-active="isHome"/>
     <div class="default-content">
       <mb-menu

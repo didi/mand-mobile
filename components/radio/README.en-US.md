@@ -1,6 +1,6 @@
 ---
 title: Radio
-preview: https://didi.github.io/mand-mobile/examples/#/radio
+preview: https://mand-mobile.github.io/1x-doc/examples/#/radio
 ---
 
 Customizable or editable radio buttons

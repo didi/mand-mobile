@@ -1,6 +1,6 @@
 ---
 title: InputItem
-preview: https://didi.github.io/mand-mobile/examples/#/input-item
+preview: https://mand-mobile.github.io/1x-doc/examples/#/input-item
 ---
 
 Single-line text input, supports text formatting in exact scenarios

@@ -1,6 +1,6 @@
 ---
 title: CheckList
-preview: https://didi.github.io/mand-mobile/examples/#/check-list
+preview: https://mand-mobile.github.io/1x-doc/examples/#/check-list
 ---
 
 Check list component. <sup class="version-after">1.5.0+</sup>

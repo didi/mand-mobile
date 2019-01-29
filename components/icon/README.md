@@ -1,6 +1,6 @@
 ---
 title: Icon 图标
-preview: https://didi.github.io/mand-mobile/examples/#/icon
+preview: https://mand-mobile.github.io/1x-doc/examples/#/icon
 ---
 
 SVG 图标

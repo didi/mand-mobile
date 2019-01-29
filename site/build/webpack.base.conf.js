@@ -70,7 +70,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
       filename: 'index.html',
-      publicPath: '/mand-mobile/',
+      publicPath: '/1x-doc/',
     })),
     new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
       filename: 'index.gitee.html',

@@ -1,6 +1,6 @@
 ---
 title: ActivityIndicator
-preview: https://didi.github.io/mand-mobile/examples/#/activity-indicator
+preview: https://mand-mobile.github.io/1x-doc/examples/#/activity-indicator
 ---
 
 Activity indicator, generally used for ongoing tasks <sup class="version-after">1.4.0+</sup>

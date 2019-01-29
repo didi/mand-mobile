@@ -1,6 +1,6 @@
 ---
 title: CheckGroup 选择项组
-preview: https://didi.github.io/mand-mobile/examples/#/check-group
+preview: https://mand-mobile.github.io/1x-doc/examples/#/check-group
 ---
 
 无 UI 的抽象选择项基础组件, 可根据具体场景自定义样式. <sup class="version-after">1.5.0+</sup>

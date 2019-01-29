@@ -1,6 +1,6 @@
 ---
 title: Tip
-preview: https://didi.github.io/mand-mobile/examples/#/tip
+preview: https://mand-mobile.github.io/1x-doc/examples/#/tip
 ---
 
 Tooltip

@@ -1,6 +1,6 @@
 ---
 title: TabPicker 多级联动选择器
-preview: https://didi.github.io/mand-mobile/examples/#/tab-picker
+preview: https://mand-mobile.github.io/1x-doc/examples/#/tab-picker
 ---
 
 底部级联选择、非级联选择的tab切换面板

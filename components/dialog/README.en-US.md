@@ -1,6 +1,6 @@
 ---
 title: Dialog
-preview: https://didi.github.io/mand-mobile/examples/#/dialog
+preview: https://mand-mobile.github.io/1x-doc/examples/#/dialog
 ---
 
 A floating layer to get users' feedback or display information.

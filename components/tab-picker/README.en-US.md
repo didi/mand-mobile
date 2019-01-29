@@ -1,6 +1,6 @@
 ---
 title: TabPicker
-preview: https://didi.github.io/mand-mobile/examples/#/tab-picker
+preview: https://mand-mobile.github.io/1x-doc/examples/#/tab-picker
 ---
 
 Support cascaded or non-cascaded selections in the footer

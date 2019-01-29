@@ -1,6 +1,6 @@
 ---
 title: CheckBox 复选框
-preview: https://didi.github.io/mand-mobile/examples/#/check-box
+preview: https://mand-mobile.github.io/1x-doc/examples/#/check-box
 ---
 
 复选框. <sup class="version-after">1.5.0+</sup>
