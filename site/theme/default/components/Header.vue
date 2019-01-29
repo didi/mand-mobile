@@ -2,7 +2,7 @@
   <div class="mfe-blog-theme-default-header" :class="{active: isActive}">
     <div class="default-header-container">
       <div class="default-header-aside">
-        <a class="default-header-logo" href="/2x-doc">
+        <a class="default-header-logo" href="/mand-mobile">
           <img class="logo-img" :src="logo" alt="logo">
           <p>
             <span class="name" v-html="title"></span>
@@ -20,7 +20,7 @@
       <div class="default-header-content">
         <mfe-search :lang="lang" :menu="menu"></mfe-search>
         <div class="default-header-github default-header-operater">
-          <a href="https://github.com/didi/mand-mobile/tree/2.0" target="_blank"></a>
+          <a href="https://github.com/didi/mand-mobile/tree/master" target="_blank"></a>
         </div>
         <div class="default-header-lang default-header-operater">
           <router-link
