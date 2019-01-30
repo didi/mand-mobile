@@ -3,6 +3,24 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.0.0
+
+`2019-01-30`      
+
+- Feature
+  - `DetailItem`属性`content`增加支持类型[#285](https://github.com/didi/mand-mobile/issues/285)
+  - `Dialog`属性`preventScroll`默认值改为`true`[#286](https://github.com/didi/mand-mobile/issues/286)
+  - `Radio`属性`value`增加支持类型[#289](https://github.com/didi/mand-mobile/issues/289)
+  - `Icon`的字体图标类型增加无前缀类名[#295](https://github.com/didi/mand-mobile/issues/295)
+  - `Check`，`CheckBox`属性`name`，`value`增加支持类型[#297](https://github.com/didi/mand-mobile/issues/297)
+  - `InputItem`增加属性`virtual-keyboard-vm`，用于支持外部自定义金融键盘
+  - `Cashier`增加插槽`footer`，`channels`增加属性`img`
+
+- Fix
+  - 去除`InputItem`内对原生输入框光标位置设置 [#268](https://github.com/didi/mand-mobile/issues/268)
+  - 补充`index.d.ts`
+  - 修复部分组件样式问题
+
 ### 2.0.0-rc.5
 
 `2019-01-04`      
