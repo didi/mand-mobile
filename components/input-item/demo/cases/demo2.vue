@@ -60,7 +60,7 @@ export default {
     }
   },
   methods: {
-    onInputKeydown(event) {
+    onInputKeydown(name, event) {
       console.log(`[Mand Mobile InputItem keydown] ${event.keyCode}`)
     },
     onInputChange(name, value) {
