@@ -62,12 +62,13 @@ Vue.component(RadioList.name, RadioList)
 
 #### Radio List Events
 
-##### @input(value)
+##### @change(option, index)
 切换选中项事件
 
 |属性 | 说明 | 类型|
 |----|-----|------|
-|value|当前选中项的value|String|
+|option|当前选中项的数据|Object:{text, value, disabled, ...}|
+|index|当前选中项的索引|Number|
 
 #### Radio List Slots
 ```html

@@ -61,12 +61,13 @@ Set selected value
 
 #### Radio List Events
 
-##### @input(value)
+##### @change(option, index)
 Selected option changed
 
 |Props | Description | Type |
 |----|-----|------|
-|value|value of selected option|`String`|
+|option|data of selected option|Object:{text, value, disabled, ...}|
+|index|index of selected option|Number|
 
 #### Radio List Slots
 ```html
