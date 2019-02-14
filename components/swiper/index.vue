@@ -135,6 +135,7 @@ export default {
     this.ready = true
     this.hasTouch = 'ontouchstart' in window || process.env.NODE_ENV === 'test'
     this.$swiper = this.$el.querySelector('.md-swiper-container')
+    this.$swiperBox = this.$el.querySelector('.md-swiper-box')
     this.$nextTick(() => {
       this.$_reInitItems()
       this.$_startPlay()
@@ -179,7 +180,7 @@ export default {
         },
       )
 
-      const container = this.$swiper
+      const container = this.$swiperBox
       const contentWidth = this.isVertical ? container.clientWidth : container.clientWidth * this.rItemCount
       const contentHeight = this.isVertical ? container.clientHeight * this.rItemCount : container.clientHeight
       scroller.setPosition(container.clientLeft, container.clientTop)
