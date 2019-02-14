@@ -24,7 +24,7 @@ Vue.component(Selector.name, Selector)
 |----|-----|------|------|------|
 |v-model|display selector or not|Boolean|false|-|
 |data|data source|Array<{value,text,disabled,...}>|`[]`|`text` can be a `html` fragment|
-|default-value|the value of initially selected item|String|-|-|
+|default-value|the value of initially selected item|any|-|-|
 |title|title of selector|String|-|-|
 |describe|description of selector|String|-|-|
 |ok-text|confirmation text|String|-|if empty, it will be `confirmed mode`, that is, click to select directly|

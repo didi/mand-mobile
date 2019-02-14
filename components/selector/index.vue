@@ -96,7 +96,6 @@ export default {
       },
     },
     defaultValue: {
-      type: String,
       default: '',
     },
     isCheck: {
