@@ -16,33 +16,39 @@ title: 布局
 
 从尽可能减少沟通与适配成本考虑，滴滴金融设计团队统一的设计画板尺寸为 750*1334；     
 栅格的基数为 4，以“4”为一个步进，来调整元素的间距及尺寸，这意味着任何padding、margin、sizing，都将是4的倍数。
-<br>
-<br>
+
+#### 页面栅栏基准
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline">
-    <div class="doc-cutline-title">页面栅栏基准</div>
     <div class="doc-cutline-desc">
       金融业务场景中，图少文案多，40px的留白可以让整个页面更透气，有空间感
     </div>
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/vPiNCT4oCo1545964504092.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/vPiNCT4oCo1545964504092.png" style="max-width: 300px;">
     </div>
   </div>
   <div class="doc-cutline">&nbsp;</div>
 </div>
 
+#### 表单/一级标题
+
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline">
-    <div class="doc-cutline-title">表单/一级标题</div>
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/MfZYiEwctf1545964504283.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/MfZYiEwctf1545964504283.png" style="max-width: 300px;">
     </div>
   </div>
+  <div class="doc-cutline">&nbsp;</div>
+</div>
+
+#### 表单/输入
+
+<div class="doc-cutline-wrapper">
   <div class="doc-cutline">
-    <div class="doc-cutline-title">表单/输入</div>
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/CAUVTpvKhP1545964504299.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/CAUVTpvKhP1545964504299.png" style="max-width: 300px;">
     </div>
   </div>
+  <div class="doc-cutline">&nbsp;</div>
 </div>

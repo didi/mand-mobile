@@ -15,18 +15,18 @@ title: Color
 </style>
 
 Color is a good way to convey the brand. To ensure the consistency of the style of the product experience, it is recommended to use a palette and other tools to build brand-specific palettes and usage rules.    
-<br/>
-<br/>
-**Functional color definition**         
+
+
+#### Functional color definition       
 
 **Blue**: brand color / basic color, representing convenience, safety, professional   
 **Orange**: brand color, representing gain, consumption, equity   
 **Green**: health, security     
 **Red**: reminder users when overdue or strong reminder      
-<br/>
 
-<div class="color-list inline">
-  <div class="color-title">Brand color</div>
+#### Brand color
+
+<div class="color-list">
   <div class="color-item">
     <div class="color-item-box large" style="background:#FF7D41"></div>
     <p class="color-item-text">#FF7D41</p>
@@ -38,8 +38,10 @@ Color is a good way to convey the brand. To ensure the consistency of the style 
     <p class="color-item-text">Brand blue</p>
   </div>
 </div>
-<div class="color-list inline">
-  <div class="color-title">Functional color</div>
+
+#### Functional color
+
+<div class="color-list">
   <div class="color-item">
     <div class="color-item-box large" style="background:#FF5257"></div>
     <p class="color-item-text">#FF5257</p>
@@ -56,8 +58,9 @@ Color is a good way to convey the brand. To ensure the consistency of the style 
   </div>
 </div>
 
+#### Neutral color
+
 <div class="color-list">
-  <div class="color-title">Neutral color</div>
   <div class="color-item">
     <div class="color-item-box large" style="background:#FFFFFF;border-bottom:solid 1px #E4E5E7"></div>
     <p class="color-item-text">#FFFFFF</p>
@@ -74,8 +77,9 @@ Color is a good way to convey the brand. To ensure the consistency of the style 
   </div>
 </div>
 
+#### Text information
+
 <div class="color-list">
-  <div class="color-title">Text information</div>
   <div class="color-item">
     <div class="color-item-box large" style="background:#111A34"></div>
     <p class="color-item-text">#111A34</p>
@@ -102,8 +106,9 @@ Color is a good way to convey the brand. To ensure the consistency of the style 
   </div>
 </div>
 
+#### Mask (transparent)
+
 <div class="color-list">
-  <div class="color-title">Mask (transparent)</div>
   <div class="color-item">
     <div class="color-item-box large" style="background:rgba(0, 0, 0, .7)"></div>
     <p class="color-item-text">#000000</p>

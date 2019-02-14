@@ -19,31 +19,31 @@ title: Thoughtful and professional
 }
 </style>
 
-## Clear progress
+#### Clear progress
 
-For the flow of funds and business processing, it is necessary to design a reasonable schedule node to clearly convey the concept of time to the user and avoid user anxiety. [Financial Management Progress / Repayment Progress]
+For the flow of funds and business processing, it is necessary to design a reasonable schedule node to clearly convey the concept of time to the user and avoid user anxiety. 
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/NGwne2FMQv1545911061860.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/NGwne2FMQv1545911061860.png" style="max-height:410px;">
     </div>
   </div>
   <div class="doc-cutline donot">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/N6fHIqY5PO1545911064113.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/N6fHIqY5PO1545911064113.png" style="max-height:410px;">
     </div>
   </div>
 </div>
 
-## Restore difference
+#### Restore difference
 
-There are physical differences between different banks and different suppliers. Under the premise of basic unity of experience, it is also necessary to maintain individual differences and let users feel the financial profession. [Supplier Information Floating Layer / Bank Card Type]
+There are physical differences between different banks and different suppliers. Under the premise of basic unity of experience, it is also necessary to maintain individual differences and let users feel the financial profession. 
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/j1hfoR4axj1545911194083.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/j1hfoR4axj1545911194083.png" style="max-height:410px;">
     </div>
   </div>
 </div>

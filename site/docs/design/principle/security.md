@@ -19,27 +19,27 @@ title: 安全可控
 }
 </style>
 
-## 数据脱敏
+#### 数据脱敏
 
-在对姓名、身份证号、银行卡号、手机号码等信息进行展示过程中，为了避免个人隐私的泄露，采用了隐藏反显的形式。【四项验证】
+在对姓名、身份证号、银行卡号、手机号码等信息进行展示过程中，为了避免个人隐私的泄露，采用了隐藏反显的形式。
 
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Y3ywMpuHs41545904053656.jpg">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Y3ywMpuHs41545904053656.jpg" style="max-height:410px;">
     </div>
   </div>
 </div>
 
-## 契约保存
+#### 契约保存
 
-对涉及交易双方的协议、合同、文档等文本契约对用户提供保存功能，让用户对此类交易有放心感；【协议下载】
+对涉及交易双方的协议、合同、文档等文本契约对用户提供保存功能，让用户对此类交易有放心感。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FulGDLPs0K1545904142068.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FulGDLPs0K1545904142068.png" style="max-height:410px;">
     </div>
   </div>
 </div>

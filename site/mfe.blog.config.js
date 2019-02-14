@@ -407,7 +407,7 @@ module.exports = {
       },
     ]
   },
-  copyRight: '2012-2018 Didi Chuxing. All Rights Reserved',
+  copyRight: '2012-2019 Didi Chuxing. All Rights Reserved',
   routePrefix: '/mand-mobile',
   // staticPrefix: '//manhattan.didistatic.com/static/manhattan/mand-mobile',
 }

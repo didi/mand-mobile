@@ -2,6 +2,8 @@
 title: 字体
 ---
 
+### 字型
+
 设计图使用系统默认字体，安卓系统自定义字体较多，以系统默认字体为准；
 
 <style>
@@ -55,7 +57,7 @@ title: 字体
   </div>
 </div>
 
-## 字号
+### 字号
 
 字体的使用注意中文和英文的使用，金融类的产品数字均为页面的重要信息。      
 中文字体建议最大字号是60Px，最小为24px；英文字体DIN Pro  Medium（在页面强突出金额时使用）建议最大字号120px      
@@ -63,7 +65,7 @@ title: 字体
 <br> 
 <img src="https://pt-starimg.didistatic.com/static/starimg/img/R1ke1asaDm1545968523580.jpg" class="font-weight-img">
 
-## 字重
+### 字重
 
 多数情况下，中文只出现 regular 以及 medium 的两种字体重量，数字字体DIN Pro只出现medium字重。
 

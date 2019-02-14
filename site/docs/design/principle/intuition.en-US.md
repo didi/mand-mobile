@@ -18,9 +18,9 @@ title: Intuitive and simple
 }
 </style>
 
-## WYSIWYG
+#### WYSIWYG
 
-For the scanning and identification function of the bank card, driving license and other documents, the recognition result and the corresponding certificate photo are displayed in comparison, and the identification is correct or not, which is very straightforward and clear at a glance.[OCR bank cards]
+For the scanning and identification function of the bank card, driving license and other documents, the recognition result and the corresponding certificate photo are displayed in comparison, and the identification is correct or not, which is very straightforward and clear at a glance.
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
@@ -35,7 +35,7 @@ For the scanning and identification function of the bank card, driving license a
   </div>
 </div>
 
-## Focus on single task
+#### Focus on single task
 
 A page focuses on only one core task and provides a single action button; if multiple operations are possible, it is also necessary to distinguish between primary and secondary, avoiding multiple action buttons.
 
@@ -52,9 +52,9 @@ A page focuses on only one core task and provides a single action button; if mul
   </div>
 </div>
 
-## Simplify multi-level
+#### Simplify multi-level
 
-Need to layer the complex information, try to show only the first level of information to the user by default, and the rest of the level is hidden. [Coupons are hidden in the show]
+Need to layer the complex information, try to show only the first level of information to the user by default, and the rest of the level is hidden.
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do" style="flex:1;">
