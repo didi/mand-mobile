@@ -74,7 +74,6 @@ export default {
       },
     },
     value: {
-      type: String,
       default: '',
     },
     hasInput: {

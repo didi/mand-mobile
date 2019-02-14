@@ -22,8 +22,8 @@ Vue.component(RadioList.name, RadioList)
 #### Radio Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|选中项的`name`|String/Number|-|
-|name|唯一键值|String/Number|-|-|
+|v-model|选中项的`name`|any|-|
+|name|唯一键值|any|-|-|
 |label|描述文案|String-|-|
 |disabled|是否禁用选项|Boolean|`false`|-|
 |inline|是否内联显示|Boolean|`false`|-|
@@ -38,7 +38,7 @@ Vue.component(RadioList.name, RadioList)
 #### Radio List Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|选中项的`value`|String|-|
+|v-model|选中项的`value`|any|-|
 |options|选项数据源|Array<{text, value, disabled, ...}>|`[]`|`disabled`为选项是否禁用|
 |has-input|是否具有可编辑项|Boolean|`false`|-|
 |input-label|可编辑项的名称|String|-|仅用于`has-input`为`true`|

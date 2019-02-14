@@ -21,8 +21,8 @@ Vue.component(Radio.name, Radio)
 #### Radio Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|selected `name`|String/Number|-|
-|name|unique name|String/Number|-|-|
+|v-model|selected `name`|any|-|
+|name|unique name|any|-|-|
 |label|description text|String-|-|
 |disabled|whether disable option|Boolean|`false`|-|
 |inline|whether display as inline block|Boolean|`false`|-|
@@ -37,7 +37,7 @@ Vue.component(Radio.name, Radio)
 #### Radio List Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|`value` of the selected item|String|-|-|
+|v-model|`value` of the selected item|any|-|-|
 |options|option data source|Array<{text, value, disabled, ...}>|`[]`|`disabled` is to disable option or not|
 |has-input|has editable item or not|Boolean|`false`|-|
 |input-label|name of editable item|String|-|only when `has-input` is true|
