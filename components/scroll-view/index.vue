@@ -80,6 +80,10 @@ export default {
       type: Number,
       default: 0,
     },
+    immediateCheckEndReaching: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -176,11 +180,30 @@ export default {
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
+
+      if (this.immediateCheckEndReaching) {
+        this.$nextTick(this.$_checkScrollerEnd)
+      }
     },
     $_initAutoReflow() {
       this.reflowTimer = setInterval(() => {
         this.reflowScroller()
       }, 100)
+    },
+    $_checkScrollerEnd() {
+      if (!this.scroller) {
+        return
+      }
+      const containerHeight = this.scroller._clientHeight
+      const content = this.scroller._contentHeight
+      const top = this.scroller._scrollTop
+      const moreOffsetY = this.moreOffsetY
+      const moreThreshold = this.endReachedThreshold
+
+      if (top >= 0 && !this.isEndReaching && content - containerHeight <= top + moreOffsetY + moreThreshold) {
+        this.isEndReaching = true
+        this.$emit('endReached')
+      }
     },
     // MARK: events handler
     $_onScollerTouchStart(event) {
@@ -254,19 +277,7 @@ export default {
       }
       this.scrollX = left
       this.scrollY = top
-      const containerHeight = this.scroller._clientHeight
-      const content = this.scroller._contentHeight
-      const moreOffsetY = this.moreOffsetY
-      const moreThreshold = this.endReachedThreshold
-      if (
-        top > 0 &&
-        !this.isEndReaching &&
-        content > containerHeight &&
-        content - containerHeight <= top + moreOffsetY + moreThreshold
-      ) {
-        this.isEndReaching = true
-        this.$emit('endReached')
-      }
+      this.$_checkScrollerEnd()
       this.$emit('scroll', {scrollLeft: left, scrollTop: top})
     },
     init() {

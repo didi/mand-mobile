@@ -33,6 +33,7 @@ Vue.component(ScrollView.name, ScrollView)
 |auto-reflow| automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` |
 |manual-init | manual initialization | Boolean | `false` | generally used for asynchronous initialization scenarios, you need to manually call the `init` method to complete the initialization |
 |end-reached-threshold | threshold for emitting `endReached`. | Number | 0 | unit `px` |
+|immediate-check-end-reaching | check if it reaches the bottom at initialization | Boolean | `false` | - |
 
 #### ScrollViewRefresh Props
 |Props | Description | Type | Default | Note |
