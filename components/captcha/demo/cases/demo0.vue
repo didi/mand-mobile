@@ -11,8 +11,7 @@
       ></md-input-item>
       <md-input-item
         title="短信验证码"
-        value="1234"
-        readonly
+        v-model="code"
       ></md-input-item>
     </md-field>
 
@@ -66,7 +65,8 @@
 	</div>
 </template>
 
-<script>import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch} from 'mand-mobile'
+<script>
+import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch} from 'mand-mobile'
 
 export default {
   name: 'captcha-demo',
@@ -93,6 +93,7 @@ export default {
       maxlength: '4',
       mask: false,
       system: false,
+      code: '1234'
     }
   },
   methods: {
@@ -103,7 +104,7 @@ export default {
       const max = parseFloat(this.maxlength)
       setTimeout(() => {
         if (!this.limit || max < 0 || val.length === max) {
-          if (val !== '1234') {
+          if (val !== this.code) {
             this.$refs.captcha.setError('验证码错误，请重新输入')
           } else {
             this.show = false
@@ -121,7 +122,8 @@ export default {
     onHide() {},
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-captcha
