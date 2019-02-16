@@ -82,3 +82,22 @@ export function transformCamelCase(str) {
     return $1.toUpperCase()
   })
 }
+
+/**
+ * Creates a throttled function that only invokes fn at most once per every interval milliseconds
+ */
+export function debouce(fn = noop, delay = 300) {
+  let timer = null
+
+  return function() {
+    let context = this
+
+    if (timer) {
+      clearTimeout(timer)
+    }
+
+    timer = setTimeout(function() {
+      fn.apply(context, arguments)
+    }, delay)
+  }
+}
