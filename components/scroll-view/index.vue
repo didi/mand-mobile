@@ -50,7 +50,8 @@
   </div>
 </template>
 
-<script>import Scroller from '../_util/scroller'
+<script>import {debouce} from '../_util'
+import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 
 export default {
@@ -105,6 +106,7 @@ export default {
       contentW: 0,
       contentH: 0,
       reflowTimer: null,
+      endReachedHandler: null,
     }
   },
   computed: {
@@ -178,6 +180,11 @@ export default {
       this.scroller = scroller
       this.reflowScroller(true)
       this.autoReflow && this.$_initAutoReflow()
+      this.endReachedHandler = debouce(() => {
+        this.isEndReaching = true
+        this.$emit('endReached')
+      }, 150)
+
       setTimeout(() => {
         this.isInitialed = true
       }, 50)
@@ -200,10 +207,15 @@ export default {
       const top = this.scroller._scrollTop
       const moreOffsetY = this.moreOffsetY
       const moreThreshold = this.endReachedThreshold
-
-      if (top >= 0 && !this.isEndReaching && content - containerHeight <= top + moreOffsetY + moreThreshold) {
-        this.isEndReaching = true
-        this.$emit('endReached')
+      const endOffset = content - containerHeight - (top + moreOffsetY + moreThreshold)
+      if (
+        top >= 0 &&
+        !this.isEndReaching &&
+        endOffset <= 0 &&
+        (this.bouncing && Math.abs(endOffset) < 50) &&
+        this.endReachedHandler
+      ) {
+        this.endReachedHandler()
       }
     },
     // MARK: events handler

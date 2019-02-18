@@ -3,8 +3,6 @@
     <md-popup
       :value="value"
       position="bottom"
-      prevent-scroll
-      prevent-scroll-exclude=".md-tabs-content"
       :mask-closable="maskClosable"
       @input="$_onPopupInput"
       @show="$_onPopupShow"
@@ -19,32 +17,34 @@
         <md-icon name="close" size="lg" slot="cancel" />
       </md-popup-title-bar>
       <div class="md-tab-picker-content">
-        <md-tabs
-          v-model="currentTab"
-          ref="tabs"
-        >
-          <md-tab-pane
-            v-for="(pane, index) in panes"
-            :key="pane.name"
-            :name="pane.name"
-            :label="pane.label"
+          <md-tabs
+            v-model="currentTab"
+            ref="tabs"
           >
-            <md-radio-list
-              :value="pane.value"
-              :options="pane.options"
-              :is-slot-scope="hasSlot"
-              :key="tabsTmpKey"
-              @input="$_onSelectPaneItem($event, index)"
-              icon=""
-              icon-inverse=""
-              icon-position="right"
-            >
-              <template slot-scope="{ option }">
-                <slot :option="option"></slot>
-              </template>
-            </md-radio-list>
-          </md-tab-pane>
-        </md-tabs>
+            <md-scroll-view :scrolling-x="false" auto-reflow>
+              <md-tab-pane
+                v-for="(pane, index) in panes"
+                :key="pane.name"
+                :name="pane.name"
+                :label="pane.label"
+              >
+                <md-radio-list
+                  :value="pane.value"
+                  :options="pane.options"
+                  :is-slot-scope="hasSlot"
+                  :key="tabsTmpKey"
+                  @input="$_onSelectPaneItem($event, index)"
+                  icon=""
+                  icon-inverse=""
+                  icon-position="right"
+                >
+                  <template slot-scope="{ option }">
+                    <slot :option="option"></slot>
+                  </template>
+                </md-radio-list>
+              </md-tab-pane>
+            </md-scroll-view>
+          </md-tabs>
       </div>
     </md-popup>
   </div>
@@ -58,6 +58,7 @@ import Icon from '../icon'
 import Tabs from '../tabs'
 import TabPane from '../tab-pane'
 import RadioList from '../radio-list'
+import ScrollView from '../scroll-view'
 import {extend} from '../_util'
 
 export default {
@@ -72,6 +73,7 @@ export default {
     [Tabs.name]: Tabs,
     [TabPane.name]: TabPane,
     [RadioList.name]: RadioList,
+    [ScrollView.name]: ScrollView,
   },
 
   props: {
