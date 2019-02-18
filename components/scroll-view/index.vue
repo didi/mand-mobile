@@ -151,6 +151,7 @@ export default {
           bouncing: this.bouncing,
           zooming: false,
           animationDuration: 200,
+          speedMultiplier: 1.2,
           inRequestAnimationFrame: true,
         },
       )
