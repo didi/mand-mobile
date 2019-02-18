@@ -14,6 +14,16 @@
 <script>export default {
   name: 'md-tab-pane',
 
+  inject: {
+    rootTabs: {
+      from: 'rootTabs',
+      default() {
+        /* istanbul ignore next */
+        return this.$parent
+      },
+    },
+  },
+
   props: {
     label: {
       type: String,
@@ -28,27 +38,27 @@
 
   computed: {
     active() {
-      return this.$parent.currentName === this.name
+      return this.rootTabs.currentName === this.name
     },
     transitionName() {
-      return this.$parent.prevIndex > this.$parent.currentIndex ? 'md-tab-slide-right' : 'md-tab-slide-left'
+      return this.rootTabs.prevIndex > this.rootTabs.currentIndex ? 'md-tab-slide-right' : 'md-tab-slide-left'
     },
   },
 
   watch: {
     label() {
-      this.$parent.$forceUpdate()
+      this.rootTabs.$forceUpdate()
     },
     disabled() {
-      this.$parent.$forceUpdate()
+      this.rootTabs.$forceUpdate()
     },
   },
 
   created() {
-    this.$parent.$_addPane(this)
+    this.rootTabs.$_addPane(this)
   },
   destroyed() {
-    this.$parent.$_removePane(this)
+    this.rootTabs.$_removePane(this)
   },
 }
 </script>
