@@ -26,8 +26,11 @@ Vue.component(CheckList.name, CheckList)
 |----|-----|------|------|------|
 |name|unique name|any|`true`|-|
 |v-model|selected name|any|`false`|-|
+|label|option text|String|-|-|
 |disabled|whether disable selection or not|Boolean|`false`|-|
-
+|icon|icon name of checked options|String|`checked`|-|
+|icon-inverse|icon name of unchecked options|String|`checke`|-|
+|icon-disabled|icon name of disabled options|String|`check-disabled`|-|
 ---
 
 #### CheckBox Props

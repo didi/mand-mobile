@@ -24,8 +24,11 @@ Vue.component(CheckList.name, CheckList)
 |----|-----|------|------|------|
 |name|唯一键值|any|`true`|当选中时，双向绑定的值|
 |v-model|选中的值|any|`false`|-|
+|label|选项文案|String|-|-|
 |disabled|是否禁用选择|Boolean|`false`|-|
-
+|icon|选中项图标名称|String|`checked`|-|
+|icon-inverse|未选中项图标名称|String|`checke`|-|
+|icon-disabled|禁用项选择图标名称|String|`check-disabled`|-|
 ---
 
 #### CheckBox Props
