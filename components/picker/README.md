@@ -27,6 +27,7 @@ Vue.component(Picker.name, Picker)
 |default-index|选择器各列初始选中项索引|Array|`[]`|-|
 |default-value|选择器各列初始选中项值|Array|`[]`|可用字段`text/lable/value`|
 |invalid-index|选择器各列不可用选项索引|Array|`[]`|某列多个不可用项使用数组，单个使用数字, 如`[[1,2], 2]`|
+|line-height|选择器选项行高|Number|`45`|单位`px`|
 |is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|-|
 |is-cascade|各列数据是否级联|Boolean|`false`|级联数据格式见附录|
 |title|选择器标题|String|-|-|

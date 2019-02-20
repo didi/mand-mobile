@@ -110,14 +110,14 @@ export default {
         return []
       },
     },
+    lineHeight: {
+      type: Number,
+      default: 45,
+    },
   },
 
   data() {
     return {
-      style: {
-        maskerHeight: 100 * dpr,
-        indicatorHeight: 45 * dpr,
-      },
       columnValues: [],
       scrollers: [],
       scrollDirect: 1,
@@ -138,6 +138,12 @@ export default {
         return []
       }
       return Array.isArray(_hooks) ? _hooks : Array.prototype.slice.call(_hooks)
+    },
+    style() {
+      return {
+        maskerHeight: (this.lineHeight * 2 + 10) * dpr,
+        indicatorHeight: this.lineHeight * dpr,
+      }
     },
   },
 
