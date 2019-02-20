@@ -20,6 +20,7 @@ export function getCursorsPosition(ctrl) {
   return CaretPos
 }
 
+let timer = null
 /**
  * set position of input cursor
  */
@@ -28,7 +29,12 @@ export function setCursorsPosition(ctrl, pos) {
   if (!ctrl) {
     return
   }
-  setTimeout(() => {
+  /* istanbul ignore if */
+  if (timer) {
+    clearTimeout(timer)
+  }
+
+  timer = setTimeout(() => {
     /* istanbul ignore next */
     if (ctrl.setSelectionRange) {
       ctrl.focus()
@@ -40,5 +46,5 @@ export function setCursorsPosition(ctrl, pos) {
       range.moveStart('character', pos)
       range.select()
     }
-  }, 0)
+  }, 50)
 }
