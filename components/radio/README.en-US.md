@@ -1,6 +1,6 @@
 ---
 title: Radio
-preview: https://mand-mobile.github.io/2x-doc/examples/#/radio
+preview: https://didi.github.io/mand-mobile/examples/#/radio
 ---
 
 Customizable or editable radio buttons
@@ -21,8 +21,8 @@ Vue.component(Radio.name, Radio)
 #### Radio Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|v-model|selected `name`|String|-|
-|name|unique name|String|-|-|
+|v-model|selected `name`|any|-|
+|name|unique name|any|-|-|
 |label|description text|String-|-|
 |disabled|whether disable option|Boolean|`false`|-|
 |inline|whether display as inline block|Boolean|`false`|-|
@@ -37,7 +37,7 @@ Vue.component(Radio.name, Radio)
 #### Radio List Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|v-model|`value` of the selected item|String|-|-|
+|v-model|`value` of the selected item|any|-|-|
 |options|option data source|Array<{text, value, disabled, ...}>|`[]`|`disabled` is to disable option or not|
 |has-input|has editable item or not|Boolean|`false`|-|
 |input-label|name of editable item|String|-|only when `has-input` is true|
@@ -61,12 +61,13 @@ Set selected value
 
 #### Radio List Events
 
-##### @input(value)
+##### @change(option, index)
 Selected option changed
 
 |Props | Description | Type |
 |----|-----|------|
-|value|value of selected option|`String`|
+|option|data of selected option|Object:{text, value, disabled, ...}|
+|index|index of selected option|Number|
 
 #### Radio List Slots
 ```html

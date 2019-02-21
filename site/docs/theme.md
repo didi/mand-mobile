@@ -15,13 +15,13 @@ title: 主题定制
 
 `Mand Mobile`样式基于<a href="http://stylus-lang.com/" target="_blank">Stylus</a>开发，可通过全局和组件的样式变量对主题样式进行调整
 
-完整的变量列表可以查看内置样式变量<a href="https://github.com/didi/mand-mobile/blob/2.0/components/_style/mixin/theme.basic.styl" target="_blank">全局样式变量</a>、<a href="https://github.com/didi/mand-mobile/blob/2.0/components/_style/mixin/theme.components.styl" target="_blank">组件样式变量</a>
+完整的变量列表可以查看内置样式变量<a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.basic.styl" target="_blank">全局样式变量</a>、<a href="https://github.com/didi/mand-mobile/blob/master/components/_style/mixin/theme.components.styl" target="_blank">组件样式变量</a>
 
 ### 变量覆盖
 
 可以通过引入**组件源码**(`components`目录下)，并覆盖`样式变量`的方式来实现主题定制
 
-* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`，完整`rules`可参考[配置](https://github.com/didi/mand-mobile/blob/2.0/build/webpack/webpack.base.conf.js)
+* 首先，项目需要安装依赖，`babel-plugin-import stylus stylus-loader css-loader`，完整`rules`可参考[配置](https://github.com/didi/mand-mobile/blob/master/build/webpack/webpack.base.conf.js)
 
 ```shell
 npm install --save-dev babel-plugin-import stylus stylus-loader css-loader

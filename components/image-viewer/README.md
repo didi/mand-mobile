@@ -1,6 +1,6 @@
 ---
 title: ImageViewer 图片查看器
-preview: https://mand-mobile.github.io/2x-doc/examples/#/image-viewer
+preview: https://didi.github.io/mand-mobile/examples/#/image-viewer
 ---
 
 用于浏览多张图片，并可对图片进行滑动切换

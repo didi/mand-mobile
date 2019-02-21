@@ -13,7 +13,7 @@ const CWD = process.cwd()
 const COMPONENTS_PATH = path.resolve(CWD, './components')
 const EXPECT_SHELL = path.resolve(CWD, './build/template.exp')
 const DEMO_INDEX_PATH = path.resolve(CWD, './examples/demo-index.js')
-const DEMO_INDEX_PATH_INDEMAND = path.resolve(CWD, './examples/demo-index.indemand.js')
+const TYPES = path.resolve(CWD, './types/index.d.ts')
 const COMPONENT_INDEX = path.resolve(CWD, './components/index.js')
 const COMPONENT_JSON = path.resolve(CWD, './examples/components.json')
 
@@ -47,7 +47,7 @@ function changeKebabToCamel(str) {
 }
 
 function sync(answers) {
-  return Promise.all([syncToComponentJson(answers), syncToExample(answers), syncToIndex(answers), syncToExampleIndemand(answers)]).then(() =>answers)
+  return Promise.all([syncToComponentJson(answers), syncToExample(answers), syncToIndex(answers), syncToTypes(answers)]).then(() =>answers)
 }
 
 function syncToExample(answers) {
@@ -58,12 +58,12 @@ function syncToExample(answers) {
     .then(str => fs.writeFileAsync(DEMO_INDEX_PATH, str, 'utf8'))
     .then(() => answers)
 }
-function syncToExampleIndemand(answers) {
-  fs.readFileAsync(DEMO_INDEX_PATH_INDEMAND, 'utf8')
+function syncToTypes(answers) {
+  fs.readFileAsync(TYPES, 'utf8')
     .then(str => {
       return compile(answers, str)
     })
-    .then(str => fs.writeFileAsync(DEMO_INDEX_PATH_INDEMAND, str, 'utf8'))
+    .then(str => fs.writeFileAsync(TYPES, str, 'utf8'))
     .then(() => answers)
 }
 

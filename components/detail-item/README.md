@@ -1,6 +1,6 @@
 ---
 title: DetailItem 清单项
-preview: https://mand-mobile.github.io/2x-doc/examples/#/detail-item
+preview: https://didi.github.io/mand-mobile/examples/#/detail-item
 ---
 
 清单列表用于展示一些列表信息，如账单。

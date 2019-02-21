@@ -78,6 +78,7 @@ export default {
     steps: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },

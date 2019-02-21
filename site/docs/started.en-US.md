@@ -6,13 +6,13 @@ title: Quickstart
 
 **New project** can be initialized and integrated with `mand-mobile` by [vue-cli](https://github.com/vuejs/vue-cli). Please refer to <a href="javascript:jumpAnchor('Installation')">Installation</a> for **existing projects**.
 
-* Vue CLI 2([Template](https://github.com/mand-mobile/mand-mobile-template))
+* Vue CLI 2/3([Template](https://github.com/mand-mobile/mand-mobile-template))(sp 1.x)
 
 ```shell
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand)/[Example](https://github.com/mand-mobile/vue-cli3-example))
+* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand))(sp 1.x)
 
 ```shell
 vue create my-project
@@ -20,6 +20,8 @@ cd my-project
 npm install --save-dev vue-cli-plugin-mand
 vue invoke mand
 ```
+
+* Vue CLI 3([Example](https://github.com/mand-mobile/vue-cli3-example))(sp 1.x/2.x)
 
 * Nuxt([Example](https://github.com/mand-mobile/nuxt-example))
 

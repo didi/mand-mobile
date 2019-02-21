@@ -73,6 +73,12 @@ export default {
     },
   },
 
+  provide() {
+    return {
+      rootTabs: this,
+    }
+  },
+
   mounted() {
     if (!this.currentName && this.menus.length) {
       this.currentName = this.menus[0].name

@@ -133,4 +133,6 @@ export default {
         right 0
         z-index 3
         opacity .8
+        .md-icon-close
+          font-size 24px
 </style>

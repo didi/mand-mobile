@@ -2,166 +2,166 @@
 
 exports[`Icon - Demo Font icon 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-0">
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-rectangle lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-rectangle rectangle lg" style="color:;"></i>
     <p>rectangle</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-right lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-right right lg" style="color:;"></i>
     <p>right</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-wrong lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-wrong wrong lg" style="color:;"></i>
     <p>wrong</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-left lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-left arrow-left lg" style="color:;"></i>
     <p>arrow-left</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-right lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-right arrow-right lg" style="color:;"></i>
     <p>arrow-right</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-up lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-up arrow-up lg" style="color:;"></i>
     <p>arrow-up</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-down lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-down arrow-down lg" style="color:;"></i>
     <p>arrow-down</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-invisible lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-invisible invisible lg" style="color:;"></i>
     <p>invisible</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-visible lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-visible visible lg" style="color:;"></i>
     <p>visible</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-service lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-service service lg" style="color:;"></i>
     <p>service</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-setting lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-setting setting lg" style="color:;"></i>
     <p>setting</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-close lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i>
     <p>close</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-refresh lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-refresh refresh lg" style="color:;"></i>
     <p>refresh</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-edit lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-edit edit lg" style="color:;"></i>
     <p>edit</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-sort lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-sort sort lg" style="color:;"></i>
     <p>sort</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-info lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-info info lg" style="color:;"></i>
     <p>info</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-question lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-question question lg" style="color:;"></i>
     <p>question</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-security lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-security security lg" style="color:;"></i>
     <p>security</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-rmb lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-rmb rmb lg" style="color:;"></i>
     <p>rmb</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-wait lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-wait wait lg" style="color:;"></i>
     <p>wait</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-check lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-check check lg" style="color:;"></i>
     <p>check</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-checked lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-checked checked lg" style="color:;"></i>
     <p>checked/success</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-check-disabled lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-check-disabled check-disabled lg" style="color:;"></i>
     <p>check-disabled</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-clear lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-clear clear lg" style="color:;"></i>
     <p>clear/fail</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-warn lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-warn warn lg" style="color:;"></i>
     <p>warn</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-info-solid lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-info-solid info-solid lg" style="color:;"></i>
     <p>info-solid</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-scan lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-scan scan lg" style="color:;"></i>
     <p>scan</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-share lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-share share lg" style="color:;"></i>
     <p>share</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-back lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-back back lg" style="color:;"></i>
     <p>back</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-card-bag lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-card-bag card-bag lg" style="color:;"></i>
     <p>card-bag</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-message lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-message message lg" style="color:;"></i>
     <p>message</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-order lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-order order lg" style="color:;"></i>
     <p>order</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-balance lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-balance balance lg" style="color:;"></i>
     <p>balance</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-coupon lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-coupon coupon lg" style="color:;"></i>
     <p>coupon</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-address-book lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-address-book address-book lg" style="color:;"></i>
     <p>address-book</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-mobile-phone lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-mobile-phone mobile-phone lg" style="color:;"></i>
     <p>mobile-phone</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-calendar lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-calendar calendar lg" style="color:;"></i>
     <p>calendar</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-home lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-home home lg" style="color:;"></i>
     <p>home</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-discovery lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-discovery discovery lg" style="color:;"></i>
     <p>discovery</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-switch lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-switch switch lg" style="color:;"></i>
     <p>switch</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-time lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-time time lg" style="color:;"></i>
     <p>time</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-search lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-search search lg" style="color:;"></i>
     <p>search</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-user lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-user user lg" style="color:;"></i>
     <p>user</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-camera lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-camera camera lg" style="color:;"></i>
     <p>camera</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-clock lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-clock clock lg" style="color:;"></i>
     <p>clock</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-delete lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-delete delete lg" style="color:;"></i>
     <p>delete</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-profession lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-profession profession lg" style="color:;"></i>
     <p>profession</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-id-card lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-id-card id-card lg" style="color:;"></i>
     <p>id-card</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-authentication lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-authentication authentication lg" style="color:;"></i>
     <p>authentication</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-location lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-location location lg" style="color:;"></i>
     <p>location</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-filter lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-filter filter lg" style="color:;"></i>
     <p>filter</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-motor-vehicle lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-motor-vehicle motor-vehicle lg" style="color:;"></i>
     <p>motor-vehicle</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-phone lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-phone phone lg" style="color:;"></i>
     <p>phone</p>
   </div>
-  <div class="md-example-item"><i class="md-icon icon-font md-icon-volumn lg" style="color:;"></i>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-volumn volumn lg" style="color:;"></i>
     <p>volumn</p>
   </div>
 </div>
@@ -169,16 +169,16 @@ exports[`Icon - Demo Font icon 1`] = `
 
 exports[`Icon - Demo Icon color 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-3">
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security md" style="color:gray;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security security md" style="color:gray;"></i>
     <p>gray</p>
   </div>
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security md" style="color:orange;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security security md" style="color:orange;"></i>
     <p>orange</p>
   </div>
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security md" style="color:blue;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security security md" style="color:blue;"></i>
     <p>blue</p>
   </div>
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security md" style="color:purple;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-security security md" style="color:purple;"></i>
     <p>purple</p>
   </div>
 </div>
@@ -186,16 +186,16 @@ exports[`Icon - Demo Icon color 1`] = `
 
 exports[`Icon - Demo Icon size 1`] = `
 <div class="md-example-child md-example-child-icon md-example-child-icon-2">
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location xs" style="color:;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location location xs" style="color:;"></i>
     <p>xs</p>
   </div>
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location sm" style="color:;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location location sm" style="color:;"></i>
     <p>sm</p>
   </div>
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location md" style="color:;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location location md" style="color:;"></i>
     <p>md</p>
   </div>
-  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location lg" style="color:;"></i>
+  <div class="md-example-item-s"><i class="md-icon icon-font md-icon-location location lg" style="color:;"></i>
     <p>lg</p>
   </div>
 </div>

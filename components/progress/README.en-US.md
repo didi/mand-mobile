@@ -1,6 +1,6 @@
 ---
 title: Progress
-preview: https://mand-mobile.github.io/2x-doc/examples/#/progress
+preview: https://didi.github.io/mand-mobile/examples/#/progress
 ---
 
 Progress circle, generally used to communicate data intuitively to users

@@ -81,7 +81,7 @@ exports[`Picker - Demo Display in Popup 1`] = `
             <div class="md-picker-column-list">
               <div class="md-picker-column-item">
                 <ul class="column-list" style="padding-top: 100px;">
-                  <li class="column-item" style="height: 45px; line-height: 45px;">2015</li>
+                  <li class="column-item active" style="height: 45px; line-height: 45px;">2015</li>
                   <li class="column-item" style="height: 45px; line-height: 45px;">2016</li>
                   <li class="column-item" style="height: 45px; line-height: 45px;">2017</li>
                   <li class="column-item" style="height: 45px; line-height: 45px;">2018</li>

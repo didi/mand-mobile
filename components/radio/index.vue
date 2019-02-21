@@ -31,11 +31,9 @@ export default {
 
   props: {
     name: {
-      type: String,
       required: true,
     },
     value: {
-      type: String,
       default: '',
     },
     size: {

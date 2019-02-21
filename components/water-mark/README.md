@@ -1,6 +1,6 @@
 ---
 title: WaterMark 水印
-preview: https://mand-mobile.github.io/2x-doc/examples/#/water-mark
+preview: https://didi.github.io/mand-mobile/examples/#/water-mark
 ---
 
 自带水印背景的容器

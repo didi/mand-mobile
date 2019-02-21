@@ -142,6 +142,8 @@ export default {
         return
       }
       const {wrap, content} = this.$refs
+
+      /* istanbul ignore if */
       if (!wrap || !content) {
         return
       }

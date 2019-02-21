@@ -16,33 +16,40 @@ title: Layout
 
 From the perspective of minimizing the communication and adaptation costs, the design drawing board size of the Drip Financial Design Team is 750*1334;     
 The base of the grid is 4, with "4" as a step to adjust the spacing and size of the elements, which means that any padding, margin, sizing, will be a multiple of 4.
-<br>
-<br>
+
+
+#### Page fence benchmark
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline">
-    <div class="doc-cutline-title">Page fence benchmark</div>
     <div class="doc-cutline-desc">
       In the financial business scenario, there are many less texts, and 40px of white space can make the whole page more breathable and have a sense of space.
     </div>
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/vPiNCT4oCo1545964504092.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/vPiNCT4oCo1545964504092.png" style="max-width: 300px;">
     </div>
   </div>
   <div class="doc-cutline">&nbsp;</div>
 </div>
 
+#### Form/Level heading
+
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline">
-    <div class="doc-cutline-title">Form/Level heading</div>
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/MfZYiEwctf1545964504283.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/MfZYiEwctf1545964504283.png" style="max-width: 300px;">
     </div>
   </div>
+  <div class="doc-cutline">&nbsp;</div>
+</div>
+
+#### Form/Input
+
+<div class="doc-cutline-wrapper">
   <div class="doc-cutline">
-    <div class="doc-cutline-title">Form/Input</div>
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/CAUVTpvKhP1545964504299.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/CAUVTpvKhP1545964504299.png" style="max-width: 300px;">
     </div>
   </div>
+  <div class="doc-cutline">&nbsp;</div>
 </div>

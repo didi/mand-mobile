@@ -19,32 +19,32 @@ title: 体贴专业
 }
 </style>
 
-## 进度清晰
+#### 进度清晰
 
-对于资金流转、业务办理，需要通过合理的进度节点设计，清晰的向用户传达时间概念，避免用户焦虑。【理财规则进度/还款进度】
+对于资金流转、业务办理，需要通过合理的进度节点设计，清晰的向用户传达时间概念，避免用户焦虑。
 
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/NGwne2FMQv1545911061860.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/NGwne2FMQv1545911061860.png" style="max-height:410px;">
     </div>
   </div>
   <div class="doc-cutline donot">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/N6fHIqY5PO1545911064113.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/N6fHIqY5PO1545911064113.png" style="max-height:410px;">
     </div>
   </div>
 </div>
 
-## 还原差异
+#### 还原差异
 
-不同银行、不同供应商存在物理差异，在体验基本统一的前提下，也要保持个体的差异度，让用户感受到金融的专业。【供应商信息浮层/银行卡类型】
+不同银行、不同供应商存在物理差异，在体验基本统一的前提下，也要保持个体的差异度，让用户感受到金融的专业。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/j1hfoR4axj1545911194083.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/j1hfoR4axj1545911194083.png" style="max-height:410px;">
     </div>
   </div>
 </div>

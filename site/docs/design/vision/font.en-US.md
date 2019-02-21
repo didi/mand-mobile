@@ -2,6 +2,8 @@
 title: Font
 ---
 
+### Font family
+
 The design drawing uses the system default font, and the Android system has more custom fonts, which are subject to the system default font;
 
 <style>
@@ -55,7 +57,7 @@ The design drawing uses the system default font, and the Android system has more
   </div>
 </div>
 
-## Font size
+### Font size
 
 The use of fonts pays attention to the use of Chinese and English. The financial product numbers are important information of the page.
 Chinese fonts are recommended to have a maximum font size of 60Px and a minimum of 24px; English font DIN Pro Medium (used when the page is highlighted) requires a maximum font size of 120px
@@ -64,7 +66,7 @@ The size of the font size is even (the multiple of 4 is the best) to guarantee t
 <br> 
 <img src="https://pt-starimg.didistatic.com/static/starimg/img/R1ke1asaDm1545968523580.jpg" class="font-weight-img">
 
-## Font weight
+### Font weight
 
 In most cases, Chinese only has two font weights, regular and medium. The digital font DIN Pro only has a medium weight.
 

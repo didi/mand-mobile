@@ -19,7 +19,7 @@ exports[`Check - Demo Check box group 1`] = `
   <div class="md-check-group">
     <div class="md-check-box is-disabled is-checked">自己 <div class="md-tag">
         <div class="default size-tiny shape-quarter type-fill font-weight-normal">
-          <div class="quarter-content"><i class="md-icon icon-font md-icon-right md" style="color:;"></i></div>
+          <div class="quarter-content"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
           <div class="quarter-bg"></div>
         </div>
       </div>
@@ -75,7 +75,7 @@ exports[`Check - Demo Check list 1`] = `
               <!---->
             </div>
             <div class="md-cell-item-right"><label class="md-check is-checked">
-                <div class="md-check-icon"><i class="md-icon icon-font md-icon-right md" style="color:;"></i></div>
+                <div class="md-check-icon"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
                 <!---->
               </label>
               <!---->
@@ -146,10 +146,10 @@ exports[`Check - Demo Check list 1`] = `
 
 exports[`Check - Demo Check options 1`] = `
 <div class="md-example-child md-example-child-check md-example-child-check-0"><label class="md-check">
-    <div class="md-check-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+    <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
     <div class="md-check-label">复选项</div>
   </label> <label class="md-check is-disabled">
-    <div class="md-check-icon"><i class="md-icon icon-font md-icon-check-disabled md" style="color:;"></i></div>
+    <div class="md-check-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
     <div class="md-check-label">禁用</div>
   </label></div>
 `;
@@ -157,19 +157,19 @@ exports[`Check - Demo Check options 1`] = `
 exports[`Check - Demo Check options group 1`] = `
 <div class="md-example-child md-example-child-check md-example-child-check-1">
   <div class="md-check-group"><label class="md-check">
-      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
       <div class="md-check-label">西瓜</div>
     </label> <label class="md-check is-checked">
-      <div class="md-check-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+      <div class="md-check-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
       <div class="md-check-label">苹果</div>
     </label> <label class="md-check">
-      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
       <div class="md-check-label">香蕉</div>
     </label> <label class="md-check">
-      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
       <div class="md-check-label">橙子</div>
     </label> <label class="md-check is-disabled">
-      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check-disabled md" style="color:;"></i></div>
+      <div class="md-check-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
       <div class="md-check-label">西红柿</div>
     </label></div>
 </div>

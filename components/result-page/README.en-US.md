@@ -1,6 +1,6 @@
 ---
 title: ResultPage
-preview: https://mand-mobile.github.io/2x-doc/examples/#/result-page
+preview: https://didi.github.io/mand-mobile/examples/#/result-page
 ---
 
 To display the process ending page

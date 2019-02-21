@@ -6,7 +6,7 @@ exports[`Cashier - Demo Baisc-captcha 1`] = `
     <div class="md-popup-mask" style="" name="md-mask-fade"></div>
     <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
       <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg"></i></div>
+        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
@@ -65,7 +65,7 @@ exports[`Cashier - Demo Baisc-channel 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
         <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
           <div class="title-bar-title">
             <p class="title">支付</p>
             <!---->
@@ -83,14 +83,14 @@ exports[`Cashier - Demo Baisc-channel 1`] = `
               <div class="choose-channel">
                 <div class="choose-channel-list">
                   <div class="md-cashier-channel-item default">
-                    <div class="item-icon cashier-icon-1"><i class="md-icon icon-font md-icon-cashier-icon-1 lg" style="color:;"></i></div>
+                    <div class="item-icon cashier-icon-1"><i class="md-icon icon-font md-icon-cashier-icon-1 cashier-icon-1 lg" style="color:;"></i></div>
                     <div class="item-label">
                       <p class="title"><span>招商银行(0056)</span>
                         <!---->
                       </p>
                       <!---->
                     </div>
-                    <div class="item-check-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+                    <div class="item-check-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
                   </div>
                 </div>
                 <div class="choose-channel-more">更多支付方式</div>
@@ -116,7 +116,7 @@ exports[`Cashier - Demo Baisc-fail 1`] = `
     <div class="md-popup-mask" style="" name="md-mask-fade"></div>
     <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
       <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg"></i></div>
+        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
@@ -143,7 +143,7 @@ exports[`Cashier - Demo Baisc-success 1`] = `
     <div class="md-popup-mask" style="" name="md-mask-fade"></div>
     <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
       <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg"></i></div>
+        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
@@ -187,7 +187,7 @@ exports[`Cashier - Demo Using slots and other configurations 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
         <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
           <div class="title-bar-title">
             <p class="title">支付</p>
             <!---->
@@ -197,13 +197,13 @@ exports[`Cashier - Demo Using slots and other configurations 1`] = `
         <div class="md-cashier-container">
           <div>
             <div class="md-notice-bar warning">
-              <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-warn md" style="color:;"></i></div>
+              <div class="md-notice-bar-left"><i class="md-icon icon-font md-notice-icon md-icon-warn warn md" style="color:;"></i></div>
               <div class="md-notice-bar-content">
                 <div>
                   该银行3:00-12:00系统维护，请更换其他银行卡
                 </div>
               </div>
-              <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-close md" style="color:;"></i></div>
+              <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-close close md" style="color:;"></i></div>
             </div>
           </div>
           <div class="md-cashier-block md-cashier-choose">
@@ -216,12 +216,12 @@ exports[`Cashier - Demo Using slots and other configurations 1`] = `
               <div class="choose-channel">
                 <div class="choose-channel-list">
                   <div class="md-cashier-channel-item default">
-                    <div class="item-icon cashier-icon-1"><i class="md-icon icon-font md-icon-cashier-icon-1 lg" style="color:;"></i></div>
+                    <div class="item-icon cashier-icon-1"><i class="md-icon icon-font md-icon-cashier-icon-1 cashier-icon-1 lg" style="color:;"></i></div>
                     <div class="item-label">
                       <p class="title"><span>XX银行(1234)</span> <span class="title-active">更换</span></p>
                       <p class="desc">当前银行维护中</p>
                     </div>
-                    <div class="item-check-icon"><i class="md-icon icon-font md-icon-check-disabled md" style="color:;"></i></div>
+                    <div class="item-check-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
                   </div>
                 </div>
                 <!---->

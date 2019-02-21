@@ -1,6 +1,6 @@
 ---
 title: Icon 图标
-preview: https://mand-mobile.github.io/2x-doc/examples/#/icon
+preview: https://didi.github.io/mand-mobile/examples/#/icon
 ---
 
 IconFont、SVG 图标
@@ -61,8 +61,8 @@ module.exports = {
 ```vue
 <template>
   <div>
-    <md-icon name="hello"></md-icon>
-    <md-icon name="world"></md-icon>
+    <md-icon name="hello" svg></md-icon>
+    <md-icon name="world" svg></md-icon>
   </div>
 </template>
 

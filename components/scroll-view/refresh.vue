@@ -46,6 +46,7 @@ export default {
 
   computed: {
     process() {
+      /* istanbul ignore if */
       if (!this.$el || !this.scrollTop) {
         return +this.scrollTop
       }

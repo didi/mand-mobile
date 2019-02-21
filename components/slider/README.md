@@ -1,6 +1,6 @@
 ---
 title: Slider 滑块
-preview: https://mand-mobile.github.io/2x-doc/examples/#/slider
+preview: https://didi.github.io/mand-mobile/examples/#/slider
 ---
 
 ### 引入

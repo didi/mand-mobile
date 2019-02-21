@@ -50,7 +50,7 @@ exports[`Tag - Demo Special tags 1`] = `
   </div>
   <div class="md-tag" style="margin-right:20px;">
     <div class="default size-large shape-quarter type-fill font-weight-normal">
-      <div class="quarter-content"><i class="md-icon icon-font md-icon-right md" style="color:;"></i></div>
+      <div class="quarter-content"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
       <div class="quarter-bg" style="background:#FC9153;color:#fff;"></div>
     </div>
   </div>

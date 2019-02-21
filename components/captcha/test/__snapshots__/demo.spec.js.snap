@@ -8,7 +8,7 @@ exports[`Captcha - Demo Customize 1`] = `
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
         <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
           <div class="md-dialog-content">
-            <div class="md-dialog-body"><a role="button" class="md-dialog-close"><i class="md-icon icon-font md-icon-close md" style="color:;"></i></a>
+            <div class="md-dialog-body"><a role="button" class="md-dialog-close"><i class="md-icon icon-font md-icon-close close md" style="color:;"></i></a>
               <!---->
               <!---->
               <div class="md-captcha-content">

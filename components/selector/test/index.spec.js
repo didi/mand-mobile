@@ -23,7 +23,7 @@ describe('Selector - Operation', () => {
   test('selector events choose', done => {
     wrapper = mount(Selector, {
       propsData: {
-        value: true,
+        value: false,
         data: [
           {
             value: '1',
@@ -47,7 +47,7 @@ describe('Selector - Operation', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-
+    wrapper.setProps({value: true})
     wrapper.vm.$nextTick(() => {
       wrapper.find('.md-radio-item').trigger('click')
       expect(wrapper.vm.tmpActiveIndex).toBe(0)

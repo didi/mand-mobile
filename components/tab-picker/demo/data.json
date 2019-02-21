@@ -62,6 +62,58 @@
                 }
               ]
             }
+          },
+          {
+            "value": "lz",
+            "label": "泸州市"
+          },
+          {
+            "value": "dy",
+            "label": "德阳市"
+          },
+          {
+            "value": "ms",
+            "label": "眉山市"
+          },
+          {
+            "value": "ls",
+            "label": "乐山市"
+          },
+          {
+            "value": "yb",
+            "label": "宜宾市"
+          },
+          {
+            "value": "ya",
+            "label": "雅安市"
+          },
+          {
+            "value": "zg",
+            "label": "自贡市"
+          },
+          {
+            "value": "pzh",
+            "label": "攀枝花市"
+          },
+          {
+            "value": "sn",
+            "label": "遂宁市"
+          },
+          {
+            "value": "nc",
+            "label": "南充市"
+          },
+          {
+            "value": "nj",
+            "label": "内江市"
+          },
+          {
+            "value": "dz",
+            "label": "达州市"
+          },
+          {
+            "value": "ga",
+            "label": "广安市"
           }
         ]
       }

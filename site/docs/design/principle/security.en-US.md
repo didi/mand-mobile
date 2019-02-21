@@ -19,27 +19,27 @@ title: Safe and controllable
 }
 </style>
 
-## Data desensitization
+#### Data desensitization
 
-In the process of displaying information such as name, ID number, bank card number, mobile phone number, etc., in order to avoid the leakage of personal privacy, a form of hidden anti-display is adopted. [Four verifications]
+In the process of displaying information such as name, ID number, bank card number, mobile phone number, etc., in order to avoid the leakage of personal privacy, a form of hidden anti-display is adopted. 
 
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Y3ywMpuHs41545904053656.jpg">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Y3ywMpuHs41545904053656.jpg" style="max-height:410px;">
     </div>
   </div>
 </div>
 
-## Contract preservation
+#### Contract preservation
 
-The text contract of the agreement, contract, document, etc. involving the parties to the transaction provides the user with a save function, so that the user has a sense of reassurance for such transaction; [protocol download]
+The text contract of the agreement, contract, document, etc. involving the parties to the transaction provides the user with a save function, so that the user has a sense of reassurance for such transaction.
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FulGDLPs0K1545904142068.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FulGDLPs0K1545904142068.png" style="max-height:410px;">
     </div>
   </div>
 </div>

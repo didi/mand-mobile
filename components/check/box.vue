@@ -31,11 +31,9 @@ export default {
 
   props: {
     name: {
-      type: [Boolean, String],
       default: true,
     },
     value: {
-      type: [Boolean, String],
       default: false,
     },
     label: {

@@ -69,11 +69,11 @@ export default {
     options: {
       type: Array,
       default() {
+        /* istanbul ignore next */
         return []
       },
     },
     value: {
-      type: String,
       default: '',
     },
     hasInput: {

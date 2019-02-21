@@ -1,5 +1,6 @@
 import {Stepper} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
+import triggerTouch from '../../popup/test/touch-trigger'
 
 describe('Stepper Operation', () => {
   let wrapper
@@ -9,17 +10,29 @@ describe('Stepper Operation', () => {
   })
 
   test('stepper method reduce', () => {
-    wrapper = mount(Stepper)
-    wrapper.vm.currentNum = 1
-    wrapper.vm.step = 2
+    wrapper = mount(Stepper, {
+      propsData: {
+        value: 1,
+        step: 2,
+      },
+    })
+    wrapper.setProps({value: 2})
     wrapper.find('.md-stepper-button-reduce').trigger('click')
-    expect(Number(wrapper.vm.currentNum)).toBe(-1)
+    expect(Number(wrapper.vm.currentNum)).toBe(0)
+
+    wrapper.setProps({disabled: true})
+    wrapper.find('.md-stepper-button-reduce').trigger('click')
+    expect(Number(wrapper.vm.currentNum)).toBe(0)
   })
 
   test('stepper method add', () => {
     wrapper = mount(Stepper)
     wrapper.vm.currentNum = 1
     wrapper.vm.step = 2
+    wrapper.find('.md-stepper-button-add').trigger('click')
+    expect(wrapper.vm.currentNum).toBe(3)
+
+    wrapper.setProps({disabled: true})
     wrapper.find('.md-stepper-button-add').trigger('click')
     expect(wrapper.vm.currentNum).toBe(3)
   })
@@ -53,6 +66,14 @@ describe('Stepper Operation', () => {
     wrapper.vm.step = 2
     wrapper.vm.$_checkStatus()
     expect(wrapper.vm.isMin).toBe(true)
+  })
+
+  test('stepper input', () => {
+    wrapper = mount(Stepper)
+    const input = wrapper.find('input')
+    triggerTouch(input.element, 'focus')
+    triggerTouch(input.element, 'input', 0, 0, 5)
+    expect(wrapper.vm.currentNum).toBe(5)
   })
 
   test('stepper method onChange', () => {

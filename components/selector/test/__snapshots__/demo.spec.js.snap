@@ -28,7 +28,7 @@ exports[`Selector - Demo Check mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -44,7 +44,7 @@ exports[`Selector - Demo Check mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -60,7 +60,7 @@ exports[`Selector - Demo Check mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -76,7 +76,7 @@ exports[`Selector - Demo Check mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -125,7 +125,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
                       <p class="md-cell-item-brief">选项一说明</p>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -141,7 +141,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
                       <p class="md-cell-item-brief">选项二说明</p>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -157,7 +157,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
                       <p class="md-cell-item-brief">选项三说明</p>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -173,7 +173,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
                       <p class="md-cell-item-brief">选项四说明</p>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -201,7 +201,7 @@ exports[`Selector - Demo Custom options 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
         <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
           <div class="title-bar-title">
             <p class="title">自定义选项</p>
             <!---->
@@ -223,7 +223,7 @@ exports[`Selector - Demo Custom options 1`] = `
                       <div class="md-selector-custom-brief">选项一使用slot-scope</div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -240,7 +240,7 @@ exports[`Selector - Demo Custom options 1`] = `
                       <div class="md-selector-custom-brief">选项二使用slot-scope</div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -257,7 +257,7 @@ exports[`Selector - Demo Custom options 1`] = `
                       <div class="md-selector-custom-brief">选项三使用slot-scope</div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -274,7 +274,7 @@ exports[`Selector - Demo Custom options 1`] = `
                       <div class="md-selector-custom-brief">选项四使用slot-scope</div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -302,7 +302,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
         <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close lg" style="color:;"></i></div>
+          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
           <div class="title-bar-title">
             <p class="title">普通模式</p>
             <!---->
@@ -323,7 +323,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -339,7 +339,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio is-checked">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -355,7 +355,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -371,7 +371,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -387,7 +387,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -403,7 +403,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -419,7 +419,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -435,7 +435,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -451,7 +451,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -467,7 +467,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->

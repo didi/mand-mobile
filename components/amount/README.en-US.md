@@ -1,6 +1,6 @@
 ---
 title: Amount
-preview: https://mand-mobile.github.io/2x-doc/examples/#/amount
+preview: https://didi.github.io/mand-mobile/examples/#/amount
 ---
 
 Financial figures, generally used for amounts, quantities, etc

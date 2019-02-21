@@ -28,7 +28,7 @@ title: Mand Mobile
 
 #### Version
 
-[![npm package](http://img.shields.io/npm/v/mand-mobile/next.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)
+[![npm package](https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](http://npmjs.com/package/mand-mobile)
 
 > Subscribe to this feed for new version notifications: https://github.com/didi/mand-mobile/releases.atom
 

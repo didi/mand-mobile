@@ -1,6 +1,6 @@
 ---
 title: Check
-preview: https://mand-mobile.github.io/2x-doc/examples/#/check
+preview: https://didi.github.io/mand-mobile/examples/#/check
 ---
 
 UI renderless check group component
@@ -24,17 +24,20 @@ Vue.component(CheckList.name, CheckList)
 #### Check Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|name|unique name|Boolean/String|`true`|-|
-|v-model|selected name|Boolean/String|`false`|-|
+|name|unique name|any|`true`|-|
+|v-model|selected name|any|`false`|-|
+|label|option text|String|-|-|
 |disabled|whether disable selection or not|Boolean|`false`|-|
-
+|icon|icon name of checked options|String|`checked`|-|
+|icon-inverse|icon name of unchecked options|String|`checke`|-|
+|icon-disabled|icon name of disabled options|String|`check-disabled`|-|
 ---
 
 #### CheckBox Props
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
-|name|unique name|Boolean/String|`true`|-|
-|v-model|selected name|Boolean/String|`false`|-|
+|name|unique name|any|`true`|-|
+|v-model|selected name|any|`false`|-|
 |disabled|whether disable selection or not|Boolean|`false`|-|
 
 ---

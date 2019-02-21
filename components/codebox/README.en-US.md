@@ -1,6 +1,6 @@
 ---
 title: CodeBox
-preview: https://mand-mobile.github.io/2x-doc/examples/#/codebox
+preview: https://didi.github.io/mand-mobile/examples/#/codebox
 ---
 
 ### Import

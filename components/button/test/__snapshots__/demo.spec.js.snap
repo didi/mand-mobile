@@ -42,7 +42,7 @@ exports[`Button Basic 1`] = `
 exports[`Button Inline 1`] = `
 <div class="md-example-child  md-example-child-button md-example-child-button-3">
   <div class="md-example-section"><button type="button" class="md-button primary active inline">
-      <div class="md-button-inner"><i class="md-icon icon-font md-icon-edit md" style="color:;"></i>
+      <div class="md-button-inner"><i class="md-icon icon-font md-icon-edit edit md" style="color:;"></i>
         <p class="md-button-content">Inline Primary</p>
       </div>
     </button> <button type="button" class="md-button primary active inline plain">
@@ -120,13 +120,13 @@ exports[`Button Round 1`] = `
 
 exports[`Button Text link 1`] = `
 <div class="md-example-child  md-example-child-button md-example-child-button-3"><button type="button" class="md-button link active block">
-    <div class="md-button-inner"><i class="md-icon icon-font md-icon-message md" style="color:;"></i>
+    <div class="md-button-inner"><i class="md-icon icon-font md-icon-message message md" style="color:;"></i>
       <p class="md-button-content">评论</p>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button link inactive block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">去看看<i class="md-icon icon-font md-icon-arrow-right md" style="color:;"></i></p>
+      <p class="md-button-content">去看看<i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></p>
     </div>
   </button></div>
 `;

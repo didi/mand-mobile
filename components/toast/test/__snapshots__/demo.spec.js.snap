@@ -20,7 +20,7 @@ exports[`Toast - Demo Continuous call 2`] = `
   <div class="md-popup center" style="">
     <div class="md-popup-mask" style="display: none;"></div>
     <div class="md-popup-box md-fade" style="">
-      <div class="md-toast-content"><i class="md-icon icon-font md-icon-fail lg"></i>
+      <div class="md-toast-content"><i class="md-icon icon-font md-icon-fail fail lg"></i>
         <div class="md-toast-text">载入失败</div>
       </div>
     </div>
@@ -47,7 +47,7 @@ exports[`Toast - Demo Failure 1`] = `
   <div class="md-popup center" style="">
     <div class="md-popup-mask" style="display: none;"></div>
     <div class="md-popup-box md-fade" style="">
-      <div class="md-toast-content"><i class="md-icon icon-font md-icon-fail lg"></i>
+      <div class="md-toast-content"><i class="md-icon icon-font md-icon-fail fail lg"></i>
         <div class="md-toast-text">操作失败</div>
       </div>
     </div>
@@ -89,7 +89,7 @@ exports[`Toast - Demo Success 1`] = `
   <div class="md-popup center" style="">
     <div class="md-popup-mask" style="display: none;"></div>
     <div class="md-popup-box md-fade" style="">
-      <div class="md-toast-content"><i class="md-icon icon-font md-icon-success lg"></i>
+      <div class="md-toast-content"><i class="md-icon icon-font md-icon-success success lg"></i>
         <div class="md-toast-text">操作成功</div>
       </div>
     </div>

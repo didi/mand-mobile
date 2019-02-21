@@ -86,6 +86,7 @@
 
 .water-mark-container
   position relative
+  z-index 2
 
 .water-mark-list
   clearfix()

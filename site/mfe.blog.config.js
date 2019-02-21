@@ -278,7 +278,7 @@ module.exports = {
           },
           {
             text: '更新日志',
-            src: 'https://github.com/didi/mand-mobile/blob/2.0/CHANGELOG.md',
+            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
           },
           {
             text: '常见问题',
@@ -347,7 +347,7 @@ module.exports = {
           },
           {
             text: 'Change Log',
-            src: 'https://github.com/didi/mand-mobile/blob/2.0/CHANGELOG.md',
+            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
           },
           {
             text: 'FAQ',
@@ -407,7 +407,7 @@ module.exports = {
       },
     ]
   },
-  copyRight: '2012-2018 Didi Chuxing. All Rights Reserved',
-  routePrefix: '/2x-doc',
+  copyRight: '2012-2019 Didi Chuxing. All Rights Reserved',
+  routePrefix: '/mand-mobile',
   // staticPrefix: '//manhattan.didistatic.com/static/manhattan/mand-mobile',
 }
