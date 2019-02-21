@@ -34,6 +34,7 @@ Vue.component(ScrollView.name, ScrollView)
 |manual-init | 手动初始化 | Boolean | `false` | 一般用于异步初始化的场景，需手动调用`init`方法完成初始化 |
 |end-reached-threshold | 触发到达底部的提前量 | Number | 0 | 单位`px` |
 |immediate-check-end-reaching | 初始化时立即触发是否到达底部检查 | Boolean | `false` | - |
+|touch-angle | 触发滚动的角度范围 | Number | 45 | 单位`deg` |
 
 #### ScrollViewRefresh Props
 |属性 | 说明 | 类型 | 默认值 | 备注|

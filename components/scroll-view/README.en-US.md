@@ -34,6 +34,7 @@ Vue.component(ScrollView.name, ScrollView)
 |manual-init | manual initialization | Boolean | `false` | generally used for asynchronous initialization scenarios, you need to manually call the `init` method to complete the initialization |
 |end-reached-threshold | threshold for emitting `endReached`. | Number | 0 | unit `px` |
 |immediate-check-end-reaching | check if it reaches the bottom at initialization | Boolean | `false` | - |
+|touch-angle | angle value range that triggers scrolling | Number | 45 | unit `deg` |
 
 #### ScrollViewRefresh Props
 |Props | Description | Type | Default | Note |
