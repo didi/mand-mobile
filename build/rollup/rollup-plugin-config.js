@@ -7,6 +7,7 @@ const jsonPlugin = require('rollup-plugin-json')
 const urlPlugin = require('rollup-plugin-url')
 const nodeResolvePlugin = require('rollup-plugin-node-resolve')
 const vuePlugin = require('rollup-plugin-vue')
+const css = require('rollup-plugin-css-only')
 const babel = require('rollup-plugin-babel')
 const common = require('rollup-plugin-commonjs')
 const stylusMixin = require('../stylus-mixin')
@@ -55,12 +56,21 @@ function vueWarpper() {
     distDir = TEST_OUTPUT_DIR
     fileName = 'mand-mobile-test.css'
   }
-  return vuePlugin({
-    css: path.resolve(distDir, fileName),
-    stylus: {
-      use: [stylusMixin],
-    },
-  })
+  return [
+    css({
+      output: path.resolve(distDir, fileName)
+    }),
+    vuePlugin({
+      css: false,
+      style: {
+        preprocessOptions: {
+          stylus: {
+            use: [stylusMixin],
+          },
+        }
+      }
+    })
+  ]
 }
 
 const vue = vueWarpper()
@@ -117,12 +127,15 @@ const rollupPlugin = [
   ...(conditionHelper(isDev, [
     svgSpritePlugin(),
   ])),
+  ...(conditionHelper(isProduction, [
+    common(),
+  ])),
   // resource
   urlPlugin({
     limit: 10 * 1024,
   }),
   jsonPlugin(),
-  vue,
+  ...vue,
   stylusCompilerPlugin({
     fn: stylusMixin,
   }),
