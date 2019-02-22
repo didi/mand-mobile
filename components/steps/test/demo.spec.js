@@ -11,26 +11,17 @@ import {renderToString} from '@vue/server-test-utils'
 import {mount} from '@vue/test-utils'
 
 describe('Steps - Demo', () => {
-  test(`Basic`, done => {
+  test(`Basic`, () => {
     const wrapper = mount(Demo0)
-    setTimeout(() => {
-      expect(wrapper.html()).toMatchSnapshot()
-      done()
-    }, 2000)
+    expect(wrapper.html()).toMatchSnapshot()
   })
-  test(`Non-integer progress`, done => {
+  test(`Non-integer progress`, () => {
     const wrapper = mount(Demo1)
-    setTimeout(() => {
-      expect(wrapper.html()).toMatchSnapshot()
-      done()
-    }, 2000)
+    expect(wrapper.html()).toMatchSnapshot()
   })
-  test(`Custom step icon`, done => {
+  test(`Custom step icon`, () => {
     const wrapper = mount(Demo2)
-    setTimeout(() => {
-      expect(wrapper.html()).toMatchSnapshot()
-      done()
-    }, 2000)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Specify the current step`, done => {
     const wrapper = mount(Demo3)
@@ -46,26 +37,17 @@ describe('Steps - Demo', () => {
       done()
     }, 2000)
   })
-  test(`Add custom styles through by class named "current"`, done => {
+  test(`Add custom styles through by class named "current"`, () => {
     const wrapper = mount(Demo5)
-    setTimeout(() => {
-      expect(wrapper.html()).toMatchSnapshot()
-      done()
-    }, 2000)
+    expect(wrapper.html()).toMatchSnapshot()
   })
-  test(`Complete all steps`, done => {
+  test(`Complete all steps`, () => {
     const wrapper = mount(Demo6)
-    setTimeout(() => {
-      expect(wrapper.html()).toMatchSnapshot()
-      done()
-    }, 2000)
+    expect(wrapper.html()).toMatchSnapshot()
   })
-  test(`Vertical display`, done => {
+  test(`Vertical display`, () => {
     const wrapper = mount(Demo7)
-    setTimeout(() => {
-      expect(wrapper.html()).toMatchSnapshot()
-      done()
-    }, 2000)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Custom content`, done => {
     const wrapper = mount(Demo8)
