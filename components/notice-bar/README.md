@@ -1,5 +1,5 @@
 ---
-title: Notice 通告栏
+title: NoticeBar 通告栏
 preview: https://didi.github.io/mand-mobile/examples/#/notice-bar
 ---
 
@@ -34,7 +34,7 @@ Vue.component(NoticeBar.name, NoticeBar)
 #### NoticeBar Slots
 
 #### default
-默认内容插错
+默认内容插槽
 
 #### left
 左侧插槽，一般用于放置图标等

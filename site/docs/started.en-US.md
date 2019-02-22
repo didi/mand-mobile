@@ -12,7 +12,7 @@ title: Quickstart
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand))(sp 1.x)
+* Vue CLI 3([Plugin](https://github.com/mand-mobile/vue-cli-plugin-mand))(sp 1.x/2.x)
 
 ```shell
 vue create my-project

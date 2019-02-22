@@ -31,7 +31,7 @@ Vue.component(WaterMask.name, WaterMark)
 #### WaterMark Slots
 
 ##### default
-默认内容插错
+默认内容插槽
 
 ##### watermark
 水印内容scoped插槽

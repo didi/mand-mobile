@@ -12,7 +12,7 @@ title: 快速上手
 vue init mand-mobile/mand-mobile-template my-mand-mobile-project
 ```
 
-* Vue CLI 3([插件](https://github.com/mand-mobile/vue-cli-plugin-mand))(支持1.x)
+* Vue CLI 3([插件](https://github.com/mand-mobile/vue-cli-plugin-mand))(支持1.x/2.x)
 
 ```shell
 vue create my-project
