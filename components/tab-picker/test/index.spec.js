@@ -10,7 +10,7 @@ describe('TabPicker - Operation', () => {
     wrapper && wrapper.destroy()
   })
 
-  test('select and switch pane', done => {
+  it('select and switch pane', done => {
     wrapper = mount(TabPicker, {
       propsData: {
         data,
@@ -51,18 +51,19 @@ describe('TabPicker - Operation', () => {
     }, 300)
   })
 
-  test('set default value', () => {
+  it('set default value', () => {
     wrapper = mount(TabPicker, {
       propsData: {
         data: data,
         value: true,
         defaultValue: ['pk'],
       },
+      sync: false,
     })
     expect(JSON.stringify(wrapper.vm.selected)).toBe(JSON.stringify(['pk']))
   })
 
-  test('click mask to close', done => {
+  it('click mask to close', done => {
     wrapper = mount(TabPicker, {
       propsData: {
         data: data,

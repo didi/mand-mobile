@@ -11,7 +11,7 @@ describe('ImageViewer - Method', () => {
   it('create a simple image-viewer', () => {
     wrapper = mount(ImageViewer)
 
-    expect(wrapper.hasClass('md-image-viewer')).toBe(true)
+    expect(wrapper.classes('md-image-viewer')).toBe(true)
     expect(wrapper.vm.value).toBe(false)
     expect(wrapper.vm.initialIndex).toBe(0)
     expect(wrapper.vm.hasDots).toBe(true)

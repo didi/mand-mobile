@@ -183,7 +183,7 @@ exports[`Steps - Demo Custom content 1`] = `
         </div>
       </div>
     </div>
-    <div class="bar vertical-bar"><i class="bar-inner" style="transform: translate3d(0, -50%, 0);"></i></div>
+    <div class="bar vertical-bar" style="height: 40px;"><i class="bar-inner" style="transform: translate3d(0, -50%, 0);"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
@@ -213,7 +213,7 @@ exports[`Steps - Demo Custom content 1`] = `
         </div>
       </div>
     </div>
-    <div class="bar vertical-bar"><i class="bar-inner" style="transform: translate3d(0, 0%, 0);"></i></div>
+    <div class="bar vertical-bar" style="height: 40px;"><i class="bar-inner" style="transform: translate3d(0, 0%, 0);"></i></div>
     <div class="step-wrapper current">
       <div class="icon-wrapper"><i class="md-icon icon-font md-icon-checked checked md"></i></div>
       <div class="text-wrapper">
