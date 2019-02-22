@@ -3,9 +3,29 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.1.0
+
+`2019-02-22`
+
+- Feature
+  - `Seletor`属性`defaultValue`去除类型限制[#305](https://github.com/didi/mand-mobile/issues/305)
+  - `ScrollView`增加属性`immediateCheckEndReaching`，用于控制初始化时就立即触发是否到达底部检查，并在内容不超过容器是也会触发`endReached`，并对事件触发防抖处理[#312](https://github.com/didi/mand-mobile/issues/312)
+  - `Picker`和`DatePicker`增加属性`lineHeight`，用于自定义选项高度[#323](https://github.com/didi/mand-mobile/issues/323)
+  - `ScrollView`增加属性`touchAngle`，用于限制仅一个方向滚动是的滚动触发角度范围[#326](https://github.com/didi/mand-mobile/issues/326)
+  - `Amount`默认使用系统内置字体
+
+- Fix
+  - 补充类型声明，修复无默认导出报错
+  - 修复`WaterMark`内容区域无法点击的问题[#304](https://github.com/didi/mand-mobile/issues/304)
+  - 修复`Swiper`当`isLoop`为`false`且`transition`为`slideY`时无法滑动问题[#311](https://github.com/didi/mand-mobile/issues/311)
+  - 修复`TabPicker`滚动或点击穿透的问题[#319](https://github.com/didi/mand-mobile/issues/319)
+  - 修复`InputItem`输入过快时偶尔导致光标位置异常的问题[#322](https://github.com/didi/mand-mobile/issues/322)
+  - 修复`InputItem`在`Vue 2.6+`中金融键盘闪现问题[#324](https://github.com/didi/mand-mobile/issues/324)
+  - 修复部分文档问题
+
 ### 2.0.0
 
-`2019-01-30`      
+`2019-01-30`
 
 - Feature
   - `DetailItem`属性`content`增加支持类型[#285](https://github.com/didi/mand-mobile/issues/285)
@@ -23,7 +43,7 @@ toc: hidden
 
 ### 2.0.0-rc.5
 
-`2019-01-04`      
+`2019-01-04`
 
 - Feature
   - 全量引入时的注册全局组件名增加`PascalCase`[#261](https://github.com/didi/mand-mobile/issues/261)
@@ -36,7 +56,7 @@ toc: hidden
 
 ### 2.0.0-rc.4
 
-`2018-12-21`      
+`2018-12-21`
 
 - Feature
   - 优化`NumberKeyboard`输入体验
@@ -51,10 +71,10 @@ toc: hidden
 
 ### 2.0.0-rc.3
 
-`2018-12-14`      
+`2018-12-14`
 
 🎉🎉🎉 👏👏👏 更多内容查看 <a href="#/zh-CN/docs/migration">从1.x迁移</a>。
 
-### 1.x 
+### 1.x
 
 去[GitHub](https://github.com/didi/mand-mobile/blob/1.x/CHANGELOG.md)查看`1.x`的 Change Log。
