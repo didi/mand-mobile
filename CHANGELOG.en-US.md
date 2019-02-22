@@ -3,9 +3,29 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.1.0
+
+`2019-02-22`
+
+- Feature
+  - `Seletor`: `defaultValue` prop remove type limits[#305](https://github.com/didi/mand-mobile/issues/305)
+  - `ScrollView`: add `immediateCheckEndReaching` prop，in order to check reach bottom immediately and emit `endReached` event[#312](https://github.com/didi/mand-mobile/issues/312)
+  - `Picker` and `DatePicker`: add `lineHeight` prop, which is used to customize option line height[#323](https://github.com/didi/mand-mobile/issues/323)
+  - `ScrollView`: add `touchAngle` prop, in order to control scroll angle[#326](https://github.com/didi/mand-mobile/issues/326)
+  - `Amount`: use system default font
+
+- Fix
+  - Update type declaration
+  - `WaterMark`: fix can not click content area[#304](https://github.com/didi/mand-mobile/issues/304)
+  - `Swiper`: fix when set `isLoop` as `false` and `transition` as `slideY`, can not scroll problem[#311](https://github.com/didi/mand-mobile/issues/311)
+  - `TabPicker`: fix scroll and click bug[#319](https://github.com/didi/mand-mobile/issues/319)
+  - `InputItem`: fix wrong cursor position[#322](https://github.com/didi/mand-mobile/issues/322)
+  - `InputItem`: fix bug at `Vue 2.6+`[#324](https://github.com/didi/mand-mobile/issues/324)
+  - Update docs
+
 ### 2.0.0
 
-`2019-01-30`      
+`2019-01-30`
 
 - Feature
   - `DetailItem` increase supported types of `content`[#285](https://github.com/didi/mand-mobile/issues/285)
@@ -23,7 +43,7 @@ toc: hidden
 
 ### 2.0.0-rc.5
 
-`2019-01-04`      
+`2019-01-04`
 
 - Feature
   - Add `PascalCase` name to global components[#261](https://github.com/didi/mand-mobile/issues/261)
@@ -36,7 +56,7 @@ toc: hidden
 
 ### 2.0.0-rc.4
 
-`2018-12-21`      
+`2018-12-21`
 
 - Feature
   - Optimize `NumberKeyboard` input experience
@@ -51,11 +71,11 @@ toc: hidden
 
 ### 2.0.0-rc.3
 
-`2018-12-14`      
+`2018-12-14`
 
 🎉🎉🎉 👏👏👏 Learn more in the<a href="#/en-US/docs/migration">Migration from 1.x</a>.
 
-### 1.x 
+### 1.x
 
 Visit [GitHub](https://github.com/didi/mand-mobile/blob/1.x/CHANGELOG.en-US.md) to read `1.x` change logs.
 
