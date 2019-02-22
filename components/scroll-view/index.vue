@@ -85,6 +85,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    touchAngle: {
+      type: Number,
+      default: 45,
+    },
   },
   data() {
     return {
@@ -101,6 +105,10 @@ export default {
       isEndReaching: false,
       scrollX: null,
       scrollY: null,
+      startX: 0,
+      startY: 0,
+      currentX: 0,
+      currentY: 0,
       containerW: 0,
       containerH: 0,
       contentW: 0,
@@ -218,6 +226,12 @@ export default {
         this.endReachedHandler()
       }
     },
+    $_getScrollerAngle() {
+      const diffX = this.currentX - this.startX
+      const diffY = this.currentY - this.startY
+      const angle = Math.atan2(Math.abs(diffY), Math.abs(diffX)) * 180 / Math.PI
+      return this.scrollingX ? 90 - angle : angle
+    },
     // MARK: events handler
     $_onScollerTouchStart(event) {
       // event.target.tagName && event.target.tagName.match(/input|textarea|select/i)
@@ -225,6 +239,8 @@ export default {
       if (!this.scroller) {
         return
       }
+      this.startX = event.targetTouches[0].pageX
+      this.startY = event.targetTouches[0].pageY
       this.scroller.doTouchStart(event.touches, event.timeStamp)
     },
     $_onScollerTouchMove(event) {
@@ -233,6 +249,17 @@ export default {
         return
       }
       event.preventDefault()
+
+      this.currentX = event.targetTouches[0].pageX
+      this.currentY = event.targetTouches[0].pageY
+
+      if (!this.scrollingX || !this.scrollingY) {
+        const currentTouchAngle = this.$_getScrollerAngle()
+        if (currentTouchAngle < this.touchAngle) {
+          return
+        }
+      }
+
       this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
     },
     $_onScollerTouchEnd(event) {
@@ -247,6 +274,8 @@ export default {
       if (!this.scroller) {
         return
       }
+      this.startX = event.pageX
+      this.startY = event.pageY
       this.scroller.doTouchStart(
         [
           {
@@ -262,6 +291,15 @@ export default {
       /* istanbul ignore if */
       if (!this.scroller || !this.isMouseDown) {
         return
+      }
+
+      this.currentX = event.pageX
+      this.currentY = event.pageY
+      if (!this.scrollingX || !this.scrollingY) {
+        const currentTouchAngle = this.$_getScrollerAngle()
+        if (currentTouchAngle < this.touchAngle) {
+          return
+        }
       }
       this.scroller.doTouchMove(
         [
