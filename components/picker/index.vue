@@ -10,6 +10,7 @@
         :default-value="defaultValue"
         :default-index="defaultIndex"
         :invalid-index="invalidIndex"
+        :line-height="lineHeight"
         :cols="cols"
         @initialed="$emit('initialed')"
         @change="$_onPickerChange"
@@ -42,6 +43,7 @@
           :default-value="$_getDefaultValue()"
           :default-index="$_getDefaultIndex()"
           :invalid-index="invalidIndex"
+          :line-height="lineHeight"
           :cols="cols"
           @initialed="$_onPickerInitialed"
           @change="$_onPickerChange"
@@ -139,6 +141,9 @@ export default {
     // maskClosable: {
     //   type: Boolean,
     //   default: true,
+    // },
+    // lineHeight: {
+    //   type: Boolean,
     // },
   },
 

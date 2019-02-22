@@ -14,5 +14,8 @@ export default {
     cancelText: {
       default: '取消',
     },
+    lineHeight: {
+      type: Number,
+    },
   },
 }

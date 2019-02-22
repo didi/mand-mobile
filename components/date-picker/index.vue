@@ -6,6 +6,7 @@
       :data="columnData"
       :cols="columnData.length"
       :default-value="columnDataDefault"
+      :line-height="lineHeight"
       :title="title"
       :describe="describe"
       :ok-text="okText"

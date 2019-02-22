@@ -29,7 +29,8 @@ Vue.component(DatePicker.name, DatePicker)
 |minute-step|increasing steps of minutes|Number|`1`|-|
 |unit-text|element unit for text displaying|Array|`['y', 'M', 'd', 'h', 'm']`|`text-render` for complex logic|
 |text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|              
-|today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`|           
+|today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`| 
+|line-height|line height of options|Number|`45`|unit `px`|          
 |is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-| 
 |title|title of date-picker|String|-|-|
 |describe|description of date-picker|String|-|-|
