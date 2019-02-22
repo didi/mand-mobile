@@ -412,9 +412,9 @@ export default {
     $_focusFakeInput() {
       this.isInputFocus = true
 
-      this.$nextTick(() => {
+      setTimeout(() => {
         this.$_addBlurListener()
-      })
+      }, 0)
     },
     $_blurFakeInput() {
       this.isInputFocus = false
@@ -674,7 +674,7 @@ export default {
     .md-input-item-input::-webkit-input-placeholder
         font-size 60px
         line-height 100px
-      
+
   &.is-error
     .md-field-item-content
       hairline(bottom, input-item-color-error, 0, 4px)
