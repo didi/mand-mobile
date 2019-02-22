@@ -11,18 +11,33 @@ import {renderToString} from '@vue/server-test-utils'
 import {mount} from '@vue/test-utils'
 
 describe('Steps - Demo', () => {
-  test(`Basic`, () => {
-    expect(renderToString(Demo0)).toMatchSnapshot()
+  test(`Basic`, done => {
+    const wrapper = mount(Demo0)
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Non-integer progress`, () => {
-    expect(renderToString(Demo1)).toMatchSnapshot()
+  test(`Non-integer progress`, done => {
+    const wrapper = mount(Demo1)
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Custom step icon`, () => {
-    expect(renderToString(Demo2)).toMatchSnapshot()
+  test(`Custom step icon`, done => {
+    const wrapper = mount(Demo2)
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Specify the current step`, () => {
+  test(`Specify the current step`, done => {
     const wrapper = mount(Demo3)
-    expect(wrapper.html()).toMatchSnapshot()
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
   test(`Transition of rogress changes`, done => {
     const wrapper = mount(Demo4)
@@ -31,17 +46,32 @@ describe('Steps - Demo', () => {
       done()
     }, 2000)
   })
-  test(`Add custom styles through by class named "current"`, () => {
-    expect(renderToString(Demo5)).toMatchSnapshot()
+  test(`Add custom styles through by class named "current"`, done => {
+    const wrapper = mount(Demo5)
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Complete all steps`, () => {
-    expect(renderToString(Demo6)).toMatchSnapshot()
+  test(`Complete all steps`, done => {
+    const wrapper = mount(Demo6)
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Vertical display`, () => {
-    expect(renderToString(Demo7)).toMatchSnapshot()
+  test(`Vertical display`, done => {
+    const wrapper = mount(Demo7)
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Custom content`, () => {
+  test(`Custom content`, done => {
     const wrapper = mount(Demo8)
-    expect(wrapper.html()).toMatchSnapshot()
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
 })
