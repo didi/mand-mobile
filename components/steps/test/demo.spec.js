@@ -7,47 +7,89 @@ import Demo5 from './cases/demo5'
 import Demo6 from './cases/demo6'
 import Demo7 from './cases/demo7'
 import Demo8 from './cases/demo8'
-import {renderToString} from '@vue/server-test-utils'
+// import {renderToString} from '@vue/server-test-utils'
 import {mount} from '@vue/test-utils'
 
 describe('Steps - Demo', () => {
-  test(`Basic`, () => {
-    const wrapper = mount(Demo0)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-  test(`Non-integer progress`, () => {
-    const wrapper = mount(Demo1)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-  test(`Custom step icon`, () => {
-    const wrapper = mount(Demo2)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-  test(`Specify the current step`, () => {
-    const wrapper = mount(Demo3)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-  test(`Transition of rogress changes`, done => {
-    const wrapper = mount(Demo4)
+  test(`Basic`, done => {
+    const wrapper = mount(Demo0, {
+      sync: false,
+    })
     setTimeout(() => {
       expect(wrapper.html()).toMatchSnapshot()
       done()
     }, 2000)
   })
-  test(`Add custom styles through by class named "current"`, () => {
-    const wrapper = mount(Demo5)
-    expect(wrapper.html()).toMatchSnapshot()
+  test(`Non-integer progress`, done => {
+    const wrapper = mount(Demo1, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Complete all steps`, () => {
-    const wrapper = mount(Demo6)
-    expect(wrapper.html()).toMatchSnapshot()
+  test(`Custom step icon`, done => {
+    const wrapper = mount(Demo2, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Vertical display`, () => {
-    const wrapper = mount(Demo7)
-    expect(wrapper.html()).toMatchSnapshot()
+  test(`Specify the current step`, done => {
+    const wrapper = mount(Demo3, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
-  test(`Custom content`, () => {
-    const wrapper = mount(Demo8)
-    expect(wrapper.html()).toMatchSnapshot()
+  test(`Transition of rogress changes`, done => {
+    const wrapper = mount(Demo4, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
+  })
+  test(`Add custom styles through by class named "current"`, done => {
+    const wrapper = mount(Demo5, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
+  })
+  test(`Complete all steps`, done => {
+    const wrapper = mount(Demo6, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
+  })
+  test(`Vertical display`, done => {
+    const wrapper = mount(Demo7, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
+  })
+  test(`Custom content`, done => {
+    const wrapper = mount(Demo8, {
+      sync: false,
+    })
+    setTimeout(() => {
+      expect(wrapper.html()).toMatchSnapshot()
+      done()
+    }, 2000)
   })
 })
