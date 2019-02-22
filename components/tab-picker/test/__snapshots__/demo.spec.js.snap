@@ -31,46 +31,54 @@ exports[`TabPicker - Demo Basic 1`] = `
               </div>
             </nav>
             <div class="md-tabs-content">
-              <div role="tabpanel" tab="province" name="md-tab-slide-left" class="md-tab-pane">
-                <div class="md-radio-list">
-                  <div class="md-cell-item md-radio-item">
-                    <div class="md-cell-item-body">
-                      <!---->
-                      <div class="md-cell-item-content">
-                        <p class="md-cell-item-title">北京</p>
-                        <!---->
-                      </div>
-                      <div class="md-cell-item-right"><label class="md-radio">
-                          <div class="md-radio-icon">
+              <div class="md-scroll-view">
+                <!---->
+                <div class="scroll-view-container">
+                  <!---->
+                  <div role="tabpanel" tab="province" name="md-tab-slide-left" class="md-tab-pane">
+                    <div class="md-radio-list">
+                      <div class="md-cell-item md-radio-item">
+                        <div class="md-cell-item-body">
+                          <!---->
+                          <div class="md-cell-item-content">
+                            <p class="md-cell-item-title">北京</p>
                             <!---->
                           </div>
-                          <!---->
-                        </label>
-                        <!---->
-                      </div>
-                    </div>
-                    <!---->
-                  </div>
-                  <div class="md-cell-item md-radio-item no-border">
-                    <div class="md-cell-item-body">
-                      <!---->
-                      <div class="md-cell-item-content">
-                        <p class="md-cell-item-title">四川</p>
-                        <!---->
-                      </div>
-                      <div class="md-cell-item-right"><label class="md-radio">
-                          <div class="md-radio-icon">
+                          <div class="md-cell-item-right"><label class="md-radio">
+                              <div class="md-radio-icon">
+                                <!---->
+                              </div>
+                              <!---->
+                            </label>
                             <!---->
                           </div>
-                          <!---->
-                        </label>
+                        </div>
                         <!---->
                       </div>
+                      <div class="md-cell-item md-radio-item no-border">
+                        <div class="md-cell-item-body">
+                          <!---->
+                          <div class="md-cell-item-content">
+                            <p class="md-cell-item-title">四川</p>
+                            <!---->
+                          </div>
+                          <div class="md-cell-item-right"><label class="md-radio">
+                              <div class="md-radio-icon">
+                                <!---->
+                              </div>
+                              <!---->
+                            </label>
+                            <!---->
+                          </div>
+                        </div>
+                        <!---->
+                      </div>
+                      <!---->
                     </div>
-                    <!---->
                   </div>
                   <!---->
                 </div>
+                <!---->
               </div>
             </div>
           </div>
