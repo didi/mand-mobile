@@ -12,13 +12,16 @@ import {mount} from '@vue/test-utils'
 
 describe('Steps - Demo', () => {
   test(`Basic`, () => {
-    expect(renderToString(Demo0)).toMatchSnapshot()
+    const wrapper = mount(Demo0)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Non-integer progress`, () => {
-    expect(renderToString(Demo1)).toMatchSnapshot()
+    const wrapper = mount(Demo1)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Custom step icon`, () => {
-    expect(renderToString(Demo2)).toMatchSnapshot()
+    const wrapper = mount(Demo2)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Specify the current step`, () => {
     const wrapper = mount(Demo3)
@@ -32,13 +35,16 @@ describe('Steps - Demo', () => {
     }, 2000)
   })
   test(`Add custom styles through by class named "current"`, () => {
-    expect(renderToString(Demo5)).toMatchSnapshot()
+    const wrapper = mount(Demo5)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Complete all steps`, () => {
-    expect(renderToString(Demo6)).toMatchSnapshot()
+    const wrapper = mount(Demo6)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Vertical display`, () => {
-    expect(renderToString(Demo7)).toMatchSnapshot()
+    const wrapper = mount(Demo7)
+    expect(wrapper.html()).toMatchSnapshot()
   })
   test(`Custom content`, () => {
     const wrapper = mount(Demo8)

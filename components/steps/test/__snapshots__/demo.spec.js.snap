@@ -6,7 +6,7 @@ exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -16,9 +16,9 @@ exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md" style="color:;"></i></div>
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           开通
@@ -26,11 +26,11 @@ exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-100%, 0, 0);transition:all 0s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -40,11 +40,11 @@ exports[`Steps - Demo Add custom styles through by class named "current" 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-100%, 0, 0);transition:all 0s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -65,7 +65,7 @@ exports[`Steps - Demo Basic 1`] = `
 <div class="md-example-child md-example-child-steps md-example-child-steps-0">
   <div class="md-steps md-steps-horizontal">
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md" style="color:;"></i></div>
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           登录/注册
@@ -73,11 +73,11 @@ exports[`Steps - Demo Basic 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-100%, 0, 0);transition:all 0s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -87,11 +87,11 @@ exports[`Steps - Demo Basic 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-100%, 0, 0);transition:all 0s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -114,7 +114,7 @@ exports[`Steps - Demo Complete all steps 1`] = `
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -124,11 +124,11 @@ exports[`Steps - Demo Complete all steps 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -138,11 +138,11 @@ exports[`Steps - Demo Complete all steps 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -152,9 +152,9 @@ exports[`Steps - Demo Complete all steps 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md" style="color:;"></i></div>
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           成功
@@ -245,9 +245,9 @@ exports[`Steps - Demo Custom step icon 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper reached">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-checked checked md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           开通
@@ -255,9 +255,9 @@ exports[`Steps - Demo Custom step icon 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-location location md" style="color:;"></i></div>
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-location location md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           验证
@@ -265,11 +265,11 @@ exports[`Steps - Demo Custom step icon 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-100%, 0, 0);transition:all 0s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -292,7 +292,7 @@ exports[`Steps - Demo Non-integer progress 1`] = `
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -302,11 +302,11 @@ exports[`Steps - Demo Non-integer progress 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(0%, 0, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper reached current">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -316,11 +316,11 @@ exports[`Steps - Demo Non-integer progress 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-80%, 0, 0);transition:all 0.059999999999999984s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-80%, 0, 0); transition: all 0.059999999999999984s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -330,11 +330,11 @@ exports[`Steps - Demo Non-integer progress 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform:translate3d(-100%, 0, 0);transition:all 0s linear;"></i></div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -354,8 +354,12 @@ exports[`Steps - Demo Non-integer progress 1`] = `
 exports[`Steps - Demo Specify the current step 1`] = `
 <div class="md-example-child md-example-child-steps md-example-child-steps-3">
   <div class="md-steps md-steps-horizontal">
-    <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
+    <div class="step-wrapper reached">
+      <div class="icon-wrapper">
+        <div class="step-node-default">
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
+        </div>
+      </div>
       <div class="text-wrapper">
         <div class="name">
           登录
@@ -363,8 +367,8 @@ exports[`Steps - Demo Specify the current step 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
-    <div class="step-wrapper">
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
+    <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
           <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
@@ -377,13 +381,9 @@ exports[`Steps - Demo Specify the current step 1`] = `
         <!---->
       </div>
     </div>
-    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(-100%, 0, 0); transition: all 0s linear;"></i></div>
-    <div class="step-wrapper">
-      <div class="icon-wrapper">
-        <div class="step-node-default">
-          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
-        </div>
-      </div>
+    <div class="bar horizontal-bar"><i class="bar-inner" style="transform: translate3d(0%, 0, 0); transition: all 0.3s linear;"></i></div>
+    <div class="step-wrapper current">
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           验证
@@ -483,7 +483,7 @@ exports[`Steps - Demo Vertical display 1`] = `
     <div class="step-wrapper reached">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -495,9 +495,9 @@ exports[`Steps - Demo Vertical display 1`] = `
         </div>
       </div>
     </div>
-    <div class="bar vertical-bar"><i class="bar-inner" style="transform:translate3d(0, 0%, 0);transition:all 0.3s linear;"></i></div>
+    <div class="bar vertical-bar"><i class="bar-inner" style="transform: translate3d(0, 0%, 0); transition: all 0.3s linear;"></i></div>
     <div class="step-wrapper current">
-      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md" style="color:;"></i></div>
+      <div class="icon-wrapper"><i class="md-icon icon-font md-icon-success success md"></i></div>
       <div class="text-wrapper">
         <div class="name">
           开通
@@ -507,11 +507,11 @@ exports[`Steps - Demo Vertical display 1`] = `
         </div>
       </div>
     </div>
-    <div class="bar vertical-bar"><i class="bar-inner" style="transform:translate3d(0, -100%, 0);transition:all 0s linear;"></i></div>
+    <div class="bar vertical-bar"><i class="bar-inner" style="transform: translate3d(0, -100%, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
@@ -523,11 +523,11 @@ exports[`Steps - Demo Vertical display 1`] = `
         </div>
       </div>
     </div>
-    <div class="bar vertical-bar"><i class="bar-inner" style="transform:translate3d(0, -100%, 0);transition:all 0s linear;"></i></div>
+    <div class="bar vertical-bar"><i class="bar-inner" style="transform: translate3d(0, -100%, 0); transition: all 0s linear;"></i></div>
     <div class="step-wrapper">
       <div class="icon-wrapper">
         <div class="step-node-default">
-          <div class="step-node-default-icon" style="width:6px;height:6px;border-radius:50%;"></div>
+          <div class="step-node-default-icon" style="width: 6px; height: 6px; border-radius: 50%;"></div>
         </div>
       </div>
       <div class="text-wrapper">
