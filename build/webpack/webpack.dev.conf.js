@@ -18,7 +18,7 @@ const pxtoremConfig = pxtorem({ rootValue: 100, propWhiteList: [], minPixelValue
 const argv = require('yargs').argv
 
 let entry = {
-  'index': ['./build/webpack/dev-client', './examples/main.js']
+  'index': ['./build/webpack/dev-client', process.env.MAND_MOBILE === 'bundle' ? './examples/main.bundle.js' : './examples/main.js']
 }
 
 if (argv.component) {

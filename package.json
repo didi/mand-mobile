@@ -26,6 +26,7 @@
     "dev": "node build/webpack/dev-server",
     "dev:rollup": "node build/rollup/dev-server.rollup",
     "dev:site": "cd site && npm start",
+    "dev:bundle": "MAND_MOBILE=bundle node build/webpack/dev-server",
     "create": "node build/component-init.js",
     "cz": "npx git-cz",
     "clean": "rm -rf ./lib && rm -rf ./lib-vw && rm -rf ./docs/examples",
@@ -49,8 +50,7 @@
     "codecov": "codecov",
     "test": "jest --no-cache --runInBand --verbose --silent",
     "test:lib": "TEST_TYPE=lib jest --no-cache --runInBand --verbose --silent",
-    "test:lib-vw": "TEST_TYPE=lib-vw jest --no-cache --runInBand --verbose --silent",
-    "test:bundle": "TEST_TYPE=bundle jest --no-cache --runInBand --verbose --silent"
+    "test:lib-vw": "TEST_TYPE=lib-vw jest --no-cache --runInBand --verbose --silent"
   },
   "license": "Apache",
   "config": {
@@ -220,8 +220,8 @@
     "yargs": "^11.0.0"
   },
   "engines": {
-    "node": ">= 8.0.0",
-    "npm": ">= 5.0.0"
+    "node": ">= 8.15.0",
+    "npm": ">= 6.0.0"
   },
   "browserslist": [
     "iOS >= 8",
