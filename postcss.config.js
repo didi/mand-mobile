@@ -5,7 +5,14 @@ module.exports = (ctx) => ({
   plugins: {
     'postcss-pxtorem': ctx.env !== 'production' ? { rootValue: 100, minPixelValue: 2, propWhiteList: [] } : false,
     'postcss-url': {url: 'inline'},
-    'cssnano': { zindex: false, mergeIdents: false, discardUnused: false, autoprefixer: false, reduceIdents: false
+    'cssnano': {
+      preset: ['default', {
+        zindex: false,
+        mergeIdents: false,
+        discardUnused: false,
+        autoprefixer: false,
+        reduceIdents: false,
+      }]
     },
     'autoprefixer': { browsers: browserslist }
   }
