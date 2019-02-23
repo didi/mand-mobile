@@ -10,6 +10,7 @@ const vuePlugin = require('rollup-plugin-vue')
 const css = require('rollup-plugin-css-only')
 const babel = require('rollup-plugin-babel')
 const common = require('rollup-plugin-commonjs')
+const stylus = require('stylus')
 const stylusMixin = require('../stylus-mixin')
 const builtins = require('rollup-plugin-node-builtins')
 const uglify = require('rollup-plugin-uglify')
@@ -65,7 +66,9 @@ function vueWarpper() {
       style: {
         preprocessOptions: {
           stylus: {
-            use: [stylusMixin],
+            use: [stylusMixin, styl => {
+              styl.define('url', stylus.url())
+            }],
           },
         }
       }
