@@ -21,7 +21,3 @@ import Demo6 from './cases/demo6'
 
 export default {...createDemoModule('scroll-view', [Demo0, Demo1, Demo2, Demo3, Demo4, Demo5, Demo6])}
 </script>
-
-<style lang="stylus" scoped>
-
-</style>

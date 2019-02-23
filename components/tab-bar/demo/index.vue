@@ -22,7 +22,3 @@ export default {
   ...createDemoModule('tab-bar', [Demo0, Demo1, Demo2, Demo3, Demo4, Demo5]),
 }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>
