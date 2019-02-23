@@ -1,9 +1,9 @@
 
 // https://github.com/michael-ciniawsky/postcss-load-config
 const browserslist = require('./package.json').browserslist
-module.exports = (ctx) => ({
+module.exports = () => ({
   plugins: {
-    'postcss-pxtorem': ctx.env !== 'production' ? { rootValue: 100, minPixelValue: 2, propWhiteList: [] } : false,
+    'postcss-pxtorem': process.env.NODE_ENV !== 'production' ? { rootValue: 100, minPixelValue: 2, propWhiteList: [] } : false,
     'postcss-url': {url: 'inline'},
     'cssnano': {
       preset: ['default', {
