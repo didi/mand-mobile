@@ -3,6 +3,13 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.1.1
+
+`2019-02-23`
+
+- Fix
+  - 修复构建时`postcss`未生效的问题，导致`mand-mobile.css`中图片等资源未被做url inline处理。
+  
 ### 2.1.0
 
 `2019-02-22`

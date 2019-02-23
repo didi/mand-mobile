@@ -3,6 +3,13 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.1.1
+
+`2019-02-23`
+
+- Fix
+  - Fix the problem that `postcss` is not in effect at build time, causing assets such as images in `mand-mobile.css` not to be processed by url inline。
+  
 ### 2.1.0
 
 `2019-02-22`
