@@ -10,6 +10,7 @@ const vuePlugin = require('rollup-plugin-vue')
 const css = require('rollup-plugin-css-only')
 const babel = require('rollup-plugin-babel')
 const common = require('rollup-plugin-commonjs')
+const stylus = require('stylus')
 const stylusMixin = require('../stylus-mixin')
 const builtins = require('rollup-plugin-node-builtins')
 const uglify = require('rollup-plugin-uglify')
@@ -20,6 +21,7 @@ const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const stylusCompilerPlugin = require('./rollup-plugin-stylus-compiler')
 const postcss = require('rollup-plugin-postcss')
+const postcssConfig = require('../../postcss.config')
 const svgSpritePlugin = require('./rollup-plugin-svg-sprite')
 const pkg = require('../../package.json')
 
@@ -63,9 +65,12 @@ function vueWarpper() {
     vuePlugin({
       css: false,
       style: {
+        postcssPlugins: postcssConfig({env: process.env.NODE_ENV}).plugins,
         preprocessOptions: {
           stylus: {
-            use: [stylusMixin],
+            use: [stylusMixin, styl => {
+              styl.define('url', stylus.url())
+            }],
           },
         }
       }

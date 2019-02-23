@@ -16,7 +16,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js',
       '@examples': resolve('examples'),
-      'mand-mobile$': resolve('components'),
+      'mand-mobile$': process.env.MAND_MOBILE === 'bundle' ? resolve('lib/mand-mobile.umd') : resolve('components'),
       'mand-mobile/lib': resolve('components'),
       'mand-mobile/components': resolve('components')
     }

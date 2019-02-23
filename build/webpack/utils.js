@@ -58,7 +58,7 @@ exports.cssLoaders = function (options) {
   stylusMixins.push(resolve('../../examples/theme.custom.styl'))
 
   return {
-    css: generateLoaders(),
+    css: generateLoaders('postcss'),
     postcss: generateLoaders(),
     stylus: generateLoaders('stylus', {
       import: stylusMixins
