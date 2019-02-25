@@ -614,7 +614,7 @@ export default class Scroller {
 
           // How much velocity is required to start the deceleration
           const minVelocityToStartDeceleration =
-            this.options.paging || this.options.snapping ? this.options.snappingVelocity : 1
+            this.options.paging || this.options.snapping ? this.options.snappingVelocity : 0.01
 
           // Verify that we have enough velocity to start deceleration
           if (
@@ -801,7 +801,7 @@ export default class Scroller {
     }
 
     // How much velocity is required to keep the deceleration running
-    const minVelocityToKeepDecelerating = this.options.snapping ? this.options.snappingVelocity : 0.001
+    const minVelocityToKeepDecelerating = this.options.snapping ? this.options.snappingVelocity : 0.01
 
     // Detect whether it's still worth to continue animating steps
     // If we are already slow enough to not being user perceivable anymore, we stop the whole process here.

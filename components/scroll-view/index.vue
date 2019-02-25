@@ -37,11 +37,10 @@
       <slot></slot>
       <div
         v-if="hasMore"
-        :is-end-reaching="isEndReaching"
-        :class="{active: isEndReaching}"
+        :class="{active: isEndReachingStart || isEndReaching}"
         class="scroll-view-more"
       >
-        <slot name="more"></slot>
+        <slot name="more" :is-end-reaching="isEndReachingStart || isEndReaching"></slot>
       </div>
     </div>
     <div class="scroll-view-footer" v-if="$slots.footer">
@@ -50,7 +49,7 @@
   </div>
 </template>
 
-<script>import {debouce} from '../_util'
+<script>import {debounce} from '../_util'
 import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 
@@ -102,6 +101,7 @@ export default {
       isMouseDown: false,
       isRefreshing: false,
       isRefreshActive: false,
+      isEndReachingStart: false,
       isEndReaching: false,
       scrollX: null,
       scrollY: null,
@@ -188,10 +188,11 @@ export default {
       this.scroller = scroller
       this.reflowScroller(true)
       this.autoReflow && this.$_initAutoReflow()
-      this.endReachedHandler = debouce(() => {
+      this.endReachedHandler = debounce(() => {
         this.isEndReaching = true
         this.$emit('endReached')
-      }, 150)
+        this.$emit('end-reached')
+      }, 50)
 
       setTimeout(() => {
         this.isInitialed = true
@@ -216,13 +217,11 @@ export default {
       const moreOffsetY = this.moreOffsetY
       const moreThreshold = this.endReachedThreshold
       const endOffset = content - containerHeight - (top + moreOffsetY + moreThreshold)
-      if (
-        top >= 0 &&
-        !this.isEndReaching &&
-        endOffset <= 0 &&
-        (this.bouncing && Math.abs(endOffset) < 50) &&
-        this.endReachedHandler
-      ) {
+      if (top >= 0 && !this.isEndReaching && endOffset <= 0 && this.endReachedHandler) {
+        // First prepare for "load more" state
+        this.isEndReachingStart = true
+        // Second enter "load more" state
+        // & trigger endReached event only once after the rebounding animation
         this.endReachedHandler()
       }
     },
@@ -396,6 +395,7 @@ export default {
       if (!this.scroller) {
         return
       }
+      this.isEndReachingStart = false
       this.isEndReaching = false
       this.reflowScroller()
     },
