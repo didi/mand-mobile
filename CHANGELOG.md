@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.1.2
+
+`2019-02-25`
+
+- Fix
+  - 修复`ScrollView`在内容不满一屏是无法触发到底的问题[#335](https://github.com/didi/mand-mobile/issues/335)
+  - 修复`InputItem`标题浮动时换行的问题
+
 ### 2.1.1
 
 `2019-02-23`
