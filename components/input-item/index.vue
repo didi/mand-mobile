@@ -257,6 +257,8 @@ export default {
       let inputType = this.type || 'text'
       if (inputType === 'bankCard' || inputType === 'phone' || inputType === 'digit') {
         inputType = 'tel'
+      } else if (inputType === 'money') {
+        inputType = 'text'
       }
       return inputType
     },
