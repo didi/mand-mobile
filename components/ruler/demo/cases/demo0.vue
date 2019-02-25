@@ -26,6 +26,11 @@ export default {
       scope: [1000, 2000],
     }
   },
+  mounted() {
+    setTimeout(() => {
+      this.value = 1500
+    })
+  },
 }
 </script>
 

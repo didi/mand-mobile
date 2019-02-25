@@ -58,11 +58,12 @@ export default {
       scroller: null,
       ratio: 2,
 
+      isInitialed: false,
       isDragging: false,
 
       x: 0,
       scrollingX: 0,
-      blank: 20, // unit blank
+      blank: 30, // unit blank
 
       dragMousePos: 0,
       lastMovingLength: 0,
@@ -107,6 +108,13 @@ export default {
     },
   },
 
+  watch: {
+    value() {
+      this.$_initX()
+      this.$_redressX()
+    },
+  },
+
   mounted() {
     const {$refs} = this
 
@@ -127,7 +135,7 @@ export default {
       canvas.height = clientHeight * ratio
 
       const scale = 1 / ratio
-      ctx.scale(scale, scale)
+      ctx.scale(scale, 1)
     },
 
     $_initScroller() {
@@ -135,13 +143,13 @@ export default {
 
       const scroller = new Scroller(
         left => {
-          this.$_draw(left)
+          this.isInitialed && this.$_draw(left)
         },
         {
           scrollingX: true,
           scrollingY: false,
-          bouncing: this.bouncing,
-          zooming: false,
+          snapping: true,
+          snappingVelocity: 1,
           animationDuration: 200,
           inRequestAnimationFrame: true,
           scrollingComplete: () => {
@@ -153,7 +161,9 @@ export default {
       // set real scroll width
       const innerWidth = unitCount * blank + canvasWidth - blankLeft - blankRight
       const x = this.$_initX()
+      this.$_draw(x)
       scroller.setDimensions(canvasWidth, clientHeight, innerWidth, clientHeight)
+      scroller.setSnapSize(blank, 0)
       scroller.scrollTo(x, 0, false)
 
       this.scroller = scroller
@@ -176,18 +186,16 @@ export default {
     },
 
     $_redressX() {
-      if (!this.isInitialed) {
-        return
-      }
       const {x, value, scope, unit, blank, canvasWidth, scrollingX} = this
       const [min] = scope
-      const range = Math.floor((value - min) / unit) * blank
+      const range = Math.round((value - min) / unit) * blank
 
       const length = canvasWidth - x - range
       this.scroller.scrollTo(scrollingX + length, 0, true)
     },
 
     $_draw(left) {
+      console.log('$_draw')
       left = +left.toFixed(2)
       const {ctx, ratio, scrollingX, canvasWidth, clientHeight} = this
 
@@ -203,16 +211,15 @@ export default {
 
     $_drawLine() {
       const {ctx, x, scope, step, unit, ratio, blank, unitCount} = this
-      const {blankLeft, blankRight, canvasWidth, clientHeight} = this
+      const {blankLeft, blankRight, canvasWidth} = this
       const [scopeLeft] = scope
 
-      const _height = clientHeight * ratio
-      const _y = 104
-      const _fontSize = 38
-
+      const _y = 120
+      const _fontSize = 22
       const _stepUnit = Math.round(step / unit)
 
       ctx.lineWidth = 2
+      ctx.font = `${_fontSize * ratio}px DINPro-Medium`
 
       for (let i = 0; i <= unitCount; i++) {
         const _x = x + i * blank
@@ -238,13 +245,12 @@ export default {
           // draw text
           const text = scopeLeft + unit * i
           const textOffset = String(text).length * _fontSize / 2
-          ctx.font = `${_fontSize * ratio}px DINPro-Medium`
-          ctx.fillText(text, _x - textOffset, _height + 80)
+          ctx.fillText(text, _x - textOffset, _fontSize * ratio)
 
           // draw line
-          ctx.lineTo(_x, 0)
+          ctx.lineTo(_x, _y - 40)
         } else {
-          ctx.lineTo(_x, _y - 52)
+          ctx.lineTo(_x, _y - 20)
         }
         ctx.stroke()
       }
@@ -269,6 +275,7 @@ export default {
       this.scroller.doTouchStart(event.touches, event.timeStamp)
 
       this.isDragging = true
+      this.isDrawFinish = false
 
       window.addEventListener('mousemove', this.$_onDrag)
       window.addEventListener('touchmove', this.$_onDrag)
@@ -313,7 +320,6 @@ export default {
     // MARK: events handler, 如 $_onButtonClick
     $_onInput(value) {
       this.$emit('input', value)
-      this.$emit('change', value)
     },
   },
 }
@@ -322,20 +328,21 @@ export default {
 <style lang="stylus">
 .md-ruler
   position relative
-  padding 60px 0 20px
+  padding 36px 0 20px
   width 100%
-  height 176px
+  height 142px
   box-sizing border-box
+  font-family font-family-number
   .md-ruler-canvas
     width 100%
     height 60px
   .md-ruler-cursor
     z-index 10
     position absolute
-    top 24px
+    top 26px
     left 50%
     width 2px
-    height 62px
+    height 70px
     transform translate(-50%)
     background-color #2F86F6
     box-shadow 0 2px 4px #2F86F6
@@ -344,8 +351,8 @@ export default {
     position absolute
     bottom 25px
     left 50%
-    border-bottom 13px solid #2F86F6
-    border-left 13px solid transparent
-    border-right 13px solid transparent
+    border-bottom 10px solid #2F86F6
+    border-left 10px solid transparent
+    border-right 10px solid transparent
     transform translate(-50%)
 </style>
