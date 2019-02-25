@@ -37,11 +37,10 @@
       <slot></slot>
       <div
         v-if="hasMore"
-        :is-end-reaching="isEndReachingStart || isEndReaching"
         :class="{active: isEndReachingStart || isEndReaching}"
         class="scroll-view-more"
       >
-        <slot name="more"></slot>
+        <slot name="more" :is-end-reaching="isEndReachingStart || isEndReaching"></slot>
       </div>
     </div>
     <div class="scroll-view-footer" v-if="$slots.footer">
@@ -192,6 +191,7 @@ export default {
       this.endReachedHandler = debounce(() => {
         this.isEndReaching = true
         this.$emit('endReached')
+        this.$emit('end-reached')
       }, 50)
 
       setTimeout(() => {
