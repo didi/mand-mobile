@@ -28,7 +28,7 @@ Vue.component(InputItem.name, InputItem)
 |type|input type, special type has text formatting|String|`text`|`text`,`bankCard`,`phone`,<br/>`money`,`password`|
 |name|name of input|String|-|one of the event arguments, is used to distinguish multi inputs|
 |v-model|value of input|String|-|-|
-|title|title of input|String|-|support `HtmlFragment` and `slot(name: left)`|
+|title|title of input|String|-|`slot left` as alternative|
 |placeholder|placeholder of input|String|-|-|
 |brief|description|String|-|-|
 |maxlength|maximum number of characters that can be entered|String/Number|-|the maxlength of `phone` type is fixed at 11|
