@@ -103,7 +103,7 @@
                 :class="homeBlockButton.theme"
                 :data-index="3 + homeBlockButtonIndex"
                 :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
-                @click="handlerButtonClick(homeBlockButton.click, `block-button-handler-slots-${homeBlockIndex}`)"
+                @click.stop="handlerButtonClick(homeBlockButton.click, `block-button-handler-slots-${homeBlockIndex}`)"
               >
                 {{ homeBlockButton.text }}
                 <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>
