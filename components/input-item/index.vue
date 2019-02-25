@@ -16,7 +16,7 @@
       size
     ]"
     :title="title"
-    solid
+    :solid="!isTitleLatent"
   >
     <template slot="left">
       <slot name="left"></slot>
