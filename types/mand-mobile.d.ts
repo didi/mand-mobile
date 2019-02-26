@@ -79,8 +79,3 @@ export {
   Dialog,
   ActionSheet
 }
-
-export default {
-  install,
-  version
-}
