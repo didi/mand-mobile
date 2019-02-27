@@ -70,7 +70,7 @@ export function functionToUrl(fn) {
  * generate random id
  */
 export function randomId(prefix = '', length = 8) {
-  return process.env.NODE_ENV !== 'test' ? `${prefix}-${parseInt(Math.pow(Math.random() * 10, length))}` : ''
+  return process.env.NODE_ENV !== 'test' ? `${prefix}-${parseInt(Math.random() * Math.pow(10, length))}` : ''
 }
 
 /**
