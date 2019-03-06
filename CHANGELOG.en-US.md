@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.1.2
+
+`2019-02-25`
+
+- Fix
+  - Fix `ScrollView` is not able to trigger the problem when the content is not full.[#335](https://github.com/didi/mand-mobile/issues/335)
+  - Fixed a problem with the line break when the `InputItem` title floated
+
 ### 2.1.1
 
 `2019-02-23`
