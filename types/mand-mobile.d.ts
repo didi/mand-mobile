@@ -80,7 +80,8 @@ export {
   ActionSheet
 }
 
-export default {
-  install,
-  version
+interface DefExport {
+  install:any,
+  version:any
 }
+export default DefExport;
