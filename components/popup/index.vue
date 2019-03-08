@@ -131,13 +131,11 @@
       this.isPopupShow = true
       this.isAnimation = true
       // popup box enter the animation after popup show
-      this.$nextTick(() => {
-        this.isPopupBoxShow = true
-        /* istanbul ignore if */
-        if (process.env.NODE_ENV === 'testing') {
-          this.$_onPopupTransitionEnd()
-        }
-      })
+      this.isPopupBoxShow = true
+      /* istanbul ignore if */
+      if (process.env.NODE_ENV === 'test') {
+        this.$_onPopupTransitionStart()
+      }
 
       this.preventScroll && this.$_preventScroll(true)
     },
