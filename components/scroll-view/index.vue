@@ -49,7 +49,8 @@
   </div>
 </template>
 
-<script>import {debounce} from '../_util'
+<script>
+import {debounce} from '../_util'
 import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 
@@ -260,6 +261,16 @@ export default {
       }
 
       this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
+
+      const boundaryDistance = 15
+      const scrollLeft = document.documentElement.scrollLeft || window.pageXOffset || document.body.scrollLeft
+      const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+
+      const pX = this.currentX - scrollLeft
+      const pY = this.currentY - scrollTop
+      if (pX > document.documentElement.clientWidth - boundaryDistance || pY > document.documentElement.clientHeight - boundaryDistance || pX < boundaryDistance || pY < boundaryDistance) {
+        this.scroller.doTouchEnd(event.timeStamp)
+      }
     },
     $_onScollerTouchEnd(event) {
       /* istanbul ignore if */
@@ -401,7 +412,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-scroll-view

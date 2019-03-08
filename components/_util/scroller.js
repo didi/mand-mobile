@@ -460,7 +460,7 @@ export default class Scroller {
         const oldLevel = level
 
         // Recompute level based on previous scale and new scale
-        level = level / this.__lastScale * scale
+        level = level / this._lastScale * scale
 
         // Limit level according to configuration
         level = Math.max(Math.min(level, this.options.maxZoom), this.options.minZoom)
@@ -476,7 +476,7 @@ export default class Scroller {
           scrollTop = (currentTouchTopRel + scrollTop) * level / oldLevel - currentTouchTopRel
 
           // Recompute max scroll values
-          this.__computeScrollMax(level)
+          this._computeScrollMax(level)
         }
       }
 
@@ -535,7 +535,7 @@ export default class Scroller {
       positions.push(scrollLeft, scrollTop, timeStamp)
 
       // Sync scroll position
-      this._publish(scrollLeft, scrollTop)
+      this._publish(scrollLeft, scrollTop, level)
 
       // Otherwise figure out whether we are switching into dragging mode now.
     } else {
@@ -752,7 +752,7 @@ export default class Scroller {
 
       // Push values out
       if (this._callback) {
-        this._callback(left, top)
+        this._callback(left, top, zoom)
       }
 
       // Fix max scroll ranges
