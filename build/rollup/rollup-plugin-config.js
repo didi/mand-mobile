@@ -62,7 +62,9 @@ async function vueWarpper() {
   const {
     options,
     plugins,
-  } = await findPostcssConfig({})
+  } = await findPostcssConfig({
+    env: process.env.NODE_ENV
+  })
   return [
     css({
       output: path.resolve(distDir, fileName)

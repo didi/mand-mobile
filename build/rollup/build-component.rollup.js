@@ -42,7 +42,10 @@ function compileVueStylus (content, cb, compiler, filePath) {
       if (err) {
         throw err
       }
-      const {plugins} = await findPostcssConfig()
+      const {plugins} = await findPostcssConfig({
+        env: process.env.NODE_ENV
+      })
+
       postcss(plugins)
         .process(css, {
           from: undefined

@@ -1,5 +1,6 @@
 
 const path = require('path')
+const fs = require('fs')
 const aliasPlugin = require('rollup-plugin-alias')
 const replacePlugin = require('rollup-plugin-replace')
 const jsonPlugin = require('rollup-plugin-json')
@@ -36,10 +37,17 @@ async function vueWarpper() {
   const {
     options,
     plugins,
-  } = await findPostcssConfig({})
+  } = await findPostcssConfig({
+    env: process.env.NODE_ENV
+  })
+
   return [
     css({
-      output: path.resolve(distDir, fileName)
+      output(styles) {
+        setTimeout(function () {
+          fs.writeFileSync(path.resolve(distDir, fileName), styles)
+        }, 0)
+      }
     }),
     vuePlugin({
       css: false,

@@ -1,9 +1,8 @@
 
 // https://github.com/michael-ciniawsky/postcss-load-config
 const browserslist = require('./package.json').browserslist
-module.exports = () => ({
-  plugins: {
-    'postcss-pxtorem': process.env.NODE_ENV !== 'production' ? { rootValue: 100, minPixelValue: 2, propWhiteList: [] } : false,
+module.exports = () => {
+  const plugins = {
     'postcss-url': {url: 'inline'},
     'cssnano': {
       preset: ['default', {
@@ -16,4 +15,12 @@ module.exports = () => ({
     },
     'autoprefixer': { browsers: browserslist }
   }
-})
+
+  if (process.env.NODE_ENV !== 'production' || process.env.BUILD_TYPE === 'example') {
+    plugins['postcss-pxtorem'] = { rootValue: 100, minPixelValue: 2, propWhiteList: [] }
+  }
+
+  return {
+    plugins
+  }
+}
