@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -37,7 +37,7 @@
     "build:mand-mobile-esm": "cross-env NODE_ENV=production BUILD_TYPE=esm node build/rollup/build-mand-mobile.rollup",
     "build:mand-mobile-umd": "cross-env NODE_ENV=production BUILD_TYPE=umd node build/rollup/build-mand-mobile.rollup",
     "build:mand-mobile-variables": "npm run build:variables && cross-env NODE_ENV=production BUILD_TYPE=variables node build/rollup/build-mand-mobile.rollup",
-    "build:components": "cross-env NODE_ENV=production && node build/rollup/build-component.rollup",
+    "build:components": "cross-env NODE_ENV=production node build/rollup/build-component.rollup",
     "build:responsive": "node build/rollup/build-vw-responsive",
     "build:variables": "node build/rollup/build-css-variables",
     "build:analysis": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile --analysis",
