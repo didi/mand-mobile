@@ -21,6 +21,10 @@
 import {render} from '../_util/render'
 import {warn, inBrowser} from '../_util'
 
+// scale of sliding distance & touch duration that triggers page turning
+const PAGING_SCALE = 0.5
+const PAGING_DURATION = 300
+
 export default {
   name: 'md-swiper',
 
@@ -165,7 +169,7 @@ export default {
     $_initScroller() {
       const scroller = new Scroller(
         (left, top) => {
-          render(this.$swiper, left, top, this.useNativeDriver)
+          render(this.$swiper, left, top, 1, this.useNativeDriver)
         },
         {
           scrollingY: this.isVertical,
@@ -568,20 +572,21 @@ export default {
       const itemHeight = dragState.itemHeight
       const index = this.index
       const itemCount = this.rItemCount
+      const isFastDrag = dragDuration < PAGING_DURATION
 
-      if (dragDuration < 300 && dragState.currentLeft === undefined) {
+      if (isFastDrag && dragState.currentLeft === undefined) {
         this.play(this.autoplay)
         return
       }
 
       if (this.isVertical) {
-        if (Math.abs(offsetTop) > itemHeight / 10) {
+        if (Math.abs(offsetTop) > itemHeight * PAGING_SCALE || isFastDrag) {
           towards = offsetTop < 0 ? 'next' : 'prev'
         } else {
           this.$_translate(this.$swiper, -this.dimension * index, true)
         }
       } else {
-        if (Math.abs(offsetLeft) > itemWidth / 10) {
+        if (Math.abs(offsetLeft) > itemWidth * PAGING_SCALE || isFastDrag) {
           towards = offsetLeft < 0 ? 'next' : 'prev'
         } else {
           if (this.isSlide) {
