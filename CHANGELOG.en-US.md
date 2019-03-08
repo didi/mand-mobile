@@ -3,6 +3,11 @@ title: Change Log
 toc: hidden
 ---
 
+### 1.6.9
+`2019-03-08`
+- Fix
+  - `Popup` synchronously operate problem[#341](https://github.com/didi/mand-mobile/issues/341)
+
 ### 1.6.8
 `2019-01-19`
 - Fix

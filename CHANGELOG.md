@@ -3,11 +3,16 @@ title: 更新日志
 toc: hidden
 ---
 
+### 1.6.9
+`2019-03-08`
+- Fix
+  - 修复`Popup`连续调用显示隐藏问题[#341](https://github.com/didi/mand-mobile/issues/341)
+
 ### 1.6.8
 `2019-01-19`
 - Fix
   - 去除`InputItem`内对原生输入框光标位置设置 [#268](https://github.com/didi/mand-mobile/issues/268)
-  
+
 ### 1.6.7
 `2018-12-28`
 - Fix
