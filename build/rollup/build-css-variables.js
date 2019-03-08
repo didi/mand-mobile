@@ -47,7 +47,7 @@ function generateVariablesStyl(variables) {
   let stylContent = '/**\r\n  Automatically generated when running script \'build:variables\'\r\n  Do not edit or delete manually\r\n**/\r\n'
 
   for (const variable in variables) {
-    if (variables.hasOwnProperty(variable)) {
+    if (variables.hasOwnProperty(variable) && variable !== 'support-for-ie') {
       stylContent += `${variable} = var(--${variable})\n`
     }
   }
@@ -60,7 +60,7 @@ try {
   const variablesAll = {}
   files.forEach(file => {
     const variablesJson = getStyleJson(file)
-    
+
     if (!fs.existsSync(outputLibDir)) {
       fs.mkdirSync(outputLibDir)
     }

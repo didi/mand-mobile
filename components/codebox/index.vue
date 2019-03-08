@@ -13,7 +13,7 @@
           v-for="i in num"
           :key="i"
           :class="[
-            'md-codebox-box', 
+            'md-codebox-box',
             (i === code.length + 1) && focused && 'is-active',
             code.charAt(i-1) !== '' && 'is-filled'
           ]"
@@ -264,8 +264,13 @@ export default {
   font-size codebox-font-size
   font-weight normal
   line-height 1.2
-  margin-left (codebox-gutter / 2)
-  margin-right (codebox-gutter / 2)
+  if codebox-gutter is a 'unit'
+    margin-left (codebox-gutter / 2)
+    margin-right (codebox-gutter / 2)
+  else
+    margin-left "calc(%s / 2)" % codebox-gutter
+    margin-right "calc(%s / 2)" % codebox-gutter
+
   border-bottom codebox-border-width solid codebox-border-color
   &:first-child
     margin-left 0
@@ -276,7 +281,10 @@ export default {
 
 .md-codebox-blink
   display block
-  height (codebox-height * 0.8)
+  if tab-height is a 'unit'
+    height (codebox-height * 0.8)
+  else
+    height "calc(%s * 0.8)" % codebox-height
   width 2px
   background-color codebox-blink-color
   animation md-codebox-flash steps(2) 1s infinite
