@@ -21,8 +21,8 @@ const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const stylusCompilerPlugin = require('./rollup-plugin-stylus-compiler')
 const postcss = require('rollup-plugin-postcss')
-const postcssConfig = require('../../postcss.config')
 const svgSpritePlugin = require('./rollup-plugin-svg-sprite')
+const findPostcssConfig = require('postcss-load-config')
 const pkg = require('../../package.json')
 
 // const postcssUrl = require('postcss-url')
@@ -46,7 +46,7 @@ const DEV_OUTPUT_DIR = fs.mkdtempSync(`${tmpDir}${path.sep}`)
 const tmpTestDir = os.tmpdir()
 const TEST_OUTPUT_DIR = fs.mkdtempSync(`${tmpTestDir}${path.sep}`)
 
-function vueWarpper() {
+async function vueWarpper() {
   let distDir = '', fileName = ''
   if (isDev) {
     distDir = DEV_OUTPUT_DIR
@@ -58,6 +58,11 @@ function vueWarpper() {
     distDir = TEST_OUTPUT_DIR
     fileName = 'mand-mobile-test.css'
   }
+
+  const {
+    options,
+    plugins,
+  } = await findPostcssConfig({})
   return [
     css({
       output: path.resolve(distDir, fileName)
@@ -65,7 +70,8 @@ function vueWarpper() {
     vuePlugin({
       css: false,
       style: {
-        postcssPlugins: postcssConfig({env: process.env.NODE_ENV}).plugins,
+        postcssOptions: options,
+        postcssPlugins: plugins,
         preprocessOptions: {
           stylus: {
             use: [stylusMixin, styl => {
@@ -78,7 +84,6 @@ function vueWarpper() {
   ]
 }
 
-const vue = vueWarpper()
 // const css = cssWarpper()
 
 function conditionHelper(condition, plugins) {
@@ -92,7 +97,10 @@ const basicAlias = {
   '@examples/assets/images/bank-zs.svg': resolve('examples/assets/images/bank-zs.svg'),
   '@examples/assets/images/tip-package.svg': resolve('examples/assets/images/tip-package.svg')
 }
-const rollupPlugin = [
+
+const rollupPluginFactory = async () =>  {
+  const vue = await vueWarpper()
+  return [
   // resolve
   ...(conditionHelper(!isDev, [
     aliasPlugin(Object.assign(basicAlias, {
@@ -144,7 +152,11 @@ const rollupPlugin = [
   stylusCompilerPlugin({
     fn: stylusMixin,
   }),
-  postcss(),
+  postcss({
+    config: {
+      path: resolve('postcss.config.js')
+    }
+  }),
   babel(babelrc({
     addModuleOptions: false,
     findRollupPresets: true,
@@ -170,10 +182,10 @@ const rollupPlugin = [
     filesize(),
   ])),
 ]
-
+}
 module.exports = {
   LIB_DIR,
   PROJECT_DIR,
   DEV_OUTPUT_DIR,
-  rollupPlugin,
+  rollupPluginFactory,
 }

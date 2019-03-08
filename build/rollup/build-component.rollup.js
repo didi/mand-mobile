@@ -9,7 +9,8 @@ const babel = bluebird.promisifyAll(require('babel-core'))
 const TARGET_LIB_BASE = 'lib'
 const SRC_BASE = 'components'
 const postcss = require('postcss')
-const autoprefixer = require('autoprefixer')
+const { resultLog } = require('../utils')
+const findPostcssConfig = require('postcss-load-config')
 
 function babelPluginInsertCssImportForVue ({ types: t }) {
   function computedSameDirCssPosition(filePath) {
@@ -37,11 +38,12 @@ function compileVueStylus (content, cb, compiler, filePath) {
     .import(path.join(__dirname, '../../components/_style/mixin/theme.basic.styl'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/vendor'))
     .import(path.join(__dirname, '../../node_modules/nib/lib/nib/gradients'))
-    .render((err, css) => {
+    .render(async (err, css) => {
       if (err) {
         throw err
       }
-      postcss([autoprefixer])
+      const {plugins} = await findPostcssConfig()
+      postcss(plugins)
         .process(css, {
           from: undefined
         })
@@ -147,7 +149,7 @@ function compileJsAndReplace(filePath){
       return fs.writeFileAsync(filePath, code)
     })
     .catch(error => {
-      console.info(`${filePath} build error::error.stack=${error.stack}`)
+      throw error
     })
 }
 
@@ -168,7 +170,7 @@ function compileAndReplaceAllJsFile() {
   const jsFiles = glob.sync(fileGlob)
   return Promise.all(jsFiles.map(compileJsAndReplace))
     .catch(e => {
-      console.info(e)
+      throw e
     })
 }
 
@@ -176,16 +178,23 @@ function compileAndReplaceAllVueFile() {
   const fileGlob = `${TARGET_LIB_BASE}/**/*.vue`
   const jsFiles = glob.sync(fileGlob)
   return Promise.all(jsFiles.map(compileVueAndReplace))
-    .catch(e => {
-      console.info(e)
-    })
+  .catch(e => {
+    throw e
+  })
 }
 
 
 function main() {
   return move('lib')
     .then(() => Promise.all([compileAndReplaceAllJsFile(), compileAndReplaceAllVueFile(), compileGlobalStylus()]))
-    .catch(e => console.info(e))
+    .then(() => {
+      resultLog('success', 'Build **Components** Complete!')
+    })
+    .catch(e => {
+      // eslint-disable-next-line no-console
+      console.error(e)
+      resultLog('error', 'Build **Components** Fail!')
+    })
 }
 
 main()

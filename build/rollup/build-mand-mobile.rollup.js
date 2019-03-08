@@ -4,14 +4,14 @@ const { resultLog } = require('../utils')
 const {
   LIB_DIR,
   PROJECT_DIR,
-  rollupPlugin
+  rollupPluginFactory
 } = require('./rollup-plugin-config')
-const isSpecial = process.env.BUILD_TYPE === 'special'
+// const isSpecial = process.env.BUILD_TYPE === 'special'
 
-const inputOptions = {
+const inputOptions = async () => ({
   input: path.resolve(PROJECT_DIR, 'components/index.js'),
   external: ['vue'],
-  plugins: rollupPlugin,
+  plugins: await rollupPluginFactory(),
   onwarn (warning) {
     // skip certain warnings
     if (warning.code === 'UNUSED_EXTERNAL_IMPORT') {
@@ -22,7 +22,7 @@ const inputOptions = {
       throw new Error(warning.message)
     }
   }
-}
+})
 
 function ouputBundle(bundle) {
   switch (process.env.BUILD_TYPE) {
@@ -47,8 +47,9 @@ function ouputBundle(bundle) {
   }
 }
 
-function build() {
-  return rollup.rollup(inputOptions)
+async function build() {
+  const input = await inputOptions()
+  return rollup.rollup(input)
   .then(bundle => {
     return Promise.all([ouputBundle(bundle)])
   })
