@@ -46,7 +46,7 @@ $ git pull --rebase origin dev
 
 $ git push origin [feature_xxx/fix_xxx]
 
-# Submit pull request, specify the corresponding person review, and submit further modifications based on feedback
+# Submit pull request to dev, specify the corresponding person review, and submit further modifications based on feedback
 
 $ git checkout dev
 $ git pull

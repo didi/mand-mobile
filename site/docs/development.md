@@ -47,7 +47,7 @@ $ git pull --rebase origin dev
 
 $ git push origin [feature_xxx/fix_xxx]
 
-# 提交 PR, 指定相应人员 review, 根据反馈进一步修改提交
+# 提交 PR 至 dev 分支, 指定相应人员 review, 根据反馈进一步修改提交
 
 $ git checkout dev
 $ git pull
