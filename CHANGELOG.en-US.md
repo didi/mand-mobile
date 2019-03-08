@@ -3,6 +3,18 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.1.3
+
+`2019-03-08`
+
+-Feature
+  - Optimize `Swiper` gestures
+
+- Fix
+  - Some build bugs
+  - `ScrollView` move out screen not trigger scroll end action
+  - `Popup` synchronously operate problem[#341](https://github.com/didi/mand-mobile/issues/341)
+
 ### 2.1.2
 
 `2019-02-25`
@@ -17,7 +29,7 @@ toc: hidden
 
 - Fix
   - Fix the problem that `postcss` is not in effect at build time, causing assets such as images in `mand-mobile.css` not to be processed by url inline。
-  
+
 ### 2.1.0
 
 `2019-02-22`

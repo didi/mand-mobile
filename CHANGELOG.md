@@ -3,6 +3,18 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.1.3
+
+`2019-03-08`
+
+-Feature
+  - 优化`Swiper`滚动边界
+
+- Fix
+  - 修复一些构建问题
+  - 修复`ScrollView`手势滚动边界问题
+  - 修复`Popup`连续调用显示隐藏问题[#341](https://github.com/didi/mand-mobile/issues/341)
+
 ### 2.1.2
 
 `2019-02-25`
@@ -17,7 +29,7 @@ toc: hidden
 
 - Fix
   - 修复构建时`postcss`未生效的问题，导致`mand-mobile.css`中图片等资源未被做url inline处理。
-  
+
 ### 2.1.0
 
 `2019-02-22`
