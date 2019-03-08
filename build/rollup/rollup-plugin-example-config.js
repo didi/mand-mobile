@@ -15,13 +15,12 @@ const progress = require('rollup-plugin-progress')
 const fillHtmlPlugin = require('rollup-plugin-template-html')
 const filesize = require('rollup-plugin-filesize')
 const postcss = require('rollup-plugin-postcss')
-const postcssConfig = require('../../postcss.config')
 const common = require('rollup-plugin-commonjs')
 const svgSpritePlugin = require('./rollup-plugin-svg-sprite')
+const findPostcssConfig = require('postcss-load-config')
 const stylusCompilerPlugin = require('./rollup-plugin-stylus-compiler')
 const pkg = require('../../package.json')
 // const postcssUrl = require('postcss-url')
-const px2rem = require('postcss-pxtorem')
 
 const babelrc = require('babelrc-rollup').default
 function resolve(dir) {
@@ -31,9 +30,13 @@ const LIB_DIR = resolve('lib')
 const PROJECT_DIR = resolve('.')
 const EXAMPLE_OUTPUT_DIR = resolve('docs/examples')
 
-function vueWarpper() {
+async function vueWarpper() {
   const distDir = EXAMPLE_OUTPUT_DIR
   const fileName = 'mand-mobile-example.css'
+  const {
+    options,
+    plugins,
+  } = await findPostcssConfig({})
   return [
     css({
       output: path.resolve(distDir, fileName)
@@ -41,10 +44,8 @@ function vueWarpper() {
     vuePlugin({
       css: false,
       style: {
-        postcssPlugins: [
-          ...postcssConfig({env: process.env.NODE_ENV}).plugins,
-          px2rem({ rootValue: 100, minPixelValue: 2, propWhiteList: [] })
-        ],
+        postcssOptions: options,
+        postcssPlugins: plugins,
         preprocessOptions: {
           stylus: {
             use: [stylusMixin, styl => {
@@ -57,11 +58,11 @@ function vueWarpper() {
   ]
 }
 
-const vue = vueWarpper()
 // const css = cssWarpper()
 
-const rollupPlugin = [
-  // resolve
+const rollupPluginFactory = async () =>  {
+  const vue = await vueWarpper()
+  return [  // resolve
   aliasPlugin({
     resolve: ['.js', '.json', '/index.js', '.css', '.vue', '.svg'], // @TODO '/index.js' hack
     'mand-mobile/components': resolve('components'),
@@ -93,7 +94,11 @@ const rollupPlugin = [
   stylusCompilerPlugin({
     fn: stylusMixin,
   }),
-  postcss(),
+  postcss({
+    config: {
+      path: resolve('postcss.config.js')
+    }
+  }),
   babel(babelrc({
     addModuleOptions: false,
     findRollupPresets: true,
@@ -113,11 +118,11 @@ const rollupPlugin = [
   // cli
   progress(),
   filesize(),
-]
+]}
 
 module.exports = {
   LIB_DIR,
   PROJECT_DIR,
   EXAMPLE_OUTPUT_DIR,
-  rollupPlugin,
+  rollupPluginFactory,
 }
