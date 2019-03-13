@@ -69,6 +69,8 @@ export default {
   position relative
   padding 20px 40px 20px 0
   box-sizing border-box
+  display flex
+  align-items center
   .item-icon, .item-image
     position relative
     float left
@@ -80,7 +82,6 @@ export default {
     float left
     margin-left h-gap-sm
     .title
-      line-height 1
       font-size cashier-choose-channel-title-font-size
       color cashier-choose-channel-title-color
       .title-active
@@ -93,10 +94,11 @@ export default {
       color cashier-choose-channel-desc-color
   .item-check-icon
     position absolute
-    top 20px
+    top 50%
     right 0
-    // transform translateY(-50%)
+    transform translateY(-50%)
     .md-icon
+      display flex
       color color-text-placeholder
       &.md-icon-checked
         color cashier-choose-channel-icon-color
