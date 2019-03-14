@@ -17,7 +17,8 @@
   ></i>
 </template>
 
-<script>import loadSprite from './load-spirte'
+<script>
+import loadSprite from './load-spirte'
 import defaultSvg from './default-svg-list'
 
 export default {
@@ -52,7 +53,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-icon
@@ -90,7 +92,7 @@ export default {
     &:before
       position relative
       z-index 2
-  
+
   &.icon-svg
     &.xss
       width icon-size-xxs
