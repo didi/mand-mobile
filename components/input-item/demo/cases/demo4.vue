@@ -23,7 +23,7 @@
         title="自定义键盘"
         placeholder="custom number keyboard"
         is-virtual-keyboard
-        :virtual-keyboard-vm="$refs.myNumberKeyBoard"
+        virtual-keyboard-vm="myNumberKeyBoard"
         clearable
       ></md-input-item>
       <md-number-keyboard type="simple" ref="myNumberKeyBoard"></md-number-keyboard>

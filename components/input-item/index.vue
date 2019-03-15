@@ -206,7 +206,8 @@ export default {
       type: String,
     },
     virtualKeyboardVm: {
-      type: Object,
+      type: [Object, String],
+      default: null,
     },
     isTitleLatent: {
       type: Boolean,
@@ -429,7 +430,15 @@ export default {
       document.removeEventListener('click', this.$_blurFakeInput, false)
     },
     $_initNumberKeyBoard() {
-      const keyboard = this.virtualKeyboardVm || this.$refs['number-keyboard']
+      let keyboard =
+        (typeof this.virtualKeyboardVm === 'object'
+          ? this.virtualKeyboardVm
+          : this.$vnode.context.$refs[this.virtualKeyboardVm]) || this.$refs['number-keyboard']
+
+      if (Array.isArray(keyboard)) {
+        keyboard = keyboard[0]
+      }
+
       keyboard.$on('enter', this.$_onNumberKeyBoardEnter)
       keyboard.$on('delete', this.$_onNumberKeyBoardDelete)
       keyboard.$on('confirm', this.$_onNumberKeyBoardConfirm)

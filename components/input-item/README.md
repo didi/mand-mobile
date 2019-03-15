@@ -47,7 +47,7 @@ Vue.component(InputItem.name, InputItem)
 |is-virtual-keyboard|表单是否使用金融数字键盘控件|Boolean|`false`|-|
 |virtual-keyboard-disorder|金融数字键盘数字键乱序|Boolean|`false`|-|
 |virtual-keyboard-ok-text|金融数字键盘确认键文案|String|`确定`|-|
-|virtual-keyboard-vm|金融数字键盘实例|Object|-|一般用于自定义键盘|
+|virtual-keyboard-vm|金融数字键盘`ref`名称|String|-|一般用于自定义键盘|
 
 #### InputItem Slots
 
