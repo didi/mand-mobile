@@ -13,9 +13,8 @@
     "indices": "node ./build/bin/gen-indices --log"
   },
   "dependencies": {
-    "mand-mobile": "^2.1.4",
+    "mand-mobile": "^2.1.5",
     "v-tooltip": "^2.0.0-rc.31",
-    "vue": "^2.5.2",
     "vue-clipboard2": "^0.1.0",
     "vue-qrcode-component": "^2.1.1",
     "vue-router": "^3.0.1"
@@ -70,9 +69,10 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.8",
+    "vue": "^2.6.9",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.5.2",
+    "vue-template-compiler": "^2.6.9",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
