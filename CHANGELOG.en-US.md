@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.1.5
+
+`2019-03-15`
+
+- Fix
+  - `Swiper` not destroy properly[#338](https://github.com/didi/mand-mobile/issues/338)
+  - `InputItem` support string type `virtual-keyboard-vm` prop[#355](https://github.com/didi/mand-mobile/issues/355)
+
 ### 2.1.4
 
 `2019-03-08`
