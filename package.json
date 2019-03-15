@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
@@ -219,10 +219,6 @@
     "webpackbar": "^2.6.3",
     "word-wrap": "^1.2.3",
     "yargs": "^11.0.0"
-  },
-  "engines": {
-    "node": ">= 8.15.0",
-    "npm": ">= 6.0.0"
   },
   "browserslist": [
     "iOS >= 8",
