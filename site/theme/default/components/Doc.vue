@@ -559,8 +559,12 @@ export default {
     border-top dashed 1px #ebebeb
     pre
       margin-bottom 0
+      padding-bottom 0
       background #fff
       transition all .3s
+      code:after
+        left 5px
+        right auto !important
   .doc-demo-box-toggle
     // display none
     position absolute
