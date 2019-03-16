@@ -11,7 +11,7 @@ const versionRequirements = [
   {
     name: 'node',
     currentVersion: semver.clean(process.version),
-    versionRequirement: packageConfig.engines ? packageConfig.engines : '>= 8.15.0'
+    versionRequirement: packageConfig.engines ? packageConfig.engines.node : '>= 8.15.0'
   }
 ]
 
