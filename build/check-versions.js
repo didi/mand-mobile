@@ -11,7 +11,7 @@ const versionRequirements = [
   {
     name: 'node',
     currentVersion: semver.clean(process.version),
-    versionRequirement: packageConfig.engines.node
+    versionRequirement: packageConfig.engines ? packageConfig.engines : '>= 8.15.0'
   }
 ]
 
@@ -19,7 +19,7 @@ if (shell.which('npm')) {
   versionRequirements.push({
     name: 'npm',
     currentVersion: exec('npm --version'),
-    versionRequirement: packageConfig.engines.npm
+    versionRequirement: packageConfig.engines ? packageConfig.engines.npm : '>= 5.0.0'
   })
 }
 
