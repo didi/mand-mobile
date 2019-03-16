@@ -15,7 +15,7 @@ toc: hidden
 
 `2019-03-08`
 
--Feature
+- Feature
   - Optimize `Swiper` gestures
 
 - Fix

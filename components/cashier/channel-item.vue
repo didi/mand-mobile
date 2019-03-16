@@ -69,13 +69,14 @@ export default {
   position relative
   padding 20px 40px 20px 0
   box-sizing border-box
-  display flex
-  align-items center
+  // display flex
+  // align-items center
   .item-icon, .item-image
     position relative
     float left
     width 32px
     height 32px
+    margin 6px 0
   .item-image img
     block() 
   .item-label

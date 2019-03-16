@@ -3,9 +3,9 @@ title: Development Guide
 ---
 
 ### Environment
-node = 6+
 
-npm = 3+
+* node = 8+
+* npm = 3+
 
 ### Development Process
 
