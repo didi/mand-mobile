@@ -31,9 +31,7 @@ vue invoke mand
 
 ```shell
 npm install mand-mobile --save
-
-# or 
-
+# OR 
 yarn add mand-mobile
 ```
 
