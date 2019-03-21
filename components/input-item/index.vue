@@ -6,8 +6,8 @@
       isTitleLatent ? 'is-title-latent' : '',
       isInputActive ? 'is-active' : '',
       isInputFocus ? 'is-focus' : '',
-      isInputError ? 'is-error' : '',
-      isInputBrief ? 'with-brief' : '',
+      isInputError() ? 'is-error' : '',
+      isInputBrief() && !isInputError() ? 'with-brief' : '',
       isDisabled ? 'is-disabled': '',
       isAmount ? 'is-amount': '',
       clearable ? 'is-clear' : '',
@@ -86,14 +86,14 @@
       <!-- BRIEF/ERROR TIP -->
       <!-- -------------------- -->
       <div
-        v-if="isInputError"
+        v-if="isInputError()"
         class="md-input-item-msg"
       >
         <p v-if="error !== ''" v-text="error"></p>
         <slot name="error" v-else></slot>
       </div>
       <div
-        v-if="isInputBrief"
+        v-if="isInputBrief() && !isInputError()"
         class="md-input-item-brief"
       >
         <p v-if="brief !== ''" v-text="brief"></p>
@@ -279,12 +279,6 @@ export default {
     isInputEmpty() {
       return !this.inputValue.length
     },
-    isInputError() {
-      return this.$slots.error || this.error !== ''
-    },
-    isInputBrief() {
-      return (this.$slots.brief || this.brief !== '') && !this.isInputError
-    },
     isDisabled() {
       return this.rootField.disabled || this.disabled
     },
@@ -316,7 +310,6 @@ export default {
       }
     },
   },
-
   created() {
     this.inputValue = this.$_formateValue(this.$_subValue(this.value + '')).value
   },
@@ -396,6 +389,12 @@ export default {
       }
 
       return formateValue
+    },
+    isInputError() {
+      return this.$slots.error || this.error !== ''
+    },
+    isInputBrief() {
+      return this.$slots.brief || this.brief !== ''
     },
     $_trimValue(val) {
       return trimValue(val, '\\s|,')
