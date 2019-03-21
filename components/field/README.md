@@ -68,7 +68,7 @@ export default {
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
 |title|标题|String|-|-|
-|brief|描述内容|String|-|-|
+|content|描述内容|String|-|-|
 |addon|附加文案|String|-|-|
 |disabled|是否禁用项目|Boolean|false|-|
 |solid|是否固定标题宽度，超出会自动换行|Boolean|false|-|
