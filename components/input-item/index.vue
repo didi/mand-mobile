@@ -7,7 +7,7 @@
       isInputActive ? 'is-active' : '',
       isInputFocus ? 'is-focus' : '',
       isInputError() ? 'is-error' : '',
-      isInputBrief && !isInputError() ? 'with-brief' : '',
+      isInputBrief() && !isInputError() ? 'with-brief' : '',
       isDisabled ? 'is-disabled': '',
       isAmount ? 'is-amount': '',
       clearable ? 'is-clear' : '',
@@ -93,7 +93,7 @@
         <slot name="error" v-else></slot>
       </div>
       <div
-        v-if="isInputBrief && !isInputError()"
+        v-if="isInputBrief() && !isInputError()"
         class="md-input-item-brief"
       >
         <p v-if="brief !== ''" v-text="brief"></p>
@@ -276,9 +276,6 @@ export default {
     isInputEmpty() {
       return !this.inputValue.length
     },
-    isInputBrief() {
-      return this.$slots.brief || this.brief !== ''
-    },
     isDisabled() {
       return this.rootField.disabled || this.disabled
     },
@@ -386,6 +383,12 @@ export default {
 
       return formateValue
     },
+    isInputError() {
+      return this.$slots.error || this.error !== ''
+    },
+    isInputBrief() {
+      return this.$slots.brief || this.brief !== ''
+    },
     $_trimValue(val) {
       return trimValue(val, '\\s|,')
     },
@@ -422,9 +425,6 @@ export default {
       const keyboard = this.$refs['number-keyboard']
       this.inputNumberKeyboard = keyboard
       document.body.appendChild(keyboard.$el)
-    },
-    isInputError() {
-      return this.$slots.error || this.error !== ''
     },
 
     // MARK: events handler
