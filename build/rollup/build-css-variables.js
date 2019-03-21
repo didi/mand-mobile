@@ -23,7 +23,7 @@ function clearComment(content) {
 }
 
 function matchContent(content, obj) {
-  const reg = /([\w-]*)\s*=\s*([\w\s#\-,()."\u4e00-\u9fa5]*)/g
+  const reg = /([\w-]*)\s*=\s*([\w\s#\-,().:/"'\u4e00-\u9fa5]*)/g
   const result = reg.exec(content)
   if (!result) {
     return obj

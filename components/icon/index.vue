@@ -224,6 +224,5 @@ export default {
   font-weight normal
   /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
   /* Version is required */
-  src url("https://manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0.2/iconfont.woff") format('woff'),
-      url("https://manhattan.didistatic.com/static/manhattan/mand-mobile/icon/2.0.2/iconfont.ttf") format("truetype")
+  src icon-font-family
 </style>
