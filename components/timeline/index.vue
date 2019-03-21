@@ -112,7 +112,7 @@ export default {
   },
 
   filters: {
-    shortDateStr: (str) => {
+    shortDateStr: str => {
       return m(str).format('MM-DD');
     }
   },
@@ -373,6 +373,7 @@ export default {
         line-height steps-icon-size
         /*margin 4px 0*/
         align-items stretch
+        z-index 1
         .time-wrapper
           font-size: 13px
           width: 75px
@@ -421,7 +422,7 @@ export default {
 
       .step-node-default-icon
         border: 1px solid steps-color
-        background rgba(234, 234, 234, 0.3)
+        background transparent
         box-sizing border-box
 
     .step-wrapper
@@ -474,7 +475,6 @@ export default {
         left 98px
         margin-top -7px
         margin-bottom -7px
-        z-index -1
         width steps-border-size
         transform translateX(-50%)
         .bar-inner
