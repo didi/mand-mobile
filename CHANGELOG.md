@@ -3,11 +3,19 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.1.6
+
+`2019-03-15`
+
+- Fix
+  - 修复`Swiper`未正确销毁问题[#338](https://github.com/didi/mand-mobile/issues/338)
+  - `InputItem`数字键盘参数支持传递字符串引用名[#355](https://github.com/didi/mand-mobile/issues/355)
+
 ### 2.1.4
 
 `2019-03-08`
 
--Feature
+- Feature
   - 优化`Swiper`滚动边界
 
 - Fix

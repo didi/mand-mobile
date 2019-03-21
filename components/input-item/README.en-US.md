@@ -46,7 +46,7 @@ Vue.component(InputItem.name, InputItem)
 |is-virtual-keyboard|use financial number keyboard control|Boolean|`false`|-|
 |virtual-keyboard-disorder|if number keys of financial number keyboard is out of order|Boolean|`false`|-|
 |virtual-keyboard-ok-text|confirmation key texts of financial number keyboard|String|`confirm`|-|
-|virtual-keyboard-vm|financial number keyboard instance|Object|-|generally used for custom number keyboard|
+|virtual-keyboard-vm|financial number keyboard ref name|String|-|generally used for custom number keyboard|
 
 #### InputItem Slots
 
