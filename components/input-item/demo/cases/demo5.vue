@@ -12,7 +12,6 @@
         type="bankCard"
         title="储蓄卡号"
         v-model="bankCardNo"
-        :key="bankCardKey"
         clearable
         @blur="checkBankCard"
       >
@@ -43,7 +42,6 @@ export default {
   data() {
     return {
       bankCardNo: '',
-      bankCardKey: Date.now(),
       isError: false,
     }
   },
@@ -54,7 +52,6 @@ export default {
       } else {
         this.isError = false
       }
-      this.bankCardKey = Date.now()
     },
     bankCardTip() {
       Dialog.alert({

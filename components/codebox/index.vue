@@ -253,6 +253,7 @@ export default {
       flex 1 1 0%
 
 .md-codebox-box
+  position relative
   flex 0 1 codebox-width
   width codebox-width
   height codebox-height
@@ -271,7 +272,7 @@ export default {
     margin-left "calc(%s / 2)" % codebox-gutter
     margin-right "calc(%s / 2)" % codebox-gutter
 
-  border-bottom codebox-border-width solid codebox-border-color
+  hairline(bottom, color-border-element)
   &:first-child
     margin-left 0
   &:last-child
