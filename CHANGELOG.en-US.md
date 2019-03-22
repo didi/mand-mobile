@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.1.7
+
+`2019-03-22`
+
+- Fix
+  - `InputItem` not update when slots change
+  - `Codebox` bottom border not shown on some devices
+
 ### 2.1.6
 
 `2019-03-15`
