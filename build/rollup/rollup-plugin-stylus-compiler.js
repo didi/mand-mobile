@@ -1,7 +1,7 @@
 const stylus = require('stylus')
 const path = require('path')
 const {createFilter} = require('rollup-pluginutils')
-module.exports = function svgSprite(options = {
+module.exports = function stylusCompiler(options = {
   fn: () => {}
 }) {
   const filter = createFilter( options.include, options.exclude );
