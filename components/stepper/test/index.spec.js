@@ -9,7 +9,7 @@ describe('Stepper Operation', () => {
     wrapper && wrapper.destroy()
   })
 
-  test('stepper method reduce', () => {
+  test('stepper method reduce', done => {
     wrapper = mount(Stepper, {
       propsData: {
         value: 1,
@@ -17,12 +17,21 @@ describe('Stepper Operation', () => {
       },
     })
     wrapper.setProps({value: 2})
-    wrapper.find('.md-stepper-button-reduce').trigger('click')
-    expect(Number(wrapper.vm.currentNum)).toBe(0)
+    wrapper.vm.$nextTick(() => {
+      wrapper.find('.md-stepper-button-reduce').trigger('click')
+      expect(Number(wrapper.vm.currentNum)).toBe(0)
 
-    wrapper.setProps({disabled: true})
-    wrapper.find('.md-stepper-button-reduce').trigger('click')
-    expect(Number(wrapper.vm.currentNum)).toBe(0)
+      wrapper.setProps({disabled: true})
+      wrapper.vm.$nextTick(() => {
+        wrapper.find('.md-stepper-button-reduce').trigger('click')
+        expect(Number(wrapper.vm.currentNum)).toBe(0)
+        done()
+      })
+    })
+
+    // wrapper.setProps({disabled: true})
+    // wrapper.find('.md-stepper-button-reduce').trigger('click')
+    // expect(Number(wrapper.vm.currentNum)).toBe(0)
   })
 
   test('stepper method add', () => {

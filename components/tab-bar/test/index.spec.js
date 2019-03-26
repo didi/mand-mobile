@@ -8,11 +8,12 @@ describe('TabBar', () => {
     wrapper && wrapper.destroy()
   })
 
-  test('switch menu by parent', done => {
+  it('switch menu by parent', done => {
     wrapper = mount(TabBar, {
       propsData: {
         items: [{name: '1', label: '标题一'}, {name: '2', label: '标题二'}, {name: '3', label: '标题三'}],
       },
+      sync: false,
     })
 
     wrapper.setProps({value: '2'})
@@ -22,7 +23,7 @@ describe('TabBar', () => {
     }, 0)
   })
 
-  test('switch menu by click', done => {
+  it('switch menu by click', done => {
     wrapper = mount(TabBar, {
       propsData: {
         items: [
@@ -34,6 +35,7 @@ describe('TabBar', () => {
           {name: '6', label: '标题六'},
         ],
       },
+      sync: false,
     })
 
     expect(
@@ -69,11 +71,12 @@ describe('TabBar', () => {
     }, 200)
   })
 
-  test('click disabled menu', done => {
+  it('click disabled menu', done => {
     wrapper = mount(TabBar, {
       propsData: {
         items: [{name: '1', label: '标题一'}, {name: '2', label: '标题二'}, {name: '3', label: '标题三', disabled: true}],
       },
+      sync: false,
     })
 
     expect(

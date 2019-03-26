@@ -3,9 +3,9 @@ title: Development Guide
 ---
 
 ### Environment
-node = 6+
 
-npm = 3+
+* node = 8+
+* npm = 3+
 
 ### Development Process
 
@@ -46,7 +46,7 @@ $ git pull --rebase origin dev
 
 $ git push origin [feature_xxx/fix_xxx]
 
-# Submit pull request, specify the corresponding person review, and submit further modifications based on feedback
+# Submit pull request to dev, specify the corresponding person review, and submit further modifications based on feedback
 
 $ git checkout dev
 $ git pull

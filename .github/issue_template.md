@@ -11,8 +11,6 @@ It is highly recommended to read 《How to Effectively Report Bug》🔝
 ************************************************************************
  -->
 
-#### **Mand Mobile Version**
-<!-- 项目版本/Required -->
 <!-- 
 亲爱的Mand Mobile用户：
 	您好，在提Issue之前，
@@ -22,8 +20,11 @@ It is highly recommended to read 《How to Effectively Report Bug》🔝
 								              -- Mand Mobile开发者
 -->
 
+#### **Mand Mobile Version**
+<!-- 【重要】项目版本/Required -->
+
 #### **OS Version & Browser Version**
-<!-- 操作系统版本&浏览器版本/Required -->
+<!-- 【重要】操作系统版本&浏览器版本/Required -->
 
 
 
@@ -33,7 +34,7 @@ It is highly recommended to read 《How to Effectively Report Bug》🔝
 
 
 #### **Recurring Links**
-<!-- 复现链接(尽量以CodeSandbox复现) -->
+<!-- 【重要】对于复杂问题请使用复现链接(尽量以CodeSandbox复现) https://codesandbox.io -->
 
 
 

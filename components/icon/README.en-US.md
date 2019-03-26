@@ -3,7 +3,7 @@ title: Icon
 preview: https://didi.github.io/mand-mobile/examples/#/icon
 ---
 
-SVG Icons
+IconFont、SVG Icons
 
 ### Import
 

@@ -83,7 +83,7 @@ exports[`InputItem - Demo Business scenario input 1`] = `
       <div class="md-field-item md-input-item is-solid is-browser left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">金额</label>
           <!---->
-          <div class="md-field-item-control"> <input name="" placeholder="money xx, xxx.xxxx" maxlength="" autocomplete="off" type="money" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-control"> <input name="" placeholder="money xx, xxx.xxxx" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
           <!---->
         </div>
         <!---->
@@ -123,7 +123,7 @@ exports[`InputItem - Demo Floating title input 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item md-input-item is-solid is-title-latent is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-title-latent is-clear is-browser left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">真实姓名</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="投保人姓名" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -134,7 +134,7 @@ exports[`InputItem - Demo Floating title input 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-title-latent is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-title-latent is-clear is-browser left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">身份证号</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="投保人身份证号" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -168,7 +168,7 @@ exports[`InputItem - Demo Large size financial input 1`] = `
         <div class="md-field-item-content">
           <!---->
           <!---->
-          <div class="md-field-item-control"> <input name="" placeholder="最多30万元" maxlength="" autocomplete="off" type="money" value="" class="md-input-item-input"> </div>
+          <div class="md-field-item-control"> <input name="" placeholder="最多30万元" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
           <div class="md-field-item-right">
             <!---->
             <div class="input-operator">全部取出</div>

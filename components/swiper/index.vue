@@ -1,5 +1,16 @@
 <template>
-  <div class="md-swiper" :class="{'md-swiper-vertical': isVertical, 'md-swiper-fade': !isSlide, 'disabled': !isInitial}">
+  <div
+    class="md-swiper"
+    :class="{'md-swiper-vertical': isVertical, 'md-swiper-fade': !isSlide, 'disabled': !isInitial}"
+    @mousedown="$_onDragStart"
+    @mousemove="$_onDragMove"
+    @mouseup="$_onDragEnd"
+    @mouseleave="$_onDragEnd"
+    @touchstart="$_onDragStart"
+    @touchmove="$_onDragMove"
+    @touchend="$_onDragEnd"
+    @touchcancel="$_onDragEnd"
+  >
     <div class="md-swiper-box">
       <div class="md-swiper-container">
         <slot></slot>
@@ -19,7 +30,11 @@
 
 <script>import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
-import {warn, inBrowser} from '../_util'
+import {warn, debounce} from '../_util'
+
+// scale of sliding distance & touch duration that triggers page turning
+const PAGING_SCALE = 0.5
+const PAGING_DURATION = 300
 
 export default {
   name: 'md-swiper',
@@ -84,7 +99,6 @@ export default {
       dragging: false,
       userScrolling: false,
       isInitial: false,
-      hasTouch: inBrowser ? 'ontouchstart' in window : false,
       index: 0,
       fromIndex: 0,
       toIndex: 0,
@@ -133,13 +147,12 @@ export default {
   */
   mounted() {
     this.ready = true
-    this.hasTouch = 'ontouchstart' in window || process.env.NODE_ENV === 'test'
     this.$swiper = this.$el.querySelector('.md-swiper-container')
     this.$swiperBox = this.$el.querySelector('.md-swiper-box')
     this.$nextTick(() => {
       this.$_reInitItems()
       this.$_startPlay()
-      this.$_bindEvents()
+      window.addEventListener('resize', this.$_resize)
     })
   },
   /*
@@ -150,7 +163,12 @@ export default {
   beforeDestroy
   */
   destroyed() {
+    this.ready = false
     this.$_clearTimer()
+    window.removeEventListener('resize', this.$_resize)
+    if (this.__resizeTimeout__) {
+      clearTimeout(this.__resizeTimeout__)
+    }
   },
   /*
   errorCaptured
@@ -158,6 +176,53 @@ export default {
 
   methods: {
     // MARK: private methods
+    $_resize() {
+      // 防止屏幕翻转时，容器的尺寸更改不及时导致异常
+      if (this.__resizeTimeout__) {
+        clearTimeout(this.__resizeTimeout__)
+      }
+      this.__resizeTimeout__ = setTimeout(() => {
+        this.$_reInitItems()
+      }, 300)
+    },
+    $_onDragStart(e) {
+      /**
+       * Consume unfinished transition handler first
+       * Otherwise the offset calculation will be abnormal
+       */
+      this.transitionEndHandler && this.transitionEndHandler()
+
+      if (this.isPrevent) {
+        e.preventDefault()
+      }
+      this.dragging = true
+      this.userScrolling = false
+      this.$_doOnTouchStart(e)
+    },
+    $_onDragMove(e) {
+      if (this.isPrevent) {
+        e.preventDefault()
+      }
+      if (!this.dragging) {
+        return
+      }
+      this.$_doOnTouchMove(e)
+    },
+    $_onDragEnd(e) {
+      if (this.isPrevent) {
+        e.preventDefault()
+      }
+      if (this.userScrolling) {
+        this.dragging = false
+        this.dragState = {}
+        return
+      }
+      if (!this.dragging) {
+        return
+      }
+      this.$_doOnTouchEnd(e)
+      this.dragging = false
+    },
     $_getDimension() {
       this.dimension = this.isVertical ? this.$el.clientHeight : this.$el.clientWidth
     },
@@ -165,7 +230,7 @@ export default {
     $_initScroller() {
       const scroller = new Scroller(
         (left, top) => {
-          render(this.$swiper, left, top, this.useNativeDriver)
+          render(this.$swiper, left, top, 1, this.useNativeDriver)
         },
         {
           scrollingY: this.isVertical,
@@ -302,6 +367,7 @@ export default {
 
     $_startPlay() {
       if (this.autoplay > 0 && this.oItemCount > 1 && this.isLoop) {
+        this.$_clearTimer()
         this.timer = setInterval(() => {
           if (!this.isLoop && this.index >= this.rItemCount - 1) {
             return this.$_clearTimer()
@@ -310,85 +376,6 @@ export default {
             this.next()
           }
         }, this.autoplay)
-      }
-    },
-
-    $_bindEvents() {
-      window.addEventListener('resize', () => {
-        // 防止屏幕翻转时，容器的尺寸更改不及时导致异常
-        setTimeout(() => {
-          this.$_reInitItems()
-        }, 300)
-      })
-
-      // if (!this.isSlide) {
-      //   return
-      // }
-
-      const element = this.$el
-
-      let isTouchEvent
-      const _onTouchStart = event => {
-        /**
-         * Consume unfinished transition handler first
-         * Otherwise the offset calculation will be abnormal
-         */
-        this.transitionEndHandler && this.transitionEndHandler()
-
-        if (event.originalEvent) {
-          event = event.originalEvent
-        }
-        isTouchEvent = event.type === 'touchstart'
-        if (this.isPrevent) {
-          event.preventDefault()
-        }
-        this.dragging = true
-        this.userScrolling = false
-        this.$_doOnTouchStart(event)
-      }
-
-      const _onTouchMove = event => {
-        if (event.originalEvent) {
-          event = event.originalEvent
-        }
-        if (isTouchEvent && event.type === 'mousemove') {
-          return
-        }
-        if (this.isPrevent) {
-          event.preventDefault()
-        }
-        if (!this.dragging) {
-          return
-        }
-        this.$_doOnTouchMove(event)
-      }
-
-      const _onTouchEnd = event => {
-        if (this.isPrevent) {
-          event.preventDefault()
-        }
-        if (this.userScrolling) {
-          this.dragging = false
-          this.dragState = {}
-          return
-        }
-        if (!this.dragging) {
-          return
-        }
-        this.$_doOnTouchEnd(event)
-        this.dragging = false
-      }
-
-      if (!this.hasTouch) {
-        element.addEventListener('mousedown', _onTouchStart)
-        element.addEventListener('mousemove', _onTouchMove)
-        element.addEventListener('mouseup', _onTouchEnd)
-        element.addEventListener('mouseleave', _onTouchEnd)
-      } else {
-        element.addEventListener('touchstart', _onTouchStart)
-        element.addEventListener('touchmove', _onTouchMove)
-        element.addEventListener('touchend', _onTouchEnd)
-        element.addEventListener('touchcancel', _onTouchEnd)
       }
     },
 
@@ -505,9 +492,10 @@ export default {
       this.stop()
 
       const element = this.$el
-      const point = this.hasTouch ? event.touches[0] : event
 
       let dragState = this.dragState
+
+      const point = event.changedTouches ? event.changedTouches[0] : event
 
       dragState.startTime = new Date()
       dragState.startLeft = point.pageX
@@ -521,8 +509,9 @@ export default {
         return
       }
 
-      const point = this.hasTouch ? event.touches[0] : event
       let dragState = this.dragState
+
+      const point = event.changedTouches ? event.changedTouches[0] : event
 
       dragState.currentLeft = point.pageX
       dragState.currentTop = point.pageY
@@ -568,20 +557,21 @@ export default {
       const itemHeight = dragState.itemHeight
       const index = this.index
       const itemCount = this.rItemCount
+      const isFastDrag = dragDuration < PAGING_DURATION
 
-      if (dragDuration < 300 && dragState.currentLeft === undefined) {
+      if (isFastDrag && dragState.currentLeft === undefined) {
         this.play(this.autoplay)
         return
       }
 
       if (this.isVertical) {
-        if (Math.abs(offsetTop) > itemHeight / 10) {
+        if (Math.abs(offsetTop) > itemHeight * PAGING_SCALE || isFastDrag) {
           towards = offsetTop < 0 ? 'next' : 'prev'
         } else {
           this.$_translate(this.$swiper, -this.dimension * index, true)
         }
       } else {
-        if (Math.abs(offsetLeft) > itemWidth / 10) {
+        if (Math.abs(offsetLeft) > itemWidth * PAGING_SCALE || isFastDrag) {
           towards = offsetLeft < 0 ? 'next' : 'prev'
         } else {
           if (this.isSlide) {
@@ -663,7 +653,7 @@ export default {
       })
     },
 
-    swiperItemDestroyed() {
+    swiperItemDestroyed: debounce(function() {
       if (!this.ready) {
         return
       }
@@ -674,7 +664,7 @@ export default {
           this.$_startPlay()
         }
       })
-    },
+    }, 50),
   },
 }
 </script>

@@ -66,6 +66,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | cancelWarning | 点击取消按钮为警示操作 | Boolean | `false` |
 | confirmWarning | 点击确认按钮为警示操作 | Boolean | `false` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
+| onCancel | 点击取消按钮回调函数 | Function | -|
 
 ##### Dialog.alert(props)
 静态方法创建警告模态窗口, 返回Dialog实例
@@ -88,6 +89,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
+| onCancel | 点击取消按钮回调函数 | Function | -|
 
 ##### Dialog.failed(props)
 静态方法创建失败确认模态窗口, 返回Dialog实例
@@ -98,6 +100,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | onConfirm | 点击确认按钮回调函数 | Function | -|
+| onCancel | 点击取消按钮回调函数 | Function | -|
 
 ##### Dialog.closeAll()
 静态方法关闭所有动态创建的全局Dialog

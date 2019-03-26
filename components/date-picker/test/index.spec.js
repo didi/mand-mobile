@@ -19,6 +19,7 @@ describe('DatePicker - Operation', () => {
         defaultDate: date,
         todayText: '今天',
       },
+      sync: false,
     })
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
 
@@ -47,6 +48,7 @@ describe('DatePicker - Operation', () => {
         defaultDate: date,
         maxDate: new Date('2018/9/9'),
       },
+      sync: false,
     })
 
     wrapper.vm.$nextTick(() => {
@@ -64,6 +66,7 @@ describe('DatePicker - Operation', () => {
         defaultDate: date,
         minDate: new Date('2020/9/9'),
       },
+      sync: false,
     })
 
     wrapper.vm.$nextTick(() => {
@@ -81,6 +84,7 @@ describe('DatePicker - Operation', () => {
         customTypes: ['dd', 'hh', 'mm'],
         isTwelveHours: true,
       },
+      sync: false,
     })
 
     wrapper.vm.$nextTick(() => {
@@ -98,6 +102,7 @@ describe('DatePicker - Operation', () => {
       propsData: {
         value: false,
       },
+      sync: false,
     })
     wrapper.setProps({value: true})
     wrapper.vm.$nextTick(() => {
@@ -129,6 +134,7 @@ describe('DatePicker - Operation', () => {
         defaultDate: date,
         maxDate: date,
       },
+      sync: false,
     })
 
     wrapper.vm.$nextTick(() => {

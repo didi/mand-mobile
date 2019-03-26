@@ -35,21 +35,22 @@ export const render = (function(global) {
   const transformProperty = vendorPrefix + 'Transform'
 
   if (helperElem.style[perspectiveProperty] !== undefined) {
-    return function(content, left, top, useNativeDriver = true) {
+    return function(content, left, top, zoom = 1, useNativeDriver = true) {
       if (useNativeDriver) {
-        content.style[transformProperty] = `translate3d(${-left}px,${-top}px,0)`
+        content.style[transformProperty] = `translate3d(${-left}px,${-top}px,0) scale(${zoom})`
       } else {
-        content.style[transformProperty] = `translate(${-left}px,${-top}px)`
+        content.style[transformProperty] = `translate(${-left}px,${-top}px) scale(${zoom})`
       }
     }
   } else if (helperElem.style[transformProperty] !== undefined) {
-    return function(content, left, top) {
-      content.style[transformProperty] = `translate(${-left}px,${-top}px)`
+    return function(content, left, top, zoom = 1) {
+      content.style[transformProperty] = `translate(${-left}px,${-top}px) scale(${zoom})`
     }
   } else {
-    return function(content, left, top) {
+    return function(content, left, top, zoom) {
       content.style.marginLeft = left ? `${-left}px` : ''
       content.style.marginTop = top ? `${-top}px` : ''
+      content.style.zoom = zoom || ''
     }
   }
 })(root)

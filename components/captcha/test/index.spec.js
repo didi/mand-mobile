@@ -119,11 +119,11 @@ describe('Captcha - Operation', () => {
     })
 
     const eventStub = sinon.stub(wrapper.vm, '$emit')
-    wrapper.find('.md-captcha-btn').trigger('click')
-    expect(eventStub.calledWith('send')).toEqual(true)
     setTimeout(() => {
+      wrapper.find('.md-captcha-btn').trigger('click')
+      expect(eventStub.calledWith('send')).toEqual(true)
       done()
-    }, 2000)
+    }, 2500)
   })
 
   it('not countdown', () => {

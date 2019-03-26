@@ -6,8 +6,8 @@
       isTitleLatent ? 'is-title-latent' : '',
       isInputActive ? 'is-active' : '',
       isInputFocus ? 'is-focus' : '',
-      isInputError ? 'is-error' : '',
-      isInputBrief ? 'with-brief' : '',
+      isInputError() ? 'is-error' : '',
+      isInputBrief() && !isInputError() ? 'with-brief' : '',
       isDisabled ? 'is-disabled': '',
       isAmount ? 'is-amount': '',
       clearable ? 'is-clear' : '',
@@ -16,7 +16,7 @@
       size
     ]"
     :title="title"
-    solid
+    :solid="!isTitleLatent"
   >
     <template slot="left">
       <slot name="left"></slot>
@@ -86,14 +86,14 @@
       <!-- BRIEF/ERROR TIP -->
       <!-- -------------------- -->
       <div
-        v-if="isInputError"
+        v-if="isInputError()"
         class="md-input-item-msg"
       >
         <p v-if="error !== ''" v-text="error"></p>
         <slot name="error" v-else></slot>
       </div>
       <div
-        v-if="isInputBrief"
+        v-if="isInputBrief() && !isInputError()"
         class="md-input-item-brief"
       >
         <p v-if="brief !== ''" v-text="brief"></p>
@@ -206,7 +206,8 @@ export default {
       type: String,
     },
     virtualKeyboardVm: {
-      type: Object,
+      type: [Object, String],
+      default: null,
     },
     isTitleLatent: {
       type: Boolean,
@@ -257,6 +258,8 @@ export default {
       let inputType = this.type || 'text'
       if (inputType === 'bankCard' || inputType === 'phone' || inputType === 'digit') {
         inputType = 'tel'
+      } else if (inputType === 'money') {
+        inputType = 'text'
       }
       return inputType
     },
@@ -275,12 +278,6 @@ export default {
     },
     isInputEmpty() {
       return !this.inputValue.length
-    },
-    isInputError() {
-      return this.$slots.error || this.error !== ''
-    },
-    isInputBrief() {
-      return (this.$slots.brief || this.brief !== '') && !this.isInputError
     },
     isDisabled() {
       return this.rootField.disabled || this.disabled
@@ -313,7 +310,6 @@ export default {
       }
     },
   },
-
   created() {
     this.inputValue = this.$_formateValue(this.$_subValue(this.value + '')).value
   },
@@ -394,6 +390,12 @@ export default {
 
       return formateValue
     },
+    isInputError() {
+      return this.$slots.error || this.error !== ''
+    },
+    isInputBrief() {
+      return this.$slots.brief || this.brief !== ''
+    },
     $_trimValue(val) {
       return trimValue(val, '\\s|,')
     },
@@ -412,9 +414,9 @@ export default {
     $_focusFakeInput() {
       this.isInputFocus = true
 
-      this.$nextTick(() => {
+      setTimeout(() => {
         this.$_addBlurListener()
-      })
+      }, 0)
     },
     $_blurFakeInput() {
       this.isInputFocus = false
@@ -427,7 +429,15 @@ export default {
       document.removeEventListener('click', this.$_blurFakeInput, false)
     },
     $_initNumberKeyBoard() {
-      const keyboard = this.virtualKeyboardVm || this.$refs['number-keyboard']
+      let keyboard =
+        (typeof this.virtualKeyboardVm === 'object'
+          ? this.virtualKeyboardVm
+          : this.$vnode.context.$refs[this.virtualKeyboardVm]) || this.$refs['number-keyboard']
+
+      if (Array.isArray(keyboard)) {
+        keyboard = keyboard[0]
+      }
+
       keyboard.$on('enter', this.$_onNumberKeyBoardEnter)
       keyboard.$on('delete', this.$_onNumberKeyBoardDelete)
       keyboard.$on('confirm', this.$_onNumberKeyBoardConfirm)
@@ -674,7 +684,7 @@ export default {
     .md-input-item-input::-webkit-input-placeholder
         font-size 60px
         line-height 100px
-      
+
   &.is-error
     .md-field-item-content
       hairline(bottom, input-item-color-error, 0, 4px)

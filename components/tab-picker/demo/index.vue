@@ -17,7 +17,3 @@ export default {
   ...createDemoModule('tab-bar', [Demo0]),
 }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>

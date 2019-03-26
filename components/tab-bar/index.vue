@@ -288,8 +288,12 @@ export default {
     left -14px
     top 50%
     width 14px
-    margin-top 0 - tab-height * 0.4
-    height tab-height * 0.8
+    if tab-height is a 'unit'
+      margin-top 0 - tab-height * 0.4
+      height tab-height * 0.8
+    else
+      margin-top "calc(0 - %s * 0.4)" % tab-height
+      height "calc(%s * 0.8)" % tab-height
     border-radius 50%
     box-shadow: -1px 0 12px 0 rgba(0,0,0,0.2)
 .md-tab-bar-end

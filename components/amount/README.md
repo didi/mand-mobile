@@ -13,6 +13,10 @@ import { Amount } from 'mand-mobile'
 Vue.component(Amount.name, Amount)
 ```
 
+### 提示
+
+组件中使用字体`DINPro-Medium`仅用于案例展示，如有必要可重置`.md-amount`的`font-family`
+
 ### 代码演示
 <!-- DEMO -->
 

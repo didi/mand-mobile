@@ -128,4 +128,41 @@ describe('InputItem - Operation', () => {
 
     input.trigger('click')
   })
+
+  test('should show error slot', async () => {
+    wrapper = mount({
+      template: `
+        <md-input-item
+          type="bankCard"
+          title="label">
+          <p
+            v-if="isError"
+            class="error"
+            slot="error">
+            errorMsg
+          </p>
+        </md-input-item>
+      `,
+      components: {
+        [InputItem.name]: InputItem,
+      },
+      data() {
+        return {
+          isError: false,
+        }
+      },
+    })
+
+    expect(wrapper.contains('.md-input-item-msg')).toBe(false)
+    wrapper.vm.isError = true
+    await wrapper.vm.$nextTick(() => {
+      expect(wrapper.contains('.md-input-item-msg')).toBe(true)
+      expect(wrapper.find('.md-input-item-msg').text()).toBe('errorMsg')
+    })
+
+    wrapper.vm.isError = false
+    await wrapper.vm.$nextTick(() => {
+      expect(wrapper.contains('.md-input-item-msg')).toBe(false)
+    })
+  })
 })

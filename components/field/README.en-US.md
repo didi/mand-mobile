@@ -69,7 +69,7 @@ footer content slot
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |title|title|String|-|-|
-|brief|description|String|-|-|
+|content|description|String|-|-|
 |addon|help info text|String|-|-|
 |disabled|disable item operation|Boolean|false|-|
 |arrow|arrow indicator|Boolean|false|-|

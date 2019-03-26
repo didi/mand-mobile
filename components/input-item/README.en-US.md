@@ -28,7 +28,7 @@ Vue.component(InputItem.name, InputItem)
 |type|input type, special type has text formatting|String|`text`|`text`,`bankCard`,`phone`,<br/>`money`,`password`|
 |name|name of input|String|-|one of the event arguments, is used to distinguish multi inputs|
 |v-model|value of input|String|-|-|
-|title|title of input|String|-|support `HtmlFragment` and `slot(name: left)`|
+|title|title of input|String|-|`slot left` as alternative|
 |placeholder|placeholder of input|String|-|-|
 |brief|description|String|-|-|
 |maxlength|maximum number of characters that can be entered|String/Number|-|the maxlength of `phone` type is fixed at 11|
@@ -46,7 +46,7 @@ Vue.component(InputItem.name, InputItem)
 |is-virtual-keyboard|use financial number keyboard control|Boolean|`false`|-|
 |virtual-keyboard-disorder|if number keys of financial number keyboard is out of order|Boolean|`false`|-|
 |virtual-keyboard-ok-text|confirmation key texts of financial number keyboard|String|`confirm`|-|
-|virtual-keyboard-vm|financial number keyboard instance|Object|-|generally used for custom number keyboard|
+|virtual-keyboard-vm|financial number keyboard ref name|String|-|generally used for custom number keyboard|
 
 #### InputItem Slots
 

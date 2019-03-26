@@ -70,7 +70,7 @@ export function functionToUrl(fn) {
  * generate random id
  */
 export function randomId(prefix = '', length = 8) {
-  return process.env.NODE_ENV !== 'test' ? `${prefix}-${parseInt(Math.pow(Math.random() * 10, length))}` : ''
+  return process.env.NODE_ENV !== 'test' ? `${prefix}-${parseInt(Math.random() * Math.pow(10, length))}` : ''
 }
 
 /**
@@ -84,9 +84,9 @@ export function transformCamelCase(str) {
 }
 
 /**
- * Creates a throttled function that only invokes fn at most once per every interval milliseconds
+ * Creates a debounced function that delays invoking fn until after delay milliseconds
  */
-export function debouce(fn = noop, delay = 300) {
+export function debounce(fn = noop, delay = 300) {
   let timer = null
 
   return function() {
@@ -99,5 +99,22 @@ export function debouce(fn = noop, delay = 300) {
     timer = setTimeout(function() {
       fn.apply(context, arguments)
     }, delay)
+  }
+}
+
+/**
+ * Creates a throttled function that only invokes fn at most once per every interval milliseconds
+ */
+export function throttle(fn = noop, interval = 300) {
+  let last = 0
+
+  return function() {
+    let context = this
+    const now = Date.now()
+
+    if (now - last > interval) {
+      last = now
+      fn.apply(context, arguments)
+    }
   }
 }

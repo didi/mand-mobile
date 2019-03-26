@@ -67,6 +67,7 @@ Dynamically create a confirmation dialog
 | cancelWarning | clicking the Cancel button is a warning action | Boolean | `false` |
 | confirmWarning | clicking the Confirm button is a warning action | Boolean | `false` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
+| onCancel | callback function is invoked when clicking cancellation button | Function | -|
 
 ##### Dialog.alert(props)
 Dynamically create an alert dialog
@@ -89,6 +90,7 @@ Dynamically create a success dialog
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
+| onCancel | callback function is invoked when clicking cancellation button | Function | -|
 
 ##### Dialog.failed(props)
 Dynamically create a fail dialog
@@ -99,6 +101,7 @@ Dynamically create a fail dialog
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
+| onCancel | callback function is invoked when clicking cancellation button | Function | -|
 
 ##### Dialog.closeAll()
 Close all global dialogs

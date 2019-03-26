@@ -18,7 +18,3 @@ import Demo3 from './cases/demo3'
 
 export default {...createDemoModule('switch', [Demo0, Demo1, Demo2, Demo3])}
 </script>
-
-<style lang="stylus" scoped>
-
-</style>
