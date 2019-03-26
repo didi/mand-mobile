@@ -16,25 +16,20 @@
       >
         <div class="time-wrapper">
           <slot
-            v-if="$scopedSlots.time"
+            v-if="$scopedSlots.timeFlag"
             name="content"
             :index="index"
             :step="step"
           />
           <template v-else>
             <div class="name">
-              <template v-if="shortInactiveSteps && index !== Math.floor(currentLength)">
-                {{ step.time | shortDateStr }}
-              </template>
-              <template v-else>
-                {{ step.time }}
-              </template>
+              {{ step.timeFlag }}
             </div>
             <div
-              v-if="step.timeDesc"
+              v-if="step.timeFlagDesc"
               class="desc"
             >
-              {{ step.timeDesc }}
+              {{ step.timeFlagDesc }}
             </div>
           </template>
         </div>
@@ -65,20 +60,20 @@
         </div>
         <div class="text-wrapper">
           <slot
-            v-if="$scopedSlots.content"
+            v-if="$scopedSlots.timeFlagMsg"
             name="content"
             :index="index"
             :step="step"
           />
           <template v-else>
             <div class="name">
-              {{ step.name }}
+              {{ step.timeFlagMsg }}
             </div>
             <div
-              v-if="step.text"
+              v-if="step.timeFlagMsgDesc"
               class="desc"
             >
-              {{ step.text }}
+              {{ step.timeFlagMsgDesc }}
             </div>
           </template>
         </div>
@@ -100,232 +95,233 @@
 </template>
 
 <script>
-import m from 'dayjs';
-import Icon from '../icon/index.vue';
-import {toArray} from '../_util/index.js';
+  import MdIcon from '../icon';
+  import {toArray} from '../_util';
 
-export default {
-  name: 'MdTimeline',
+  export default {
+    name: 'MdTimeline',
 
-  components: {
-    [Icon.name]: Icon
-  },
-
-  filters: {
-    shortDateStr: str => {
-      return m(str).format('MM-DD');
-    }
-  },
-
-  props: {
-    type: {
-      type: String,
-      default: ''
+    components: {
+      [MdIcon.name]: MdIcon
     },
-    steps: {
-      type: Array,
-      default() {
-        /* istanbul ignore next */
-        return [];
+
+    props: {
+      type: {
+        type: String,
+        default: ''
+      },
+      steps: {
+        type: Array,
+        default() {
+          /* istanbul ignore next */
+          return [];
+        }
+      },
+      step: {
+        type: Number,
+        default: -1
+      },
+      direction: {
+        type: String,
+        default: 'horizontal'
+      },
+      transition: {
+        type: Boolean,
+        default: false
+      },
+      verticalAdaptive: {
+        type: Boolean,
+        default: false
+      },
+      shortInactiveSteps: {
+        type: Boolean,
+        default: true
       }
     },
-    current: {
-      type: Number,
-      default: 0,
-      validator(val) {
-        return val >= 0;
-      }
-    },
-    direction: {
-      type: String,
-      default: 'horizontal'
-    },
-    transition: {
-      type: Boolean,
-      default: false
-    },
-    verticalAdaptive: {
-      type: Boolean,
-      default: false
-    },
-    shortInactiveSteps: {
-      type: Boolean,
-      default: true
-    }
-  },
 
-  data() {
-    return {
-      initialed: false,
-      progress: [],
-      stepsSize: [],
-      currentLength: 0,
-      duration: 0.3,
-      timer: null
-    };
-  },
-
-  computed: {
-    $_barInnerStyle() {
-      return index => {
-        const {progress} = this;
-        const transform
-            = this.direction === 'horizontal'
-              ? `(${(progress[index].len - 1) * 100}%, 0, 0)`
-              : `(0, ${(progress[index].len - 1) * 100}%, 0)`;
-        return {
-          transform: `translate3d${transform}`,
-          transition: `all ${progress[index].time}s linear`
-        };
+    data() {
+      return {
+        initialed: false,
+        progress: [],
+        stepsSize: [],
+        currentLength: 0,
+        duration: 0.3,
+        timer: null
       };
-    }
-  },
-
-  watch: {
-    current(val, oldVal) {
-      const currentStep = this.$_formatValue(val);
-      const newProgress = this.$_sliceProgress(currentStep);
-      if (this.transition) {
-        const isAdd = currentStep >= oldVal;
-        this.timer && clearTimeout(this.timer);
-        this.timer = setTimeout(() => {
-          this.$_doTransition(newProgress, isAdd, len => {
-            if ((isAdd && len > this.currentLength) || (!isAdd && len < this.currentLength)) {
-              this.currentLength = len;
-            }
-          });
-        }, 100);
-      }
-      else {
-        this.progress = newProgress;
-        this.currentLength = currentStep;
-      }
-    }
-  },
-
-  created() {
-    const currentStep = this.$_formatValue(this.current);
-    this.currentLength = currentStep;
-    this.progress = this.$_sliceProgress(currentStep);
-  },
-  mounted() {
-    this.$_initStepSize();
-  },
-  updated() {
-    this.$nextTick(() => {
-      this.$_initStepSize();
-    });
-  },
-
-  methods: {
-    // MARK: private methods
-    $_initStepSize() {
-      if (this.direction !== 'vertical' || this.verticalAdaptive) {
-        return;
-      }
-      const iconWrappers = this.$el.querySelectorAll('.icon-wrapper');
-      const textWrappers = this.$el.querySelectorAll('.text-wrapper');
-      const stepsSize = toArray(textWrappers).map((wrapper, index) => {
-        let stepHeight = wrapper.clientHeight;
-        const iconHeight = iconWrappers[index].clientHeight;
-        if (index === textWrappers.length - 1) {
-          // The last step needs to subtract floated height
-          stepHeight -= iconHeight;
-        }
-        else {
-          // Add spacing between steps to prevent distance too close
-          stepHeight += 16;
-        }
-        return stepHeight > 0 ? stepHeight : 0;
-      });
-
-      if (stepsSize.toString() !== this.stepsSize.toString()) {
-        this.stepsSize = stepsSize;
-      }
     },
-    $_getStepSizeForStyle(index) {
-      const size = this.direction === 'vertical' && !this.verticalAdaptive ? this.stepsSize[index] : 0;
-      return size
-        ? {
-          height: `${size}px`
-        }
-        : null;
-    },
-    $_getStepStatusClass(index) {
-      const currentLength = this.currentLength;
 
-      let status = [];
-
-      if (index < currentLength) {
-        status.push('reached');
-      }
-
-      if (index === Math.floor(currentLength)) {
-        status.push('current');
-      }
-
-      return status.join(' ');
-    },
-    $_formatValue(val) {
-      if (val < 0) {
-        return 0;
-      }
-      else if (val > this.steps.length - 1) {
-        return this.steps.length - 1;
-      }
-      return val;
-
-    },
-    $_sliceProgress(current) {
-      return this.steps.slice(0, this.steps.length - 1).map((step, index) => {
-        const offset = current - index;
-        const progress = this.progress[index];
-        const isNewProgress = progress === undefined;
-        let len;
-        let time;
-        if (offset <= 0) {
-          len = 0;
-        }
-        else if (offset >= 1) {
-          len = 1;
-        }
-        else {
-          len = offset;
-        }
-        time = (isNewProgress ? len : Math.abs(progress.len - len)) * this.duration;
-        return {
-          len,
-          time
+    computed: {
+      $_barInnerStyle() {
+        return index => {
+          const {progress} = this;
+          const transform
+            = this.direction === 'horizontal'
+            ? `(${(progress[index].len - 1) * 100}%, 0, 0)`
+            : `(0, ${(progress[index].len - 1) * 100}%, 0)`;
+          return {
+            transform: `translate3d${transform}`,
+            transition: `all ${progress[index].time}s linear`
+          };
         };
+      },
+      current() {
+        if (this.step !== -1) {
+          return this.step;
+        }
+        const current = this.steps.findIndex(item => (item.SysNo === '1'));
+        return current === -1 ? 0 : current;
+      }
+    },
+    watch: {
+      current(val, oldVal) {
+        const currentStep = this.$_formatValue(val);
+        const newProgress = this.$_sliceProgress(currentStep);
+        if (this.transition) {
+          const isAdd = currentStep >= oldVal;
+          this.timer && clearTimeout(this.timer);
+          this.timer = setTimeout(() => {
+            this.$_doTransition(newProgress, isAdd, len => {
+              if ((isAdd && len > this.currentLength) || (!isAdd && len < this.currentLength)) {
+                this.currentLength = len;
+              }
+            });
+          }, 100);
+        }
+        else {
+          this.progress = newProgress;
+          this.currentLength = currentStep;
+        }
+      }
+    },
+
+    created() {
+      const currentStep = this.$_formatValue(this.current);
+      this.currentLength = currentStep;
+      this.progress = this.$_sliceProgress(currentStep);
+    },
+    mounted() {
+      this.$_initStepSize();
+    },
+    updated() {
+      this.$nextTick(() => {
+        this.$_initStepSize();
       });
     },
-    $_doTransition(progress, isAdd, step) {
-      let currentLength = isAdd ? 0 : this.currentLength;
-      const walk = index => {
-        if ((index < progress.length) & (index > -1) && progress[index]) {
-          if (isAdd) {
-            currentLength += progress[index].len;
+
+    methods: {
+      // MARK: private methods
+      $_initStepSize() {
+        if (this.direction !== 'vertical' || this.verticalAdaptive) {
+          return;
+        }
+        const iconWrappers = this.$el.querySelectorAll('.icon-wrapper');
+        const textWrappers = this.$el.querySelectorAll('.text-wrapper');
+        const stepsSize = toArray(textWrappers).map((wrapper, index) => {
+          let stepHeight = wrapper.clientHeight || 22;
+          const iconHeight = iconWrappers[index].clientHeight || 22;
+          if (index === textWrappers.length - 1) {
+            // The last step needs to subtract floated height
+            stepHeight -= iconHeight;
           }
           else {
-            currentLength -= this.progress[index].len - progress[index].len;
+            // Add spacing between steps to prevent distance too close
+            stepHeight += 16;
           }
+          return stepHeight > 0 ? stepHeight : 0;
+        });
 
-          setTimeout(() => {
-            index += isAdd ? 1 : -1;
-            step(currentLength);
-            walk(index);
-          }, progress[index].time * 1000);
+        if (stepsSize.toString() !== this.stepsSize.toString()) {
+          this.stepsSize = stepsSize;
         }
-        this.$set(this.progress, index, progress[index]);
-      };
-      walk(isAdd ? 0 : progress.length - 1);
+      },
+      $_getStepSizeForStyle(index) {
+        const size = this.direction === 'vertical' && !this.verticalAdaptive ? this.stepsSize[index] : 0;
+        return size
+          ? {
+            height: `${size}px`
+          }
+          : null;
+      },
+      $_getStepStatusClass(index) {
+        const currentLength = this.currentLength;
+
+        let status = [];
+
+        if (index < currentLength) {
+          status.push('reached');
+        }
+
+        if (index === Math.floor(currentLength)) {
+          status.push('current');
+        }
+
+        return status.join(' ');
+      },
+      $_formatValue(val) {
+        if (val < 0) {
+          return 0;
+        }
+        else if (val > this.steps.length - 1) {
+          return this.steps.length - 1;
+        }
+        return val;
+
+      },
+      $_sliceProgress(current) {
+        return this.steps.slice(0, this.steps.length - 1).map((step, index) => {
+          const offset = current - index;
+          const progress = this.progress[index];
+          const isNewProgress = progress === undefined;
+          let len;
+          let time;
+          if (offset <= 0) {
+            len = 0;
+          }
+          else if (offset >= 1) {
+            len = 1;
+          }
+          else {
+            len = offset;
+          }
+          time = (isNewProgress ? len : Math.abs(progress.len - len)) * this.duration;
+          return {
+            len,
+            time
+          };
+        });
+      },
+      $_doTransition(progress, isAdd, step) {
+        let currentLength = isAdd ? 0 : this.currentLength;
+        const walk = index => {
+          if ((index < progress.length) & (index > -1) && progress[index]) {
+            if (isAdd) {
+              currentLength += progress[index].len;
+            }
+            else {
+              currentLength -= this.progress[index].len - progress[index].len;
+            }
+
+            setTimeout(() => {
+              index += isAdd ? 1 : -1;
+              step(currentLength);
+              walk(index);
+            }, progress[index].time * 1000);
+          }
+          this.$set(this.progress, index, progress[index]);
+        };
+        walk(isAdd ? 0 : progress.length - 1);
+      }
     }
-  }
-};
+  };
 
 </script>
 
 <style lang="stylus">
+  @require "./../_style/mixin/util.styl"
+  @require "./../_style/mixin/theme.components.styl"
+  @require "./../_style/mixin/theme.basic.styl"
+  @require "./../../theme.custom.styl"
+  @require "./../_style/global.styl"
   .md-timeline
     display flex
     justify-content space-around
@@ -364,7 +360,7 @@ export default {
       flex-direction column
       &.vertical-adaptive
         justify-content normal
-        padding 40px 40px 8px
+        padding 0
         .bar.vertical-bar
           flex 1
       .step-wrapper
