@@ -45,21 +45,18 @@ export default {
       type: Number,
       default: 100,
     },
-    bouncing: {
-      type: Boolean,
-      default: true,
-    },
   },
 
   data() {
     return {
-      ctx: null,
+      ctx: null, // canvas
       clientHeight: 60,
       scroller: null,
       ratio: 2,
 
       isInitialed: false,
       isDragging: false,
+      isScrolling: false,
 
       x: 0,
       scrollingX: 0,
@@ -110,8 +107,15 @@ export default {
 
   watch: {
     value() {
-      this.$_initX()
-      this.$_redressX()
+      if (this.isScrolling) {
+        return
+      }
+
+      this.scrollingX = 0
+      this.isScrolling = true
+      const x = this.$_initX()
+      this.$_draw(x)
+      this.scroller.scrollTo(x, 0, true)
     },
   },
 
@@ -153,7 +157,7 @@ export default {
           animationDuration: 200,
           inRequestAnimationFrame: true,
           scrollingComplete: () => {
-            this.$_redressX()
+            this.isScrolling = false
           },
         },
       )
@@ -185,17 +189,7 @@ export default {
       }
     },
 
-    $_redressX() {
-      const {x, value, scope, unit, blank, canvasWidth, scrollingX} = this
-      const [min] = scope
-      const range = Math.round((value - min) / unit) * blank
-
-      const length = canvasWidth - x - range
-      this.scroller.scrollTo(scrollingX + length, 0, true)
-    },
-
     $_draw(left) {
-      console.log('$_draw')
       left = +left.toFixed(2)
       const {ctx, ratio, scrollingX, canvasWidth, clientHeight} = this
 
@@ -275,7 +269,7 @@ export default {
       this.scroller.doTouchStart(event.touches, event.timeStamp)
 
       this.isDragging = true
-      this.isDrawFinish = false
+      this.isScrolling = true
 
       window.addEventListener('mousemove', this.$_onDrag)
       window.addEventListener('touchmove', this.$_onDrag)
@@ -302,6 +296,10 @@ export default {
     },
 
     $_updateValue() {
+      if (!this.isInitialed) {
+        return
+      }
+
       const {x, scope: [min], realMin, realMax, unit, blank, canvasWidth} = this
 
       if (x > canvasWidth) {
@@ -320,6 +318,7 @@ export default {
     // MARK: events handler, 如 $_onButtonClick
     $_onInput(value) {
       this.$emit('input', value)
+      this.$emit('change', value)
     },
   },
 }

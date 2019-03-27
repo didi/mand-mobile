@@ -1,49 +1,34 @@
+---
+title: Ruler
+preview: https://didi.github.io/mand-mobile/examples/#/ruler
+---
 
-[此处填写组件简介xxx]
+Sliding selection
 
 ### Import
 
 ```javascript
-import { SingleComponent } from 'mand-mobile'
+import { Ruler } from 'mand-mobile'
 
-Vue.component(SingleComponent.name, SingleComponent)
+Vue.component(Ruler.name, Ruler)
 ```
-
-### Usage Guide
-
-[此处填写组件使用特殊说明，如使用其他依赖或项目配置，如无可缺省(如缺省删去标题)]
 
 ### Code Examples
 <!-- DEMO -->
 
 ### API
 
-#### [Component] Props
+#### [Ruler] Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|xxx|xxx|String|xxx|xxx|
-|xxx|xxx|Number|xxx|xxx|
-|xxx|xxx|Boolean|xxx|xxx|
-|xxx|xxx|Array<{a, b, c}>|xxx|xxx|
-|xxx|xxx|Object:{a, b, c}|xxx|xxx|
-|xxx|xxx|Function(a: String): void|xxx|xxx|
+|v-model|current value|Number|0|-|
+|scope|ruler scope|Number[]|[0, 100]|-|
+|step|each large distance of the scale|Number|10|-|
+|unit|scale each small distance|Number|1|-|
+|min|minimum|Number|0|-|
+|max|maximum|Number|100|-|
 
-#### [Component] Methods
-方法说明    
+#### [Ruler] Events
 
-|Parameters | Description | Type | Note|
-|----|-----|------|------|
-|xxx|xxx|xxx|xxx|
-
-Return（如有）
-
-|Props | Description | Type|
-|----|-----|------|
-|xxx|xxx|xxx|
-
-#### [Component] Events
-事件说明
-
-|Props | Description | Type|
-|----|-----|------|
-|xxx|xxx|xxx|
+##### @change(currentValue)
+Change value

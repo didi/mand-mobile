@@ -12,10 +12,11 @@
 
 <script>import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
-// import Demo1 from './cases/demo1'
+import Demo1 from './cases/demo1'
+import Demo2 from './cases/demo2'
 
 export default {
-  ...createDemoModule('single-component', [Demo0]),
+  ...createDemoModule('single-component', [Demo0, Demo1, Demo2]),
 }
 </script>
 

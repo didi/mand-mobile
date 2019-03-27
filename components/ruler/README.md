@@ -1,49 +1,34 @@
+---
+title: Ruler 刻度尺
+preview: https://didi.github.io/mand-mobile/examples/#/ruler
+---
 
-[此处填写组件简介xxx]
+滑动选择
 
 ### 引入
 
 ```javascript
-import { SingleComponent } from 'mand-mobile'
+import { Ruler } from 'mand-mobile'
 
-Vue.component(SingleComponent.name, SingleComponent)
+Vue.component(Ruler.name, Ruler)
 ```
-
-### 使用指南
-
-[此处填写组件使用特殊说明，如使用其他依赖或项目配置，如无可缺省(如缺省删去标题)]
 
 ### 代码演示
 <!-- DEMO -->
 
 ### API
 
-#### [Component] Props
+#### [Ruler] Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
-|xxx|xxx|String|xxx|xxx|
-|xxx|xxx|Number|xxx|xxx|
-|xxx|xxx|Boolean|xxx|xxx|
-|xxx|xxx|Array<{a, b, c}>|xxx|xxx|
-|xxx|xxx|Object:{a, b, c}|xxx|xxx|
-|xxx|xxx|Function(a: String): void|xxx|xxx|
+|v-model|双向绑定的值|Number|0|-|
+|scope|刻度尺范围|Number[]|[0, 100]|-|
+|step|刻度尺每一大格步数|Number|10|-|
+|unit|刻度尺每一小格步数|Number|1|-|
+|min|最小可滑动位置|Number|0|-|
+|max|最大可滑动位置|Number|100|-|
 
-#### [Component] Methods
-方法说明    
+#### [Ruler] Events
 
-|参数 | 说明 | 类型 | 默认值 |
-|----|-----|------|------|
-|xxx|xxx|xxx|xxx|
-
-返回（如有）
-
-|属性 | 说明 | 类型 |
-|----|-----|------|
-|xxx|xxx|xxx|
-
-#### [Component] Events
-事件说明
-
-|属性 | 说明 | 类型 |
-|----|-----|------|
-|xxx|xxx|xxx|
+##### @change(currentValue)
+值发生变化事件
