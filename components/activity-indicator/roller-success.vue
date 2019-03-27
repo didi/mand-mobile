@@ -3,7 +3,7 @@
     <md-activity-indicator-rolling
       :width="strokeWidth"
       :radius="radius"
-      fill="#EFF6FF"
+      fill="#FFF6F1"
       border-color="transparent"
     >
       <template v-if="isSuccess">
