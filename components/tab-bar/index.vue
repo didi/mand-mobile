@@ -49,7 +49,8 @@
   </nav>
 </template>
 
-<script>import ScrollView from '../scroll-view'
+<script>
+import ScrollView from '../scroll-view'
 
 export default {
   name: 'md-tab-bar',
@@ -143,7 +144,7 @@ export default {
   },
 
   created() {
-    if (this.currentName === '' && this.items.length) {
+    if (this.currentName === '' && this.items.length && this.immediate) {
       this.currentName = this.items[0].name
       this.$emit('change', this.items[0], 0, 0)
     }
@@ -225,7 +226,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-tab-bar
