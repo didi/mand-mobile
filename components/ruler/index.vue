@@ -14,6 +14,7 @@
 </template>
 
 <script>import Scroller from '../_util/scroller'
+import {throttle} from '../_util'
 
 export default {
   name: 'md-ruler',
@@ -49,7 +50,6 @@ export default {
 
   data() {
     return {
-      ctx: null, // canvas
       clientHeight: 60,
       scroller: null,
       ratio: 2,
@@ -61,9 +61,6 @@ export default {
       x: 0,
       scrollingX: 0,
       blank: 30, // unit blank
-
-      dragMousePos: 0,
-      lastMovingLength: 0,
     }
   },
 
@@ -122,6 +119,7 @@ export default {
   mounted() {
     const {$refs} = this
 
+    // without watch ctx
     this.ctx = $refs.canvas.getContext('2d')
 
     this.$_initCanvas()
@@ -145,9 +143,10 @@ export default {
     $_initScroller() {
       const {blankLeft, blankRight, blank, unitCount, canvasWidth, clientHeight} = this
 
+      const drawFn = throttle(this.$_draw, 10)
       const scroller = new Scroller(
         left => {
-          this.isInitialed && this.$_draw(left)
+          this.isInitialed && drawFn(left)
         },
         {
           scrollingX: true,
@@ -271,7 +270,6 @@ export default {
       this.isDragging = true
       this.isScrolling = true
 
-      window.addEventListener('mousemove', this.$_onDrag)
       window.addEventListener('touchmove', this.$_onDrag)
     },
 
@@ -291,7 +289,6 @@ export default {
 
       this.scroller.doTouchEnd(event.timeStamp)
 
-      window.removeEventListener('mousemove', this.$_onDrag)
       window.removeEventListener('touchmove', this.$_onDrag)
     },
 
