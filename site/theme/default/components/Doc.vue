@@ -27,187 +27,189 @@
       <template v-if="demos && demos.length">
         <div class="default-doc-demo-container">
           <div class="default-doc-demo-list">
-            <div class="default-doc-demo"
-              v-for="(demo, index) in demos"
-              :key="index">
-              <div class="doc-demo-box"
+            <template v-for="(demo, index) in demos">
+              <div class="default-doc-demo"
                 v-if="index % 2 === 0"
-                :class="[
-                  `doc-demo-box-${index}`,
-                  demoBoxShowStat[index] ? 'active' : ''
-                ]"
-              >
-                <div class="doc-demo-box-info">
-                  <template v-if="lang === 'en-US'">
-                    <h4 class="doc-demo-title"
-                      v-html="demo.component.titleEnUS || demo.component.title || 'Basic'"
-                    ></h4>
-                    <h5 class="doc-demo-describe"
-                      v-if="demo.component.describeEnUS || demo.component.describe"
-                      v-html="demo.component.describeEnUS || demo.component.describe"
-                    ></h5>
-                    <h5 class="doc-demo-message"
-                      v-if="demo.component.messageEnUS || demo.component.message"
-                      v-html="demo.component.messageEnUS || demo.component.message"
-                    ></h5>
-                  </template>
-                  <template v-else>
-                    <h4 class="doc-demo-title" v-html="demo.component.title || '基本'"></h4>
-                    <h5 class="doc-demo-describe" v-if="demo.component.describe" v-html="demo.component.describe"></h5>
-                    <h5 class="doc-demo-message" v-if="demo.component.message" v-html="demo.component.message"></h5>
-                  </template>
-                </div>
-                <div class="doc-demo-box-preview">
-                  <div class="doc-demo-box-preview-box" :style="{minHeight: `${demo.component.height}px`}">
-                    <component :is="demo.component"></component>
-                  </div>
-                </div>
-                <div class="doc-demo-box-code">
-                  <div class="doc-demo-box-code-operate">
-                    <i class="icon-hollowError"
-                      @click="toggleDemoBox(index)"
-                    ></i>
+                :key="index">
+                <div class="doc-demo-box"
+                  :class="[
+                    `doc-demo-box-${index}`,
+                    demoBoxShowStat[index] ? 'active' : ''
+                  ]"
+                >
+                  <div class="doc-demo-box-info">
                     <template v-if="lang === 'en-US'">
-                      <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
-                        v-tooltip="{content: isCopySuccess ? 'Copied' : 'Copy Code', offset: 5}"
-                        v-clipboard:copy="decodeURI(demo.raw)"
-                        v-clipboard:success="onCopySuccess"></i>
-                      <i class="demo-codesandbox"
-                        v-if="demo.component.codeSandBox"
-                        v-tooltip="{content: 'Open in CodeSandBox', offset: 5}">
-                        <a :href="demo.component.codeSandBox" target="_blank"></a>
-                      </i>
-                      <i class="icon-edit"
-                        v-tooltip="{content: 'Edit this page on Github', offset: 5}"
-                        @click="goToDemo(index)"
-                      ></i>
+                      <h4 class="doc-demo-title"
+                        v-html="demo.component.titleEnUS || demo.component.title || 'Basic'"
+                      ></h4>
+                      <h5 class="doc-demo-describe"
+                        v-if="demo.component.describeEnUS || demo.component.describe"
+                        v-html="demo.component.describeEnUS || demo.component.describe"
+                      ></h5>
+                      <h5 class="doc-demo-message"
+                        v-if="demo.component.messageEnUS || demo.component.message"
+                        v-html="demo.component.messageEnUS || demo.component.message"
+                      ></h5>
                     </template>
                     <template v-else>
-                      <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
-                        v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
-                        v-clipboard:copy="decodeURI(demo.raw)"
-                        v-clipboard:success="onCopySuccess"></i>
-                      <i class="demo-codesandbox"
-                        v-if="demo.component.codeSandBox"
-                        v-tooltip="{content: '在CodeSandBox打开', offset: 5}">
-                        <a :href="demo.component.codeSandBox" target="_blank"></a>
-                      </i>
-                      <i class="icon-edit"
-                        v-tooltip="{content: '在Github上编辑此页', offset: 5}"
-                        @click="goToDemo(index)"
-                      ></i>
+                      <h4 class="doc-demo-title" v-html="demo.component.title || '基本'"></h4>
+                      <h5 class="doc-demo-describe" v-if="demo.component.describe" v-html="demo.component.describe"></h5>
+                      <h5 class="doc-demo-message" v-if="demo.component.message" v-html="demo.component.message"></h5>
                     </template>
                   </div>
-                  <pre>
-                    <code class="lang-vue" v-html="demo.code"></code>
-                  </pre>
-                </div>
-                <div class="doc-demo-box-toggle" @click="toggleDemoBox(index)">
-                  <template v-if="demoBoxShowStat[index]">
-                    <i class="icon-triangle-up"></i>
-                    <span v-if="lang === 'en-US'">Hide Code</span>
-                    <span v-else>代码收起</span>
-                  </template>
-                  <template v-else>
-                    <i class="icon-triangle-down"></i>
-                    <span v-if="lang === 'en-US'">Show Code</span>
-                    <span v-else>代码展示</span>
-                  </template>
+                  <div class="doc-demo-box-preview">
+                    <div class="doc-demo-box-preview-box" :style="{minHeight: `${demo.component.height}px`}">
+                      <component :is="demo.component"></component>
+                    </div>
+                  </div>
+                  <div class="doc-demo-box-code">
+                    <div class="doc-demo-box-code-operate">
+                      <i class="icon-hollowError"
+                        @click="toggleDemoBox(index)"
+                      ></i>
+                      <template v-if="lang === 'en-US'">
+                        <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
+                          v-tooltip="{content: isCopySuccess ? 'Copied' : 'Copy Code', offset: 5}"
+                          v-clipboard:copy="decodeURI(demo.raw)"
+                          v-clipboard:success="onCopySuccess"></i>
+                        <i class="demo-codesandbox"
+                          v-if="demo.component.codeSandBox"
+                          v-tooltip="{content: 'Open in CodeSandBox', offset: 5}">
+                          <a :href="demo.component.codeSandBox" target="_blank"></a>
+                        </i>
+                        <i class="icon-edit"
+                          v-tooltip="{content: 'Edit this page on Github', offset: 5}"
+                          @click="goToDemo(index)"
+                        ></i>
+                      </template>
+                      <template v-else>
+                        <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
+                          v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
+                          v-clipboard:copy="decodeURI(demo.raw)"
+                          v-clipboard:success="onCopySuccess"></i>
+                        <i class="demo-codesandbox"
+                          v-if="demo.component.codeSandBox"
+                          v-tooltip="{content: '在CodeSandBox打开', offset: 5}">
+                          <a :href="demo.component.codeSandBox" target="_blank"></a>
+                        </i>
+                        <i class="icon-edit"
+                          v-tooltip="{content: '在Github上编辑此页', offset: 5}"
+                          @click="goToDemo(index)"
+                        ></i>
+                      </template>
+                    </div>
+                    <pre>
+                      <code class="lang-vue" v-html="demo.code"></code>
+                    </pre>
+                  </div>
+                  <div class="doc-demo-box-toggle" @click="toggleDemoBox(index)">
+                    <template v-if="demoBoxShowStat[index]">
+                      <i class="icon-triangle-up"></i>
+                      <span v-if="lang === 'en-US'">Hide Code</span>
+                      <span v-else>代码收起</span>
+                    </template>
+                    <template v-else>
+                      <i class="icon-triangle-down"></i>
+                      <span v-if="lang === 'en-US'">Show Code</span>
+                      <span v-else>代码展示</span>
+                    </template>
+                  </div>
                 </div>
               </div>
-            </div>
+            </template>
           </div>
           <div class="default-doc-demo-list">
-            <div class="default-doc-demo"
-              v-for="(demo, index) in demos"
-              :key="index"
-            >
-              <div class="doc-demo-box"
+            <template v-for="(demo, index) in demos">
+              <div class="default-doc-demo"
                 v-if="index % 2 !== 0"
-                :class="[
-                  `doc-demo-box-${index}`,
-                  demoBoxShowStat[index] ? 'active' : ''
-                ]"
+                :key="index"
               >
-                <div class="doc-demo-box-info">
-                  <template v-if="lang === 'en-US'">
-                    <h4 class="doc-demo-title"
-                      v-html="demo.component.titleEnUS || demo.component.title || 'Basic'"
-                    ></h4>
-                    <h5 class="doc-demo-describe"
-                      v-if="demo.component.describeEnUS || demo.component.describe"
-                      v-html="demo.component.describeEnUS || demo.component.describe"
-                    ></h5>
-                    <h5 class="doc-demo-message"
-                      v-if="demo.component.messageEnUS || demo.component.message"
-                      v-html="demo.component.messageEnUS || demo.component.message"
-                    ></h5>
-                  </template>
-                  <template v-else>
-                    <h4 class="doc-demo-title" v-html="demo.component.title || '基本'"></h4>
-                    <h5 class="doc-demo-describe" v-if="demo.component.describe" v-html="demo.component.describe"></h5>
-                    <h5 class="doc-demo-message" v-if="demo.component.message" v-html="demo.component.message"></h5>
-                  </template>
-                </div>
-                <div class="doc-demo-box-preview">
-                  <div class="doc-demo-box-preview-box" :style="{minHeight: `${demo.component.height}px`}">
-                    <component :is="demo.component"></component>
-                  </div>
-                </div>
-                <div class="doc-demo-box-code">
-                  <div class="doc-demo-box-code-operate">
-                    <i class="icon-hollowError"
-                      @click="toggleDemoBox(index)"
-                    ></i>
+                <div class="doc-demo-box"
+                  :class="[
+                    `doc-demo-box-${index}`,
+                    demoBoxShowStat[index] ? 'active' : ''
+                  ]"
+                >
+                  <div class="doc-demo-box-info">
                     <template v-if="lang === 'en-US'">
-                      <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
-                        v-tooltip="{content: isCopySuccess ? 'Copied' : 'Copy Code', offset: 5}"
-                        v-clipboard:copy="decodeURI(demo.raw)"
-                        v-clipboard:success="onCopySuccess"></i>
-                      <i class="demo-codesandbox"
-                        v-if="demo.component.codeSandBox"
-                        v-tooltip="{content: 'Open in CodeSandBox', offset: 5}">
-                        <a :href="demo.component.codeSandBox" target="_blank"></a>
-                      </i>
-                      <i class="icon-edit"
-                        v-tooltip="{content: 'Edit this page on Github', offset: 5}"
-                        @click="goToDemo(index)"
-                      ></i>
+                      <h4 class="doc-demo-title"
+                        v-html="demo.component.titleEnUS || demo.component.title || 'Basic'"
+                      ></h4>
+                      <h5 class="doc-demo-describe"
+                        v-if="demo.component.describeEnUS || demo.component.describe"
+                        v-html="demo.component.describeEnUS || demo.component.describe"
+                      ></h5>
+                      <h5 class="doc-demo-message"
+                        v-if="demo.component.messageEnUS || demo.component.message"
+                        v-html="demo.component.messageEnUS || demo.component.message"
+                      ></h5>
                     </template>
                     <template v-else>
-                      <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
-                        v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
-                        v-clipboard:copy="decodeURI(demo.raw)"
-                        v-clipboard:success="onCopySuccess"></i>
-                      <i class="demo-codesandbox"
-                        v-if="demo.component.codeSandBox"
-                        v-tooltip="{content: '在CodeSandBox打开', offset: 5}">
-                        <a :href="demo.component.codeSandBox" target="_blank"></a>
-                      </i>
-                      <i class="icon-edit"
-                        v-tooltip="{content: '在Github上编辑此页', offset: 5}"
-                        @click="goToDemo(index)"
-                      ></i>
+                      <h4 class="doc-demo-title" v-html="demo.component.title || '基本'"></h4>
+                      <h5 class="doc-demo-describe" v-if="demo.component.describe" v-html="demo.component.describe"></h5>
+                      <h5 class="doc-demo-message" v-if="demo.component.message" v-html="demo.component.message"></h5>
                     </template>
                   </div>
-                  <pre>
-                    <code class="lang-vue" v-html="demo.code"></code>
-                  </pre>
-                </div>
-                <div class="doc-demo-box-toggle" @click="toggleDemoBox(index)">
-                  <template v-if="demoBoxShowStat[index]">
-                    <i class="icon-triangle-up"></i>
-                    <span v-if="lang === 'en-US'">Hide Code</span>
-                    <span v-else>代码收起</span>
-                  </template>
-                  <template v-else>
-                    <i class="icon-triangle-down"></i>
-                    <span v-if="lang === 'en-US'">Show Code</span>
-                    <span v-else>代码展示</span>
-                  </template>
+                  <div class="doc-demo-box-preview">
+                    <div class="doc-demo-box-preview-box" :style="{minHeight: `${demo.component.height}px`}">
+                      <component :is="demo.component"></component>
+                    </div>
+                  </div>
+                  <div class="doc-demo-box-code">
+                    <div class="doc-demo-box-code-operate">
+                      <i class="icon-hollowError"
+                        @click="toggleDemoBox(index)"
+                      ></i>
+                      <template v-if="lang === 'en-US'">
+                        <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
+                          v-tooltip="{content: isCopySuccess ? 'Copied' : 'Copy Code', offset: 5}"
+                          v-clipboard:copy="decodeURI(demo.raw)"
+                          v-clipboard:success="onCopySuccess"></i>
+                        <i class="demo-codesandbox"
+                          v-if="demo.component.codeSandBox"
+                          v-tooltip="{content: 'Open in CodeSandBox', offset: 5}">
+                          <a :href="demo.component.codeSandBox" target="_blank"></a>
+                        </i>
+                        <i class="icon-edit"
+                          v-tooltip="{content: 'Edit this page on Github', offset: 5}"
+                          @click="goToDemo(index)"
+                        ></i>
+                      </template>
+                      <template v-else>
+                        <i :class="isCopySuccess ? 'icon-question' : 'icon-paper'"
+                          v-tooltip="{content: isCopySuccess ? '复制代码成功' : '复制代码', offset: 5}"
+                          v-clipboard:copy="decodeURI(demo.raw)"
+                          v-clipboard:success="onCopySuccess"></i>
+                        <i class="demo-codesandbox"
+                          v-if="demo.component.codeSandBox"
+                          v-tooltip="{content: '在CodeSandBox打开', offset: 5}">
+                          <a :href="demo.component.codeSandBox" target="_blank"></a>
+                        </i>
+                        <i class="icon-edit"
+                          v-tooltip="{content: '在Github上编辑此页', offset: 5}"
+                          @click="goToDemo(index)"
+                        ></i>
+                      </template>
+                    </div>
+                    <pre>
+                      <code class="lang-vue" v-html="demo.code"></code>
+                    </pre>
+                  </div>
+                  <div class="doc-demo-box-toggle" @click="toggleDemoBox(index)">
+                    <template v-if="demoBoxShowStat[index]">
+                      <i class="icon-triangle-up"></i>
+                      <span v-if="lang === 'en-US'">Hide Code</span>
+                      <span v-else>代码收起</span>
+                    </template>
+                    <template v-else>
+                      <i class="icon-triangle-down"></i>
+                      <span v-if="lang === 'en-US'">Show Code</span>
+                      <span v-else>代码展示</span>
+                    </template>
+                  </div>
                 </div>
               </div>
-            </div>
+            </template>
           </div>
         </div>
       </template>
