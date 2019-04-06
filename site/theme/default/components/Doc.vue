@@ -29,9 +29,9 @@
           <div class="default-doc-demo-list">
             <div class="default-doc-demo"
               v-for="(demo, index) in demos"
-              v-if="index % 2 === 0"
               :key="index">
               <div class="doc-demo-box"
+                v-if="index % 2 === 0"
                 :class="[
                   `doc-demo-box-${index}`,
                   demoBoxShowStat[index] ? 'active' : ''
@@ -120,9 +120,10 @@
           <div class="default-doc-demo-list">
             <div class="default-doc-demo"
               v-for="(demo, index) in demos"
-              v-if="index % 2 !== 0"
-              :key="index">
+              :key="index"
+            >
               <div class="doc-demo-box"
+                v-if="index % 2 !== 0"
                 :class="[
                   `doc-demo-box-${index}`,
                   demoBoxShowStat[index] ? 'active' : ''
@@ -233,8 +234,8 @@
     <div
       v-if="!hiddenToc"
       class="default-doc-toc"
-      :class="{'is-stricky': isTocStricky}"
-      v-html="toc">
+      v-html="toc"
+    >
     </div>
   </div>
 </template>
@@ -293,15 +294,15 @@ export default {
   },
 
   mounted() {
-    if (!this.hiddenToc) {
-      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      $(window).bind('scroll', () => {
-        const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-        this.strickyTocBar(scrollTop)
-        // this.strickyToggleBar(scrollTop)
-      })
-      this.strickyTocBar(scrollTop)
-    }
+    // if (!this.hiddenToc) {
+    //   const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    //   $(window).bind('scroll', () => {
+    //     const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+    //     this.strickyTocBar(scrollTop)
+    //     // this.strickyToggleBar(scrollTop)
+    //   })
+    //   this.strickyTocBar(scrollTop)
+    // }
     
     if (location.hash) {
       const tmpHash = location.hash.substr(1)
@@ -335,47 +336,46 @@ export default {
 
       this.$set(this.demoBoxShowStat, index, stat)
     },
-    strickyTocBar(scrollTop) {
-      window.requestAnimationFrame(() => {
-        if (scrollTop > 96) {
-          this.isTocStricky = true
-        } else {
-          this.isTocStricky = false
-        }
-      })
-    },
-    strickyToggleBar (scrollTop) {
-      window.requestAnimationFrame(() => {
-        this.toggleStrickyToggleBar(scrollTop)
-      })
-    },
-    toggleStrickyToggleBar (scrollTop) {
-      scrollTop = scrollTop || document.body.scrollTop || document.documentElement.scrollTop
-      $.each($('.doc-demo-box-toggle'), (index, item) => {
-        const width = $(item).width()
-        const height = $(item).height()
-        const demo = $(item).siblings('.doc-demo-box-code')
-        const offset = demo.offset()
-        const codeHeight = demo.height()
-        const top = $(window).height() - (offset.top - scrollTop)
-        const bottom = $(window).height() - (offset.top + codeHeight - scrollTop)
-        if ($(item).hasClass('active') && top >= 0 && bottom <= 0) {
-          if (!$(item).hasClass('is-stricky')) {
-            $(item).css({maxWidth: `${width}px`, left: `${$(item).offset().left}px`})
-            $(item).addClass('is-stricky')
-          }
-        } else {
-          $(item).css({maxWidth: `${width}px`, left: '0px'})
-          $(item).removeClass('is-stricky')
-        }
-      })
-    },
+    // strickyTocBar(scrollTop) {
+    //   window.requestAnimationFrame(() => {
+    //     if (scrollTop > 96) {
+    //       this.isTocStricky = true
+    //     } else {
+    //       this.isTocStricky = false
+    //     }
+    //   })
+    // },
+    // strickyToggleBar (scrollTop) {
+    //   window.requestAnimationFrame(() => {
+    //     this.toggleStrickyToggleBar(scrollTop)
+    //   })
+    // },
+    // toggleStrickyToggleBar (scrollTop) {
+    //   scrollTop = scrollTop || document.body.scrollTop || document.documentElement.scrollTop
+    //   $.each($('.doc-demo-box-toggle'), (index, item) => {
+    //     const width = $(item).width()
+    //     const height = $(item).height()
+    //     const demo = $(item).siblings('.doc-demo-box-code')
+    //     const offset = demo.offset()
+    //     const codeHeight = demo.height()
+    //     const top = $(window).height() - (offset.top - scrollTop)
+    //     const bottom = $(window).height() - (offset.top + codeHeight - scrollTop)
+    //     if ($(item).hasClass('active') && top >= 0 && bottom <= 0) {
+    //       if (!$(item).hasClass('is-stricky')) {
+    //         $(item).css({maxWidth: `${width}px`, left: `${$(item).offset().left}px`})
+    //         $(item).addClass('is-stricky')
+    //       }
+    //     } else {
+    //       $(item).css({maxWidth: `${width}px`, left: '0px'})
+    //       $(item).removeClass('is-stricky')
+    //     }
+    //   })
+    // },
     goToDemo (index) {
       const component = this.info.preview.split('#')[1]
       if (component) {
         window.open(`https://github.com/didi/mand-mobile/edit/master/components/${component}/demo/cases/demo${index}.vue`)
       }
-      console.log(this.info.preview, index)
     },
     onCopySuccess (e) {
       this.isCopySuccess = true
@@ -389,6 +389,12 @@ export default {
 </script>
 
 <style lang="stylus">
+.default-content-wrapper.stricky
+  .default-doc-toc
+    position fixed
+    top 20px
+    right 0
+
 .mfe-blog-theme-default-doc
   position relative
   block()
