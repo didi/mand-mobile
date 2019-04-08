@@ -83,7 +83,7 @@ export default {
 <style lang="stylus">
 .mfe-blog-theme-default-menu
   float left
-  width 16.666%
+  // width 16.666%
   // min-height 1500px
   height 100%
   // padding 32px 0
@@ -92,6 +92,12 @@ export default {
   -webkit-font-smoothing antialiased
   background #FFF
   overflow hidden
+  &.stricky
+    position fixed
+    z-index 2
+    top 20px
+    left 0
+    overflow-y auto
   .menu-ggs
     padding 0 40px 10px 40px
     .menu-ggs-item

@@ -18,7 +18,7 @@ Vue.component(Ruler.name, Ruler)
 
 ### API
 
-#### [Ruler] Props
+#### Ruler Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
 |v-model|current value|Number|0|-|
@@ -28,7 +28,7 @@ Vue.component(Ruler.name, Ruler)
 |min|minimum|Number|0|-|
 |max|maximum|Number|100|-|
 
-#### [Ruler] Events
+#### Ruler Events
 
 ##### @change(currentValue)
 Change value

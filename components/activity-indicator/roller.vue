@@ -20,6 +20,7 @@
           class="circle"
         >
           <circle
+            v-if="isAutoAnimation || process > 0"
             class="stroke"
             :cx="viewBoxSize/2"
             :cy="viewBoxSize/2"

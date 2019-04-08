@@ -18,7 +18,7 @@ Vue.component(Ruler.name, Ruler)
 
 ### API
 
-#### [Ruler] Props
+#### Ruler Props
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
 |v-model|双向绑定的值|Number|0|-|
@@ -28,7 +28,7 @@ Vue.component(Ruler.name, Ruler)
 |min|最小可滑动位置|Number|0|-|
 |max|最大可滑动位置|Number|100|-|
 
-#### [Ruler] Events
+#### Ruler Events
 
 ##### @change(currentValue)
 值发生变化事件

@@ -2,12 +2,15 @@
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
     <mb-header :is-active="isHome" :logo-ads="logoAds"/>
     <div class="default-content">
-      <mb-menu
-        v-if="!noMenu"
-        v-model="isMenuShow"
-        :menua-ads="menuAds"
-      />
-      <div class="default-content-wrapper">
+      <div class="default-content-sidebar">
+        <mb-menu
+          :class="{stricky: isAffixStricky}"
+          v-if="!noMenu"
+          v-model="isMenuShow"
+          :menu-ads="menuAds"
+        />
+      </div>
+      <div class="default-content-wrapper" :class="{stricky: isAffixStricky}">
         <router-view></router-view>
       </div>
     </div>
@@ -17,7 +20,7 @@
     <div class="default-menu-trigger" v-else @click="changeLang">
       <i class="lang" v-text="lang === 'en-US' ? '中文' : 'English'"></i>
     </div>
-    <mb-footer/>
+    <mb-footer :class="{stricky: isAffixStricky}"/>
     <div class="hover-ggs" v-if="hoverAds && hoverAds.length" >
       <a
         v-for="(gg, index) in hoverAds"
@@ -31,6 +34,7 @@
 </template>
 
 <script>
+import { Affix } from 'vue-affix'
 import './assets/js/responsive'
 import './assets/css/global.styl'
 import './assets/css/markdown.styl'
@@ -46,6 +50,7 @@ import { localStore } from './assets/js/util'
 export default {
   name: 'mfe-blog-theme-default',
   components: {
+    Affix,
     MbHeader: Header,
     MbMenu: Menu,
     MbFooter: Footer,
@@ -53,6 +58,7 @@ export default {
   data() {
     return {
       isMenuShow: false,
+      isAffixStricky: false,
       hoverAds: [], // {image: string, link: string}
       menuAds: [], // {image: string, link: string}
       logoAds: {}, // images: Array logo下方图片集合，text: string logo下方slogan
@@ -86,6 +92,14 @@ export default {
   },
   mounted () {
     this.getConfig()
+    if (document.documentElement.clientWidth > 1000) {
+      $(window).bind('scroll', () => {
+        const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+        this.strickyAffix(scrollTop)
+        // this.strickyToggleBar(scrollTop)
+      })
+      this.strickyAffix(document.body.scrollTop || document.documentElement.scrollTop)
+    }
   },
   methods: {
     getConfig () {
@@ -104,6 +118,15 @@ export default {
        location.reload()
       }
     },
+    strickyAffix (scrollTop) {
+      window.requestAnimationFrame(() => {
+        if (scrollTop > 96) {
+          this.isAffixStricky = true
+        } else {
+          this.isAffixStricky = false
+        }
+      })
+    }
   }
 }
 
@@ -123,10 +146,14 @@ export default {
   .default-content
     min-height 800px
     padding 32px 0
-    &:after
-      content ""
-      clear both
-      display table
+    clearfix()
+    .default-content-sidebar
+      clearfix()
+      float left
+      width 16.666%
+      min-height 10px
+      .stricky
+        width 16.666%
     .default-content-wrapper
       position relative
       left -1px

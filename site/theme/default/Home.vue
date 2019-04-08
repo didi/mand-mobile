@@ -221,7 +221,7 @@ export default {
 <style lang="stylus">
 .mfe-blog-theme-default-home
   .home-box
-    display grid
+    // display grid
     width 1280px
     margin 0 auto
     .home-box-block

@@ -76,7 +76,10 @@ export default {
 
     realMin() {
       const {scope, min} = this
-      const [left] = scope
+      const [left, right] = scope
+      if (min > right) {
+        return left
+      }
       return min > left ? min : left
     },
 
@@ -84,7 +87,7 @@ export default {
       let {scope, max} = this
       const [left, right] = scope
       if (left > max) {
-        max = right
+        return right
       }
       return max > right ? right : max
     },
