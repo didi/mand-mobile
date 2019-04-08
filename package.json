@@ -146,6 +146,7 @@
     "inject-loader": "^3.0.0",
     "inquirer": "^3.3.0",
     "jest": "^23.6.0",
+    "jest-canvas-mock": "^2.0.0-beta.1",
     "jest-serializer-vue": "^2.0.2",
     "jest-svg-sprite-loader": "^1.0.1",
     "jest-transform-stub": "^1.0.0",
