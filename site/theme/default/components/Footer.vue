@@ -58,15 +58,13 @@ export default {
 </script>
 
 <style lang="stylus">
-clearfix()
-  &:after
-    content ""
-    clear both
-    display table
 .mfe-blog-theme-default-footer
   position relative
   height 673px
   -webkit-font-smoothing antialiased
+  &.stricky
+    .default-footer-container, .default-footer-copyright-container
+      left 16.6%
 
   .default-footer-bg
     position absolute
@@ -98,6 +96,7 @@ clearfix()
     box-sizing border-box
     clearfix()
   .default-footer-copyright-container
+    position relative
     width 1280px
     margin 0 auto
 
