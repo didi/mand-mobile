@@ -3,45 +3,56 @@
     <div class="water-mark-container">
       <slot></slot>
     </div>
-    <div class="water-mark-list" v-if="!!$scopedSlots.watermark || content">
-      <div class="water-mark-list-wrapper"
+    <div
+      v-if="!!$scopedSlots.watermark || content"
+      class="water-mark-list"
+      ref="mark"
+    >
+      <div
+        class="water-mark-list-wrapper"
         :style="{
-          opacity,
-          transform: `rotate(${rotate}deg)`
-        }"
+           opacity,
+           transform: `rotate(${rotate}deg)`
+         }"
       >
-        <ul
-          v-for="i in (repeatY ? repetition : 1)"
-          class="water-mark-line"
-          :style="{
+        <template v-if="content">
+          <canvas ref="canvas"></canvas>
+        </template>
+        <template v-else-if="!!$scopedSlots.watermark">
+          <ul
+            v-for="i in (repeatY ? repetition : 1)"
+            class="water-mark-line"
+            :style="{
             marginBottom: spacing,
           }"
-          :key="`line-${i}`"
-        >
-          <li
-            v-for="j in (repeatX ? repetition : 1)"
-            class="water-mark-item"
-            :style="i % 2 === 0 ? {
+            :key="`line-${i}`"
+          >
+            <li
+              v-for="j in (repeatX ? repetition : 1)"
+              class="water-mark-item"
+              :style="i % 2 === 0 ? {
               marginLeft: repeatX ? spacing : 0,
             } : {
               marginRight: repeatX ? spacing : 0,
             }"
-            :key="`item-${j}`"
-          >
-            <p v-if="content">{{ content }}</p>
-            <slot
-              v-else-if="!!$scopedSlots.watermark"
-              name="watermark"
-              :coord="{row: i, col: j}"
-            ></slot>
-          </li>
-        </ul>
+              :key="`item-${j}`"
+            >
+              <slot
+                name="watermark"
+                :coord="{row: i, col: j}"
+              ></slot>
+            </li>
+          </ul>
+        </template>
       </div>
     </div>
   </div>
 </template>
 
-<script>export default {
+<script>const fontSize = 28
+const color = '#858B9C'
+
+export default {
   name: 'md-water-mark',
 
   props: {
@@ -76,6 +87,74 @@
       repetition: process.env.NODE_ENV === 'test' ? 2 : 50,
     }
   },
+
+  mounted() {
+    if (this.content) {
+      this.ctx = this.$refs.canvas.getContext('2d')
+      this.ratio = 2
+
+      this.$_initCanvas()
+      this.$_computedSpacing()
+      this.$_draw()
+    }
+  },
+
+  methods: {
+    $_initCanvas() {
+      const {ctx, ratio, $refs} = this
+      const {mark, canvas} = $refs
+      const {clientWidth, clientHeight} = mark
+
+      this.ctxWidth = canvas.width = clientWidth * ratio
+      this.ctxHeight = canvas.height = clientHeight * ratio
+
+      ctx.scale(1 / ratio, 1 / ratio)
+    },
+
+    $_computedSpacing() {
+      const {spacing, ratio} = this
+
+      if (typeof spacing === 'number') {
+        this.realSpacing = spacing
+        return
+      }
+      const [, amount = 20, unit = 'vw'] = /([0-9]+)([A-Za-z]+)/.exec(spacing)
+
+      if (unit === 'px') {
+        this.realSpacing = amount
+      } else if (unit === 'vh') {
+        const height = window.screen.height
+        this.realSpacing = amount * height / 100
+      } else if (unit === 'vw') {
+        const width = window.screen.width
+        this.realSpacing = amount * width / 100
+      }
+
+      this.realSpacing *= ratio
+    },
+
+    $_draw() {
+      const {content, ctx, realSpacing, ratio, ctxWidth, ctxHeight} = this
+
+      const contentLength = content.length * fontSize
+      const xCount = Math.ceil(ctxWidth * ratio / (contentLength + realSpacing))
+      const yCount = Math.ceil(ctxHeight * ratio / (fontSize + realSpacing))
+
+      ctx.font = `${fontSize}px DINPro-Medium`
+      ctx.fillStyle = color
+
+      let ctxX = 0
+      let ctxY = 0
+      for (let y = 0; y < yCount; y++) {
+        ctxX = 0
+        for (let x = 0; x < xCount; x++) {
+          ctx.fillText(content, ctxX, ctxY)
+          ctxX += contentLength
+        }
+        ctxY += fontSize + realSpacing
+      }
+    },
+  },
 }
 </script>
 
@@ -97,6 +176,12 @@
   flex-direction column
   justify-content center
   overflow hidden
+
+  canvas
+    position absolute
+    top 0
+    left 0
+    transform translate3d(-50%, -50%, 0)
 
 .water-mark-line
   position relative
