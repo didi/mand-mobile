@@ -21,7 +21,7 @@
         <div
           class="md-swiper-indicator"
           :key="index"
-          :class="{ 'md-swiper-indicator-active': index - 1 === originalIndex }"
+          :class="{ 'md-swiper-indicator-active': index - 1 === realIndex }"
           ></div>
       </template>
     </div>
@@ -65,6 +65,7 @@ export default {
       default: 250,
     },
     defaultIndex: {
+      // display index
       type: Number,
       default: 0,
       validator: function(value) {
@@ -99,11 +100,11 @@ export default {
       dragging: false,
       userScrolling: false,
       isInitial: false,
-      index: 0,
-      fromIndex: 0,
-      toIndex: 0,
-      firstIndex: 0,
-      lastIndex: 0,
+      index: 0, // real index (swiper perspective)
+      fromIndex: 0, // display index (user perspective)
+      toIndex: 0, // display index
+      firstIndex: 0, // display index
+      lastIndex: 0, // display index
       oItemCount: 0, // original item count
       rItemCount: 0, // real item count
       dimension: 0,
@@ -124,12 +125,8 @@ export default {
     isFirstItem() {
       return this.index === 0
     },
-    originalIndex() {
-      if (this.isLoop && this.isSlide) {
-        return this.index - 1
-      } else {
-        return this.index
-      }
+    realIndex() {
+      return this.getIndex()
     },
     isSlide() {
       return this.transition.toLowerCase().indexOf('slide') > -1
@@ -397,9 +394,23 @@ export default {
       }
     },
 
-    $_calcuRealIndex(index) {
+    // real index => display index
+    $_calcDisplayIndex(index) {
       if (this.isLoop && this.isSlide && this.oItemCount > 0) {
         return index - 1 < 0 ? this.oItemCount - 1 : index - 1 > this.oItemCount - 1 ? 0 : index - 1
+      }
+      return index
+    },
+    // display index => real index
+    $_calcuRealIndex(index) {
+      if (index < 0) {
+        index = 0
+      } else if (this.oItemCount > 0 && index > this.oItemCount - 1) {
+        index = this.oItemCount - 1
+      }
+
+      if (this.isLoop && this.isSlide) {
+        return index + 1
       }
       return index
     },
@@ -414,15 +425,13 @@ export default {
 
       const index = this.index
       const itemCount = this.rItemCount
-
-      let oldIndex = this.index
+      const oldIndex = this.index
 
       if (!towards) {
         return
       }
-
-      if (options && options.index) {
-        this.index = options.index + (this.isLoop && this.isSlide ? 1 : 0)
+      if (options && options.index !== undefined) {
+        this.index = options.index
       } else if (towards === 'prev') {
         if (index > 0) {
           this.index = index - 1
@@ -442,8 +451,8 @@ export default {
       }
 
       if (this.isLoop && this.isSlide) {
-        this.fromIndex = this.$_calcuRealIndex(oldIndex)
-        this.toIndex = this.$_calcuRealIndex(this.index)
+        this.fromIndex = this.$_calcDisplayIndex(oldIndex)
+        this.toIndex = this.$_calcDisplayIndex(this.index)
       } else {
         this.fromIndex = this.toIndex
         this.toIndex = this.index
@@ -606,23 +615,25 @@ export default {
       this.$_doTransition('prev')
     },
 
-    goto(index) {
-      if (isNaN(index)) {
+    goto(displayIndex) {
+      if (isNaN(displayIndex)) {
         return
       }
-      index = parseInt(index)
-      if (index === this.index || index < 0 || index >= this.oItemCount) {
-        return
-      }
-      const towards = index > this.index ? 'next' : 'pre'
-      this.index = index
+      displayIndex = parseInt(displayIndex)
+
+      const realIndex = this.$_calcuRealIndex(displayIndex)
+      const towards = realIndex > this.index ? 'next' : 'pre'
+
       this.$_doTransition(towards, {
-        index,
+        index: realIndex,
       })
+
+      // restart timer
+      this.play(this.autoplay)
     },
 
     getIndex() {
-      return this.$_calcuRealIndex(this.index)
+      return this.$_calcDisplayIndex(this.index)
     },
 
     play(autoplay = 3000) {
