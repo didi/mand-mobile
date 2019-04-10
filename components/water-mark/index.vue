@@ -49,7 +49,9 @@
   </div>
 </template>
 
-<script>const fontSize = 28
+<script>import {getDpr} from '../_util'
+
+const fontSize = 14
 const color = '#858B9C'
 
 export default {
@@ -91,7 +93,7 @@ export default {
   mounted() {
     if (this.content) {
       this.ctx = this.$refs.canvas.getContext('2d')
-      this.ratio = 2
+      this.ratio = Math.max(getDpr(), 2) // min ratio = 2
 
       this.$_initCanvas()
       this.$_computedSpacing()
@@ -136,11 +138,12 @@ export default {
     $_draw() {
       const {content, ctx, realSpacing, ratio, ctxWidth, ctxHeight} = this
 
-      const contentLength = content.length * fontSize
+      const _fontSize = fontSize * ratio
+      const contentLength = content.length * _fontSize
       const xCount = Math.ceil(ctxWidth * ratio / (contentLength + realSpacing))
-      const yCount = Math.ceil(ctxHeight * ratio / (fontSize + realSpacing))
+      const yCount = Math.ceil(ctxHeight * ratio / (_fontSize + realSpacing))
 
-      ctx.font = `${fontSize}px DINPro-Medium`
+      ctx.font = `${_fontSize}px DINPro-Medium`
       ctx.fillStyle = color
 
       let ctxX = 0
@@ -151,7 +154,7 @@ export default {
           ctx.fillText(content, ctxX, ctxY)
           ctxX += contentLength
         }
-        ctxY += fontSize + realSpacing
+        ctxY += _fontSize + realSpacing
       }
     },
   },
