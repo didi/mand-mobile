@@ -15,24 +15,7 @@ exports[`Tabs - Demo Basic 1`] = `
       </p>
     </div>
     <div class="water-mark-list">
-      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);">
-        <ul class="water-mark-line" style="margin-bottom:10vw;">
-          <li class="water-mark-item" style="margin-right:10vw;">
-            <p>MAND MOBILE</p>
-          </li>
-          <li class="water-mark-item" style="margin-right:10vw;">
-            <p>MAND MOBILE</p>
-          </li>
-        </ul>
-        <ul class="water-mark-line" style="margin-bottom:10vw;">
-          <li class="water-mark-item" style="margin-left:10vw;">
-            <p>MAND MOBILE</p>
-          </li>
-          <li class="water-mark-item" style="margin-left:10vw;">
-            <p>MAND MOBILE</p>
-          </li>
-        </ul>
-      </div>
+      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);"><canvas></canvas></div>
     </div>
   </div>
 </div>
