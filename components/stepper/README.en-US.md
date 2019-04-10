@@ -34,3 +34,17 @@ Vue.component(Stepper.name, Stepper)
 
 ##### @change(currentValue)
 Change value
+
+##### @increase(difference)
+Triggered when the current value increases
+
+|Props | Description | Type|
+|----|-----|------|
+|difference|Increased value|Number|
+
+##### @decrease(difference)
+Triggered when the current value decreases
+
+|Props | Description | Type|
+|----|-----|------|
+|difference|Reduced value|Number|

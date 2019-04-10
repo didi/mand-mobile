@@ -127,10 +127,20 @@ export default {
       }
       this.$_checkStatus()
     },
-    currentNum(val) {
+    currentNum(val, oldVal) {
       this.$_checkStatus()
-      this.$emit('input', +val)
-      this.$emit('change', +val)
+
+      this.$emit('input', val)
+      this.$emit('change', val)
+
+      const diff = val - oldVal
+
+      // judge the event of operation
+      if (diff > 0) {
+        this.$emit('increase', diff)
+      } else if (diff < 0) {
+        this.$emit('decrease', Math.abs(diff))
+      }
     },
   },
 
