@@ -45,6 +45,7 @@ Vue.component(ScrollView.name, ScrollView)
 |refresh-text | 待刷新文案 | String | `下拉刷新` | - |
 |refresh-active-text | 释放可刷新文案 | String | `释放刷新` | - |
 |refreshing-text | 刷新中文案 | String | `刷新中...` | - |
+|roller-color | 进度条颜色 | String | `#2F86F6` | - |
 
 #### ScrollViewMore Props
 |属性 | 说明 | 类型 | 默认值 | 备注|

@@ -3,6 +3,7 @@
     <md-activity-indicator-rolling
       :process="!isRefreshing ? process : undefined"
       :width="10"
+      :color="rollerColor"
     ></md-activity-indicator-rolling>
     <p class="refresh-tip">{{ refreshTip }}</p>
   </div>
@@ -41,6 +42,10 @@ export default {
     refreshingText: {
       type: String,
       default: '刷新中...',
+    },
+    rollerColor: {
+      type: String,
+      default: '#2F86F6',
     },
   },
 
