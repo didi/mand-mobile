@@ -23,7 +23,7 @@
           />
           <template v-else>
             <div class="name">
-              {{ step.timeFlag }}
+              {{ step.timeFlag || '--' }}
             </div>
             <div
               v-if="step.timeFlagDesc"
@@ -71,7 +71,7 @@
           />
           <template v-else>
             <div class="name" :style="{'max-width': direction === 'horizontal' ? 340 / steps.length + 'px' : 'auto'}">
-              {{ step.timeFlagMsg }}
+              {{ step.timeFlagMsg || '--' }}
             </div>
             <div
               v-if="step.timeFlagMsgDesc"
@@ -106,7 +106,7 @@
   import {toArray} from '../_util';
 
   export default {
-    name: 'MdTimeline',
+    name: 'timeline',
 
     components: {
       [MdIcon.name]: MdIcon
@@ -343,6 +343,7 @@
 
 </script>
 
+
 <style lang="stylus">
   @require "./../_style/mixin/util.styl"
   @require "./../_style/mixin/theme.components.styl"
@@ -361,10 +362,11 @@
       padding 0
       .step-wrapper
         justify-content center
-        align-items center
+        //align-items center
         flex-direction column-reverse
         z-index 1
-        max-width 0
+        flex 1
+        max-width steps-horizontal-icon-size
         overflow visible
         min-width steps-horizontal-icon-size
         min-height steps-horizontal-icon-size
@@ -373,6 +375,7 @@
           min-height steps-horizontal-icon-size
           margin 2px 0
           z-index 2
+          line-height 1
           .md-icon
             width steps-horizontal-icon-size
             height steps-horizontal-icon-size
@@ -382,31 +385,49 @@
           .text-wrapper .name
             color #595959
         &.current
-          .text-wrapper .name
-            color steps-color-active
+          .time-wrapper,
+          .text-wrapper
+            .name
+              color steps-color-active
         &.first-node
-          align-items flex-start
           .icon-wrapper
             justify-content flex-start
+          .time-wrapper,
+          .text-wrapper
+            .name
+              left 0
+              transform translateX(0)
         &.last-node
-          align-items flex-end
           .icon-wrapper
             justify-content flex-end
+          .time-wrapper,
+          .text-wrapper
+            .name
+              left 100%
+              transform translateX(-100%)
+      .time-wrapper,
+      .text-wrapper
+        height 17px
+        line-height 17px
+        width 100%
+        position relative
+        .name
+          max-width 60px
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align center
+          position absolute
+          left 50%
+          transform translateX(-50%)
       .time-wrapper
         font-size 12px
-        line-height 17px
         color #595959
         white-space nowrap
       .text-wrapper
         top 100%
-        text-align center
         .name
           color #595959
-          line-height 17px
           font-size 12px
-          max-width: 60px;
-          overflow: hidden;
-          text-overflow: ellipsis;
         .desc
           color #595959
           line-height 12px
