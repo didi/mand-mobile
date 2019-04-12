@@ -16,7 +16,7 @@
          }"
       >
         <template v-if="content">
-          <canvas ref="canvas"></canvas>
+          <canvas ref="canvas" class="water-mark-canvas"></canvas>
         </template>
         <template v-else-if="!!$scopedSlots.watermark">
           <ul
@@ -180,7 +180,7 @@ export default {
   justify-content center
   overflow hidden
 
-  canvas
+  .water-mark-canvas
     position absolute
     top 0
     left 0
