@@ -48,24 +48,7 @@ exports[`Bill Basic 1`] = `
       </div>
     </div>
     <div class="water-mark-list">
-      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);">
-        <ul class="water-mark-line" style="margin-bottom:20vw;">
-          <li class="water-mark-item" style="margin-right:20vw;">
-            <p>MAND-MOBILE</p>
-          </li>
-          <li class="water-mark-item" style="margin-right:20vw;">
-            <p>MAND-MOBILE</p>
-          </li>
-        </ul>
-        <ul class="water-mark-line" style="margin-bottom:20vw;">
-          <li class="water-mark-item" style="margin-left:20vw;">
-            <p>MAND-MOBILE</p>
-          </li>
-          <li class="water-mark-item" style="margin-left:20vw;">
-            <p>MAND-MOBILE</p>
-          </li>
-        </ul>
-      </div>
+      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);"><canvas class="water-mark-canvas"></canvas></div>
     </div>
   </div>
 </div>

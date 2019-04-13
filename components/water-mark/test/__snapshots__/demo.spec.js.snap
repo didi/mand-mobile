@@ -15,7 +15,7 @@ exports[`Tabs - Demo Basic 1`] = `
       </p>
     </div>
     <div class="water-mark-list">
-      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);"><canvas></canvas></div>
+      <div class="water-mark-list-wrapper" style="opacity:0.1;transform:rotate(-30deg);"><canvas class="water-mark-canvas"></canvas></div>
     </div>
   </div>
 </div>
