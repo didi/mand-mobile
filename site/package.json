@@ -13,8 +13,9 @@
     "indices": "node ./build/bin/gen-indices --log"
   },
   "dependencies": {
-    "mand-mobile": "^2.1.7",
+    "mand-mobile": "^2.2.0",
     "v-tooltip": "^2.0.0-rc.31",
+    "vue-affix": "^0.5.2",
     "vue-clipboard2": "^0.1.0",
     "vue-qrcode-component": "^2.1.1",
     "vue-router": "^3.0.1"
@@ -55,7 +56,7 @@
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.19.1",
     "inject-loader": "^3.0.0",
-    "marked": "^0.3.6",
+    "marked": "^0.6.2",
     "nightwatch": "^0.9.12",
     "nodemon": "^1.12.1",
     "opn": "^5.1.0",
