@@ -9,6 +9,7 @@ toc: hidden
 
 - Feature
   - New `Ruler` Component
+  - `ScrollViewRefresh` add prop `rollerColor`, used to set the progress bar color of pull-down refreshing[#366](https://github.com/didi/mand-mobile/issues/399)
   - Optimize `WaterMark` component by using `canvas` to render watermark
   - `Stepper` add `increase`, `decrease` events
 

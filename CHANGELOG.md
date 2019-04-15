@@ -9,6 +9,7 @@ toc: hidden
 
 - Feature
   - 新增`Ruler`组件
+  - `ScrollViewRefresh`新增属性`rollerColor`，用于设置下拉刷新是进度条颜色[#366](https://github.com/didi/mand-mobile/issues/399)
   - `WaterMark`组件采用`canvas`渲染水印
   - `Stepper`组件新增`increase`, `decrease`事件
 
