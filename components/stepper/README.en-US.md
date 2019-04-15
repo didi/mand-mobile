@@ -36,14 +36,14 @@ Vue.component(Stepper.name, Stepper)
 Change value
 
 ##### @increase(difference)
-Triggered when the current value increases
+Triggered when the current value increases <sup class="version-after">2.2.0+</sup>
 
 |Props | Description | Type|
 |----|-----|------|
 |difference|Increased value|Number|
 
 ##### @decrease(difference)
-Triggered when the current value decreases
+Triggered when the current value decreases <sup class="version-after">2.2.0+</sup>
 
 |Props | Description | Type|
 |----|-----|------|
