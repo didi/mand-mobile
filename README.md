@@ -1,16 +1,18 @@
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/4bJIa4DLYE1544607705566.jpg">
-
-# mand-mobile 
-
-[![Build Status](https://img.shields.io/travis/didi/mand-mobile/master.svg?style=flat-square)](https://travis-ci.org/didi/mand-mobile)
-[![codecov](https://img.shields.io/codecov/c/github/didi/mand-mobile/master.svg?style=flat-square)](https://codecov.io/gh/didi/mand-mobile)
-[![npm package](https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square)](https://www.npmjs.org/package/mand-mobile)
-[![License](https://img.shields.io/npm/l/mand-mobile.svg?style=flat-square)](https://www.npmjs.org/package/mand-mobile)<br>
-[![npm downloads](http://img.shields.io/npm/dm/mand-mobile.svg?style=flat-square)](http://npmtrends.com/mand-mobile)
-[![gzip js size](http://img.badgesize.io/https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js?compression=gzip&label=gzip%20size:%20JS&style=flat-square)](https://unpkg.com/mand-mobile/)
-[![gzip css size](http://img.badgesize.io/https://unpkg.com/mand-mobile/lib/mand-mobile.css?compression=gzip&label=gzip%20size:%20CSS&style=flat-square)](https://unpkg.com/mand-mobile/)
-
-A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios.
+<p align="center"><img width="80" src="https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="LOGO"></p>
+<h2 align="center">mand-mobile</h2> 
+<p align="center">A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios</p>
+<p align="center">
+  <a href="https://travis-ci.org/didi/mand-mobile"><img src="https://img.shields.io/travis/didi/mand-mobile/master.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://codecov.io/gh/didi/mand-mobile"><img src="https://img.shields.io/codecov/c/github/didi/mand-mobile/master.svg?style=flat-square" alt="codecov"></a>
+  <a href="https://www.npmjs.org/package/mand-mobile"><img src="https://img.shields.io/npm/v/mand-mobile.svg?style=flat-square" alt="npm package"></a>
+  <a href="https://www.npmjs.org/package/mand-mobile"><img src="http://img.shields.io/npm/dm/mand-mobile.svg?style=flat-square" alt="npm downloads"></a>
+  <a href="https://www.npmjs.org/package/mand-mobile"><img src="https://img.shields.io/npm/l/mand-mobile.svg?style=flat-square" alt="License"></a>
+  <br/>
+  <a href="https://unpkg.com/mand-mobile/"><img src="http://img.badgesize.io/https://unpkg.com/mand-mobile/lib/mand-mobile.umd.js?compression=gzip&label=gzip%20size:%20JS&style=flat-square" alt="gzip js size"></a>
+  <a href="https://unpkg.com/mand-mobile/"><img src="http://img.badgesize.io/https://unpkg.com/mand-mobile/lib/mand-mobile.css?compression=gzip&label=gzip%20size:%20CSS&style=flat-square" alt="gzip css size"></a>
+</p>
+<p align="center"><img src="https://pt-starimg.didistatic.com/static/starimg/img/toa8XOspJG1555486253802.png" width="800"></p>
+<br/>
 
 **English** | [中文](./README.zh-CN.md)
 
