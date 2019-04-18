@@ -29,6 +29,7 @@ Vue.component(InputItem.name, InputItem)
 |name|name of input|String|-|one of the event arguments, is used to distinguish multi inputs|
 |v-model|value of input|String|-|-|
 |title|title of input|String|-|`slot left` as alternative|
+|solid <sup class="version-after">2.2.1+</sup>|the width of title is fixed or not|Boolean|`true`|-|
 |placeholder|placeholder of input|String|-|-|
 |brief|description|String|-|-|
 |maxlength|maximum number of characters that can be entered|String/Number|-|the maxlength of `phone` type is fixed at 11|

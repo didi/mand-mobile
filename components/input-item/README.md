@@ -30,6 +30,7 @@ Vue.component(InputItem.name, InputItem)
 |name|表单名称|String|-|事件入参之一，可用于区分表单组件|
 |v-model|表单值|String|-|-|
 |title|表单左侧标题|String|-|可直接使用`slot left`代替|
+|solid <sup class="version-after">2.2.1+</sup>|是否固定标题宽度，超出会自动换行|Boolean|`true`|-|
 |placeholder|表单占位符|String|-|-|
 |brief|表单描述|String|-|-|
 |maxlength|表单最大字符数|String/Number|-|`phone`类型固定为11|
