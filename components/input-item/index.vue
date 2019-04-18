@@ -16,7 +16,7 @@
       size
     ]"
     :title="title"
-    :solid="!isTitleLatent"
+    :solid="solid && !isTitleLatent"
   >
     <template slot="left">
       <slot name="left"></slot>
@@ -190,6 +190,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    solid: {
+      type: Boolean,
+      default: true,
     },
     clearable: {
       type: Boolean,
