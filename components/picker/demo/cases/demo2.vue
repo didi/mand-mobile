@@ -17,6 +17,7 @@
     <md-picker
       ref="picker0"
       v-model="isPickerShow0"
+      :key="pickerKey0"
       :data="pickerData0"
       @confirm="onPickerConfirm(0)"
       title="选择年份"
@@ -24,6 +25,7 @@
     <md-picker
       ref="picker1"
       v-model="isPickerShow1"
+      :key="pickerKey1"
       :data="pickerData1"
       :cols="3"
       is-cascade
@@ -51,6 +53,8 @@ export default {
   },
   data() {
     return {
+      pickerKey0: 'picker-demo-2-0',
+      pickerKey1: 'picker-demo-2-1',
       isPickerShow0: false,
       isPickerShow1: false,
       pickerData0: simple,

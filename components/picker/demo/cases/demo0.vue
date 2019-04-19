@@ -2,6 +2,7 @@
   <div class="md-example-child md-example-child-picker md-example-child-picker-0">
     <md-picker
       ref="picker"
+      :key="pickerKey"
       :data="pickerData"
       :invalid-index="[[2, 3, 4]]"
       @initialed="onPickerInitialed"
@@ -29,6 +30,7 @@ export default {
   },
   data() {
     return {
+      pickerKey: 'picker-demo-0',
       pickerData: simple,
       pickerDataNew: [
         {
