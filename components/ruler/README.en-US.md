@@ -3,7 +3,7 @@ title: Ruler
 preview: https://didi.github.io/mand-mobile/examples/#/ruler
 ---
 
-Sliding selection
+Slidable ruler<sup class="version-after">2.2.0+</sup>
 
 ### Import
 
@@ -27,6 +27,8 @@ Vue.component(Ruler.name, Ruler)
 |unit|scale each small distance|Number|1|-|
 |min|minimum|Number|0|-|
 |max|maximum|Number|100|-|
+|stepTextPosition<sup class="version-after">2.2.1+</sup>|step text position|String|'top'|'top' and 'bottom'|
+|stepTextRender<sup class="version-after">2.2.1+</sup>|step text render function|Function|noop|function should return string value|
 
 #### Ruler Events
 
