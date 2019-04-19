@@ -32,7 +32,7 @@ Vue.component(Steps.name, Steps)
 
 #### icon
 
-统一自定义所有步骤图标，支持`scoped slot`如下所示：
+统一自定义所有步骤图标，支持`scoped slot`如下所示：<sup class="version-after">2.2.1+</sup>
 
 ```html
 <template slot="reached" slot-scope="{ index, currentIndex }">
@@ -60,7 +60,7 @@ Vue.component(Steps.name, Steps)
 
 #### unreached
 
-未完成步骤图标插槽，用于自定义未完成步骤图标，支持`scoped slot`用法同`reached`
+未完成步骤图标插槽，用于自定义未完成步骤图标，支持`scoped slot`用法同`reached` <sup class="version-after">2.2.1+</sup>
 
 #### content
 

@@ -42,7 +42,7 @@ Unify custom step icons, and the `scoped slot` is supported as follows:
 
 #### reached
 
-Slot of step icon that has been completed,  generally used to customize the completed step icon, and the `scoped slot` is supported as follows:
+Slot of step icon that has been completed,  generally used to customize the completed step icon, and the `scoped slot` is supported as follows: <sup class="version-after">2.2.1+</sup>
 
 ```html
 <template slot="reached" slot-scope="{ index }">
@@ -59,7 +59,7 @@ Slot of current step icon, generally used to customize the current step icon, su
 
 #### unreached
 
-Slot of unreached step icon, generally used to customize the unreached step icon, supports `scoped slot` and has the same usage as `reached`
+Slot of unreached step icon, generally used to customize the unreached step icon, supports `scoped slot` and has the same usage as `reached` <sup class="version-after">2.2.1+</sup>
 
 #### content
 
