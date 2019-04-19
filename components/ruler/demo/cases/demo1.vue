@@ -17,8 +17,13 @@
 <script>import {Ruler} from 'mand-mobile'
 
 export default {
-  name: 'ruler-demo',
+  name: 'ruler-demo-1',
+  /* DELETE */
   title: '最大1800，最小1200',
+  titleEnUS: 'Max 1800, Min 1200',
+  message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
+  /* DELETE */
   components: {
     [Ruler.name]: Ruler,
   },
