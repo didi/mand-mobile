@@ -15,8 +15,13 @@
 <script>import {Ruler} from 'mand-mobile'
 
 export default {
-  name: 'ruler-demo',
+  name: 'ruler-demo-0',
+  /* DELETE */
   title: '基本',
+  titleEnUS: 'Basic',
+  message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
+  /* DELETE */
   components: {
     [Ruler.name]: Ruler,
   },
