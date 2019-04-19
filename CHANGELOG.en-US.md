@@ -3,6 +3,19 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.2.0
+
+`2019-04-13`
+
+- Feature
+  - New `Ruler` Component
+  - Optimize `WaterMark` component by using `canvas` to render watermark
+  - `Stepper` add `increase`, `decrease` events
+
+- Fix
+  - `Swiper` incorrect index jumping with method `goto`[#366](https://github.com/didi/mand-mobile/issues/366)
+  - `Progress` hide inner circle when value is `0`[#381](https://github.com/didi/mand-mobile/issues/381)
+
 ### 2.1.7
 
 `2019-03-22`

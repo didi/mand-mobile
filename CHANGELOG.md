@@ -3,6 +3,19 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.2.0
+
+`2019-04-13`
+
+- Feature
+  - 新增`Ruler`组件
+  - `WaterMark`组件采用`canvas`渲染水印
+  - `Stepper`组件新增`increase`, `decrease`事件
+
+- Fix
+  - 修复`Swiper`连续跳转导致索引不正确问题[#366](https://github.com/didi/mand-mobile/issues/366)
+  - 修复`Progress`值为`0`时显示问题[#381](https://github.com/didi/mand-mobile/issues/381)
+
 ### 2.1.7
 
 `2019-03-22`

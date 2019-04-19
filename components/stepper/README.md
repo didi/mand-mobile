@@ -34,3 +34,17 @@ Vue.component(Stepper.name, Stepper)
 
 ##### @change(currentValue)
 值发生变化事件
+
+##### @increase(difference)
+当前值增加时触发
+
+|属性 | 说明 | 类型|
+|----|-----|------|
+|difference|增加的数值|Number|
+
+##### @decrease(difference)
+当前值减少时触发
+
+|属性 | 说明 | 类型|
+|----|-----|------|
+|difference|减少的数值|Number|
