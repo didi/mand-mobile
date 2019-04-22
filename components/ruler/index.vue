@@ -8,13 +8,16 @@
       class="md-ruler-canvas"
       ref="canvas"
     ></canvas>
-    <div class="md-ruler-cursor"></div>
+    <div
+      class="md-ruler-cursor"
+      :class="[isStepTextBottom && 'md-ruler-cursor-bottom']"
+    ></div>
     <div class="md-ruler-arrow"></div>
   </div>
 </template>
 
 <script>import Scroller from '../_util/scroller'
-import {throttle} from '../_util'
+import {throttle, noop} from '../_util'
 
 export default {
   name: 'md-ruler',
@@ -45,6 +48,15 @@ export default {
     max: {
       type: Number,
       default: 100,
+    },
+    stepTextPosition: {
+      type: String,
+      default: 'top',
+      validate: val => ['top', 'bottom'].includes(val),
+    },
+    stepTextRender: {
+      type: Function,
+      default: noop,
     },
   },
 
@@ -102,6 +114,9 @@ export default {
       const {scope, realMax, unit, blank} = this
       const [, max] = scope
       return Math.ceil((max - realMax) / unit) * blank
+    },
+    isStepTextBottom() {
+      return this.stepTextPosition === 'bottom'
     },
   },
 
@@ -206,12 +221,12 @@ export default {
     },
 
     $_drawLine() {
-      const {ctx, x, scope, step, unit, ratio, blank, unitCount} = this
+      const {ctx, x, scope, step, unit, ratio, blank, unitCount, isStepTextBottom} = this
       const {blankLeft, blankRight, canvasWidth} = this
       const [scopeLeft] = scope
 
-      const _y = 120
       const _fontSize = 22
+      const _y = 120 - (isStepTextBottom ? _fontSize + 40 : 0)
       const _stepUnit = Math.round(step / unit)
 
       ctx.lineWidth = 2
@@ -240,9 +255,9 @@ export default {
 
         if (i % _stepUnit === 0) {
           // draw text
-          const text = scopeLeft + unit * i
+          const text = this.$_matchStepText(scopeLeft + unit * i)
           const textOffset = String(text).length * _fontSize / 2
-          ctx.fillText(text, _x - textOffset, _fontSize * ratio)
+          ctx.fillText(text, _x - textOffset, _fontSize * ratio + (isStepTextBottom ? 70 : 0))
 
           // draw line
           ctx.lineTo(_x, _y - 40)
@@ -260,6 +275,11 @@ export default {
       ctx.stroke()
 
       this.$_updateValue()
+    },
+
+    $_matchStepText(step) {
+      const match = this.stepTextRender(step)
+      return match !== undefined && match !== null ? match : step
     },
 
     $_startDrag(event) {
@@ -346,6 +366,8 @@ export default {
     transform translate(-50%)
     background-color #2F86F6
     box-shadow 0 2px 4px #2F86F6
+    &-bottom
+      height 40px
   .md-ruler-arrow
     z-index 10
     position absolute
