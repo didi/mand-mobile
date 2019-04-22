@@ -52,7 +52,7 @@ export default {
     stepTextPosition: {
       type: String,
       default: 'top',
-      validate: val => ['top', 'bottom'].includes(val),
+      validator: val => !!~['top', 'bottom'].indexOf(val),
     },
     stepTextRender: {
       type: Function,
