@@ -47,6 +47,8 @@ export default {
   /* DELETE */
   title: '表单控件',
   titleEnUS: 'Input with controls',
+  message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
   /* DELETE */
   components: {
     [InputItem.name]: InputItem,
