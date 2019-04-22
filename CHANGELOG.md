@@ -13,6 +13,7 @@ toc: hidden
   - `Ruler`新增属性`stepTextPosition`、`stepTextRender`
 
 - Fix
+  - 修复`Picker`当设置错误的`default-index`时引发的异常[#416](https://github.com/didi/mand-mobile/issues/416)
   - 优化部分组件样式
 
 ### 2.2.0

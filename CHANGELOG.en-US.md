@@ -13,6 +13,7 @@ toc: hidden
   - `Ruler` add props `stepTextPosition`、`stepTextRender`
 
 - Fix
+  - Fix the exception thrown by `Picker` when setting a wrong `default-index`[#416](https://github.com/didi/mand-mobile/issues/416)
   - Optimize some component styles
   
 ### 2.2.0
