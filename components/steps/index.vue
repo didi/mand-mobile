@@ -297,12 +297,10 @@ export default {
       align-items center
       flex-direction column
       &.reached
-        .icon-wrapper
-          color steps-color-active
         .text-wrapper .name
           color steps-text-color
       &.current
-        .icon-wrapper, .text-wrapper .name
+        .text-wrapper .name
           color steps-color-active
     .text-wrapper
       top 100%
@@ -332,7 +330,6 @@ export default {
       align-items stretch
       .icon-wrapper
         position relative
-        justify-content flex-start
         .step-node-default
           min-width steps-icon-size
           min-height steps-icon-size
@@ -386,9 +383,11 @@ export default {
       .desc
         line-height steps-text-font-size
         font-size steps-desc-font-size
-    &.reached
-      .icon-wrapper .step-node-default-icon
-        background steps-color-active
+    &.reached, &.current
+      .icon-wrapper
+        color steps-color-active
+        .step-node-default-icon
+          background steps-color-active
 
   .bar
     position relative
