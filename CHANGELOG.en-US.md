@@ -3,13 +3,25 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.2.1
+
+`2019-04-22`
+
+- Feature
+  - `Stepper` add slots `unreached`、`icon`[#405](https://github.com/didi/mand-mobile/issues/405)
+  - `InputItem` add prop `solid`, used to set the title with unfixed width[#411](https://github.com/didi/mand-mobile/issues/411)
+  - `Ruler` add props `stepTextPosition`、`stepTextRender`
+
+- Fix
+  - Optimize some component styles
+  
 ### 2.2.0
 
 `2019-04-13`
 
 - Feature
   - New `Ruler` Component
-  - `ScrollViewRefresh` add prop `rollerColor`, used to set the progress bar color of pull-down refreshing[#366](https://github.com/didi/mand-mobile/issues/399)
+  - `ScrollViewRefresh` add prop `rollerColor`, used to set the progress bar color of pull-down refreshing[#399](https://github.com/didi/mand-mobile/issues/399)
   - Optimize `WaterMark` component by using `canvas` to render watermark
   - `Stepper` add `increase`, `decrease` events
 

@@ -3,13 +3,25 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.2.1
+
+`2019-04-22`
+
+- Feature
+  - `Stepper`新增slot `unreached`、`icon`[#405](https://github.com/didi/mand-mobile/issues/405)
+  - `InputItem`新增属性`solid`，用来设置标题宽度不固定[#411](https://github.com/didi/mand-mobile/issues/411)
+  - `Ruler`新增属性`stepTextPosition`、`stepTextRender`
+
+- Fix
+  - 优化部分组件样式
+
 ### 2.2.0
 
 `2019-04-13`
 
 - Feature
   - 新增`Ruler`组件
-  - `ScrollViewRefresh`新增属性`rollerColor`，用于设置下拉刷新是进度条颜色[#366](https://github.com/didi/mand-mobile/issues/399)
+  - `ScrollViewRefresh`新增属性`rollerColor`，用于设置下拉刷新是进度条颜色[#399](https://github.com/didi/mand-mobile/issues/399)
   - `WaterMark`组件采用`canvas`渲染水印
   - `Stepper`组件新增`increase`, `decrease`事件
 
