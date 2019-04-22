@@ -143,7 +143,7 @@ export default {
       const xCount = Math.ceil(ctxWidth * ratio / (contentLength + realSpacing))
       const yCount = Math.ceil(ctxHeight * ratio / (_fontSize + realSpacing))
 
-      ctx.font = `${_fontSize}px DINPro-Medium`
+      ctx.font = `${_fontSize}px DIN Alternate, "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif`
       ctx.fillStyle = color
 
       let ctxX = 0

@@ -23,6 +23,8 @@ export default {
   titleEnUS: 'trigger <a href="javascript:window.triggerRuler2()">Change to 1500</a>',
   describe: '只在滚动停止时有效',
   describeEnUS: 'only valid when scroll is stopped',
+  message: '请在移动设备中扫码预览',
+  messageEnUS: 'Please scan QR code and preview on mobile device',
   /* DELETE */
   components: {
     [Ruler.name]: Ruler,
