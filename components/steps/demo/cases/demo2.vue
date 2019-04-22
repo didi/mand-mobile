@@ -4,6 +4,15 @@
       :steps="steps"
       :current="2"
     >
+      <template slot="icon" slot-scope="props">
+        <b v-if="props.index === props.currentIndex">{{ props.index }}</b>
+        <span v-else>{{ props.index }}</span>
+      </template>
+    </md-steps>
+    <md-steps
+      :steps="steps"
+      :current="2"
+    >
       <template slot="reached" slot-scope="props">
         <!-- props.index -->
         <md-icon name="checked" v-if="props.index === 1"></md-icon>
@@ -11,8 +20,11 @@
           <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
         </div>
       </template>
-      <template slot="current" slot-scope="props">
+      <template slot="current">
         <md-icon name="location"></md-icon>
+      </template>
+      <template slot="unreached">
+        <md-icon name="time"></md-icon>
       </template>
     </md-steps>
   </div>

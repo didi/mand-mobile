@@ -3,7 +3,7 @@ title: Ruler 刻度尺
 preview: https://didi.github.io/mand-mobile/examples/#/ruler
 ---
 
-滑动选择
+可滑动刻度尺<sup class="version-after">2.2.0+</sup>
 
 ### 引入
 
@@ -27,6 +27,8 @@ Vue.component(Ruler.name, Ruler)
 |unit|刻度尺每一小格步数|Number|1|-|
 |min|最小可滑动位置|Number|0|-|
 |max|最大可滑动位置|Number|100|-|
+|stepTextPosition<sup class="version-after">2.2.1+</sup>|Step标志位置|String|'top'|可选'top', 'bottom'|
+|stepTextRender<sup class="version-after">2.2.1+</sup>|自定义step文案|Function|noop|自定义函数应该返回字符串|
 
 #### Ruler Events
 

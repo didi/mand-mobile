@@ -29,9 +29,20 @@ Vue.component(Steps.name, Steps)
 
 #### Steps Slots
 
+#### icon
+
+Unify custom step icons, and the `scoped slot` is supported as follows:
+
+```html
+<template slot="reached" slot-scope="{ index, currentIndex }">
+  <b v-if="props.index === props.currentIndex">{{ props.index }}</b>
+  <span v-else>{{ props.index }}</span>
+</template>
+```
+
 #### reached
 
-Slot of step icon that has been completed,  generally used to customize the completed step icon, and the `scoped slot` is supported as follows:
+Slot of step icon that has been completed,  generally used to customize the completed step icon, and the `scoped slot` is supported as follows: <sup class="version-after">2.2.1+</sup>
 
 ```html
 <template slot="reached" slot-scope="{ index }">
@@ -45,6 +56,10 @@ Slot of step icon that has been completed,  generally used to customize the comp
 #### current
 
 Slot of current step icon, generally used to customize the current step icon, supports `scoped slot` and has the same usage as `reached`
+
+#### unreached
+
+Slot of unreached step icon, generally used to customize the unreached step icon, supports `scoped slot` and has the same usage as `reached` <sup class="version-after">2.2.1+</sup>
 
 #### content
 
