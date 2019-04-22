@@ -2,7 +2,6 @@
   <div class="md-example-child md-example-child-picker md-example-child-picker-1">
     <md-picker
       ref="picker"
-      :key="pickerKey"
       :data="pickerData"
       :cols="3"
       :default-index="pickerDefaultIndex"
@@ -33,7 +32,6 @@ export default {
   },
   data() {
     return {
-      pickerKey: 'picker-demo-1',
       pickerData: [],
       pickerDefaultIndex: [],
       pickerDefaultValue: [],
