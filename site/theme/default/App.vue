@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import { Affix } from 'vue-affix'
 import './assets/js/responsive'
 import './assets/css/global.styl'
 import './assets/css/markdown.styl'
@@ -50,7 +49,6 @@ import { localStore } from './assets/js/util'
 export default {
   name: 'mfe-blog-theme-default',
   components: {
-    Affix,
     MbHeader: Header,
     MbMenu: Menu,
     MbFooter: Footer,

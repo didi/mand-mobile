@@ -94,7 +94,7 @@ export default {
   overflow hidden
   &.stricky
     position fixed
-    z-index 2
+    z-index 3
     top 20px
     left 0
     overflow-y auto
@@ -109,6 +109,7 @@ export default {
   .menu-list-0
     position relative
     top -10px
+    padding-bottom 32px
   ul, li, a
     float left
     width 100%
