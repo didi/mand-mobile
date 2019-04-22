@@ -26,8 +26,8 @@ function getDefaultIndex(data, defaultIndex, defaultValue) {
 /**
  * cascade column by set value of following columns
  * @param {*} picker instance of picker-column
- * @param {*} options { currentLevel, maxLevel, values } 
- * @param {*} fn 
+ * @param {*} options { currentLevel, maxLevel, values }
+ * @param {*} fn
  */
 export default function(picker, options = {}, fn) {
   options = extend(defaultOptions, options)
@@ -44,7 +44,8 @@ export default function(picker, options = {}, fn) {
   for (let i = options.currentLevel + 1; i < options.maxLevel; i++) {
     const columnValues = (!i ? values[i] : values.children) || []
     picker.setColumnValues(i, columnValues)
-    const activeIndex = getDefaultIndex(columnValues, options.defaultIndex[i], options.defaultValue[i])
+    let activeIndex = getDefaultIndex(columnValues, options.defaultIndex[i], options.defaultValue[i])
+    activeIndex >= columnValues.length && (activeIndex = 0)
     values = columnValues[activeIndex] || []
   }
 
