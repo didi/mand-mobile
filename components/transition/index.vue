@@ -1,4 +1,5 @@
-<script>export default {
+<script>
+export default {
   name: 'md-transition',
 
   functional: true,
@@ -7,7 +8,8 @@
     return h('transition', context.data, context.children)
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-bounce
@@ -20,6 +22,15 @@
   &-enter, &-leave-to
     opacity 0.01
     transform scale(0.75)
+  &-enter-active
+    transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
+  &-leave-active
+    transition all 250ms linear
+
+.md-landscape
+  &-enter, &-leave-to
+    opacity 0.01
+    transform scale(1.2)
   &-enter-active
     transition all 300ms cubic-bezier(0.215, 0.61, 0.355, 1)
   &-leave-active

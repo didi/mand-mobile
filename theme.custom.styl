@@ -1,106 +1,4 @@
-//@import '~mand-mobile/components/_style/global'
-//@import '~mand-mobile/components/_style/mixin/util'
-//@import '~mand-mobile/components/_style/mixin/theme.components'
-//@import '~mand-mobile/components/_style/mixin/theme.basic'
-//
-//// 安装并引入css拓展nib(可选)
-//@import '~nib/lib/nib/vendor'
-//@import '~nib/lib/nib/gradients'
-
-// global color
-gray-level-1 = #333
-gray-level-2 = #595959
-gray-level-3 = #898989
-gray-level-4 = #c9c9c9
-gray-level-5 = #d9d9d9
-gray-level-6 = #eaeaea
-
-
-// 覆盖样式变量
-support-for-ie = false
-
-/*
- * GLOBAL COLOR
- */
-
-// brand color
-color-primary           = #EF7D00 // 品牌色
-
-// text color
-color-text-base         = gray-level-1 // 重要信息，如一级标题
-color-text-base-inverse = #FFF
-color-text-body         = gray-level-2 // 普通信息，如正文主要内容
-color-text-minor        = gray-level-3 // 次要信息，如利益点、摘要
-color-text-caption      = gray-level-4 // 辅助信息，如列表内容描述
-color-text-disabled     = gray-level-5 // 禁用状态
-color-text-placeholder  = gray-level-5 // 默认提示输入或占位
-color-text-highlight    = color-primary // 高亮状态
-color-text-warn         = #FF7D41 // 利益点，警告提示
-color-text-error        = #FF5257 // 强提示报错
-color-text-link         = #5878B4 // 文字链接
-
-// border & bg
-color-border-base       = #E2E4EA // 条目边框
-color-border-element    = #C5CAD5 // 元素边框，如按钮
-color-bg-base           = #F9FAFB // 元素，容器背景
-color-bg-inverse        = #FFF
-color-bg-disabled       = #E2E4EA // 禁用元素背景
-color-bg-tap            = #F9FAFB // 条目点击态
-color-mask              = rgba(37, 38, 45, .7) // 弹窗蒙层
-
-/*
- * GLOBAL SIZE
- */
-
-// text size
-font-heading-large  = 18px
-font-heading-medium = 16px
-font-heading-normal = 16px
-font-caption-large  = 18px
-font-caption-normal = 16px
-font-body-large     = 16px
-font-body-normal    = 14px
-font-minor-large    = 13px
-font-minor-normal   = 10px
-
-font-weight-light    = 300
-font-weight-normal   = 400
-font-weight-medium   = 500
-font-weight-semibold = 600
-
-// radius size
-radius-normal = 4px
-radius-circle = 50%
-
-// border size
-border-width-base = 2px
-
-// gap size
-h-gap-xs = 8px
-h-gap-sm = 12px
-h-gap-md = 20px
-h-gap-lg = 32px
-h-gap-sl = 40px
-
-v-gap-xs = 8px
-v-gap-sm = 12px
-v-gap-md = 20px
-v-gap-lg = 32px
-v-gap-sl = 40px
-
-/*
- * GLOBAL OTHER
- */
-
-// animate
-ease-in-out-quint = cubic-bezier(.86, 0, .07, 1)
-
-// opacity
-opacity-disabled = .3 // opacity of disabled button, switch, agree
-
-// font family
-font-family-normal = Helvetica,"微软雅黑","Helvetica Neue","Microsoft YaHei","PingFang SC","Hiragino Sans GB",Arial,sans-serif
-font-family-number = DINPro-Medium, DIN Alternate, Helvetica,"微软雅黑","Microsoft YaHei","Helvetica Neue","PingFang SC","Hiragino Sans GB",Arial,sans-serif
+@require "./../theme.variables.styl"
 
 // ui components theme
 
@@ -109,3 +7,14 @@ steps-icon-size = 22px
 steps-text-gap-vertical = 12px
 steps-color = color-text-caption
 steps-text-color = color-text-minor
+
+steps-horizontal-icon-size = 15px
+
+// icon
+icon-size-xs = 20px
+icon-size-sm = 28px
+icon-size-md = 36px
+icon-size-lg = 40px
+
+// landscape
+landscape-width = 286px

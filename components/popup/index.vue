@@ -7,13 +7,18 @@
       position
     ]"
   >
-    <transition name="md-mask-fade">
-      <div
-        v-show="hasMask && isPopupBoxShow"
-        @click="$_onPopupMaskClick"
-        class="md-popup-mask"
-      ></div>
-    </transition>
+    <!--<transition name="md-mask-fade" v-if="transition !== 'none'">-->
+      <!--<div-->
+        <!--v-show="hasMask && isPopupBoxShow"-->
+        <!--@click="$_onPopupMaskClick"-->
+        <!--class="md-popup-mask"-->
+      <!--&gt;</div>-->
+    <!--</transition>-->
+    <div
+      v-show="hasMask && isPopupBoxShow"
+      @click="$_onPopupMaskClick"
+      class="md-popup-mask"
+    ></div>
     <md-transition
       :name="transition"
       @before-enter="$_onPopupTransitionStart"
@@ -34,7 +39,8 @@
   </div>
 </template>
 
-<script>import Transition from '../transition'
+<script>
+import Transition from '../transition'
 import popupMixin from './mixins'
 
 export default {
@@ -223,9 +229,15 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
+@require "./../_style/mixin/util.styl"
+@require "./../_style/mixin/theme.components.styl"
+@require "./../_style/mixin/theme.basic.styl"
+@require "./../../theme.custom.styl"
+@require "./../_style/global.styl"
 .md-popup
   absolute-pos()
   position fixed
@@ -268,7 +280,7 @@ export default {
   position absolute
   pointer-events auto
   z-index 1
-  background-color popup-mask-bg
+  background-color rgba(0, 0, 0, .8)
 
 .md-popup-box
   position relative

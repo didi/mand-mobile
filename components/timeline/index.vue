@@ -12,7 +12,7 @@
       <div
         :key="`steps-${index}`"
         class="step-wrapper"
-        :class="[$_getStepStatusClass(index)]"
+        :class="[$_getStepStatusClass(index, steps.length)]"
       >
         <div class="time-wrapper">
           <slot
@@ -23,7 +23,7 @@
           />
           <template v-else>
             <div class="name">
-              {{ step.timeFlag }}
+              {{ step.timeFlag || '--' }}
             </div>
             <div
               v-if="step.timeFlagDesc"
@@ -54,7 +54,11 @@
           >
             <div
               class="step-node-default-icon"
-              style="width: 8px;height: 8px;border-radius: 50%;"
+              :style="{
+                width: direction === 'horizontal' ? '7px' : '8px',
+                height: direction === 'horizontal' ? '7px' : '8px',
+                'border-radius': '50%'
+              }"
             />
           </div>
         </div>
@@ -66,8 +70,8 @@
             :step="step"
           />
           <template v-else>
-            <div class="name">
-              {{ step.timeFlagMsg }}
+            <div class="name" :style="{'max-width': direction === 'horizontal' ? 340 / steps.length + 'px' : 'auto'}">
+              {{ step.timeFlagMsg || '--' }}
             </div>
             <div
               v-if="step.timeFlagMsgDesc"
@@ -81,8 +85,11 @@
       <div
         :key="`bar-${index}`"
         class="bar"
-        :class="[direction === 'horizontal' ? 'horizontal-bar' : 'vertical-bar']"
-        :style="$_getStepSizeForStyle(index)"
+        :class="[
+          direction === 'horizontal' ? 'horizontal-bar' : 'vertical-bar',
+          $_getStepBarStatusClass(index, steps.length)
+        ]"
+        :style="$_getStepSizeForStyle(index, steps.length)"
       >
         <i
           v-if="progress[index]"
@@ -99,7 +106,7 @@
   import {toArray} from '../_util';
 
   export default {
-    name: 'MdTimeline',
+    name: 'timeline',
 
     components: {
       [MdIcon.name]: MdIcon
@@ -242,7 +249,19 @@
           }
           : null;
       },
-      $_getStepStatusClass(index) {
+      $_getStepBarStatusClass(index, total) {
+        const status = [];
+        if (index === 0) {
+          status.push('first-bar');
+        }
+
+        if (index === total - 2) {
+          status.push('last-bar');
+        }
+
+        return status.join(' ');
+      },
+      $_getStepStatusClass(index, total) {
         const currentLength = this.currentLength;
 
         let status = [];
@@ -253,6 +272,14 @@
 
         if (index === Math.floor(currentLength)) {
           status.push('current');
+        }
+
+        if (index === 0 && index !== total - 1) {
+          status.push('first-node');
+        }
+
+        if (index === total - 1 && index !== 0) {
+          status.push('last-node');
         }
 
         return status.join(' ');
@@ -316,6 +343,7 @@
 
 </script>
 
+
 <style lang="stylus">
   @require "./../_style/mixin/util.styl"
   @require "./../_style/mixin/theme.components.styl"
@@ -328,28 +356,82 @@
     font-size 14px
 
     &.md-timeline-horizontal
+      width 100%
+      justify-content space-between
       align-items center
-      padding 40px 100px 100px
+      padding 0
       .step-wrapper
-        margin 0 4px
         justify-content center
-        align-items center
-        flex-direction column
+        //align-items center
+        flex-direction column-reverse
+        z-index 1
+        flex 1
+        max-width steps-horizontal-icon-size
+        overflow visible
+        min-width steps-horizontal-icon-size
+        min-height steps-horizontal-icon-size
+        .icon-wrapper
+          min-width steps-horizontal-icon-size
+          min-height steps-horizontal-icon-size
+          margin 2px 0
+          z-index 2
+          line-height 1
+          .md-icon
+            width steps-horizontal-icon-size
+            height steps-horizontal-icon-size
+            font-size steps-horizontal-icon-size
+            line-height steps-horizontal-icon-size
         &.reached
           .text-wrapper .name
-            color steps-text-color
+            color #595959
         &.current
-          .text-wrapper .name
-            color steps-color-active
+          .time-wrapper,
+          .text-wrapper
+            .name
+              color steps-color-active
+        &.first-node
+          .icon-wrapper
+            justify-content flex-start
+          .time-wrapper,
+          .text-wrapper
+            .name
+              left 0
+              transform translateX(0)
+        &.last-node
+          .icon-wrapper
+            justify-content flex-end
+          .time-wrapper,
+          .text-wrapper
+            .name
+              left 100%
+              transform translateX(-100%)
+      .time-wrapper,
+      .text-wrapper
+        height 17px
+        line-height 17px
+        width 100%
+        position relative
+        .name
+          max-width 60px
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-align center
+          position absolute
+          left 50%
+          transform translateX(-50%)
+      .time-wrapper
+        font-size 12px
+        color #595959
+        white-space nowrap
       .text-wrapper
         top 100%
-        padding-top steps-text-gap-horizontal
-        text-align center
         .name
-          color steps-desc-color
+          color #595959
+          font-size 12px
         .desc
-          margin-top 10px
-          color steps-desc-color
+          color #595959
+          line-height 12px
+          font-size 12px
       &.no-current
         .reached:last-of-type
           display none !important
@@ -367,7 +449,6 @@
         width 100%
         height steps-icon-size
         line-height steps-icon-size
-        /*margin 4px 0*/
         align-items stretch
         z-index 1
         .time-wrapper
@@ -394,9 +475,12 @@
             text-align left
           .name
             color steps-text-color
+            line-height steps-icon-size
+            font-size steps-text-font-size
           .desc
-            /*margin-top 18px*/
             color steps-desc-color
+            line-height steps-text-font-size
+            font-size steps-desc-font-size
         &.current
           .time-wrapper,
           .text-wrapper
@@ -418,7 +502,7 @@
 
       .step-node-default-icon
         border: 1px solid steps-color
-        background transparent
+        background #fff
         box-sizing border-box
 
     .step-wrapper
@@ -437,12 +521,6 @@
       .text-wrapper
         .name, .desc
           white-space nowrap
-        .name
-          line-height steps-text-font-size
-          font-size steps-text-font-size
-        .desc
-          line-height steps-text-font-size
-          font-size steps-desc-font-size
       &.reached
         .icon-wrapper .step-node-default-icon
           background steps-color-active
@@ -452,8 +530,9 @@
       position relative
       background-color steps-color
       overflow hidden
+      z-index 0
       .bar-inner
-        z-index 10
+        z-index 1
         position absolute
         top 0
         left 0
@@ -463,6 +542,8 @@
       &.horizontal-bar
         flex 1
         height steps-border-size
+        margin-left -8px
+        margin-right -8px
         .bar-inner
           width 100%
           height steps-border-size
