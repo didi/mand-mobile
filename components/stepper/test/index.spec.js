@@ -1,5 +1,6 @@
 import {Stepper} from 'mand-mobile'
 import {mount} from '@vue/test-utils'
+import sinon from 'sinon'
 import triggerTouch from '../../popup/test/touch-trigger'
 
 describe('Stepper Operation', () => {
@@ -103,5 +104,44 @@ describe('Stepper Operation', () => {
     wrapper.vm.$_onChange()
     // min < currentNum < max
     expect(wrapper.vm.currentNum).toBe(4)
+  })
+
+  test('stepper add and reduce event', async () => {
+    const onIncrease = sinon.spy()
+    const onDecrease = sinon.spy()
+
+    wrapper = mount({
+      template: `
+        <md-stepper 
+          v-model="value"
+          @increase="onIncrease"
+          @decrease="onDecrease" />
+      `,
+      components: {
+        [Stepper.name]: Stepper,
+      },
+      data() {
+        return {
+          value: 0,
+        }
+      },
+      methods: {
+        onIncrease,
+        onDecrease,
+      },
+    })
+
+    expect(onIncrease.callCount).toBe(0)
+    expect(onDecrease.callCount).toBe(0)
+
+    // value add 2
+    wrapper.vm.value = 2
+    expect(onIncrease.callCount).toBe(1)
+    expect(onIncrease.calledWith(2)).toBe(true)
+
+    // value reduce 1
+    wrapper.vm.value = 1
+    expect(onDecrease.callCount).toBe(1)
+    expect(onDecrease.calledWith(1)).toBe(true)
   })
 })

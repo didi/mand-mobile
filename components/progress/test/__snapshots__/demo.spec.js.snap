@@ -69,10 +69,7 @@ exports[`Progress Other configurations 1`] = `
     <div class="rolling-container"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width: 100px; height: 100px; transform: rotateZ(-90deg);">
         <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="10" cx="60" cy="60" r="50"></circle>
         <g class="circle">
-          <circle cx="60" cy="60" fill="transparent" stroke="#FF5257" stroke-width="10" stroke-dasharray="0 314.15000000000003" stroke-linecap="round" r="50" class="stroke">
-            <!---->
-            <!---->
-          </circle>
+          <!---->
         </g>
       </svg>
       <div class="content"><span class="progress-value"><span class="md-amount numerical">0</span>%

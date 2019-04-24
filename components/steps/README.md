@@ -30,6 +30,17 @@ Vue.component(Steps.name, Steps)
 
 #### Steps Slots
 
+#### icon
+
+统一自定义所有步骤图标，支持`scoped slot`如下所示：<sup class="version-after">2.2.1+</sup>
+
+```html
+<template slot="reached" slot-scope="{ index, currentIndex }">
+  <b v-if="props.index === props.currentIndex">{{ props.index }}</b>
+  <span v-else>{{ props.index }}</span>
+</template>
+```
+
 #### reached
 
 已完成步骤图标插槽，用于自定义已完成步骤图标，支持`scoped slot`如下所示：
@@ -45,7 +56,11 @@ Vue.component(Steps.name, Steps)
 
 #### current
 
-当前步骤图标插槽，用于自定义前步骤图标，支持`scoped slot`用法同`reached`
+当前步骤图标插槽，用于自定义当前步骤图标，支持`scoped slot`用法同`reached`
+
+#### unreached
+
+未完成步骤图标插槽，用于自定义未完成步骤图标，支持`scoped slot`用法同`reached` <sup class="version-after">2.2.1+</sup>
 
 #### content
 

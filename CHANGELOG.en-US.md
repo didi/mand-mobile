@@ -3,6 +3,41 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.2.1
+
+`2019-04-22`
+
+- Feature
+  - `Stepper` add slots `unreached`、`icon`[#405](https://github.com/didi/mand-mobile/issues/405)
+  - `InputItem` add prop `solid`, used to set the title with unfixed width[#411](https://github.com/didi/mand-mobile/issues/411)
+  - `Ruler` add props `stepTextPosition`、`stepTextRender`
+
+- Fix
+  - Fix the exception thrown by `Picker` when setting a wrong `default-index`[#416](https://github.com/didi/mand-mobile/issues/416)
+  - Optimize some component styles
+  
+### 2.2.0
+
+`2019-04-13`
+
+- Feature
+  - New `Ruler` Component
+  - `ScrollViewRefresh` add prop `rollerColor`, used to set the progress bar color of pull-down refreshing[#399](https://github.com/didi/mand-mobile/issues/399)
+  - Optimize `WaterMark` component by using `canvas` to render watermark
+  - `Stepper` add `increase`, `decrease` events
+
+- Fix
+  - `Swiper` incorrect index jumping with method `goto`[#366](https://github.com/didi/mand-mobile/issues/366)
+  - `Progress` hide inner circle when value is `0`[#381](https://github.com/didi/mand-mobile/issues/381)
+
+### 2.1.7
+
+`2019-03-22`
+
+- Fix
+  - `InputItem` not update when slots change
+  - `Codebox` bottom border not shown on some devices
+
 ### 2.1.6
 
 `2019-03-15`

@@ -2,7 +2,7 @@ const TEST_TYPE = process.env.TEST_TYPE || 'components'
 // const TEST_BUNDLE = TEST_TYPE === 'bundle' ? 'lib/mand-mobile.umd' : ''
 
 module.exports = {
-  setupFiles: ['<rootDir>/test/jest.init.js'],
+  setupFiles: ['jest-canvas-mock', '<rootDir>/test/jest.init.js'],
   moduleFileExtensions: [
     'js',
     'json',

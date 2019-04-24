@@ -140,7 +140,7 @@ describe('Swiper', () => {
       expect(wrapper.vm.getIndex()).toBe(0)
 
       wrapper.vm.goto(3) // ill
-      expect(wrapper.vm.getIndex()).toBe(0)
+      expect(wrapper.vm.getIndex()).toBe(2)
 
       wrapper.vm.goto(2)
       expect(wrapper.vm.getIndex()).toBe(2)

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Basic 1`] = `
+<div class="md-example-child md-example-child-single-component">
+  <p>当前值：1000</p>
+  <div class="container">
+    <div class="md-ruler"><canvas class="md-ruler-canvas"></canvas>
+      <div class="md-ruler-cursor"></div>
+      <div class="md-ruler-arrow"></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Radio List 1`] = `
+<div class="md-example-child md-example-child-single-component">
+  <p>当前值：1300</p>
+  <div class="container">
+    <div class="md-ruler"><canvas class="md-ruler-canvas"></canvas>
+      <div class="md-ruler-cursor"></div>
+      <div class="md-ruler-arrow"></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Radio With Field 1`] = `
+<div class="md-example-child md-example-child-single-component">
+  <p>当前值：1305</p>
+  <div class="container">
+    <div class="md-ruler"><canvas class="md-ruler-canvas"></canvas>
+      <div class="md-ruler-cursor"></div>
+      <div class="md-ruler-arrow"></div>
+    </div>
+  </div>
+</div>
+`;

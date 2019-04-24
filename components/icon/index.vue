@@ -225,12 +225,11 @@ export default {
   .md-icon-close:before
     content "\e604"
 
-  @font-face
-    font-family Mand-Mobile-Icon
-    font-style normal
-    font-weight normal
-    /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
-    /* Version is required */
-    src url("./iconfont.woff") format('woff'),
-        url("./iconfont.ttf") format("truetype")
+@font-face
+  font-family Mand-Mobile-Icon
+  font-style normal
+  font-weight normal
+  /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+  /* Version is required */
+  src icon-font-family
 </style>

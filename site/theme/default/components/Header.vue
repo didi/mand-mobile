@@ -33,7 +33,7 @@
         </div>
         <div class="default-header-version default-header-operater">
           <div class="operater-select" @click.stop="versionTableShow = true">
-            <span>{{version}}</span>
+            <span>{{`v${version}`}}</span>
           </div>
           <mfe-table v-model="versionTableShow" :data="versionData" style="width:96px;top:47px;left:50%;transform:translateX(-50%)"></mfe-table>
         </div>
@@ -102,7 +102,7 @@ export default {
       logo: window.mbConfig.logo,
       versionTableShow: false,
       versionData: [{
-        text: '1.x',
+        text: 'v1.x',
         path: 'https://mand-mobile.github.io'
       }],
       langSwitchPath: ''

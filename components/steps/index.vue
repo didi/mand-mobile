@@ -13,24 +13,40 @@
         :class="[$_getStepStatusClass(index)]"
         :key="`steps-${index}`"
       >
-        <div class="icon-wrapper">
-          <slot
-            v-if="index < currentLength && (($scopedSlots.reached) || $slots.reached)"
-            name="reached"
-            :index="index"
-          ></slot>
-          <slot
-            v-else-if="index === currentLength && (($scopedSlots.current) || $slots.current)"
-            name="current"
-            :index="index"
-          ></slot>
-          <md-icon
-            v-else-if="index === currentLength"
-            name="success"
-          ></md-icon>
-          <div v-else class="step-node-default">
-            <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
-          </div>
+        <!-- Customize uniformly -->
+        <div v-if="$scopedSlots.icon" class="icon-wrapper" >
+          <slot name="icon" :index="index" :current-index="currentLength"></slot>
+        </div>
+        <!-- Customize by status-->
+        <div v-else class="icon-wrapper">
+          <template v-if="index < currentLength">
+            <slot
+              v-if="$scopedSlots.reached || $slots.reached"
+              name="reached"
+              :index="index"
+            ></slot>
+            <div v-else class="step-node-default">
+              <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
+            </div>
+          </template>
+          <template v-else-if="index === currentLength">
+            <slot
+              v-if="$scopedSlots.current || $slots.current"
+              name="current"
+              :index="index"
+            ></slot>
+            <md-icon v-else name="success"></md-icon>
+          </template>
+          <template v-else>
+            <slot
+              v-if="$scopedSlots.unreached || $slots.unreached"
+              name="unreached"
+              :index="index"
+            ></slot>
+            <div v-else class="step-node-default">
+              <div class="step-node-default-icon" style="width: 6px;height: 6px;border-radius: 50%;"></div>
+            </div>
+          </template>
         </div>
         <div class="text-wrapper">
           <slot
@@ -314,7 +330,6 @@ export default {
       align-items stretch
       .icon-wrapper
         position relative
-        justify-content flex-start
         .step-node-default
           min-width steps-icon-size
           min-height steps-icon-size
@@ -333,7 +348,7 @@ export default {
     display flex
     justify-content center
     align-items center
-    color steps-color-active
+    color steps-color
 
     >div
       display flex
@@ -368,9 +383,11 @@ export default {
       .desc
         line-height steps-text-font-size
         font-size steps-desc-font-size
-    &.reached
-      .icon-wrapper .step-node-default-icon
-        background steps-color-active
+    &.reached, &.current
+      .icon-wrapper
+        color steps-color-active
+        .step-node-default-icon
+          background steps-color-active
 
   .bar
     position relative

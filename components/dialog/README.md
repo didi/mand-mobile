@@ -33,7 +33,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
-| transition | 弹出层过度动画 | String |`fade`, `fade-bounce`, `fade-slide`, `fade-zoom`<br> `slide-up`, `slide-down`, `slide-left`, `slide-right`|
+| transition | 弹出层过度动画 | String | 可选值参考[Transition](https://didi.github.io/mand-mobile/#/zh-CN/docs/components/feedback/transition?anchor=API) |
 
 #### Dialog Slots
 组件子元素会被当做默认插槽内容使用，适合于不需要标题的自定义窗口内容的场景。
