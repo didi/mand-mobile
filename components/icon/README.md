@@ -13,6 +13,10 @@ import { Icon } from 'mand-mobile'
 Vue.component(Icon.name, Icon)
 ```
 
+### 使用指南
+
+自定义svg图标和引入本地字体文件，请参考<a href="javascript:jumpAnchor('附录')">附录</a>。
+
 ### 代码演示
 <!-- DEMO -->
 
@@ -24,9 +28,11 @@ Vue.component(Icon.name, Icon)
 |name|图标名称|String|-|-|
 |size|图标大小|String|`md`|`xs`, `sm`, `md`, `lg`|
 |color|图标颜色|String|`currentColor`|-|
-|svg|使用svg图标|Boolean|`false`|用法见附录|
+|svg|使用svg图标|Boolean|`false`|-|
 
 ### 附录
+
+#### 自定义svg图标
 
 自定义svg图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
 
@@ -78,4 +84,25 @@ export default {
   }
 }
 </script>
+```
+
+#### 引入本地字体文件
+
+> 注意：webpack配置[url-loader](https://github.com/webpack-contrib/url-loader)需要包含mand-mobile 
+
+* 重置css中的图标字体  
+
+```css
+@font-face{
+  font-family: Mand-Mobile-Icon;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~mand-mobile/components/icon/iconfont.woff) format("woff"),url(~mand-mobile/components/icon/iconfont.woff) format("truetype")
+}
+``` 
+
+* 自定义主题时重置stylus变量
+
+```
+icon-font-family = url("./iconfont.woff") format("woff"), url("./iconfont.ttf") format("truetype")
 ```
