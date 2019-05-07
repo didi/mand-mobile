@@ -13,6 +13,11 @@ import { ActionBar } from 'mand-mobile'
 Vue.component(ActionBar.name, ActionBar)
 ```
 
+### 使用指南
+
+默认使用`position: fixed`固定在页面底部，为避免遮挡内容区底部预留不小于`100px`的空白（iPhone还需额外增加`constant(safe-area-inset-bottom)`）
+
+
 ### 代码演示
 <!-- DEMO -->
 

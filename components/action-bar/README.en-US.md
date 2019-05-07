@@ -13,6 +13,10 @@ import { ActionBar } from 'mand-mobile'
 Vue.component(ActionBar.name, ActionBar)
 ```
 
+### Instruction
+
+ActionBar is fixed at the bottom of the page by `position: fixed`. In order to avoid the page content being occluded, you need to reserve a blank of not less than `100px` at the bottom (the iPhone also needs to add `constant(safe-area-inset-bottom)`).
+
 ### Code Examples
 <!-- DEMO -->
 
