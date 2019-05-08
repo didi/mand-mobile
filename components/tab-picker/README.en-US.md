@@ -51,6 +51,18 @@ Get all options of selected items
 
 #### TabPicker Events
 
+##### @select(data)
+Option selected event
+
+```
+// data对象
+{
+  index: 0,
+  value: 'value1',
+  options: { value: 'value1', label: 'Item1' }
+}
+```
+
 ##### @change(data)
 Change selection in the tabpicker
 

@@ -52,6 +52,18 @@ Vue.component(TabPicker.name, TabPicker)
 
 #### TabPicker 事件
 
+##### @select(data)
+选项选中事件
+
+```
+// data对象
+{
+  index: 0,
+  value: 'value1',
+  options: { value: 'value1', label: 'Item1' }
+}
+```
+
 ##### @change(data)
 底部弹窗选中事件
 
