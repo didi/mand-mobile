@@ -21,7 +21,11 @@
             v-model="currentTab"
             ref="tabs"
           >
-            <md-scroll-view :scrolling-x="false" auto-reflow>
+            <md-scroll-view
+              ref="scrollView"
+              :scrolling-x="false"
+              auto-reflow
+            >
               <md-tab-pane
                 v-for="(pane, index) in panes"
                 :key="pane.name"
@@ -197,9 +201,16 @@ export default {
       this.$nextTick(() => {
         const nextPane = this.panes[index + 1]
 
+        this.$emit('select', {
+          index,
+          value,
+          option: this.panes[index],
+        })
+
         /* istanbul ignore else */
         if (nextPane) {
           this.currentTab = nextPane.name
+          this.$refs.scrollView.scrollTo(0, 0)
         } else if (value !== '') {
           setTimeout(() => {
             this.$emit('change', {
