@@ -160,6 +160,7 @@ export default {
     $_select(option, index) {
       this.selectedValue = option.value
       this.inputSelected = false
+      this.inputValue && (this.inputValue = '')
       this.$emit('change', option, index)
     },
     // MARK: public methods
