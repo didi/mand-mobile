@@ -37,6 +37,7 @@ const TYPE_FORMAT = {
   'yyyy': 'Year',
   'MM': 'Month',
   'dd': 'Date',
+  'HH': 'Hour',
   'hh': 'Hour',
   'mm': 'Minute'
 }
@@ -553,7 +554,8 @@ export default {
         if (value < 10) {
           value = '0' + value
         }
-
+        
+        format = format.replace('HH', 'hh') // deal with HH as hh
         format = format.replace(item.type, value)
         format = format.replace(TYPE_FORMAT_INVERSE[item.type], value)
       })
