@@ -3,6 +3,20 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.2.2
+
+`2019-05-11`
+
+- Feature
+  - `TabPicker`add event `select`[#436](https://github.com/didi/mand-mobile/issues/436)
+
+- Fix
+  - When the option in the tab list of each level of `TabPicker` is selected, the internal container is reset to the top
+  - `RadioList` automatically clears the filled out text box when switching to a non-text option
+  - `DatePicker` prop `custom-types` support `HH`[#433](https://github.com/didi/mand-mobile/issues/433)
+  - Add `onCancel` to the type declaration of `Dialog`
+  - Optimize some components documentation
+  
 ### 2.2.1
 
 `2019-04-22`

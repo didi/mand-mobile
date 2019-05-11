@@ -3,6 +3,20 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.2.2
+
+`2019-05-11`
+
+- Feature
+  - `TabPicker`新增事件`select`[#436](https://github.com/didi/mand-mobile/issues/436)
+
+- Fix
+  - `TabPicker`的每一级tab列表中的选项被选中时将内部容器复位至最顶部
+  - `RadioList`当切换至非文本选项时，自动将已填写的文本框清空
+  - `DatePicker`的`custom-types`内支持`HH`写法[#433](https://github.com/didi/mand-mobile/issues/433)
+  - `Dialog`的类型声明内增加`onCancel`
+  - 优化部分组件文档
+
 ### 2.2.1
 
 `2019-04-22`
