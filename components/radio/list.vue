@@ -17,10 +17,10 @@
       @click="$_select(item, index)"
     >
       <template v-if="hasSlot">
-        <slot :option="item"></slot>
+        <slot :option="item" :index="index" :selected="currentValue === item.value"></slot>
       </template>
       <md-radio
-        v-if="!alignCenter && !inputSelected"
+        v-if="!alignCenter && !inputSelected && !withoutIcon"
         :name="item.value"
         v-model="selectedValue"
         :disabled="item.disabled"
@@ -96,6 +96,10 @@ export default {
       type: Boolean,
       default: undefined,
     },
+    noIcon: {
+      type: Boolean,
+      default: false,
+    },
     // Mixin Props
     // icon: {
     //   type: String,
@@ -141,6 +145,9 @@ export default {
     },
     hasSlot() {
       return this.isSlotScope !== undefined ? this.isSlotScope : !!this.$scopedSlots.default
+    },
+    withoutIcon() {
+      return this.isSlotScope && this.noIcon
     },
   },
 
