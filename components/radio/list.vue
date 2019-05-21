@@ -96,10 +96,6 @@ export default {
       type: Boolean,
       default: undefined,
     },
-    noIcon: {
-      type: Boolean,
-      default: false,
-    },
     // Mixin Props
     // icon: {
     //   type: String,
@@ -147,7 +143,7 @@ export default {
       return this.isSlotScope !== undefined ? this.isSlotScope : !!this.$scopedSlots.default
     },
     withoutIcon() {
-      return this.isSlotScope && this.noIcon
+      return this.isSlotScope && !this.icon
     },
   },
 
