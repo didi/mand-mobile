@@ -211,9 +211,19 @@ export default {
         const prevTarget = this.$refs.items[this.currentIndex - 1]
         const nextTarget = this.$refs.items[this.currentIndex + 1]
 
+        if (!prevTarget) {
+          this.$refs.scroller.scrollTo(0, 0, true)
+          return
+        }
+
+        if (!nextTarget) {
+          this.$refs.scroller.scrollTo(this.wrapperW, 0, true)
+          return
+        }
+
         const wrapperRect = this.$refs.wrapper.getBoundingClientRect()
-        const prevTargetRect = prevTarget && prevTarget.getBoundingClientRect()
-        const nextTargetRect = nextTarget && nextTarget.getBoundingClientRect()
+        const prevTargetRect = prevTarget.getBoundingClientRect()
+        const nextTargetRect = nextTarget.getBoundingClientRect()
 
         /* istanbul ignore next */
         if (prevTargetRect && prevTargetRect.left < wrapperRect.left) {

@@ -24,11 +24,10 @@ word-ellipsis()
   overflow hidden
   text-overflow ellipsis
 
-hairline-common(direction, color)
+hairline-common(direction)
   content ''
   position absolute
   z-index 2
-  background-color color
   transform-origin 100% 50%
   if direction == top
     transform scaleY(0.5) translateY(-100%)
@@ -50,45 +49,45 @@ hairline-common(direction, color)
 hairline(direction = all, color = color-border-base, radius = 0, size = border-width-base)
   if direction == top
     &::after
-      hairline-common(direction, color)
+      hairline-common(direction)
       top 0
       left 0
       right auto
       bottom auto
       width 100%
-      height size
+      border-top solid size color
       transform-origin 50% 0
 
   else if direction == bottom
     &::before
-      hairline-common(direction, color)
+      hairline-common(direction)
       bottom 0
       left 0
       right auto
       top auto
       width 100%
-      height size
+      border-bottom solid size color
       transform-origin 50% 100%
 
   else if direction == left
     &::after
-      hairline-common(direction, color)
+      hairline-common(direction)
       top 0
       left 0
       right auto
       bottom auto
-      width size
+      border-left solid size color
       height 100%
       transform-origin 0 50%
 
   else if direction == right
     &::before
-      hairline-common(direction, color)
+      hairline-common(direction)
       top 0
       right 0
       left auto
       bottom auto
-      width size
+      border-right solid size color
       height 100%
       transform-origin 100% 50%
 
