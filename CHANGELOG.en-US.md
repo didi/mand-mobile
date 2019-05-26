@@ -3,12 +3,19 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.2.4
+
+`2019-05-26`
+
+- Fix
+  - Fix the problem that the first and last items of `TabBar` cannot be automatically repaired after they are selected[#434](https://github.com/didi/mand-mobile/issues/434)
+  - Texts of `TabBar` items cannot be selected
+  
 ### 2.2.3
 
 `2019-05-25`
 
 - Fix
-  - Fix the problem that the first and last items of `TabBar` cannot be automatically repaired after they are selected[#434](https://github.com/didi/mand-mobile/issues/434)
   - Utility style `hairline` replaces `width` and `height` with `border`
   
 ### 2.2.2
