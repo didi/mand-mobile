@@ -12,7 +12,7 @@
         :key="scrollerTmpKey"
         @scroll="$_onScroll"
       >
-        <div class="md-tab-bar-list" :style="{width: contentW + 'px'}">
+         <div class="md-tab-bar-list" :style="{width: contentW + 'px'}">
           <a
             class="md-tab-bar-item"
             :class="{
@@ -217,7 +217,7 @@ export default {
         }
 
         if (!nextTarget) {
-          this.$refs.scroller.scrollTo(this.wrapperW, 0, true)
+          this.$refs.scroller.scrollTo(this.contentW, 0, true)
           return
         }
 
@@ -267,6 +267,8 @@ export default {
   padding 0 tab-item-gap
   margin 0 auto
   box-sizing border-box
+  -webkit-user-select none
+  -webkit-tap-highlight-color transparent
   &.is-active
     color tab-active-color
   &.is-disabled

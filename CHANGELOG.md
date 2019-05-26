@@ -3,12 +3,19 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.2.4
+
+`2019-05-26`
+
+- Fix
+  - 修复`TabBar`第一项和最后一项选中后无法自动修复位置的问题[#434](https://github.com/didi/mand-mobile/issues/434)
+  - `TabBar`选项内部文字不可选中
+  
 ### 2.2.3
 
 `2019-05-25`
 
 - Fix
-  - 修复`TabBar`第一项和最后一项选中后无法自动修复位置的问题[#434](https://github.com/didi/mand-mobile/issues/434)
   - 工具样式`hairline`使用`border`取代`width`和`height`
 
 
