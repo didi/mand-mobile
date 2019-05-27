@@ -363,7 +363,7 @@ export default {
     },
 
     $_startPlay() {
-      if (this.autoplay > 0 && this.oItemCount > 1 && this.isLoop) {
+      if (this.autoplay > 0 && this.oItemCount > 1) {
         this.$_clearTimer()
         this.timer = setInterval(() => {
           if (!this.isLoop && this.index >= this.rItemCount - 1) {
