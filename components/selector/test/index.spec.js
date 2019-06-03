@@ -138,4 +138,49 @@ describe('Selector - Operation', () => {
       done()
     })
   })
+
+  test('selector multi select', done => {
+    wrapper = mount(Selector, {
+      propsData: {
+        value: true,
+        data: [
+          {
+            value: '1',
+            text: '选项一',
+          },
+          {
+            value: '2',
+            text: '选项二',
+          },
+          {
+            value: '3',
+            disabled: true,
+            text: '选项三',
+          },
+          {
+            value: '4',
+            text: '选项四',
+          },
+        ],
+        multi: true,
+        okText: 'ok',
+        cancelText: 'cancel',
+      },
+    })
+
+    const eventStub = sinon.stub(wrapper.vm, '$emit')
+
+    wrapper.vm.$nextTick(() => {
+      const item = wrapper.find('.md-check-item')
+      const confirmBtn = wrapper.find('.md-popup-confirm')
+
+      item.trigger('click')
+      confirmBtn.trigger('click')
+
+      expect(wrapper.vm.multiDefaultValue).toContain('1')
+      expect(eventStub.calledWith('confirm')).toBe(true)
+
+      done()
+    })
+  })
 })

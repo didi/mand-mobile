@@ -24,7 +24,7 @@ Vue.component(Selector.name, Selector)
 |----|-----|------|------|------|
 |v-model|display selector or not|Boolean|false|-|
 |data|data source|Array<{value,text,disabled,...}>|`[]`|`text` can be a `html` fragment|
-|default-value|the value of initially selected item|any|-|-|
+|default-value|the value of initially selected item|any|-|when `multi` is `true`, `default-value` should be `array`|
 |title|title of selector|String|-|-|
 |describe|description of selector|String|-|-|
 |ok-text|confirmation text|String|-|if empty, it will be `confirmed mode`, that is, click to select directly|
@@ -39,6 +39,8 @@ Vue.component(Selector.name, Selector)
 |icon-size|the size of icon|String|`lg`|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 |icon-position|the position of icon|String|`right`|`left`, `right`|
+|multi<sup class="version-after">2.2.0+</sup>|support multi select|Boolean|`false`|`multi` must be with `ok-text` prop|
+
 
 #### Selector Events
 
