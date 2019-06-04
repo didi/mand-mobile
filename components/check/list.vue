@@ -19,7 +19,7 @@
       @click="$_check(item, index)"
     >
       <template v-if="hasSlot">
-        <slot :option="item"></slot>
+        <slot :option="item" :index="index" :selected="value.indexOf(item.value) > -1"></slot>
       </template>
       <md-check
         v-if="!alignCenter"
