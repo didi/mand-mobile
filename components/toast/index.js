@@ -42,8 +42,9 @@ const Toast = function({
   vm.duration = duration
   vm.position = position
   vm.hasMask = hasMask
-  vm.visible = true
-  vm.fire()
+  // vm.visible = true
+  // vm.fire()
+  vm.show()
 
   return vm
 }
@@ -136,5 +137,7 @@ Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = docume
     parentNode,
   })
 }
+
+Toast.component = ToastOptions
 
 export default Toast

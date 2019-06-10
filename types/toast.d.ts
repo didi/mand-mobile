@@ -1,3 +1,5 @@
+import { MandComponent } from './component'
+
 export type ToastOptions = {
   content: string
   duration?: number
@@ -17,6 +19,7 @@ export interface Toast {
   failed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
   loading(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
   hide(): void
+  component: MandComponent
 }
 
 declare module 'vue/types/vue' {
