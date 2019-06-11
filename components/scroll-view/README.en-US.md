@@ -35,6 +35,11 @@ Vue.component(ScrollView.name, ScrollView)
 |end-reached-threshold | threshold for emitting `endReached`. | Number | 0 | unit `px` |
 |immediate-check-end-reaching <sup class="version-after">2.1.0+</sup>| check if it reaches the bottom at initialization | Boolean | `false` | - |
 |touch-angle <sup class="version-after">2.1.0+</sup>| angle value range that triggers scrolling | Number | 45 | unit `deg` |
+|is-prevent <sup class="version-after">2.3.0+</sup>| prevent browser default scrolling | Boolean | `true` | if set to `false`, the browser defaults to scroll when scrolling is triggered over a non-scrollable angle range |
+
+#### ScrollView TouchAngle
+
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/cSL4mjxTmW1560240984431.jpg" width="460"/>
 
 #### ScrollViewRefresh Props
 |Props | Description | Type | Default | Note |
