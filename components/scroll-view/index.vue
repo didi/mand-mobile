@@ -49,8 +49,7 @@
   </div>
 </template>
 
-<script>
-import {debounce} from '../_util'
+<script>import {debounce} from '../_util'
 import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 
@@ -88,6 +87,10 @@ export default {
     touchAngle: {
       type: Number,
       default: 45,
+    },
+    isPrevent: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -248,7 +251,10 @@ export default {
       if (!this.scroller) {
         return
       }
-      event.preventDefault()
+
+      if (this.isPrevent) {
+        event.preventDefault()
+      }
 
       this.currentX = event.targetTouches[0].pageX
       this.currentY = event.targetTouches[0].pageY
@@ -260,6 +266,10 @@ export default {
         }
       }
 
+      if (!this.isPrevent) {
+        event.preventDefault()
+      }
+
       this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
 
       const boundaryDistance = 15
@@ -268,7 +278,12 @@ export default {
 
       const pX = this.currentX - scrollLeft
       const pY = this.currentY - scrollTop
-      if (pX > document.documentElement.clientWidth - boundaryDistance || pY > document.documentElement.clientHeight - boundaryDistance || pX < boundaryDistance || pY < boundaryDistance) {
+      if (
+        pX > document.documentElement.clientWidth - boundaryDistance ||
+        pY > document.documentElement.clientHeight - boundaryDistance ||
+        pX < boundaryDistance ||
+        pY < boundaryDistance
+      ) {
         this.scroller.doTouchEnd(event.timeStamp)
       }
     },
@@ -412,8 +427,7 @@ export default {
     },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-scroll-view
