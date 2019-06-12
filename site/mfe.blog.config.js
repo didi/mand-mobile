@@ -292,6 +292,10 @@ module.exports = {
             text: '调色板',
             src: 'https://mand-mobile.github.io/palette'
           },
+          {
+            text: '国内镜像 🇨🇳',
+            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html#/zh-CN/home'
+          },
         ],
       },
       {
@@ -312,8 +316,12 @@ module.exports = {
         ]
       },
       {
-        title: '更多产品 <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+        title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
+          {
+            text: 'Chameleon <span>- 跨端解决方案</span>',
+            src: 'https://CML.JS.org',
+          },
           {
             text: 'Cube UI <span>- Vue.js组件库</span>',
             src: 'https://didi.github.io/cube-ui',
@@ -361,6 +369,10 @@ module.exports = {
             text: 'Palette',
             src: 'https://mand-mobile.github.io/palette'
           },
+          {
+            text: 'China Mirror 🇨🇳',
+            src: 'https://mand-mobile.gitee.io/docs/index.gitee.html#/en-US/home'
+          },
         ],
       },
       {
@@ -381,8 +393,12 @@ module.exports = {
         ]
       },
       {
-        title: 'More Products <a href="https://didi.github.io/" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+        title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
+          {
+            text: 'Chameleon <span>- Cross-end Framework</span>',
+            src: 'https://CML.JS.org',
+          },
           {
             text: 'Cube UI <span>- Vue.js UI Lib</span>',
             src: 'https://didi.github.io/cube-ui',
