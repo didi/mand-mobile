@@ -40,7 +40,7 @@ title: Mand Mobile
 
 #### 快速上手
 
-请参考<a href="#/docs/started">快速上手</a>
+请参考<a href="#/zh-CN/docs/started">快速上手</a>
 
 #### 链接
 
@@ -55,7 +55,7 @@ title: Mand Mobile
 
 #### 如何贡献
 
-在以任何形式的参与前，请先阅读<a href="#/docs/development">开发指南</a>。如有任何的意见或建议，欢迎您通过创建<a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a>或<a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>的方式告知我们。
+在以任何形式的参与前，请先阅读<a href="#/zh-CN/docs/development">开发指南</a>。如有任何的意见或建议，欢迎您通过创建<a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a>或<a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>的方式告知我们。
 
 #### 社区互助
 
