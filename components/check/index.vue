@@ -8,7 +8,7 @@
     @click="$_onClick"
   >
     <div class="md-check-icon">
-      <md-icon :name="currentIcon" :size="size" />
+      <md-icon :name="currentIcon" :size="size" :svg="iconSvg"/>
     </div>
     <div class="md-check-label" v-if="$slots.default || label">
       <slot>{{ label }}</slot>
@@ -17,8 +17,12 @@
 </template>
 
 <script>import Icon from '../icon'
+import checkMixin from './mixin'
+
 export default {
   name: 'md-check',
+
+  mixins: [checkMixin],
 
   components: {
     [Icon.name]: Icon,
@@ -34,18 +38,6 @@ export default {
     size: {
       type: String,
       default: 'md',
-    },
-    icon: {
-      type: String,
-      default: 'checked',
-    },
-    iconInverse: {
-      type: String,
-      default: 'check',
-    },
-    iconDisabled: {
-      type: String,
-      default: 'check-disabled',
     },
     label: {
       type: String,

@@ -29,6 +29,8 @@ Vue.component(CheckList.name, CheckList)
 |icon|选中项图标名称|String|`checked`|-|
 |icon-inverse|未选中项图标名称|String|`checke`|-|
 |icon-disabled|禁用项选择图标名称|String|`check-disabled`|-|
+|icon-svg<sup class="version-after">2.3.0+</sup>|使用svg图标|Boolean|`false`|-|
+|size|图标大小|String|`md`|-|
 ---
 
 #### CheckBox Props
@@ -75,6 +77,12 @@ Vue.component(CheckList.name, CheckList)
 |----|-----|------|------|------|
 |v-model|选中项的`value`|Array|-|-|
 |options|选项数据源|Array<{text, value, disabled, ...}>|`[]`|`disabled`为选项是否禁用|
+|icon<sup class="version-after">2.3.0+</sup>|选中项的图标|String|`checked`|-|
+|icon-inverse<sup class="version-after">2.3.0+</sup>|非选中项的图标|String|`check`|-|
+|icon-disabled<sup class="version-after">2.3.0+</sup>|禁用项的图标|String|`check-disabled`|-|
+|icon-size<sup class="version-after">2.3.0+</sup>|图标大小|String|`md`|-|
+|icon-svg<sup class="version-after">2.3.0+</sup>|使用svg图标|Boolean|`false`|-|
+|icon-position<sup class="version-after">2.3.0+</sup>|图标位置|String|`right`|`left`, `right`|
 |is-slot-scope|是否强制使用或不使用`slot-scope`|Boolean|-|某些情况下需要根据业务逻辑动态确定是否使用，可避免直接组件上加`if/else`|
 
 #### CheckList Slots

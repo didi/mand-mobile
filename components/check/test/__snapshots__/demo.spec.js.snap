@@ -57,9 +57,7 @@ exports[`Check - Demo Check list 1`] = `
               <!---->
             </div>
             <div class="md-cell-item-right"><label class="md-check">
-                <div class="md-check-icon">
-                  <!---->
-                </div>
+                <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                 <!---->
               </label>
               <!---->
@@ -75,7 +73,7 @@ exports[`Check - Demo Check list 1`] = `
               <!---->
             </div>
             <div class="md-cell-item-right"><label class="md-check is-checked">
-                <div class="md-check-icon"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
+                <div class="md-check-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
                 <!---->
               </label>
               <!---->
@@ -91,9 +89,7 @@ exports[`Check - Demo Check list 1`] = `
               <!---->
             </div>
             <div class="md-cell-item-right"><label class="md-check">
-                <div class="md-check-icon">
-                  <!---->
-                </div>
+                <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                 <!---->
               </label>
               <!---->
@@ -109,9 +105,7 @@ exports[`Check - Demo Check list 1`] = `
               <!---->
             </div>
             <div class="md-cell-item-right"><label class="md-check">
-                <div class="md-check-icon">
-                  <!---->
-                </div>
+                <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                 <!---->
               </label>
               <!---->
@@ -127,9 +121,7 @@ exports[`Check - Demo Check list 1`] = `
               <!---->
             </div>
             <div class="md-cell-item-right"><label class="md-check is-disabled">
-                <div class="md-check-icon">
-                  <!---->
-                </div>
+                <div class="md-check-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
                 <!---->
               </label>
               <!---->

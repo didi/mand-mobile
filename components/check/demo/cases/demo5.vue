@@ -3,12 +3,11 @@
     <md-field title="复选列表">
       <md-check-list
         v-model="favorites"
-        icon="right"
-        icon-inverse=""
+        iconPosition="left"
         :options="fruits"
       />
     </md-field>
-	</div>
+  </div>
 </template>
 
 <script>import {Field, CheckList} from 'mand-mobile'
@@ -27,11 +26,11 @@ export default {
     return {
       favorites: ['apple'],
       fruits: [
-        {value: 'watermelon', label: '西瓜'},
-        {value: 'apple', label: '苹果'},
-        {value: 'banana', label: '香蕉'},
-        {value: 'orange', label: '橙子'},
-        {value: 'tomato', label: '西红柿', disabled: true},
+        {value: 'watermelon', label: '西瓜', brief: '选项摘要描述'},
+        {value: 'apple', label: '苹果', brief: '选项摘要描述'},
+        {value: 'banana', label: '香蕉', brief: '选项摘要描述'},
+        {value: 'orange', label: '橙子', brief: '选项摘要描述'},
+        {value: 'tomato', label: '西红柿', brief: '选项摘要描述', disabled: true},
       ],
     }
   },
@@ -39,6 +38,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.md-example-child
-  font-size 28px
+  .md-example-child
+    font-size 28px
 </style>
