@@ -3,6 +3,32 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.3.0
+
+`2019-06-13`
+
+- Feature
+  - `Check` and `CheckList` increase the icon size, location and other related configuration properties[#383](https://github.com/didi/mand-mobile/issues/383)
+  - `CheckList` slot adds `index`, `selected` field
+
+  ```html
+    <template>
+      <md-check-list :options="data">
+        <template slot-scope="{ option, index, selected }">
+          <!-- xxx -->
+        </template>
+      </md-check-list>
+    </template>
+  ```
+
+  - `RadioList` slot adds `index`, `selected` fields, and does not display icons when `icon` is empty
+  - `Selector` adds property `multi` to support multiple selections[#296](https://github.com/didi/mand-mobile/issues/296)
+  - `Toast` adds the attribute `component`, which is used and customized in component form[#445](https://github.com/didi/mand-mobile/issues/445)
+  - ScrollView` adds property `is-prevent` to support setting whether to prevent the default behavior when scrolling in non-scrollable areas[#454](https://github.com/didi/mand-mobile/issues/454)
+
+- Fix
+  - Fix autoplay invalidation when `Swiper` property isLoop is true[#452](https://github.com/didi/mand-mobile/issues/452)
+  
 ### 2.2.4
 
 `2019-05-26`

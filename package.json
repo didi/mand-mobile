@@ -1,6 +1,6 @@
 {
   "name": "mand-mobile",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "description": "A Vue.js 2.0 Mobile UI Toolkit",
   "homepage": "https://github.com/didi/mand-mobile",
   "main": "lib/mand-mobile.umd.js",
