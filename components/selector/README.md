@@ -24,7 +24,7 @@ Vue.component(Selector.name, Selector)
 |----|-----|------|------|------|
 |v-model|选择器是否可见|Boolean|false|-|
 |data|数据源|Array<{value,text,disabled,...}>|`[]`|`text`可为`html`片段|
-|default-value|选择器初始选中项的值|any|-|`multi`为`true`时，`default-value`应该传数组sup class="version-after">2.3.0+</sup>|
+|default-value|选择器初始选中项的值|any|-|`multi`为`true`时，`default-value`应该传数组<sup class="version-after">2.3.0+</sup>|
 |title|选择器标题|String|-|-|
 |describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|-|若为空则为`确认模式`，即点击选项直接选择|
