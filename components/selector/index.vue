@@ -41,25 +41,49 @@
             minHeight: `${minHeight}`
           }"
         >
-          <md-radio-list
-            class="md-selector-list"
-            ref="radio"
-            :key="radioKey"
-            :value="defaultValue"
-            :options="data"
-            :is-slot-scope="hasSlot"
-            :icon="icon"
-            :icon-disabled="iconDisabled"
-            :icon-inverse="iconInverse"
-            :icon-position="iconPosition"
-            :icon-size="iconSize"
-            :icon-svg="iconSvg"
-            @change="$_onSelectorChoose"
-          >
-            <template slot-scope="{ option }">
-              <slot :option="option"></slot>
-            </template>
-          </md-radio-list>
+          <!-- audio-list with single select -->
+          <template v-if="!multi">
+            <md-radio-list
+              class="md-selector-list"
+              ref="radio"
+              :key="radioKey"
+              :value="defaultValue"
+              :options="data"
+              :is-slot-scope="hasSlot"
+              :icon="icon"
+              :icon-disabled="iconDisabled"
+              :icon-inverse="iconInverse"
+              :icon-position="iconPosition"
+              :icon-size="iconSize"
+              :icon-svg="iconSvg"
+              @change="$_onSelectorChoose"
+            >
+              <template slot-scope="{ option }">
+                <slot :option="option"></slot>
+              </template>
+            </md-radio-list>
+          </template>
+          <!-- check-list with multi select -->
+          <template v-else>
+            <md-check-list
+              class="md-selector-list"
+              ref="check"
+              :key="checkKey"
+              v-model="multiDefaultValue"
+              :options="data"
+              :is-slot-scope="hasSlot"
+              :icon="icon"
+              :icon-disabled="iconDisabled"
+              :icon-inverse="iconInverse"
+              :icon-position="iconPosition"
+              :icon-size="iconSize"
+              :icon-svg="iconSvg"
+            >
+              <template slot-scope="{ option }">
+                <slot :option="option"></slot>
+              </template>
+            </md-check-list>
+          </template>
         </md-scroll-view>
       </div>
     </md-popup>
@@ -74,6 +98,7 @@ import popupTitleBarMixin from '../popup/mixins/title-bar'
 import RadioList from '../radio-list'
 import radioMixin from '../radio/mixins'
 import ScrollView from '../scroll-view'
+import CheckList from '../check-list'
 
 export default {
   name: 'md-selector',
@@ -83,6 +108,7 @@ export default {
   components: {
     [Icon.name]: Icon,
     [RadioList.name]: RadioList,
+    [CheckList.name]: CheckList,
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
     [ScrollView.name]: ScrollView,
@@ -117,6 +143,10 @@ export default {
     },
     iconPosition: {
       default: 'right',
+    },
+    multi: {
+      type: Boolean,
+      default: false,
     },
 
     // Mixin Props
@@ -170,8 +200,10 @@ export default {
     return {
       isSelectorShow: this.value,
       radioKey: Date.now(),
+      checkKey: Date.now() + 1,
       activeIndex: -1,
       tmpActiveIndex: -1,
+      multiDefaultValue: [],
     }
   },
 
@@ -191,6 +223,16 @@ export default {
     isSelectorShow(val) {
       this.$emit('input', val)
     },
+    defaultValue: {
+      handler(val) {
+        if (!this.multi || val === '') {
+          return
+        }
+
+        this.multiDefaultValue = !Array.isArray(val) ? [val] : val
+      },
+      immediate: true,
+    },
   },
 
   methods: {
@@ -200,6 +242,12 @@ export default {
     },
     // MARK: events handler
     $_onSelectorConfirm() {
+      if (this.multi) {
+        this.$emit('confirm', this.multiDefaultValue.slice())
+        this.isSelectorShow = false
+        return
+      }
+
       if (this.tmpActiveIndex > -1) {
         this.activeIndex = this.tmpActiveIndex
         this.isSelectorShow = false
@@ -215,6 +263,7 @@ export default {
       } else {
         // reset radio
         this.radioKey = Date.now()
+        this.checkKey = Date.now() + 1
       }
 
       this.$emit('cancel')
@@ -264,6 +313,9 @@ export default {
     .md-radio-item.is-selected
       .md-cell-item-title
         color inherit
+  .md-check-item
+    padding-left h-gap-sl
+    padding-right h-gap-sl
 
 
 .md-selector-container

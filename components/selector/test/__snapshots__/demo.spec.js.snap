@@ -295,6 +295,108 @@ exports[`Selector - Demo Custom options 1`] = `
 </div>
 `;
 
+exports[`Selector - Demo Multi mode 1`] = `
+<div class="md-example-child md-example-child-selector md-example-child-selector-4">
+  <div class="md-selector is-normal">
+    <div class="md-popup inner-popup with-mask bottom" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+        <div class="md-popup-title-bar">
+          <div class="title-bar-left md-popup-cancel">取消</div>
+          <div class="title-bar-title">
+            <p class="title">多选模式</p>
+            <!---->
+          </div>
+          <div class="title-bar-right md-popup-confirm">确定</div>
+        </div>
+        <div class="md-selector-container">
+          <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
+            <!---->
+            <div class="scroll-view-container">
+              <!---->
+              <div icon="checked" icon-disabled="check-disabled" icon-inverse="check" icon-position="right" icon-size="md" class="md-check-group md-check-list md-selector-list">
+                <div class="md-cell-item md-check-item is-checked">
+                  <div class="md-cell-item-body">
+                    <!---->
+                    <div class="md-cell-item-content">
+                      <p class="md-cell-item-title">选项一</p>
+                      <!---->
+                    </div>
+                    <div class="md-cell-item-right"><label class="md-check is-checked">
+                        <div class="md-check-icon"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
+                        <!---->
+                      </label>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                </div>
+                <div class="md-cell-item md-check-item">
+                  <div class="md-cell-item-body">
+                    <!---->
+                    <div class="md-cell-item-content">
+                      <p class="md-cell-item-title">选项二</p>
+                      <!---->
+                    </div>
+                    <div class="md-cell-item-right"><label class="md-check">
+                        <div class="md-check-icon">
+                          <!---->
+                        </div>
+                        <!---->
+                      </label>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                </div>
+                <div class="md-cell-item md-check-item">
+                  <div class="md-cell-item-body">
+                    <!---->
+                    <div class="md-cell-item-content">
+                      <p class="md-cell-item-title">选项三</p>
+                      <!---->
+                    </div>
+                    <div class="md-cell-item-right"><label class="md-check">
+                        <div class="md-check-icon">
+                          <!---->
+                        </div>
+                        <!---->
+                      </label>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                </div>
+                <div class="md-cell-item md-check-item">
+                  <div class="md-cell-item-body">
+                    <!---->
+                    <div class="md-cell-item-content">
+                      <p class="md-cell-item-title">选项四</p>
+                      <!---->
+                    </div>
+                    <div class="md-cell-item-right"><label class="md-check">
+                        <div class="md-check-icon">
+                          <!---->
+                        </div>
+                        <!---->
+                      </label>
+                      <!---->
+                    </div>
+                  </div>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+            </div>
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Selector - Demo No need to confirm 1`] = `
 <div class="md-example-child md-example-child-selector md-example-child-selector-0">
   <div class="md-selector is-normal">
