@@ -80,7 +80,9 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 ##### Toast.hide()
 隐藏提示
 
-#### Toast.component Props
+#### Toast.component Props 
+
+<sup class="version-after">2.3.0+</sup>
 
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
@@ -91,7 +93,15 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | position | 展示位置 | String | `center` | `top/center/bottom` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` | - |
 
+```html
+<md-toast>
+  <md-activity-indicator>loading...</md-activity-indicator>
+</md-toast>
+```
+
 #### Toast.component Methods
+
+<sup class="version-after">2.3.0+</sup>
 
 ##### show()
 展示提示
@@ -100,6 +110,8 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 隐藏提示
 
 #### Toast.component Events
+
+<sup class="version-after">2.3.0+</sup>
 
 ##### @show()
 提示展示事件
