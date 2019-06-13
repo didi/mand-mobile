@@ -19,7 +19,7 @@ describe('Toast - Operation', () => {
     })
     setTimeout(() => {
       wrapper.setProps({icon: 'circle-right'})
-      wrapper.vm.fire()
+      wrapper.vm.show()
       setTimeout(function() {
         expect(wrapper.vm.visible).toBe(true)
         done()
@@ -52,6 +52,7 @@ describe('Toast - Operation', () => {
       },
     })
 
+    wrapper.vm.show()
     const eventStub = sinon.stub(wrapper.vm, '$emit')
     wrapper.vm.hide()
     setTimeout(() => {

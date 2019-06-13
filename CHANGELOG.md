@@ -3,6 +3,33 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.3.0
+
+`2019-06-13`
+
+- Feature
+  - `Check`和`CheckList`增加图标大小、位置等相关配置属性[#383](https://github.com/didi/mand-mobile/issues/383)
+  - `CheckList`插槽增加`index`、`selected`字段
+
+  ```html
+    <template>
+      <md-check-list :options="data">
+        <template slot-scope="{ option, index, selected }">
+          <!-- xxx -->
+        </template>
+      </md-check-list>
+    </template>
+  ```
+
+  - `RadioList`插槽增加`index`、`selected`字段，且当`icon`置空时不展示图标
+  - `Selector`增加属性`multi`，支持多选[#296](https://github.com/didi/mand-mobile/issues/296)
+  - `Toast`增加属性`component`，支持以组件形式引入并定制[#445](https://github.com/didi/mand-mobile/issues/445)
+  - `ScrollView`增加属性`is-prevent`，支持设置当在非可滚动区域触发滚动时是否也阻止默认行为[#454](https://github.com/didi/mand-mobile/issues/454)
+
+- Fix
+  - 修复`Swiper`属性isLoop为true时，autoplay失效的问题[#452](https://github.com/didi/mand-mobile/issues/452)
+
+
 ### 2.2.4
 
 `2019-05-26`
