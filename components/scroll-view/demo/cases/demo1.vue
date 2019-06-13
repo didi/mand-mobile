@@ -3,6 +3,8 @@
     <md-scroll-view
       ref="scrollView"
       :scrolling-y="false"
+      :touch-angle="80"
+      :is-prevent="false"
     >
       <div class="scroll-view-list">
         <p
@@ -22,6 +24,8 @@ export default {
   /* DELETE */
   title: '横向滚动',
   titleEnUS: 'Horizontal scrolling',
+  describe: 'isPrevent false, touchAngle 80',
+  describEnUs: 'isPrevent false, touchAngle 80',
   /* DELETE */
   components: {
     [ScrollView.name]: ScrollView,

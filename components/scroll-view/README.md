@@ -35,6 +35,11 @@ Vue.component(ScrollView.name, ScrollView)
 |end-reached-threshold | 触发到达底部的提前量 | Number | 0 | 单位`px` |
 |immediate-check-end-reaching <sup class="version-after">2.1.0+</sup>| 初始化时立即触发是否到达底部检查 | Boolean | `false` | - |
 |touch-angle <sup class="version-after">2.1.0+</sup>| 触发滚动的角度范围 | Number | 45 | 单位`deg` |
+|is-prevent <sup class="version-after">2.3.0+</sup>| 阻止浏览器默认滚动 | Boolean | `true` | 如果设置为`false`，当在非可滚动角度范围触发滚动时会触发浏览器默认滚动 |
+
+#### ScrollView TouchAngle
+
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/cSL4mjxTmW1560240984431.jpg" width="460"/>
 
 #### ScrollViewRefresh Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
