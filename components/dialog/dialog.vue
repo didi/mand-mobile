@@ -1,7 +1,7 @@
 <template>
   <div class="md-dialog">
     <md-popup
-      v-model="value"
+      :value="value"
       :hasMask="hasMask"
       :maskClosable="maskClosable"
       position="center"
