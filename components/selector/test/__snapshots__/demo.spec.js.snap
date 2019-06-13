@@ -314,7 +314,7 @@ exports[`Selector - Demo Multi mode 1`] = `
             <!---->
             <div class="scroll-view-container">
               <!---->
-              <div icon="checked" icon-disabled="check-disabled" icon-inverse="check" icon-position="right" icon-size="md" class="md-check-group md-check-list md-selector-list">
+              <div class="md-check-group md-check-list md-selector-list">
                 <div class="md-cell-item md-check-item is-checked">
                   <div class="md-cell-item-body">
                     <!---->
@@ -323,7 +323,7 @@ exports[`Selector - Demo Multi mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-check is-checked">
-                        <div class="md-check-icon"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
+                        <div class="md-check-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -339,9 +339,7 @@ exports[`Selector - Demo Multi mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-check">
-                        <div class="md-check-icon">
-                          <!---->
-                        </div>
+                        <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -357,9 +355,7 @@ exports[`Selector - Demo Multi mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-check">
-                        <div class="md-check-icon">
-                          <!---->
-                        </div>
+                        <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -375,9 +371,7 @@ exports[`Selector - Demo Multi mode 1`] = `
                       <!---->
                     </div>
                     <div class="md-cell-item-right"><label class="md-check">
-                        <div class="md-check-icon">
-                          <!---->
-                        </div>
+                        <div class="md-check-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
