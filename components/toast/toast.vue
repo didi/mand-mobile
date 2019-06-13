@@ -2,11 +2,15 @@
   <div class="md-toast" :class="[position]">
     <md-popup
       :value="visible"
+      @show="$_onShow"
       @hide="$_onHide"
       :hasMask="hasMask"
       :maskClosable="false"
     >
-      <div class="md-toast-content">
+      <div class="md-toast-content" v-if="$slots.default">
+        <slot></slot>
+      </div>
+      <div class="md-toast-content" v-else>
         <md-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/>
         <div class="md-toast-text" v-if="content" v-text="content"></div>
       </div>
@@ -55,7 +59,7 @@ export default {
 
   data() {
     return {
-      visible: true,
+      visible: false,
     }
   },
 
@@ -66,6 +70,9 @@ export default {
   },
 
   methods: {
+    $_onShow() {
+      this.$emit('show')
+    },
     $_onHide() {
       this.$emit('hide')
     },
@@ -78,6 +85,10 @@ export default {
           this.hide()
         }, this.duration)
       }
+    },
+    show() {
+      this.visible = true
+      this.fire()
     },
     hide() {
       this.visible = false

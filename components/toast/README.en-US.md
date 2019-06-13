@@ -77,3 +77,42 @@ Dynamically create a loading toast
 
 ##### Toast.hide()
 Hide current toast
+
+#### Toast.component Props
+
+<sup class="version-after">2.3.0+</sup>
+
+| Props | Description | Type | Default | Note |
+|----|-----|------|------|------|
+| icon | name of icon | String | - | refer to `Icon` component for customized icons|
+| iconSvg | use svg icon | Boolean | `false` |-|
+| content | content of message| String/Number | - |- |
+| duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
+| position | display position | String | `center` | `top/center/bottom` |
+| hasMask | whether to show a transparent mask, which will prevent users from clicking| Boolean | `false` | - |
+
+```html
+<md-toast>
+  <md-activity-indicator>loading...</md-activity-indicator>
+</md-toast>
+```
+
+#### Toast.component Methods
+
+<sup class="version-after">2.3.0+</sup>
+
+##### show()
+Show toast
+
+##### hide()
+Hide toast
+
+#### Toast.component Events
+
+<sup class="version-after">2.3.0+</sup>
+
+##### @show()
+Toast show event
+
+##### @hide()
+Toast hidden event
