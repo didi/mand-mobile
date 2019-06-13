@@ -251,9 +251,12 @@ export default {
       if (!this.scroller) {
         return
       }
+      let hadPrevent = false
 
       if (this.isPrevent) {
         event.preventDefault()
+
+        hadPrevent = true
       }
 
       this.currentX = event.targetTouches[0].pageX
@@ -266,9 +269,7 @@ export default {
         }
       }
 
-      if (!this.isPrevent) {
-        event.preventDefault()
-      }
+      !hadPrevent && event.preventDefault()
 
       this.scroller.doTouchMove(event.touches, event.timeStamp, event.scale)
 
