@@ -187,6 +187,8 @@ export default {
   height dialog-icon-size
   margin v-gap-md auto 28px
 .md-dialog .md-dialog-icon .md-icon
+.md-dialog .md-dialog-icon .md-icon.icon-svg
+.md-dialog .md-dialog-icon .md-icon.icon-font
   display flex
   align-items center
   justify-content center
