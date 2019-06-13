@@ -27,7 +27,8 @@ toc: hidden
   - `ScrollView`增加属性`is-prevent`，支持设置当在非可滚动区域触发滚动时是否也阻止默认行为[#454](https://github.com/didi/mand-mobile/issues/454)
 
 - Fix
-  - 修复`Swiper`属性isLoop为true时，autoplay失效的问题[#452](https://github.com/didi/mand-mobile/issues/452)
+  - 修复`Swiper`属性`isLoop`为true时，autoplay失效的问题[#452](https://github.com/didi/mand-mobile/issues/452)
+  - 修复`Dialog`属性`maskClosable`为true时，关闭弹窗导致报错[#471](https://github.com/didi/mand-mobile/issues/471)
 
 
 ### 2.2.4

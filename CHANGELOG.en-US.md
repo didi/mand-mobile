@@ -28,6 +28,7 @@ toc: hidden
 
 - Fix
   - Fix autoplay invalidation when `Swiper` property isLoop is true[#452](https://github.com/didi/mand-mobile/issues/452)
+  - Fix error caused by closing dialog, when `Dialog` property `maskClosable` is true[#471](https://github.com/didi/mand-mobile/issues/471)
   
 ### 2.2.4
 
