@@ -42,6 +42,7 @@
 <script>
 import Transition from '../transition'
 import popupMixin from './mixins'
+import fullScreenPatchUtil from './../../../business/fullscreen-patch-util';
 
 export default {
   name: 'md-popup',
@@ -110,6 +111,10 @@ export default {
       isPopupBoxShow: false,
       // transtion lock
       isAnimation: false,
+
+      excluder: {},
+      touchStartY: 0,
+      nativeViewPatches: []
     }
   },
 
@@ -121,10 +126,12 @@ export default {
           setTimeout(() => {
             this.$_showPopupBox()
           }, 50)
-        } else {
+        }
+        else {
           this.$_showPopupBox()
         }
-      } else {
+      }
+      else {
         this.$_hidePopupBox()
       }
     },
@@ -155,6 +162,17 @@ export default {
       }
 
       this.preventScroll && this.$_preventScroll(true)
+
+      if (window.plus && this.hasMask) {
+        const maskStyle = {backgroundColor: '#000000', opacity: 0.8};
+        this.nativeViewPatches = fullScreenPatchUtil.createNativeViewPatches(maskStyle);
+        this.nativeViewPatches.forEach(patch => {
+          patch.show();
+          window.addEventListener('unload', () => {
+            patch.close();
+          });
+        });
+      }
     },
     $_hidePopupBox() {
       this.isAnimation = true
@@ -165,6 +183,10 @@ export default {
       if (process.env.NODE_ENV === 'test') {
         this.$_onPopupTransitionStart()
         this.$_onPopupTransitionEnd()
+      }
+
+      if (window.plus && this.hasMask) {
+        fullScreenPatchUtil.destoryNativeViewPatches(this.nativeViewPatches);
       }
     },
     $_preventScroll(isBind) {
@@ -182,15 +204,39 @@ export default {
       const excluder =
         preventScrollExclude && typeof preventScrollExclude === 'string'
           ? this.$el.querySelector(preventScrollExclude)
-          : preventScrollExclude
-      excluder && excluder[handler]('touchmove', this.$_stopImmediatePropagation, false)
+          : preventScrollExclude;
+      this.excluder = excluder;
+      excluder && excluder[handler]('touchstart', this.$_recordTouchStart, false);
+      excluder && excluder[handler]('touchmove', this.$_scollSelfButPreventOthers, false);
     },
     $_preventDefault(event) {
       event.preventDefault()
     },
-    $_stopImmediatePropagation(event) {
+    $_scollSelfButPreventOthers(event) {
+      let canMove = true;
+      const touch = event.changedTouches && event.changedTouches.length ? event.changedTouches[0] : {};
+      const target = this.excluder;
+      const moveY = touch.clientY - this.touchStartY;
+
+      if (target.scrollTop === 0 && moveY > 0) {
+        canMove = false;
+      }
+
+      if (target.scrollTop - target.clientTop + target.clientHeight === target.scrollHeight && moveY < 0) {
+        canMove = false;
+      }
+
+      if (!canMove) {
+        event.preventDefault();
+        return;
+      }
+
       /* istanbul ignore next */
       event.stopImmediatePropagation()
+    },
+    $_recordTouchStart(event) {
+      const touch = event.changedTouches && event.changedTouches.length ? event.changedTouches[0] : {};
+      this.touchStartY = touch.clientY;
     },
 
     // MARK: event handler
@@ -244,6 +290,8 @@ export default {
   display flex
   pointer-events none
   z-index popup-zindex
+  top -1px
+  bottom -1px
 
   &.center
     align-items center
