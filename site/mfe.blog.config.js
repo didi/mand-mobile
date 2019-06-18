@@ -66,6 +66,7 @@ module.exports = {
           name: 'introduce',
           text: 'Mand Mobile',
           markdown: resolve('site/docs/introduce.md'),
+          demo: [resolve('site/theme/default/components/GitContributors.vue')]
         },
         {
           name: 'started',
@@ -170,6 +171,7 @@ module.exports = {
           name: 'introduce',
           text: 'Mand Mobile',
           markdown: resolve('site/docs/introduce.en-US.md'),
+          demo: [resolve('site/theme/default/components/GitContributors.vue')]
         },
         {
           name: 'started',

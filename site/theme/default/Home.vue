@@ -131,6 +131,15 @@
               </template>
             </template>
           </div>
+          <!-- 模块其他 -->
+          <div
+            class="home-others"
+            v-if="homeBlock.others"
+            v-show="blockShow[homeBlockIndex]"
+            :key="`home-others-${homeBlockIndex}-3`"
+          >
+            <component :is="homeBlock.others" :ref="`block-other-slots-${homeBlockIndex}`"></component>  
+          </div>
         </transition-group>
       </section>
     </div>
