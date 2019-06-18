@@ -88,19 +88,10 @@ export default {
         return ''
       },
     },
-    // Mixin Props
-    // value: {
-    //   type: Boolean,
-    //   default: false,
-    // },
-    // hasMask: {
-    //   type: Boolean,
-    //   default: true,
-    // },
-    // maskClosable: {
-    //   type: Boolean,
-    //   default: true,
-    // },
+    nativeTitleHeight: {
+      type: Number,
+      default: 44
+    }
   },
 
   data() {
@@ -165,12 +156,12 @@ export default {
 
       if (window.plus && this.hasMask) {
         const maskStyle = {backgroundColor: '#000000', opacity: 0.8};
-        this.nativeViewPatches = fullScreenPatchUtil.createNativeViewPatches(maskStyle);
+        this.nativeViewPatches = fullScreenPatchUtil.createNativeViewPatches(maskStyle, this.nativeTitleHeight);
         this.nativeViewPatches.forEach(patch => {
           patch.show();
-          window.addEventListener('unload', () => {
-            patch.close();
-          });
+        });
+        window.addEventListener('unload', () => {
+          fullScreenPatchUtil.destoryNativeViewPatches(this.nativeViewPatches);
         });
       }
     },

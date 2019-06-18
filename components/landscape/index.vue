@@ -7,6 +7,7 @@
       prevent-scroll-exclude=".md-landscape-inner-scroll"
       :has-mask="!fullScreen && hasMask"
       :transition="fullScreen ? 'md-landscape' : 'md-punch'"
+      :native-title-height="nativeTitleHeight"
       @input="$emit('input', false)"
       @show="$emit('show')"
       @hide="$emit('hide')"
