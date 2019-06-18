@@ -57,6 +57,10 @@ title: Mand Mobile
 
 在以任何形式的参与前，请先阅读<a href="#/zh-CN/docs/development">开发指南</a>。如有任何的意见或建议，欢迎您通过创建<a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a>或<a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>的方式告知我们。
 
+##### 贡献者
+
+<!-- DEMO -->
+
 #### 社区互助
 
 如果您在使用的过程中碰到问题，可以扫描下方二维码加入官方群寻求帮助，同时期待您能够分享个人使用经验给予他人帮助。   

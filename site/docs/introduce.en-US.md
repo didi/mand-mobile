@@ -57,6 +57,10 @@ Please refer to <a href="#/en-US/docs/started">Quickstart</a>
 
 Please read our <a href="#/en-US/docs/development">Development Guide</a> first. If you'd like to help us improve Mand Mobile, please create <a href="https://github.com/didi/mand-mobile/issues" targe="_blank">Issue</a> or <a href="https://github.com/didi/mand-mobile/pulls" targe="_blank">Pull Request</a>.
 
+##### Contributors
+
+<!-- DEMO -->
+
 #### Community
 
 If you have problems during use, you can scan the QR code below to join the official group for help and it's expected that you share your personal experience to help others.  

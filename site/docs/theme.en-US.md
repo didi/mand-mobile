@@ -8,6 +8,8 @@ title: Theme Customization
   <img src="http://static.galileo.xiaojukeji.com/static/tms/other/mand-theme.jpg" width="800">
 </p>
 
+<iframe src="https://codesandbox.io/embed/mand-mobile-custom-theme-ofbut?fontsize=12&module=%2Fsrc%2Fassets%2Ftheme.custom.styl" title="Mand Mobile Custom Theme" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
 
 ### Style Variables
 

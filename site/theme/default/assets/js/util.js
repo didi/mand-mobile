@@ -70,3 +70,11 @@ export function localStore (key, value) {
     return setStorage('localStorage', key, value)
   }
 }
+
+export function sessionStore (key, value) {
+  if (value === undefined) {
+    return getStorage('sessionStore', key)
+  } else {
+    return setStorage('sessionStore', key, value)
+  }
+}
