@@ -1,6 +1,9 @@
 <template>
   <div class="md-number-keyboard" :class="{'in-view': isView}">
     <template v-if="isView">
+      <div class="md-number-keyboard-slot" v-if="$slots.default">
+        <slot></slot>
+      </div>
       <md-number-keyboard-container
         ref="keyborad"
         :type="type"
@@ -24,6 +27,9 @@
         @hide="$emit('hide')"
         :has-mask="false"
       >
+        <div class="md-number-keyboard-slot" v-if="$slots.default">
+          <slot></slot>
+        </div>
         <md-number-keyboard-container
           ref="keyborad"
           :type="type"
@@ -73,6 +79,10 @@ export default {
     disorder: {
       type: Boolean,
     },
+    isHideConfirm: {
+      type: Boolean,
+      default: true,
+    },
     okText: {
       type: String,
     },
@@ -110,7 +120,7 @@ export default {
     },
     $_onConfirm() {
       this.$emit('confirm')
-      this.hide()
+      this.isHideConfirm && this.hide()
     },
 
     // MARK: public methods
