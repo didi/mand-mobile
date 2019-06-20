@@ -14,5 +14,6 @@
 import Demo0 from './cases/demo0'
 import Demo1 from './cases/demo1'
 import Demo2 from './cases/demo2'
-export default {...createDemoModule('number-keyboard', [Demo0, Demo1, Demo2])}
+import Demo3 from './cases/demo3'
+export default {...createDemoModule('number-keyboard', [Demo0, Demo1, Demo2, Demo3])}
 </script>
