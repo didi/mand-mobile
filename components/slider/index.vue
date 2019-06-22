@@ -115,14 +115,16 @@
       return (this.values[1] - this.min) / (this.max - this.min) * 100
     },
     barStyle() {
-      if (this.range) {
+      const {range, values, min, max, lowerHandlePosition} = this
+
+      if (range) {
         return {
-          width: (this.values[1] - this.values[0]) / (this.max - this.min) * 100 + '%',
-          left: this.lowerHandlePosition + '%',
+          width: (values[1] - values[0]) / (max - min) * 100 + '%',
+          left: lowerHandlePosition + '%',
         }
       } else {
         return {
-          width: this.values[0] / (this.max - this.min) * 100 + '%',
+          width: (values[0] - min) / (max - min) * 100 + '%',
         }
       }
     },
