@@ -3,6 +3,18 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.3.1
+
+`2019-06-22`
+
+- Feature
+  - `NumberKeyboard`增加属性`isHideConfirm`，用来控制确认键点击动作是否自动隐藏键盘[#474](https://github.com/didi/mand-mobile/issues/474)
+  - `NumberKeyboard`增加默认插槽
+
+- Fix
+  - 修复`Slider`的进度条计算错误[#472](https://github.com/didi/mand-mobile/issues/472)
+  - 修复`NumberKeyboard`按键点击易误触的体验问题[#477](https://github.com/didi/mand-mobile/issues/477)
+
 ### 2.3.0
 
 `2019-06-13`

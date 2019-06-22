@@ -9,6 +9,7 @@ exports[`Codebox Basic 1`] = `
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
         <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <!---->
           <div class="md-number-keyboard-container simple">
             <div class="keyboard-number">
               <ul class="keyboard-number-list">
@@ -44,6 +45,7 @@ exports[`Codebox Character mask 1`] = `
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
         <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <!---->
           <div class="md-number-keyboard-container simple">
             <div class="keyboard-number">
               <ul class="keyboard-number-list">
@@ -79,6 +81,7 @@ exports[`Codebox System keyboard 1`] = `
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
         <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <!---->
           <div class="md-number-keyboard-container professional">
             <div class="keyboard-number">
               <ul class="keyboard-number-list">
@@ -119,6 +122,7 @@ exports[`Codebox Unlimited length 1`] = `
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
         <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+          <!---->
           <div class="md-number-keyboard-container professional">
             <div class="keyboard-number">
               <ul class="keyboard-number-list">

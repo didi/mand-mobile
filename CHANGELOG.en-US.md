@@ -3,6 +3,18 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.3.1
+
+`2019-06-22`
+
+- Feature
+  - `NumberKeyboard` adds property `isHideConfirm`, used to control whether the confirmation button click action automatically hides the keyboard[#474](https://github.com/didi/mand-mobile/issues/474)
+  - `NumberKeyboard` add default slot
+
+- Fix
+  - fix 'Slider` progress bar width calculation error[#472](https://github.com/didi/mand-mobile/issues/472)
+  - fix the problem that the `NumberKeyboard` keys may be clicked incorrectly[#477](https://github.com/didi/mand-mobile/issues/477)
+  
 ### 2.3.0
 
 `2019-06-13`

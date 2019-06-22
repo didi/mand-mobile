@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-1">
+  <div class="md-example-child md-example-child-number-keyboard md-example-child-number-keyboard-2">
     <md-button @click="isKeyBoardShow = !isKeyBoardShow">{{ isKeyBoardShow ? '收起键盘' : '唤起键盘' }}</md-button>
     <md-number-keyboard
       v-model="isKeyBoardShow"
@@ -51,6 +51,6 @@ export default {
   left 50%
   z-index 9999
   transform translate(-50%, -50%)
-  font-size font-heading-large * 2
-  text-shadow 0 4px 20px color-text-minor
+  font-size 120px
+  text-shadow 0 4px 20px #666
 </style>
