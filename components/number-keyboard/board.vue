@@ -195,6 +195,8 @@ export default {
           width 66.6%
         &:active, &.active
           background-color number-keyboard-key-bg-tap
+        &:before, &:after
+          pointer-events none
   .keyboard-operate
     flex 1
     .keyboard-operate-list

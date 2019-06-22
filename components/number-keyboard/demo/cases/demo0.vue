@@ -76,6 +76,6 @@ export default {
     left 50%
     z-index 9999
     transform translate(-50%, -50%)
-    font-size font-heading-large * 2
-    text-shadow 0 4px 20px color-text-minor
+    font-size 120px
+    text-shadow 0 4px 20px #666
 </style>
