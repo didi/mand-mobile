@@ -27,6 +27,7 @@ exports[`Captcha - Demo Customize 1`] = `
                   <div class="md-popup bottom" style="display:none;">
                     <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
                     <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+                      <!---->
                       <div class="md-number-keyboard-container simple">
                         <div class="keyboard-number">
                           <ul class="keyboard-number-list">
@@ -76,6 +77,7 @@ exports[`Captcha - Demo Inline display 1`] = `
       </footer>
       <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
       <div class="md-number-keyboard md-codebox-keyboard in-view">
+        <!---->
         <div class="md-number-keyboard-container simple">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">

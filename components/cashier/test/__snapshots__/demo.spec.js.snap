@@ -29,6 +29,7 @@ exports[`Cashier - Demo Baisc-captcha 1`] = `
               </footer>
               <form action="" style="display: none;"><input type="text" maxlength="4" class="md-codebox-input"></form>
               <div class="md-number-keyboard md-codebox-keyboard in-view">
+                <!---->
                 <div class="md-number-keyboard-container simple">
                   <div class="keyboard-number">
                     <ul class="keyboard-number-list">
