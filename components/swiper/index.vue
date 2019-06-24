@@ -28,7 +28,8 @@
   </div>
 </template>
 
-<script>import Scroller from '../_util/scroller'
+<script>
+import Scroller from '../_util/scroller'
 import {render} from '../_util/render'
 import {warn, debounce} from '../_util'
 
@@ -254,12 +255,12 @@ export default {
     $_backupItem(children) {
       const firstNode = children[0].$el.cloneNode(true)
       const lastNode = children[children.length - 1].$el.cloneNode(true)
-
-      if (children.length > 1 && this.isLoop) {
-        const firstNodeCopy = this.$swiper.querySelector('.md-swiper-item-first-copy')
+      const firstNodeCopy = this.$swiper.querySelector('.md-swiper-item-first-copy')
         const lastNodeCopy = this.$swiper.querySelector('.md-swiper-item-last-copy')
         firstNodeCopy && this.$swiper.removeChild(firstNodeCopy)
         lastNodeCopy && this.$swiper.removeChild(lastNodeCopy)
+      if (children.length > 1 && this.isLoop) {
+        
 
         firstNode.className += ' md-swiper-item-first-copy'
         lastNode.className += ' md-swiper-item-last-copy'
@@ -678,7 +679,7 @@ export default {
     }, 50),
   },
 }
-</script>
+</script>
 
 <style lang="stylus">
 .md-swiper-box
