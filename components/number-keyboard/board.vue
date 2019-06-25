@@ -222,13 +222,12 @@ export default {
         &.confirm
           padding-top 5px
           color number-keyboard-key-confirm-color
-          font-size number-keyboard-key-font-size
+          font-size font-caption-large
           background number-keyboard-key-confirm-bg
           display flex
           flex 1
           align-items center
           justify-content center
-          font-size font-caption-large
           &:active
             background-color number-keyboard-key-confirm-bg-tap
 
