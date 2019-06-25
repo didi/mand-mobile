@@ -10,18 +10,18 @@ exports[`NumberKeyboard - Demo Simple type 1`] = `
         <div class="md-number-keyboard-container simple">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">9</li>
+              <li class="keyboard-number-item"><span>1</span></li>
+              <li class="keyboard-number-item"><span>2</span></li>
+              <li class="keyboard-number-item"><span>3</span></li>
+              <li class="keyboard-number-item"><span>4</span></li>
+              <li class="keyboard-number-item"><span>5</span></li>
+              <li class="keyboard-number-item"><span>6</span></li>
+              <li class="keyboard-number-item"><span>7</span></li>
+              <li class="keyboard-number-item"><span>8</span></li>
+              <li class="keyboard-number-item"><span>9</span></li>
               <li class="keyboard-number-item no-bg"></li>
-              <li class="keyboard-number-item">0</li>
-              <li class="keyboard-number-item no-bg delete"></li>
+              <li class="keyboard-number-item"><span>0</span></li>
+              <li class="keyboard-number-item no-bg delete"><span></span></li>
             </ul>
           </div>
           <!---->
@@ -42,24 +42,24 @@ exports[`NumberKeyboard - Demo With confirmation key and decimal point, generall
         <div class="md-number-keyboard-container professional">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">9</li>
-              <li class="keyboard-number-item">.</li>
-              <li class="keyboard-number-item">0</li>
-              <li class="keyboard-number-item slidedown"></li>
+              <li class="keyboard-number-item"><span>1</span></li>
+              <li class="keyboard-number-item"><span>2</span></li>
+              <li class="keyboard-number-item"><span>3</span></li>
+              <li class="keyboard-number-item"><span>4</span></li>
+              <li class="keyboard-number-item"><span>5</span></li>
+              <li class="keyboard-number-item"><span>6</span></li>
+              <li class="keyboard-number-item"><span>7</span></li>
+              <li class="keyboard-number-item"><span>8</span></li>
+              <li class="keyboard-number-item"><span>9</span></li>
+              <li class="keyboard-number-item"><span>.</span></li>
+              <li class="keyboard-number-item"><span>0</span></li>
+              <li class="keyboard-number-item slidedown"><span></span></li>
             </ul>
           </div>
           <div class="keyboard-operate">
             <ul class="keyboard-operate-list">
-              <li class="keyboard-operate-item delete"></li>
-              <li class="keyboard-operate-item confirm">确定</li>
+              <li class="keyboard-operate-item delete"><span></span></li>
+              <li class="keyboard-operate-item confirm"><span>确定</span></li>
             </ul>
           </div>
         </div>
@@ -74,24 +74,24 @@ exports[`NumberKeyboard - Demo With confirmation key and decimal point, generall
         <div class="md-number-keyboard-container professional">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">9</li>
+              <li class="keyboard-number-item"><span>1</span></li>
+              <li class="keyboard-number-item"><span>2</span></li>
+              <li class="keyboard-number-item"><span>3</span></li>
+              <li class="keyboard-number-item"><span>4</span></li>
+              <li class="keyboard-number-item"><span>5</span></li>
+              <li class="keyboard-number-item"><span>6</span></li>
+              <li class="keyboard-number-item"><span>7</span></li>
+              <li class="keyboard-number-item"><span>8</span></li>
+              <li class="keyboard-number-item"><span>9</span></li>
               <!---->
-              <li class="keyboard-number-item large-item">0</li>
-              <li class="keyboard-number-item slidedown"></li>
+              <li class="keyboard-number-item large-item"><span>0</span></li>
+              <li class="keyboard-number-item slidedown"><span></span></li>
             </ul>
           </div>
           <div class="keyboard-operate">
             <ul class="keyboard-operate-list">
-              <li class="keyboard-operate-item delete"></li>
-              <li class="keyboard-operate-item confirm">确定</li>
+              <li class="keyboard-operate-item delete"><span></span></li>
+              <li class="keyboard-operate-item confirm"><span>确定</span></li>
             </ul>
           </div>
         </div>
@@ -106,24 +106,24 @@ exports[`NumberKeyboard - Demo With confirmation key and decimal point, generall
         <div class="md-number-keyboard-container professional">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">9</li>
-              <li class="keyboard-number-item">x</li>
-              <li class="keyboard-number-item">0</li>
-              <li class="keyboard-number-item slidedown"></li>
+              <li class="keyboard-number-item"><span>1</span></li>
+              <li class="keyboard-number-item"><span>2</span></li>
+              <li class="keyboard-number-item"><span>3</span></li>
+              <li class="keyboard-number-item"><span>4</span></li>
+              <li class="keyboard-number-item"><span>5</span></li>
+              <li class="keyboard-number-item"><span>6</span></li>
+              <li class="keyboard-number-item"><span>7</span></li>
+              <li class="keyboard-number-item"><span>8</span></li>
+              <li class="keyboard-number-item"><span>9</span></li>
+              <li class="keyboard-number-item"><span>x</span></li>
+              <li class="keyboard-number-item"><span>0</span></li>
+              <li class="keyboard-number-item slidedown"><span></span></li>
             </ul>
           </div>
           <div class="keyboard-operate">
             <ul class="keyboard-operate-list">
-              <li class="keyboard-operate-item delete"></li>
-              <li class="keyboard-operate-item confirm">确定</li>
+              <li class="keyboard-operate-item delete"><span></span></li>
+              <li class="keyboard-operate-item confirm"><span>确定</span></li>
             </ul>
           </div>
         </div>
