@@ -69,6 +69,16 @@ export default {
   &-leave-active
     transition transform 250ms cubic-bezier(0.165, 0.84, 0.44, 1)
 
+.md-wheel-left
+  &-enter
+    transform translate3d(100%, 0, 0)
+  &-leave-to
+    transform translate3d(-100%, 0, 0)
+  &-enter-active
+    transition transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1)
+  &-leave-active
+    transition transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1)
+
 .md-slide-down
   &-enter, &-leave-to
     transform translate3d(0, -100%, 0)

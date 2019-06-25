@@ -138,6 +138,12 @@ export default {
     hairline(all, button-primary-fill, button-radius, 3px)
     &.active:active
       background button-primary-active-fill
+  &.primary-flat
+    background color-primary
+    color button-primary-color
+    hairline(all, button-primary-fill, button-radius, 3px)
+    &.active:active
+      background button-primary-active-fill
   &.warning
     background button-warning-fill
     color button-warning-color
@@ -207,7 +213,7 @@ export default {
     line-height 1
     font-size button-small-font-size
     font-weight font-weight-normal
-    color button-primary-fill
+    color color-primary
     background transparent
     &.inactive
       color color-text-disabled
