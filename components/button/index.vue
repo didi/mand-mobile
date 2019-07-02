@@ -144,6 +144,8 @@ export default {
     hairline(all, button-primary-fill, button-radius, 3px)
     &.active:active
       background button-primary-active-fill
+    &:disabled
+      background #c9c9c9
   &.warning
     background button-warning-fill
     color button-warning-color

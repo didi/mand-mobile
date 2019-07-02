@@ -17,7 +17,7 @@
     <div
       v-show="hasMask && isPopupBoxShow"
       @click="$_onPopupMaskClick"
-      class="md-popup-mask"
+      :class="['md-popup-mask', {'md-popup-mask-lighter': lighterMask}]"
     ></div>
     <md-transition
       :name="transition"
@@ -91,6 +91,10 @@ export default {
     nativeTitleHeight: {
       type: Number,
       default: 44
+    },
+    lighterMask: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -160,7 +164,7 @@ export default {
         this.nativeViewPatches.forEach(patch => {
           patch.show();
         });
-        window.addEventListener('unload', () => {
+        window.addEventListener('beforeunload', () => {
           fullScreenPatchUtil.destoryNativeViewPatches(this.nativeViewPatches);
         });
       }
@@ -320,6 +324,8 @@ export default {
   pointer-events auto
   z-index 1
   background-color rgba(0, 0, 0, .8)
+  &.md-popup-mask-lighter
+    background-color rgba(0, 0, 0, .3)
 
 .md-popup-box
   position relative

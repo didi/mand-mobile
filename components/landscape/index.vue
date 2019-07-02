@@ -159,9 +159,9 @@ export default {
           this.nativeViewPatches.forEach(patch => {
             patch.show();
           });
-          window.addEventListener('unload', () => {
+          window.addEventListener('beforeunload', () => {
             fullScreenPatchUtil.destoryNativeViewPatches(this.nativeViewPatches);
-          });
+          }, false);
         }
         else {
           fullScreenPatchUtil.destoryNativeViewPatches(this.nativeViewPatches);
