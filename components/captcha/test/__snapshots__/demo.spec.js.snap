@@ -31,18 +31,18 @@ exports[`Captcha - Demo Customize 1`] = `
                       <div class="md-number-keyboard-container simple">
                         <div class="keyboard-number">
                           <ul class="keyboard-number-list">
-                            <li class="keyboard-number-item">1</li>
-                            <li class="keyboard-number-item">2</li>
-                            <li class="keyboard-number-item">3</li>
-                            <li class="keyboard-number-item">4</li>
-                            <li class="keyboard-number-item">5</li>
-                            <li class="keyboard-number-item">6</li>
-                            <li class="keyboard-number-item">7</li>
-                            <li class="keyboard-number-item">8</li>
-                            <li class="keyboard-number-item">9</li>
+                            <li class="keyboard-number-item"><span>1</span></li>
+                            <li class="keyboard-number-item"><span>2</span></li>
+                            <li class="keyboard-number-item"><span>3</span></li>
+                            <li class="keyboard-number-item"><span>4</span></li>
+                            <li class="keyboard-number-item"><span>5</span></li>
+                            <li class="keyboard-number-item"><span>6</span></li>
+                            <li class="keyboard-number-item"><span>7</span></li>
+                            <li class="keyboard-number-item"><span>8</span></li>
+                            <li class="keyboard-number-item"><span>9</span></li>
                             <li class="keyboard-number-item no-bg"></li>
-                            <li class="keyboard-number-item">0</li>
-                            <li class="keyboard-number-item no-bg delete"></li>
+                            <li class="keyboard-number-item"><span>0</span></li>
+                            <li class="keyboard-number-item no-bg delete"><span></span></li>
                           </ul>
                         </div>
                         <!---->
@@ -81,18 +81,18 @@ exports[`Captcha - Demo Inline display 1`] = `
         <div class="md-number-keyboard-container simple">
           <div class="keyboard-number">
             <ul class="keyboard-number-list">
-              <li class="keyboard-number-item">1</li>
-              <li class="keyboard-number-item">2</li>
-              <li class="keyboard-number-item">3</li>
-              <li class="keyboard-number-item">4</li>
-              <li class="keyboard-number-item">5</li>
-              <li class="keyboard-number-item">6</li>
-              <li class="keyboard-number-item">7</li>
-              <li class="keyboard-number-item">8</li>
-              <li class="keyboard-number-item">9</li>
+              <li class="keyboard-number-item"><span>1</span></li>
+              <li class="keyboard-number-item"><span>2</span></li>
+              <li class="keyboard-number-item"><span>3</span></li>
+              <li class="keyboard-number-item"><span>4</span></li>
+              <li class="keyboard-number-item"><span>5</span></li>
+              <li class="keyboard-number-item"><span>6</span></li>
+              <li class="keyboard-number-item"><span>7</span></li>
+              <li class="keyboard-number-item"><span>8</span></li>
+              <li class="keyboard-number-item"><span>9</span></li>
               <li class="keyboard-number-item no-bg"></li>
-              <li class="keyboard-number-item">0</li>
-              <li class="keyboard-number-item no-bg delete"></li>
+              <li class="keyboard-number-item"><span>0</span></li>
+              <li class="keyboard-number-item no-bg delete"><span></span></li>
             </ul>
           </div>
           <!---->

@@ -1,20 +1,22 @@
 <template>
   <li
     v-if="noTouch"
-    v-text="value"
     :class="[active ? 'active' : '']"
     @click="$_onFocus"
-  ></li>
+  >
+    <span v-text="value"></span>
+  </li>
   <li
     v-else
-    v-text="value"
     :class="[active ? 'active' : '']"
     @touchstart="$_onFocus"
     @touchmove="$_onBlur"
     @touchend="$_onBlur"
     @touchcancel="$_onBlur"
     @click="$_onFocus"
-  ></li>
+  >
+    <span v-text="value"></span>
+  </li>
 </template>
 
 <script>export default {
