@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.3.2
+
+`2019-06-22`
+
+- Fix
+  - fix `Codebox` value could not be assigned when initializing
+  - fix the problem that the `NumberKeyboard` keys may be clicked incorrectly[#477](https://github.com/didi/mand-mobile/issues/477)
+
 ### 2.3.1
 
 `2019-06-22`

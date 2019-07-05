@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.3.2
+
+`2019-07-05`
+
+- Fix
+  - 修复`Codebox`初始化无法赋值的问题
+  - 修复`NumberKeyboard`按键点击易误触的体验问题[#477](https://github.com/didi/mand-mobile/issues/477)
+
 ### 2.3.1
 
 `2019-06-22`
