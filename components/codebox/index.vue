@@ -139,7 +139,7 @@ export default {
   },
   watch: {
     value: {
-      imediate: true,
+      immediate: true,
       handler(val) {
         if (val !== this.code) {
           this.code = val
