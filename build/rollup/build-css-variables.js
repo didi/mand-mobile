@@ -17,13 +17,17 @@ function getFile(filename) {
 
 function clearComment(content) {
   content = content.replace(/\/\*{1,2}[\s\S]*?\*\//g, '')
-  content = content.replace(/\/\/[\s\S]*?\n/g, '\n')
+  content = content.replace(/[^:]\/\/[\s\S]*?\n/g, '\n')
   content = content.replace(/\n/g, '|')
   return content
 }
 
+function matchModule(text, mark) {
+  return text.split('\n')[0].replace(mark, '').trim()
+}
+
 function matchContent(content, obj) {
-  const reg = /([\w-]*)\s*=\s*([\w\s#\-,().:/"'\u4e00-\u9fa5]*)/g
+  const reg = /([\w-]*)\s*=\s*([\w\s#\-,().:/%"'\u4e00-\u9fa5]*)/g
   const result = reg.exec(content)
   if (!result) {
     return obj
@@ -38,9 +42,26 @@ function matchContent(content, obj) {
 }
 
 function getStyleJson(filename) {
-  let content = getFile(filename)
-  content = clearComment(content)
-  return matchContent(content)
+  const content = getFile(filename)
+  let dataCatalogic = {}
+  const moduleMark = '///'
+  content.split(moduleMark).forEach(part => {
+    const moduleName = matchModule(part, moduleMark)
+    if (moduleName) {
+      dataCatalogic[moduleName] = {}
+      part = clearComment(part)
+
+      const moduleData = matchContent(part)
+      if (moduleData) {
+        dataCatalogic[moduleName] = moduleData
+      }
+    }
+  })
+  const dataCompressed = matchContent(clearComment(content))
+  return {
+    compressed: dataCompressed,
+    catalogic: dataCatalogic
+  }
 }
 
 function generateVariablesStyl(variables) {
@@ -59,17 +80,15 @@ const files = ['theme.basic.styl', 'theme.components.styl']
 try {
   const variablesAll = {}
   files.forEach(file => {
-    const variablesJson = getStyleJson(file)
+    const { compressed, catalogic } = getStyleJson(file)
 
     if (!fs.existsSync(outputLibDir)) {
       fs.mkdirSync(outputLibDir)
     }
     const fileLibDir = path.resolve(outputLibDir, file.replace('styl', 'json'))
-    fs.createWriteStream(fileLibDir).write(JSON.stringify(variablesJson))
-    // const fileLibVwDir = path.resolve(outputLibVwDir, file.replace('styl', 'json'))
-    // fs.createWriteStream(fileLibVwDir).write(JSON.stringify(variablesJson))
+    fs.createWriteStream(fileLibDir).write(JSON.stringify(catalogic))
 
-    Object.assign(variablesAll, variablesJson)
+    Object.assign(variablesAll, compressed)
   })
 
   const variablesStyl = generateVariablesStyl(variablesAll)
