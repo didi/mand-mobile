@@ -3,8 +3,16 @@
 exports[`Codebox Basic 1`] = `
 <div class="md-example-child md-example-child-codebox md-example-child-codebox-0">
   <div class="md-codebox-wrapper">
-    <div class="md-codebox"><span class="md-codebox-box is-active"><!----> <i class="md-codebox-blink"></i></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
-    <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
+    <div class="md-codebox"><span class="md-codebox-box is-filled">
+            1
+           <!----></span><span class="md-codebox-box is-filled">
+            2
+           <!----></span><span class="md-codebox-box is-filled">
+            3
+           <!----></span><span class="md-codebox-box is-filled">
+            4
+           <!----></span></div>
+    <form action="" style="display:none;"><input type="text" maxlength="4" value="1234" class="md-codebox-input"></form>
     <div class="md-number-keyboard md-codebox-keyboard">
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
@@ -39,8 +47,8 @@ exports[`Codebox Basic 1`] = `
 exports[`Codebox Character mask 1`] = `
 <div class="md-example-child md-example-child-codebox md-example-child-codebox-1">
   <div class="md-codebox-wrapper">
-    <div class="md-codebox"><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
-    <form action="" style="display:none;"><input type="password" maxlength="6" value="" class="md-codebox-input"></form>
+    <div class="md-codebox"><span class="md-codebox-box is-filled"><i class="md-codebox-dot"></i> <!----></span><span class="md-codebox-box is-filled"><i class="md-codebox-dot"></i> <!----></span><span class="md-codebox-box is-filled"><i class="md-codebox-dot"></i> <!----></span><span class="md-codebox-box is-filled"><i class="md-codebox-dot"></i> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
+    <form action="" style="display:none;"><input type="password" maxlength="6" value="1234" class="md-codebox-input"></form>
     <div class="md-number-keyboard md-codebox-keyboard">
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
@@ -75,8 +83,8 @@ exports[`Codebox Character mask 1`] = `
 exports[`Codebox System keyboard 1`] = `
 <div class="md-example-child md-example-child-codebox md-example-child-codebox-3">
   <div class="md-codebox-wrapper">
-    <div class="md-codebox"><input type="text" maxlength="-1" readonly="readonly" disabled="disabled" value="" class="md-codebox-holder"></div>
-    <form action=""><input type="text" maxlength="-1" value="" class="md-codebox-input"></form>
+    <div class="md-codebox"><input type="text" maxlength="-1" readonly="readonly" disabled="disabled" value="1234" class="md-codebox-holder"></div>
+    <form action=""><input type="text" maxlength="-1" value="1234" class="md-codebox-input"></form>
     <div class="md-number-keyboard md-codebox-keyboard" style="display:none;">
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
@@ -116,8 +124,8 @@ exports[`Codebox System keyboard 1`] = `
 exports[`Codebox Unlimited length 1`] = `
 <div class="md-example-child md-example-child-codebox md-example-child-codebox-2">
   <div class="md-codebox-wrapper">
-    <div class="md-codebox"><input type="text" maxlength="-1" readonly="readonly" disabled="disabled" value="" class="md-codebox-holder"></div>
-    <form action="" style="display:none;"><input type="text" maxlength="-1" value="" class="md-codebox-input"></form>
+    <div class="md-codebox"><input type="text" maxlength="-1" readonly="readonly" disabled="disabled" value="1234" class="md-codebox-holder"></div>
+    <form action="" style="display:none;"><input type="text" maxlength="-1" value="1234" class="md-codebox-input"></form>
     <div class="md-number-keyboard md-codebox-keyboard">
       <div class="md-popup bottom" style="display:none;">
         <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
