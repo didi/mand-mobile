@@ -127,5 +127,5 @@ Release refreshable event
 ##### @refreshing()
 Refreshing event
 
-##### @endReached()
+##### @end-reached()
 Reached end event
