@@ -3,7 +3,7 @@
     <md-scroll-view
       ref="scrollView"
       :scrolling-x="false"
-      @endReached="$_onEndReached"
+      @end-reached="$_onEndReached"
     >
       <div
         v-for="i in list"
