@@ -127,5 +127,5 @@ Vue.component(ScrollView.name, ScrollView)
 ##### @refreshing()
 刷新中事件
 
-##### @endReached()
+##### @end-reached()
 滚动触底事件
