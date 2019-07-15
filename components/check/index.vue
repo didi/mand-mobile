@@ -47,6 +47,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isPrevent: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -64,6 +68,10 @@ export default {
 
   methods: {
     $_onClick() {
+      if (this.isPrevent) {
+        return
+      }
+
       if (this.disabled) {
         return
       }

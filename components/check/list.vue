@@ -31,6 +31,7 @@
         :icon-disabled="iconDisabled"
         :icon-svg="iconSvg"
         :slot="iconPosition === 'right' ? 'right' : 'left'"
+        :is-prevent="true"
       />
     </md-cell-item>
   </md-check-group>
