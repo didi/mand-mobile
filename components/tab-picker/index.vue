@@ -19,6 +19,7 @@
       <div class="md-tab-picker-content">
           <md-tabs
             v-model="currentTab"
+            :key="tabsTmpKey"
             ref="tabs"
           >
             <md-scroll-view
@@ -36,7 +37,6 @@
                   :value="pane.value"
                   :options="pane.options"
                   :is-slot-scope="hasSlot"
-                  :key="tabsTmpKey"
                   @input="$_onSelectPaneItem($event, index)"
                   icon=""
                   icon-inverse=""
@@ -151,6 +151,7 @@ export default {
           target = null
         }
         panes.push(pane)
+        this.currentTab = pane.name // select the tab corresponding to this pane
       }
 
       return panes
