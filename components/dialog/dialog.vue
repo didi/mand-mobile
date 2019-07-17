@@ -32,36 +32,26 @@
         </div>
         <footer class="md-dialog-actions" :class="{ 'is-column': layout === 'column' }">
           <template v-for="(btn, index) in btns">
-            <a v-if="btn.state==='active'"
-               role="button"
-               class="md-dialog-btn"
-               :key="index"
-               @touchmove.prevent
-            >
-              <md-activity-indicator :size="20"
-              >
-                {{btn.activeText||btn.text}}
-              </md-activity-indicator>
-            </a>
-            <a v-else-if="btn.state==='disable'"
-               role="button"
-               class="md-dialog-btn"
-               :key="index"
-               style="color: #999"
-               v-text="btn.text"
-               @touchmove.prevent
-            ></a>
-            <a v-else
+            <a
               role="button"
               class="md-dialog-btn"
               :class="{
-                warning: !!btn.warning
+                warning: !!btn.warning,
+                disable: btn.state==='disable'
               }"
               :key="index"
-              v-text="btn.text"
               @click="$_onClick(btn)"
               @touchmove.prevent
-            ></a>
+            >
+              <md-activity-indicator v-if="btn.state==='active'"
+                                     :size="20"
+              >
+                {{btn.activeText||btn.text}}
+              </md-activity-indicator>
+              <template v-else>
+                {{btn.text}}
+              </template>
+            </a>
           </template>
         </footer>
       </div>
@@ -170,6 +160,9 @@ export default {
       this.$emit('hide')
     },
     $_onClick(btn) {
+      if (['active', 'disable'].indexOf(btn.state) !== -1) {
+        return
+      }
       if (typeof btn.handler === 'function') {
         btn.handler.call(null)
       } else {
@@ -273,6 +266,8 @@ export default {
   -webkit-tap-highlight-color transparent
   &.warning
     color color-text-error !important
+  &.disable
+    color #999 !important
   &:last-child
     color dialog-action-highlight-color
     remove-hairline(right)

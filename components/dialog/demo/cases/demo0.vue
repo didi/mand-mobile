@@ -4,7 +4,7 @@
     <md-button @click="iconDialog.open = true">带图标</md-button>
     <md-button @click="warnDialog.open = true">警示操作</md-button>
     <md-button @click="actDialog.open = true">多操作</md-button>
-    <md-button @click="stateDialog.open = true">状态</md-button>
+    <md-button @click="stateDialog.open = true">状态指示</md-button>
 
     <md-dialog
       title="窗口标题"
