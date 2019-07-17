@@ -4,6 +4,7 @@
     <md-button @click="iconDialog.open = true">带图标</md-button>
     <md-button @click="warnDialog.open = true">警示操作</md-button>
     <md-button @click="actDialog.open = true">多操作</md-button>
+    <md-button @click="stateDialog.open = true">状态</md-button>
 
     <md-dialog
       title="窗口标题"
@@ -40,6 +41,16 @@
       :btns="actDialog.btns"
     >
       据说每个人需要一面镜子，可以常常自照，知道自己是个什么东西。不过，能自知的人根本不用照镜子；不自知的东西，照了镜子也没有用。
+    </md-dialog>
+
+    <md-dialog
+      title="窗口标题"
+      :closable="false"
+      layout="column"
+      v-model="stateDialog.open"
+      :btns="stateDialog.btns"
+    >
+      结婚仿佛金漆的鸟笼，笼子外面的鸟想住进去，笼内的鸟想飞出来；所以结而离，离而结，没有了局。
     </md-dialog>
   </div>
 </template>
@@ -106,6 +117,26 @@ export default {
           },
         ],
       },
+      stateDialog: {
+        open: false,
+        btns: [
+          {
+            text: '常规',
+            handler: this.onStateConfirm,
+          },
+          {
+            text: '禁用',
+            state: 'disable',
+            handler: this.onStateConfirm,
+          },
+          {
+            text: '激活',
+            state: 'active',
+            activeText: '加载中...',
+            handler: this.onStateConfirm,
+          },
+        ],
+      },
     }
   },
   methods: {
@@ -129,6 +160,9 @@ export default {
     },
     onActConfirm() {
       this.actDialog.open = false
+    },
+    onStateConfirm() {
+      this.stateDialog.open = false
     },
   },
 }

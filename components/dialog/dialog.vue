@@ -32,7 +32,26 @@
         </div>
         <footer class="md-dialog-actions" :class="{ 'is-column': layout === 'column' }">
           <template v-for="(btn, index) in btns">
-            <a
+            <a v-if="btn.state==='active'"
+               role="button"
+               class="md-dialog-btn"
+               :key="index"
+               @touchmove.prevent
+            >
+              <md-activity-indicator :size="20"
+              >
+                {{btn.activeText||btn.text}}
+              </md-activity-indicator>
+            </a>
+            <a v-else-if="btn.state==='disable'"
+               role="button"
+               class="md-dialog-btn"
+               :key="index"
+               style="color: #999"
+               v-text="btn.text"
+               @touchmove.prevent
+            ></a>
+            <a v-else
               role="button"
               class="md-dialog-btn"
               :class="{
@@ -52,6 +71,7 @@
 
 <script>import Popup from '../popup'
 import Icon from '../icon'
+import ActivityIndicator from '../activity-indicator'
 import {mdDocument} from '../_util'
 
 export default {
@@ -60,6 +80,7 @@ export default {
   components: {
     [Popup.name]: Popup,
     [Icon.name]: Icon,
+    [ActivityIndicator.name]: ActivityIndicator,
   },
 
   props: {
@@ -257,4 +278,6 @@ export default {
     remove-hairline(right)
   &:active
     background-color color-bg-tap
+  .md-activity-indicator-text
+    font-size dialog-action-font-size
 </style>
