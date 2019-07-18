@@ -3,6 +3,17 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.3.3
+
+`2019-07-18`
+
+- Fix
+  - 修复`Toast`自定义位置时的样式兼容问题[#485](https://github.com/didi/mand-mobile/issues/485)
+  - 修复`TabPicker`设置`default-value`时，`TabBar`无法自动选中最后一项的问题[#488](https://github.com/didi/mand-mobile/issues/488)
+  - 修复`Selector`和`CheckList`点击图标无法选中的问题[#491](https://github.com/didi/mand-mobile/issues/491)
+  - 修复`Popup`无法覆盖`NoticeBar`的问题[#492](https://github.com/didi/mand-mobile/issues/492)
+  - 修复`Stepper`中部分`stylus`变量赋值错误
+
 ### 2.3.2
 
 `2019-07-05`

@@ -3,9 +3,20 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.3.3
+
+`2019-07-18`
+
+- Fix
+  - Fix compatibility issues when fixing `Toast` custom positions[#485](https://github.com/didi/mand-mobile/issues/485)
+  - Fix `TabPicker` when setting `default-value`, `TabBar` can't automatically select the last item[#488](https://github.com/didi/mand-mobile/issues/488)
+  - Fix `Selector` and `CheckList` click icons can't select current item[#491](https://github.com/didi/mand-mobile/issues/491)
+  - Fix this problem `Popup` can't cover `NoticeBar`[#492](https://github.com/didi/mand-mobile/issues/492)
+  - Fix partial `stylus` variable assignment error in `Stepper`
+
 ### 2.3.2
 
-`2019-06-22`
+`2019-07-05`
 
 - Fix
   - fix `Codebox` value could not be assigned when initializing
