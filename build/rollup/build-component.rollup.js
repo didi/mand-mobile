@@ -130,7 +130,8 @@ function compileVueAndReplace(filePath) {
       fs.writeFileAsync(jsFilePath, result)
       .then(() => fs.writeFileAsync(cssFilePath, styleContent))
       .then(() => {
-        return fs.unlinkAsync(filePath)
+        fs.unlinkAsync(filePath)
+        resolve()
       })
     })
   })
