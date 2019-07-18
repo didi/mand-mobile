@@ -101,6 +101,7 @@ export default {
   .md-check
     margin-top 0
     margin-bottom 0
+    pointer-events none
   .md-cell-item-body.multilines .md-cell-item-title
     font-weight font-weight-medium
 
