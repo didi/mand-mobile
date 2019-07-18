@@ -43,7 +43,8 @@ export default {
       animations: {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
         content: MfeAnimation0
-      }
+      },
+      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
     },
     {
       title: '用户体验',
@@ -123,7 +124,8 @@ export default {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
         // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'
         content: MfeAnimation0,
-      }
+      },
+      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
     },
     {
       title: 'User Experience',

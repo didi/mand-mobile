@@ -30,6 +30,15 @@
         <img :src="gg.image" alt="">
       </a>
     </div>
+    <transition name="slide-fade">
+      <div class="screen-ggs" v-if="screenAds && screenAds.name">
+        <p class="screen-ggs-mask" @click="closeScreenAd"></p>
+        <a class="screen-ggs-content" :href="screenAds.link" @click="closeScreenAd">
+          <img :src="screenAds.image" alt="">
+          <!-- <i class="screen-ggs-close icon-error"></i> -->
+        </a>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -57,9 +66,10 @@ export default {
     return {
       isMenuShow: false,
       isAffixStricky: false,
-      hoverAds: [], // {image: string, link: string}
-      menuAds: [], // {image: string, link: string}
-      logoAds: {}, // images: Array logo下方图片集合，text: string logo下方slogan
+      screenAds: {}, // {image: string, link: string, name: string}
+      hoverAds: [], // [{image: string, link: string}]
+      menuAds: [], // [{image: string, link: string}]
+      logoAds: {}, // {images: ['x', 'y'] logo下方图片集合, text: string logo下方slogan}
     }
   },
   watch: {
@@ -101,10 +111,17 @@ export default {
   },
   methods: {
     getConfig () {
+      const tmpScreenAd = localStore('MAND_MOBILE_SCREENAD') || {}
       $.get(`//star.xiaojukeji.com/config/get.node?city=-1&name=mand_mobile_ads&${Date.now()}`).then(({ data }) => {
+        if (!data || !data.mand_mobile_ads) {
+          return
+        }
         this.hoverAds = data.mand_mobile_ads.hoverAds
         this.menuAds = data.mand_mobile_ads.menuAds
         this.logoAds = data.mand_mobile_ads.logoAds
+        if (data.mand_mobile_ads.screenAds && tmpScreenAd.name !== data.mand_mobile_ads.screenAds.name) {
+          this.screenAds = data.mand_mobile_ads.screenAds
+        }
       })
     },
     changeLang () {
@@ -124,6 +141,10 @@ export default {
           this.isAffixStricky = false
         }
       })
+    },
+    closeScreenAd () {
+      localStore('MAND_MOBILE_SCREENAD', this.screenAds)
+      this.screenAds = {}
     }
   }
 }
@@ -190,6 +211,36 @@ export default {
       margin-top 10px
       img
         width 100%
+  .screen-ggs
+    position fixed
+    left 0
+    right 0
+    top 0
+    bottom 0
+    z-index 99999
+    .screen-ggs-mask
+      position absolute
+      left 0
+      right 0
+      top 0
+      bottom 0
+      background rgba(0, 0, 0, 0.3)
+    .screen-ggs-content
+      position absolute
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      max-width 50%
+      img
+        width 100%
+  .slide-fade-enter-active
+    transition all .3s ease
+  .slide-fade-leave-active
+    transition all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */
+    transform translateY(10px)
+    opacity 0
 
 @media (max-width: 1000px)
   .default-content
@@ -212,5 +263,8 @@ export default {
       right 10px
       .hover-ggs-item
         margin-top 10px
+    .screen-ggs .screen-ggs-content
+        max-width none
+        width 80%
 </style>
 

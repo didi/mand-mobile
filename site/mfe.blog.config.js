@@ -157,6 +157,12 @@ module.exports = {
       text: '调色板',
       src: 'https://mand-mobile.github.io/palette',
       // dot: true
+    },
+    {
+      name: 'mand-mobile-rn',
+      text: 'Mand Mobile RN',
+      src: 'https://didi.github.io/mand-mobile-rn',
+      dot: true
     }]
   }, {
     name: 'en-US',
@@ -261,6 +267,12 @@ module.exports = {
       name: 'palette',
       text: 'Palette',
       src: 'https://mand-mobile.github.io/palette',
+    },
+    {
+      name: 'mand-mobile-rn',
+      text: 'Mand Mobile RN',
+      src: 'https://didi.github.io/mand-mobile-rn',
+      dot: true
     }]
   }],
   components: generateSource(),
@@ -275,23 +287,19 @@ module.exports = {
         title: '相关资源',
         link: [
           {
-            text: 'GitHub',
-            src: 'https://github.com/mand-mobile',
+            text: 'Mand Mobile',
+            src: 'https://github.com/didi/mand-mobile',
           },
           {
-            text: '更新日志',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
-          },
-          {
-            text: '常见问题',
-            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+            text: 'Mand Mobile RN',
+            src: 'https://github.com/didi/mand-mobile-rn',
           },
           {
             text: '脚手架模板',
             src: 'https://github.com/mand-mobile/mand-mobile-template',
           },
           {
-            text: '调色板',
+            text: '调色板 <span>- 主题编辑工具</span>',
             src: 'https://mand-mobile.github.io/palette'
           },
           {
@@ -304,6 +312,23 @@ module.exports = {
         title: '社区',
         link: [
           {
+            text: 'Organization',
+            src: 'https://github.com/mand-mobile'
+          },
+          {
+            text: '码云',
+            src: 'https://gitee.com/mand-mobile/mand-mobile'
+          },
+          {
+            text: '官方交流群',
+            src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
+          }
+        ],
+      },
+      {
+        title: '帮助',
+        link: [
+          {
             text: '贡献指南',
             src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
           },
@@ -312,13 +337,21 @@ module.exports = {
             src: 'https://github.com/didi/mand-mobile/issues',
           },
           {
+            text: '更新日志',
+            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
+          },
+          {
+            text: '常见问题',
+            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+          },
+          {
             text: '加入我们',
             src: 'http://job.didichuxing.com/',
           }
         ]
       },
       {
-        title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+        title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
           {
             text: 'Chameleon <span>- 跨端解决方案</span>',
@@ -352,23 +385,19 @@ module.exports = {
         title: 'Resources',
         link: [
           {
-            text: 'GitHub',
-            src: 'https://github.com/mand-mobile',
+            text: 'Mand Mobile',
+            src: 'https://github.com/didi/mand-mobile',
           },
           {
-            text: 'Change Log',
-            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
-          },
-          {
-            text: 'FAQ',
-            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+            text: 'Mand Mobile RN',
+            src: 'https://github.com/didi/mand-mobile-rn',
           },
           {
             text: 'Template',
             src: 'https://github.com/mand-mobile/mand-mobile-template',
           },
           {
-            text: 'Palette',
+            text: 'Palette <span>- Theme Editing Tool</span>',
             src: 'https://mand-mobile.github.io/palette'
           },
           {
@@ -381,6 +410,23 @@ module.exports = {
         title: 'Community',
         link: [
           {
+            text: 'Organization',
+            src: 'https://github.com/mand-mobile'
+          },
+          {
+            text: 'Gitee',
+            src: 'https://gitee.com/mand-mobile/mand-mobile'
+          },
+          {
+            text: 'Official Communication Group',
+            src: 'https://shang.qq.com/wpa/qunwpa?idkey=97670d381924f2d46c53960715577502285952dd12f67e5dc9727f554955a254'
+          }
+        ],
+      },
+      {
+        title: 'Help',
+        link: [
+          {
             text: 'Contribute Guide',
             src: 'https://github.com/didi/mand-mobile/blob/master/CONTRIBUTING.md',
           },
@@ -389,13 +435,21 @@ module.exports = {
             src: 'https://github.com/didi/mand-mobile/issues',
           },
           {
+            text: 'Change Log',
+            src: 'https://github.com/didi/mand-mobile/blob/master/CHANGELOG.md',
+          },
+          {
+            text: 'FAQ',
+            src: 'https://github.com/didi/mand-mobile/wiki/FAQ',
+          },
+          {
             text: 'Join Us',
             src: 'http://job.didichuxing.com/',
           }
         ]
       },
       {
-        title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="18" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
+        title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
           {
             text: 'Chameleon <span>- Cross-end Framework</span>',
