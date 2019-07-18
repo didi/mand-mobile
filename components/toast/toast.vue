@@ -117,10 +117,14 @@ export default {
     .md-popup .md-popup-box
       position absolute
       bottom 50px
+      left 50%
+      transform translateX(-50%)
   &.top
     .md-popup .md-popup-box
       position absolute
       top 50px
+      left 50%
+      transform translateX(-50%)
 
 .md-toast-content
   display inline-flex
