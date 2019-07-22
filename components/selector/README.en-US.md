@@ -29,6 +29,8 @@ Vue.component(Selector.name, Selector)
 |describe|description of selector|String|-|-|
 |ok-text|confirmation text|String|-|if empty, it will be `confirmed mode`, that is, click to select directly|
 |cancel-text|cancellation text|String|`cancel`|-|
+|large-radius|large radius of title bar|Boolean|`false`|-|
+|hide-title-bar|hide title bar|Boolean|`false`|-|
 |mask-closable|if the popup will be closed when clicking mask|Boolean|`true`|-|
 |is-check|has a `check` icon or not|Boolean|`false`|only for `confirmed mode`|
 |max-height|the maximum height of selectable area|Number/String|`auto`|-|
@@ -60,10 +62,21 @@ Show selector
 Hide selector
 
 #### Selector Slots
+
+##### default
+
 ```html
 <md-selector>
-  <template slot-scope="{ option }">
+  <template slot-scope="{ option, index, selected }">
     <div class="md-selector-custom-title">Hello, {{ option.text }}</div>
   </template>
 </md-selector>
 ```
+
+##### header
+
+header slot     
+
+##### footer
+
+footer slot     

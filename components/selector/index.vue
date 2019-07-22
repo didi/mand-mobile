@@ -16,23 +16,17 @@
       @maskClick="$_onSelectorCancel"
     >
       <md-popup-title-bar
+        v-show="!hideTitleBar || isNeedConfirm"
         :title="title"
         :describe="describe"
         :ok-text="okText"
         :cancel-text="cancelText"
+        :large-radius="largeRadius"
+        :only-close="!isCheck && !isNeedConfirm && !cancelText"
         @confirm="$_onSelectorConfirm"
         @cancel="$_onSelectorCancel"
-      >
-        <md-icon
-          v-if="!isCheck && !isNeedConfirm && !cancelText"
-          name="close"
-          size="lg"
-          slot="cancel"
-        ></md-icon>
-      </md-popup-title-bar>
-      <div
-        class="md-selector-container"
-      >
+      ></md-popup-title-bar>
+      <div class="md-selector-container">
         <md-scroll-view
           ref="scroll"
           :scrolling-x="false"
@@ -41,6 +35,7 @@
             minHeight: `${minHeight}`
           }"
         >
+          <slot name="header"></slot>
           <!-- audio-list with single select -->
           <template v-if="!multi">
             <md-radio-list
@@ -58,8 +53,8 @@
               :icon-svg="iconSvg"
               @change="$_onSelectorChoose"
             >
-              <template slot-scope="{ option }">
-                <slot :option="option"></slot>
+              <template slot-scope="{ option, index, selected }">
+                <slot :option="option" :index="index" :selected="selected"></slot>
               </template>
             </md-radio-list>
           </template>
@@ -79,11 +74,12 @@
               :icon-size="iconSize"
               :icon-svg="iconSvg"
             >
-              <template slot-scope="{ option }">
-                <slot :option="option"></slot>
+              <template slot-scope="{ option, index, selected }">
+                <slot :option="option" :index="index" :selected="selected"></slot>
               </template>
             </md-check-list>
           </template>
+          <slot name="footer"></slot>
         </md-scroll-view>
       </div>
     </md-popup>
@@ -145,6 +141,10 @@ export default {
       default: 'right',
     },
     multi: {
+      type: Boolean,
+      default: false,
+    },
+    hideTitleBar: {
       type: Boolean,
       default: false,
     },
@@ -294,10 +294,9 @@ export default {
 .md-selector
   .md-popup
     z-index selector-zindex
-  .md-popup-title-bar .md-popup-cancel
-    .md-icon
-      align-self flex-start
-      margin-left h-gap-lg
+  // .md-popup-title-bar .md-popup-cancel
+  //   .md-icon
+  //     align-self flex-start
   .md-radio-item
     padding-left h-gap-sl
     padding-right h-gap-sl

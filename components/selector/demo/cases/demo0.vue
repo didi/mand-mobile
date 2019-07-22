@@ -15,6 +15,7 @@
       :data="data[0]"
       max-height="320px"
       title="普通模式"
+      large-radius
       @choose="onSelectorChoose"
     ></md-selector>
   </div>

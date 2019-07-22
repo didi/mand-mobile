@@ -15,6 +15,7 @@
       min-height="320px"
       title="确认模式"
       okText="确认"
+      large-radius
       @confirm="onSelectorConfirm"
     ></md-selector>
   </div>

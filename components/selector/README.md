@@ -29,6 +29,8 @@ Vue.component(Selector.name, Selector)
 |describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|-|若为空则为`确认模式`，即点击选项直接选择|
 |cancel-text|选择器取消文案|String|`取消`|-|
+|large-radius|选择器标题栏大圆角模式|Boolean|`false`|-|
+|hide-title-bar|隐藏选择器标题栏|Boolean|`false`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 |is-check|是否有`check`图标|Boolean|`false`|仅`确认模式`|
 |max-height|选择器内容区域最高高度, 超出后可滚动|Number/String|`auto`|-|
@@ -59,10 +61,21 @@ Vue.component(Selector.name, Selector)
 选择器隐藏事件
 
 #### Selector Slots
+
+##### default
+
 ```html
 <md-selector>
-  <template slot-scope="{ option }">
+  <template slot-scope="{ option, index, selected }">
     <div class="md-selector-custom-title">Hello, {{ option.text }}</div>
   </template>
 </md-selector>
 ```
+
+##### header
+
+顶部插槽        
+
+##### footer
+
+底部插槽      
