@@ -111,13 +111,26 @@ Vue.use(mandMobile)
 
 #### Prepare Before Use
 
-##### Normalize
+##### Normalize or Reset
 
-To make browsers render all elements more consistently and in line with modern standards，[Normalize.css](http://necolas.github.io/normalize.css/) is recommended to import.
+To make browsers render all elements more consistently and in line with modern standards，[Normalize.css](http://necolas.github.io/normalize.css/) or [Reset CSS](https://meyerweb.com/eric/tools/css/reset/) is recommended to import.
 
 ##### FastClick
 
 To avoid click problems caused by [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile), [FastClick](https://github.com/ftlabs/fastclick) is recommended to import.
+
+```javascript
+import FastClick from 'fastclick'
+
+if ('addEventListener' in document && 'ontouchstart' in window) {
+  FastClick.prototype.focus = function (targetElement) {
+    targetElement.focus()
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    FastClick.attach(document.body)
+  }, false)
+}
+```
 
 ##### Release Package Directory
 
@@ -183,6 +196,9 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
   }
 }))
 ```
+
+> [How to make the configuration only work on `mand-mobile`?](https://github.com/didi/mand-mobile/issues/103)
+
 
 #### Customization
 

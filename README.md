@@ -86,7 +86,7 @@ Vue.use(mandMobile)
 
 ### Usage
 
-Select the components you need to build your webapp. Find more details in [Component Preview](https://didi.github.io/mand-mobile/#/docs/preview) and [Quick Start](https://didi.github.io/mand-mobile/#/docs/started).
+Select the components you need to build your webapp. Find more details in [Quick Start](https://didi.github.io/mand-mobile/#/en-US/docs/started).
 
 ## Development
 
@@ -96,7 +96,7 @@ cd mand-mobile
 npm install
 npm run dev
 ```
-Open your browser and visit http://127.0.0.1:4000. Find more details in [Development Guide](https://didi.github.io/mand-mobile/#/docs/development).
+Open your browser and visit http://127.0.0.1:4000. Find more details in [Development Guide](https://didi.github.io/mand-mobile/#/en-US/docs/development).
 
 ## Contributing [![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/didi/mand-mobile/pulls)
 Welcome to contribute by creating issues or sending pull requests. See [Contributing Guide](CONTRIBUTING.md) for guidelines.

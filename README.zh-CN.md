@@ -87,7 +87,7 @@ Vue.use(mandMobile)
 
 ### 使用
 
-选择需要的组件开始构建您的webapp，详细内容请查看[组件预览](https://didi.github.io/mand-mobile/#/docs/preview)和[快速上手](https://didi.github.io/mand-mobile/#/docs/started)。
+选择需要的组件开始构建您的webapp，详细内容请查看[快速上手](https://didi.github.io/mand-mobile/#/zh-CN/docs/started)。
 
 ## 开发
 
@@ -97,7 +97,7 @@ cd mand-mobile
 npm install
 npm run dev
 ```
-打开浏览器访问http://127.0.0.1:4000， 详细内容请查看[开发指南](https://didi.github.io/mand-mobile/#/docs/development)。
+打开浏览器访问http://127.0.0.1:4000， 详细内容请查看[开发指南](https://didi.github.io/mand-mobile/#/zh-CN/docs/development)。
 
 ## 贡献 [![PR](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/didi/mand-mobile/pulls)
 

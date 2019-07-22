@@ -111,13 +111,26 @@ Vue.use(mandMobile)
 
 #### 使用前准备
 
-##### Normalize
+##### Normalize or Reset
 
-为标准化浏览器元素的样式，推荐引入[Normalize.css](http://necolas.github.io/normalize.css/)
+为标准化浏览器元素的样式，推荐引入[Normalize.css](http://necolas.github.io/normalize.css/)或[Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 
 ##### FastClick
 
 为避免[浏览器兼容问题](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)引起的点击问题, 推荐引入[FastClick](https://github.com/ftlabs/fastclick)
+
+```javascript
+import FastClick from 'fastclick'
+
+if ('addEventListener' in document && 'ontouchstart' in window) {
+  FastClick.prototype.focus = function (targetElement) {
+    targetElement.focus()
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    FastClick.attach(document.body)
+  }, false)
+}
+```
 
 ##### 产出包目录
 
@@ -180,6 +193,8 @@ webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({
   }
 }))
 ```
+
+> [如何使配置仅作用于`mand-mobile`?](https://github.com/didi/mand-mobile/issues/103)
 
 #### 配置主题和字体
 
