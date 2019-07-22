@@ -18,6 +18,7 @@
       ref="picker0"
       v-model="isPickerShow0"
       :data="pickerData0"
+      large-radius
       @confirm="onPickerConfirm(0)"
       title="选择年份"
     ></md-picker>
@@ -27,6 +28,7 @@
       :data="pickerData1"
       :cols="3"
       is-cascade
+      large-radius
       title="选择省市区/县"
       @confirm="onPickerConfirm(1)"
     ></md-picker>

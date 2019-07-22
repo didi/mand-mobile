@@ -34,6 +34,7 @@
           :describe="describe"
           :ok-text="okText"
           :cancel-text="cancelText"
+          :large-radius="largeRadius"
           @confirm="$_onPickerConfirm"
           @cancel="$_onPickerCancel"
         ></md-popup-title-bar>
