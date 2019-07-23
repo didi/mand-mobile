@@ -13,6 +13,7 @@
     <md-tab-picker
       title="请选择"
       describe="请选择您所在的省份、城市、区县"
+      large-radius
       :data="data"
       v-model="show"
       @change="handleChange"
