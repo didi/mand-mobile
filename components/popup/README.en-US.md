@@ -34,6 +34,8 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |describe|description of popup|String|-|-|
 |ok-text|confirmation text|String|-|no confirmation button if empty|
 |cancel-text|cancellation text|String|-|no cancellation button if empty|
+|large-radius|large radius|Boolean|`false`|-|
+|only-close|only right close button|Boolean|`false`|-|
 
 #### Popup Events
 
