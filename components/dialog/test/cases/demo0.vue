@@ -1,5 +1,12 @@
 <template>
   <div class="md-example-child md-example-child-dialog md-example-child-dialog-0">
+    <md-button @click="basicDialog.open = true">基本</md-button>
+    <md-button @click="iconDialog.open = true">带图标</md-button>
+    <md-button @click="warnDialog.open = true">警示操作</md-button>
+    <md-button @click="asyncDialog.open = true">异步操作</md-button>
+    <md-button @click="actDialog.open = true">多操作</md-button>
+    <md-button @click="slotDialog.open = true">插槽</md-button>
+
     <md-dialog
       title="窗口标题"
       :closable="true"
@@ -28,6 +35,14 @@
     </md-dialog>
 
     <md-dialog
+      :closable="false"
+      v-model="asyncDialog.open"
+      :btns="asyncDialog.btns"
+    >
+      每个人都有属于自己的一片森林，也许我们 从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。
+    </md-dialog>
+
+    <md-dialog
       title="窗口标题"
       :closable="false"
       layout="column"
@@ -36,15 +51,28 @@
     >
       据说每个人需要一面镜子，可以常常自照，知道自己是个什么东西。不过，能自知的人根本不用照镜子；不自知的东西，照了镜子也没有用。
     </md-dialog>
+
+    <md-dialog
+      title="家"
+      :closable="false"
+      v-model="slotDialog.open"
+      :btns="slotDialog.btns"
+    >
+      <div class="dialog-banner" slot="header">
+        <img src="http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/27fb7f097ca218d743f816836bc7ea4a" alt="">
+      </div>
+      虽然其中有一些争吵、不愉快、曲折，但重要的是一家人整整齐齐。
+    </md-dialog>
   </div>
 </template>
 
-<script>import {Dialog} from 'mand-mobile'
+<script>import {Dialog, Button, Toast} from 'mand-mobile'
 
 export default {
   name: 'dialog-demo',
   components: {
     [Dialog.name]: Dialog,
+    [Button.name]: Button,
   },
   data() {
     return {
@@ -53,11 +81,11 @@ export default {
         btns: [
           {
             text: '取消',
-            handler: () => {},
+            handler: this.onBasicCancel,
           },
           {
             text: '确认操作',
-            handler: () => {},
+            handler: this.onBasicConfirm,
           },
         ],
       },
@@ -66,7 +94,7 @@ export default {
         btns: [
           {
             text: '确认操作',
-            handler: () => {},
+            handler: this.onIconConfirm,
           },
         ],
       },
@@ -79,6 +107,17 @@ export default {
           {
             text: '警示操作',
             warning: true,
+            handler: this.onWarnConfirm,
+          },
+        ],
+      },
+      asyncDialog: {
+        open: false,
+        btns: [
+          {
+            text: '开始搜索',
+            icon: 'search',
+            handler: this.onAsyncConfirm,
           },
         ],
       },
@@ -88,19 +127,70 @@ export default {
           {
             text: '操作一',
             type: 'danger',
-            handler: () => {},
+            handler: this.onActConfirm,
           },
           {
             text: '操作二',
-            handler: () => {},
+            handler: this.onActConfirm,
+            disabled: true,
           },
           {
             text: '操作三',
-            handler: () => {},
+            handler: this.onActConfirm,
+          },
+        ],
+      },
+      slotDialog: {
+        open: false,
+        btns: [
+          {
+            text: '好的',
           },
         ],
       },
     }
   },
+  methods: {
+    onBasicConfirm() {
+      Toast({
+        content: '你点击了确认',
+      })
+      this.basicDialog.open = false
+    },
+    onBasicCancel() {
+      Toast({
+        content: '你点击了取消',
+      })
+      this.basicDialog.open = false
+    },
+    onIconConfirm() {
+      Toast({
+        content: '你点击了确认',
+      })
+      this.iconDialog.open = false
+    },
+    onActConfirm() {
+      this.actDialog.open = false
+    },
+    onAsyncConfirm(btn) {
+      this.$set(btn, 'loading', true)
+      this.$set(btn, 'text', '搜索中')
+      setTimeout(() => {
+        this.asyncDialog.open = false
+        this.$set(btn, 'loading', false)
+        this.$set(btn, 'text', '开始搜索')
+        Toast({
+          content: '搜索成功',
+        })
+      }, 1500)
+    },
+  },
 }
 </script>
+
+<style lang="stylus" scoped>
+.dialog-banner
+  img
+    display block
+    width 100%
+</style>
