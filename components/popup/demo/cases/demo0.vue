@@ -17,6 +17,7 @@
         describe="Popup Description"
         ok-text="ok"
         cancel-text="cancel"
+        large-radius
         @confirm="hidePopUp('bottom')"
         @cancel="hidePopUp('bottom')"
       ></md-popup-title-bar>

@@ -16,5 +16,13 @@ export default {
       type: String,
       default: '',
     },
+    largeRadius: {
+      type: Boolean,
+      default: false,
+    },
+    onlyClose: {
+      type: Boolean,
+      default: false,
+    },
   },
 }

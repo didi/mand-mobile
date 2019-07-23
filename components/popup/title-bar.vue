@@ -1,23 +1,25 @@
 <template>
   <div
     class="md-popup-title-bar"
-    :class="{large: !!describe}"
+    :class="{large: !!describe, 'large-radius': largeRadius}"
     @touchmove="$_preventScroll"
   >
     <!-- Cancel -->
-    <div
-      class="title-bar-left md-popup-cancel"
-      v-if="cancelText"
-      v-html="cancelText"
-      @click="$emit('cancel')"
-    ></div>
-    <div
-      class="title-bar-left md-popup-cancel"
-      v-else-if="$slots.cancel"
-      @click="$emit('cancel')"
-    >
-      <slot name="cancel"></slot>
-    </div>
+    <template v-if="!onlyClose">
+      <div
+        class="title-bar-left md-popup-cancel"
+        v-if="cancelText"
+        v-html="cancelText"
+        @click="$emit('cancel')"
+      ></div>
+      <div
+        class="title-bar-left md-popup-cancel"
+        v-else-if="$slots.cancel"
+        @click="$emit('cancel')"
+      >
+        <slot name="cancel"></slot>
+      </div>
+    </template>
 
     <!-- Title -->
     <div
@@ -43,28 +45,43 @@
     </div>
 
     <!-- Ok -->
-    <div
-      class="title-bar-right md-popup-confirm"
-      v-if="okText"
-      v-html="okText"
-      @click="$emit('confirm')"
-    ></div>
-    <div
-      class="title-bar-right md-popup-confirm"
-      v-else-if="$slots.confirm"
-      @click="$emit('confirm')"
-    >
-      <slot name="confirm"></slot>
-    </div>
+    <template v-if="!onlyClose">
+      <div
+        class="title-bar-right md-popup-confirm"
+        v-if="okText"
+        v-html="okText"
+        @click="$emit('confirm')"
+      ></div>
+      <div
+        class="title-bar-right md-popup-confirm"
+        v-else-if="$slots.confirm"
+        @click="$emit('confirm')"
+      >
+        <slot name="confirm"></slot>
+      </div>
+    </template>
+    <template v-if="onlyClose">
+      <div
+        class="title-bar-right md-popup-close"
+        @click="$emit('cancel')"
+      >
+        <md-icon name="close" size="lg"></md-icon>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>import titleBarMixin from './mixins/title-bar'
+import Icon from '../icon'
 
 export default {
   name: 'md-popup-title-bar',
 
   mixins: [titleBarMixin],
+
+  components: {
+    [Icon.name]: Icon,
+  },
 
   props: {
     // Mixin Props
@@ -84,6 +101,23 @@ export default {
     //   type: String,
     //   default: '',
     // },
+    // largeRadius: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+    // onlyClose: {
+    //   type: Boolean,
+    //   default: false,
+    // },
+  },
+
+  watch: {
+    largeRadius: {
+      handler(val) {
+        this.$parent.largeRadius = val
+      },
+      immediate: true,
+    },
   },
 
   methods: {
@@ -106,6 +140,8 @@ export default {
   overflow hidden
   &.large
     height popup-title-bar-height-large
+  &.large-radius
+    border-radius popup-title-bar-radius-large popup-title-bar-radius-large 0 0
   &>div
     display flex
     float left
@@ -137,8 +173,18 @@ export default {
       color popup-title-bar-color-describe
   .title-bar-left
     left 0
-    color popup-title-bar-color-button-left
+    padding-left h-gap-sl
+    align-items flex-start
   .title-bar-right
     right 0
+    padding-right h-gap-sl
+    align-items flex-end
+  .md-popup-cancel
+    color popup-title-bar-color-button-left
+  .md-popup-confirm
     color popup-title-bar-color-button-right
+  .md-popup-close
+    padding-top h-gap-sl
+    color popup-title-bar-color-button-left
+    justify-content flex-start
 </style>
