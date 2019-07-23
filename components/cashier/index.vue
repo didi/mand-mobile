@@ -16,9 +16,7 @@
         :large-radius="largeRadius"
         only-close
         @cancel="$_onPopupCancel"
-      >
-        <md-icon name="close" size="lg" slot="cancel"></md-icon>
-      </md-popup-title-bar>
+      ></md-popup-title-bar>
       <div class="md-cashier-container">
         <slot name="header" :scene="scene"></slot>
 
