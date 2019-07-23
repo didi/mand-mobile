@@ -4,6 +4,7 @@
     <md-button @click="iconDialog.open = true">带图标</md-button>
     <md-button @click="warnDialog.open = true">警示操作</md-button>
     <md-button @click="actDialog.open = true">多操作</md-button>
+    <md-button @click="slotDialog.open = true">插槽</md-button>
 
     <md-dialog
       title="窗口标题"
@@ -40,6 +41,18 @@
       :btns="actDialog.btns"
     >
       据说每个人需要一面镜子，可以常常自照，知道自己是个什么东西。不过，能自知的人根本不用照镜子；不自知的东西，照了镜子也没有用。
+    </md-dialog>
+
+    <md-dialog
+      title="家"
+      :closable="false"
+      v-model="slotDialog.open"
+      :btns="slotDialog.btns"
+    >
+      <div class="dialog-banner" slot="header">
+        <img src="http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/27fb7f097ca218d743f816836bc7ea4a" alt="">
+      </div>
+      虽然其中有一些争吵、不愉快、曲折，但重要的是一家人整整齐齐。
     </md-dialog>
   </div>
 </template>
@@ -99,10 +112,19 @@ export default {
           {
             text: '操作二',
             handler: this.onActConfirm,
+            disabled: true,
           },
           {
             text: '操作三',
             handler: this.onActConfirm,
+          },
+        ],
+      },
+      slotDialog: {
+        open: false,
+        btns: [
+          {
+            text: '好的',
           },
         ],
       },
@@ -133,3 +155,10 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus" scoped>
+.dialog-banner
+  img
+    display block
+    width 100%
+</style>

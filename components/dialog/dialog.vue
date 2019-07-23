@@ -13,6 +13,7 @@
       @hide="$_onHide"
     >
       <div class="md-dialog-content">
+        <slot name="header"></slot>
         <div class="md-dialog-body">
           <a
             role="button"
@@ -36,6 +37,7 @@
               role="button"
               class="md-dialog-btn"
               :class="{
+                disabled: !!btn.disabled,
                 warning: !!btn.warning
               }"
               :key="index"
@@ -149,6 +151,9 @@ export default {
       this.$emit('hide')
     },
     $_onClick(btn) {
+      if (btn.disabled) {
+        return
+      }
       if (typeof btn.handler === 'function') {
         btn.handler.call(null)
       } else {
@@ -254,9 +259,11 @@ export default {
   -webkit-tap-highlight-color transparent
   &.warning
     color color-text-error !important
+  &.disabled
+    color color-text-disabled !important
   &:last-child
     color dialog-action-highlight-color
     remove-hairline(right)
-  &:active
+  &:not(.disabled):active
     background-color color-bg-tap
 </style>
