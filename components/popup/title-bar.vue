@@ -1,7 +1,10 @@
 <template>
   <div
     class="md-popup-title-bar"
-    :class="{large: !!describe, 'large-radius': largeRadius}"
+    :class="[
+      `title-align-${titleAlign}`,
+      ...{large: !!describe, 'large-radius': largeRadius}
+    ]"
     @touchmove="$_preventScroll"
   >
     <!-- Cancel -->
@@ -142,13 +145,26 @@ export default {
     height popup-title-bar-height-large
   &.large-radius
     border-radius popup-title-bar-radius-large popup-title-bar-radius-large 0 0
+  &.title-align-left
+    .title-bar-title
+      padding-left h-gap-sl
+      align-items flex-start
+    .title-bar-left
+      display none
+  &.title-align-right
+    .title-bar-title
+      padding-right h-gap-sl
+      align-items flex-end
+    .title-bar-right
+      display none
   &>div
     display flex
     float left
     height 100%
+    padding-top 60px
     flex-direction column
     align-items center
-    justify-content center
+    justify-content flex-start
     overflow hidden
     text-overflow ellipsis
     word-break break-word
@@ -160,15 +176,18 @@ export default {
     font-size popup-title-bar-font-size-button
     font-weight popup-title-bar-font-weight-button
     box-sizing border-box
+    line-height 1
   .title-bar-title
     width 100%
-    padding 0 20%
+    padding-left 20%
+    padding-right 20%
     box-sizing border-box
+    line-height 1
     p.title
       font-size popup-title-bar-font-size-title
       color popup-title-bar-color-title
     p.describe
-      margin-top 4px
+      margin-top 15px
       font-size popup-title-bar-font-size-describe
       color popup-title-bar-color-describe
   .title-bar-left

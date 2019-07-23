@@ -1,5 +1,26 @@
 <template>
   <div class="md-example-child md-example-child-popup md-example-child-popup-2">
+    <md-button @click="showPopUp('align')">标题居左</md-button>
+    <md-popup
+      class="inner-popup"
+      v-model="isPopupShow.align"
+      position="bottom"
+    >
+      <md-popup-title-bar
+        only-close
+        large-radius
+        title="标题"
+        describe="title & description align left"
+        title-align="left"
+        @cancel="hidePopUp('align')"
+      ></md-popup-title-bar>
+      <div class="md-example-popup md-example-popup-align">
+        <md-scroll-view :scrolling-x="false">
+          <p>Scroll View</p>
+        </md-scroll-view>
+      </div>
+    </md-popup>
+
     <md-button @click="showPopUp('top')">无遮罩层</md-button>
     <md-popup
       v-model="isPopupShow.top"
@@ -51,19 +72,21 @@
   </div>
 </template>
 
-<script>import {Popup, PopupTitleBar, Button, Icon} from 'mand-mobile'
+<script>import {Popup, PopupTitleBar, ScrollView, Button, Icon} from 'mand-mobile'
 
 export default {
   name: 'popup-demo',
   /* DELETE */
   title: '其他配置',
   titleEnUS: 'Other configurations',
+  height: '500',
   /* DELETE */
   components: {
     [Popup.name]: Popup,
     [PopupTitleBar.name]: PopupTitleBar,
     [Button.name]: Button,
     [Icon.name]: Icon,
+    [ScrollView.name]: ScrollView,
   },
   data() {
     return {
@@ -99,9 +122,16 @@ export default {
     box-sizing border-box
     text-align center
     background-color #FFF
-  .md-example-popup-center
-    padding 50px
-    border-radius radius-normal
+  .md-example-popup-align
+    padding 0 40px
+    .md-scroll-view
+      height 500px
+      background #EEE
+      p
+        line-height 500px
+        font-size 64px
+        font-weight 200
+        color #999
   .md-example-popup-top
     width 100%
     height 75px

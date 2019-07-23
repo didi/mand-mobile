@@ -37,6 +37,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |cancel-text|取消按钮文案|String|-|为空则没有取消按钮|
 |large-radius <sup class="version-after">2.4.0+</sup>|大圆角模式|Boolean|`false`|-|
 |only-close <sup class="version-after">2.4.0+</sup>|只有右侧关闭按钮|Boolean|`false`|-|
+|title-align <sup class="version-after">2.4.0+</sup>|标题和描述位置|String|`center`|注意`left`和`right`时会分别隐藏左右两侧按钮|
 
 #### Popup Events
 

@@ -36,6 +36,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |cancel-text|cancellation text|String|-|no cancellation button if empty|
 |large-radius|large radius|Boolean|`false`|-|
 |only-close|only right close button|Boolean|`false`|-|
+|title-align <sup class="version-after">2.4.0+</sup>|title and description position|String|`center`|note that `left` and `right` will hide the left and right buttons respectively|
 
 #### Popup Events
 
