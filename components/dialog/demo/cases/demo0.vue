@@ -3,6 +3,7 @@
     <md-button @click="basicDialog.open = true">基本</md-button>
     <md-button @click="iconDialog.open = true">带图标</md-button>
     <md-button @click="warnDialog.open = true">警示操作</md-button>
+    <md-button @click="asyncDialog.open = true">异步操作</md-button>
     <md-button @click="actDialog.open = true">多操作</md-button>
     <md-button @click="slotDialog.open = true">插槽</md-button>
 
@@ -31,6 +32,14 @@
       :btns="warnDialog.btns"
     >
       或是因为习惯了孤独，我们渴望被爱；又或是害怕爱而不得，我们最后仍然选择孤独。
+    </md-dialog>
+
+    <md-dialog
+      :closable="false"
+      v-model="asyncDialog.open"
+      :btns="asyncDialog.btns"
+    >
+      每个人都有属于自己的一片森林，也许我们 从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。
     </md-dialog>
 
     <md-dialog
@@ -98,6 +107,17 @@ export default {
           {
             text: '警示操作',
             warning: true,
+            handler: this.onWarnConfirm,
+          },
+        ],
+      },
+      asyncDialog: {
+        open: false,
+        btns: [
+          {
+            text: '开始搜索',
+            icon: 'search',
+            handler: this.onAsyncConfirm,
           },
         ],
       },
@@ -151,6 +171,18 @@ export default {
     },
     onActConfirm() {
       this.actDialog.open = false
+    },
+    onAsyncConfirm(btn) {
+      this.$set(btn, 'loading', true)
+      this.$set(btn, 'text', '搜索中')
+      setTimeout(() => {
+        this.asyncDialog.open = false
+        this.$set(btn, 'loading', false)
+        this.$set(btn, 'text', '开始搜索')
+        Toast({
+          content: '搜索成功',
+        })
+      }, 1500)
     },
   },
 }
