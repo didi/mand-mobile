@@ -1,21 +1,39 @@
 <template>
   <div class="md-example-child md-example-child-selector md-example-child-selector-2">
+    <md-field>
+      <md-field-item
+        title="确认模式"
+        :content="selectorValue"
+        @click="showSelector"
+        arrow
+        solid
+      />
+    </md-field>
     <md-selector
-      value
+      v-model="isSelectorShow"
       :data="data[0]"
       min-height="320px"
       title="确认模式"
       okText="确认"
+      large-radius
+      @confirm="onSelectorConfirm"
     ></md-selector>
   </div>
 </template>
 
-<script>import {Selector} from 'mand-mobile'
+<script>import {Selector, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'selector-demo',
+  /* DELETE */
+  title: '确认模式',
+  titleEnUS: 'Confirmed mode',
+  height: 500,
+  /* DELETE */
   components: {
     [Selector.name]: Selector,
+    [Field.name]: Field,
+    [FieldItem.name]: FieldItem,
   },
   data() {
     return {
@@ -46,6 +64,14 @@ export default {
       ],
       selectorValue: '',
     }
+  },
+  methods: {
+    showSelector() {
+      this.isSelectorShow = true
+    },
+    onSelectorConfirm({text}) {
+      this.selectorValue = text
+    },
   },
 }
 </script>

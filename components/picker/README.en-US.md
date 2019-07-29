@@ -34,6 +34,8 @@ Vue.component(Picker.name, Picker)
 |describe|description of picker|String|-|-|
 |ok-text|confirmation text|String|`confirm`|-|
 |cancel-text|cancellation text|String|`cancel`|-|
+|large-radius <sup class="version-after">2.4.0+</sup>|large radius of title bar|Boolean|`false`|-|
+|mask-closable|picker will be closed when clicking mask|Boolean|`true`|-|
 
 #### Picker Methods
 

@@ -4,29 +4,29 @@
   "options": [
     {
       "value": "pk",
-      "label": "北京",
+      "label": "北京市",
       "children": {
         "name": "block",
-        "label": "",
+        "label": "请选择",
         "options": [
           {
             "value": "hd",
-            "label": "海淀"
+            "label": "海淀区"
           },
           {
             "value": "cp",
-            "label": "昌平"
+            "label": "昌平区"
           },
           {
             "value": "cy",
-            "label": "朝阳"
+            "label": "朝阳区"
           }
         ]
       }
     },
     {
       "value": "sc",
-      "label": "四川",
+      "label": "四川省",
       "children": {
         "name": "city",
         "label": "请选择",
@@ -36,7 +36,7 @@
             "label": "成都市",
             "children": {
               "name": "block",
-              "label": "区",
+              "label": "请选择",
               "options": [
                 {
                   "value": "gx",

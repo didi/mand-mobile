@@ -36,7 +36,8 @@ Vue.component(DatePicker.name, DatePicker)
 |describe|description of date-picker|String|-|-|
 |ok-text|confirmation text|String|`confirm`|-| 
 |cancel-text|cancellation text|String|`cancel`|-| 
-|mask-closable|if popup can be closed through clicking mask|String|`true`|-|
+|large-radius <sup class="version-after">2.4.0+</sup>|large radius of title bar|Boolean|`false`|-|
+|mask-closable|picker will be closed when clicking mask|String|`true`|-|
 
 #### DatePicker Methods
 

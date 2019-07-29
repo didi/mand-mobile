@@ -29,6 +29,7 @@ this.$actionsheet.create({ /* ... */ }) // 全量引入
 |default-index|默认选中项| Boolean| `0`|-|
 |invalid-index|禁用选择项索引 |Number|`-1`|-|
 |cancel-text|取消按钮文案 |String |-|-|
+|large-radius <sup class="version-after">2.4.0+</sup>|大圆角模式|Boolean|`false`|-|
 
 #### ActionSheet Events
 

@@ -15,6 +15,7 @@
       min-height="320px"
       okText="确认"
       cancelText="取消"
+      large-radius
       @confirm="onSelectorConfirm"
       is-check
     ></md-selector>

@@ -15,6 +15,7 @@
       v-model="isDatePickerShow"
       type="custom"
       title="选择出险时间"
+      large-radius
       :text-render="textRender"
       :custom-types="['yyyy', 'MM','dd', 'hh', 'mm']"
       :default-date="currentDate"

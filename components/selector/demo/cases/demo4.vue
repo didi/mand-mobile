@@ -16,6 +16,7 @@
       min-height="320px"
       okText="确定"
       cancelText="取消"
+      large-radius
       @confirm="onSelectorConfirm"
       multi
     ></md-selector>

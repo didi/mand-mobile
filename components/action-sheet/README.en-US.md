@@ -30,6 +30,7 @@ this.$actionsheet.create({ /* ... */ }) // Totally Import
 |default-index|default selected index|Boolean|0|-|
 |invalid-index|invalid index|Number| -1|-|
 |cancel-text|cancel text|String|-|-|
+|large-radius <sup class="version-after">2.4.0+</sup>|large radius|Boolean|`false`|-|
 
 #### ActionSheet Events
 
