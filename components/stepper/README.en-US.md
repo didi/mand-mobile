@@ -22,7 +22,6 @@ Vue.component(Stepper.name, Stepper)
 |Props | Description | Type | Default |
 |---------|------|--------|----|
 |v-model | current value | Number/String |-|
-|default-value |stepper initial value| Number/String|-|
 |step|the number of steps can be changed and be a decimal|Number/String|`1`|
 |min|minimum|Number/String|`-Infinity`|
 |max|maximum|Number/String|`Infinity`|
