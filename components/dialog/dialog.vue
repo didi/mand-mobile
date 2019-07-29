@@ -38,7 +38,7 @@
               class="md-dialog-btn"
               :class="{
                 disabled: !!btn.disabled,
-                warning: !!btn.warning
+                warning: !btn.disabled && !!btn.warning
               }"
               :key="index"
               @click="$_onClick(btn)"
