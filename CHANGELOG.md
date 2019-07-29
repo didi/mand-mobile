@@ -3,6 +3,48 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.4.0
+
+`2019-07-29`
+
+- Design
+  - 🍭金融设计规范更新，`Popup`类组件标题栏`border-radius`由`8px`变为`40px`（大圆角模式），`Dialog`组件`border-radius`由`8px`变为`12px`
+
+  ![Design](https://pt-starimg.didistatic.com/static/starimg/img/FLXmXRBcDX1564369346467.jpg)
+
+- Feature
+  - `PopupTitleBar`增加以下属性:
+    - `large-radius`，用于支持大圆角模式
+    - `only-close`，用于快捷设置单个关闭按钮
+    - `title-align`，用于设置标题描述位置（left/right/center）
+  - `Picker`, `DatePicker`, `TabPicker`, `Selector`, `Cashier`增加属性`large-radius`用于支持支持大圆角模式
+  - `Selector`增加属性`hide-title-bar`，用于支持在无需确认模式下隐藏标题栏，增加插槽`header`，`footer`
+  - `Button`增加属性`loading`，用于设置加载状态
+  - `Dialog`属性`btns`中增加两个状态设置`disabled`（禁用态）/`loading`（加载态），并在`handler`中回传`btn`实例[#500](https://github.com/didi/mand-mobile/issues/500)
+
+    ```javascript
+    export default {
+      data () {
+        return {
+          btns: [{
+            text: '搜索',
+            handler: this.btnHandler
+          }]
+        }
+      },
+      methods: {
+        btnHandler (btn) {
+          this.$set(btn, 'loading', true)
+          this.$set(btn, 'text', '搜索中')
+        },
+      }
+    }
+    ```
+
+- Fix
+  - 修复`InputItem`和`Stepper`有默认值时会在组件初始化时误触发`change`事件[#495](https://github.com/didi/mand-mobile/issues/495)
+  - `Amount`大写模式兼容负数[#510](https://github.com/didi/mand-mobile/issues/510)
+
 ### 2.3.3
 
 `2019-07-18`
