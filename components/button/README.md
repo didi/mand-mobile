@@ -30,6 +30,7 @@ Vue.component(Button.name, Button)
 |icon|图标|String|-|可选值请参考组件`Icon`|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 |inactive|未激活|Boolean|`false`|`inactive`设为`true`和`disabled`类型的按钮都无法点击，前者一般用于表单校验无效等主观因素，后者用于无权限或无库存等客观因素|
+|loading|加载中状态|Boolean|`false`|-|
 
 #### Button Events
 

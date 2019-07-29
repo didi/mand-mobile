@@ -21,6 +21,23 @@ exports[`Button Basic 1`] = `
       <!---->
       <p class="md-button-content">Primary Inactive</p>
     </div>
+  </button> <button type="button" class="md-button primary active block">
+    <div class="md-button-inner">
+      <div class="md-activity-indicator-rolling md-button-loading">
+        <div class="rolling-container"><svg viewBox="0 0 81.66666666666667 81.66666666666667" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:70px;height:70px;transform:rotateZ(0deg);">
+            <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="5.833333333333333" cx="40.833333333333336" cy="40.833333333333336" r="35"></circle>
+            <g class="circle">
+              <circle cx="40.833333333333336" cy="40.833333333333336" fill="transparent" stroke="#2F86F6" stroke-width="5.833333333333333" stroke-dasharray="193.5164" stroke-linecap="round" r="35" class="stroke">
+                <animate attributeName="stroke-dashoffset" values="633.3264;246.2936" dur="2.2s" keyTimes="0;1" calcMode="spline" fill="freeze" keySplines="0.41,0.314,0.8,0.54" repeatCount="indefinite" begin="0"></animate>
+                <animateTransform dur="2s" values="0 40.833333333333336 40.833333333333336;360 40.833333333333336 40.833333333333336" attributeName="transform" type="rotate" calcMode="linear" keyTimes="0;1" begin="0" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </g>
+          </svg>
+          <div class="content"></div>
+        </div>
+      </div>
+      <p class="md-button-content">Loading</p>
+    </div>
   </button> <button type="button" class="md-button warning active block">
     <div class="md-button-inner">
       <!---->
@@ -90,6 +107,23 @@ exports[`Button Plain 1`] = `
     <div class="md-button-inner">
       <!---->
       <p class="md-button-content">Primary &amp; Plain &amp; Round</p>
+    </div>
+  </button> <button type="button" class="md-button primary active block round plain">
+    <div class="md-button-inner">
+      <div class="md-activity-indicator-rolling md-button-loading">
+        <div class="rolling-container"><svg viewBox="0 0 81.66666666666667 81.66666666666667" preserveAspectRatio="xMidYMid" class="md-activity-indicator-svg rolling" style="width:70px;height:70px;transform:rotateZ(0deg);">
+            <circle fill="none" stroke="rgba(0, 0, 0, .1)" stroke-width="5.833333333333333" cx="40.833333333333336" cy="40.833333333333336" r="35"></circle>
+            <g class="circle">
+              <circle cx="40.833333333333336" cy="40.833333333333336" fill="transparent" stroke="#2F86F6" stroke-width="5.833333333333333" stroke-dasharray="193.5164" stroke-linecap="round" r="35" class="stroke">
+                <animate attributeName="stroke-dashoffset" values="633.3264;246.2936" dur="2.2s" keyTimes="0;1" calcMode="spline" fill="freeze" keySplines="0.41,0.314,0.8,0.54" repeatCount="indefinite" begin="0"></animate>
+                <animateTransform dur="2s" values="0 40.833333333333336 40.833333333333336;360 40.833333333333336 40.833333333333336" attributeName="transform" type="rotate" calcMode="linear" keyTimes="0;1" begin="0" repeatCount="indefinite"></animateTransform>
+              </circle>
+            </g>
+          </svg>
+          <div class="content"></div>
+        </div>
+      </div>
+      <p class="md-button-content">Primary &amp; Plain &amp; Loading</p>
     </div>
   </button></div>
 `;
