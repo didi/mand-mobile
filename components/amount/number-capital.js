@@ -11,10 +11,13 @@ const cnDecUnits = ['\u89d2', '\u5206', '\u6beb', '\u5398']
 const cnInteger = '\u6574' // 整 \u6574
 const cnIntLast = '\u5143' // 元 \u5143
 
+const cnNegative = '\u8d1f' // 负
+
 // Maximum number
 const maxNum = 999999999999999.9999
 
 export default function(number) {
+  let negative
   // Integral part
   let integerNum
   // Decimal part
@@ -30,6 +33,11 @@ export default function(number) {
   }
 
   number = parseFloat(number)
+
+  if (number < 0) {
+    negative = true
+    number = Math.abs(number)
+  }
 
   /* istanbul ignore if  */
   if (number >= maxNum) {
@@ -93,6 +101,10 @@ export default function(number) {
     capitalStr += cnNums[0] + cnIntLast + cnInteger
   } else if (decimalNum === '') {
     capitalStr += cnInteger
+  }
+
+  if (negative) {
+    capitalStr = `${cnNegative}${capitalStr}`
   }
   return capitalStr
 }
