@@ -13,6 +13,7 @@
       @hide="$_onHide"
     >
       <div class="md-dialog-content">
+        <slot name="header"></slot>
         <div class="md-dialog-body">
           <a
             role="button"
@@ -36,13 +37,23 @@
               role="button"
               class="md-dialog-btn"
               :class="{
-                warning: !!btn.warning
+                disabled: !!btn.disabled,
+                warning: !btn.disabled && !!btn.warning
               }"
               :key="index"
-              v-text="btn.text"
               @click="$_onClick(btn)"
               @touchmove.prevent
-            ></a>
+            >
+              <md-activity-indicator-rolling v-if="btn.loading" class="md-dialog-btn-loading"></md-activity-indicator-rolling>
+              <md-icon
+                v-else-if="btn.icon"
+                class="md-dialog-btn-icon"
+                :name="btn.icon"
+                :svg="btn.iconSvg"
+                size="md"
+              ></md-icon>
+              {{ btn.text }}
+            </a>
           </template>
         </footer>
       </div>
@@ -52,6 +63,7 @@
 
 <script>import Popup from '../popup'
 import Icon from '../icon'
+import ActivityIndicatorRolling from '../activity-indicator/roller'
 import {mdDocument} from '../_util'
 
 export default {
@@ -60,6 +72,7 @@ export default {
   components: {
     [Popup.name]: Popup,
     [Icon.name]: Icon,
+    [ActivityIndicatorRolling.name]: ActivityIndicatorRolling,
   },
 
   props: {
@@ -149,8 +162,11 @@ export default {
       this.$emit('hide')
     },
     $_onClick(btn) {
+      if (btn.disabled || btn.loading) {
+        return
+      }
       if (typeof btn.handler === 'function') {
-        btn.handler.call(null)
+        btn.handler.call(null, btn)
       } else {
         this.close()
       }
@@ -254,9 +270,25 @@ export default {
   -webkit-tap-highlight-color transparent
   &.warning
     color color-text-error !important
+    .md-dialog-btn-loading .md-activity-indicator-svg .circle circle
+      stroke color-text-error !important
+  &.disabled
+    color color-text-disabled !important
+    .md-dialog-btn-loading .md-activity-indicator-svg .circle circle
+      stroke color-text-disabled !important
   &:last-child
     color dialog-action-highlight-color
     remove-hairline(right)
-  &:active
+    .md-dialog-btn-loading .md-activity-indicator-svg .circle circle
+      stroke dialog-action-highlight-color 
+  &:not(.disabled):active
     background-color color-bg-tap
+  .md-dialog-btn-loading .md-activity-indicator-svg
+    width 32px !important
+    height 32px !important
+    margin-right 10px
+    .circle circle
+      stroke color-text-minor
+  .md-dialog-btn-icon
+    margin-right 10px
 </style>

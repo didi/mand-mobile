@@ -29,14 +29,33 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | icon-svg | svg图标 | Boolean |`false`|如需自定义图标, 请查看`Icon`组件|
 | closable | 是否显示关闭按钮 | Boolean | `true`|-|
 | layout | 底部按钮组布局方式, `row, column` | String | `row` | - |
-| btns | 底部操作按钮组 | Array<{text, handler, warning}> | `[]`|`warning` is used to identify the warning action|
+| btns | 底部操作按钮组 | Array<DialogBtnOptions> | `[]`|-|
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
 | transition | 弹出层过度动画 | String | 可选值参考[Transition](https://didi.github.io/mand-mobile/#/zh-CN/docs/components/feedback/transition?anchor=API) |
 
+#### DialogBtnOptions Props
+
+|属性 | 说明 | 类型 | 默认值|
+|----|-----|------|------|
+|text|按钮文案|String|-|
+|handler|点击回调|Function(btn: DialogBtnOptions)|-|
+|warning|警示按钮|Boolean|`false`|
+|disabled <sup class="version-after">2.4.0+</sup>|禁用按钮|Boolean|`false`|
+|loading <sup class="version-after">2.4.0+</sup>|加载中按钮|Boolean|`false`|
+|icon|按钮图标|String|-|
+|iconSvg|按钮svg图标|Boolean|`false`|
+
 #### Dialog Slots
-组件子元素会被当做默认插槽内容使用，适合于不需要标题的自定义窗口内容的场景。
+
+##### default
+
+组件子元素会被当做默认插槽内容使用，适合于不需要标题的自定义窗口内容的场景
+
+##### header
+
+顶部插槽，一般用于放置图片等 <sup class="version-after">2.4.0+</sup>
 
 #### Dialog Instance Methods
 

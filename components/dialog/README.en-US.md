@@ -29,14 +29,33 @@ this.$dialog.alert({ content: '' }) // Totally Import
 | icon-svg | svg icon | Boolean |`false`|Refer to `Icon` component for customized icon|
 | closable | whether the close button is visible or not | Boolean | `true` | - |
 | layout | layout of action buttons, `row, column` | String | `row` | - |
-| btns | action buttons in the footer| Array {text, handler, warning} | `[]` | - |
+| btns | action buttons in the footer| Array<DialogBtnOptions> | `[]` | - |
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
 | has-mask | has mask or not | Boolean | `true` | - |
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
 | transition | the animation effect of dialog | String | refer to [Transition](https://didi.github.io/mand-mobile/#/en-US/docs/components/feedback/transition?anchor=API) for optional values |
 
+#### DialogBtnOptions Props
+
+| Props | Description | Type | Default |
+|----|-----|------|------|
+|text|button text|String|-|
+|handler|click callback|Function(btn: DialogBtnOptions)|-|
+|warning|warning button|Boolean|`false`|
+|disabled <sup class="version-after">2.4.0+</sup>|disabled button|Boolean|`false`|
+|loading <sup class="version-after">2.4.0+</sup>|loading button|Boolean|`false`|
+|icon|name of icon|String|-|
+|iconSvg|svg icon|Boolean|`false`|
+
 #### Dialog Slots
+
+##### default
+
 Default slots is used as the content of dialog
+
+##### header
+
+Header slot, generally used for placing pictures, etc <sup class="version-after">2.4.0+</sup>
 
 #### Dialog Instance Methods
 
