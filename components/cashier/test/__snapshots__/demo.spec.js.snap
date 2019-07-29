@@ -2,16 +2,17 @@
 
 exports[`Cashier - Demo Baisc-captcha 1`] = `
 <div class="md-cashier">
-  <div class="md-popup with-mask bottom" style="">
+  <div class="md-popup inner-popup with-mask bottom" style="">
     <div class="md-popup-mask" style="" name="md-mask-fade"></div>
     <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
-      <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
+      <div class="md-popup-title-bar title-align-center">
+        <!---->
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
         </div>
         <!---->
+        <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg"></i></div>
       </div>
       <div class="md-cashier-container">
         <div class="md-cashier-block md-cashier-captcha">
@@ -62,16 +63,17 @@ exports[`Cashier - Demo Baisc-captcha 1`] = `
 exports[`Cashier - Demo Baisc-channel 1`] = `
 <div class="md-example-child md-example-child-cashier">
   <div class="md-cashier">
-    <div class="md-popup with-mask bottom" style="display:none;">
+    <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+        <div class="md-popup-title-bar title-align-center">
+          <!---->
           <div class="title-bar-title">
             <p class="title">支付</p>
             <!---->
           </div>
           <!---->
+          <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
         </div>
         <div class="md-cashier-container">
           <div class="md-cashier-block md-cashier-choose">
@@ -113,16 +115,17 @@ exports[`Cashier - Demo Baisc-channel 1`] = `
 
 exports[`Cashier - Demo Baisc-fail 1`] = `
 <div class="md-cashier">
-  <div class="md-popup with-mask bottom" style="">
+  <div class="md-popup inner-popup with-mask bottom" style="">
     <div class="md-popup-mask" style="" name="md-mask-fade"></div>
     <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
-      <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
+      <div class="md-popup-title-bar title-align-center">
+        <!---->
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
         </div>
         <!---->
+        <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg"></i></div>
       </div>
       <div class="md-cashier-container">
         <div class="md-cashier-block md-cashier-fail">
@@ -140,16 +143,17 @@ exports[`Cashier - Demo Baisc-fail 1`] = `
 
 exports[`Cashier - Demo Baisc-success 1`] = `
 <div class="md-cashier">
-  <div class="md-popup with-mask bottom" style="">
+  <div class="md-popup inner-popup with-mask bottom" style="">
     <div class="md-popup-mask" style="" name="md-mask-fade"></div>
     <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
-      <div class="md-popup-title-bar">
-        <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg"></i></div>
+      <div class="md-popup-title-bar title-align-center">
+        <!---->
         <div class="title-bar-title">
           <p class="title">支付</p>
           <!---->
         </div>
         <!---->
+        <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg"></i></div>
       </div>
       <div class="md-cashier-container">
         <div class="md-cashier-block md-cashier-success">
@@ -184,16 +188,17 @@ exports[`Cashier - Demo Baisc-success 1`] = `
 exports[`Cashier - Demo Using slots and other configurations 1`] = `
 <div class="md-example-child md-example-child-cashier">
   <div class="md-cashier">
-    <div class="md-popup with-mask bottom" style="display:none;">
+    <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+        <div class="md-popup-title-bar title-align-center">
+          <!---->
           <div class="title-bar-title">
             <p class="title">支付</p>
             <!---->
           </div>
           <!---->
+          <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
         </div>
         <div class="md-cashier-container">
           <div>

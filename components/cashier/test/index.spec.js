@@ -97,7 +97,7 @@ describe('Cashier - Operation', () => {
 
     wrapper.vm.$nextTick(() => {
       expect(!!wrapper.find('.md-cashier-captcha')).toBeTruthy()
-      const cancel = wrapper.find('.md-popup-cancel')
+      const cancel = wrapper.find('.md-popup-close')
       cancel.trigger('click')
       done()
     })

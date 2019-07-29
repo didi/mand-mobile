@@ -22,7 +22,7 @@ exports[`Selector - Demo Check mode 1`] = `
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar large-radius">
+        <div class="md-popup-title-bar title-align-center large-radius">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">Check模式</p>
@@ -136,7 +136,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar large-radius">
+        <div class="md-popup-title-bar title-align-center large-radius">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">确认模式</p>
@@ -250,7 +250,7 @@ exports[`Selector - Demo Custom options 1`] = `
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar large-radius" style="display:none;">
+        <div class="md-popup-title-bar title-align-center large-radius" style="display:none;">
           <!---->
           <div class="title-bar-title"></div>
           <!---->
@@ -393,7 +393,7 @@ exports[`Selector - Demo Multi mode 1`] = `
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar large-radius">
+        <div class="md-popup-title-bar title-align-center large-radius">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">多选模式</p>
@@ -504,7 +504,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar large-radius">
+        <div class="md-popup-title-bar title-align-center large-radius">
           <!---->
           <div class="title-bar-title">
             <p class="title">普通模式</p>

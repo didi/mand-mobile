@@ -3,7 +3,7 @@
 exports[`ActionSheet Basic 1`] = `
 <div class="md-example-child md-example-child-action-sheet">
   <div class="md-action-sheet">
-    <div class="md-popup with-mask bottom" style="display:none;">
+    <div class="md-popup inner-popup large-radius with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
         <div class="md-action-sheet-content">
@@ -35,7 +35,7 @@ exports[`ActionSheet Basic 1`] = `
 
 exports[`ActionSheet Singleton pattern 1`] = `
 <div class="md-action-sheet">
-  <div class="md-popup with-mask bottom" style="">
+  <div class="md-popup inner-popup large-radius with-mask bottom" style="">
     <div class="md-popup-mask" style=""></div>
     <div class="md-popup-box md-slide-up" style="">
       <div class="md-action-sheet-content">

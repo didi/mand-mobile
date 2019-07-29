@@ -6,13 +6,14 @@ exports[`TabPicker - Demo Basic 1`] = `
     <div class="md-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar large">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+        <div class="md-popup-title-bar title-align-center large">
+          <!---->
           <div class="title-bar-title">
             <p class="title">请选择</p>
             <p class="describe">请选择您所在的省份、城市、区县</p>
           </div>
           <!---->
+          <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
         </div>
         <div class="md-tab-picker-content">
           <div class="md-tabs">
@@ -41,7 +42,7 @@ exports[`TabPicker - Demo Basic 1`] = `
                         <div class="md-cell-item-body">
                           <!---->
                           <div class="md-cell-item-content">
-                            <p class="md-cell-item-title">北京</p>
+                            <p class="md-cell-item-title">北京市</p>
                             <!---->
                           </div>
                           <div class="md-cell-item-right"><label class="md-radio">
@@ -59,7 +60,7 @@ exports[`TabPicker - Demo Basic 1`] = `
                         <div class="md-cell-item-body">
                           <!---->
                           <div class="md-cell-item-content">
-                            <p class="md-cell-item-title">四川</p>
+                            <p class="md-cell-item-title">四川省</p>
                             <!---->
                           </div>
                           <div class="md-cell-item-right"><label class="md-radio">

@@ -14,13 +14,14 @@ exports[`Popup - Demo Different positions 1`] = `
   ] <div class="md-popup with-mask bottom" style="display:none;">
     <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
     <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-      <div class="md-popup-title-bar large">
+      <div class="md-popup-title-bar title-align-center large">
         <div class="title-bar-left md-popup-cancel">cancel</div>
         <div class="title-bar-title">
           <p class="title">Popup Title</p>
           <p class="describe">Popup Description</p>
         </div>
         <div class="title-bar-right md-popup-confirm">ok</div>
+        <!---->
       </div>
       <div class="md-example-popup md-example-popup-bottom">
         Popup Bottom
@@ -69,13 +70,14 @@ exports[`Popup - Demo Other configurations 1`] = `
   <div class="md-popup with-mask bottom" style="display:none;">
     <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
     <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-      <div class="md-popup-title-bar">
+      <div class="md-popup-title-bar title-align-center">
         <div class="title-bar-left md-popup-cancel">cancel</div>
         <div class="title-bar-title">
           <p class="title">Prevent Mask Click</p>
           <!---->
         </div>
         <div class="title-bar-right md-popup-confirm">ok</div>
+        <!---->
       </div>
       <div class="md-example-popup md-example-popup-bottom">
         Popup Bottom

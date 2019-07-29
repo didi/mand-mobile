@@ -66,13 +66,14 @@ exports[`Picker - Demo Display in Popup 1`] = `
     <div class="md-popup inner-popup with-mask bottom" style="">
       <div class="md-popup-mask" style="" name="md-mask-fade"></div>
       <div class="md-popup-box md-slide-up" style="" name="md-slide-up">
-        <div class="md-popup-title-bar">
+        <div class="md-popup-title-bar title-align-center">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">选择年份</p>
             <!---->
           </div>
           <div class="title-bar-right md-popup-confirm">确认</div>
+          <!---->
         </div>
         <div class="md-picker-column" style="height: 245px;">
           <div class="md-picker-column-container">
