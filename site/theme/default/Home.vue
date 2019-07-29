@@ -138,7 +138,12 @@
             v-show="blockShow[homeBlockIndex]"
             :key="`home-others-${homeBlockIndex}-3`"
           >
-            <component :is="homeBlock.others" :ref="`block-other-slots-${homeBlockIndex}`"></component>  
+            <template v-if="typeof homeBlock.others === 'string'">
+              <div v-html="homeBlock.others"></div>
+            </template>
+            <template v-else>
+              <component :is="homeBlock.others" :ref="`block-other-slots-${homeBlockIndex}`"></component>  
+            </template>
           </div>
         </transition-group>
       </section>
@@ -341,6 +346,13 @@ export default {
           a
             color #2F86F6
             text-decoration none
+      .home-others
+        a
+          float left
+          color #2F86F6
+          text-decoration none
+          &:hover
+            opacity 0.8
       &.home-box-block-0
         // height 700px
         .home-text
@@ -484,6 +496,11 @@ export default {
             box-shadow none !important
             &:last-of-type
               margin 0 !important
+      .home-others
+        float left
+        position relative
+        left 50%
+        transform translateX(-50%)
   .home-button-other, .mfe-git-star-number
     display none !important
 </style>

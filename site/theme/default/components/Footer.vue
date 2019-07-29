@@ -1,13 +1,13 @@
 <template>
   <div class="mfe-blog-theme-default-footer">
     <div class="default-footer-container">
-      <ul class="default-footer-category">
+      <!-- <ul class="default-footer-category">
         <h1>
           <img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-white.svg" alt="">
           <br>
           <span>Mand Mobile</span>
         </h1>
-      </ul>
+      </ul> -->
       <ul
         class="default-footer-category"
         v-for="(items, i) in list"
