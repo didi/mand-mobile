@@ -12,6 +12,8 @@
       <md-popup-title-bar
         :title="title"
         :describe="describe"
+        :large-radius="largeRadius"
+        only-close
         @cancel="$_onCancel"
       >
         <md-icon name="close" size="lg" slot="cancel" />
@@ -20,6 +22,7 @@
           <md-tabs
             v-model="currentTab"
             :key="tabsTmpKey"
+            :inkLength="100"
             ref="tabs"
           >
             <md-scroll-view

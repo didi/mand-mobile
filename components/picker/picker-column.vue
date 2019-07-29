@@ -528,6 +528,7 @@ export default {
 .md-picker-column-list
   display flex
   height 100%
+  padding 0 picker-padding-h
 
 .md-picker-column-item
   position relative

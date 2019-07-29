@@ -1,7 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dialog - Demo Basic 1`] = `
-<div class="md-example-child md-example-child-dialog md-example-child-dialog-0">
+<div class="md-example-child md-example-child-dialog md-example-child-dialog-0"><button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">基本</p>
+    </div>
+  </button> <button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">带图标</p>
+    </div>
+  </button> <button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">警示操作</p>
+    </div>
+  </button> <button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">异步操作</p>
+    </div>
+  </button> <button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">多操作</p>
+    </div>
+  </button> <button type="button" class="md-button default active block">
+    <div class="md-button-inner">
+      <!---->
+      <p class="md-button-content">插槽</p>
+    </div>
+  </button>
   <div class="md-dialog">
     <div class="md-popup with-mask center" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
@@ -12,7 +42,13 @@ exports[`Dialog - Demo Basic 1`] = `
             <h2 class="md-dialog-title">窗口标题</h2>
             人生的刺，就在这里，留恋着不肯快走的，偏是你所不留恋的东西。
           </div>
-          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">取消</a><a role="button" class="md-dialog-btn">确认操作</a></footer>
+          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">
+              <!---->
+              取消
+            </a><a role="button" class="md-dialog-btn">
+              <!---->
+              确认操作
+            </a></footer>
         </div>
       </div>
     </div>
@@ -27,7 +63,10 @@ exports[`Dialog - Demo Basic 1`] = `
             <!---->
             围在城里的人想逃出来，城外的人想冲进去，对婚姻也罢，职业也罢，人生的愿望大都如此。
           </div>
-          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">确认操作</a></footer>
+          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">
+              <!---->
+              确认操作
+            </a></footer>
         </div>
       </div>
     </div>
@@ -43,7 +82,31 @@ exports[`Dialog - Demo Basic 1`] = `
             <h2 class="md-dialog-title">警示操作</h2>
             或是因为习惯了孤独，我们渴望被爱；又或是害怕爱而不得，我们最后仍然选择孤独。
           </div>
-          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">取消</a><a role="button" class="md-dialog-btn warning">警示操作</a></footer>
+          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">
+              <!---->
+              取消
+            </a><a role="button" class="md-dialog-btn warning">
+              <!---->
+              警示操作
+            </a></footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="md-dialog">
+    <div class="md-popup with-mask center" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
+        <div class="md-dialog-content">
+          <div class="md-dialog-body">
+            <!---->
+            <!---->
+            <!---->
+            每个人都有属于自己的一片森林，也许我们 从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。
+          </div>
+          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn"><i class="md-icon icon-font md-dialog-btn-icon md-icon-search search md" style="color:;"></i>
+              开始搜索
+            </a></footer>
         </div>
       </div>
     </div>
@@ -59,7 +122,36 @@ exports[`Dialog - Demo Basic 1`] = `
             <h2 class="md-dialog-title">窗口标题</h2>
             据说每个人需要一面镜子，可以常常自照，知道自己是个什么东西。不过，能自知的人根本不用照镜子；不自知的东西，照了镜子也没有用。
           </div>
-          <footer class="md-dialog-actions is-column"><a role="button" class="md-dialog-btn">操作一</a><a role="button" class="md-dialog-btn">操作二</a><a role="button" class="md-dialog-btn">操作三</a></footer>
+          <footer class="md-dialog-actions is-column"><a role="button" class="md-dialog-btn">
+              <!---->
+              操作一
+            </a><a role="button" class="md-dialog-btn disabled">
+              <!---->
+              操作二
+            </a><a role="button" class="md-dialog-btn">
+              <!---->
+              操作三
+            </a></footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="md-dialog">
+    <div class="md-popup with-mask center" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
+        <div class="md-dialog-content">
+          <div class="dialog-banner"><img src="http://img-hxy021.didistatic.com/static/strategymis/insurancePlatform_spu/uploads/27fb7f097ca218d743f816836bc7ea4a" alt=""></div>
+          <div class="md-dialog-body">
+            <!---->
+            <!---->
+            <h2 class="md-dialog-title">家</h2>
+            虽然其中有一些争吵、不愉快、曲折，但重要的是一家人整整齐齐。
+          </div>
+          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn">
+              <!---->
+              好的
+            </a></footer>
         </div>
       </div>
     </div>

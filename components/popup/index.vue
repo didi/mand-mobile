@@ -4,6 +4,7 @@
     class="md-popup"
     :class="[
       hasMask ? 'with-mask' : '',
+      largeRadius ? 'large-radius' : '',
       position
     ]"
   >
@@ -104,6 +105,7 @@ export default {
       isPopupBoxShow: false,
       // transtion lock
       isAnimation: false,
+      largeRadius: false,
     }
   },
 
@@ -262,6 +264,8 @@ export default {
   &.inner-popup .md-popup-box
     background-color color-bg-inverse
     border-radius popup-title-bar-radius popup-title-bar-radius 0 0
+  &.large-radius.inner-popup .md-popup-box
+    border-radius popup-title-bar-radius-large popup-title-bar-radius-large 0 0
 
 .md-popup-mask
   absolute-pos()

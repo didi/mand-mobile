@@ -1,6 +1,7 @@
 <template>
   <div class="md-cashier">
     <md-popup
+      class="inner-popup"
       v-model="isCashierShow"
       position="bottom"
       :mask-closable="false"
@@ -12,10 +13,10 @@
       <md-popup-title-bar
         :title="title"
         :describe="describe"
+        :large-radius="largeRadius"
+        only-close
         @cancel="$_onPopupCancel"
-      >
-        <md-icon name="close" size="lg" slot="cancel"></md-icon>
-      </md-popup-title-bar>
+      ></md-popup-title-bar>
       <div class="md-cashier-container">
         <slot name="header" :scene="scene"></slot>
 

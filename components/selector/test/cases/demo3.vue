@@ -1,23 +1,40 @@
 <template>
   <div class="md-example-child md-example-child-selector md-example-child-selector-3">
+    <md-field>
+      <md-field-item
+        title="Check模式"
+        :content="selectorValue"
+        @click="showSelector"
+        arrow
+      />
+    </md-field>
     <md-selector
-      value
+      v-model="isSelectorShow"
       :data="data[0]"
       title="Check模式"
       min-height="320px"
       okText="确认"
       cancelText="取消"
+      large-radius
+      @confirm="onSelectorConfirm"
       is-check
     ></md-selector>
   </div>
 </template>
 
-<script>import {Selector} from 'mand-mobile'
+<script>import {Selector, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'selector-demo',
+  /* DELETE */
+  title: 'Check模式',
+  titleEnUS: 'Check mode',
+  height: 500,
+  /* DELETE */
   components: {
     [Selector.name]: Selector,
+    [Field.name]: Field,
+    [FieldItem.name]: FieldItem,
   },
   data() {
     return {
@@ -35,6 +52,7 @@ export default {
           {
             value: '3',
             text: '选项三',
+            disabled: true,
           },
           {
             value: '4',
@@ -44,6 +62,14 @@ export default {
       ],
       selectorValue: '',
     }
+  },
+  methods: {
+    showSelector() {
+      this.isSelectorShow = true
+    },
+    onSelectorConfirm({text}) {
+      this.selectorValue = text
+    },
   },
 }
 </script>

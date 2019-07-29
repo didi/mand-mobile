@@ -34,6 +34,7 @@ Vue.component(Picker.name, Picker)
 |describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|`确认`|-|
 |cancel-text|选择器取消文案|String|`取消`|-|
+|large-radius <sup class="version-after">2.4.0+</sup>|选择器标题栏大圆角模式|Boolean|`false`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 
 #### Picker Methods

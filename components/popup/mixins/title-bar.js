@@ -16,5 +16,17 @@ export default {
       type: String,
       default: '',
     },
+    titleAlign: {
+      type: String,
+      default: 'center',
+    },
+    largeRadius: {
+      type: Boolean,
+      default: false,
+    },
+    onlyClose: {
+      type: Boolean,
+      default: false,
+    },
   },
 }

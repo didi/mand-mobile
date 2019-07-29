@@ -33,6 +33,7 @@
       :channel-limit="2"
       :payment-amount="cashierAmount"
       payment-describe="关于支付金额的特殊说明"
+      large-radius
       @select="onCashierSelect"
       @pay="onCashierPay"
       @cancel="onCashierCancel"

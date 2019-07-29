@@ -2,17 +2,34 @@
 
 exports[`Selector - Demo Check mode 1`] = `
 <div class="md-example-child md-example-child-selector md-example-child-selector-3">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item">
+        <div class="md-field-item-content"><label class="md-field-item-title">Check模式</label>
+          <!---->
+          <div class="md-field-item-control">
+            <!---->
+          </div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
   <div class="md-selector is-check">
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
+        <div class="md-popup-title-bar large-radius">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">Check模式</p>
             <!---->
           </div>
           <div class="title-bar-right md-popup-confirm">确认</div>
+          <!---->
         </div>
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
@@ -52,15 +69,15 @@ exports[`Selector - Demo Check mode 1`] = `
                   </div>
                   <!---->
                 </div>
-                <div class="md-cell-item md-radio-item">
+                <div class="md-cell-item md-radio-item is-disabled">
                   <div class="md-cell-item-body">
                     <!---->
                     <div class="md-cell-item-content">
                       <p class="md-cell-item-title">选项三</p>
                       <!---->
                     </div>
-                    <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+                    <div class="md-cell-item-right"><label class="md-radio is-disabled">
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -99,17 +116,34 @@ exports[`Selector - Demo Check mode 1`] = `
 
 exports[`Selector - Demo Confirmed mode 1`] = `
 <div class="md-example-child md-example-child-selector md-example-child-selector-2">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item is-solid">
+        <div class="md-field-item-content"><label class="md-field-item-title">确认模式</label>
+          <!---->
+          <div class="md-field-item-control">
+            <!---->
+          </div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
   <div class="md-selector is-normal">
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
+        <div class="md-popup-title-bar large-radius">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">确认模式</p>
             <!---->
           </div>
           <div class="title-bar-right md-popup-confirm">确认</div>
+          <!---->
         </div>
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
@@ -196,16 +230,30 @@ exports[`Selector - Demo Confirmed mode 1`] = `
 
 exports[`Selector - Demo Custom options 1`] = `
 <div class="md-example-child md-example-child-selector md-example-child-selector-1">
-  <div class="md-selector is-normal">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item is-solid">
+        <div class="md-field-item-content"><label class="md-field-item-title">自定义</label>
+          <!---->
+          <div class="md-field-item-control">
+            <!---->
+          </div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+  <div class="md-selector is-check">
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
-          <div class="title-bar-title">
-            <p class="title">自定义选项</p>
-            <!---->
-          </div>
+        <div class="md-popup-title-bar large-radius" style="display:none;">
+          <!---->
+          <div class="title-bar-title"></div>
+          <!---->
           <!---->
         </div>
         <div class="md-selector-container">
@@ -213,6 +261,9 @@ exports[`Selector - Demo Custom options 1`] = `
             <!---->
             <div class="scroll-view-container">
               <!---->
+              <div class="selector-header">
+                Header Slot
+              </div>
               <div class="md-radio-list md-selector-list">
                 <div class="md-cell-item md-radio-item">
                   <div class="md-cell-item-body">
@@ -220,10 +271,16 @@ exports[`Selector - Demo Custom options 1`] = `
                     <div class="md-cell-item-content">
                       <!---->
                       <!---->
-                      <div class="md-selector-custom-brief">选项一使用slot-scope</div>
+                      <div class="selector-item-body">
+                        <div class="selector-item-left"><span class="holder">A</span></div>
+                        <div class="selector-item-content">
+                          <p class="selector-item-title">选项一</p>
+                          <p class="selector-item-brief">使用slot-scope-0</p>
+                        </div>
+                      </div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check lg" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -237,10 +294,16 @@ exports[`Selector - Demo Custom options 1`] = `
                     <div class="md-cell-item-content">
                       <!---->
                       <!---->
-                      <div class="md-selector-custom-brief">选项二使用slot-scope</div>
+                      <div class="selector-item-body">
+                        <div class="selector-item-left"><span class="holder">B</span></div>
+                        <div class="selector-item-content">
+                          <p class="selector-item-title">选项二</p>
+                          <p class="selector-item-brief">使用slot-scope-1</p>
+                        </div>
+                      </div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check lg" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -248,16 +311,22 @@ exports[`Selector - Demo Custom options 1`] = `
                   </div>
                   <!---->
                 </div>
-                <div class="md-cell-item md-radio-item">
+                <div class="md-cell-item md-radio-item is-disabled">
                   <div class="md-cell-item-body">
                     <!---->
                     <div class="md-cell-item-content">
                       <!---->
                       <!---->
-                      <div class="md-selector-custom-brief">选项三使用slot-scope</div>
+                      <div class="selector-item-body disabled">
+                        <div class="selector-item-left"><span class="holder">C</span></div>
+                        <div class="selector-item-content">
+                          <p class="selector-item-title">选项三</p>
+                          <p class="selector-item-brief">使用slot-scope-2</p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+                    <div class="md-cell-item-right"><label class="md-radio is-disabled">
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled lg" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -271,10 +340,16 @@ exports[`Selector - Demo Custom options 1`] = `
                     <div class="md-cell-item-content">
                       <!---->
                       <!---->
-                      <div class="md-selector-custom-brief">选项四使用slot-scope</div>
+                      <div class="selector-item-body">
+                        <div class="selector-item-left"><span class="holder">D</span></div>
+                        <div class="selector-item-content">
+                          <p class="selector-item-title">选项四</p>
+                          <p class="selector-item-brief">使用slot-scope-3</p>
+                        </div>
+                      </div>
                     </div>
                     <div class="md-cell-item-right"><label class="md-radio">
-                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+                        <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check lg" style="color:;"></i></div>
                         <!---->
                       </label>
                       <!---->
@@ -283,6 +358,9 @@ exports[`Selector - Demo Custom options 1`] = `
                   <!---->
                 </div>
                 <!---->
+              </div>
+              <div class="selector-footer">
+                Footer Slot
               </div>
               <!---->
             </div>
@@ -297,17 +375,32 @@ exports[`Selector - Demo Custom options 1`] = `
 
 exports[`Selector - Demo Multi mode 1`] = `
 <div class="md-example-child md-example-child-selector md-example-child-selector-4">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item">
+        <div class="md-field-item-content"><label class="md-field-item-title">多选模式</label>
+          <!---->
+          <div class="md-field-item-control">1</div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
   <div class="md-selector is-normal">
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
+        <div class="md-popup-title-bar large-radius">
           <div class="title-bar-left md-popup-cancel">取消</div>
           <div class="title-bar-title">
             <p class="title">多选模式</p>
             <!---->
           </div>
           <div class="title-bar-right md-popup-confirm">确定</div>
+          <!---->
         </div>
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
@@ -393,17 +486,32 @@ exports[`Selector - Demo Multi mode 1`] = `
 
 exports[`Selector - Demo No need to confirm 1`] = `
 <div class="md-example-child md-example-child-selector md-example-child-selector-0">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item is-solid">
+        <div class="md-field-item-content"><label class="md-field-item-title">普通模式</label>
+          <!---->
+          <div class="md-field-item-control">选项二</div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
   <div class="md-selector is-normal">
     <div class="md-popup inner-popup with-mask bottom" style="display:none;">
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
-        <div class="md-popup-title-bar">
-          <div class="title-bar-left md-popup-cancel"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+        <div class="md-popup-title-bar large-radius">
+          <!---->
           <div class="title-bar-title">
             <p class="title">普通模式</p>
             <!---->
           </div>
           <!---->
+          <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
         </div>
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:320px;min-height:auto;">

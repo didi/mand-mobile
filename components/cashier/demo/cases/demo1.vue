@@ -7,6 +7,7 @@
       :channels="cashierChannels"
       :payment-amount="cashierAmount"
       payment-describe="关于支付金额的特殊说明"
+      large-radius
       @show="onCashierShow"
       @select="onCashierSelect"
       @pay="onCashierPay"

@@ -11,6 +11,7 @@
       :describe="describe"
       :ok-text="okText"
       :cancel-text="cancelText"
+      :large-radius="largeRadius"
       :is-view="isView"
       :mask-closable="maskClosable"
       @initialed="$emit('initialed')"

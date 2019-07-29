@@ -130,8 +130,10 @@ export default {
     currentNum(val, oldVal) {
       this.$_checkStatus()
 
-      this.$emit('input', val)
-      this.$emit('change', val)
+      if (val !== this.value) {
+        this.$emit('input', val)
+        this.$emit('change', val)
+      }
 
       const diff = val - oldVal
 
