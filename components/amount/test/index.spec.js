@@ -1,5 +1,5 @@
 import {Amount} from 'mand-mobile'
-import {shallowMount} from '@vue/test-utils'
+import {shallowMount, mount} from '@vue/test-utils'
 
 describe('Amount - Operation', () => {
   let wrapper
