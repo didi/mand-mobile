@@ -113,6 +113,10 @@ export default {
     $_doAnimateDisplay(fromValue = 0, toValue = 0) {
       /* istanbul ignore next  */
       const step = percent => {
+        if (percent === 1) {
+          this.formatValue = toValue
+          return
+        }
         this.formatValue = fromValue + (toValue - fromValue) * percent
       }
 
