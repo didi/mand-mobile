@@ -83,6 +83,7 @@ describe('InputItem - Operation', () => {
       propsData: {
         type: 'money',
         isVirtualKeyboard: true,
+        maxlength: 4,
       },
     })
 
@@ -102,6 +103,11 @@ describe('InputItem - Operation', () => {
       keys.at(2).trigger('click')
       deleteBtn.trigger('click')
       expect(wrapper.vm.inputValue).toBe('2.3')
+      keys.at(2).trigger('click')
+      keys.at(2).trigger('click')
+      keys.at(2).trigger('click')
+      keys.at(2).trigger('click')
+      expect(wrapper.vm.inputValue).toBe('2.33')
       confirmBtn.trigger('click')
       expect(eventStub.calledWith('confirm')).toBe(true)
       wrapper.vm.blur()
