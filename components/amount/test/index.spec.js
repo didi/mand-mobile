@@ -1,5 +1,5 @@
 import {Amount} from 'mand-mobile'
-import {shallowMount} from '@vue/test-utils'
+import {shallowMount, mount} from '@vue/test-utils'
 
 describe('Amount - Operation', () => {
   let wrapper
@@ -16,5 +16,38 @@ describe('Amount - Operation', () => {
       },
     })
     expect(wrapper.vm.isMounted).toBe(true)
+  })
+
+  test('should number animation not lose precision', done => {
+    wrapper = mount({
+      template: `
+          <md-amount
+          :value="val"
+          :duration="1000"
+          transition
+          ref="amount"
+        ></md-amount>
+      `,
+      components: {
+        [Amount.name]: Amount,
+      },
+      data() {
+        return {
+          val: 1000,
+        }
+      },
+    })
+
+    const instance = wrapper.vm.$refs.amount
+
+    setTimeout(() => {
+      expect(instance.formatValue).toBe(1000)
+      wrapper.vm.val = 20.66
+    }, 2000)
+
+    setTimeout(() => {
+      expect(instance.formatValue).toBe(20.66)
+      done()
+    }, 4000)
   })
 })
