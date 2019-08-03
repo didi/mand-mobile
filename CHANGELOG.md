@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.4.1
+
+`2019-08-03`
+
+- Fix
+  - 修复`InputItem`使用虚拟键盘输入时无法限制字符长度的问题[#524](https://github.com/didi/mand-mobile/issues/524)
+  - 修复`Amount`使用动效时数字的精度问题
+
 ### 2.4.0
 
 `2019-07-29`

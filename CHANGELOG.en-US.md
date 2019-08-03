@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.4.1
+
+`2019-08-03`
+
+- Fix
+  - Fix the problem that `InputItem` cannot limit the max length of characters when using virtual keyboard input[#524](https://github.com/didi/mand-mobile/issues/524)
+  - Fix `Amount` with the loss of precision in animation mode
+  
 ### 2.4.0
 
 `2019-07-29`
