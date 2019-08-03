@@ -498,6 +498,9 @@ export default {
       }
     },
     $_onNumberKeyBoardEnter(val) {
+      if (this.$_trimValue(this.inputValue).length >= this.inputMaxLength) {
+        return
+      }
       this.inputValue = this.$_formateValue(this.inputValue + val).value
     },
     $_onNumberKeyBoardDelete() {
