@@ -88,6 +88,11 @@ module.exports = {
           text: '主题定制',
           markdown: resolve('site/docs/theme.md'),
         },
+        {
+          name: 'faq',
+          text: '常见问题',
+          link: 'https://github.com/didi/mand-mobile/wiki/FAQ---%E4%B8%AD%E6%96%87',
+        },
         // {
         //   name: 'preview',
         //   text: '组件概览',
@@ -198,6 +203,11 @@ module.exports = {
           name: 'theme',
           text: 'Custom Theme',
           markdown: resolve('site/docs/theme.en-US.md'),
+        },
+        {
+          name: 'faq',
+          text: 'FAQ',
+          link: 'https://github.com/didi/mand-mobile/wiki/FAQ',
         },
         // {
         //   name: 'preview',
