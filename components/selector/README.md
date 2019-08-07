@@ -74,8 +74,8 @@ Vue.component(Selector.name, Selector)
 
 ##### header
 
-顶部插槽        
+顶部插槽 <sup class="version-after">2.4.0+</sup>       
 
 ##### footer
 
-底部插槽      
+底部插槽 <sup class="version-after">2.4.0+</sup>     
