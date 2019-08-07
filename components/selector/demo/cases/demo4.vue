@@ -30,7 +30,7 @@ export default {
   /* DELETE */
   title: '多选模式',
   titleEnUS: 'Multi mode',
-  height: 500,
+  height: 350,
   /* DELETE */
   components: {
     [Selector.name]: Selector,

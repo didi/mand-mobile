@@ -25,6 +25,20 @@ vue invoke mand
 
 * Nuxt([Example](https://github.com/mand-mobile/nuxt-example))
 
+#### Vue UI
+
+Create and manage projects with a graphical interface via [Vue UI](https://cli.vuejs.org/guide/creating-a-project.html#using-the-gui) and integrate `mand-mobile` with the plugin [vue-cli-plugin-mand](https://www.npmjs.com/package/vue-cli-plugin-mand)
+
+* Start `Vue UI`
+
+```shell
+vue ui
+```
+
+* Once the project is created, click on the **Plugins** and search for `mand-mobile`, click on the search result to complete the installation
+
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/3zEzXVU28N1565160574175.png"/>
+
 #### Installation
 
 ##### **NPM or Yarn**
@@ -42,6 +56,8 @@ Add `script` and `link` tags in your browser and use the global variable `window
 The `JS` and `CSS` bundles are provided in the `mand-mobile/lib` or `mand-mobile/lib-vw` directory of the `npm` distribution. See <a href="javascript:jumpAnchor('Release Package Directory')">Release Package Directory</a>.    
 
 You can also download it via [![](https://data.jsdelivr.com/v1/package/npm/mand-mobile/badge)](https://www.jsdelivr.com/package/npm/mand-mobile) or [UNPKG](https://unpkg.com/mand-mobile/lib/).
+
+> It is recommended that users who are directly introduced with the CDN lock the version to avoid incompatibility updates. Please refer to [unpkg.com](unpkg.com) for more information.
 
 #### Import
 

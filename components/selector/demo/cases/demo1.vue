@@ -47,7 +47,7 @@ export default {
   /* DELETE */
   title: '自定义选项',
   titleEnUS: 'Custom options',
-  height: 400,
+  height: 550,
   /* DELETE */
   components: {
     [Selector.name]: Selector,

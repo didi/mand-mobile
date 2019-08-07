@@ -29,7 +29,7 @@ this.$dialog.alert({ content: '' }) // Totally Import
 | icon-svg | svg icon | Boolean |`false`|Refer to `Icon` component for customized icon|
 | closable | whether the close button is visible or not | Boolean | `true` | - |
 | layout | layout of action buttons, `row, column` | String | `row` | - |
-| btns | action buttons in the footer| Array<DialogBtnOptions> | `[]` | - |
+| btns | action buttons in the footer| Array\<DialogBtnOptions\> | `[]` | - |
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
 | has-mask | has mask or not | Boolean | `true` | - |
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |

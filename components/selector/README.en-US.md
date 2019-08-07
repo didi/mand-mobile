@@ -75,8 +75,8 @@ Hide selector
 
 ##### header
 
-header slot     
+header slot <sup class="version-after">2.4.0+</sup>    
 
 ##### footer
 
-footer slot     
+footer slot <sup class="version-after">2.4.0+</sup>     

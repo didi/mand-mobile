@@ -16,6 +16,7 @@ $ npm install # 安装依赖
 
 $ npm run create # 新增组件， 根据提示填写组件信息
 ```
+> 需安装[vue-cli](https://cli.vuejs.org/), v3.0+还需安装[@vue/cli-init](https://www.npmjs.com/package/@vue/cli-init)
 
 #### 开发组件
 ```shell

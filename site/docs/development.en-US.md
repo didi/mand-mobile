@@ -17,6 +17,8 @@ $ npm install # Install dependencies
 $ npm run create # Create a new component, fill in information according to the prompts
 ```
 
+> [vue-cli](https://cli.vuejs.org/) needs to be installed. v3.0 also requires [@vue/cli-init](https://www.npmjs.com/package/@vue/cli -init)
+
 #### Develop Component
 ```shell
 $ npm run dev # Visit http://localhost:4000/[COMPONENT NAME]
