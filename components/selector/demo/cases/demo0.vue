@@ -28,7 +28,7 @@ export default {
   /* DELETE */
   title: '无需确认',
   titleEnUS: 'No need to confirm',
-  height: 500,
+  height: 300,
   /* DELETE */
   components: {
     [Selector.name]: Selector,
