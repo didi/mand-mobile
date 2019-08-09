@@ -32,11 +32,9 @@
 
 export default {
   name: 'md-textarea',
-  created() {},
-  mounted() {
-    this.resizeTextarea()
+  components: {
+    [FieldItem.name]: FieldItem,
   },
-  destroyed() {},
   props: {
     title: {
       type: String,
@@ -83,8 +81,11 @@ export default {
       defalut: '',
     },
   },
-  components: {
-    [FieldItem.name]: FieldItem,
+  data() {
+    return {
+      maxHeightInner: this.$props.maxHeight,
+      inputValue: this.value,
+    }
   },
   computed: {
     isDisabled() {
@@ -93,12 +94,6 @@ export default {
     errorInfo() {
       return this.$props.error
     },
-  },
-  data() {
-    return {
-      maxHeightInner: this.$props.maxHeight,
-      inputValue: this.value,
-    }
   },
   watch: {
     value(val) {
@@ -113,6 +108,9 @@ export default {
       this.$data.maxHeightInner = val
       this.resizeTextarea()
     },
+  },
+  mounted() {
+    this.resizeTextarea()
   },
   methods: {
     $_onInput(event) {
