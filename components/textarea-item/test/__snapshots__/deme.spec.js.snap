@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextareaItem - Demo Basic 1`] = `
+<div class="md-example-child md-example-child-textarea md-example-child-textarea-0">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-textarea-item example is-solid is-browser">
+        <div class="md-field-item-content"><label class="md-field-item-title">普通</label>
+          <!---->
+          <div class="md-field-item-control"><textarea maxlength="" placeholder="普通文本域" rows="3" class="md-textarea-item__textarea"></textarea> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-textarea-item example is-solid is-browser">
+        <div class="md-field-item-content"><label class="md-field-item-title">自动适应</label>
+          <!---->
+          <div class="md-field-item-control"><textarea maxlength="10" placeholder="最大高度100px 超过出现滚动条" rows="1" class="md-textarea-item__textarea"></textarea> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-textarea-item example is-solid is-browser is-disabled">
+        <div class="md-field-item-content"><label class="md-field-item-title">禁用</label>
+          <!---->
+          <div class="md-field-item-control"><textarea disabled="disabled" maxlength="" placeholder="500字以内" rows="3" class="md-textarea-item__textarea">禁用文本域, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述</textarea> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-textarea-item example is-solid is-browser">
+        <div class="md-field-item-content"><label class="md-field-item-title">只读</label>
+          <!---->
+          <div class="md-field-item-control"><textarea readonly="readonly" maxlength="" placeholder="500字以内" rows="3" class="md-textarea-item__textarea">只读文本域, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述</textarea> </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`TextareaItem - Demo Error Tip 1`] = `
+<div class="md-example-child md-example-child-textarea md-example-child-textarea-0">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-textarea-item example is-solid is-browser is-error">
+        <div class="md-field-item-content"><label class="md-field-item-title">错误提示</label>
+          <!---->
+          <div class="md-field-item-control"><textarea maxlength="" placeholder="" rows="3" class="md-textarea-item__textarea">申请理赔xxx</textarea> </div>
+          <!---->
+        </div>
+        <div class="md-field-item-children">
+          <div class="md-textarea-item-msg">
+            <p>输入信息有误!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`TextareaItem - Demo Slot 1`] = `
+<div class="md-example-child md-example-child-textarea md-example-child-textarea-2">
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="md-field-item md-textarea-item demo2 is-solid is-browser">
+        <div class="md-field-item-content">
+          <!---->
+          <!---->
+          <div class="md-field-item-control"><textarea maxlength="100" placeholder="描述信息在100字以内" rows="3" class="md-textarea-item__textarea"></textarea>
+            <p class="demo2__footer"><span></span> <span class="demo2__footer-right">页脚文案</span></p>
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
