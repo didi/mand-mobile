@@ -18,6 +18,10 @@
       :placeholder="placeholder"
       :rows="rows"
       @input="$_onInput"
+      @focus="$_onFocus"
+      @blur="$_onBlur"
+      @keyup="$_onKeyup"
+      @keydown="$_onKeydown"
     ></textarea>
     <footer class="md-textarea-item__footer"></footer>
     <slot name="footer"></slot>
@@ -121,6 +125,20 @@ export default {
         this.resizeTextarea()
       })
     },
+    $_onKeyup(event) {
+      this.$emit('keyup', event)
+    },
+    $_onKeydown(event) {
+      this.$emit('keydown', event)
+    },
+    $_onFocus() {
+      this.$emit('focus')
+    },
+    $_onBlur() {
+      setTimeout(() => {
+        this.$emit('blur')
+      }, 100)
+    },
     $_calcTextareaHeight(textarea) {
       /**
        * 思路1 查看是否有滚动条, 获取scrollHeight
@@ -159,10 +177,20 @@ export default {
       // })
       // this.rowsInner = linecount
     },
+    // public
     resizeTextarea() {
       if (this.$props.autosize) {
         this.$_calcTextareaHeight(this.$refs.textarea)
       }
+    },
+    focus() {
+      this.$el.querySelector('.md-textarea-item__textarea').focus()
+    },
+    blur() {
+      this.$el.querySelector('.md-textarea-item__textarea').blur()
+    },
+    getValue() {
+      return this.inputValue
     },
   },
 }
