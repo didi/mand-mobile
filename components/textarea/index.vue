@@ -23,7 +23,6 @@
       @keyup="$_onKeyup"
       @keydown="$_onKeydown"
     ></textarea>
-    <footer class="md-textarea-item__footer"></footer>
     <slot name="footer"></slot>
     <template slot="children">
       <div v-if="errorInfo" class="md-textarea-item-msg">
