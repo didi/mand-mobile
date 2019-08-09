@@ -59,6 +59,7 @@ import DetailItem from './detail-item'
 import Slider from './slider'
 import Progress from './progress'
 import Ruler from './ruler'
+import Textarea from './textarea'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // Totally importing reminder
@@ -127,6 +128,7 @@ export const components = {
   Slider,
   Progress,
   Ruler,
+  Textarea,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -216,6 +218,7 @@ export {
   Slider,
   Progress,
   Ruler,
+  Textarea,
   /* @init<%${componentNameUpper},%> */
 }
 
