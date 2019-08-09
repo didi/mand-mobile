@@ -119,7 +119,6 @@ export default {
   flex-shrink 0
   margin-right field-item-title-gap
   font-size field-item-font-size
-  line-height 1.2
 
 .md-field-item-left
   flex-shrink 0
@@ -136,7 +135,6 @@ export default {
   color field-item-color
   font-size field-item-font-size
   font-weight field-item-font-weight
-  line-height 1.2
 
 .md-field-item-placeholder
   color field-item-placeholder-color
