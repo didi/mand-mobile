@@ -1,5 +1,5 @@
 <template>
-  <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}">
+  <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}" id="default-container">
     <mb-header :is-active="isHome" :logo-ads="logoAds"/>
     <div class="default-content">
       <div class="default-content-sidebar">
@@ -53,7 +53,7 @@ import './assets/css/tooltip.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Menu from './components/Menu'
-import { localStore } from './assets/js/util'
+import { localStore, throttle } from './assets/js/util'
 
 export default {
   name: 'mfe-blog-theme-default',
@@ -76,6 +76,7 @@ export default {
     '$route': {
       handler () {
         this.isMenuShow = false
+        $('#default-container').scrollTop(0)
       },
       deep: true
     },
@@ -100,11 +101,11 @@ export default {
   },
   mounted () {
     this.getConfig()
+    const that = this
     if (document.documentElement.clientWidth > 1000) {
-      $(window).bind('scroll', () => {
-        const scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-        this.strickyAffix(scrollTop)
-        // this.strickyToggleBar(scrollTop)
+      $('#default-container').bind('scroll', function () {
+        const scrollTop = $(this).scrollTop()
+        that.strickyAffix(scrollTop)
       })
       this.strickyAffix(document.body.scrollTop || document.documentElement.scrollTop)
     }
@@ -153,6 +154,8 @@ export default {
 
 <style lang="stylus">
 .mfe-blog-theme-default
+  height 100%
+  overflow auto
   line-height 1.5
   color #314659
   font-size 14px
@@ -177,6 +180,8 @@ export default {
       position relative
       left -1px
       overflow hidden
+      // &.stricky
+      //   left 1px
   .default-menu-trigger
     position fixed
     bottom 20px

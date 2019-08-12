@@ -46,18 +46,17 @@
     height 200px
   .md-example-item, .md-example-item-s
     float left
-    width 33%
-    padding 15px 0
+    width 20%
+    padding 30px 0
     color #333
     text-align center
     .md-icon
       margin 0 auto
     p
+      margin-top 10px
       text-align center
-      font-size font-body-normal
+      font-size 20px
       color #666
-  .md-example-item-s
-    width 25%
 .md-example-child-popup
   .md-popup.with-mask, .md-popup-box
     position absolute !important
@@ -146,6 +145,11 @@
 .md-action-sheet
   .md-popup
     position absolute !important
+body>.md-action-sheet
+  zoom .6
+  .md-popup-box
+    width 750px !important
+    left calc(50% - 375px)
 .md-date-picker
   .md-popup
     position absolute !important
@@ -192,3 +196,9 @@
 
  .md-popup.with-mask
     z-index 1111 !important
+
+
+@media (max-width: 750px)
+  .md-example-child-icon
+    .md-example-item, .md-example-item-s
+      width 33%

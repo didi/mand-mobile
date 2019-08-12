@@ -78,3 +78,36 @@ export function sessionStore (key, value) {
     return setStorage('sessionStore', key, value)
   }
 }
+
+export function debouce (fn, delay = 0) {
+  let timer = null
+
+  return function () {
+    // @ts-ignore
+    let context = this
+    
+    if (timer) {
+      clearTimeout(timer)
+    }
+
+    timer = setTimeout(function () {
+      fn.apply(context, arguments)
+    }, delay)
+  }
+}
+
+export function throttle (fn, interval = 0) {
+  let last = 0
+
+  return function () {
+    // @ts-ignore
+    let context = this
+    const now = Date.now()
+
+    if (now - last > interval) {
+      last = now
+      fn.apply(context, arguments)
+    }
+  }
+}
+
