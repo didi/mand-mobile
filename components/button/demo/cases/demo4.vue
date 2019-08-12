@@ -12,6 +12,7 @@ export default {
   /* DELETE */
   title: '文字链接按钮',
   titleEnUS: 'Text link buttons',
+  align: 'right',
   /* DELETE */
   components: {
     [Button.name]: Button,

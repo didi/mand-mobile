@@ -8,6 +8,9 @@
 
 export default {
   name: 'notice-bar-demo',
+  /* DELETE */
+  background: '#fff',
+  /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
   },

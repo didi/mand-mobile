@@ -13,6 +13,7 @@ export default {
   titleEnUS: 'Setting dwell time',
   describe: '5s后隐藏',
   describeEnUS: 'Hidden after 5s',
+  background: '#fff',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

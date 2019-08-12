@@ -17,6 +17,7 @@ export default {
   /* DELETE */
   title: '多行显示',
   titleEnUS: 'Multi-line display',
+  background: '#fff',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

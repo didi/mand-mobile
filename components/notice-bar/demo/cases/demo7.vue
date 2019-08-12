@@ -14,6 +14,7 @@ export default {
   /* DELETE */
   title: '使用插槽自定义',
   titleEnUS: 'Customize',
+  background: '#fff',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

@@ -21,6 +21,8 @@ export default {
   /* DELETE */
   title: '字体图标',
   titleEnUS: 'Icon Font',
+  align: 'center',
+  background: '#fff',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

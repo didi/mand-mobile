@@ -26,6 +26,7 @@ export default {
   /* DELETE */
   title: '大小',
   titleEnUS: 'Icon size',
+  background: '#fff',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

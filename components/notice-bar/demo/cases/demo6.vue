@@ -17,6 +17,7 @@ export default {
   /* DELETE */
   title: '滚动播放',
   titleEnUS: 'Scroll play',
+  background: '#fff',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,
