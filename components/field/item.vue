@@ -1,11 +1,12 @@
 <template>
   <div
     class="md-field-item"
-    :class="{
-      'is-solid': solid,
-      'is-disabled': currentDisabled,
-      'is-align-right': alignRight
-    }"
+    :class="[
+      solid ? 'is-solid' : '',
+      currentDisabled ? 'is-disabled' : '',
+      alignRight ? 'is-align-right' : '',
+      inputEnv
+    ]"
     @click="$_onClick"
   >
     <div class="md-field-item-content">
@@ -31,6 +32,7 @@
 </template>
 
 <script>import Icon from '../icon'
+import {isIOS, isAndroid} from '../_util'
 
 export default {
   name: 'md-field-item',
@@ -85,6 +87,16 @@ export default {
   },
 
   computed: {
+    inputEnv() {
+      /* istanbul ignore next */
+      if (isIOS) {
+        return 'is-ios'
+      } else if (isAndroid) {
+        return 'is-android'
+      } else {
+        return 'is-browser'
+      }
+    },
     currentDisabled() {
       return this.rootField.disabled || this.disabled
     },
@@ -169,4 +181,7 @@ export default {
   &.is-align-right
     .md-field-item-control
       text-align right
+  &.is-android
+    .md-field-item-control
+      font-weight bold
 </style>
