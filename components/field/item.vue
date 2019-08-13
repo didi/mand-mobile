@@ -183,5 +183,5 @@ export default {
       text-align right
   &.is-android
     .md-field-item-control
-      font-weight bold
+      font-weight field-title-font-weight-android
 </style>

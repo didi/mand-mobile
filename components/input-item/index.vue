@@ -699,7 +699,7 @@ export default {
       border-right solid 4px color-text-base
     .md-input-item-input,
     .md-input-item-fake
-      font-weight bold
+      font-weight input-item-font-weight-android
 
 @-webkit-keyframes keyboard-cursor
   0%
