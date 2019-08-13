@@ -156,6 +156,7 @@ export default {
 .mfe-blog-theme-default
   height 100%
   overflow auto
+  overflow-x hidden
   line-height 1.5
   color #314659
   font-size 14px
