@@ -107,6 +107,7 @@ export default {
   -webkit-font-smoothing antialiased
   background #FFF
   overflow auto
+  -webkit-overflow-scrolling touch
   &.stricky
     position fixed
     z-index 3

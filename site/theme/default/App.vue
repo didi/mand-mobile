@@ -157,6 +157,7 @@ export default {
   height 100%
   overflow auto
   overflow-x hidden
+  -webkit-overflow-scrolling touch
   line-height 1.5
   color #314659
   font-size 14px
@@ -261,7 +262,7 @@ export default {
   .default-container
     overflow-x hidden !important
     .default-content
-      padding-top 100px !important
+      padding-top 70px !important
     .default-menu-trigger
       display flex
     .hover-ggs

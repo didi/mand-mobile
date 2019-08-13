@@ -368,13 +368,14 @@ export default {
 @media (max-width: 1000px)
   .default-doc-demo-list
     width 100% !important
-    margin-right 0 !important
+    &.is-right
+      margin-left 0 !important
   .mfe-blog-theme-default-doc
     padding-right 0 !important
   .default-doc-toc
     display none
 @media (max-width: 750px)
-  .mfe-blog-theme-default-doc
+  .default-content .default-content-wrapper .mfe-blog-theme-default-doc
     padding 0
     .default-doc-content
       padding 15px 15px 100px 15px !important
