@@ -189,7 +189,7 @@ exports[`Radio With Field 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">婚姻状况</label>
           <!---->
           <div class="md-field-item-control"><label class="md-radio is-checked is-inline">

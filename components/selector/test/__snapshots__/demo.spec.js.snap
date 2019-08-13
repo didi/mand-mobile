@@ -5,7 +5,7 @@ exports[`Selector - Demo Check mode 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item">
+      <div class="md-field-item is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">Check模式</label>
           <!---->
           <div class="md-field-item-control">
@@ -119,7 +119,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">确认模式</label>
           <!---->
           <div class="md-field-item-control">
@@ -233,7 +233,7 @@ exports[`Selector - Demo Custom options 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">自定义</label>
           <!---->
           <div class="md-field-item-control">
@@ -378,7 +378,7 @@ exports[`Selector - Demo Multi mode 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item">
+      <div class="md-field-item is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">多选模式</label>
           <!---->
           <div class="md-field-item-control">1</div>
@@ -489,7 +489,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">普通模式</label>
           <!---->
           <div class="md-field-item-control">选项二</div>

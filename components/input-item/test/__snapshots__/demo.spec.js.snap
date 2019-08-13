@@ -5,7 +5,7 @@ exports[`InputItem - Demo Basic 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item md-input-item is-solid is-amount is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-amount left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">普通文本</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="普通文本" maxlength="5" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -13,7 +13,7 @@ exports[`InputItem - Demo Basic 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-active is-disabled is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-active is-disabled left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">禁用表单</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="" disabled="disabled" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -21,7 +21,7 @@ exports[`InputItem - Demo Basic 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-active is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-active left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">只读表单</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="" readonly="readonly" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -29,7 +29,7 @@ exports[`InputItem - Demo Basic 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-highlight is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-highlight left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">高亮表单</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="高亮表单" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -72,7 +72,7 @@ exports[`InputItem - Demo Business scenario input 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-active is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-active left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">手机号</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="phone xxx xxxx xxxx" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
@@ -88,7 +88,7 @@ exports[`InputItem - Demo Business scenario input 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-active is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-active left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">数字</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="digit 0123456789" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
@@ -123,7 +123,7 @@ exports[`InputItem - Demo Floating title input 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item md-input-item is-title-latent is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-browser is-title-latent is-clear left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">真实姓名</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="投保人姓名" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -134,7 +134,7 @@ exports[`InputItem - Demo Floating title input 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-title-latent is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-browser is-title-latent is-clear left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">身份证号</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="投保人身份证号" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -164,7 +164,7 @@ exports[`InputItem - Demo Large size financial input 1`] = `
       </div>
     </header>
     <div class="md-field-content">
-      <div class="md-field-item md-input-item is-solid is-highlight with-brief is-amount is-browser left large">
+      <div class="md-field-item md-input-item is-solid is-browser is-highlight with-brief is-amount left large">
         <div class="md-field-item-content">
           <!---->
           <!---->
@@ -194,7 +194,7 @@ exports[`InputItem - Demo input with controls 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item md-input-item is-solid is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-clear left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">清空按钮</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="normal text" maxlength="" autocomplete="off" type="text" value="" class="md-input-item-input"> </div>
@@ -205,7 +205,7 @@ exports[`InputItem - Demo input with controls 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item md-input-item is-solid is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-clear left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">金融键盘</label>
           <!---->
           <div class="md-field-item-control">
@@ -278,7 +278,7 @@ exports[`InputItem - Demo input with error message 1`] = `
   <fieldset class="md-field">
     <!---->
     <div class="md-field-content">
-      <div class="md-field-item md-input-item is-solid is-active is-error is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-active is-error is-clear left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">手机号码</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
@@ -295,7 +295,7 @@ exports[`InputItem - Demo input with error message 1`] = `
           <!---->
         </div>
       </div>
-      <div class="md-field-item md-input-item is-solid is-clear is-browser left normal">
+      <div class="md-field-item md-input-item is-solid is-browser is-clear left normal">
         <div class="md-field-item-content"><label class="md-field-item-title">储蓄卡号</label>
           <!---->
           <div class="md-field-item-control"> <input name="" placeholder="" maxlength="" autocomplete="off" type="tel" value="" class="md-input-item-input"> </div>
