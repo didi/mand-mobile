@@ -11,7 +11,6 @@
       isDisabled ? 'is-disabled': '',
       isAmount ? 'is-amount': '',
       clearable ? 'is-clear' : '',
-      inputEnv,
       align,
       size
     ]"
@@ -118,7 +117,7 @@
 import FieldItem from '../field-item'
 import NumberKeyboard from '../number-keyboard'
 import {getCursorsPosition, setCursorsPosition} from './cursor'
-import {noop, isIOS, isAndroid, randomId} from '../_util'
+import {noop, randomId} from '../_util'
 import {formatValueByGapRule, formatValueByGapStep, trimValue} from '../_util/formate-value'
 
 export default {
@@ -248,16 +247,6 @@ export default {
   },
 
   computed: {
-    inputEnv() {
-      /* istanbul ignore next */
-      if (isIOS) {
-        return 'is-ios'
-      } else if (isAndroid) {
-        return 'is-android'
-      } else {
-        return 'is-browser'
-      }
-    },
     inputType() {
       let inputType = this.type || 'text'
       if (inputType === 'bankCard' || inputType === 'phone' || inputType === 'digit') {
@@ -678,7 +667,6 @@ export default {
   &.is-amount
     .md-input-item-input,
     .md-input-item-fake
-      padding-top 5px
       font-family font-family-number
     &.large
       .md-input-item-input,
@@ -709,6 +697,9 @@ export default {
   &.is-android
     .md-input-item-fake::after
       border-right solid 4px color-text-base
+    .md-input-item-input,
+    .md-input-item-fake
+      font-weight input-item-font-weight-android
 
 @-webkit-keyframes keyboard-cursor
   0%
