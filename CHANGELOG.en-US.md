@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.4.2
+
+`2019-08-13`
+
+- Fix
+  - fix style issues with `FieldItem` and `InputItem` headers and content alignment[#528](https://github.com/didi/mand-mobile/issues/528)
+  - bolder font weight in android devices of `FieldItem` and `InputItem`
+
 ### 2.4.1
 
 `2019-08-03`

@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.4.2
+
+`2019-08-13`
+
+- Fix
+  - 修复`FieldItem`和`InputItem`标题和内容对齐的样式问题[#528](https://github.com/didi/mand-mobile/issues/528)
+  - 修复`FieldItem`和`InputItem`在安卓设备中内容字体加粗问题
+
 ### 2.4.1
 
 `2019-08-03`
