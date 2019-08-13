@@ -396,7 +396,7 @@ export default {
       display block !important
       margin 0 !important
       li.nav-item
-        &.palette
+        &.palette, &.mand-mobile-rn
           display none
         a
           padding 0 10px !important
