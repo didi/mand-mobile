@@ -22,6 +22,8 @@ export default {
   /* DELETE */
   title: 'svg图标',
   titleEnUS: 'Svg Icon',
+  align: 'center',
+  background: '#fff',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

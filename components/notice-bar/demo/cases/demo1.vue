@@ -16,6 +16,7 @@ export default {
   /* DELETE */
   title: '设置图标',
   titleEnUS: 'With icon',
+  background: '#fff',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

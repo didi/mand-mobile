@@ -1,6 +1,6 @@
 ---
 name: '⚠️  Please use Mand Mobile Issue Helper ⚠️'
-about: The issue which is not created via https://mand-mobile.github.io/mand-mobile-issue-helper/?project=mand-mobile  will be closed immediately.
+about: The issue which is not created via https://mand-mobile.github.io/mand-mobile-issue-helper/?project=mand-mobile  will be closed immediately. 不是用Mand Mobile Issue Helper创建的issue会被立即关闭。
 labels:
 ---
 

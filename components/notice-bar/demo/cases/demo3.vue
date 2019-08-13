@@ -11,6 +11,7 @@ export default {
   /* DELETE */
   title: '圆角',
   titleEnUS: 'Round',
+  background: '#fff',
   /* DELETE */
   components: {
     [NoticeBar.name]: NoticeBar,

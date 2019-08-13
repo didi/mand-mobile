@@ -26,6 +26,7 @@ export default {
   /* DELETE */
   title: '颜色',
   titleEnUS: 'Icon color',
+  background: '#fff',
   /* DELETE */
   components: {
     [Icon.name]: Icon,

@@ -1,5 +1,8 @@
 <template>
-  <div class="mfe-blog-theme-default-menu" :class="{active: value}">
+  <div
+    class="mfe-blog-theme-default-menu"
+    :class="{active: value}"
+  >
     <div class="menu-ggs" v-if="menuAds && menuAds.length">
       <a
         v-for="(gg, index) in menuAds"
@@ -62,6 +65,11 @@ export default {
       }
     }
   },
+  data () {
+    return {
+      containerHeight: 0
+    }
+  },
   watch: {
     value (val) {
       if (val) {
@@ -92,12 +100,13 @@ export default {
   // width 16.666%
   // min-height 1500px
   height 100%
+  max-height 100vh
   // padding 32px 0
   box-sizing border-box
   border-right solid 1px #e8e8e8
   -webkit-font-smoothing antialiased
   background #FFF
-  overflow hidden
+  overflow auto
   &.stricky
     position fixed
     z-index 3

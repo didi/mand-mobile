@@ -14,7 +14,7 @@ exports[`Field Basic 1`] = `
       </div>
     </header>
     <div class="md-field-content">
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">标题区域</label>
           <!---->
           <div class="md-field-item-control">
@@ -24,7 +24,7 @@ exports[`Field Basic 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">标题区域</label>
           <!---->
           <div class="md-field-item-control">内容文本</div>
@@ -34,7 +34,7 @@ exports[`Field Basic 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">附加内容</label>
           <!---->
           <div class="md-field-item-control">正文内容</div>
@@ -44,7 +44,7 @@ exports[`Field Basic 1`] = `
           <p>这是子内容区域</p>
         </div>
       </div>
-      <div class="md-field-item is-solid">
+      <div class="md-field-item is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">动作条目</label>
           <!---->
           <div class="md-field-item-control">
@@ -54,7 +54,7 @@ exports[`Field Basic 1`] = `
         </div>
         <!---->
       </div>
-      <div class="md-field-item is-solid is-disabled">
+      <div class="md-field-item is-solid is-disabled is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">禁用条目</label>
           <!---->
           <div class="md-field-item-control">内容禁用状态</div>
