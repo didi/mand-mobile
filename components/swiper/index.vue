@@ -98,7 +98,7 @@ export default {
     return {
       ready: false,
       dragging: false,
-      userScrolling: false,
+      userScrolling: null,
       isInitial: false,
       index: 0, // real index (swiper perspective)
       fromIndex: 0, // display index (user perspective)
@@ -109,6 +109,7 @@ export default {
       rItemCount: 0, // real item count
       dimension: 0,
       dragState: {},
+      touchAngle: 45,
       timer: null,
       noDrag: false,
       scroller: null,
@@ -193,7 +194,7 @@ export default {
         e.preventDefault()
       }
       this.dragging = true
-      this.userScrolling = false
+      this.userScrolling = null
       this.$_doOnTouchStart(e)
     },
     $_onDragMove(e) {
@@ -383,15 +384,24 @@ export default {
       }
     },
 
-    $_isScroll(distanceX, distanceY) {
+    $_isScroll(dragState, diffX, diffY) {
       const vertical = this.isVertical
-      if (!vertical && (distanceX < 5 || (distanceX >= 5 && distanceY >= 1.73 * distanceX))) {
-        return true
-      } else if (vertical && (distanceY < 5 || (distanceY >= 5 && distanceX >= 1.73 * distanceY))) {
-        return true
-      } else {
-        return false
+      const {currentLeft, currentTop, startLeft, startTop} = dragState
+
+      if (this.userScrolling === null) {
+        if ((!vertical && currentTop === startTop) || (vertical && currentLeft === startLeft)) {
+          return false
+        } else {
+          if (diffX * diffX + diffY * diffY >= 25) {
+            const _touchAngle = Math.atan2(Math.abs(diffY), Math.abs(diffX)) * 180 / Math.PI
+            return !vertical ? _touchAngle > this.touchAngle : 90 - _touchAngle > this.touchAngle
+          } else {
+            return false
+          }
+        }
       }
+
+      return this.userScrolling
     },
 
     // real index => display index
@@ -527,15 +537,13 @@ export default {
 
       let offsetLeft = dragState.currentLeft - dragState.startLeft
       let offsetTop = dragState.currentTop - dragState.startTop
-      const distanceX = Math.abs(offsetLeft)
-      const distanceY = Math.abs(offsetTop)
+      this.userScrolling = this.$_isScroll(dragState, Math.abs(offsetLeft), Math.abs(offsetTop))
 
-      this.userScrolling = this.$_isScroll(distanceX, distanceY)
       if (this.userScrolling) {
         return
-      } else {
-        event.preventDefault()
       }
+
+      event.preventDefault()
 
       let _offsetLeft = Math.min(Math.max(-dragState.itemWidth + 1, offsetLeft), dragState.itemWidth - 1)
       let _offsetTop = Math.min(Math.max(-dragState.itemHeight + 1, offsetTop), dragState.itemHeight - 1)
