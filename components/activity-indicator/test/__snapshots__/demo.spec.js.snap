@@ -25,7 +25,7 @@ exports[`ActivityIndicator Carousel 1`] = `
   </div> <button type="button" class="md-button primary active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content"><span>确认支付</span></p>
+      <div class="md-button-content"><span>确认支付</span></div>
     </div>
   </button>
 </div>

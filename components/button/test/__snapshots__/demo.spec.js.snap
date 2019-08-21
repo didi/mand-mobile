@@ -4,22 +4,22 @@ exports[`Button Basic 1`] = `
 <div class="md-example-child md-example-child-button md-example-child-button-0"><button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Default</p>
+      <div class="md-button-content">Default</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button default inactive block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Default Inactive</p>
+      <div class="md-button-content">Default Inactive</div>
     </div>
   </button> <button type="button" class="md-button primary active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Primary</p>
+      <div class="md-button-content">Primary</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button primary inactive block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Primary Inactive</p>
+      <div class="md-button-content">Primary Inactive</div>
     </div>
   </button> <button type="button" class="md-button primary active block">
     <div class="md-button-inner">
@@ -36,22 +36,22 @@ exports[`Button Basic 1`] = `
           <div class="content"></div>
         </div>
       </div>
-      <p class="md-button-content">Loading</p>
+      <div class="md-button-content">Loading</div>
     </div>
   </button> <button type="button" class="md-button warning active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Warning</p>
+      <div class="md-button-content">Warning</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button warning inactive block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Warning Inactive</p>
+      <div class="md-button-content">Warning Inactive</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button disabled active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Disabled</p>
+      <div class="md-button-content">Disabled</div>
     </div>
   </button></div>
 `;
@@ -60,23 +60,23 @@ exports[`Button Inline 1`] = `
 <div class="md-example-child  md-example-child-button md-example-child-button-3">
   <div class="md-example-section"><button type="button" class="md-button primary active inline">
       <div class="md-button-inner"><i class="md-icon icon-font md-icon-edit edit md" style="color:;"></i>
-        <p class="md-button-content">Inline Primary</p>
+        <div class="md-button-content">Inline Primary</div>
       </div>
     </button> <button type="button" class="md-button primary active inline plain">
       <div class="md-button-inner">
         <!---->
-        <p class="md-button-content">Inline Plain</p>
+        <div class="md-button-content">Inline Plain</div>
       </div>
     </button></div>
   <div class="md-example-section"><button type="button" class="md-button warning active inline small">
       <div class="md-button-inner">
         <!---->
-        <p class="md-button-content">Warning</p>
+        <div class="md-button-content">Warning</div>
       </div>
     </button> <button type="button" disabled="disabled" class="md-button disabled active inline small">
       <div class="md-button-inner">
         <!---->
-        <p class="md-button-content">Disabled</p>
+        <div class="md-button-content">Disabled</div>
       </div>
     </button></div>
 </div>
@@ -86,27 +86,27 @@ exports[`Button Plain 1`] = `
 <div class="md-example-child md-example-child-button md-example-child-button-1"><button type="button" class="md-button default active block plain">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Default &amp; Plain</p>
+      <div class="md-button-content">Default &amp; Plain</div>
     </div>
   </button> <button type="button" class="md-button primary active block plain">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Primary &amp; Plain</p>
+      <div class="md-button-content">Primary &amp; Plain</div>
     </div>
   </button> <button type="button" class="md-button warning active block plain">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Warning &amp; Plain</p>
+      <div class="md-button-content">Warning &amp; Plain</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button disabled active block plain">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Disabled &amp; Plain</p>
+      <div class="md-button-content">Disabled &amp; Plain</div>
     </div>
   </button> <button type="button" class="md-button primary active block round plain">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Primary &amp; Plain &amp; Round</p>
+      <div class="md-button-content">Primary &amp; Plain &amp; Round</div>
     </div>
   </button> <button type="button" class="md-button primary active block round plain">
     <div class="md-button-inner">
@@ -123,7 +123,7 @@ exports[`Button Plain 1`] = `
           <div class="content"></div>
         </div>
       </div>
-      <p class="md-button-content">Primary &amp; Plain &amp; Loading</p>
+      <div class="md-button-content">Primary &amp; Plain &amp; Loading</div>
     </div>
   </button></div>
 `;
@@ -132,22 +132,22 @@ exports[`Button Round 1`] = `
 <div class="md-example-child md-example-child-button md-example-child-button-2"><button type="button" class="md-button default active block round">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Default &amp; Round</p>
+      <div class="md-button-content">Default &amp; Round</div>
     </div>
   </button> <button type="button" class="md-button primary active block round">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Primary &amp; Round</p>
+      <div class="md-button-content">Primary &amp; Round</div>
     </div>
   </button> <button type="button" class="md-button warning active block round">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Warning &amp; Round</p>
+      <div class="md-button-content">Warning &amp; Round</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button disabled active block round">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">Disabled &amp; Round</p>
+      <div class="md-button-content">Disabled &amp; Round</div>
     </div>
   </button></div>
 `;
@@ -155,12 +155,12 @@ exports[`Button Round 1`] = `
 exports[`Button Text link 1`] = `
 <div class="md-example-child  md-example-child-button md-example-child-button-3"><button type="button" class="md-button link active block">
     <div class="md-button-inner"><i class="md-icon icon-font md-icon-message message md" style="color:;"></i>
-      <p class="md-button-content">评论</p>
+      <div class="md-button-content">评论</div>
     </div>
   </button> <button type="button" disabled="disabled" class="md-button link inactive block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">去看看<i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></p>
+      <div class="md-button-content">去看看<i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
     </div>
   </button></div>
 `;
