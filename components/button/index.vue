@@ -20,9 +20,9 @@
       <template v-else-if="icon">
         <md-icon :name="icon" :svg="iconSvg"></md-icon>
       </template>
-      <p class="md-button-content">
+      <div class="md-button-content">
         <slot></slot>
-      </p>
+      </div>
     </div>
   </button>
 </template>
