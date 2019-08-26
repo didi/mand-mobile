@@ -553,7 +553,7 @@ export default {
         : _offsetLeft - dragState.itemWidth * this.index
 
       if (this.isSlide) {
-        this.$_translate(this.$swiper, offset)
+        this.$_translate(this.$swiper, offset, false)
       } else {
         this.$_opacity(false, offsetLeft / dragState.itemWidth)
       }
