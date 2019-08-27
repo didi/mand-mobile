@@ -5,7 +5,7 @@ import Demo3 from './cases/demo3'
 import Demo4 from './cases/demo4'
 import {renderToString} from '@vue/server-test-utils'
 
-describe('Agree - Demo', () => {
+describe('Skeleton - Demo', () => {
   test(`basic`, () => {
     expect(renderToString(Demo0)).toMatchSnapshot()
   })
@@ -16,9 +16,9 @@ describe('Agree - Demo', () => {
     expect(renderToString(Demo2)).toMatchSnapshot()
   })
   test(`defaultSkeleton`, () => {
-    expect(renderToString(Demo2)).toMatchSnapshot()
+    expect(renderToString(Demo3)).toMatchSnapshot()
   })
   test(`combineSkeleton`, () => {
-    expect(renderToString(Demo2)).toMatchSnapshot()
+    expect(renderToString(Demo4)).toMatchSnapshot()
   })
 })
