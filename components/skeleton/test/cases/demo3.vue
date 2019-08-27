@@ -1,6 +1,7 @@
 <template>
   <div class="md-example">
-    <md-skeleton>
+    <md-skeleton :loading="false">
+      <h4></h4>
     </md-skeleton>
   </div>
 </template>

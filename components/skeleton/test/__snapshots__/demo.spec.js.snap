@@ -29,13 +29,7 @@ exports[`Skeleton - Demo combineSkeleton 1`] = `
 
 exports[`Skeleton - Demo defaultSkeleton 1`] = `
 <div class="md-example">
-  <div class="md-skeleton">
-    <div class="md-skeleton-content">
-      <div class="md-skeleton-row" style="width:100%;"></div>
-      <div class="md-skeleton-row" style="width:100%;"></div>
-      <div class="md-skeleton-row" style="width:60%;"></div>
-    </div>
-  </div>
+  <h4></h4>
 </div>
 `;
 

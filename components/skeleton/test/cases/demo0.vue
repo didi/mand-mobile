@@ -1,6 +1,6 @@
 <template>
   <div class="md-example">
-    <md-skeleton title :loading="loading">
+    <md-skeleton title :loading="loading" titleWidth rowWidth>
     </md-skeleton>
   </div>
 </template>
