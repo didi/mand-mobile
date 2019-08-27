@@ -37,3 +37,9 @@ It is recommended to set the parent element filled with windows to achieve cente
 |text | button text | String | - | - |
 |type | button style | String | `default` | refer to `Button` |
 |handler | callback of click operation | Function | - | callback function invoked after clicking |
+|plain|-|Boolean|`false` for the last one and `true` for the others|-|
+|round|-|Boolean|`false`|-|
+|icon|icon name|String|-|-|
+|iconSvg|use svg icon|Boolean|`false`|-|
+|inactive|-|Boolean|`false`|-|
+|loading|-|Boolean|`false`|-|
