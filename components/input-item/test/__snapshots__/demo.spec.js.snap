@@ -209,7 +209,7 @@ exports[`InputItem - Demo input with controls 1`] = `
         <div class="md-field-item-content"><label class="md-field-item-title">金融键盘</label>
           <!---->
           <div class="md-field-item-control">
-            <div class="md-input-item-fake"><span></span> <span class="md-input-item-fake-placeholder">financial number keyboard</span></div>
+            <div class="md-input-item-fake is-waiting"><span></span> <span class="md-input-item-fake-placeholder">financial number keyboard</span></div>
           </div>
           <div class="md-field-item-right">
             <div class="md-input-item-clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
