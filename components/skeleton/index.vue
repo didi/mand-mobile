@@ -1,4 +1,7 @@
-<script>export default {
+<script>const DEFUALT_TITLE_WIDTH = '40%'
+const DEFUALT_WIDTH = '100%'
+
+export default {
   name: 'md-skeleton',
 
   props: {
@@ -20,11 +23,11 @@
     },
     titleWidth: {
       type: [Number, String],
-      default: '40%',
+      default: DEFUALT_TITLE_WIDTH,
     },
     rowWidth: {
       type: [Number, String, Array],
-      default: '100%',
+      default: DEFUALT_WIDTH,
     },
     avatarSize: {
       type: String,
@@ -32,8 +35,6 @@
     },
   },
   render() {
-    const DEFUALT_TITLE_WIDTH = '40%'
-    const DEFUALT_WIDTH = '100%'
     const isNumber = n => {
       return typeof n === 'number'
     }
@@ -75,18 +76,20 @@
         }
         return DEFUALT_WIDTH
       }
-      return new Array(row)
-        .fill(1)
-        .map((item, index) => (
+      const rows = []
+      for (let i = 0; i < row; i++) {
+        rows.push(
           <div
             class="md-skeleton-row"
-            style={{width: index === row - 1 ? `${100 - parseInt(DEFUALT_TITLE_WIDTH, 10)}%` : getRowWidth(index)}}
-          />
-        ))
+            style={{width: i === row - 1 ? `${100 - parseInt(DEFUALT_TITLE_WIDTH, 10)}%` : getRowWidth(i)}}
+          />,
+        )
+      }
+      return rows
     }
 
     if (!loading) {
-      // 子组件需要有且只有一个根节点
+      // the child component must have only one root wrapper
       return this.$slots.default && this.$slots.default[0]
     }
     return (
