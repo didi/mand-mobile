@@ -91,13 +91,14 @@ export function debounce(fn = noop, delay = 300) {
 
   return function() {
     let context = this
+    const args = arguments
 
     if (timer) {
       clearTimeout(timer)
     }
 
     timer = setTimeout(function() {
-      fn.apply(context, arguments)
+      fn.apply(context, args)
     }, delay)
   }
 }
