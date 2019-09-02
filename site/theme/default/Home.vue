@@ -118,7 +118,7 @@
                     :data-index="3 + homeBlockButtonIndex"
                     v-html="homeBlockButton.htmls"
                   ></div>
-                  </template>
+                </template>
                 <template>
                   <div
                     class="home-button-other"
@@ -176,7 +176,7 @@ export default {
       })
     } else {
       this.scrollBlockView()
-      $(window).bind('scroll', this.scrollBlockView)
+      this.container.bind('scroll', this.scrollBlockView)
     }
   },
 
@@ -187,6 +187,9 @@ export default {
     homeData() {
       return homeConfig[this.lang]
     },
+    container() {
+      return $('#default-container')
+    }
   },
 
   methods: {
@@ -213,8 +216,8 @@ export default {
       }, delay)
     },
     scrollBlockView () {
-      const scrollTop = $(document).scrollTop()
-      const bottomOffset = scrollTop + $(window).height()
+      const scrollTop = this.container.scrollTop()
+      const bottomOffset = scrollTop + this.container.height()
       $('.home-box-block').each((index, item) => {
         const hh = $(item).height()
         // const topPos = index < 1 ? 0 : (index - 1) * hh  + hh/2 + 100
