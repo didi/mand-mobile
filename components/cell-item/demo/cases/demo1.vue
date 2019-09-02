@@ -23,6 +23,7 @@ export default {
   /* DELETE */
   title: '单行列表',
   titleEnUS: 'Simple List',
+  align: 'left',
   /* DELETE */
   components: {
     [Field.name]: Field,

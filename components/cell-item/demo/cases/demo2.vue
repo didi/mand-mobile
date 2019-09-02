@@ -28,6 +28,7 @@ export default {
   /* DELETE */
   title: '多行列表',
   titleEnUS: 'Content List',
+  align: 'right',
   /* DELETE */
   components: {
     [Field.name]: Field,
