@@ -135,31 +135,31 @@ export default {
     padding 0 6px
   // type
   &.default
-    background-color button-default-fill
+    background button-default-fill
     color button-default-color
     hairline(all, color-border-element, button-radius, 3px)
     &.active:active
-      background-color button-default-active-fill
+      background button-default-active-fill
     .md-button-loading .md-activity-indicator-svg .circle circle
       stroke button-default-color !important
   &.primary
-    background-color button-primary-fill
+    background button-primary-fill
     color button-primary-color
     hairline(all, button-primary-fill, button-radius, 3px)
     &.active:active
-      background-color button-primary-active-fill
+      background button-primary-active-fill
     .md-button-loading .md-activity-indicator-svg .circle circle
       stroke button-primary-color !important
   &.warning
-    background-color button-warning-fill
+    background button-warning-fill
     color button-warning-color
     hairline(all, button-warning-fill, button-radius, 3px)
     &.active:active
-      background-color button-warning-active-fill
+      background button-warning-active-fill
     .md-button-loading .md-activity-indicator-svg .circle circle
       stroke button-warning-color !important
   &.disabled
-    background-color button-disabled-fill
+    background button-disabled-fill
     color button-disabled-color
     hairline(all, button-disabled-fill, button-radius, 3px)
     .md-button-loading .md-activity-indicator-svg .circle circle
@@ -172,21 +172,21 @@ export default {
       color button-default-plain-color
       hairline(all, color-border-element, button-radius, 3px)
       &.active:active
-        background-color button-default-plain-active-fill
+        background button-default-plain-active-fill
       .md-button-loading .md-activity-indicator-svg .circle circle
         stroke button-default-plain-color !important
     &.primary
       color button-primary-plain-color
       hairline(all, button-primary-fill, button-radius, 3px)
       &.active:active
-        background-color button-primary-plain-active-fill
+        background button-primary-plain-active-fill
       .md-button-loading .md-activity-indicator-svg .circle circle
         stroke button-primary-plain-color !important
     &.warning
       color button-warning-plain-color
       hairline(all, button-warning-fill, button-radius, 3px)
       &.active:active
-        background-color button-warning-plain-active-fill
+        background button-warning-plain-active-fill
       .md-button-loading .md-activity-indicator-svg .circle circle
         stroke button-warning-plain-color !important
     &.disabled
