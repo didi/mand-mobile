@@ -3,7 +3,7 @@ title: Change Log
 toc: hidden
 ---
 
-### 2.5.0
+### 2.5.1
 
 `2019-09-04`
 
