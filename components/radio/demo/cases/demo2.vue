@@ -30,6 +30,7 @@ export default {
   /* DELETE */
   title: '列表模式',
   titleEnUS: 'List Radio',
+  align: 'right',
   /* DELETE */
   components: {
     [Field.name]: Field,

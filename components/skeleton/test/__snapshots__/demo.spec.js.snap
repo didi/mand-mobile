@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton - Demo basic 1`] = `
+<div class="md-example">
+  <div class="md-skeleton">
+    <div class="md-skeleton-content">
+      <h4 class="md-skeleton-title" style="width:40%;"></h4>
+      <div class="md-skeleton-row" style="width:100%;"></div>
+      <div class="md-skeleton-row" style="width:100%;"></div>
+      <div class="md-skeleton-row" style="width:60%;"></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Skeleton - Demo combineSkeleton 1`] = `
+<div class="md-example">
+  <div class="md-skeleton">
+    <div class="md-skeleton-content">
+      <h4 class="md-skeleton-title" style="width:36%;"></h4>
+      <div class="md-skeleton-row" style="width:40%;"></div>
+      <div class="md-skeleton-row" style="width:56%;"></div>
+      <div class="md-skeleton-row" style="width:72%;"></div>
+      <div class="md-skeleton-row" style="width:60%;"></div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Skeleton - Demo defaultSkeleton 1`] = `
+<div class="md-example">
+  <h4></h4>
+</div>
+`;
+
+exports[`Skeleton - Demo switchSkeleton 1`] = `
+<div class="md-example">
+  <div class="md-switch skeleton-switch active"></div>
+  <fieldset class="md-field">
+    <!---->
+    <div class="md-field-content">
+      <div class="skeleton-item md-skeleton">
+        <div class="md-skeleton-avatar"></div>
+        <div class="md-skeleton-content">
+          <h4 class="md-skeleton-title" style="width:40%;"></h4>
+          <div class="md-skeleton-row" style="width:100%;"></div>
+          <div class="md-skeleton-row" style="width:60%;"></div>
+        </div>
+      </div>
+      <div class="skeleton-item md-skeleton">
+        <div class="md-skeleton-avatar"></div>
+        <div class="md-skeleton-content">
+          <h4 class="md-skeleton-title" style="width:40%;"></h4>
+          <div class="md-skeleton-row" style="width:100%;"></div>
+          <div class="md-skeleton-row" style="width:60%;"></div>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </fieldset>
+</div>
+`;
+
+exports[`Skeleton - Demo withAvatar 1`] = `
+<div class="md-example">
+  <div class="md-skeleton">
+    <div class="md-skeleton-avatar"></div>
+    <div class="md-skeleton-content">
+      <h4 class="md-skeleton-title" style="width:40%;"></h4>
+      <div class="md-skeleton-row" style="width:100%;"></div>
+      <div class="md-skeleton-row" style="width:100%;"></div>
+      <div class="md-skeleton-row" style="width:60%;"></div>
+    </div>
+  </div>
+</div>
+`;

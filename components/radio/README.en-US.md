@@ -31,7 +31,32 @@ Vue.component(Radio.name, Radio)
 |icon-disabled|icon of disabled options|String|`check-disabled`|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 |size|size of icon|String|`md`|-|
+---
 
+
+#### RadioBox Props
+| Props | Description | Type | Default | Note |
+|----|-----|------|------|------|
+|name|unique name|any|`true`|-|
+|v-model|selected name|any|`false`|-|
+|disabled|whether disable selection or not|Boolean|`false`|-|
+---
+
+#### RadioGroup Props
+Check multiple radios. Combine with `Radio` or `RadioBox`.
+
+| Props | Description | Type | Default | Note |
+|----|-----|------|------|------|
+|v-model|selected names|Array|-|-|
+|max|max selected name length|Number|`0`|`0`: no limit|
+
+#### RadioGroup Methods
+
+##### check(name)
+
+| Arg | Description | Type | Default |
+|----|-----|------|------|
+|name|name will be selected|String|-|
 ---
 
 #### Radio List Props

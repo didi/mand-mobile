@@ -24,6 +24,7 @@ describe('InputItem - Operation', () => {
     wrapper.vm.focus()
     triggerEvent(input.element, 'keydown', 0, 0, 49)
     triggerEvent(input.element, 'keyup', 0, 0, 49)
+    expect(wrapper.vm.isInputEditing).toBe(true)
 
     triggerEvent(input.element, 'keydown', 0, 0, 11)
     triggerEvent(input.element, 'keyup', 0, 0, 11)
@@ -34,6 +35,30 @@ describe('InputItem - Operation', () => {
     expect(eventStub.calledWith('confirm')).toBe(true)
     expect(wrapper.vm.getValue()).toEqual('4949 1111 1313 123')
     wrapper.vm.blur()
+  })
+
+  test('input-item preview-type', () => {
+    wrapper = mount(InputItem, {
+      propsData: {
+        type: 'bankCard',
+        previewType: 'text',
+        value: '123',
+      },
+    })
+    expect(wrapper.vm.inputItemType).toBe('text')
+    expect(wrapper.vm.isInputFormative).toBe(false)
+    expect(wrapper.vm.inputType).toBe('text')
+
+    const input = wrapper.find('.md-input-item-input')
+    wrapper.vm.focus()
+    triggerEvent(input.element, 'keydown', 0, 0, 13)
+    triggerEvent(input.element, 'keyup', 0, 0, 13)
+    expect(wrapper.vm.getValue()).toEqual('123')
+    triggerEvent(input.element, 'keydown', 0, 0, 8)
+    triggerEvent(input.element, 'keyup', 0, 0, 8)
+    expect(wrapper.vm.getValue()).toEqual('')
+    expect(wrapper.vm.inputItemType).toBe('bankCard')
+    expect(wrapper.vm.isInputFormative).toBe(true)
   })
 
   test('phone input-item', () => {
@@ -102,6 +127,7 @@ describe('InputItem - Operation', () => {
       keys.at(2).trigger('click')
       keys.at(2).trigger('click')
       deleteBtn.trigger('click')
+      expect(wrapper.vm.isInputEditing).toBe(true)
       expect(wrapper.vm.inputValue).toBe('2.3')
       keys.at(2).trigger('click')
       keys.at(2).trigger('click')
@@ -111,7 +137,10 @@ describe('InputItem - Operation', () => {
       confirmBtn.trigger('click')
       expect(eventStub.calledWith('confirm')).toBe(true)
       wrapper.vm.blur()
-      done()
+      setTimeout(() => {
+        expect(wrapper.vm.isInputEditing).toBe(false)
+        done()
+      }, 500)
     }, 500)
   })
 

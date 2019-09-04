@@ -1,4 +1,6 @@
-import {Radio, RadioList} from 'mand-mobile'
+import Vue from 'vue'
+import {Radio, RadioBox, RadioGroup, RadioList} from 'mand-mobile'
+import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 import triggerTouch from '../../popup/test/touch-trigger'
 
@@ -68,6 +70,83 @@ describe('Radio', () => {
       expect(wrapper.findAll('.md-radio-item').length).toEqual(2)
       done()
     })
+  })
+
+  it('radio group', () => {
+    Vue.component(Radio.name, Radio)
+    let value = 'a'
+    wrapper = mount(RadioGroup, {
+      propsData: {
+        value,
+      },
+      slots: {
+        default: ['<md-radio name="a"/>', '<md-radio name="b"/>'],
+      },
+      listeners: {
+        input(val) {
+          value = val
+          wrapper.setProps({value})
+        },
+      },
+    })
+
+    const radios = wrapper.findAll('.md-radio')
+    expect(radios.at(0).classes('is-checked')).toBe(true)
+
+    radios.at(1).trigger('click')
+    expect(value).toEqual('b')
+    radios.at(0).trigger('click')
+    expect(value).toEqual('a')
+  })
+
+  it('radiokbox click event', () => {
+    let value = false
+    wrapper = mount(RadioBox, {
+      propsData: {
+        value,
+        name: 'a',
+      },
+      listeners: {
+        input(val) {
+          value = val
+          wrapper.setProps({value})
+        },
+      },
+    })
+
+    const eventSpy = sinon.spy(wrapper.vm, '$emit')
+    const radioBox = wrapper.find('.md-radio-box')
+
+    radioBox.trigger('click')
+    expect(eventSpy.calledWith('input')).toBe(true)
+    expect(value).toBe('a')
+  })
+
+  it('radiobox group', () => {
+    Vue.component(RadioBox.name, RadioBox)
+    let value = 'a'
+    wrapper = mount(RadioGroup, {
+      propsData: {
+        value,
+      },
+      slots: {
+        default: ['<md-radio-box name="a"/>', '<md-radio-box name="b"/>'],
+      },
+      listeners: {
+        input(val) {
+          value = val
+          wrapper.setProps({value})
+        },
+      },
+    })
+
+    const radios = wrapper.findAll('.md-radio-box')
+    expect(radios.at(0).classes('is-checked')).toBe(true)
+
+    radios.at(1).trigger('click')
+    expect(value).toEqual('b')
+    radios.at(0).trigger('click')
+    expect(value).toEqual('a')
   })
 
   it('create a radio list with input', () => {

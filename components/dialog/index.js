@@ -13,11 +13,20 @@ const instances = []
  * @param {Object} props
  * @return {Dialog}
  */
-const generate = function({title = '', icon = '', iconSvg = false, content = '', closable = false, btns = []}) {
+const generate = function({
+  title = '',
+  icon = '',
+  iconSvg = false,
+  content = '',
+  closable = false,
+  btns = [],
+  onShow = noop,
+  onHide = noop,
+}) {
   const DialogConstructor = Vue.extend(Dialog)
   const vm = new DialogConstructor({
     propsData: {
-      value: true,
+      value: false,
       title,
       icon,
       iconSvg,
@@ -44,7 +53,13 @@ const generate = function({title = '', icon = '', iconSvg = false, content = '',
       instances.splice(index, 1)
     }
     vm.$destroy()
+    onHide()
   })
+  vm.$on('show', () => {
+    onShow()
+  })
+
+  vm.value = true
 
   return vm
 }
@@ -67,6 +82,8 @@ Dialog.confirm = ({
   closable = false,
   onConfirm = noop,
   onCancel = noop,
+  onShow = noop,
+  onHide = noop,
 }) => {
   const vm = generate({
     title,
@@ -74,6 +91,8 @@ Dialog.confirm = ({
     iconSvg,
     content,
     closable,
+    onShow,
+    onHide,
     btns: [
       {
         text: cancelText,
@@ -114,6 +133,8 @@ Dialog.alert = ({
   closable = false,
   warning = false,
   onConfirm = noop,
+  onShow = noop,
+  onHide = noop,
 }) => {
   const vm = generate({
     title,
@@ -121,6 +142,8 @@ Dialog.alert = ({
     iconSvg,
     content,
     closable,
+    onShow,
+    onHide,
     btns: [
       {
         text: confirmText,

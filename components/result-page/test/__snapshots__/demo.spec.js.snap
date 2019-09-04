@@ -42,16 +42,16 @@ exports[`ResultPage With button 1`] = `
     <div class="md-result-buttons"><button type="button" class="md-button default active inline plain small">
         <div class="md-button-inner">
           <!---->
-          <p class="md-button-content">
+          <div class="md-button-content">
             普通按钮
-          </p>
+          </div>
         </div>
       </button><button type="button" class="md-button primary active inline plain small">
         <div class="md-button-inner">
           <!---->
-          <p class="md-button-content">
+          <div class="md-button-content">
             高亮按钮
-          </p>
+          </div>
         </div>
       </button></div>
   </div>

@@ -184,6 +184,64 @@ exports[`Radio List 1`] = `
 </div>
 `;
 
+exports[`Radio Radio box 1`] = `
+<div class="md-example-child md-example-child-check md-example-child-check-4">
+  <div class="md-check-base-box md-radio-box is-disabled">日缴
+    <!---->
+  </div>
+  <div class="md-check-base-box md-radio-box">月付
+    <!---->
+  </div>
+  <div class="md-check-base-box md-radio-box">季度费
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Radio Radio box group 1`] = `
+<div class="md-example-child md-example-child-check md-example-child-check-5">
+  <div class="md-radio-group">
+    <div class="md-check-base-box md-radio-box is-checked">自己 <div class="md-tag">
+        <div class="default size-tiny shape-quarter type-fill font-weight-normal">
+          <div class="quarter-content"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
+          <div class="quarter-bg"></div>
+        </div>
+      </div>
+    </div>
+    <div class="md-check-base-box md-radio-box">配偶
+      <!---->
+    </div>
+    <div class="md-check-base-box md-radio-box">父母
+      <!---->
+    </div>
+    <div class="md-check-base-box md-radio-box is-disabled">子女
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Radio Radio group 1`] = `
+<div class="md-example-child md-example-child-radio md-example-child-radio-3">
+  <div class="md-radio-group"><label class="md-radio">
+      <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+      <div class="md-radio-label">西瓜</div>
+    </label> <label class="md-radio is-checked">
+      <div class="md-radio-icon"><i class="md-icon icon-font md-icon-checked checked md" style="color:;"></i></div>
+      <div class="md-radio-label">苹果</div>
+    </label> <label class="md-radio">
+      <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+      <div class="md-radio-label">香蕉</div>
+    </label> <label class="md-radio">
+      <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check check md" style="color:;"></i></div>
+      <div class="md-radio-label">橙子</div>
+    </label> <label class="md-radio is-disabled">
+      <div class="md-radio-icon"><i class="md-icon icon-font md-icon-check-disabled check-disabled md" style="color:;"></i></div>
+      <div class="md-radio-label">西红柿</div>
+    </label></div>
+</div>
+`;
+
 exports[`Radio With Field 1`] = `
 <div class="md-example-child md-example-child-radio md-example-child-radio-1">
   <fieldset class="md-field">

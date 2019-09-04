@@ -26,7 +26,22 @@ ActionBar is fixed at the bottom of the page by `position: fixed`. In order to a
 #### ActionBar Props
 |Props | Description | Type | Default | Note|
 |----|-----|------|------|------|
-|actions|button group|Array<{text, disabled, onClick}>|-|`text` is button text,<br/>`disabled`is whether to disable the button or not,<br/>`onClick`is click event callback function with the same parameters as the `click` event|
+|actions|button group|Array\<ActionOptions\>|-|-|
+
+#### ActionOptions Props
+
+|属性 | 说明 | 类型 | 默认值|
+|----|-----|------|------|
+|text|-|String|-|
+|disabled|-|Boolean|`false`|
+|onClick|click handler|Function(action: ActionOptions)|-|
+|type|-|String|`disabled` when the prop `disabled` is true, otherwise is `primary`|
+|plain|-|Boolean|`false` for the last one and `true` for the others|
+|round|-|Boolean|`false`|
+|icon|icon name|String|-|
+|iconSvg|use svg icon|Boolean|`false`|
+|inactive|-|Boolean|`false`|
+|loading|-|Boolean|`false`|
 
 #### ActionBar Slots
 
@@ -40,4 +55,4 @@ Button click event
 
 |Props | Description | Type |
 |----|-----|------|
-|action|object corresponding to the clicked button in the actions list|Object: {text, disabled, ...}|
+|action|object corresponding to the clicked button in the actions list|Object: ActionOptions|
