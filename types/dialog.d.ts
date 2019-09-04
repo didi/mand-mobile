@@ -7,6 +7,8 @@ export type DialogOptions = {
   confirmText?: string
   onCancel?: () => void
   onConfirm?: () => void
+  onShow?: () => void
+  onHide?: () => void
 }
 
 export type DialogAlertOptions = {
