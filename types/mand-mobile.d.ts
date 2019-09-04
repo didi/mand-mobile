@@ -40,6 +40,8 @@ export class Popup extends MandComponent { }
 export class PopupTitleBar extends MandComponent { }
 export class Progress extends MandComponent { }
 export class Radio extends MandComponent { }
+export class RadioBox extends MandComponent { }
+export class RadioGroup extends MandComponent { }
 export class RadioList extends MandComponent { }
 export class ResultPage extends MandComponent { }
 export class Ruler extends MandComponent { }
@@ -61,6 +63,8 @@ export class Tag extends MandComponent { }
 export class Tip extends MandComponent { }
 export class Transition extends MandComponent { }
 export class WaterMark extends MandComponent { }
+export class TextareaItem extends MandComponent { }
+export class Skeleton extends MandComponent { }
 /* @init<%export class ${componentNameUpper} extends MandComponent { }%> */
 
 
