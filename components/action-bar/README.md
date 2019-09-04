@@ -36,13 +36,13 @@ Vue.component(ActionBar.name, ActionBar)
 |text|文案|String|-|
 |disabled|禁用|Boolean|`false`|
 |onClick|点击回调|Function(action: ActionOptions)|-|
-|type|类型|String|`disabled`为`true`时为`disabled`，否则为`primary`|
-|plain|朴素|Boolean|最后一个按钮为`false`，其它为`true`|
-|round|圆角|Boolean|`false`|
-|icon|按钮图标|String|-|
-|iconSvg|按钮svg图标|Boolean|`false`|
-|inactive|未激活|Boolean|`false`|
-|loading|加载中状态|Boolean|`false`|
+|type <sup class="version-after">2.5.0+</sup>|类型|String|`disabled`为`true`时为`disabled`，否则为`primary`|
+|plain <sup class="version-after">2.5.0+</sup>|朴素|Boolean|最后一个按钮为`false`，其它为`true`|
+|round <sup class="version-after">2.5.0+</sup>|圆角|Boolean|`false`|
+|icon <sup class="version-after">2.5.0+</sup>|按钮图标|String|-|
+|iconSvg <sup class="version-after">2.5.0+</sup>|按钮svg图标|Boolean|`false`|
+|inactive <sup class="version-after">2.5.0+</sup>|未激活|Boolean|`false`|
+|loading <sup class="version-after">2.5.0+</sup>|加载中状态|Boolean|`false`|
 
 #### ActionBar Slots
 

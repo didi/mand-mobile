@@ -35,13 +35,13 @@ ActionBar is fixed at the bottom of the page by `position: fixed`. In order to a
 |text|-|String|-|
 |disabled|-|Boolean|`false`|
 |onClick|click handler|Function(action: ActionOptions)|-|
-|type|-|String|`disabled` when the prop `disabled` is true, otherwise is `primary`|
-|plain|-|Boolean|`false` for the last one and `true` for the others|
-|round|-|Boolean|`false`|
-|icon|icon name|String|-|
-|iconSvg|use svg icon|Boolean|`false`|
-|inactive|-|Boolean|`false`|
-|loading|-|Boolean|`false`|
+|type <sup class="version-after">2.5.0+</sup>|-|String|`disabled` when the prop `disabled` is true, otherwise is `primary`|
+|plain <sup class="version-after">2.5.0+</sup>|-|Boolean|`false` for the last one and `true` for the others|
+|round <sup class="version-after">2.5.0+</sup>|-|Boolean|`false`|
+|icon <sup class="version-after">2.5.0+</sup>|icon name|String|-|
+|iconSvg <sup class="version-after">2.5.0+</sup>|use svg icon|Boolean|`false`|
+|inactive <sup class="version-after">2.5.0+</sup>|-|Boolean|`false`|
+|loading <sup class="version-after">2.5.0+</sup>|-|Boolean|`false`|
 
 #### ActionBar Slots
 

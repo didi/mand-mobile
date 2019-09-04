@@ -3,6 +3,8 @@ title: Skeleton 骨架屏
 preview: https://didi.github.io/mand-mobile/examples/#/skeleton
 ---
 
+骨架屏，一般用于数据尚未加载前先展示出页面的大致结构的加载状态 <sup class="version-after">2.5.0+</sup>
+
 ### 引入
 
 ```javascript
@@ -25,4 +27,4 @@ Vue.component(Skeleton.name, Skeleton)
 |title|是否显示标题占位图|Boolean|false|-|
 |title-width|标题占位宽度|Number,String| 40%|-|
 |row|内容占位图行数|Number|3|-|
-|row-width|内容占位图宽度|String,Number,Array<String\|Number>|100%|-|
+|row-width|内容占位图宽度|String,Number,Array\<String\|Number\>|100%|-|

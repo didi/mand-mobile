@@ -1,3 +1,10 @@
+---
+title: TextareaItem
+preview: https://didi.github.io/mand-mobile/examples/#/TextareaItem
+---
+
+Multi-line text input <sup class="version-after">2.5.0+</sup>
+
 ### Import
 
 ```javascript

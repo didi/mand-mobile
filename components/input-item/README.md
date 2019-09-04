@@ -27,7 +27,7 @@ Vue.component(InputItem.name, InputItem)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |type|表单类型，特殊类型自带文本格式化|String|`text`|`text(文本)`,`bankCard(银行卡号)`,`phone(手机号)`,<br/>`money(金额)`,`digit(数字)`,`password(密码)`,<br/>以及其他的标准`Html Input`类型|
-|preview-type|表单预览类型|String|-|一般用于初始化时的特殊表单值（如带掩码的*身份证号，手机号*）预览，第一次触发编辑操作如点击退格键及其他字符键点击时，先**清空预填值并将表单类型切换至`type`**|
+|preview-type <sup class="version-after">2.5.0+</sup>|表单预览类型|String|-|一般用于初始化时的特殊表单值（如带掩码的*身份证号，手机号*）预览，第一次触发编辑操作如点击退格键及其他字符键点击时，先**清空预填值并将表单类型切换至`type`**|
 |name|表单名称|String|-|事件入参之一，可用于区分表单组件|
 |v-model|表单值|String|-|-|
 |title|表单左侧标题|String|-|可直接使用`slot left`代替|

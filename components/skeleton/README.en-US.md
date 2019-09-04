@@ -3,6 +3,8 @@ title: Skeleton
 preview: https://didi.github.io/mand-mobile/examples/#/Skeleton
 ---
 
+Skeleton screen, generally used to display the loading state of the general structure of the page before the data has been loaded <sup class="version-after">2.5.0+</sup>
+
 ### Import
 
 ```javascript
@@ -25,4 +27,4 @@ Vue.component(Skeleton.name, Skeleton)
 |title|display the title placeholders|Boolean|false|-|
 |title-width|title placeholders width|Number,String| 40%|-|
 |row|number of rows|Number|3|-|
-|row-width|rows' width|String,Number,Array<String\|Number>|100%|-|
+|row-width|rows' width|String,Number,Array\<String\|Number\>|100%|-|

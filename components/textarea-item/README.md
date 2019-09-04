@@ -1,3 +1,10 @@
+---
+title: TextareaItem 多行输入框
+preview: https://didi.github.io/mand-mobile/examples/#/TextareaItem
+---
+
+多行文本输入框 <sup class="version-after">2.5.0+</sup>
+
 ### 引入
 
 ```javascript

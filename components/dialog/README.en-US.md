@@ -57,6 +57,8 @@ Default slots is used as the content of dialog
 
 Header slot, generally used for placing pictures, etc <sup class="version-after">2.4.0+</sup>
 
+---
+
 #### Dialog Instance Methods
 
 ##### close()
@@ -87,8 +89,8 @@ Dynamically create a confirmation dialog
 | confirmWarning | clicking the Confirm button is a warning action | Boolean | `false` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
-| onShow | callback function is invoked when dialog is shown | Function | -|
-| onHide | callback function is invoked when dialog is hidden | Function | -|
+| onShow <sup class="version-after">2.5.0+</sup>| callback function is invoked when dialog is shown | Function | -|
+| onHide <sup class="version-after">2.5.0+</sup>| callback function is invoked when dialog is hidden | Function | -|
 
 ##### Dialog.alert(props)
 Dynamically create an alert dialog

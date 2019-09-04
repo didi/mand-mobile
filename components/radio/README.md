@@ -37,6 +37,8 @@ Vue.component(RadioList.name, RadioList)
 ---
 
 #### RadioBox Props
+单选框 <sup class="version-after">2.5.0+</sup>
+
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
 |name|唯一键值|any|`true`|当选中时，双向绑定的值|
@@ -45,7 +47,7 @@ Vue.component(RadioList.name, RadioList)
 ---
 
 #### RadioGroup Props
-单选组，用以选中多个单选项。与`Radio`或`RadioBox`组合使用。
+单选组，用以选中多个单选项。与`Radio`或`RadioBox`组合使用 <sup class="version-after">2.5.0+</sup>
 
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|

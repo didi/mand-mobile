@@ -57,6 +57,8 @@ this.$dialog.alert({ content: '' }) // 全量引入
 
 顶部插槽，一般用于放置图片等 <sup class="version-after">2.4.0+</sup>
 
+---
+
 #### Dialog Instance Methods
 
 ##### close()
@@ -86,8 +88,8 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | confirmWarning | 点击确认按钮为警示操作 | Boolean | `false` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onCancel | 点击取消按钮回调函数 | Function | -|
-| onShow | 窗口显示后回调函数 | Function | -|
-| onHide | 窗口隐藏后回调函数 | Function | -|
+| onShow <sup class="version-after">2.5.0+</sup>| 窗口显示后回调函数 | Function | -|
+| onHide <sup class="version-after">2.5.0+</sup>| 窗口隐藏后回调函数 | Function | -|
 
 ##### Dialog.alert(props)
 静态方法创建警告模态窗口, 返回Dialog实例
