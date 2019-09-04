@@ -1,5 +1,5 @@
 <template>
-  <div class="md-example">
+  <div class="md-example-child md-example-child-skeleton md-example-child-skeleton-0">
     <md-skeleton title :loading="loading">
     </md-skeleton>
   </div>
@@ -18,3 +18,8 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus" scoped>
+.md-example-child-skeleton-0
+  margin 30px 0
+</style>

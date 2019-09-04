@@ -32,8 +32,8 @@ async function build() {
       resultLog('success', 'Building **Examples** Complete!')
     })
   })
-  .catch(() => {
-    resultLog('error', 'Building **Examples** Fail!')
+  .catch(err => {
+    resultLog('error', 'Building **Examples** Fail!' + '\n\n' + err.message || err.stack)
   })
 }
 

@@ -47,8 +47,9 @@
 
 export default {
   name: 'tips-demo',
+  /* DELETE */
   title: '普通文本域',
-  titleEnUS: 'basic',
+  /* DELETE */
   data() {
     return {
       value: '',

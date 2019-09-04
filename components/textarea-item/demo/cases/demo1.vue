@@ -23,8 +23,10 @@
 
 export default {
   name: 'tips-demo',
+  /* DELETE */
   title: '错误提示',
-  titleEnUS: 'error-tip',
+  titleEnUS: 'Error tips',
+  /* DELETE */
   data() {
     return {
       value: '申请理赔xxx',
