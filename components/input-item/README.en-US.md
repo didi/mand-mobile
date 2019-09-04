@@ -26,6 +26,7 @@ Vue.component(InputItem.name, InputItem)
 |Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
 |type|input type, special type has text formatting|String|`text`|`text`,`bankCard`,`phone`,<br/>`money`,`password`|
+|preview-type <sup class="version-after">2.5.0+</sup>|input preview type|String|-|generally used for initial input value (such as masked *ID number with mobile phone number, mobile phone number*) preview and the first time you trigger an edit operation, such as clicking the backspace key and other character key clicks, ** the pre-fill value will be cleared first and the input will be switched to `type` **|
 |name|name of input|String|-|one of the event arguments, is used to distinguish multi inputs|
 |v-model|value of input|String|-|-|
 |title|title of input|String|-|`slot left` as alternative|

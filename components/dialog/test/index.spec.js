@@ -32,10 +32,25 @@ describe('Dialog - Operation', () => {
     expect(vm.btns.length).toBe(1)
   })
 
-  it('generate a succeed dialog', () => {
-    vm = Dialog.succeed({})
-    expect(vm.icon).toBe('success-color')
-    vm.$el.querySelector('.md-dialog-btn').click()
+  it('generate a succeed dialog', done => {
+    let num = 0
+    vm = Dialog.succeed({
+      onShow: () => {
+        num = 1
+      },
+      onHide: () => {
+        num = 2
+      },
+    })
+    setTimeout(() => {
+      expect(vm.icon).toBe('success-color')
+      expect(num).toBe(1)
+      // vm.$el.querySelector('.md-dialog-btn').click()
+      setTimeout(() => {
+        // expect(num).toBe(2)
+        done()
+      }, 500)
+    }, 1000)
   })
 
   it('generate a failed dialog', done => {

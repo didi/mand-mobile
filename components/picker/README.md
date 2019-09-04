@@ -25,7 +25,7 @@ Vue.component(Picker.name, Picker)
 |data|数据源|Array<{value, lable, ...}>[]|`[]`|-|
 |cols|数据列数|Number|`1`|-|
 |default-index|选择器各列初始选中项索引|Array|`[]`|-|
-|default-value|选择器各列初始选中项值|Array|`[]`|可用字段`text/lable/value`|
+|default-value|选择器各列初始选中项值|Array|`[]`|可用字段`text/label/value`|
 |invalid-index|选择器各列不可用选项索引|Array|`[]`|某列多个不可用项使用数组，单个使用数字, 如`[[1,2], 2]`|
 |line-height|选择器选项行高|Number|`45`|单位`px`|
 |is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|-|
@@ -58,7 +58,7 @@ Vue.component(Picker.name, Picker)
 
 |属性 | 说明 | 类型|
 |----|-----|------|
-|activeItemValue|选中项的值|Object: {value, lable, ...}|
+|activeItemValue|选中项的值|Object: {value, label, ...}|
 
 ##### getColumnValues(): columnsValue
 获取所有列选中项的值，需在`initialed`事件触发之后或异步调用
@@ -67,7 +67,7 @@ Vue.component(Picker.name, Picker)
 
 |属性 | 说明 | 类型|
 |----|-----|------|
-|columnsValue|所有列选中项的值|Array<{value, lable, ...}>|
+|columnsValue|所有列选中项的值|Array<{value, label, ...}>|
 
 ##### getColumnIndex(index): activeItemIndex
 获取某列当前选中项的索引值，需在`initialed`事件触发之后或异步调用
@@ -97,7 +97,7 @@ Vue.component(Picker.name, Picker)
 |参数 | 说明 | 类型|
 |----|-----|------|
 |index|列索引|Number|
-|values|列数据|Array<{value, lable, ...}>|
+|values|列数据|Array<{value, label, ...}>|
 |callback|列数据设置完成回调|Function|
 
 #### Picker Events
@@ -112,14 +112,14 @@ Vue.component(Picker.name, Picker)
 |----|-----|------|
 |columnIndex|更改列的索引值|Number|
 |itemIndex|更改列选中项的索引值|Number|
-|value|更改列选中项的的值|Object: {value, lable, ...}|
+|value|更改列选中项的的值|Object: {value, label, ...}|
 
 ##### @confirm(columnsValue)
 选择器确认选择事件（仅`is-view`为`false`）
 
 |参数 | 说明 | 类型|
 |----|-----|------|
-|columnsValue|所有列选中项的值|Array<{value, lable, ...}>|
+|columnsValue|所有列选中项的值|Array<{value, label, ...}>|
 
 ##### @cancel()
 选择器取消选择事件（仅`is-view`为`false`）

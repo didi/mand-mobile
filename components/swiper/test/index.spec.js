@@ -201,9 +201,9 @@ describe('Swiper', () => {
       expect(wrapper.vm.getIndex()).toBe(0)
       triggerTouch(hook, 'touchstart', 0, 0)
       triggerTouch(hook, 'touchmove', -4, 0)
-      triggerTouch(hook, 'touchend')
-      expect(eventStub.calledWith('before-change')).toBe(false)
       setTimeout(() => {
+        triggerTouch(hook, 'touchend')
+        expect(eventStub.calledWith('before-change')).toBe(false)
         expect(wrapper.vm.getIndex()).toBe(0)
         done()
       }, 300)

@@ -46,4 +46,7 @@ export {default as Transition} from '../components/transition/demo'
 export {default as DetailItem} from '../components/detail-item/demo'
 export {default as Slider} from '../components/slider/demo'
 export {default as Progress} from '../components/progress/demo'
-export {default as Ruler} from '../components/ruler/demo'/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */
+export {default as Ruler} from '../components/ruler/demo'
+export {default as TextareaItem} from '../components/textarea-item/demo'
+export {default as Skeleton} from '../components/skeleton/demo'
+/* @init<%export {default as ${componentNameUpper}} from '../components/${componentName}/demo'%> */

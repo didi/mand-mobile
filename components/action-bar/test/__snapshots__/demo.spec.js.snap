@@ -8,9 +8,9 @@ exports[`ActionBar Demo Basic 1`] = `
       <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block">
           <div class="md-button-inner">
             <!---->
-            <p class="md-button-content">
+            <div class="md-button-content">
               主要按钮
-            </p>
+            </div>
           </div>
         </button></div>
     </div>
@@ -26,16 +26,16 @@ exports[`ActionBar Demo Multiple buttons 1`] = `
       <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block plain">
           <div class="md-button-inner">
             <!---->
-            <p class="md-button-content">
+            <div class="md-button-content">
               次要按钮
-            </p>
+            </div>
           </div>
         </button><button type="button" class="md-button md-action-bar-button primary active block">
           <div class="md-button-inner">
             <!---->
-            <p class="md-button-content">
+            <div class="md-button-content">
               主要按钮
-            </p>
+            </div>
           </div>
         </button></div>
     </div>
@@ -51,16 +51,16 @@ exports[`ActionBar Demo Multiple buttons and disabled button 1`] = `
       <div class="md-action-bar-group"><button type="button" disabled="disabled" class="md-button md-action-bar-button disabled active block plain">
           <div class="md-button-inner">
             <!---->
-            <p class="md-button-content">
+            <div class="md-button-content">
               次要按钮
-            </p>
+            </div>
           </div>
         </button><button type="button" disabled="disabled" class="md-button md-action-bar-button disabled active block">
           <div class="md-button-inner">
             <!---->
-            <p class="md-button-content">
+            <div class="md-button-content">
               主要按钮
-            </p>
+            </div>
           </div>
         </button></div>
     </div>
@@ -76,9 +76,9 @@ exports[`ActionBar Demo With slot 1`] = `
       <div class="md-action-bar-group"><button type="button" class="md-button md-action-bar-button primary active block">
           <div class="md-button-inner">
             <!---->
-            <p class="md-button-content">
+            <div class="md-button-content">
               主要按钮
-            </p>
+            </div>
           </div>
         </button></div>
     </div>

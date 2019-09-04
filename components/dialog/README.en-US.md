@@ -57,6 +57,8 @@ Default slots is used as the content of dialog
 
 Header slot, generally used for placing pictures, etc <sup class="version-after">2.4.0+</sup>
 
+---
+
 #### Dialog Instance Methods
 
 ##### close()
@@ -87,6 +89,8 @@ Dynamically create a confirmation dialog
 | confirmWarning | clicking the Confirm button is a warning action | Boolean | `false` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
+| onShow <sup class="version-after">2.5.0+</sup>| callback function is invoked when dialog is shown | Function | -|
+| onHide <sup class="version-after">2.5.0+</sup>| callback function is invoked when dialog is hidden | Function | -|
 
 ##### Dialog.alert(props)
 Dynamically create an alert dialog
@@ -99,6 +103,8 @@ Dynamically create an alert dialog
 | confirmText | confirmation button | String | `Confirm` |
 | warning | clicking the Confirm button is a warning action | Boolean | `false` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
+| onShow | callback function is invoked when dialog is shown | Function | -|
+| onHide | callback function is invoked when dialog is hidden | Function | -|
 
 ##### Dialog.succeed(props)
 Dynamically create a success dialog
@@ -110,6 +116,8 @@ Dynamically create a success dialog
 | confirmText | confirmation button | String | `Confirm` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
+| onShow | callback function is invoked when dialog is shown | Function | -|
+| onHide | callback function is invoked when dialog is hidden | Function | -|
 
 ##### Dialog.failed(props)
 Dynamically create a fail dialog
@@ -121,6 +129,8 @@ Dynamically create a fail dialog
 | confirmText | confirmation button | String | `Confirm` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
+| onShow | callback function is invoked when dialog is shown | Function | -|
+| onHide | callback function is invoked when dialog is hidden | Function | -|
 
 ##### Dialog.closeAll()
 Close all global dialogs

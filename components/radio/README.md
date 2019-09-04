@@ -8,9 +8,11 @@ preview: https://didi.github.io/mand-mobile/examples/#/radio
 ### 引入
 
 ```javascript
-import { Radio, RadioList } from 'mand-mobile'
+import { Radio, RadioBox, RadioGroup, RadioList } from 'mand-mobile'
 
 Vue.component(Radio.name, Radio)
+Vue.component(RadioBox.name, RadioBox)
+Vue.component(RadioGroup.name, RadioGroup)
 Vue.component(RadioList.name, RadioList)
 ```
 
@@ -32,7 +34,33 @@ Vue.component(RadioList.name, RadioList)
 |icon-disabled|禁用项的图标|String|`check-disabled`|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 |size|图标大小|String|`md`|-|
+---
 
+#### RadioBox Props
+单选框 <sup class="version-after">2.5.0+</sup>
+
+|属性 | 说明 | 类型 | 默认值 | 备注 |
+|----|-----|------|------|------|
+|name|唯一键值|any|`true`|当选中时，双向绑定的值|
+|v-model|选中的值|any|`false`|-|
+|disabled|是否禁用选择|Boolean|`false`|-|
+---
+
+#### RadioGroup Props
+单选组，用以选中多个单选项。与`Radio`或`RadioBox`组合使用 <sup class="version-after">2.5.0+</sup>
+
+|属性 | 说明 | 类型 | 默认值 | 备注 |
+|----|-----|------|------|------|
+|v-model|选中的值|Array|-|-|
+|max|最多选择几个|Number|`0`|0为不限制|
+
+#### RadioGroup Methods
+
+##### check(name)
+
+|参数 | 说明 | 类型 | 默认值 |
+|----|-----|------|------|
+|name|需要选中的键值|String|-|
 ---
 
 #### Radio List Props

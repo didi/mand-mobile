@@ -3,6 +3,32 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.0
+
+`2019-09-04`
+
+- Feat
+  - 增加部分全局[reset样式](https://github.com/didi/mand-mobile/pull/539/files)
+  - 新增组件`Skeleton`
+  - 新增组件`TextareaItem`
+  - 新增组件`RadioGroup`和`RadioBox`
+  - `ActionBar`和`ResultPage`增加按钮配置属性`type `, `plain`, `round`, `inactive`, `loading`, `icon`, `iconSvg`[#544](https://github.com/didi/mand-mobile/issues/544)
+  - `Dialog`单例模式增加`onShow`和`onHide`
+  - `InputItem`增加属性`preview-type`用于设置预填展示时类型
+
+  ```html
+  <md-input-item
+    type="bankCard" <!-- 正常输入时表单类型 -->
+    preview-type="text" <!-- 预填展示时表单类型 -->
+    title="银行卡号"
+    value="6222 **** **** 1234"  <!-- 带掩码的预填值 -->
+  ></md-input-item>
+  ```
+
+- Fix
+  - 修复`Swiper`滑出滚动区域时无法正常翻页问题[#540](https://github.com/didi/mand-mobile/issues/540)
+  - 修改按钮背景色设置属性为`background`，容器元素为`div`
+
 ### 2.4.2
 
 `2019-08-13`

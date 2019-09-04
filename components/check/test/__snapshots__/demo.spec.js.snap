@@ -2,13 +2,13 @@
 
 exports[`Check - Demo Check box 1`] = `
 <div class="md-example-child md-example-child-check md-example-child-check-2">
-  <div class="md-check-box is-disabled">日缴
+  <div class="md-check-base-box md-check-box is-disabled">日缴
     <!---->
   </div>
-  <div class="md-check-box">月付
+  <div class="md-check-base-box md-check-box">月付
     <!---->
   </div>
-  <div class="md-check-box">季度费
+  <div class="md-check-base-box md-check-box">季度费
     <!---->
   </div>
 </div>
@@ -17,20 +17,20 @@ exports[`Check - Demo Check box 1`] = `
 exports[`Check - Demo Check box group 1`] = `
 <div class="md-example-child md-example-child-check md-example-child-check-3">
   <div class="md-check-group">
-    <div class="md-check-box is-disabled is-checked">自己 <div class="md-tag">
+    <div class="md-check-base-box md-check-box is-disabled is-checked">自己 <div class="md-tag">
         <div class="default size-tiny shape-quarter type-fill font-weight-normal">
           <div class="quarter-content"><i class="md-icon icon-font md-icon-right right md" style="color:;"></i></div>
           <div class="quarter-bg"></div>
         </div>
       </div>
     </div>
-    <div class="md-check-box">配偶
+    <div class="md-check-base-box md-check-box">配偶
       <!---->
     </div>
-    <div class="md-check-box">父母
+    <div class="md-check-base-box md-check-box">父母
       <!---->
     </div>
-    <div class="md-check-box">子女
+    <div class="md-check-base-box md-check-box">子女
       <!---->
     </div>
   </div>

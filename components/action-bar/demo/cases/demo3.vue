@@ -25,14 +25,21 @@ export default {
       data: [
         {
           text: '主要按钮',
+          round: true,
         },
       ],
     }
   },
   methods: {
     onBtnClick(event, action) {
+      this.$set(action, 'loading', true)
+      this.$set(action, 'inactive', true)
       Dialog.alert({
         content: `${action.text}点击`,
+        onConfirm: () => {
+          this.$set(action, 'loading', false)
+          this.$set(action, 'inactive', false)
+        },
       })
     },
   },

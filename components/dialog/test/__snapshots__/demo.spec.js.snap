@@ -4,32 +4,32 @@ exports[`Dialog - Demo Basic 1`] = `
 <div class="md-example-child md-example-child-dialog md-example-child-dialog-0"><button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">基本</p>
+      <div class="md-button-content">基本</div>
     </div>
   </button> <button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">带图标</p>
+      <div class="md-button-content">带图标</div>
     </div>
   </button> <button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">警示操作</p>
+      <div class="md-button-content">警示操作</div>
     </div>
   </button> <button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">异步操作</p>
+      <div class="md-button-content">异步操作</div>
     </div>
   </button> <button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">多操作</p>
+      <div class="md-button-content">多操作</div>
     </div>
   </button> <button type="button" class="md-button default active block">
     <div class="md-button-inner">
       <!---->
-      <p class="md-button-content">插槽</p>
+      <div class="md-button-content">插槽</div>
     </div>
   </button>
   <div class="md-dialog">

@@ -27,7 +27,22 @@ Vue.component(ActionBar.name, ActionBar)
 #### ActionBar Props
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
-|actions|按钮组|Array<{text, disabled, onClick}>|-|`text`为按钮文案，<br/>`disabled`为是否禁用该按钮，<br/>`onClick`为点击事件响应函数，传参数与`click`事件相同|
+|actions|按钮组|Array\<ActionOptions\>|-|-|
+
+#### ActionOptions Props
+
+|属性 | 说明 | 类型 | 默认值|
+|----|-----|------|------|
+|text|文案|String|-|
+|disabled|禁用|Boolean|`false`|
+|onClick|点击回调|Function(action: ActionOptions)|-|
+|type <sup class="version-after">2.5.0+</sup>|类型|String|`disabled`为`true`时为`disabled`，否则为`primary`|
+|plain <sup class="version-after">2.5.0+</sup>|朴素|Boolean|最后一个按钮为`false`，其它为`true`|
+|round <sup class="version-after">2.5.0+</sup>|圆角|Boolean|`false`|
+|icon <sup class="version-after">2.5.0+</sup>|按钮图标|String|-|
+|iconSvg <sup class="version-after">2.5.0+</sup>|按钮svg图标|Boolean|`false`|
+|inactive <sup class="version-after">2.5.0+</sup>|未激活|Boolean|`false`|
+|loading <sup class="version-after">2.5.0+</sup>|加载中状态|Boolean|`false`|
 
 #### ActionBar Slots
 
@@ -41,4 +56,4 @@ Vue.component(ActionBar.name, ActionBar)
 
 |属性 | 说明 | 类型 |
 |----|-----|------|
-|action|actions列表中与被点击按钮对应的对象|Object: {text, disabled, ...}|
+|action|actions列表中与被点击按钮对应的对象|Object: ActionOptions|
