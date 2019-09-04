@@ -1,4 +1,5 @@
-<script>const DEFUALT_TITLE_WIDTH = '40%'
+<script lang="babel">
+const DEFUALT_TITLE_WIDTH = '40%'
 const DEFUALT_WIDTH = '100%'
 
 export default {
@@ -103,7 +104,8 @@ export default {
     )
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 placeHolder()
