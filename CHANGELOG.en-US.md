@@ -3,6 +3,32 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.0
+
+`2019-09-04`
+
+- Feat
+  - Add part of global [reset style](https://github.com/didi/mand-mobile/pull/539/files)
+  - Add new component `Skeleton`
+  - Add new component `TextareaItem`
+  - Add new components `RadioGroup` and `RadioBox`
+  - Add options `type `, `plain`, `round`, `inactive`, `loading`, `icon`, `iconSvg` to `ActionBar` and `ResultPage` button configration[#544](https://github.com/didi/mand-mobile/issues/544)
+  - Add handlers `onShow` and `onHide` to singleton mode `Dialog`
+  - `InputItem` add prop `preview-type`, used to set the type of pre-filled impression
+
+  ```html
+  <md-input-item
+    type="bankCard" <!-- type when entering normally -->
+    preview-type="text" <!-- type when pre-filling display -->
+    title="银行卡号"
+    value="6222 **** **** 1234"  <!-- pre-filled value with mask -->
+  ></md-input-item>
+  ```
+
+- Fix
+  - fix page flipping problem when sliding out of touch area in `Swiper`[#540](https://github.com/didi/mand-mobile/issues/540)
+  - modify button background color setting property to `background` and the container element to `div`
+  
 ### 2.4.2
 
 `2019-08-13`
