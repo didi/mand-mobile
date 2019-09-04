@@ -10,7 +10,7 @@
 export default {
   name: 'radio-demo',
   /* DELETE */
-  title: '普通单选框',
+  title: '普通单选项',
   titleEnUS: 'Normal radio',
   /* DELETE */
   components: {
