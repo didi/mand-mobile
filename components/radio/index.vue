@@ -73,17 +73,24 @@ export default {
 
   computed: {
     isChecked() {
-      return this.value === this.name
+      return this.value === this.name || (this.rootGroup && this.rootGroup.value === this.name)
     },
     currentIcon() {
-      return this.disabled ? this.iconDisabled : this.value === this.name ? this.icon : this.iconInverse
+      return this.disabled ? this.iconDisabled : this.isChecked ? this.icon : this.iconInverse
     },
+  },
+
+  inject: {
+    rootGroup: {default: null},
   },
 
   methods: {
     $_onClick() {
       if (!this.disabled) {
         this.$emit('input', this.name)
+        if (this.rootGroup) {
+          this.rootGroup.check(this.name)
+        }
       }
     },
   },

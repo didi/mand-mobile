@@ -17,6 +17,7 @@ export default {
   /* DELETE */
   title: '表单项内联',
   titleEnUS: 'With Field',
+  align: 'left',
   /* DELETE */
   components: {
     [Field.name]: Field,
