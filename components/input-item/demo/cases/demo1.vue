@@ -3,17 +3,21 @@
     <md-field>
       <md-input-item
         ref="name"
+        preview-type="text"
+        value="张**"
         title="真实姓名"
         placeholder="投保人姓名"
         is-title-latent
-        clearable
       ></md-input-item>
       <md-input-item
         ref="id"
-        title="身份证号"
-        placeholder="投保人身份证号"
+        type="bankCard"
+        preview-type="text"
+        value="6222 **** **** 1234"
+        title="银行卡号"
+        placeholder="投保人银行卡号"
         is-title-latent
-        clearable
+        is-virtual-keyboard
         ></md-input-item>
     </md-field>
   </div>
