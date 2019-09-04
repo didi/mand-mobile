@@ -11,16 +11,16 @@
         placeholder="描述信息在100字以内"
       >
         <template slot="footer">
-          <p class="demo2__footer">
+          <p class="demo2-footer">
             <span
-              class="demo2__footer-left"
+              class="demo2-footer-left"
               v-if="value.length"
               >{{ value.length }}/100</span
             >
             <span v-else></span>
 
             <span
-              class="demo2__footer-right"
+              class="demo2-footer-right"
               >页脚文案</span
             >
           </p>
@@ -34,8 +34,10 @@
 
 export default {
   name: 'tips-demo',
+  /* DELETE */
   title: '插槽',
-  titleEnUS: 'slot',
+  titleEnUS: 'Slot',
+  /* DELETE */
   data() {
     return {
       value: '',
@@ -47,12 +49,11 @@ export default {
   },
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .md-example-child-textarea-2
-  .demo2
-    &__footer
-      display: flex;
-      justify-content: space-between;
-      color: #999;
-      font-size: 24px;
+  .demo2-footer
+    display flex
+    justify-content space-between
+    color #999
+    font-size 24px
 </style>
