@@ -37,3 +37,9 @@ Vue.component(ResultPage.name, ResultPage)
 |text | 按钮文字 | String | - | - |
 |type | 按钮样式类别 | String | `default` | 可参考`Button` |
 |handler | 点击操作 | Function | - | 点击按钮后调用的方法 |
+|plain|朴素|Boolean|最后一个按钮为`false`，其它为`true`|
+|round|圆角|Boolean|`false`|-|
+|icon|按钮图标|String|-|-|
+|iconSvg|按钮svg图标|Boolean|`false`|-|
+|inactive|未激活|Boolean|`false`|-|
+|loading|加载中状态|Boolean|`false`|-|

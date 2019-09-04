@@ -9,9 +9,14 @@
       <md-button
         v-for="(button, index) of buttons"
         :type="button.type"
-        plain
-        inline
+        :plain="button.plain === undefined || button.plain"
+        :round="button.round"
+        :inactive="button.inactive"
+        :loading="button.loading"
+        :icon="button.icon"
+        :icon-svg="button.iconSvg"
         size="small"
+        inline
         :key="index"
         @click="button.handler">
         {{button.text}}
