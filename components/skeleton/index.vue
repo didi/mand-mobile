@@ -1,5 +1,29 @@
-<script lang="babel">
-const DEFUALT_TITLE_WIDTH = '40%'
+<template>
+  <div class="md-skeleton" v-if="loading">
+    <div
+      v-if="avatar"
+      :class="{
+        'md-skeleton-avatar': true,
+        'md-skeleton-avatar-large': avatarSize === 'lg',
+        'md-skeleton-avatar-small': avatarSize === 'sm',
+      }"
+    ></div>
+    <div class="md-skeleton-content">
+      <h4 class="md-skeleton-title" :style="{ width: getTitleWidth() }" />
+      <div
+        v-for="index in row"
+        class="md-skeleton-row"
+        :style="{width: index === row ? '60%' : getRowWidth(index - 1)}"
+        :key="index"
+      >
+      </div>
+    </div>
+  </div>
+  <div  v-else>
+    <slot></slot>
+  </div>
+</template>
+<script>const DEFUALT_TITLE_WIDTH = '40%'
 const DEFUALT_WIDTH = '100%'
 
 export default {
@@ -35,77 +59,30 @@ export default {
       default: 'md',
     },
   },
-  render() {
-    const isNumber = n => {
+
+  methods: {
+    isNumber(n) {
       return typeof n === 'number'
-    }
-
-    const {loading, title, row, titleWidth, avatar, rowWidth, avatarSize} = this.$props
-
-    const skeletonAvatar = () => {
-      if (avatar) {
-        return (
-          <div
-            class={{
-              'md-skeleton-avatar': true,
-              'md-skeleton-avatar-large': avatarSize === 'lg',
-              'md-skeleton-avatar-small': avatarSize === 'sm',
-            }}
-          />
-        )
+    },
+    getRowWidth(index) {
+      const {rowWidth, isNumber} = this
+      if (rowWidth && Array.isArray(rowWidth)) {
+        return isNumber(rowWidth[index]) ? `${rowWidth[index]}%` : rowWidth[index]
+      } else if (rowWidth) {
+        return isNumber(rowWidth) ? `${rowWidth}%` : rowWidth
       }
-    }
-
-    const skeletonTitle = () => {
-      if (title) {
-        const getTitleWidth = () => {
-          if (titleWidth) {
-            return isNumber(titleWidth) ? `${titleWidth}%` : titleWidth
-          }
-          return DEFUALT_TITLE_WIDTH
-        }
-        return <h4 class="md-skeleton-title" style={{width: getTitleWidth()}} />
+      return DEFUALT_WIDTH
+    },
+    getTitleWidth() {
+      const {titleWidth, isNumber} = this
+      if (titleWidth) {
+        return isNumber(titleWidth) ? `${titleWidth}%` : titleWidth
       }
-    }
-
-    const skeletonRows = () => {
-      const getRowWidth = index => {
-        if (rowWidth && Array.isArray(rowWidth)) {
-          return isNumber(rowWidth[index]) ? `${rowWidth[index]}%` : rowWidth[index]
-        } else if (rowWidth) {
-          return isNumber(rowWidth) ? `${rowWidth}%` : rowWidth
-        }
-        return DEFUALT_WIDTH
-      }
-      const rows = []
-      for (let i = 0; i < row; i++) {
-        rows.push(
-          <div
-            class="md-skeleton-row"
-            style={{width: i === row - 1 ? `${100 - parseInt(DEFUALT_TITLE_WIDTH, 10)}%` : getRowWidth(i)}}
-          />,
-        )
-      }
-      return rows
-    }
-
-    if (!loading) {
-      // the child component must have only one root wrapper
-      return this.$slots.default && this.$slots.default[0]
-    }
-    return (
-      <div class="md-skeleton">
-        {skeletonAvatar()}
-        <div class="md-skeleton-content">
-          {skeletonTitle()}
-          {skeletonRows()}
-        </div>
-      </div>
-    )
+      return DEFUALT_TITLE_WIDTH
+    },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 placeHolder()
