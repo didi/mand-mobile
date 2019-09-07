@@ -10,7 +10,8 @@
     >
     </div>
     <div class="md-stepper-number">
-      <input type="tel"
+      <input 
+        :type="inputType"
         :size="contentLength"
         :value="currentNum"
         :readOnly="readOnly"
@@ -26,7 +27,8 @@
   </div>
 </template>
 
-<script>import {warn} from '../_util'
+<script>
+import {warn} from '../_util'
 function getDecimalNum(num) {
   try {
     return num.toString().split('.')[1].length
@@ -56,6 +58,10 @@ export default {
   components: {},
 
   props: {
+    inputType: {
+      type: [String],
+      default: "tel",
+    },
     defaultValue: {
       type: [Number, String],
       default: 0,
@@ -202,7 +208,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-stepper
