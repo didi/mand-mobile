@@ -7,7 +7,7 @@
         :autosize="true"
         v-model="value"
         :max-length="100"
-        :max-height="100"
+        :max-height="150"
         placeholder="描述信息在100字以内"
       >
         <template slot="footer">
