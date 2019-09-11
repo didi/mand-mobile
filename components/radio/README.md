@@ -34,6 +34,7 @@ Vue.component(RadioList.name, RadioList)
 |icon-disabled|禁用项的图标|String|`check-disabled`|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 |size|图标大小|String|`md`|-|
+
 ---
 
 #### RadioBox Props
@@ -44,6 +45,7 @@ Vue.component(RadioList.name, RadioList)
 |name|唯一键值|any|`true`|当选中时，双向绑定的值|
 |v-model|选中的值|any|`false`|-|
 |disabled|是否禁用选择|Boolean|`false`|-|
+
 ---
 
 #### RadioGroup Props
@@ -61,6 +63,7 @@ Vue.component(RadioList.name, RadioList)
 |参数 | 说明 | 类型 | 默认值 |
 |----|-----|------|------|
 |name|需要选中的键值|String|-|
+
 ---
 
 #### Radio List Props

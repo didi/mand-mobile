@@ -33,6 +33,7 @@ Vue.component(CheckList.name, CheckList)
 |icon-disabled|icon name of disabled options|String|`check-disabled`|-|
 |icon-svg<sup class="version-after">2.3.0+</sup>|use svg icon|Boolean|`false`|-|
 |size|size of icon|String|`md`|-|
+
 ---
 
 #### CheckBox Props

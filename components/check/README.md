@@ -31,6 +31,7 @@ Vue.component(CheckList.name, CheckList)
 |icon-disabled|禁用项选择图标名称|String|`check-disabled`|-|
 |icon-svg<sup class="version-after">2.3.0+</sup>|使用svg图标|Boolean|`false`|-|
 |size|图标大小|String|`md`|-|
+
 ---
 
 #### CheckBox Props
