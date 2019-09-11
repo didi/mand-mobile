@@ -35,7 +35,7 @@ title: Mand Mobile
 #### 浏览器支持
 
 * 现代浏览器
-* iOS 6+
+* iOS 8+
 * Android 4.0+
 
 #### 快速上手

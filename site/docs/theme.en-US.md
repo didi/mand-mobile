@@ -36,10 +36,10 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
     ]
 }
 ```
+
 * Create a customized theme file, such as `theme.custom.styl`
 
 ```stylus
-@import '~mand-mobile/components/_style/global'
 @import '~mand-mobile/components/_style/mixin/util'
 @import '~mand-mobile/components/_style/mixin/theme.components'
 @import '~mand-mobile/components/_style/mixin/theme.basic'
@@ -52,7 +52,21 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 color-primary = #1AAD19
 ```
 
-* Configure `webpack` and import customized theme file
+* Import the `mand-mobile` global style (either in the project entry or global style), for example:
+
+main.js
+
+```js
+import 'mand-mobile/components/_style/global'
+```
+
+or global.styl
+
+```stylus
+@import '~mand-mobile/components/_style/global'
+```
+
+* Configure `webpack` and import customized theme file `theme.custom.styl`
 
 ```javascript
 const poststylus = require('poststylus')

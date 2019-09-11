@@ -28,6 +28,7 @@ title: 主题定制
 ```shell
 npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 ```
+
 * 配置`babel-plugin-import`， 确保引入组件源码
 
 ```javascript
@@ -38,10 +39,10 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
     ]
 }
 ```
+
 * 创建自定义主题文件，如`theme.custom.styl`
 
 ```stylus
-@import '~mand-mobile/components/_style/global'
 @import '~mand-mobile/components/_style/mixin/util'
 @import '~mand-mobile/components/_style/mixin/theme.components'
 @import '~mand-mobile/components/_style/mixin/theme.basic'
@@ -54,7 +55,21 @@ npm install --save-dev babel-plugin-import stylus stylus-loader css-loader
 color-primary = #1AAD19
 ```
 
-* 配置`webpack`，引入主题文件
+* 引入`mand-mobile`全局样式（可在项目入口或全局样式中），例如：
+
+main.js
+
+```js
+import 'mand-mobile/components/_style/global'
+```
+
+或者 global.styl
+
+```stylus
+@import '~mand-mobile/components/_style/global'
+```
+
+* 配置`webpack`，引入主题文件`theme.custom.styl`
 
 ```javascript
 const poststylus = require('poststylus')

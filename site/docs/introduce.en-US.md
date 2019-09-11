@@ -35,7 +35,7 @@ title: Mand Mobile
 #### Browser Support
 
 * Modern browsers
-* iOS 6+
+* iOS 8+
 * Android 4.0+
 
 #### Quickstart
