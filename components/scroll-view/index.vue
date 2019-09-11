@@ -451,6 +451,7 @@ export default {
   .scroll-view-container
     clearfix()
     position relative
+    z-index 1
     // display inline-block
     .scroll-view-refresh
       clearfix()
