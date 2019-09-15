@@ -23,7 +23,13 @@
       ]"
       ref="wrap"
     >
-      <div :class="[(overflow && scrollable) && 'md-notice-bar-content-animate']" ref="content">
+      <div 
+        ref="content"
+        :class="[
+          (autoScroll || (overflow && scrollable)) && 'md-notice-bar-content-animate'
+        ]" 
+        :style="{ animationDuration: animationDurationStyle }"
+      >
         <slot></slot>
       </div>
     </div>
@@ -76,6 +82,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    autoScroll: {
+      type: Boolean,
+      default: false,
+    },
+    animationDuration: {
+      type: [Number, String],
+      default: '16s',
+    },
     // will be delete in future
     icon: {
       type: String,
@@ -111,6 +125,16 @@ export default {
     rightIcon() {
       return this.mode === 'link' ? 'arrow-right' : 'close'
     },
+
+    animationDurationStyle() {
+      const {animationDuration} = this
+
+      if (typeof animationDuration === 'string') {
+        return animationDuration
+      } else {
+        return `${animationDuration}ms`
+      }
+    },
   },
 
   updated() {
@@ -138,7 +162,7 @@ export default {
       this.$emit('close')
     },
     $_checkOverflow() {
-      if (!this.scrollable) {
+      if (!this.scrollable && !this.autoScroll) {
         return
       }
       const {wrap, content} = this.$refs

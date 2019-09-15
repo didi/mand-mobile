@@ -27,7 +27,9 @@ Vue.component(NoticeBar.name, NoticeBar)
 |time|display time|Number|`0`|unit is `ms`, which does not disappear automatically and can be set to `0`|
 |round|fillet radius|Boolean|`false`|-|
 |multi-rows|content exceeds line break display|Boolean|`false`|Priority is heigher than scrollable|
-|scrollable|show scrolling animation when content is exceeded|Boolean|`false``|Priority is less than multiRows|
+|scrollable|show scrolling animation when content is exceeded|Boolean|`false`|Priority is less than multiRows. Priority is less than autoScroll |
+|auto-scroll|alaways auto start scrolling animation without content is exceeded or not|Boolean|`false`|Priority is less than multiRows|
+|animation-duration|set scrolling animation duration|String, Number|`16s`|-|
 |icon|notice bar icon|String|-|-|
 |icon-svg|use svg icon|Boolean|`false`|-|
 

@@ -27,7 +27,9 @@ Vue.component(NoticeBar.name, NoticeBar)
 |time|显示时长|Number|`0`|单位为`ms`，不需要自动消失可将其置为`0`|
 |round|圆角展示|Boolean|`false`|-|
 |multi-rows|内容超出多行展示|Boolean|`false`|优先级高于scrollable|
-|scrollable|内容超出滚动展示|Boolean|`false`|优先级低于multiRows|
+|scrollable|内容超出滚动展示|Boolean|`false`|优先级低于multiRows, 优先级低于autoScroll|
+|auto-scroll|不论内容是否超出，均自动开始滚动动画|Boolean|`false`|优先级低于multiRows, 优先级高于scrollable|
+|animation-duration|滚动动画过渡时间|String, Number|`16s`|-|
 |icon|左侧图标|String|-|-|
 |icon-svg|使用svg图标|Boolean|`false`|-|
 
