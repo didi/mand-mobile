@@ -255,6 +255,7 @@ export default {
   min-width 100%
 
 .md-tab-bar-item
+  flex auto
   flex-shrink 0
   position relative
   display inline-flex
