@@ -6,6 +6,7 @@ import Demo4 from './cases/demo4'
 import Demo5 from './cases/demo5'
 import Demo6 from './cases/demo6'
 import Demo7 from './cases/demo7'
+import Demo8 from './cases/demo8'
 import {renderToString} from '@vue/server-test-utils'
 
 describe('NoticeBar - Demo', () => {
@@ -30,7 +31,10 @@ describe('NoticeBar - Demo', () => {
   test('Scroll play', () => {
     expect(renderToString(Demo6)).toMatchSnapshot()
   })
-  test('Customize', () => {
+  test('Auto scroll', () => {
     expect(renderToString(Demo7)).toMatchSnapshot()
+  })
+  test('Customize', () => {
+    expect(renderToString(Demo8)).toMatchSnapshot()
   })
 })
