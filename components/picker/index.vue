@@ -11,6 +11,7 @@
         :default-index="defaultIndex"
         :invalid-index="invalidIndex"
         :line-height="lineHeight"
+        :keep-index="keepIndex"
         :cols="cols"
         @initialed="$emit('initialed')"
         @change="$_onPickerChange"
@@ -45,6 +46,7 @@
           :default-index="$_getDefaultIndex()"
           :invalid-index="invalidIndex"
           :line-height="lineHeight"
+          :keep-index="keepIndex"
           :cols="cols"
           @initialed="$_onPickerInitialed"
           @change="$_onPickerChange"
@@ -145,6 +147,10 @@ export default {
     // },
     // lineHeight: {
     //   type: Boolean,
+    // },
+    // keepIndex: {
+    //   type: Boolean,
+    //   default: false,
     // },
   },
 
