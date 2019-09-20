@@ -17,5 +17,9 @@ export default {
     lineHeight: {
       type: Number,
     },
+    keepIndex: {
+      type: Boolean,
+      default: false,
+    },
   },
 }

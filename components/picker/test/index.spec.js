@@ -98,4 +98,28 @@ describe('Picker - Operation', () => {
         .classes('disabled'),
     ).toBe(true)
   })
+
+  test('picker keep index', done => {
+    wrapper = mount(Picker, {
+      propsData: {
+        data: district,
+        isView: true,
+        isCascade: true,
+        keepIndex: true,
+        cols: 3,
+        defaultIndex: [3, 2, 1],
+      },
+    })
+    setTimeout(() => {
+      expect(wrapper.vm.column.activedIndexs[0]).toBe(3)
+
+      const hook = wrapper.findAll('.md-picker-column-hook').at(0)
+      triggerTouch(hook.element, 'touchstart', 0, 0)
+      triggerTouch(hook.element, 'touchmove', 0, 108)
+      triggerTouch(hook.element, 'touchend')
+
+      expect(wrapper.vm.column.activedIndexs[1]).toBe(2)
+      done()
+    }, 500)
+  })
 })

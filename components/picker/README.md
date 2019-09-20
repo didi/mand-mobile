@@ -30,6 +30,7 @@ Vue.component(Picker.name, Picker)
 |line-height|选择器选项行高|Number|`45`|单位`px`|
 |is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|-|
 |is-cascade|各列数据是否级联|Boolean|`false`|级联数据格式见附录|
+|keep-index|当列数据变化时保持上次停留的位置|Boolean|`false`|仅用于级联数据|  
 |title|选择器标题|String|-|-|
 |describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|`确认`|-|

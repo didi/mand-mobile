@@ -114,6 +114,10 @@ export default {
       type: Number,
       default: 45,
     },
+    keepIndex: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -221,6 +225,9 @@ export default {
 
       // save scroller instance
       this.$set(this.scrollers, index, scroller)
+
+      // reset scrolling position
+      this.$_resetScrollingPosition(index)
     },
 
     // each column scroll to active item by defaultIndex
@@ -244,10 +251,9 @@ export default {
          * then a valid item is automatically selected
          */
         if (this.$_isColumnIndexInvalid(columnIndex, itemIndex)) {
-          this.$_scrollToValidIndex(columnIndex, itemIndex)
+          this.$_scrollToValidIndex(scroller, columnIndex, itemIndex)
         } else {
-          const offsetTop = this.$_getColumnOffsetByIndex(itemIndex)
-          scroller.scrollTo(0, offsetTop)
+          this.$_scrollToIndex(scroller, columnIndex, itemIndex)
           this.$set(this.activedIndexs, columnIndex, itemIndex)
         }
       })
@@ -326,8 +332,27 @@ export default {
       }
       return tempCount
     },
-    $_scrollToValidIndex(columnIndex, itemIndex) {
+    $_resetScrollingPosition(columnIndex) {
       const scroller = this.scrollers[columnIndex]
+      const columnValue = this.columnValues[columnIndex] || []
+      let oldColumnActiveIndex = this.activedIndexs[columnIndex] || 0
+
+      if (!scroller || !oldColumnActiveIndex) {
+        return
+      }
+
+      if (oldColumnActiveIndex > columnValue.length - 1) {
+        oldColumnActiveIndex = columnValue.length - 1
+      }
+
+      this.$_scrollToIndex(scroller, columnIndex, oldColumnActiveIndex)
+      this.$set(this.activedIndexs, columnIndex, oldColumnActiveIndex)
+    },
+    $_scrollToIndex(scroller, columnIndex, itemIndex) {
+      const offsetTop = this.$_getColumnOffsetByIndex(itemIndex)
+      scroller.scrollTo(0, offsetTop)
+    },
+    $_scrollToValidIndex(scroller, columnIndex, itemIndex) {
       const count = this.$_findValidIndex(columnIndex, itemIndex)
       const offsetTop = this.$_getColumnOffsetByIndex(count)
       scroller.scrollTo(0, this.$_scrollInZoon(scroller, offsetTop), true)
@@ -396,7 +421,7 @@ export default {
       const isInvalid = this.$_isColumnIndexInvalid(index, activeItemIndex)
 
       if (isInvalid || activeItemIndex === this.activedIndexs[index]) {
-        isInvalid && this.$_scrollToValidIndex(index, activeItemIndex)
+        isInvalid && this.$_scrollToValidIndex(scroller, index, activeItemIndex)
         return false
       }
 
@@ -456,7 +481,12 @@ export default {
       if (index === undefined || values === undefined) {
         return
       }
-      this.$set(this.activedIndexs, index, 0) // reset active index
+
+      // reset active index
+      if (!this.keepIndex) {
+        this.$set(this.activedIndexs, index, 0)
+      }
+
       this.$set(this.columnValues, index, values)
       this.$nextTick(() => {
         // this.$_initSingleColumnScroller(index)
