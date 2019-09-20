@@ -31,7 +31,7 @@ Vue.component(DatePicker.name, DatePicker)
 |text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|              
 |today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`| 
 |line-height|line height of options|Number|`45`|unit `px`| 
-|keep-index|keep last stop position when the column data changes|Boolean|`false`|-|          
+|keep-index <sup class="version-after">2.5.2+</sup>|keep last stop position when the column data changes|Boolean|`false`|-|          
 |is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-| 
 |title|title of date-picker|String|-|-|
 |describe|description of date-picker|String|-|-|
