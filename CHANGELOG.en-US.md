@@ -3,6 +3,18 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.2
+
+`2019-09-20`
+
+- Feat
+  - `Picker` and `DatePicker` add prop `keep-index`, used to set the last stop position when the column data changes
+
+- Fix
+  - Fix the problem that `Toast` is covered by `Landscape`
+  - Fix the problem of `TabBar` rendering crash[#567](https://github.com/didi/mand-mobile/issues/567)
+  - Remove the useless style variables of `Textarea` 
+
 ### 2.5.1
 
 `2019-09-04`
