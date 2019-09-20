@@ -172,11 +172,13 @@ export default {
     color textarea-item-color-error
   .md-field-item-content
     align-items normal
-  .is-disabled
+  &.is-disabled
     .md-textarea-item__textarea
       -webkit-text-fill-color textarea-item-color-disabled
       color textarea-item-color-disabled
   &__textarea
+    color textarea-item-color
+    font-weight textarea-item-font-weight
     width 100%
     -webkit-appearance none
     border none
