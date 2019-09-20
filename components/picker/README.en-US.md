@@ -29,7 +29,7 @@ Vue.component(Picker.name, Picker)
 |invalid-index|indexes of disabled items in each column|Array|`[]`|array of multiple disabled items, such as `[[1,2], 2]`|
 |is-view|inline display in page, otherwise it shows as `Popup`|Boolean|`false`|-|
 |is-cascade|data in each column is cascaded or not|Boolean|`false`|see #Appendix for the format of cascaded data|
-|keep-index|keep last stop position when the column data changes|Boolean|`false`|only for cascaded data|  
+|keep-index <sup class="version-after">2.5.2+</sup>|keep last stop position when the column data changes|Boolean|`false`|only for cascaded data|  
 |line-height|line height of options|Number|`45`|unit `px`|
 |title|title of picker|String|-|-|
 |describe|description of picker|String|-|-|

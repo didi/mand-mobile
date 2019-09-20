@@ -31,7 +31,7 @@ Vue.component(DatePicker.name, DatePicker)
 |text-render|自定义选项展示文案方法|Function(typeFormat, column0Value, column1Value, ...): String|-|如果使用`text-render`则`unit-text`无效, 示例见附录|
 |today-text|今天展示文案设置|String|`今天`|使用`&`可占位日期数字，如`&(今天)`| 
 |line-height|选择器选项行高|Number|`45`|单位`px`|  
-|keep-index|当列数据变化时保持上次停留的位置|Boolean|`false`|-|        
+|keep-index <sup class="version-after">2.5.2+</sup>|当列数据变化时保持上次停留的位置|Boolean|`false`|-|        
 |is-view|是否内嵌在页面内展示, 否则以弹层形式|Boolean|`false`|-| 
 |title|选择器标题|String|-|-|
 |describe|选择器描述|String|-|-|
