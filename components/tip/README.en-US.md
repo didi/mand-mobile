@@ -20,7 +20,7 @@ Vue.component(Tip.name, Tip)
 
 #### Tip Props
 | Props | Description | Type | Default | Note |
-|----|-----|------|------|------|------|
+|----|-----|------|------|------|
 |name|the name of tip|String/Number|-|generally used for special class names|
 |content|the content of tip|String/Number|-|-|
 |placement|the position of tip|String|`top`| `top`, `left`, `bottom`, `right`|

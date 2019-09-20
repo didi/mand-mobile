@@ -3,8 +3,9 @@
     <md-date-picker
       ref="datePicker"
       type="datetime"
-      :min-date="currentDate"
+      :default-date="currentDate"
       is-view
+      keep-index
     ></md-date-picker>
   </div>
 </template>
@@ -23,7 +24,6 @@ export default {
   data() {
     return {
       currentDate: new Date(),
-      minDate: new Date('2018/8/30 11:30'),
     }
   },
   mounted() {

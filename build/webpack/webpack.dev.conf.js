@@ -40,7 +40,7 @@ module.exports = merge(baseWebpackConfig, {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
   // cheap-module-eval-source-map is faster for development
-  devtool: '#cheap-module-eval-source-map',
+  devtool: '#cheap-eval-source-map',
   plugins: [
     new WebpackBar({
       name: 'mand-mobile'

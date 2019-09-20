@@ -17,7 +17,7 @@
         :autosize="true"
         :rows="1"
         placeholder="最大高度100px 超过出现滚动条"
-        :max-height="100"
+        :max-height="150"
       />
       <md-textarea-item
         ref="demo0"
@@ -26,7 +26,7 @@
         :autosize="true"
         value="禁用文本域, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述"
         placeholder="500字以内"
-        :max-height="100"
+        :max-height="150"
         disabled
       />
       <md-textarea-item
@@ -36,7 +36,7 @@
         :autosize="true"
         value="只读文本域, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述"
         placeholder="500字以内"
-        :max-height="100"
+        :max-height="150"
         readonly
       />
     </md-field>

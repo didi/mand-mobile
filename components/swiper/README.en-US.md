@@ -74,6 +74,7 @@ switch to `index`
 | Args | Description | Type | Default | Note |
 |---|---|---|---|---|
 |index|the index to be shown|Number|`0`|`[0, length - 1]`|
+
 ```js
 vm.$refs.swiper.goto(2)
 ```

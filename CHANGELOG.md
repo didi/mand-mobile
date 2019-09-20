@@ -3,6 +3,18 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.2
+
+`2019-09-20`
+
+- Feat
+  - `Picker`和`DatePicker`增加属性`keep-index`，用于设置当列数据发生变更时，保持上次停留位置
+
+- Fix
+  - 修复`Toast`被`Landscape`覆盖的问题
+  - 修复`TabBar`渲染崩溃的问题[#567](https://github.com/didi/mand-mobile/issues/567)
+  - 移除`Textarea`部分无用样式变量
+
 ### 2.5.1
 
 `2019-09-04`
