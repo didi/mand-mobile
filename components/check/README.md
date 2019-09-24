@@ -90,7 +90,7 @@ Vue.component(CheckList.name, CheckList)
 ```html
 <template>
   <md-check-list :options="data">
-    <template slot-scope="{ option }">
+    <template slot-scope="{ option, index, selected }">
       <div class="custom-title" v-text="option.text"></div>
       <div class="custom-brief">{{ option.text }}的自定义描述</div>
     </template>
