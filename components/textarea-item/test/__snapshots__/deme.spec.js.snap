@@ -16,8 +16,19 @@ exports[`TextareaItem - Demo Basic 1`] = `
       <div class="md-field-item md-textarea-item example is-solid is-browser">
         <div class="md-field-item-content"><label class="md-field-item-title">自动适应</label>
           <!---->
-          <div class="md-field-item-control"><textarea maxlength="10" placeholder="最大高度100px 超过出现滚动条" rows="1" class="md-textarea-item__textarea"></textarea> </div>
+          <div class="md-field-item-control"><textarea maxlength="" placeholder="最大高度150px" rows="1" class="md-textarea-item__textarea"></textarea> </div>
           <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="md-field-item md-textarea-item example is-solid is-browser">
+        <div class="md-field-item-content"><label class="md-field-item-title">删除图标</label>
+          <!---->
+          <div class="md-field-item-control"><textarea maxlength="" placeholder="输入出现删除图标" rows="1" class="md-textarea-item__textarea"></textarea> </div>
+          <div class="md-field-item-right">
+            <div class="md-textarea-item__clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
+            <!---->
+          </div>
         </div>
         <!---->
       </div>
