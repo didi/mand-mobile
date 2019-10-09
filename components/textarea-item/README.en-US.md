@@ -30,6 +30,7 @@ Vue.component(TextareaItem.name, TextareaItem)
 | solid       | the width of title is fixed or not               | Boolean       | `true`  |                    |
 | readonly    | readonly                                         | Boolean       | `false` | -                  |
 | disabled    | disabled                                         | Boolean       | `false` | -                  |
+| clearable   | clearable                                        | Boolean       | `false` | -                  |
 | rows        | rows                                             | String/Number | `'3'`   | -                  |
 | error       | error message                                    | String        | -       | -                  |
 
