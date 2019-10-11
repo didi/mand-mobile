@@ -3,6 +3,17 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.3
+
+`2019-10-11`
+
+- Feat
+  - `TextareaItem`增加属性`clearable`[#589](https://github.com/didi/mand-mobile/issues/589)
+
+- Fix
+  - 修复`TabPicker`文字过长时无法拖动而展示不全的问题[#590](https://github.com/didi/mand-mobile/issues/590)
+  - 去除部分非必须reset样式[#586](https://github.com/didi/mand-mobile/issues/586)
+
 ### 2.5.2
 
 `2019-09-20`
