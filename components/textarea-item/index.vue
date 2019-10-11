@@ -211,6 +211,7 @@ export default {
     .md-icon
       display flex
   &__textarea
+    font-family font-family-normal
     color textarea-item-color
     font-weight textarea-item-font-weight
     width 100%
