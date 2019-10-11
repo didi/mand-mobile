@@ -13,12 +13,20 @@
         ref="demo0"
         title="自动适应"
         class="example"
-        v-model="value"
         :autosize="true"
         :rows="1"
-        maxLength="10"
-        placeholder="最大高度100px 超过出现滚动条"
-        :max-height="100"
+        placeholder="最大高度150px"
+        :max-height="150"
+      />
+      <md-textarea-item
+        ref="demo0"
+        title="删除图标"
+        class="example"
+        :autosize="true"
+        clearable
+        :rows="1"
+        placeholder="输入出现删除图标"
+        :max-height="150"
       />
       <md-textarea-item
         ref="demo0"
@@ -27,7 +35,7 @@
         :autosize="true"
         value="禁用文本域, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述"
         placeholder="500字以内"
-        :max-height="100"
+        :max-height="150"
         disabled
       />
       <md-textarea-item
@@ -37,7 +45,7 @@
         :autosize="true"
         value="只读文本域, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述, 理赔报案描述"
         placeholder="500字以内"
-        :max-height="100"
+        :max-height="150"
         readonly
       />
     </md-field>
@@ -48,8 +56,9 @@
 
 export default {
   name: 'tips-demo',
+  /* DELETE */
   title: '普通文本域',
-  titleEnUS: 'basic',
+  /* DELETE */
   data() {
     return {
       value: '',

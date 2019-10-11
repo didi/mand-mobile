@@ -62,4 +62,20 @@ describe('TextareaItem - Operation', () => {
     }, 120)
     wrapper.vm.focus()
   })
+
+  test('input with delete icon', () => {
+    wrapper = mount(TextareaItem, {
+      propsData: {
+        maxHeight: 300,
+        maxLength: 10,
+        autosize: true,
+        clearable: true,
+        value: '1',
+      },
+    })
+    expect(wrapper.contains('.md-textarea-item__clear'))
+    const clearBtn = wrapper.find('.md-textarea-item__clear')
+    clearBtn.trigger('click')
+    expect(wrapper.vm.inputValue).toBe('')
+  })
 })

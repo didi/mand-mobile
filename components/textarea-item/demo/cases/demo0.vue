@@ -13,10 +13,19 @@
         ref="demo0"
         title="自动适应"
         class="example"
-        v-model="value"
         :autosize="true"
         :rows="1"
-        placeholder="最大高度100px 超过出现滚动条"
+        placeholder="最大高度150px"
+        :max-height="150"
+      />
+      <md-textarea-item
+        ref="demo0"
+        title="删除图标"
+        class="example"
+        :autosize="true"
+        clearable
+        :rows="1"
+        placeholder="输入出现删除图标"
         :max-height="150"
       />
       <md-textarea-item
