@@ -265,8 +265,9 @@ export default {
   .md-tab-bar-list
     justify-content flex-start
     .md-tab-bar-item
-      margin 0 60px 0 0
-      padding 0
+      flex none
+      margin 0 0
+      padding 0 30px
       font-size font-caption-normal
   .md-tab-pane
     padding-left tab-picker-h-gap
