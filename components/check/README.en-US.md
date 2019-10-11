@@ -94,7 +94,7 @@ Check multiple checks. Combine with `Check` or `CheckBox`.
 ```html
 <template>
   <md-check-list :options="data">
-    <template slot-scope="{ option }">
+    <template slot-scope="{ option, index, selected }">
       <div class="custom-title" v-text="option.text"></div>
       <div class="custom-brief">{{ option.text }} custom description</div>
     </template>

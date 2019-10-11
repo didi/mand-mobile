@@ -88,6 +88,7 @@ export default {
     top 0
     left 0
     right 0
+    z-index 2
   .scroll-view-category-title, .scroll-view-striky-title
     padding 10px 0
     text-align center

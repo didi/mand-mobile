@@ -24,6 +24,17 @@
       @keydown="$_onKeydown"
     ></textarea>
     <slot name="footer"></slot>
+    <template slot="right">
+      <div
+        class="md-textarea-item__clear"
+        v-if="clearable && !isDisabled && !readonly"
+        v-show="!isInputEmpty"
+        @click="$_clearInput"
+      >
+        <md-icon name="clear"></md-icon>
+      </div>
+      <slot name="right"></slot>
+    </template>
     <template slot="children">
       <div v-if="errorInfo" class="md-textarea-item-msg">
         <p>{{ errorInfo }}</p>
@@ -32,11 +43,13 @@
   </md-field-item>
 </template>
 <script>import FieldItem from '../field-item'
+import Icon from '../icon'
 
 export default {
   name: 'md-textarea-item',
   components: {
     [FieldItem.name]: FieldItem,
+    [Icon.name]: Icon,
   },
   props: {
     title: {
@@ -71,6 +84,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    clearable: {
+      type: Boolean,
+      default: false,
+    },
     rows: {
       type: [String, Number],
       default: '3',
@@ -97,6 +114,9 @@ export default {
     errorInfo() {
       return this.error
     },
+    isInputEmpty() {
+      return !this.inputValue.length
+    },
   },
   watch: {
     value(val) {
@@ -122,6 +142,13 @@ export default {
       this.$nextTick(() => {
         this.resizeTextarea()
       })
+    },
+    $_clearInput() {
+      this.inputValue = ''
+      this.$nextTick(() => {
+        this.resizeTextarea()
+      })
+      this.focus()
     },
     $_onKeyup(event) {
       this.$emit('keyup', event)
@@ -176,7 +203,15 @@ export default {
     .md-textarea-item__textarea
       -webkit-text-fill-color textarea-item-color-disabled
       color textarea-item-color-disabled
+  .md-field-item-right
+    align-items start
+  &__clear
+    padding 6px 0
+    color textarea-item-icon
+    .md-icon
+      display flex
   &__textarea
+    font-family font-family-normal
     color textarea-item-color
     font-weight textarea-item-font-weight
     width 100%

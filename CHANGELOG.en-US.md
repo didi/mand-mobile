@@ -3,6 +3,17 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.3
+
+`2019-10-11`
+
+- Feat
+  - `TextareaItem` add prop `clearable`[#589](https://github.com/didi/mand-mobile/issues/589)
+
+- Fix
+  - Fix the problem that `TabPicker` could not be dragged when the text was too long[#590](https://github.com/didi/mand-mobile/issues/590)
+  - Remove some non-required reset styles[#586](https://github.com/didi/mand-mobile/issues/586)
+
 ### 2.5.2
 
 `2019-09-20`
