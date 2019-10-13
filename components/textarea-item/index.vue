@@ -214,20 +214,17 @@ export default {
     .md-icon
       display flex
   &__textarea
-    font-family font-family-normal
-    color textarea-item-color
-    font-weight textarea-item-font-weight
+    box-sizing border-box
     width 100%
-    -webkit-appearance none
-    border none
+    font textarea-item-font-weight textarea-item-font-size font-family-normal
+    line-height textarea-item-line-height
+    color textarea-item-color
     background transparent
+    border none
     outline none
     resize none
-    box-sizing border-box
-    -webkit-tap-highlight-color transparent
     appearance none
-    line-height textarea-item-line-height
-    font-size textarea-item-font-size
+    -webkit-tap-highlight-color transparent
     &::-webkit-input-placeholder
       color textarea-item-placeholder-color
       font-weight textarea-item-placeholder-weight
