@@ -28,7 +28,7 @@
       <div
         class="md-textarea-item__clear"
         v-if="clearable && !isDisabled && !readonly"
-        v-show="!isInputEmpty"
+        v-show="!isInputEmpty && isInputFocus"
         @click="$_clearInput"
       >
         <md-icon name="clear"></md-icon>
@@ -105,6 +105,7 @@ export default {
     return {
       maxHeightInner: this.maxHeight,
       inputValue: this.value,
+      isInputFocus: false,
     }
   },
   computed: {
@@ -157,10 +158,12 @@ export default {
       this.$emit('keydown', event)
     },
     $_onFocus() {
+      this.isInputFocus = true
       this.$emit('focus')
     },
     $_onBlur() {
       setTimeout(() => {
+        this.isInputFocus = false
         this.$emit('blur')
       }, 100)
     },
