@@ -104,6 +104,9 @@ Scroll to the specified location
 |top|distance from top|Number|
 |animate|using animation|Boolean|
 
+##### getOffsets(): {left: number, top: number}
+Get scrolling position
+
 ##### triggerRefresh()
 -
 

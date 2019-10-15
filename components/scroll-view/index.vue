@@ -371,6 +371,13 @@ export default {
       }
       this.scroller.scrollTo(left, top, animate)
     },
+    getOffsets() {
+      /* istanbul ignore if */
+      if (!this.scroller) {
+        return {left: 0, top: 0}
+      }
+      return this.scroller.getValues()
+    },
     reflowScroller(force = false) {
       const container = this.container
       const content = this.content

@@ -104,6 +104,9 @@ Vue.component(ScrollView.name, ScrollView)
 |top|距顶部距离|Number|
 |animate|使用动画|Boolean|
 
+##### getOffsets(): {left: number, top: number}
+获取滚动位置
+
 ##### triggerRefresh()
 触发下拉刷新
 
