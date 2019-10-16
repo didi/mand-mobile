@@ -129,13 +129,22 @@ export default {
       return !!(this.$slots.more || this.$scopedSlots.more)
     },
   },
+  watch: {
+    autoReflow(val) {
+      if (val) {
+        this.$_initAutoReflow()
+      } else {
+        this.$_destroyAutoReflow()
+      }
+    },
+  },
   mounted() {
     if (!this.manualInit) {
       this.$_initScroller()
     }
   },
   destroyed() {
-    this.reflowTimer && clearInterval(this.reflowTimer)
+    this.$_destroyAutoReflow()
   },
   methods: {
     $_initScroller() {
@@ -207,9 +216,13 @@ export default {
       }
     },
     $_initAutoReflow() {
+      this.$_destroyAutoReflow()
       this.reflowTimer = setInterval(() => {
         this.reflowScroller()
       }, 100)
+    },
+    $_destroyAutoReflow() {
+      this.reflowTimer && clearInterval(this.reflowTimer)
     },
     $_checkScrollerEnd() {
       if (!this.scroller) {
