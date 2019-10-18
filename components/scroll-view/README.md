@@ -32,7 +32,7 @@ Vue.component(ScrollView.name, ScrollView)
 |scrolling-x | 水平滚动 | Boolean | `true` | - |
 |scrolling-y | 垂直滚动 | Boolean | `true` | - |
 |bouncing | 可回弹 | Boolean | `true` | -|
-|auto-reflow | 内容发生变化时自动重置滚动区域尺寸 | Boolean | `false` | 当设置为`false`时，内容发生变化需手动调用`reflowScroller` |
+|auto-reflow | 内容发生变化时自动重置滚动区域尺寸 | Boolean | `false` | 当设置为`false`时，内容发生变化需手动调用`reflowScroller`。建议当滚动区域被隐藏时将其关闭，否则会无法保存上次滚动位置。 |
 |manual-init | 手动初始化 | Boolean | `false` | 一般用于异步初始化的场景，需手动调用`init`方法完成初始化 |
 |end-reached-threshold | 触发到达底部的提前量 | Number | 0 | 单位`px` |
 |immediate-check-end-reaching <sup class="version-after">2.1.0+</sup>| 初始化时立即触发是否到达底部检查 | Boolean | `false` | - |
@@ -103,6 +103,9 @@ Vue.component(ScrollView.name, ScrollView)
 |left|距左侧距离|Number|
 |top|距顶部距离|Number|
 |animate|使用动画|Boolean|
+
+##### getOffsets(): {left: number, top: number}
+获取滚动位置 <sup class="version-after">2.5.4+</sup>
 
 ##### triggerRefresh()
 触发下拉刷新

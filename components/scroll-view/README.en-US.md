@@ -32,7 +32,7 @@ Vue.component(ScrollView.name, ScrollView)
 |scrolling-x | horizontal scrolling | Boolean | `true` | -|
 |scrolling-y | vertical scrolling | Boolean | `true` | -|
 |bouncing | - | Boolean | `true` | -|
-|auto-reflow| automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` |
+|auto-reflow| automatically reset scroller size when content changes | Boolean | `false` | manually call `reflowScroller` when set to `false` and it is recommended to turn `auto-reflow` off when `ScrollView` is hidden, otherwise the last scroll position will not be saved|
 |manual-init | manual initialization | Boolean | `false` | generally used for asynchronous initialization scenarios, you need to manually call the `init` method to complete the initialization |
 |end-reached-threshold | threshold for emitting `endReached`. | Number | 0 | unit `px` |
 |immediate-check-end-reaching <sup class="version-after">2.1.0+</sup>| check if it reaches the bottom at initialization | Boolean | `false` | - |
@@ -103,6 +103,9 @@ Scroll to the specified location
 |left|distance from left|Number|
 |top|distance from top|Number|
 |animate|using animation|Boolean|
+
+##### getOffsets(): {left: number, top: number}
+Get scrolling position <sup class="version-after">2.5.4+</sup>
 
 ##### triggerRefresh()
 -
