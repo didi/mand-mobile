@@ -100,6 +100,7 @@ export default {
       dragging: false,
       userScrolling: null,
       isInitial: false,
+      duration: 0,
       index: 0, // real index (swiper perspective)
       fromIndex: 0, // display index (user perspective)
       toIndex: 0, // display index
@@ -113,10 +114,19 @@ export default {
       timer: null,
       noDrag: false,
       scroller: null,
-      isStoped: false,
+      isStoped: true,
       $swiper: null,
       transitionEndHandler: null,
     }
+  },
+
+  watch: {
+    autoplay: {
+      handler(val) {
+        this.duration = val
+      },
+      immediate: true,
+    },
   },
 
   computed: {
@@ -149,7 +159,7 @@ export default {
     this.$swiperBox = this.$el.querySelector('.md-swiper-box')
     this.$nextTick(() => {
       this.$_reInitItems()
-      this.$_startPlay()
+      this.play(this.duration)
       window.addEventListener('resize', this.$_resize)
     })
   },
@@ -179,8 +189,12 @@ export default {
       if (this.__resizeTimeout__) {
         clearTimeout(this.__resizeTimeout__)
       }
+      this.stop()
+
+      const startIndex = this.index
       this.__resizeTimeout__ = setTimeout(() => {
-        this.$_reInitItems()
+        this.$_reInitItems(startIndex)
+        this.play(this.duration)
       }, 300)
     },
     $_onDragStart(e) {
@@ -293,6 +307,12 @@ export default {
     },
 
     $_opacity(animate = true, opacity) {
+      const children = this.$children
+
+      if (!children || !children.length) {
+        return
+      }
+
       if (typeof opacity !== 'undefined') {
         let toIndex = 0
         let fromIndex = this.toIndex
@@ -311,16 +331,16 @@ export default {
             toIndex = 0
           }
         }
-        const from = this.$children[fromIndex].$el
-        const to = this.$children[toIndex].$el
+        const from = children[fromIndex].$el
+        const to = children[toIndex].$el
         from.style.opacity = 1 - Math.abs(opacity)
         from.style.transition = animate ? 'opacity 300ms ease' : ''
         to.style.opacity = Math.abs(opacity)
         return
       }
 
-      const from = this.$children[this.fromIndex].$el
-      const to = this.$children[this.toIndex].$el
+      const from = children[this.fromIndex].$el
+      const to = children[this.toIndex].$el
       from.style.opacity = 0
       from.style.transition = animate ? 'opacity 500ms ease' : ''
       to.style.opacity = 1
@@ -331,18 +351,26 @@ export default {
       }
     },
 
-    $_initState(children) {
+    $_initState(children, startIndex) {
       this.oItemCount = children.length
       this.rItemCount = children.length
       this.noDrag = children.length === 1 || !this.dragable
-      this.index = this.defaultIndex >= 0 && this.defaultIndex < children.length ? parseInt(this.defaultIndex) : 0
+
+      this.index =
+        startIndex !== undefined
+          ? this.$_calcDisplayIndex(startIndex)
+          : this.defaultIndex >= 0 && this.defaultIndex < children.length ? parseInt(this.defaultIndex) : 0
+
       this.firstIndex = 0
       this.lastIndex = children.length - 1
-      this.fromIndex = this.index === this.firstIndex ? this.lastIndex : this.index + 1
+      this.fromIndex =
+        this.index === this.firstIndex
+          ? this.lastIndex
+          : this.index === this.lastIndex ? this.firstIndex : this.index + 1
       this.toIndex = this.index
     },
 
-    $_reInitItems() {
+    $_reInitItems(startIndex) {
       const children = this.$children
 
       if (!children || !children.length) {
@@ -350,8 +378,7 @@ export default {
       }
 
       this.$_getDimension()
-
-      this.$_initState(children)
+      this.$_initState(children, startIndex)
 
       if (this.isSlide) {
         this.$_backupItem(children)
@@ -364,7 +391,7 @@ export default {
     },
 
     $_startPlay() {
-      if (this.autoplay > 0 && this.oItemCount > 1) {
+      if (this.duration > 0 && this.oItemCount > 1) {
         this.$_clearTimer()
         this.timer = setInterval(() => {
           if (!this.isLoop && this.index >= this.rItemCount - 1) {
@@ -373,7 +400,7 @@ export default {
           if (!this.dragging) {
             this.next()
           }
-        }, this.autoplay)
+        }, this.duration)
       }
     },
 
@@ -577,7 +604,7 @@ export default {
       const isFastDrag = dragDuration < PAGING_DURATION
 
       if (isFastDrag && dragState.currentLeft === undefined) {
-        this.play(this.autoplay)
+        this.play(this.duration)
         return
       }
 
@@ -609,7 +636,7 @@ export default {
 
       this.dragState = {}
 
-      this.play(this.autoplay)
+      this.play(this.duration)
     },
 
     // MARK: events handler, 如 $_onButtonClick
@@ -637,19 +664,20 @@ export default {
       })
 
       // restart timer
-      this.play(this.autoplay)
+      this.play(this.duration)
     },
 
     getIndex() {
       return this.$_calcDisplayIndex(this.index)
     },
 
-    play(autoplay = 3000) {
+    play(duration = 3000) {
       this.$_clearTimer()
-      if (autoplay < 500) {
+      if (duration < 500) {
         return
       }
-      this.autoplay = autoplay || this.autoplay
+
+      this.duration = duration || this.autoplay
       this.$_startPlay()
       this.isStoped = false
     },
@@ -666,8 +694,8 @@ export default {
       this.$nextTick(() => {
         this.$_clearTimer()
         this.$_reInitItems()
-        if (this.autoplay > 0 && !this.isStoped) {
-          this.$_startPlay()
+        if (!this.isStoped) {
+          this.play(this.duration)
         }
       })
     },
@@ -679,8 +707,8 @@ export default {
       this.$nextTick(() => {
         this.$_clearTimer()
         this.$_reInitItems()
-        if (this.autoplay > 0 && !this.isStoped) {
-          this.$_startPlay()
+        if (!this.isStoped) {
+          this.play(this.duration)
         }
       })
     }, 50),
