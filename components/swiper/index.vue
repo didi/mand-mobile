@@ -189,12 +189,14 @@ export default {
       if (this.__resizeTimeout__) {
         clearTimeout(this.__resizeTimeout__)
       }
-      this.stop()
 
+      // if swiper stoped originally, keep status
+      const isStoped = this.isStoped
       const startIndex = this.index
+      !isStoped && this.stop()
       this.__resizeTimeout__ = setTimeout(() => {
         this.$_reInitItems(startIndex)
-        this.play(this.duration)
+        !isStoped && this.play(this.duration)
       }, 300)
     },
     $_onDragStart(e) {
