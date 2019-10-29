@@ -88,7 +88,7 @@ export default {
       buttons: [{
         type: 'link',
         text: '设计资源',
-        src: '/zh-CN/design/resource',
+        src: '/zh-CN/design/',
         theme: 'demo'
       }],
       animations: {
@@ -170,7 +170,7 @@ export default {
       buttons: [{
         type: 'link',
         text: 'Resource',
-        src: '/en-US/design/resource',
+        src: '/en-US/design/',
         theme: 'demo'
       }],
       animations: {
