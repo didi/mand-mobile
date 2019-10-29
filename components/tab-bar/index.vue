@@ -181,7 +181,7 @@ export default {
     $_resizeEnterBehavior() {
       window.addEventListener('resize', this.reflow)
       this.reflow()
-
+      /* istanbul ignore next */
       if (this.immediate) {
         this.$nextTick(() => {
           this.$emit('change', this.items[this.currentIndex], this.currentIndex)
@@ -193,6 +193,7 @@ export default {
     },
     // MARK: public methods
     reflow() {
+      /* istanbul ignore next */
       if (!this.$refs.items || this.$refs.items.length === 0) {
         return
       }
@@ -206,6 +207,7 @@ export default {
       this.contentW = contentWidth
       this.$refs.scroller.reflowScroller()
       this.$nextTick(() => {
+        /* istanbul ignore next */
         if (!this.$refs.items || !this.$refs.items[this.currentIndex]) {
           return
         }
@@ -221,7 +223,7 @@ export default {
           this.$refs.scroller.scrollTo(0, 0, true)
           return
         }
-
+        /* istanbul ignore next */
         if (!nextTarget) {
           this.$refs.scroller.scrollTo(this.contentW, 0, true)
           return
