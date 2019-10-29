@@ -154,29 +154,23 @@ export default {
   beforeMount
   */
   mounted() {
-    this.ready = true
-    this.$swiper = this.$el.querySelector('.md-swiper-container')
-    this.$swiperBox = this.$el.querySelector('.md-swiper-box')
-    this.$nextTick(() => {
-      this.$_reInitItems()
-      this.play(this.duration)
-      window.addEventListener('resize', this.$_resize)
-    })
+    this.$_resizeEnterBehavior()
   },
   /*
   beforeUpdate
   updated
-  activated
-  deactivated
-  beforeDestroy
   */
+  activated() {
+    this.$_resizeEnterBehavior()
+  },
+  deactivated() {
+    this.$_resizeLeaveBehavior()
+  },
+  /**
+   beforeDestroy
+   */
   destroyed() {
-    this.ready = false
-    this.$_clearTimer()
-    window.removeEventListener('resize', this.$_resize)
-    if (this.__resizeTimeout__) {
-      clearTimeout(this.__resizeTimeout__)
-    }
+    this.$_resizeLeaveBehavior()
   },
   /*
   errorCaptured
@@ -636,6 +630,24 @@ export default {
       this.dragState = {}
 
       this.play(this.duration)
+    },
+    $_resizeEnterBehavior() {
+      this.ready = true
+      this.$swiper = this.$el.querySelector('.md-swiper-container')
+      this.$swiperBox = this.$el.querySelector('.md-swiper-box')
+      this.$nextTick(() => {
+        this.$_reInitItems()
+        this.play(this.duration)
+        window.addEventListener('resize', this.$_resize)
+      })
+    },
+    $_resizeLeaveBehavior() {
+      this.ready = false
+      this.$_clearTimer()
+      window.removeEventListener('resize', this.$_resize)
+      if (this.__resizeTimeout__) {
+        clearTimeout(this.__resizeTimeout__)
+      }
     },
 
     // MARK: events handler, 如 $_onButtonClick

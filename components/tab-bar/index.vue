@@ -149,17 +149,10 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('resize', this.reflow)
-    this.reflow()
-
-    if (this.immediate) {
-      this.$nextTick(() => {
-        this.$emit('change', this.items[this.currentIndex], this.currentIndex)
-      })
-    }
+    this.$_resizeEnterBehavior()
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.reflow)
+    this.$_resizeLeaveBehavior()
   },
 
   methods: {
@@ -184,6 +177,19 @@ export default {
       this.$emit('change', item, index, this.currentIndex)
       this.currentName = item.name
       this.$emit('input', item.name)
+    },
+    $_resizeEnterBehavior() {
+      window.addEventListener('resize', this.reflow)
+      this.reflow()
+
+      if (this.immediate) {
+        this.$nextTick(() => {
+          this.$emit('change', this.items[this.currentIndex], this.currentIndex)
+        })
+      }
+    },
+    $_resizeLeaveBehavior() {
+      window.removeEventListener('resize', this.reflow)
     },
     // MARK: public methods
     reflow() {
