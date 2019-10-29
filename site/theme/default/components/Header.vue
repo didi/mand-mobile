@@ -103,7 +103,7 @@ export default {
       versionTableShow: false,
       versionData: [{
         text: 'v1.x',
-        path: 'https://mand-mobile.github.io'
+        path: 'https://mand-mobile.github.io/1x-doc/'
       }],
       langSwitchPath: ''
     }
