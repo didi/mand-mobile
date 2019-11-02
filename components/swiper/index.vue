@@ -154,29 +154,23 @@ export default {
   beforeMount
   */
   mounted() {
-    this.ready = true
-    this.$swiper = this.$el.querySelector('.md-swiper-container')
-    this.$swiperBox = this.$el.querySelector('.md-swiper-box')
-    this.$nextTick(() => {
-      this.$_reInitItems()
-      this.play(this.duration)
-      window.addEventListener('resize', this.$_resize)
-    })
+    this.$_resizeEnterBehavior()
   },
   /*
   beforeUpdate
   updated
-  activated
-  deactivated
-  beforeDestroy
   */
+  activated() {
+    this.$_resizeEnterBehavior()
+  },
+  deactivated() {
+    this.$_resizeLeaveBehavior()
+  },
+  /**
+   beforeDestroy
+   */
   destroyed() {
-    this.ready = false
-    this.$_clearTimer()
-    window.removeEventListener('resize', this.$_resize)
-    if (this.__resizeTimeout__) {
-      clearTimeout(this.__resizeTimeout__)
-    }
+    this.$_resizeLeaveBehavior()
   },
   /*
   errorCaptured
@@ -214,6 +208,7 @@ export default {
       if (this.isPrevent) {
         e.preventDefault()
       }
+      /* istanbul ignore if */
       if (!this.dragging) {
         return
       }
@@ -223,11 +218,13 @@ export default {
       if (this.isPrevent) {
         e.preventDefault()
       }
+      /* istanbul ignore if */
       if (this.userScrolling) {
         this.dragging = false
         this.dragState = {}
         return
       }
+      /* istanbul ignore if */
       if (!this.dragging) {
         return
       }
@@ -307,11 +304,11 @@ export default {
 
     $_opacity(animate = true, opacity) {
       const children = this.$children
-
+      /* istanbul ignore if */
       if (!children || !children.length) {
         return
       }
-
+      /* istanbul ignore if */
       if (typeof opacity !== 'undefined') {
         let toIndex = 0
         let fromIndex = this.toIndex
@@ -393,6 +390,7 @@ export default {
       if (this.duration > 0 && this.oItemCount > 1) {
         this.$_clearTimer()
         this.timer = setInterval(() => {
+          /* istanbul ignore if */
           if (!this.isLoop && this.index >= this.rItemCount - 1) {
             return this.$_clearTimer()
           }
@@ -418,6 +416,7 @@ export default {
         if ((!vertical && currentTop === startTop) || (vertical && currentLeft === startLeft)) {
           return false
         } else {
+          /* istanbul ignore next */
           if (diffX * diffX + diffY * diffY >= 25) {
             const _touchAngle = Math.atan2(Math.abs(diffY), Math.abs(diffX)) * 180 / Math.PI
             return !vertical ? _touchAngle > this.touchAngle : 90 - _touchAngle > this.touchAngle
@@ -466,6 +465,7 @@ export default {
       if (!towards) {
         return
       }
+      /* istanbul ignore next */
       if (options && options.index !== undefined) {
         this.index = options.index
       } else if (towards === 'prev') {
@@ -502,7 +502,7 @@ export default {
       setTimeout(() => {
         const isFirstItem = this.isFirstItem && this.isLoop
         const isLastItem = this.isLastItem && this.isLoop
-
+        /* istanbul ignore next */
         this.transitionEndHandler = () => {
           // Recover first and last page
           if (isLastItem) {
@@ -564,7 +564,7 @@ export default {
       let offsetLeft = dragState.currentLeft - dragState.startLeft
       let offsetTop = dragState.currentTop - dragState.startTop
       this.userScrolling = this.$_isScroll(dragState, Math.abs(offsetLeft), Math.abs(offsetTop))
-
+      /* istanbul ignore if */
       if (this.userScrolling) {
         return
       }
@@ -637,6 +637,24 @@ export default {
 
       this.play(this.duration)
     },
+    $_resizeEnterBehavior() {
+      this.ready = true
+      this.$swiper = this.$el.querySelector('.md-swiper-container')
+      this.$swiperBox = this.$el.querySelector('.md-swiper-box')
+      this.$nextTick(() => {
+        this.$_reInitItems()
+        this.play(this.duration)
+        window.addEventListener('resize', this.$_resize)
+      })
+    },
+    $_resizeLeaveBehavior() {
+      this.ready = false
+      this.$_clearTimer()
+      window.removeEventListener('resize', this.$_resize)
+      if (this.__resizeTimeout__) {
+        clearTimeout(this.__resizeTimeout__)
+      }
+    },
 
     // MARK: events handler, 如 $_onButtonClick
 
@@ -690,6 +708,7 @@ export default {
       if (!this.ready) {
         return
       }
+      /* istanbul ignore next */
       this.$nextTick(() => {
         this.$_clearTimer()
         this.$_reInitItems()
@@ -703,6 +722,7 @@ export default {
       if (!this.ready) {
         return
       }
+      /* istanbul ignore next */
       this.$nextTick(() => {
         this.$_clearTimer()
         this.$_reInitItems()
