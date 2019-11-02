@@ -69,4 +69,19 @@ describe('ScrollView', () => {
     expect(wrapper.findAll('.scroll-view-more').length > 0).toBe(true)
     wrapper.vm.finishLoadMore()
   })
+
+  it('get offsets', () => {
+    wrapper = mount(ScrollView, {
+      propsData: {
+        autoReflow: true,
+      },
+      slots: {
+        default: ScrollViewContent,
+      },
+    })
+    // const eventStub = sinon.stub(wrapper.vm, '$emit')
+
+    wrapper.vm.init()
+    expect(wrapper.vm.getOffsets().top).toBe(0)
+  })
 })

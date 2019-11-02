@@ -28,7 +28,7 @@
       <div
         class="md-textarea-item__clear"
         v-if="clearable && !isDisabled && !readonly"
-        v-show="!isInputEmpty"
+        v-show="!isInputEmpty && isInputFocus"
         @click="$_clearInput"
       >
         <md-icon name="clear"></md-icon>
@@ -105,6 +105,7 @@ export default {
     return {
       maxHeightInner: this.maxHeight,
       inputValue: this.value,
+      isInputFocus: false,
     }
   },
   computed: {
@@ -157,10 +158,12 @@ export default {
       this.$emit('keydown', event)
     },
     $_onFocus() {
+      this.isInputFocus = true
       this.$emit('focus')
     },
     $_onBlur() {
       setTimeout(() => {
+        this.isInputFocus = false
         this.$emit('blur')
       }, 100)
     },
@@ -183,9 +186,13 @@ export default {
     },
     focus() {
       this.$refs.textarea.focus()
+      setTimeout(() => {
+        this.isInputFocus = true
+      }, 200)
     },
     blur() {
       this.$refs.textarea.blur()
+      this.isInputFocus = false
     },
     getValue() {
       return this.inputValue
@@ -211,20 +218,17 @@ export default {
     .md-icon
       display flex
   &__textarea
-    font-family font-family-normal
-    color textarea-item-color
-    font-weight textarea-item-font-weight
+    box-sizing border-box
     width 100%
-    -webkit-appearance none
-    border none
+    font textarea-item-font-weight textarea-item-font-size font-family-normal
+    line-height textarea-item-line-height
+    color textarea-item-color
     background transparent
+    border none
     outline none
     resize none
-    box-sizing border-box
-    -webkit-tap-highlight-color transparent
     appearance none
-    line-height textarea-item-line-height
-    font-size textarea-item-font-size
+    -webkit-tap-highlight-color transparent
     &::-webkit-input-placeholder
       color textarea-item-placeholder-color
       font-weight textarea-item-placeholder-weight

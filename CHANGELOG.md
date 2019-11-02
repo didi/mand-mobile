@@ -3,6 +3,19 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.4
+
+`2019-11-02`
+
+- Feat
+  - `ScrollView`增加方法`getOffsets`，用于获取当前滚动距离
+
+- Fix
+  - 修复`Swiper`因窗口尺寸变更回到第一屏的问题[#596](https://github.com/didi/mand-mobile/issues/596)
+  - 修复`Swiper`和`TabBar`在`keep-alive`中使用因窗口尺寸变更导致尺寸异常的问题[#599](https://github.com/didi/mand-mobile/issues/599)
+  - 修复`TabBar`尺寸计算兼容性问题
+  - 更新`TextareaItem`清空按钮的展示逻辑，只有当表单值不为空且获得焦点时才展示[#589](https://github.com/didi/mand-mobile/issues/589)
+
 ### 2.5.3
 
 `2019-10-11`

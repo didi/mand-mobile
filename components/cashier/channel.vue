@@ -130,7 +130,6 @@ export default {
     clearfix()
     position relative
     padding 65px 0 25px
-    hairline(bottom, color-border-minor)
     p
       block()
       text-align center

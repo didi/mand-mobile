@@ -68,4 +68,25 @@ export default {
           color #fff
           &:hover
             box-shadow 0 4px 8px RGBA(252, 145, 83, .5)
+@media (max-width: 750px)
+  .mfe-blog-theme-default-error
+    .error-box
+      display flex
+      flex-direction column
+      align-items center
+      margin-bottom 10%
+      img
+        width 100px
+      .error-box-text
+        display flex
+        flex-direction column
+        align-items center
+        margin 20px 0
+        text-align center
+        h1
+          font-size 23px
+        p
+          font-size 16px
+        .router-link-active
+          margin 20px 0
 </style>

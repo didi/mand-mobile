@@ -129,13 +129,22 @@ export default {
       return !!(this.$slots.more || this.$scopedSlots.more)
     },
   },
+  watch: {
+    autoReflow(val) {
+      if (val) {
+        this.$_initAutoReflow()
+      } else {
+        this.$_destroyAutoReflow()
+      }
+    },
+  },
   mounted() {
     if (!this.manualInit) {
       this.$_initScroller()
     }
   },
   destroyed() {
-    this.reflowTimer && clearInterval(this.reflowTimer)
+    this.$_destroyAutoReflow()
   },
   methods: {
     $_initScroller() {
@@ -207,9 +216,13 @@ export default {
       }
     },
     $_initAutoReflow() {
+      this.$_destroyAutoReflow()
       this.reflowTimer = setInterval(() => {
         this.reflowScroller()
       }, 100)
+    },
+    $_destroyAutoReflow() {
+      this.reflowTimer && clearInterval(this.reflowTimer)
     },
     $_checkScrollerEnd() {
       if (!this.scroller) {
@@ -370,6 +383,13 @@ export default {
         return
       }
       this.scroller.scrollTo(left, top, animate)
+    },
+    getOffsets() {
+      /* istanbul ignore if */
+      if (!this.scroller) {
+        return {left: 0, top: 0}
+      }
+      return this.scroller.getValues()
     },
     reflowScroller(force = false) {
       const container = this.container

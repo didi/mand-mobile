@@ -230,8 +230,4 @@ export default {
           justify-content center
           &:active
             background-color number-keyboard-key-confirm-bg-tap
-
-  &.simple
-    .keyboard-number-item
-      color number-keyboard-key-color-simple !important
 </style>

@@ -60,8 +60,6 @@ export default {
   &.is-checked
     color checkbox-active-color
     border-color checkbox-active-border-color
-    &:before
-      background-color checkbox-active-bg
     &.is-disabled
       color checkbox-active-color
       border-color checkbox-active-border-color
