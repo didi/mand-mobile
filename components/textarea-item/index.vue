@@ -186,9 +186,13 @@ export default {
     },
     focus() {
       this.$refs.textarea.focus()
+      setTimeout(() => {
+        this.isInputFocus = true
+      }, 200)
     },
     blur() {
       this.$refs.textarea.blur()
+      this.isInputFocus = false
     },
     getValue() {
       return this.inputValue
