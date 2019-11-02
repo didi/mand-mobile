@@ -202,7 +202,8 @@ export default {
 
       let contentWidth = 0
       for (let i = 0, len = this.items.length; i < len; i++) {
-        contentWidth += this.$refs.items[i].offsetWidth
+        const {width} = this.$refs.items[i].getBoundingClientRect()
+        contentWidth += width
       }
       this.contentW = contentWidth
       this.$refs.scroller.reflowScroller()
