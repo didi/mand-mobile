@@ -3,6 +3,19 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.4
+
+`2019-11-02`
+
+- Feat
+  - `ScrollView` adds method`getOffsets`, used to get scroll distance
+
+- Fix
+  - Fix the problem that `Swiper` changes back to the first screen due to window size change[#596](https://github.com/didi/mand-mobile/issues/596)
+  - Fix the problem of size exception caused by window size change when `Swiper` and `TabBar` were used in `keep-alive`[#599](https://github.com/didi/mand-mobile/issues/599)
+  - Fix `TabBar` size calculation compatibility issue
+  - Update the presentation logic of the `TextareaItem` empty button, only when the form value is not empty and focused[#589](https://github.com/didi/mand-mobile/issues/589)
+
 ### 2.5.3
 
 `2019-10-11`
