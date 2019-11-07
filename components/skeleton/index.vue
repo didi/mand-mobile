@@ -9,7 +9,7 @@
       }"
     ></div>
     <div class="md-skeleton-content">
-      <h4 class="md-skeleton-title" :style="{ width: getTitleWidth() }" />
+      <h4 v-if="title" class="md-skeleton-title" :style="{ width: getTitleWidth() }" />
       <div
         v-for="index in row"
         class="md-skeleton-row"
@@ -23,7 +23,8 @@
     <slot></slot>
   </div>
 </template>
-<script>const DEFUALT_TITLE_WIDTH = '40%'
+<script>
+const DEFUALT_TITLE_WIDTH = '40%'
 const DEFUALT_WIDTH = '100%'
 
 export default {
@@ -82,7 +83,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 placeHolder()
