@@ -128,6 +128,7 @@ export default {
       })
     },
     items() {
+      /* istanbul ignore next */
       this.$nextTick(function() {
         this.reflow()
       })
@@ -138,6 +139,7 @@ export default {
       })
     },
     scrollable() {
+      /* istanbul ignore next */
       this.scrollerTmpKey = Date.now()
     },
   },
@@ -150,6 +152,14 @@ export default {
   },
   mounted() {
     this.$_resizeEnterBehavior()
+  },
+  activated() {
+    /* istanbul ignore next */
+    this.$_resizeEnterBehavior()
+  },
+  deactivated() {
+    /* istanbul ignore next */
+    this.$_resizeLeaveBehavior()
   },
   beforeDestroy() {
     this.$_resizeLeaveBehavior()

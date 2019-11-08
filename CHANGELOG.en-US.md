@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.5
+
+`2019-11-08`
+
+- Fix
+  - Fix the problem of size exception caused by window size change when `TabBar` were used in `keep-alive`[#608](https://github.com/didi/mand-mobile/issues/608)
+  - Fix `Skeleton` title exception shows when it is empty
+
 ### 2.5.4
 
 `2019-11-02`

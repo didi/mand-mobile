@@ -127,23 +127,6 @@ Vue.use(mandMobile)
 
 #### 使用前准备
 
-##### FastClick
-
-为避免[浏览器兼容问题](https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile)引起的点击问题, 推荐引入[FastClick](https://github.com/ftlabs/fastclick)
-
-```javascript
-import FastClick from 'fastclick'
-
-if ('addEventListener' in document && 'ontouchstart' in window) {
-  FastClick.prototype.focus = function (targetElement) {
-    targetElement.focus()
-  }
-  document.addEventListener('DOMContentLoaded', function () {
-    FastClick.attach(document.body)
-  }, false)
-}
-```
-
 ##### 产出包目录
 
 [产出包](https://unpkg.com/mand-mobile/)中包含以下几种不同目录，分别适用于不同场景的代码，可根据实际需要选择一个目录加载：

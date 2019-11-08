@@ -3,6 +3,14 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.5
+
+`2019-11-08`
+
+- Fix
+  - 修复`TabBar`在`keep-alive`中使用因窗口尺寸变更导致尺寸异常的问题[#608](https://github.com/didi/mand-mobile/issues/608)
+  - 修复`Skeleton`标题为空时也展示的问题
+
 ### 2.5.4
 
 `2019-11-02`
