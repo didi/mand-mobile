@@ -132,7 +132,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .md-popup-title-bar
   position relative
   width 100%
