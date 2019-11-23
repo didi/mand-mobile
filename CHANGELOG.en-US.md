@@ -3,6 +3,13 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.6
+
+`2019-11-23`
+
+- Fix
+  - Fix `Stepper` has initial values, maximum and minimum values are the problem of not being able to enter numbers, and optimized boundary check logic[#614](https://github.com/didi/mand-mobile/issues/614)
+
 ### 2.5.5
 
 `2019-11-08`

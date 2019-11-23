@@ -3,6 +3,13 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.6
+
+`2019-11-23`
+
+- Fix
+  - 修复`Stepper`有初始值，最大和最小值是无法输入数字的问题，并优化了边界校验逻辑[#614](https://github.com/didi/mand-mobile/issues/614)
+
 ### 2.5.5
 
 `2019-11-08`
