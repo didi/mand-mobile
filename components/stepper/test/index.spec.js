@@ -72,14 +72,30 @@ describe('Stepper Operation', () => {
   test('stepper method checkStatus', () => {
     wrapper = mount(Stepper)
     wrapper.vm.min = 2
+    wrapper.vm.max = 5
     wrapper.vm.currentNum = 3
     wrapper.vm.step = 2
     wrapper.vm.$_checkStatus()
+    expect(wrapper.vm.isMin).toBe(false)
+    wrapper.vm.$_reduce()
+    expect(wrapper.vm.currentNum).toBe(2)
     expect(wrapper.vm.isMin).toBe(true)
+    wrapper.vm.currentNum = 4
+    wrapper.vm.$_checkStatus()
+    expect(wrapper.vm.isMax).toBe(false)
+    wrapper.vm.$_add()
+    expect(wrapper.vm.currentNum).toBe(5)
+    expect(wrapper.vm.isMax).toBe(true)
   })
 
   test('stepper input', () => {
-    wrapper = mount(Stepper)
+    wrapper = mount(Stepper, {
+      listeners: {
+        input(val) {
+          wrapper.setProps({value: val})
+        },
+      },
+    })
     const input = wrapper.find('input')
     triggerTouch(input.element, 'focus')
     triggerTouch(input.element, 'input', 0, 0, 5)
