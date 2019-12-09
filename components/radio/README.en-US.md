@@ -51,7 +51,6 @@ Check multiple radios. Combine with `Radio` or `RadioBox` <sup class="version-af
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
 |v-model|selected names|Array|-|-|
-|max|max selected name length|Number|`0`|`0`: no limit|
 
 #### RadioGroup Methods
 

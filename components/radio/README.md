@@ -54,7 +54,6 @@ Vue.component(RadioList.name, RadioList)
 |属性 | 说明 | 类型 | 默认值 | 备注 |
 |----|-----|------|------|------|
 |v-model|选中的值|Array|-|-|
-|max|最多选择几个|Number|`0`|0为不限制|
 
 #### RadioGroup Methods
 
