@@ -78,6 +78,7 @@ export default {
   display flex
   flex 1
   padding-bottom constant(safe-area-inset-bottom)
+  padding-bottom env(safe-area-inset-bottom)
   
 .md-action-bar-text
   display flex

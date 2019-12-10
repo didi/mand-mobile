@@ -517,7 +517,6 @@ export default {
   position relative
   width 100%
   padding 0 picker-padding-h
-  padding-bottom constant(safe-area-inset-bottom)
   background color-bg-inverse
   box-sizing border-box
   transform translate3d(0, 0, 0)

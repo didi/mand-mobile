@@ -203,7 +203,6 @@ export default {
   left 0
   right 0
   height drop-menu-height
-  padding-bottom constant(safe-area-inset-bottom)
   box-sizing border-box
   color color-text-minor
   font-size drop-menu-font-size
