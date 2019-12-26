@@ -147,7 +147,18 @@ export default {
       if (!wrap || !content) {
         return
       }
-      this.overflow = content.scrollWidth > wrap.clientWidth
+      /**
+       * 计算 padding-left 对宽度的影响
+       * 替换 clientWidth 为 getBoundingClientRect
+       */
+      const paddingLeft =
+        window
+          .getComputedStyle(content, null)
+          .getPropertyValue('padding')
+          .split(' ')[3] || '0px'
+      const left = +paddingLeft.match(/\d+/g)[0]
+
+      this.overflow = content.scrollWidth - left > Math.ceil(wrap.getBoundingClientRect().width)
     },
   },
 }
