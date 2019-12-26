@@ -59,6 +59,11 @@
     <md-landscape v-model="showListen" @show="alert('已弹出')" @hide="alert('已隐藏')">
       <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
     </md-landscape>
+
+    <md-button @click="showCustomTransition=true">自定义动画</md-button>
+    <md-landscape v-model="showCustomTransition" transition="md-bounce">
+      <img src="//manhattan.didistatic.com/static/manhattan/do1_6VL7HL8TYaUMsIfygfpz">
+    </md-landscape>
   </div>
 </template>
 
@@ -80,6 +85,7 @@ export default {
       showFullScreen: false,
       showListen: false,
       showMaskClosable: false,
+      showCustomTransition: false,
     }
   },
   methods: {
