@@ -29,6 +29,7 @@ Vue.component(Codebox.name, Codebox)
 | ok-text | the text of confirmation button of the keyboard |String| `Confirm` |
 | disorder| whether to use random keyboard layout or not | Boolean | `false` |
 | system | whether to use system keyboard or simulated keyboard | Boolean | `false` |
+| is-view | whether to show as inline element or append to the body | Boolean |`false`|
 
 #### Codebox Methods
 
