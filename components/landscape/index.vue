@@ -6,7 +6,7 @@
       prevent-scroll
       prevent-scroll-exclude=".md-landscape-content"
       :has-mask="!fullScreen && hasMask"
-      :transition="fullScreen ? 'md-fade' : 'md-punch'"
+      :transition="transition"
       @input="$emit('input', false)"
       @show="$emit('show')"
       @hide="$emit('hide')">
@@ -56,6 +56,12 @@ export default {
     maskClosable: {
       type: Boolean,
       default: false,
+    },
+    transition: {
+      type: String,
+      default() {
+        return this.fullScreen ? 'md-fade' : 'md-punch'
+      },
     },
   },
 

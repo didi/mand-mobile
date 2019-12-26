@@ -3,6 +3,18 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.7
+
+`2019-12-26`
+
+- Feat
+  - `Landscape`增加属性`transition`，用于自定义展示动效
+
+- Fix
+  - 修复`Tabs`在切换时可能导致的重绘问题[#627](https://github.com/didi/mand-mobile/issues/614)
+  - 修复`NoticeBar`动态变化内容时导致误触滚动的问题[#628](https://github.com/didi/mand-mobile/issues/614)
+  - 修复`ActionBar`, `NumberKeyboard`安全区留白兼容写法
+
 ### 2.5.6
 
 `2019-11-23`

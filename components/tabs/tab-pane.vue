@@ -67,6 +67,7 @@
 .md-tab-pane
   position relative
   width 100%
+  transform translateZ(0)
 
 .md-tab-slide-left,
 .md-tab-slide-right

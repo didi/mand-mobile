@@ -26,7 +26,7 @@ Vue.component(PopupTitleBar.name, PopupTitleBar)
 |has-mask|是否有蒙层|Boolean|`true`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
 |position|弹出层位置|String|`center`|`center`, `top`, `bottom`, `left`, `right`|
-|transition|弹出层过度动画|String|-|`fade`, `fade-bounce`, `fade-slide`, `fade-zoom`<br> `slide-up`, `slide-down`, `slide-left`, `slide-right`|
+|transition|弹出层过渡动画|String|-|`fade`, `fade-bounce`, `fade-slide`, `fade-zoom`<br> `slide-up`, `slide-down`, `slide-left`, `slide-right`|
 
 #### PopupTitleBar Props
 |属性 | 说明 | 类型 | 默认值 | 备注|

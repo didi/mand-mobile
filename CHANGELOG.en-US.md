@@ -3,6 +3,18 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.7
+
+`2019-12-26`
+
+- Feat
+  - `Landscape` add prop `transition`, used to customize the display animation
+
+- Fix
+  - Fix the reflowing issue that `Tabs` may cause when switching tabs[#627](https://github.com/didi/mand-mobile/issues/614)
+  - Fix the problem of scrolling accidentally when `NoticeBar` dynamically changed content[#628](https://github.com/didi/mand-mobile/issues/614)
+  - Fix safe area white space compatible writing of `ActionBar`, `NumberKeyboard`
+
 ### 2.5.6
 
 `2019-11-23`

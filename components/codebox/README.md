@@ -31,6 +31,7 @@ Vue.component(Codebox.name, Codebox)
 |ok-text|键盘确认键文案|String|`确认`|
 |disorder|数字键盘是否乱序|Boolean|`false`|
 |system|是否使用系统默认键盘|Boolean|`false`|
+|is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|
 
 #### Codebox Methods
 
