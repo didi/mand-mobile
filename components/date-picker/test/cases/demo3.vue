@@ -6,6 +6,8 @@
       title="选择出险时间"
       :text-render="textRender"
       :custom-types="['yyyy', 'MM','dd', 'hh', 'mm']"
+      :min-date="minDate"
+      :max-date="maxDate"
       :default-date="currentDate"
       is-view
     ></md-date-picker>
@@ -21,7 +23,9 @@ export default {
   },
   data() {
     return {
-      currentDate: new Date('2018/10/10'),
+      currentDate: new Date('2019-10-01 00:00'),
+      minDate: new Date('2009-10-01'),
+      maxDate: new Date('2029-10-01'),
     }
   },
   methods: {
