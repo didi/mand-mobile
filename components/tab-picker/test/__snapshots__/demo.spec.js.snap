@@ -22,7 +22,7 @@ exports[`TabPicker - Demo Basic 1`] = `
                 <!---->
                 <div class="md-scroll-view">
                   <!---->
-                  <div class="scroll-view-container">
+                  <div scroll-wrapper="" class="scroll-view-container">
                     <!---->
                     <div class="md-tab-bar-list" style="width:0px;"></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
                     <!---->
@@ -34,7 +34,7 @@ exports[`TabPicker - Demo Basic 1`] = `
             <div class="md-tabs-content">
               <div class="md-scroll-view">
                 <!---->
-                <div class="scroll-view-container">
+                <div scroll-wrapper="" class="scroll-view-container">
                   <!---->
                   <div role="tabpanel" tab="province" name="md-tab-slide-left" class="md-tab-pane">
                     <div class="md-radio-list">
