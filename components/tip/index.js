@@ -113,8 +113,9 @@ export default {
 
       const overflowY = window.getComputedStyle(node).overflowY
       const isScrollable = overflowY !== 'visible' && overflowY !== 'hidden'
+      const isScrollView = node && node.getAttribute('scroll-wrapper') !== null
 
-      if (isScrollable && node.scrollHeight > node.clientHeight) {
+      if ((isScrollable && node.scrollHeight > node.clientHeight) || isScrollView) {
         return node
       } else {
         return this.$_getFirstScrollWrapper(node.parentNode)
