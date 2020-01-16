@@ -26,7 +26,8 @@ Vue.component(Captcha.name, Captcha)
 |maxlength|字符最大输入长度, 若为`-1`则不限制输入长度|Number|`4`|
 |mask|是否掩码|Boolean|`false`|
 |system|是否使用系统默认键盘|Boolean|`false`|
-|auto-countdown|是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|
+|auto-send <sup class="version-after">2.5.8+</sup> |第一次展示时是否触发`send`事件，否则需手动点击发送按钮|Boolean|`true`|
+|auto-countdown|手动点击发送按钮后是否自动开始倒计时，否则需手动调用`countdown`|Boolean|`true`|
 |title|标题|String|-|
 |brief|描述|String|-|
 |append-to|挂载节点|HTMLElement|`document.body`|
