@@ -126,6 +126,25 @@ describe('Captcha - Operation', () => {
     }, 2500)
   })
 
+  it('auto send', done => {
+    wrapper = mount(Captcha, {
+      propsData: {
+        autoSend: false,
+      },
+    })
+
+    const eventStub = sinon.stub(wrapper.vm, '$emit')
+    wrapper.setProps({
+      value: true,
+    })
+    expect(eventStub.calledWith('send')).toEqual(false)
+    setTimeout(() => {
+      wrapper.find('.md-captcha-btn').trigger('click')
+      expect(eventStub.calledWith('send')).toEqual(true)
+      done()
+    }, 2500)
+  })
+
   it('not countdown', () => {
     wrapper = mount(Captcha, {
       propsData: {
