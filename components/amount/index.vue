@@ -24,10 +24,17 @@ export default {
       }
 
       const numberParts = value.split('.')
-      const integerValue = numberParts[0]
+      let integerValue = numberParts[0]
       const decimalValue = numberParts[1] || ''
+
+      let startIcon = ''
+      if (integerValue.startsWith('-')) {
+        integerValue = integerValue.substring(1)
+        startIcon = '-'
+      }
+
       const formateValue = formatValueByGapStep(3, integerValue, separator, 'right', 0, 1)
-      return decimalValue ? `${formateValue.value}.${decimalValue}` : `${formateValue.value}`
+      return decimalValue ? `${startIcon}${formateValue.value}.${decimalValue}` : `${startIcon}${formateValue.value}`
     },
     doCapital(value) {
       return numberCapital(value)

@@ -4,6 +4,12 @@
       :value="1234"
       has-separator
     ></md-amount>
+    <br>
+    <md-amount
+      :value="-123456.123"
+      :precision="3"
+      has-separator
+    ></md-amount>
 	</div>
 </template>
 
