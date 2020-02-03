@@ -27,14 +27,14 @@ export default {
       let integerValue = numberParts[0]
       const decimalValue = numberParts[1] || ''
 
-      let startIcon = ''
+      let sign = ''
       if (integerValue.startsWith('-')) {
         integerValue = integerValue.substring(1)
-        startIcon = '-'
+        sign = '-'
       }
 
       const formateValue = formatValueByGapStep(3, integerValue, separator, 'right', 0, 1)
-      return decimalValue ? `${startIcon}${formateValue.value}.${decimalValue}` : `${startIcon}${formateValue.value}`
+      return decimalValue ? `${sign}${formateValue.value}.${decimalValue}` : `${sign}${formateValue.value}`
     },
     doCapital(value) {
       return numberCapital(value)
