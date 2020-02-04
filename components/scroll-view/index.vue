@@ -18,6 +18,7 @@
       :class="{
         'horizon': scrollingX && !scrollingY
       }"
+      scroll-wrapper
     >
       <div
         v-if="hasRefresher"

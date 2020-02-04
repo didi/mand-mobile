@@ -34,7 +34,7 @@ exports[`Selector - Demo Check mode 1`] = `
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
             <!---->
-            <div class="scroll-view-container">
+            <div scroll-wrapper="" class="scroll-view-container">
               <!---->
               <div class="md-radio-list md-selector-list">
                 <div class="md-cell-item md-radio-item">
@@ -148,7 +148,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
             <!---->
-            <div class="scroll-view-container">
+            <div scroll-wrapper="" class="scroll-view-container">
               <!---->
               <div class="md-radio-list md-selector-list">
                 <div class="md-cell-item md-radio-item">
@@ -259,7 +259,7 @@ exports[`Selector - Demo Custom options 1`] = `
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:auto;">
             <!---->
-            <div class="scroll-view-container">
+            <div scroll-wrapper="" class="scroll-view-container">
               <!---->
               <div class="selector-header">
                 Header Slot
@@ -405,7 +405,7 @@ exports[`Selector - Demo Multi mode 1`] = `
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:auto;min-height:320px;">
             <!---->
-            <div class="scroll-view-container">
+            <div scroll-wrapper="" class="scroll-view-container">
               <!---->
               <div class="md-check-group md-check-list md-selector-list">
                 <div class="md-cell-item md-check-item is-checked">
@@ -516,7 +516,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:320px;min-height:auto;">
             <!---->
-            <div class="scroll-view-container">
+            <div scroll-wrapper="" class="scroll-view-container">
               <!---->
               <div class="md-radio-list md-selector-list">
                 <div class="md-cell-item md-radio-item">
