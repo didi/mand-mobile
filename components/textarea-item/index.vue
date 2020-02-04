@@ -172,6 +172,11 @@ export default {
       textarea.style.height = 'auto'
 
       let scrollHeight = textarea.scrollHeight
+      // if textarea-item is not displayed, avoid height calculations
+      if (scrollHeight === 0) {
+        return
+      }
+
       if (this.maxHeightInner && scrollHeight > this.maxHeightInner) {
         scrollHeight = this.maxHeightInner
       }

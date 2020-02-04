@@ -1,4 +1,5 @@
 import TipContent from 'mand-mobile/components/tip/tip'
+import TipWrapper from './tip-wrapper'
 import sinon from 'sinon'
 import {mount} from '@vue/test-utils'
 
@@ -53,5 +54,12 @@ describe('Tip', () => {
 
     wrapper.find('.md-icon-close').trigger('click')
     expect(eventStub.calledWith('close')).toBe(true)
+  })
+
+  it('scroll-wrapper', () => {
+    wrapper = mount(TipWrapper)
+    const wrapperEl = wrapper.vm.$refs.tip.wrapperEl
+    console.log(wrapperEl.className)
+    expect(wrapperEl.className).toBe('wrapper1')
   })
 })

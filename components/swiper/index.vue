@@ -220,6 +220,8 @@ export default {
       }
       /* istanbul ignore if */
       if (this.userScrolling) {
+        this.play(this.duration)
+
         this.dragging = false
         this.dragState = {}
         return

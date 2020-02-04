@@ -8,7 +8,7 @@ exports[`Tabs - Demo Basic 1`] = `
         <!---->
         <div class="md-scroll-view">
           <!---->
-          <div class="scroll-view-container">
+          <div scroll-wrapper="" class="scroll-view-container">
             <!---->
             <div class="md-tab-bar-list" style="width:0px;"></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
             <!---->

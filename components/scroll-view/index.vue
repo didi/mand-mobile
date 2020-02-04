@@ -18,6 +18,7 @@
       :class="{
         'horizon': scrollingX && !scrollingY
       }"
+      scroll-wrapper
     >
       <div
         v-if="hasRefresher"
@@ -185,11 +186,11 @@ export default {
           () => {
             this.isRefreshActive = true
             this.isRefreshing = false
+            this.$emit('refreshActive')
           },
           () => {
             this.isRefreshActive = false
             this.isRefreshing = false
-            this.$emit('refreshActive')
           },
           () => {
             this.isRefreshActive = false
