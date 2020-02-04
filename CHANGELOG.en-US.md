@@ -3,6 +3,22 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.8
+
+`2020-02-04`
+
+- Feat
+  - `Captcha` add prop `auto-send`, used to control whether the `send` event is automatically triggered when the captcha popup is first displayed
+  - `ResultPage` props add dynamic change response
+
+- Fix
+  - Fix the issue of `Picker` and `DatePicker` that when scrolled multiple columns, the selected item was abnormal[#632](https://github.com/didi/mand-mobile/issues/632)
+  - Fix the incorrect timing of the refreshActive event in `ScrollViewRefresh`[#642](https://github.com/didi/mand-mobile/issues/642)
+  - Fix `Amount` displaying wrong numbers with thousands characters[#644](https://github.com/didi/mand-mobile/issues/644)
+  - Fix the issue that the size calculation of `TextAreaItem` is incorrect when nesting in` Popup`
+  - Fix the issue that auto-play would not work when sliding up and down in `Swiper`
+  - Fix `Tip` incorrect placement in ScrollView
+
 ### 2.5.7
 
 `2019-12-26`
@@ -11,8 +27,8 @@ toc: hidden
   - `Landscape` add prop `transition`, used to customize the display animation
 
 - Fix
-  - Fix the reflowing issue that `Tabs` may cause when switching tabs[#627](https://github.com/didi/mand-mobile/issues/614)
-  - Fix the problem of scrolling accidentally when `NoticeBar` dynamically changed content[#628](https://github.com/didi/mand-mobile/issues/614)
+  - Fix the reflowing issue that `Tabs` may cause when switching tabs[#627](https://github.com/didi/mand-mobile/issues/627)
+  - Fix the problem of scrolling accidentally when `NoticeBar` dynamically changed content[#628](https://github.com/didi/mand-mobile/issues/628)
   - Fix safe area white space compatible writing of `ActionBar`, `NumberKeyboard`
 
 ### 2.5.6

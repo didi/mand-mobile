@@ -3,6 +3,22 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.8
+
+`2020-02-04`
+
+- Feat
+  - `Captcha`增加属性`auto-send`，用于控制验证码弹窗第一次展示时是否自动触发`send`事件
+  - `ResultPage`属性增加动态变更响应
+
+- Fix
+  - 修复`Picker`和`DatePicker`快速滑动多列时，选中项异常的问题[#632](https://github.com/didi/mand-mobile/issues/632)
+  - 修复`ScrollViewRefresh`中的`refreshActive`事件触发错误问题[#642](https://github.com/didi/mand-mobile/issues/642)
+  - 修复`Amount`使用千分符展示负数错误问题[#644](https://github.com/didi/mand-mobile/issues/644)
+  - 修复`TextAreaItem`在`Popup`中嵌套时尺寸计算错误的问题
+  - 修复`Swiper`上下滑动导致自动播放失效的问题
+  - 修复`Tip`在`ScrollView`中展示位置错误的问题
+
 ### 2.5.7
 
 `2019-12-26`
@@ -11,8 +27,8 @@ toc: hidden
   - `Landscape`增加属性`transition`，用于自定义展示动效
 
 - Fix
-  - 修复`Tabs`在切换时可能导致的重绘问题[#627](https://github.com/didi/mand-mobile/issues/614)
-  - 修复`NoticeBar`动态变化内容时导致误触滚动的问题[#628](https://github.com/didi/mand-mobile/issues/614)
+  - 修复`Tabs`在切换时可能导致的重绘问题[#627](https://github.com/didi/mand-mobile/issues/627)
+  - 修复`NoticeBar`动态变化内容时导致误触滚动的问题[#628](https://github.com/didi/mand-mobile/issues/628)
   - 修复`ActionBar`, `NumberKeyboard`安全区留白兼容写法
 
 ### 2.5.6
