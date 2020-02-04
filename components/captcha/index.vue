@@ -114,6 +114,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    autoSend: {
+      type: Boolean,
+      default: true,
+    },
     autoCountdown: {
       type: Boolean,
       default: true,
@@ -156,7 +160,7 @@ export default {
         this.code = ''
         if (!this.firstShown) {
           this.firstShown = true
-          this.$_onResend()
+          this.$_emitSend()
         }
       }
     },
@@ -173,7 +177,7 @@ export default {
     }
     if (this.value || this.isView) {
       this.firstShown = true
-      this.$_onResend()
+      this.$_emitSend()
     }
   },
 
@@ -206,6 +210,9 @@ export default {
         this.countdown()
       }
       this.$emit('send', this.countdown)
+    },
+    $_emitSend() {
+      this.autoSend && this.$_onResend()
     },
     // MARK: public methods
     countdown() {
