@@ -73,6 +73,13 @@ Check multiple checks. Combine with `Check` or `CheckBox`.
 |----|-----|------|------|
 |name|name will be toggle|String|-|
 
+##### toggleAll(checked?: Boolean)
+Select All or Deselect (`disabled` options will not be changed) <sup class="version-after">2.5.9+</sup>
+
+| Arg | Description | Type | Default |
+|----|-----|------|------|
+|checked|select all or none|Boolean|reverse election if empty|
+
 ---
 
 #### CheckList Props

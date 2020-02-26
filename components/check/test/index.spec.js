@@ -130,6 +130,37 @@ describe('Check - Operation', () => {
     expect(value).toEqual(['b'])
   })
 
+  test('checkbox group toggle', () => {
+    Vue.component(CheckBox.name, CheckBox)
+    let value = ['a']
+    wrapper = mount(CheckGroup, {
+      propsData: {
+        value,
+      },
+      slots: {
+        default: ['<md-check-box name="a"/>', '<md-check-box name="b"/>', '<md-check-box name="c" disabled/>'],
+      },
+      listeners: {
+        input(val) {
+          value = val
+          wrapper.setProps({value})
+        },
+      },
+    })
+
+    const checks = wrapper.findAll('.md-check-box')
+    expect(checks.at(0).classes('is-checked')).toBe(true)
+
+    wrapper.vm.toggleAll()
+    expect(value).toEqual(['b'])
+
+    wrapper.vm.toggleAll(true)
+    expect(value).toEqual(['a', 'b'])
+
+    wrapper.vm.toggleAll(false)
+    expect(value).toEqual([])
+  })
+
   test('checkbox disabled', () => {
     let clicked = false
     wrapper = shallowMount(CheckBox, {
