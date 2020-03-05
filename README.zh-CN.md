@@ -109,3 +109,9 @@ npm run dev
 
 ## 证书
 Mand Mobile使用Apache License 2.0，查看[证书](LICENSE)。
+
+## 友情链接
+
+* [Chameleon](https://github.com/didi/chameleon)/kəˈmiːlɪən/，简写CML，中文意思变色龙，意味着就像变色龙一样能适应不同环境的跨端整体解决方案，达到真正意义上"一套代码，多端运行"的终极目标
+
+* [DoraemonKit](https://github.com/didi/DoraemonKit) /'dɔ:ra:'emɔn/，简称DoKit， 一款功能齐全的客户端（ iOS 、Android、微信小程序 ）研发助手，你值得拥有
