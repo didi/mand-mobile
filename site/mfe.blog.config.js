@@ -365,7 +365,7 @@ module.exports = {
         link: [
           {
             text: 'Chameleon <span>- 跨端解决方案</span>',
-            src: 'https://CML.JS.org',
+            src: 'https://cmljs.org/#/',
           },
           {
             text: 'Cube UI <span>- Vue.js组件库</span>',
@@ -463,7 +463,7 @@ module.exports = {
         link: [
           {
             text: 'Chameleon <span>- Cross-end Framework</span>',
-            src: 'https://CML.JS.org',
+            src: 'https://cmljs.org/#/',
           },
           {
             text: 'Cube UI <span>- Vue.js UI Lib</span>',

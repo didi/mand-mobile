@@ -107,3 +107,10 @@ Welcome to contribute by creating issues or sending pull requests. See [Contribu
 
 ## License
 Mand Mobile is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
+
+## Links
+
+
+* [Chameleon](https://github.com/didi/chameleon) /kəˈmiːlɪən/: Unify all platforms(Web/Weex/Mini program) with MVVM. Focus on Write Once Run AnyWhere.
+
+* [DoraemonKit](https://github.com/didi/DoraemonKit) /'dɔ:ra:'emɔn/: A full-featured App (iOS & Android) development assistant. You deserve it.
