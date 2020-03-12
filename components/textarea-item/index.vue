@@ -122,7 +122,9 @@ export default {
   watch: {
     value(val) {
       this.inputValue = val
-      this.resizeTextarea()
+      this.$nextTick(() => {
+        this.resizeTextarea()
+      })
     },
     inputValue(val) {
       this.$emit('input', val)
