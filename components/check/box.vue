@@ -46,6 +46,13 @@ export default {
     rootGroup: {default: null},
   },
 
+  mounted() {
+    this.rootGroup && this.rootGroup.register(this)
+  },
+  destroyed() {
+    this.rootGroup && this.rootGroup.unregister(this)
+  },
+
   methods: {
     $_onClick() {
       if (this.disabled) {

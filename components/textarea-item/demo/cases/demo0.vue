@@ -14,6 +14,7 @@
         title="自动适应"
         class="example"
         :autosize="true"
+        v-model="value2"
         :rows="1"
         placeholder="最大高度150px"
         :max-height="150"
@@ -62,11 +63,17 @@ export default {
   data() {
     return {
       value: '',
+      value2: '',
     }
   },
   components: {
     [TextareaItem.name]: TextareaItem,
     [Field.name]: Field,
+  },
+  mounted() {
+    setTimeout(() => {
+      this.value2 = '异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应'
+    }, 1000)
   },
 }
 </script>

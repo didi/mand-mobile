@@ -71,6 +71,13 @@ Vue.component(CheckList.name, CheckList)
 |----|-----|------|------|
 |name|需要反选的键值|String|-|
 
+##### toggleAll(checked?: Boolean)
+全选或者反选（对`disabled`的选项不改变其原选中状态）<sup class="version-after">2.5.9+</sup>
+
+|参数 | 说明 | 类型 | 默认值 |
+|----|-----|------|------|
+|checked|全选或全不选|Boolean|如果传空，则反选|
+
 ---
 
 #### CheckList Props
