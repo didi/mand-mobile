@@ -44,20 +44,60 @@ describe('TextareaItem - Operation', () => {
     triggerEvent(textarea, 'keyup', 0, 0, 49)
     triggerEvent(textarea, 'blur', 0, 0)
 
+    expect(textarea.style.height).toBe('342px')
+  })
+
+  test('test async data', done => {
+    wrapper = mount(TextareaItem, {
+      propsData: {
+        maxHeight: 300,
+        maxLength: 10,
+        autosize: true,
+        value: '',
+      },
+    })
+    wrapper.setProps({maxHeight: '200'})
+    const textarea = wrapper.vm.$refs.textarea
+
     // 测试高度适应
     // scrollHeight 总是0, 很难模拟到srollHeight的计算过程
     // https://github.com/testing-library/react-testing-library/issues/353
-    Object.defineProperty(HTMLTextAreaElement.prototype, 'scrollHeight', {configurable: true, value: 30})
+
+    // 模拟本来高度342
+    textarea.style.height = '342px'
+    // 模拟数据异步更新
+    Object.defineProperty(HTMLTextAreaElement.prototype, 'scrollHeight', {configurable: true, value: 300})
     wrapper.setProps({value: '123'})
-    expect(textarea.style.height).toBe('30px')
+    // 验证最终的高度, 以最大高度为准
+    setTimeout(() => {
+      expect(textarea.style.height).toBe('200px')
+      done()
+    }, 100)
+  })
 
-    wrapper.setProps({maxHeight: '20'})
-    expect(textarea.style.height).toBe('20px')
+  test('test textarea not display', done => {
+    wrapper = mount(TextareaItem, {
+      propsData: {
+        maxHeight: 300,
+        maxLength: 10,
+        autosize: true,
+        value: '',
+      },
+    })
 
-    // 当scrollHeight为0时, 不改变textarea的高度
+    const textarea = wrapper.vm.$refs.textarea
+
+    // 模拟本来高度342
+    textarea.style.height = '342px'
+    // 模拟textarea还没有显示, scrollHeight==0
     Object.defineProperty(HTMLTextAreaElement.prototype, 'scrollHeight', {configurable: true, value: 0})
     wrapper.setProps({value: '123'})
-    expect(textarea.style.height).toBe('20px')
+
+    setTimeout(() => {
+      // 现实中是不会改变高度
+      expect(textarea.style.height).toBe('auto')
+      done()
+    }, 100)
   })
 
   test('focus and blur', done => {
