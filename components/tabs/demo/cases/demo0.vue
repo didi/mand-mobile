@@ -14,7 +14,8 @@
   </div>
 </template>
 
-<script>import {Tabs, TabPane} from 'mand-mobile'
+<script>
+import {Tabs, TabPane} from 'mand-mobile'
 
 export default {
   name: 'tab-bar-demo',
@@ -26,12 +27,13 @@ export default {
     [TabPane.name]: TabPane,
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-tabs
   .content
-    padding 12px 0
+    margin 12px 0
     font-size 28px
     background #FFF
     padding 20px
