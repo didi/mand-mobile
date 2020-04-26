@@ -208,7 +208,8 @@ export default {
         return
       }
 
-      this.wrapperW = this.$refs.wrapper.offsetWidth
+      const wrapperReact = this.$refs.wrapper.getBoundingClientRect()
+      this.wrapperW = wrapperReact.width
 
       let contentWidth = 0
       for (let i = 0, len = this.items.length; i < len; i++) {
