@@ -3,6 +3,15 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.10
+
+`2020-04-30`
+
+- Fix
+  - 修复`Button`在文字链接类型下字体行高不正确的问题[#663](https://github.com/didi/mand-mobile/issues/663)
+  - 修复`ImageReader`中`jpgencoder`可能被重复加载的问题（如微前端模式下）
+  - 修复`TabBar`尺寸计算不准确的问题
+
 ### 2.5.9
 
 `2020-03-26`

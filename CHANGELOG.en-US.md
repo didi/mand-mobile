@@ -3,6 +3,15 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.10
+
+`2020-04-30`
+
+- Fix
+  - Fix the issue of incorrect font line-height of `Button` under text link type[#663](https://github.com/didi/mand-mobile/issues/663)
+  - Fix the issue that `jpgencoder` in` ImageReader` may be repeatedly loaded (such as in micro front-end mode)
+  - Fix `TabBar` size calculation compatibility issue
+
 ### 2.5.9
 
 `2020-03-26`

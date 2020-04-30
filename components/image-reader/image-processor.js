@@ -167,7 +167,7 @@ function makeCanvas(img, orientation, maxWidth, maxHeight, quality) {
       ctx.drawImage(img, 0, 0, width, height)
   }
 
-  if (UA.oldIOS || UA.oldAndroid || UA.mQQBrowser || !navigator.userAgent) {
+  if ((UA.oldIOS || UA.oldAndroid || UA.mQQBrowser || !navigator.userAgent) && window.JPEGEncoder) {
     /* global JPEGEncoder */
     const encoder = new JPEGEncoder()
     const newImg = ctx.getImageData(0, 0, canvas.width, canvas.height)
@@ -216,7 +216,7 @@ export default function(options, fn = noop) {
 }
 
 // Import jpeg_encoder_basic for compatibility if necessary
-if (UA.oldIOS || UA.oldAndroid || UA.mQQBrowser || !navigator.userAgent) {
+if ((UA.oldIOS || UA.oldAndroid || UA.mQQBrowser || !navigator.userAgent) && !window.JPEGEncoder) {
   /* istanbul ignore next */
   requireRemoteScript('//manhattan.didistatic.com/static/manhattan/mfd/image-reader/jpeg_encoder_basic.js')
 }
