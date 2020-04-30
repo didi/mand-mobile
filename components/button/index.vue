@@ -219,7 +219,7 @@ export default {
     display inline
     width auto
     height auto
-    line-height 1
+    line-height normal
     font-size button-small-font-size
     font-weight font-weight-normal
     color button-primary-fill
