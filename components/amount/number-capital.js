@@ -6,8 +6,8 @@ const cnIntRadice = ['', '\u62fe', '\u4f70', '\u4edf']
 // 万 \u4e07 亿 \u4ebf 兆 \u5146
 const cnIntUnits = ['', '\u4e07', '\u4ebf', '兆']
 
-// 角 \u89d2 分 \u5206 毫 \u6beb 厘 \u5398
-const cnDecUnits = ['\u89d2', '\u5206', '\u6beb', '\u5398']
+// 角 \u89d2 分 \u5206 厘 \u5398 毫 \u6beb
+const cnDecUnits = ['\u89d2', '\u5206', '\u5398', '\u6beb']
 const cnInteger = '\u6574' // 整 \u6574
 const cnIntLast = '\u5143' // 元 \u5143
 

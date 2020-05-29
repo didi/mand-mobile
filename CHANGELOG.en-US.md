@@ -3,6 +3,11 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.11
+
+- Fix
+  - Fix the issue of incorrect Chinese currency unit of `Amount` component[#675](https://github.com/didi/mand-mobile/issues/675)
+
 ### 2.5.10
 
 `2020-04-30`
