@@ -3,6 +3,13 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.11
+
+`2020-05-29`
+
+- Fix
+  - 修复`Amount`组件中文货币单位不正确的问题[#675](https://github.com/didi/mand-mobile/issues/675)
+
 ### 2.5.10
 
 `2020-04-30`
