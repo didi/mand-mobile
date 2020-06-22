@@ -4,7 +4,8 @@
   </div>
 </template>
 
-<script>import {ActionBar, Toast} from 'mand-mobile'
+<script>
+import {ActionBar, Toast} from 'mand-mobile'
 
 export default {
   name: 'action-bar-demo',
@@ -27,6 +28,10 @@ export default {
           text: '主要按钮',
           onClick: this.handleClick,
         },
+          {
+          text: '测试按钮',
+          onClick: this.handleClick,
+        },
       ],
     }
   },
@@ -36,4 +41,5 @@ export default {
     },
   },
 }
-</script>
+
+</script>
