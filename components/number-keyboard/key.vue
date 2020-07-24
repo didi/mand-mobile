@@ -2,18 +2,18 @@
   <li
     v-if="noTouch"
     :class="[active ? 'active' : '']"
-    @click="$_onFocus"
+    @click="$_onFocus($event, 'click')"
   >
     <span v-text="value"></span>
   </li>
   <li
     v-else
     :class="[active ? 'active' : '']"
-    @touchstart="$_onFocus"
+    @touchstart="$_onFocus($event, 'touch')"
     @touchmove="$_onBlur"
     @touchend="$_onBlur"
     @touchcancel="$_onBlur"
-    @click="$_onFocus"
+    @click="$_onFocus($event, 'click')"
   >
     <span v-text="value"></span>
   </li>
@@ -40,18 +40,27 @@
   data() {
     return {
       active: false,
+      activeType: '',
     }
   },
 
   methods: {
-    $_onFocus(event) {
+    $_onFocus(event, type) {
       if (!this.noPrevent) {
         event.preventDefault()
         event.stopImmediatePropagation()
       }
+
+      if (this.activeType && this.activeType !== type) {
+        return
+      }
+
+      this.activeType = type
+
       if (!this.noTouch) {
         this.active = true
       }
+
       this.$emit('press', this.value)
     },
     $_onBlur() {

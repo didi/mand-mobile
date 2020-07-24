@@ -3,7 +3,16 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.12
+
+`2020-07-24`
+
+- Fix
+  - Avoid repeated triggering of click and touchstart in `NumberKeyboard` component
+
 ### 2.5.11
+
+`2020-05-29`
 
 - Fix
   - Fix the issue of incorrect Chinese currency unit of `Amount` component[#675](https://github.com/didi/mand-mobile/issues/675)
