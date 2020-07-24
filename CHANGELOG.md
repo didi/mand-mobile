@@ -3,6 +3,13 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.12
+
+`2020-07-24`
+
+- Fix
+  - 避免在`NumberKeyboard`组件中重复触发`click`和`touchstart`事件
+
 ### 2.5.11
 
 `2020-05-29`
