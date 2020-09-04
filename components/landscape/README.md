@@ -1,5 +1,5 @@
 ---
-title: Landscape 输入框
+title: Landscape 压屏窗
 preview: https://didi.github.io/mand-mobile/examples/#/landscape
 ---
 
