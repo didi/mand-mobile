@@ -44,6 +44,8 @@
 </template>
 <script>import FieldItem from '../field-item'
 import Icon from '../icon'
+import {noop, randomId} from '../_util'
+import {getCursorsPosition, setCursorsPosition} from '../input-item/cursor'
 
 export default {
   name: 'md-textarea-item',
@@ -55,6 +57,12 @@ export default {
     title: {
       type: String,
       default: '',
+    },
+    name: {
+      type: [String, Number],
+      default() {
+        return randomId('input-item')
+      },
     },
     placeholder: {
       type: String,
@@ -100,6 +108,10 @@ export default {
       type: String,
       defalut: '',
     },
+    formation: {
+      type: Function,
+      default: noop,
+    },
   },
   data() {
     return {
@@ -140,11 +152,25 @@ export default {
   },
   methods: {
     $_onInput(event) {
-      this.inputValue = event.target.value
+      const formateValue = this.$_formateValue(event.target.value, getCursorsPosition(event.target))
+
+      this.inputValue = formateValue.value
 
       this.$nextTick(() => {
+        setCursorsPosition(event.target, formateValue.range)
         this.resizeTextarea()
       })
+    },
+    $_formateValue(curValue, curPos = 0) {
+      // custom format by user
+      const customValue = this.formation(name, curValue, curPos)
+
+      if (customValue) {
+        return customValue
+      }
+
+      // no format
+      return {value: curValue, range: curPos}
     },
     $_clearInput() {
       this.inputValue = ''

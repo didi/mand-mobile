@@ -117,6 +117,33 @@ describe('TextareaItem - Operation', () => {
     wrapper.vm.focus()
   })
 
+  test('formation', done => {
+    wrapper = mount(TextareaItem, {
+      propsData: {
+        maxHeight: 300,
+        maxLength: 10,
+        autosize: true,
+        formation(name, curValue, curPos) {
+          return {
+            value: curValue.replace(/\d/g, ''),
+            range: curPos,
+          }
+        },
+        value: 'abc',
+      },
+    })
+    const textarea = wrapper.vm.$refs.textarea
+
+    expect(wrapper.vm.getValue()).toBe('abc')
+    triggerEvent(textarea, 'input', 0, 0, 'efg1')
+
+    setTimeout(() => {
+      expect(wrapper.vm.getValue()).toBe('abcefg')
+      done()
+    }, 100)
+    wrapper.vm.focus()
+  })
+
   test('input with delete icon', () => {
     wrapper = mount(TextareaItem, {
       propsData: {
