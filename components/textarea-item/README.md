@@ -33,6 +33,7 @@ Vue.component(TextareaItem.name, TextareaItem)
 | clearable <sup class="version-after">2.5.3+</sup> | 是否有删除图标                                   | Boolean       | `false` | -              |
 | rows                                              | 开始显示的行数                                   | String/Number | `'3'`   | -              |
 | error                                             | 是否显示错误, 如果有内容就认定是出错, 并显示出来 | String        | -       | -              |
+| formation <sup class="version-after">2.5.13+</sup> |表单文本格式化回调方法                         |Function(name, curValue, curPos): {value: curValue, range: curPos}|-|传入参数`name`为表单名称，`curValue`为表单值，`curPos`为表单光标当前所在位置<br/>返回参数`value`格式化值, `range`表单光标格式化后所在位置|
 
 #### TextareaItem Slots
 

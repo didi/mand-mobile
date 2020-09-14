@@ -33,6 +33,7 @@ Vue.component(TextareaItem.name, TextareaItem)
 | clearable <sup class="version-after">2.5.3+</sup> | clearable                                       | Boolean       | `false` | -                  |
 | rows                                              | rows                                            | String/Number | `'3'`   | -                  |
 | error                                             | error message                                   | String        | -       | -                  |
+|formation <sup class="version-after">2.5.13+</sup>  |input text formatting callback function|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|passing parameter `name` is the name of input, `curValue` is input value, `curPos` is the current position of input cursor, and returned `value` is formatted value. `range` is the position of input cursor after formatting|
 
 #### TextareaItem Slots
 
