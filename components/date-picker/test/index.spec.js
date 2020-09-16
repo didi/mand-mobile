@@ -15,7 +15,7 @@ describe('DatePicker - Operation', () => {
       propsData: {
         isView: true,
         minDate: new Date('2013/9/9'),
-        maxDate: new Date('2020/9/9'),
+        maxDate: new Date(`${date.getFullYear() + 1}/9/9`),
         defaultDate: date,
         todayText: '今天',
       },
