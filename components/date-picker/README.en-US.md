@@ -28,15 +28,15 @@ Vue.component(DatePicker.name, DatePicker)
 |default-date|initial selected date|Date|-|-|
 |minute-step|increasing steps of minutes|Number|`1`|-|
 |unit-text|element unit for text displaying|Array|`['y', 'M', 'd', 'h', 'm']`|`text-render` for complex logic|
-|text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|              
-|today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`| 
-|line-height|line height of options|Number|`45`|unit `px`| 
-|keep-index <sup class="version-after">2.5.2+</sup>|keep last stop position when the column data changes|Boolean|`false`|-|          
-|is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-| 
+|text-render|customized option for text displaying|Function(typeFormat, column0Value, column1Value, ...): String|-|`unit-text` is invalid when using `text-render`, refer to `Appendix`|
+|today-text|displaying text of today|String|`today`|use `&` to take placeholder date, like `&(today)`|
+|line-height|line height of options|Number|`45`|unit `px`|
+|keep-index <sup class="version-after">2.5.2+</sup>|keep last stop position when the column data changes|Boolean|`false`|-|
+|is-view|inline-display in page, otherwise it shows as `Popup`|Boolean|`false`|-|
 |title|title of date-picker|String|-|-|
 |describe|description of date-picker|String|-|-|
-|ok-text|confirmation text|String|`confirm`|-| 
-|cancel-text|cancellation text|String|`cancel`|-| 
+|ok-text|confirmation text|String|`confirm`|-|
+|cancel-text|cancellation text|String|`cancel`|-|
 |large-radius <sup class="version-after">2.4.0+</sup>|large radius of title bar|Boolean|`false`|-|
 |mask-closable|picker will be closed when clicking mask|String|`true`|-|
 
@@ -68,7 +68,7 @@ Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|activeItemValue|value of selected item|Object: {value, lable, ...}|
+|activeItemValue|value of selected item|Object: {value, label, ...}|
 
 ##### getColumnValues(): columnsValue
 Get all values of currently seleted items, which is called after `initialed` event is invoked or asynchronously called
@@ -77,7 +77,7 @@ Returns
 
 |Props | Description | Type|
 |----|-----|------|
-|columnsValue|values of all selected items in the column|Array<{value, lable, ...}>|
+|columnsValue|values of all selected items in the column|Array<{value, label, ...}>|
 
 ##### getColumnIndex(index): activeItemIndex
 Get the index of the currently selected item in the column, which is called after `initialed` event is invoked or asynchronously called
@@ -113,18 +113,18 @@ Change selections of date picker
 |----|-----|------|
 |columnIndex|change the index of column|Number|
 |itemIndex|change the index of selected item|Number|
-|value|change the value of selected item|Object: {value, lable, ...}|
+|value|change the value of selected item|Object: {value, label, ...}|
 
 ##### @confirm(columnsValue)
 Confirm the selection of date picker(only when `is-view` is `false`）
 
 |Parameters | Description | Type|
 |----|-----|------|
-|columnsValue|values of selected items in the column|Array<{value, lable, ...}>|
+|columnsValue|values of selected items in the column|Array<{value, label, ...}>|
 
 #### Appendix
 
-* columnData  
+* columnData
 
 ```javascript
 
