@@ -22,7 +22,7 @@ Vue.component(Picker.name, Picker)
 |属性 | 说明 | 类型 | 默认值 | 备注|
 |----|-----|------|------|------|
 |v-model|选择器是否可见|Boolean|`false`|-|
-|data|数据源|Array<{value, lable, ...}>[]|`[]`|-|
+|data|数据源|Array<{value, label, ...}>[]|`[]`|-|
 |cols|数据列数|Number|`1`|-|
 |default-index|选择器各列初始选中项索引|Array|`[]`|-|
 |default-value|选择器各列初始选中项值|Array|`[]`|可用字段`text/label/value`|
@@ -30,7 +30,7 @@ Vue.component(Picker.name, Picker)
 |line-height|选择器选项行高|Number|`45`|单位`px`|
 |is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|-|
 |is-cascade|各列数据是否级联|Boolean|`false`|级联数据格式见附录|
-|keep-index <sup class="version-after">2.5.2+</sup>|当列数据变化时保持上次停留的位置|Boolean|`false`|仅用于级联数据|  
+|keep-index <sup class="version-after">2.5.2+</sup>|当列数据变化时保持上次停留的位置|Boolean|`false`|仅用于级联数据|
 |title|选择器标题|String|-|-|
 |describe|选择器描述|String|-|-|
 |ok-text|选择器确认文案|String|`确认`|-|
