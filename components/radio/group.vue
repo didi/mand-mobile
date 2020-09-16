@@ -9,7 +9,6 @@
 
   props: {
     value: {
-      type: String,
       default: '',
     },
     max: {
