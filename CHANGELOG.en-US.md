@@ -3,6 +3,18 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.13
+
+`2020-09-17`
+
+- Feat
+  - `TextareaItem` support formation[#699](https://github.com/didi/mand-mobile/issues/699)
+
+- Fix
+  - Fix spelling errors in the document[#690](https://github.com/didi/mand-mobile/issues/690)
+  - Fix the bug of `DatePicker` unit test
+  - Fix the type check of `RadioGroup` to `value`[#693](https://github.com/didi/mand-mobile/issues/693)
+
 ### 2.5.12
 
 `2020-07-24`

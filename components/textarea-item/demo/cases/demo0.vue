@@ -49,6 +49,15 @@
         :max-height="150"
         readonly
       />
+      <md-textarea-item
+        ref="demo0"
+        title="格式化"
+        autosize
+        class="example"
+        v-model="value3"
+        :formation="format"
+        placeholder="去掉所有数字"
+      />
     </md-field>
   </div>
 </template>
@@ -64,6 +73,7 @@ export default {
     return {
       value: '',
       value2: '',
+      value3: '',
     }
   },
   components: {
@@ -74,6 +84,14 @@ export default {
     setTimeout(() => {
       this.value2 = '异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应,异步数据, 高度适应'
     }, 1000)
+  },
+  methods: {
+    format(name, curValue, curPos) {
+      return {
+        value: curValue.replace(/\d/g, ''),
+        range: curPos,
+      }
+    },
   },
 }
 </script>
