@@ -16,7 +16,8 @@
   </label>
 </template>
 
-<script>import Icon from '../icon'
+<script>
+import Icon from '../icon'
 import checkMixin from './mixin'
 
 export default {
@@ -77,13 +78,16 @@ export default {
 
       if (typeof this.name === 'boolean') {
         this.$emit('input', !this.value)
+        this.$emit('change', !this.value)
       } else if (this.isChecked) {
         this.$emit('input', '')
+        this.$emit('change', '')
         if (this.rootGroup) {
           this.rootGroup.uncheck(this.name)
         }
       } else {
         this.$emit('input', this.name)
+        this.$emit('change', this.name)
         if (this.rootGroup) {
           this.rootGroup.check(this.name)
         }
@@ -91,7 +95,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-check
