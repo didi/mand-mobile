@@ -76,6 +76,7 @@ export default {
     })
 
     if (firstNode) {
+      firstNode.data = firstNode.data || {}
       const on = (firstNode.data.on = firstNode.data.on || {})
       const nativeOn = (firstNode.data.nativeOn = firstNode.data.nativeOn || {})
 
