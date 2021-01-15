@@ -3,6 +3,15 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.14
+
+`2021-01-15`
+
+- Feat
+  - `Dialog` supports passing in `transition` when using static methods[#716](https://github.com/didi/mand-mobile/issues/716)
+- Fix
+  - Fix the conflict of `InputItem` component instance method sharing `debounce` internal variables
+
 ### 2.5.13
 
 `2020-09-17`

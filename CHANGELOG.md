@@ -3,6 +3,15 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.5.14
+
+`2021-01-15`
+
+- Feat
+  - `Dialog`使用静态方法时支持传入`transition`[#716](https://github.com/didi/mand-mobile/issues/716)
+- Fix
+  - 修复`InputItem`组件实例方法共享`debounce`内部变量的冲突
+
 ### 2.5.13
 
 `2020-09-17`
