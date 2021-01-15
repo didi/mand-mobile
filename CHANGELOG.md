@@ -10,6 +10,7 @@ toc: hidden
 - Feat
   - `Dialog`使用静态方法时支持传入`transition`[#716](https://github.com/didi/mand-mobile/issues/716)
 - Fix
+  - 修复`Tip`组件子组件属性为空时导致报错
   - 修复`InputItem`组件实例方法共享`debounce`内部变量的冲突
 
 ### 2.5.13
