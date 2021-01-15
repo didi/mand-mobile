@@ -33,7 +33,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | append-to | 组件的挂载节点 | HTMLElement | `document.body`|-|
 | has-mask | 是否有蒙层 | Boolean | `true`|-|
 | mask-closable | 点击蒙层是否可关闭弹出层 | Boolean | `false`|-|
-| transition | 弹出层过度动画 | String | 可选值参考[Transition](https://didi.github.io/mand-mobile/#/zh-CN/docs/components/feedback/transition?anchor=API) |
+| transition <sup class="version-after">2.5.14+</sup> | 弹出层过度动画 | String |`md-fade`| 可选值参考[Transition](https://didi.github.io/mand-mobile/#/zh-CN/docs/components/feedback/transition?anchor=API) |
 
 #### DialogBtnOptions Props
 
@@ -86,6 +86,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | cancelWarning | 点击取消按钮为警示操作 | Boolean | `false` |
 | confirmWarning | 点击确认按钮为警示操作 | Boolean | `false` |
+| transition <sup class="version-after">2.5.14+</sup>| 弹出层过度动画 | String | `md-bounce` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onCancel | 点击取消按钮回调函数 | Function | -|
 | onShow <sup class="version-after">2.5.0+</sup>| 窗口显示后回调函数 | Function | -|
@@ -101,6 +102,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
 | warning | 点击确认按钮为警示操作 | Boolean | `false` |
+| transition <sup class="version-after">2.5.14+</sup>| 弹出层过度动画 | String | `md-bounce` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onShow | 窗口显示后回调函数 | Function | -|
 | onHide | 窗口隐藏后回调函数 | Function | -|
@@ -113,6 +115,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
+| transition <sup class="version-after">2.5.14+</sup>| 弹出层过度动画 | String | `md-bounce` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onCancel | 点击取消按钮回调函数 | Function | -|
 | onShow | 窗口显示后回调函数 | Function | -|
@@ -126,6 +129,7 @@ this.$dialog.alert({ content: '' }) // 全量引入
 | title | 窗口标题 | String | -|
 | content | 正文内容 | String | -|
 | confirmText | 底部确认按钮文字 | String | `确认`|
+| transition <sup class="version-after">2.5.14+</sup>| 弹出层过度动画 | String | `md-bounce` |
 | onConfirm | 点击确认按钮回调函数 | Function | -|
 | onCancel | 点击取消按钮回调函数 | Function | -|
 | onShow | 窗口显示后回调函数 | Function | -|

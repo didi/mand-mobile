@@ -19,6 +19,7 @@ const generate = function({
   iconSvg = false,
   content = '',
   closable = false,
+  transition = 'md-bounce',
   btns = [],
   onShow = noop,
   onHide = noop,
@@ -33,7 +34,7 @@ const generate = function({
       content,
       closable,
       btns,
-      transition: 'md-bounce',
+      transition,
       preventScroll: true,
     },
   }).$mount()
@@ -80,6 +81,7 @@ Dialog.confirm = ({
   confirmText = '确定',
   confirmWarning = false,
   closable = false,
+  transition,
   onConfirm = noop,
   onCancel = noop,
   onShow = noop,
@@ -91,6 +93,7 @@ Dialog.confirm = ({
     iconSvg,
     content,
     closable,
+    transition,
     onShow,
     onHide,
     btns: [
@@ -132,6 +135,7 @@ Dialog.alert = ({
   confirmText = '确定',
   closable = false,
   warning = false,
+  transition,
   onConfirm = noop,
   onShow = noop,
   onHide = noop,
@@ -142,6 +146,7 @@ Dialog.alert = ({
     iconSvg,
     content,
     closable,
+    transition,
     onShow,
     onHide,
     btns: [
