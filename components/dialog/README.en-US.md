@@ -33,7 +33,7 @@ this.$dialog.alert({ content: '' }) // Totally Import
 | append-to | portal node of dialog | HTMLElement | `document.body` | - |
 | has-mask | has mask or not | Boolean | `true` | - |
 | mask-closable | if the dialog will be closed when clicking mask| Boolean | `false` | - |
-| transition | the animation effect of dialog | String | refer to [Transition](https://didi.github.io/mand-mobile/#/en-US/docs/components/feedback/transition?anchor=API) for optional values |
+| transition <sup class="version-after">2.5.14+</sup>| the animation effect of dialog | String | `md-fade`| refer to [Transition](https://didi.github.io/mand-mobile/#/en-US/docs/components/feedback/transition?anchor=API) for optional values |
 
 #### DialogBtnOptions Props
 
@@ -87,6 +87,7 @@ Dynamically create a confirmation dialog
 | confirmText | confirmation button | String | `Confirm` |
 | cancelWarning | clicking the Cancel button is a warning action | Boolean | `false` |
 | confirmWarning | clicking the Confirm button is a warning action | Boolean | `false` |
+| transition <sup class="version-after">2.5.14+</sup>| the animation effect of dialog | String | `md-bounce` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
 | onShow <sup class="version-after">2.5.0+</sup>| callback function is invoked when dialog is shown | Function | -|
@@ -102,6 +103,7 @@ Dynamically create an alert dialog
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
 | warning | clicking the Confirm button is a warning action | Boolean | `false` |
+| transition <sup class="version-after">2.5.14+</sup>| the animation effect of dialog | String | `md-bounce` |
 | onConfirm | callback function is invoked when clicking confirmation button | Function | -|
 | onShow | callback function is invoked when dialog is shown | Function | -|
 | onHide | callback function is invoked when dialog is hidden | Function | -|
@@ -114,6 +116,7 @@ Dynamically create a success dialog
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
+| transition <sup class="version-after">2.5.14+</sup>| the animation effect of dialog | String | `md-bounce` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
 | onShow | callback function is invoked when dialog is shown | Function | -|
@@ -127,6 +130,7 @@ Dynamically create a fail dialog
 | title | title of dialog | String | - |
 | content | content of dialog | String | -|
 | confirmText | confirmation button | String | `Confirm` |
+| transition <sup class="version-after">2.5.14+</sup>| the animation effect of dialog | String | `md-bounce` |
 | onConfirm | callback function is invoked when clicking confirmation button| Function | -|
 | onCancel | callback function is invoked when clicking cancellation button | Function | -|
 | onShow | callback function is invoked when dialog is shown | Function | -|
