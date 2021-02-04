@@ -3,6 +3,13 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.15
+
+`2021-02-04`
+
+- Fix
+  - Replace `NODE_ENV` with `MAND_ENV` in some components
+
 ### 2.5.14
 
 `2021-01-15`

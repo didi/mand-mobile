@@ -547,8 +547,8 @@ export default {
       dragState.startTime = new Date()
       dragState.startLeft = point.pageX
       dragState.startTop = point.pageY
-      dragState.itemWidth = process.env.NODE_ENV !== 'test' ? element.offsetWidth : 100
-      dragState.itemHeight = process.env.NODE_ENV !== 'test' ? element.offsetHeight : 100
+      dragState.itemWidth = process.env.MAND_ENV !== 'test' ? element.offsetWidth : 100
+      dragState.itemHeight = process.env.MAND_ENV !== 'test' ? element.offsetHeight : 100
     },
 
     $_doOnTouchMove(event) {
