@@ -145,7 +145,7 @@ export default {
       // popup box enter the animation after popup show
       this.isPopupBoxShow = true
       /* istanbul ignore if */
-      if (process.env.NODE_ENV === 'test') {
+      if (process.env.MAND_ENV === 'test') {
         this.$_onPopupTransitionStart()
         this.$_onPopupTransitionEnd()
       }
@@ -158,7 +158,7 @@ export default {
       this.preventScroll && this.$_preventScroll(false)
       this.$emit('input', false)
       /* istanbul ignore if */
-      if (process.env.NODE_ENV === 'test') {
+      if (process.env.MAND_ENV === 'test') {
         this.$_onPopupTransitionStart()
         this.$_onPopupTransitionEnd()
       }

@@ -86,7 +86,7 @@ export default {
 
   data() {
     return {
-      repetition: process.env.NODE_ENV === 'test' ? 2 : 50,
+      repetition: process.env.MAND_ENV === 'test' ? 2 : 50,
     }
   },
 
