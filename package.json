@@ -48,9 +48,9 @@
     "build:webpack:mand-mobile": "cross-env NODE_ENV=production node build/webpack/build-mand-mobile",
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
-    "test": "jest --no-cache --runInBand --verbose --silent",
-    "test:lib": "TEST_TYPE=lib jest --no-cache --runInBand --verbose --silent",
-    "test:lib-vw": "TEST_TYPE=lib-vw jest --no-cache --runInBand --verbose --silent"
+    "test": "MAND_ENV=test jest --no-cache --runInBand --verbose --silent",
+    "test:lib": "MAND_ENV=test TEST_TYPE=lib jest --no-cache --runInBand --verbose --silent",
+    "test:lib-vw": "MAND_ENV=test TEST_TYPE=lib-vw jest --no-cache --runInBand --verbose --silent"
   },
   "license": "Apache",
   "config": {
