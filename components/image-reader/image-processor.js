@@ -127,7 +127,7 @@ function makeCanvas(img, orientation, maxWidth, maxHeight, quality) {
   ctx.drawImage(img, 0, 0, width, height)
 
   let base64 = null
-  if (!CSS.supports('image-orientation:none')) {
+  if (CSS && CSS.supports && !CSS.supports('image-orientation:none')) {
     switch (orientation) {
       case 3:
         ctx.rotate(180 * Math.PI / 180)
