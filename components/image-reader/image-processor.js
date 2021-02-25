@@ -127,44 +127,48 @@ function makeCanvas(img, orientation, maxWidth, maxHeight, quality) {
   ctx.drawImage(img, 0, 0, width, height)
 
   let base64 = null
-  switch (orientation) {
-    case 3:
-      ctx.rotate(180 * Math.PI / 180)
-      ctx.drawImage(img, -width, -height, width, height)
-      break
-    case 6:
-      ctx.rotate(90 * Math.PI / 180)
-      ctx.drawImage(img, 0, -width, height, width)
-      break
-    case 8:
-      ctx.rotate(270 * Math.PI / 180)
-      ctx.drawImage(img, -height, 0, height, width)
-      break
-    case 2:
-      ctx.translate(width, 0)
-      ctx.scale(-1, 1)
-      ctx.drawImage(img, 0, 0, width, height)
-      break
-    case 4:
-      ctx.translate(width, 0)
-      ctx.scale(-1, 1)
-      ctx.rotate(180 * Math.PI / 180)
-      ctx.drawImage(img, -width, -height, width, height)
-      break
-    case 5:
-      ctx.translate(width, 0)
-      ctx.scale(-1, 1)
-      ctx.rotate(90 * Math.PI / 180)
-      ctx.drawImage(img, 0, -width, height, width)
-      break
-    case 7:
-      ctx.translate(width, 0)
-      ctx.scale(-1, 1)
-      ctx.rotate(270 * Math.PI / 180)
-      ctx.drawImage(img, -height, 0, height, width)
-      break
-    default:
-      ctx.drawImage(img, 0, 0, width, height)
+  if (CSS && CSS.supports && !CSS.supports('image-orientation:none')) {
+    switch (orientation) {
+      case 3:
+        ctx.rotate(180 * Math.PI / 180)
+        ctx.drawImage(img, -width, -height, width, height)
+        break
+      case 6:
+        ctx.rotate(90 * Math.PI / 180)
+        ctx.drawImage(img, 0, -width, height, width)
+        break
+      case 8:
+        ctx.rotate(270 * Math.PI / 180)
+        ctx.drawImage(img, -height, 0, height, width)
+        break
+      case 2:
+        ctx.translate(width, 0)
+        ctx.scale(-1, 1)
+        ctx.drawImage(img, 0, 0, width, height)
+        break
+      case 4:
+        ctx.translate(width, 0)
+        ctx.scale(-1, 1)
+        ctx.rotate(180 * Math.PI / 180)
+        ctx.drawImage(img, -width, -height, width, height)
+        break
+      case 5:
+        ctx.translate(width, 0)
+        ctx.scale(-1, 1)
+        ctx.rotate(90 * Math.PI / 180)
+        ctx.drawImage(img, 0, -width, height, width)
+        break
+      case 7:
+        ctx.translate(width, 0)
+        ctx.scale(-1, 1)
+        ctx.rotate(270 * Math.PI / 180)
+        ctx.drawImage(img, -height, 0, height, width)
+        break
+      default:
+        ctx.drawImage(img, 0, 0, width, height)
+    }
+  } else {
+    ctx.drawImage(img, 0, 0, width, height)
   }
 
   if ((UA.oldIOS || UA.oldAndroid || UA.mQQBrowser || !navigator.userAgent) && window.JPEGEncoder) {
