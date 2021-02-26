@@ -3,6 +3,13 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.16
+
+`2021-02-26`
+
+- Fix
+  - Fix the issue of picture angle correction
+
 ### 2.5.15
 
 `2021-02-04`
