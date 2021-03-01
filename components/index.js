@@ -3,7 +3,7 @@
 // Import components core
 import './_style/global.styl'
 import {transformCamelCase, warn} from './_util'
-import {useLang, t} from './_local'
+import {setLocal, t} from './_local'
 import Button from './button'
 import Icon from './icon'
 import Popup from './popup'
@@ -229,7 +229,7 @@ export {
   Ruler,
   TextareaItem,
   Skeleton,
-  useLang,
+  setLocal,
   t,
   /* @init<%${componentNameUpper},%> */
 }

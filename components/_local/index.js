@@ -30,8 +30,8 @@ export const t = (path, option) => {
   return ''
 }
 
-export const useLang = l => {
+export const setLocal = l => {
   lang = l || lang
 }
 
-export default {useLang, t}
+export default {setLocal, t}
