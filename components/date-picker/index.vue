@@ -33,7 +33,7 @@ import {
   toArray,
   warn
 } from '../_util'
-import {t} from '../_local'
+import {t} from '../_locale'
 
 // yyyy-MM-dd hh:mm:ss => Year-Month-Date Hour:Minute
 const TYPE_FORMAT = {

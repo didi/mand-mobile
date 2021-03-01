@@ -136,7 +136,7 @@ import Captcha from '../captcha'
 import Icon from '../icon'
 import RollerSuccess from '../activity-indicator/roller-success'
 import {noop, extend} from '../_util'
-import {t} from '../_local'
+import {t} from '../_locale'
 import Channel from './channel'
 import ChannelButton from './channel-button'
 

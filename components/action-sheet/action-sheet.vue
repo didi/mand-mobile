@@ -35,7 +35,7 @@
 
 <script>import Popup from '../popup'
 import {inArray} from '../_util'
-import {t} from '../_local'
+import {t} from '../_locale'
 
 export default {
   name: 'md-action-sheet',

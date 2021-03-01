@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script>import {t} from '../_local'
+<script>import {t} from '../_locale'
 import Roller from '../activity-indicator/roller'
 
 export default {

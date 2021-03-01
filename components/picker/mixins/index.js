@@ -1,4 +1,4 @@
-import {t} from '../../_local'
+import {t} from '../../_locale'
 import popupMixin from '../../popup/mixins'
 import popupTitleBarMixin from '../../popup/mixins/title-bar'
 

@@ -64,7 +64,7 @@
 </template>
 
 <script>import {noop} from '../_util'
-import {t} from '../_local'
+import {t} from '../_locale'
 import Key from './key'
 
 export default {

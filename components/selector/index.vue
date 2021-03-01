@@ -86,7 +86,7 @@
   </div>
 </template>
 
-<script>import {t} from '../_local'
+<script>import {t} from '../_locale'
 import Icon from '../icon'
 import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'

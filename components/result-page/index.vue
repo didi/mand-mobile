@@ -25,7 +25,7 @@
   </div>
 </template>
 
-<script>import {t} from '../_local'
+<script>import {t} from '../_locale'
 import Button from '../button'
 
 export default {

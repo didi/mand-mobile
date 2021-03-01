@@ -80,7 +80,7 @@
 import Codebox from '../codebox'
 import Button from '../button'
 import {mdDocument} from '../_util'
-import {t} from '../_local'
+import {t} from '../_locale'
 
 export default {
   name: 'md-captcha',
