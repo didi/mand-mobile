@@ -3,6 +3,13 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.6.17
+
+`2021-03-02`
+
+- Feat
+  - Add i18n support in the project
+
 ### 2.5.16
 
 `2021-02-26`
