@@ -3,7 +3,7 @@ title: Change Log
 toc: hidden
 ---
 
-### 2.6.17
+### 2.5.17
 
 `2021-03-02`
 
