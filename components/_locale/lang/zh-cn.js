@@ -27,7 +27,7 @@ export default {
       minute: '分',
     },
     'dialog': {
-      confirm: '确认',
+      confirm: '确定',
       cancel: '取消',
     },
     'number-keyboard': {
