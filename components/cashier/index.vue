@@ -136,6 +136,7 @@ import Captcha from '../captcha'
 import Icon from '../icon'
 import RollerSuccess from '../activity-indicator/roller-success'
 import {noop, extend} from '../_util'
+import {t} from '../_locale'
 import Channel from './channel'
 import ChannelButton from './channel-button'
 
@@ -171,7 +172,7 @@ export default {
     },
     paymentTitle: {
       type: String,
-      default: '\u652f\u4ed8\u91d1\u989d\u0028\u5143\u0029', // 支付金额
+      default: t('md.cashier.payCash'), // 支付金额
     },
     paymentAmount: {
       type: String,
@@ -183,7 +184,7 @@ export default {
     },
     payButtonText: {
       type: String,
-      default: '\u786e\u5b9a\u652f\u4ed8', // 确定支付
+      default: t('md.cashier.confirmPay'), // 确定支付
     },
     payButtonDisabled: {
       type: Boolean,
@@ -191,10 +192,10 @@ export default {
     },
     moreButtonText: {
       type: String,
-      default: '\u66f4\u591a\u652f\u4ed8\u65b9\u5f0f', // 更多支付方式
+      default: t('md.cashier.morePayWays'), // 更多支付方式
     },
     title: {
-      default: '\u652f\u4ed8', // 支付
+      default: t('md.cashier.pay'), // 支付
     },
 
     // Mixin Props
@@ -215,16 +216,16 @@ export default {
       sceneKey: Date.now(),
       sceneOption: {
         loading: {
-          text: '\u652f\u4ed8\u7ed3\u679c\u67e5\u8be2\u4e2d\u002e\u002e\u002e', // 支付结果查询中...
+          text: t('md.cashier.payResultSearch'), // 支付结果查询中...
         },
         success: {
-          text: '\u652f\u4ed8\u6210\u529f', // 支付成功
-          buttonText: '\u6211\u77e5\u9053\u4e86', // 我知道了
+          text: t('md.cashier.paySuccess'), // 支付成功
+          buttonText: t('md.cashier.confirm'), // 我知道了
           handler: null,
         },
         fail: {
-          text: '\u652f\u4ed8\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5', // 支付失败，请稍后重试
-          buttonText: '\u6211\u77e5\u9053\u4e86', // 我知道了
+          text: t('md.cashier.payFail'), // 支付失败，请稍后重试
+          buttonText: t('md.cashier.confirm'), // 我知道了
           handler: null,
         },
         captcha: {
@@ -335,7 +336,7 @@ export default {
         padding 0 40px 40px
         box-sizing border-box
       // &.md-cashier-choose
-        
+
       &.md-cashier-captcha
         .md-captcha
           block()

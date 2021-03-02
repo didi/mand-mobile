@@ -64,6 +64,7 @@
 </template>
 
 <script>import {noop} from '../_util'
+import {t} from '../_locale'
 import Key from './key'
 
 export default {
@@ -89,7 +90,7 @@ export default {
     },
     okText: {
       type: String,
-      default: '确定',
+      default: t('md.number-keyboard.confirm'),
     },
     isView: {
       type: Boolean,
