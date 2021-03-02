@@ -80,6 +80,7 @@
 import Codebox from '../codebox'
 import Button from '../button'
 import {mdDocument} from '../_util'
+import {t} from '../_locale'
 
 export default {
   name: 'md-captcha',
@@ -131,11 +132,11 @@ export default {
     },
     countNormalText: {
       type: String,
-      default: '发送验证码',
+      default: t('md.captcha.sendCaptcha'),
     },
     countActiveText: {
       type: String,
-      default: '{$1}秒后重发',
+      default: t('md.captcha.countdown'),
     },
     isView: {
       type: Boolean,

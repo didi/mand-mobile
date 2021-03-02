@@ -1,3 +1,4 @@
+import {t} from '../../_locale'
 import popupMixin from '../../popup/mixins'
 import popupTitleBarMixin from '../../popup/mixins/title-bar'
 
@@ -9,10 +10,10 @@ export default {
       default: false,
     },
     okText: {
-      default: '确认',
+      default: t('md.picker.confirm'),
     },
     cancelText: {
-      default: '取消',
+      default: t('md.picker.cancel'),
     },
     lineHeight: {
       type: Number,

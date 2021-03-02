@@ -25,7 +25,8 @@
   </div>
 </template>
 
-<script>import Button from '../button'
+<script>import {t} from '../_locale'
+import Button from '../button'
 
 export default {
   name: 'md-result-page',
@@ -69,9 +70,9 @@ export default {
         this.text ||
         {
           // 网络连接异常
-          network: '\u7f51\u7edc\u8fde\u63a5\u5f02\u5e38',
+          network: t('md.result-page.networkError'),
           // 暂无信息
-          empty: '\u6682\u65e0\u4fe1\u606f',
+          empty: t('md.result-page.noInformation'),
         }[this.type] ||
         ''
       )
@@ -81,7 +82,7 @@ export default {
         this.subtext ||
         {
           // 您要访问的页面已丢失
-          lost: '\u60a8\u8981\u8bbf\u95ee\u7684\u9875\u9762\u5df2\u4e22\u5931',
+          lost: t('md.result-page.lostWay'),
         }[this.type] ||
         ''
       )

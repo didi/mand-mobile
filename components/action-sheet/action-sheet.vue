@@ -35,6 +35,7 @@
 
 <script>import Popup from '../popup'
 import {inArray} from '../_util'
+import {t} from '../_locale'
 
 export default {
   name: 'md-action-sheet',
@@ -68,7 +69,7 @@ export default {
     },
     cancelText: {
       type: String,
-      default: '取消',
+      default: t('md.action-sheet.cancel'),
     },
   },
 

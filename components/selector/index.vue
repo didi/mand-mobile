@@ -86,7 +86,8 @@
   </div>
 </template>
 
-<script>import Icon from '../icon'
+<script>import {t} from '../_locale'
+import Icon from '../icon'
 import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import popupMixin from '../popup/mixins'
@@ -134,7 +135,7 @@ export default {
     },
     cancelText: {
       default() {
-        return this.okText ? '取消' : ''
+        return this.okText ? t('md.selector.cancel') : ''
       },
     },
     iconPosition: {

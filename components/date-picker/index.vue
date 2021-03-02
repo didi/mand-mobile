@@ -33,6 +33,7 @@ import {
   toArray,
   warn
 } from '../_util'
+import {t} from '../_locale'
 
 // yyyy-MM-dd hh:mm:ss => Year-Month-Date Hour:Minute
 const TYPE_FORMAT = {
@@ -107,7 +108,13 @@ export default {
     unitText: {
       type: Array,
       default () {
-        return ['年', '月', '日', '时', '分']
+        return [
+          t('md.date-picker.year'),
+          t('md.date-picker.month'),
+          t('md.date-picker.day'),
+          t('md.date-picker.hour'),
+          t('md.date-picker.minute'),
+        ]
       }
     },
     todayText: {
@@ -268,8 +275,8 @@ export default {
       this.$_generateDateData.type = 'Date'
       this.$_generateHourData.type = 'Hour'
       this.$_generateMinuteData.type = 'Minute'
-    
-      const defaultDate = this.$_getDefaultDate()     
+
+      const defaultDate = this.$_getDefaultDate()
       switch (this.type) {
         case 'date':
           this.$_initColumnDataGeneratorForDate(defaultDate)
@@ -316,7 +323,7 @@ export default {
 
         if (defaultDate) {
           let value = defaultDate[TYPE_METHODS[type]]()
-          
+
           if (type === 'Month') {
             value += 1
           }
@@ -386,7 +393,7 @@ export default {
     },
     $_generateDateData () {
       const args = this.$_getGeneratorArguments(toArray(arguments))
-      
+
       let start, end
 
       if (this.$_isDateTimeEqual(this.minDate, args.Year, args.Month)) {
@@ -403,7 +410,7 @@ export default {
 
       const dateData = this.$_generateData(start, end, 'Date', this.unitText[2] || '', 1, arguments)
 
-      if (this.$_isDateTimeEqual(this.currentDateIns, args.Year, args.Month) && 
+      if (this.$_isDateTimeEqual(this.currentDateIns, args.Year, args.Month) &&
           this.currentDate >= start && this.currentDate <= end &&
           this.todayText) {
         const currentDateIndex = this.currentDate - start
@@ -438,7 +445,7 @@ export default {
         warn('MinDate Hour should be earlier than MaxDate')
         return
       }
-  
+
       return this.$_generateData(start, end, 'Hour', this.unitText[3] || '', 1, arguments)
     },
     $_generateMinuteData () {
@@ -468,7 +475,7 @@ export default {
       })
 
       while (count <= to) {
-        this.textRender 
+        this.textRender
         && (text = this.textRender.apply(this, [
             TYPE_FORMAT_INVERSE[type],
             ...defaultArgs,
@@ -486,7 +493,7 @@ export default {
       return data
     },
     /**
-     * Determine whether year, month, date, etc of 
+     * Determine whether year, month, date, etc of
      * the current date are equal to the given value
      * @params Date
      * @params year, month, date ...
@@ -556,7 +563,7 @@ export default {
         if (value < 10) {
           value = '0' + value
         }
-        
+
         format = format.replace('HH', 'hh') // deal with HH as hh
         format = format.replace(item.type, value)
         format = format.replace(TYPE_FORMAT_INVERSE[item.type], value)

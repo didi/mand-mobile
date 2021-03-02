@@ -9,16 +9,18 @@
   </div>
 </template>
 
-<script>export default {
+<script>import {t} from '../_locale'
+
+export default {
   name: 'md-scroll-view-more',
   props: {
     loadingText: {
       type: String,
-      default: '更多加载中...',
+      default: t('md.scroll-view.more.loading'),
     },
     finishedText: {
       type: String,
-      default: '全部已加载',
+      default: t('md.scroll-view.more.allLoaded'),
     },
     isFinished: {
       type: Boolean,
@@ -26,7 +28,7 @@
     },
   },
 }
-</script>
+</script>
 
 <style lang="stylus">
 .md-scroll-view-more

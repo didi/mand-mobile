@@ -9,7 +9,8 @@
   </div>
 </template>
 
-<script>import Roller from '../activity-indicator/roller'
+<script>import {t} from '../_locale'
+import Roller from '../activity-indicator/roller'
 
 export default {
   name: 'md-scroll-view-refresh',
@@ -33,15 +34,15 @@ export default {
     },
     refreshText: {
       type: String,
-      default: '下拉刷新',
+      default: t('md.scroll-view.refresh.pullDownRefresh'),
     },
     refreshActiveText: {
       type: String,
-      default: '释放刷新',
+      default: t('md.scroll-view.refresh.freedRefresh'),
     },
     refreshingText: {
       type: String,
-      default: '刷新中...',
+      default: t('md.scroll-view.refresh.refreshing'),
     },
     rollerColor: {
       type: String,

@@ -57,7 +57,8 @@
   </div>
 </template>
 
-<script>import Popup from '../popup'
+<script>import {t} from '../_locale'
+import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import popupMixin from '../popup/mixins'
 import popupTitleBarMixin from '../popup/mixins/title-bar'
@@ -94,7 +95,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: '请选择',
+      default: t('md.tab-picker.choose'),
     },
 
     // Mixin Props
