@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import {t} from '../_locale'
 import Dialog from './dialog'
 
 /* istanbul ignore next */
@@ -76,9 +77,9 @@ Dialog.confirm = ({
   icon = '',
   iconSvg = false,
   content = '',
-  cancelText = '取消',
+  cancelText = t('md.dialog.cancel'),
   cancelWarning = false,
-  confirmText = '确定',
+  confirmText = t('md.dialog.confirm'),
   confirmWarning = false,
   closable = false,
   transition,
@@ -132,7 +133,7 @@ Dialog.alert = ({
   icon = '',
   iconSvg = false,
   content = '',
-  confirmText = '确定',
+  confirmText = t('md.dialog.confirm'),
   closable = false,
   warning = false,
   transition,
