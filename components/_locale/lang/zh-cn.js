@@ -26,6 +26,10 @@ export default {
       hour: '时',
       minute: '分',
     },
+    'dialog': {
+      confirm: '确认',
+      cancel: '取消',
+    },
     'number-keyboard': {
       confirm: '确定',
     },
