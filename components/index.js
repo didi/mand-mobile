@@ -165,7 +165,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-// xport components
+// Export components
 export {
   install,
   version,
