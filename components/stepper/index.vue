@@ -176,7 +176,7 @@ export default {
     },
     $_formatNum(value) {
       // @elist
-      value = String(value).replace(/[^0-9.-]/g, '')
+      value = String(value).replace(/[^0-9.-]|^-|^\./g, '')
       return value === '' ? 0 : this.isInteger ? Math.floor(value) : +value
     },
     $_getCurrentNum(value) {
