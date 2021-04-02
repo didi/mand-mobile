@@ -3,6 +3,15 @@ title: Change Log
 toc: hidden
 ---
 
+
+### 2.5.18
+
+`2021-04-02`
+
+- Fix
+  - Fix the problem that the initial value of `stepper` is `-` `.` incorrectly parsed
+  - Fix the problem of incorrect image size modification by `image-reader`
+
 ### 2.5.17
 
 `2021-03-02`
