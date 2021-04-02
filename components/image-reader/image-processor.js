@@ -168,7 +168,11 @@ function makeCanvas(img, orientation, maxWidth, maxHeight, quality) {
         ctx.drawImage(img, 0, 0, width, height)
     }
   } else {
-    ctx.drawImage(img, 0, 0, width, height)
+    if ('5678'.includes(orientation)) {
+      ctx.drawImage(img, 0, 0, height, width)
+    } else {
+      ctx.drawImage(img, 0, 0, width, height)
+    }
   }
 
   if ((UA.oldIOS || UA.oldAndroid || UA.mQQBrowser || !navigator.userAgent) && window.JPEGEncoder) {
