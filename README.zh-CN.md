@@ -1,4 +1,4 @@
-<div align="center"><img width="80" src="https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="LOGO"></div>
+<div align="center"><img width="80" src="https://pt-starimg.didistatic.com/static/starimg/img/BSHOVw2pyT1620726744938.png" alt="LOGO"></div>
 <h2 align="center">mand-mobile</h2> 
 <p align="center">面向金融场景的移动端UI组件库，基于Vue.js实现</p>
 <p align="center">
@@ -113,6 +113,8 @@ Mand Mobile使用Apache License 2.0，查看[证书](LICENSE)。
 
 ## 友情链接
 
-* [Chameleon](https://github.com/didi/chameleon)/kəˈmiːlɪən/，简写CML，中文意思变色龙，意味着就像变色龙一样能适应不同环境的跨端整体解决方案，达到真正意义上"一套代码，多端运行"的终极目标
+* [Hummer](https://github.com/didi/Hummer)是一套高性能高可用的跨端开发框架，一套代码可以同时支持开发 Android 和 iOS 应用。现已经支持 Vue/TypeScript/JavaScript，面向大前端开发人员，总有一款适合你。
 
-* [DoraemonKit](https://github.com/didi/DoraemonKit) /'dɔ:ra:'emɔn/，简称DoKit， 一款功能齐全的客户端（ iOS 、Android、微信小程序 ）研发助手，你值得拥有
+* [DoraemonKit](https://github.com/didi/DoraemonKit) /'dɔ:ra:'emɔn/，简称DoKit， 一款功能齐全的客户端（ iOS 、Android、微信小程序 ）研发助手，你值得拥有。
+
+* [Chameleon](https://github.com/didi/chameleon)/kəˈmiːlɪən/，简写CML，中文意思变色龙，意味着就像变色龙一样能适应不同环境的跨端整体解决方案，达到真正意义上"一套代码，多端运行"的终极目标。
