@@ -262,7 +262,7 @@ export default {
 
 .md-stepper-number
   margin 0 4px
-  min-width stepper-width-input
+  width stepper-width-input
   height stepper-height
   padding 0 4px
   text-align center
