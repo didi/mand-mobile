@@ -90,6 +90,7 @@ const rollupPluginFactory = async () =>  {
   // inject
   replacePlugin({
     'process.env.NODE_ENV': `"${process.env.NODE_ENV}"`,
+    'process.env.MAND_ENV': `"${process.env.NODE_ENV}"`,
     'MAN_VERSION': `"${pkg.version}"`
   }),
   svgSpritePlugin(),

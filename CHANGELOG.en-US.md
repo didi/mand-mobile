@@ -3,6 +3,14 @@ title: Change Log
 toc: hidden
 ---
 
+### 2.5.19
+
+`2021-05-14`
+
+- Fix
+  - Fix the problem of incorrect image size modification by `image-reader`
+  - Fix the problem that `stepper` can't enter the decimal point
+  - Fix the problem that the `process.env.MAND_ENV` environment variable is not injected correctly
 
 ### 2.5.18
 
