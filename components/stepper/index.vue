@@ -10,13 +10,15 @@
     >
     </div>
     <div class="md-stepper-number">
-      <input type="tel"
+      <input
+        :type="!isInteger ? 'number' :'tel'"
         :size="contentLength"
         :value="currentNum"
         :readOnly="readOnly"
         @input="$_onInput"
         @focus="$_onFocus"
-        @blur="$_onChange">
+        @blur="$_onChange"
+      />
     </div>
     <div
       class="md-stepper-button md-stepper-button-add"
