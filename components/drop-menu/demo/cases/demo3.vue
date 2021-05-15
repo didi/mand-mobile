@@ -10,7 +10,8 @@
   </div>
 </template>
 
-<script>import {DropMenu} from 'mand-mobile'
+<script>
+import {DropMenu} from 'mand-mobile'
 
 export default {
   name: 'drop-menu-demo',
@@ -27,7 +28,7 @@ export default {
       isContentShow: false,
       data: [
         {
-          text: '一级选项1',
+          text: '一级选项12',
           options: [
             {
               value: '0',
@@ -43,7 +44,8 @@ export default {
     }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-drop-menu-3
