@@ -16,6 +16,7 @@
       large-radius
       is-check
       iconSize="lg"
+      default-value="3"
       @choose="onSelectorChoose"
     >
       <div class="selector-header" slot="header">
@@ -40,7 +41,8 @@
   </div>
 </template>
 
-<script>import {Selector, Field, FieldItem} from 'mand-mobile'
+<script>
+import {Selector, Field, FieldItem} from 'mand-mobile'
 
 export default {
   name: 'selector-demo',
@@ -94,7 +96,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-example-child-selector-1
