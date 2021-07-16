@@ -34,15 +34,15 @@ export default {
     },
     refreshText: {
       type: String,
-      default: t('md.scroll-view.refresh.pullDownRefresh'),
+      default: t('md.scroll_view.refresh.pullDownRefresh'),
     },
     refreshActiveText: {
       type: String,
-      default: t('md.scroll-view.refresh.freedRefresh'),
+      default: t('md.scroll_view.refresh.freedRefresh'),
     },
     refreshingText: {
       type: String,
-      default: t('md.scroll-view.refresh.refreshing'),
+      default: t('md.scroll_view.refresh.refreshing'),
     },
     rollerColor: {
       type: String,
