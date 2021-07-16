@@ -90,7 +90,7 @@ export default {
     },
     okText: {
       type: String,
-      default: t('md.number-keyboard.confirm'),
+      default: t('md.number_keyboard.confirm'),
     },
     isView: {
       type: Boolean,

@@ -95,7 +95,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: t('md.tab-picker.choose'),
+      default: t('md.tab_picker.choose'),
     },
 
     // Mixin Props

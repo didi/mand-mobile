@@ -1,4 +1,4 @@
-import defaultLang from './lang/zh-cn'
+import defaultLang from './lang/zh-CN'
 
 let lang = defaultLang
 
