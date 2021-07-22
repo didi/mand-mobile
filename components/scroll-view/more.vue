@@ -16,11 +16,11 @@ export default {
   props: {
     loadingText: {
       type: String,
-      default: t('md.scroll-view.more.loading'),
+      default: t('md.scroll_view.more.loading'),
     },
     finishedText: {
       type: String,
-      default: t('md.scroll-view.more.allLoaded'),
+      default: t('md.scroll_view.more.allLoaded'),
     },
     isFinished: {
       type: Boolean,

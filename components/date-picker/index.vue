@@ -109,11 +109,11 @@ export default {
       type: Array,
       default () {
         return [
-          t('md.date-picker.year'),
-          t('md.date-picker.month'),
-          t('md.date-picker.day'),
-          t('md.date-picker.hour'),
-          t('md.date-picker.minute'),
+          t('md.date_picker.year'),
+          t('md.date_picker.month'),
+          t('md.date_picker.day'),
+          t('md.date_picker.hour'),
+          t('md.date_picker.minute'),
         ]
       }
     },
