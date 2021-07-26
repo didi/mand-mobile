@@ -34,6 +34,7 @@ export function setCursorsPosition(ctrl, pos) {
     clearTimeout(timer)
   }
 
+  // Compatible with some Android devices, the synchronized settings will be invalid
   timer = setTimeout(() => {
     /* istanbul ignore next */
     if (ctrl.setSelectionRange) {
@@ -46,5 +47,5 @@ export function setCursorsPosition(ctrl, pos) {
       range.moveStart('character', pos)
       range.select()
     }
-  }, 50)
+  }, 0)
 }
