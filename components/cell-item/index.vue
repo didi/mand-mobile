@@ -22,7 +22,7 @@
         <slot name="right">
           {{ addon }}
         </slot>
-        <md-icon v-if="arrow" name="arrow-right" size="md" />
+        <md-icon v-if="arrow" name="arrow" size="md" />
       </div>
     </div>
     <div class="md-cell-item-children" v-if="$slots.children">
@@ -116,7 +116,7 @@ export default {
   justify-content flex-end
   color cell-item-right-color
   font-size cell-item-right-font-size
-  .md-icon-arrow-right
+  .md-icon-arrow
     margin-left 6px
     margin-right -6px
     color color-text-placeholder

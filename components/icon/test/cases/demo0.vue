@@ -27,6 +27,7 @@ export default {
         'rectangle',
         'right',
         'wrong',
+        'arrow',
         'arrow-left',
         'arrow-right',
         'arrow-up',

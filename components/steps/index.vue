@@ -8,7 +8,8 @@
       'no-current': currentLength % 1 !== 0
     }"
   >
-    <template v-for="(step, index) of steps">
+    <slot v-if="custom" :steps="steps"></slot>
+    <template v-else v-for="(step, index) of steps">
       <div class="step-wrapper"
         :class="[$_getStepStatusClass(index)]"
         :key="`steps-${index}`"
@@ -114,6 +115,10 @@ export default {
       default: false,
     },
     verticalAdaptive: {
+      type: Boolean,
+      default: false,
+    },
+    custom: {
       type: Boolean,
       default: false,
     },

@@ -70,7 +70,7 @@ export default {
   bottom 0
   right 0
   display flex
-  padding action-bar-padding-v action-bar-padding-h
+  padding action-bar-padding-v action-bar-padding-h 36px
   background color-bg-inverse
   clearfix()
 
@@ -79,7 +79,7 @@ export default {
   flex 1
   padding-bottom constant(safe-area-inset-bottom)
   padding-bottom env(safe-area-inset-bottom)
-  
+
 .md-action-bar-text
   display flex
   flex 1

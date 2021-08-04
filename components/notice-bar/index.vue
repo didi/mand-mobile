@@ -109,7 +109,7 @@ export default {
     },
 
     rightIcon() {
-      return this.mode === 'link' ? 'arrow-right' : 'close'
+      return this.mode === 'link' ? 'arrow' : 'close'
     },
   },
 
@@ -190,7 +190,7 @@ export default {
   align-items center
 
 .md-notice-bar-left
-  padding-right 12px
+  padding-right 16px
 .md-notice-bar-right
   padding-right 32px
 .md-notice-bar-empty
@@ -200,6 +200,7 @@ export default {
   flex 1
   margin auto
   width auto
+  margin-right 40px
   line-height 64px
   white-space nowrap
   overflow hidden

@@ -22,7 +22,7 @@
       </div>
       <div class="md-field-item-right" v-if="arrow || addon || $slots.right">
         <slot name="right">{{ addon }}</slot>
-        <md-icon v-if="arrow" :name="arrow === true ? 'arrow-right' : arrow" size="md" />
+        <md-icon v-if="arrow" :name="arrow === true ? 'arrow' : arrow" size="md" />
       </div>
     </div>
     <div class="md-field-item-children" v-if="$slots.children">
@@ -161,7 +161,7 @@ export default {
   justify-content flex-end
   color field-item-addon-color
   font-size field-item-addon-font-size
-  .md-icon-arrow-right
+  .md-icon-arrow
     margin-right -6px
     color color-text-placeholder
 
@@ -173,6 +173,7 @@ export default {
   &.is-solid
     .md-field-item-title
       width field-item-title-width
+      color #01080F
   &.is-disabled
     .md-field-item-control,
     .md-field-item-left,

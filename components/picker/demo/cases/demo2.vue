@@ -3,13 +3,13 @@
     <md-field>
       <md-field-item
         title="起保年份"
-        arrow="arrow-right"
+        arrow="arrow"
         :addon="pickerValue0"
         @click="isPickerShow0 = true">
       </md-field-item>
       <md-field-item
         title="省市区/县"
-        arrow="arrow-right"
+        arrow="arrow"
         :addon="pickerValue1"
         @click="isPickerShow1 = true">
       </md-field-item>

@@ -5,8 +5,8 @@ exports[`Toast - Demo Continuous call 1`] = `
   <div class="md-popup with-mask center" style="">
     <div class="md-popup-mask" style=""></div>
     <div class="md-popup-box md-fade" style="">
-      <div class="md-toast-content"><svg class="md-icon icon-svg md-icon-spinner lg">
-          <use xlink:href="#spinner"></use>
+      <div class="md-toast-content"><svg class="md-icon icon-svg md-icon-ring lg">
+          <use xlink:href="#ring"></use>
         </svg>
         <div class="md-toast-text">载入中</div>
       </div>
@@ -60,8 +60,8 @@ exports[`Toast - Demo Loading 1`] = `
   <div class="md-popup with-mask center" style="">
     <div class="md-popup-mask" style=""></div>
     <div class="md-popup-box md-fade" style="">
-      <div class="md-toast-content"><svg class="md-icon icon-svg md-icon-spinner lg">
-          <use xlink:href="#spinner"></use>
+      <div class="md-toast-content"><svg class="md-icon icon-svg md-icon-ring lg">
+          <use xlink:href="#ring"></use>
         </svg>
         <div class="md-toast-text">加载中...</div>
       </div>
