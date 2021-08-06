@@ -11,6 +11,9 @@ exports[`Icon - Demo Font icon 1`] = `
   <div class="md-example-item"><i class="md-icon icon-font md-icon-wrong wrong lg" style="color:;"></i>
     <p>wrong</p>
   </div>
+  <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow arrow lg" style="color:;"></i>
+    <p>arrow</p>
+  </div>
   <div class="md-example-item"><i class="md-icon icon-font md-icon-arrow-left arrow-left lg" style="color:;"></i>
     <p>arrow-left</p>
   </div>

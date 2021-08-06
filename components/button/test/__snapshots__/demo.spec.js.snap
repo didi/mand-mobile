@@ -160,7 +160,7 @@ exports[`Button Text link 1`] = `
   </button> <button type="button" disabled="disabled" class="md-button link inactive block">
     <div class="md-button-inner">
       <!---->
-      <div class="md-button-content">去看看<i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+      <div class="md-button-content">去看看<i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
     </div>
   </button></div>
 `;

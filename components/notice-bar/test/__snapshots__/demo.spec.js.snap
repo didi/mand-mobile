@@ -41,7 +41,7 @@ exports[`NoticeBar - Demo Multi-line display 1`] = `
         为了确保您的资金安全，请设置支付密码。为了确保您的资金安全，请设置支付密码。为了确保您的资金安全，请设置支付密码。
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-arrow arrow md" style="color:;"></i></div>
   </div>
 </div>
 `;
@@ -110,7 +110,7 @@ exports[`NoticeBar - Demo Theme 1`] = `
         福利来啦，7日免息券发放中！
       </div>
     </div>
-    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+    <div class="md-notice-bar-right"><i class="md-icon icon-font md-notice-icon md-notice-icon-right md-icon-arrow arrow md" style="color:;"></i></div>
   </div>
 </div>
 `;

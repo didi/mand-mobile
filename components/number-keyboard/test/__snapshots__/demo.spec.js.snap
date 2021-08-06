@@ -53,6 +53,7 @@ exports[`NumberKeyboard - Demo With confirmation key and decimal point, generall
               <li class="keyboard-number-item"><span>9</span></li>
               <li class="keyboard-number-item"><span>.</span></li>
               <li class="keyboard-number-item"><span>0</span></li>
+              <!---->
               <li class="keyboard-number-item slidedown"><span></span></li>
             </ul>
           </div>
@@ -85,6 +86,7 @@ exports[`NumberKeyboard - Demo With confirmation key and decimal point, generall
               <li class="keyboard-number-item"><span>9</span></li>
               <!---->
               <li class="keyboard-number-item large-item"><span>0</span></li>
+              <!---->
               <li class="keyboard-number-item slidedown"><span></span></li>
             </ul>
           </div>
@@ -117,6 +119,7 @@ exports[`NumberKeyboard - Demo With confirmation key and decimal point, generall
               <li class="keyboard-number-item"><span>9</span></li>
               <li class="keyboard-number-item"><span>x</span></li>
               <li class="keyboard-number-item"><span>0</span></li>
+              <!---->
               <li class="keyboard-number-item slidedown"><span></span></li>
             </ul>
           </div>
