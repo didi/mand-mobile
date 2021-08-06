@@ -128,7 +128,7 @@ export default {
 .md-icon-edit:before
   content "\e607"
 .md-icon-refresh:before
-  content "\e60a"
+  content "\e692"
 .md-icon-question:before
   content "\e608"
 .md-icon-setting:before
