@@ -72,8 +72,8 @@ export default {
       default: true,
     },
     inkLength: {
-      type: Number,
-      default: 100,
+      type: [Number, String],
+      default: '25',
     },
     immediate: {
       type: Boolean,
@@ -225,7 +225,7 @@ export default {
         }
 
         const target = this.$refs.items[this.currentIndex]
-        this.inkWidth = target.offsetWidth * this.inkLength / 100
+        this.inkWidth = typeof this.inkLength === 'string' ? this.inkLength : target.offsetWidth * this.inkLength / 100
         this.inkPos = target.offsetLeft + (target.offsetWidth - this.inkWidth) / 2
 
         const prevTarget = this.$refs.items[this.currentIndex - 1]

@@ -12,6 +12,7 @@
         :is-view="isView"
         :hide-dot="hideDot"
         :text-render="textRender"
+        :disabled="disabled"
         @enter="$_onEnter"
         @delete="$_onDelete"
         @confirm="$_onConfirm"
@@ -38,6 +39,7 @@
           :is-view="isView"
           :hide-dot="hideDot"
           :text-render="textRender"
+          :disabled="disabled"
           @enter="$_onEnter"
           @delete="$_onDelete"
           @confirm="$_onConfirm"
@@ -82,6 +84,10 @@ export default {
     isHideConfirm: {
       type: Boolean,
       default: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     okText: {
       type: String,

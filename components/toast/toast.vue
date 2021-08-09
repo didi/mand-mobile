@@ -7,10 +7,10 @@
       :hasMask="hasMask"
       :maskClosable="false"
     >
-      <div class="md-toast-content" v-if="$slots.default">
+      <div class="md-toast-content" :class="{ square: square }" v-if="$slots.default">
         <slot></slot>
       </div>
-      <div class="md-toast-content" v-else>
+      <div class="md-toast-content" :class="{ square: square }" v-else>
         <md-icon v-if="icon" :name="icon" size="lg" :svg="iconSvg"/>
         <div class="md-toast-text" v-if="content" v-text="content"></div>
       </div>
@@ -52,6 +52,10 @@ export default {
       default: 'center',
     },
     hasMask: {
+      type: Boolean,
+      default: false,
+    },
+    square: {
       type: Boolean,
       default: false,
     },
@@ -140,6 +144,17 @@ export default {
   background-color toast-fill
   box-sizing border-box
   overflow hidden
+  &.square
+    display flex
+    flex-direction column
+    width 300px
+    height 240px
+    padding 56px 60px
+    .md-icon
+      margin-bottom 32px
+      width 60px
+      height 60px
+      font-size 60px
 
 .md-toast-text
   white-space nowrap

@@ -22,7 +22,7 @@ export default {
       current: 1,
       items: [
         {name: 1, label: '标签1', icon: 'arrow-up'},
-        {name: 2, label: '标签2', icon: 'arrow-right'},
+        {name: 2, label: '标签2', icon: 'arrow'},
         {name: 3, label: '标签3', icon: 'arrow-down'},
         {name: 4, label: '标签4', icon: 'arrow-left'},
       ],

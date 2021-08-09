@@ -15,6 +15,7 @@ const Toast = function({
   position = 'center',
   hasMask = false,
   parentNode = document.body,
+  square = false,
 }) {
   let vm = Toast._instance
 
@@ -28,6 +29,7 @@ const Toast = function({
         duration,
         position,
         hasMask,
+        square,
       },
     }).$mount()
   }
@@ -42,6 +44,7 @@ const Toast = function({
   vm.duration = duration
   vm.position = position
   vm.hasMask = hasMask
+  vm.square = square
   // vm.visible = true
   // vm.fire()
   vm.show()
@@ -71,13 +74,14 @@ Toast.hide = () => {
  * @returns {Toast}
  */
 
-Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
+Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = document.body, square = false) => {
   return Toast({
     icon: '',
     content,
     duration,
     hasMask,
     parentNode,
+    square,
   })
 }
 
@@ -90,13 +94,14 @@ Toast.info = (content = '', duration = 3000, hasMask = false, parentNode = docum
  * @returns {Toast}
  */
 
-Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
+Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = document.body, square = false) => {
   return Toast({
     icon: 'success',
     content,
     duration,
     hasMask,
     parentNode,
+    square,
   })
 }
 
@@ -109,13 +114,14 @@ Toast.succeed = (content = '', duration = 3000, hasMask = false, parentNode = do
  * @returns {Toast}
  */
 
-Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = document.body) => {
+Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = document.body, square = false) => {
   return Toast({
     icon: 'fail',
     content,
     duration,
     hasMask,
     parentNode,
+    square,
   })
 }
 
@@ -127,14 +133,15 @@ Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = doc
  * @param {node=} [parentNode=document.body]
  * @returns {Toast}
  */
-Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = document.body) => {
+Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = document.body, square = false) => {
   return Toast({
-    icon: 'spinner',
+    icon: 'ring',
     iconSvg: true,
     content,
     duration,
     hasMask,
     parentNode,
+    square,
   })
 }
 

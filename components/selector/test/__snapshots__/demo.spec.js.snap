@@ -11,7 +11,7 @@ exports[`Selector - Demo Check mode 1`] = `
           <div class="md-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
         </div>
         <!---->
       </div>
@@ -125,7 +125,7 @@ exports[`Selector - Demo Confirmed mode 1`] = `
           <div class="md-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
         </div>
         <!---->
       </div>
@@ -239,7 +239,7 @@ exports[`Selector - Demo Custom options 1`] = `
           <div class="md-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
         </div>
         <!---->
       </div>
@@ -382,7 +382,7 @@ exports[`Selector - Demo Multi mode 1`] = `
         <div class="md-field-item-content"><label class="md-field-item-title">多选模式</label>
           <!---->
           <div class="md-field-item-control">1</div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
         </div>
         <!---->
       </div>
@@ -493,7 +493,7 @@ exports[`Selector - Demo No need to confirm 1`] = `
         <div class="md-field-item-content"><label class="md-field-item-title">普通模式</label>
           <!---->
           <div class="md-field-item-control">选项二</div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow-right arrow-right md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
         </div>
         <!---->
       </div>

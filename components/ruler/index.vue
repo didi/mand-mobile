@@ -164,7 +164,11 @@ export default {
       const drawFn = throttle(this.$_draw, 10)
       const scroller = new Scroller(
         left => {
-          this.isInitialed && drawFn(left)
+          if (this.isInitialed) {
+            drawFn(left)
+          } else {
+            this.$_draw(left)
+          }
         },
         {
           scrollingX: true,

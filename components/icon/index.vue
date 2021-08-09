@@ -90,7 +90,7 @@ export default {
     &:before
       position relative
       z-index 2
-  
+
   &.icon-svg
     &.xss
       width icon-size-xxs
@@ -109,16 +109,18 @@ export default {
       vertical-height(icon-size-lg)
 
 // name
+.md-icon-arrow:before
+  content "\e68d"
 .md-icon-rectangle:before
-  content "\e900"
+  content "\e68e"
 .md-icon-invisible:before
   content "\e601"
 .md-icon-visible:before
   content "\e602"
 .md-icon-right:before
-  content "\e905"
+  content "\e68f"
 .md-icon-wrong:before
-  content "\e906"
+  content "\e604"
 .md-icon-info:before
   content "\e605"
 .md-icon-service:before
@@ -126,23 +128,23 @@ export default {
 .md-icon-edit:before
   content "\e607"
 .md-icon-refresh:before
-  content "\e901"
+  content "\e692"
 .md-icon-question:before
   content "\e608"
 .md-icon-setting:before
   content "\e609"
 .md-icon-wait:before
-  content "\e902"
+  content "\e690"
 .md-icon-check:before
-  content "\e904"
+  content "\e60c"
 .md-icon-check-disabled:before
-  content "\e903"
+  content "\e636"
 .md-icon-checked:before, .md-icon-success:before
-  content "\e908"
+  content "\e60d"
 .md-icon-clear:before, .md-icon-fail:before
   content "\e60e"
 .md-icon-info-solid:before
-  content "\e907"
+  content "\e635"
 .md-icon-warn:before
   content "\e60b"
 .md-icon-security:before
@@ -216,7 +218,7 @@ export default {
 .md-icon-arrow-down:before
   content "\e634"
 .md-icon-close:before
-  content "\e604"
+  content "\e68c"
 
 @font-face
   font-family Mand-Mobile-Icon

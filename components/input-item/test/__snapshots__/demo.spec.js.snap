@@ -238,6 +238,7 @@ exports[`InputItem - Demo input with controls 1`] = `
                       <li class="keyboard-number-item"><span>9</span></li>
                       <li class="keyboard-number-item"><span>.</span></li>
                       <li class="keyboard-number-item"><span>0</span></li>
+                      <!---->
                       <li class="keyboard-number-item slidedown"><span></span></li>
                     </ul>
                   </div>

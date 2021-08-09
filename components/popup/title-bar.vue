@@ -138,7 +138,7 @@ export default {
   width 100%
   height popup-title-bar-height
   background-color popup-title-bar-bg
-  border-radius popup-title-bar-radius popup-title-bar-radius 0 0
+  border-radius popup-title-bar-radius-large popup-title-bar-radius-large 0 0
   clearfix()
   overflow hidden
   &.large
@@ -186,6 +186,7 @@ export default {
     p.title
       font-size popup-title-bar-font-size-title
       color popup-title-bar-color-title
+      // font-family PingFangSC-Medium
     p.describe
       margin-top 15px
       font-size popup-title-bar-font-size-describe
