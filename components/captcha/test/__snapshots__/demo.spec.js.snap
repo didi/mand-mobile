@@ -22,7 +22,7 @@ exports[`Captcha - Demo Customize 1`] = `
                 <footer class="md-captcha-footer">
                   <div class="md-captcha-brief"></div> <button class="md-captcha-btn">发送验证码</button>
                 </footer>
-                <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
+                <form action="" style="display:none;"><input type="tel" maxlength="4" value="" class="md-codebox-input"></form>
                 <div class="md-number-keyboard md-codebox-keyboard">
                   <div class="md-popup bottom" style="display:none;">
                     <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
@@ -75,7 +75,7 @@ exports[`Captcha - Demo Inline display 1`] = `
       <footer class="md-captcha-footer">
         <div class="md-captcha-brief">最新验证码依然有效，请勿重发</div> <button class="md-captcha-btn">发送验证码</button>
       </footer>
-      <form action="" style="display:none;"><input type="text" maxlength="4" value="" class="md-codebox-input"></form>
+      <form action="" style="display:none;"><input type="tel" maxlength="4" value="" class="md-codebox-input"></form>
       <div class="md-number-keyboard md-codebox-keyboard in-view">
         <!---->
         <div class="md-number-keyboard-container simple">

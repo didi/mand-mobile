@@ -18,6 +18,7 @@
         :isView="true"
         :justify="true"
         :autofocus="false"
+        :input-type="inputType"
       >
         <footer class="md-captcha-footer">
           <div class="md-captcha-error" v-if="errorMsg" v-text="errorMsg"></div>
@@ -57,6 +58,7 @@
           :mask="mask"
           :justify="true"
           :autofocus="false"
+          :input-type="inputType"
           @submit="$_onSubmit"
         >
           <footer class="md-captcha-footer">
@@ -141,6 +143,10 @@ export default {
     isView: {
       type: Boolean,
       default: false,
+    },
+    inputType: {
+      type: String,
+      default: 'tel',
     },
   },
 
