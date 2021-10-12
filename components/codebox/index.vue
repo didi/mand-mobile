@@ -163,6 +163,10 @@ export default {
     if (!this.system && !this.isView) {
       document.body.appendChild(this.$refs.keyboard.$el)
     }
+
+    if (this.focused) {
+      this.$emit('focus')
+    }
   },
   beforeDestroy() {
     if (this.closable) {
@@ -225,6 +229,7 @@ export default {
       if (this.system) {
         this.$refs.input.blur()
       }
+      this.$emit('blur')
     },
     focus() {
       if (this.disabled) {
@@ -235,6 +240,7 @@ export default {
       if (this.system) {
         this.$refs.input.focus()
       }
+      this.$emit('focus')
     },
   },
 }
