@@ -56,9 +56,11 @@
     <form action="" v-show="system" @submit="$_onSubmit">
       <input
         :value="code"
-        :type="mask ? 'password' : inputType"
+        :type="inputType"
         :maxlength="maxlength"
         @input="$_onInputChange"
+        @focus="$_nativeFocus"
+        @blur="$_nativeBlur"
         ref="input"
         class="md-codebox-input"
       />
@@ -163,10 +165,6 @@ export default {
     if (!this.system && !this.isView) {
       document.body.appendChild(this.$refs.keyboard.$el)
     }
-
-    if (this.focused) {
-      this.$emit('focus')
-    }
   },
   beforeDestroy() {
     if (this.closable) {
@@ -229,7 +227,6 @@ export default {
       if (this.system) {
         this.$refs.input.blur()
       }
-      this.$emit('blur')
     },
     focus() {
       if (this.disabled) {
@@ -240,6 +237,11 @@ export default {
       if (this.system) {
         this.$refs.input.focus()
       }
+    },
+    $_nativeBlur() {
+      this.$emit('blur')
+    },
+    $_nativeFocus() {
       this.$emit('focus')
     },
   },
