@@ -10,10 +10,7 @@
         value ? 'checked' : ''
       ]"
       @click="$_onChange($event)">
-      <div class="md-agree-icon-container">
-        <md-icon name="checked" :size="size"></md-icon>
-        <md-icon name="check" :size="size"></md-icon>
-      </div>
+        <md-icon :name="currentIcon" :size="size" :svg="iconSvg"/>
     </div>
     <div class="md-agree-content">
       <slot></slot>
@@ -21,7 +18,8 @@
   </div>
 </template>
 
-<script>import Icon from '../icon'
+<script>
+import Icon from '../icon'
 export default {
   name: 'md-agree',
 
@@ -42,12 +40,28 @@ export default {
       type: String,
       default: 'md',
     },
+    iconSvg: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: String,
+      default: 'checked',
+    },
+    iconInverse: {
+      type: String,
+      default: 'check',
+    },
   },
 
   data() {
     return {}
   },
-
+  computed: {
+    currentIcon() {
+      return this.value ? this.icon : this.iconInverse
+    },
+  },
   methods: {
     // MARK: events handler, 如 $_onButtonClick
     $_onChange(event) {
@@ -59,7 +73,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-agree

@@ -35,7 +35,8 @@
   </div>
 </template>
 
-<script>import Transition from '../transition'
+<script>
+import Transition from '../transition'
 import popupMixin from './mixins'
 
 export default {
@@ -166,10 +167,11 @@ export default {
     $_preventScroll(isBind) {
       const handler = isBind ? 'addEventListener' : 'removeEventListener'
       const masker = this.$el.querySelector('.md-popup-mask')
-      const boxer = this.$el.querySelector('.md-popup-box')
+      // const boxer = this.$el.querySelector('.md-popup-box')
 
       masker && masker[handler]('touchmove', this.$_preventDefault, false)
-      boxer && boxer[handler]('touchmove', this.$_preventDefault, false)
+      // 修复content不可滚动问题
+      // boxer && boxer[handler]('touchmove', this.$_preventDefault, false)
       this.$_preventScrollExclude(isBind)
     },
     $_preventScrollExclude(isBind, preventScrollExclude) {
@@ -225,7 +227,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-popup
