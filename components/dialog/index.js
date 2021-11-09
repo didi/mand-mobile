@@ -24,6 +24,7 @@ const generate = function({
   btns = [],
   onShow = noop,
   onHide = noop,
+  preventScroll = true,
 }) {
   const DialogConstructor = Vue.extend(Dialog)
   const vm = new DialogConstructor({
@@ -36,7 +37,7 @@ const generate = function({
       closable,
       btns,
       transition,
-      preventScroll: true,
+      preventScroll,
     },
   }).$mount()
 
@@ -87,6 +88,7 @@ Dialog.confirm = ({
   onCancel = noop,
   onShow = noop,
   onHide = noop,
+  preventScroll = true,
 }) => {
   const vm = generate({
     title,
@@ -117,6 +119,7 @@ Dialog.confirm = ({
         },
       },
     ],
+    preventScroll,
   })
 
   return vm
@@ -140,6 +143,7 @@ Dialog.alert = ({
   onConfirm = noop,
   onShow = noop,
   onHide = noop,
+  preventScroll = true,
 }) => {
   const vm = generate({
     title,
@@ -161,6 +165,7 @@ Dialog.alert = ({
         },
       },
     ],
+    preventScroll,
   })
 
   return vm

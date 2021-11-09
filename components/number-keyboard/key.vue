@@ -19,7 +19,8 @@
   </li>
 </template>
 
-<script>export default {
+<script>
+export default {
   name: 'md-number-key',
 
   props: {
@@ -65,7 +66,9 @@
     },
     $_onBlur() {
       this.active = false
+      this.$emit('blur')
     },
   },
 }
-</script>
+
+</script>

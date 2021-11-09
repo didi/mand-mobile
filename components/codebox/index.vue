@@ -40,6 +40,7 @@
           readonly
           disabled
           :class="['md-codebox-holder', focused && 'is-active']"
+          @blur="blur"
         />
         <input
           v-else
@@ -49,6 +50,7 @@
           readonly
           disabled
           :class="['md-codebox-holder', focused && 'is-active']"
+          @blur="blur"
         />
       </template>
     </div>
@@ -61,6 +63,7 @@
         @input="$_onInputChange"
         ref="input"
         class="md-codebox-input"
+        @blur="blur"
       />
     </form>
     <md-number-keyboard
@@ -75,11 +78,14 @@
       @delete="$_onDelete"
       @enter="$_onEnter"
       @confirm="$_onConfirm"
+      @press="focus"
+      @blur="blur"
     ></md-number-keyboard>
   </div>
 </template>
 
-<script>import NumberKeyboard from '../number-keyboard'
+<script>
+import NumberKeyboard from '../number-keyboard'
 
 export default {
   name: 'md-codebox',
@@ -221,6 +227,7 @@ export default {
       if (this.system) {
         this.$refs.input.blur()
       }
+      this.$emit('blur')
     },
     focus() {
       if (this.disabled) {
@@ -231,10 +238,12 @@ export default {
       if (this.system) {
         this.$refs.input.focus()
       }
+      this.$emit('focus')
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-codebox-wrapper
