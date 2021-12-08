@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ToastOptions from './toast'
+import ToastOptions from './toast.vue'
 
 /**
  * Toast factory
