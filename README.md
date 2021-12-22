@@ -104,7 +104,7 @@ Welcome to contribute by creating issues or sending pull requests. See [Contribu
 
 ## Community
 
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/tuDKFjM2at1640157275725.png" alt="Mand Mobile Community" width="200"/>
 
 ## License
 Mand Mobile is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
