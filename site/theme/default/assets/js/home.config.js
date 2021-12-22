@@ -44,7 +44,10 @@ export default {
         bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
         content: MfeAnimation0
       },
-      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
+      others: `
+        <a href="https://mand-mobile.github.io/mand-mobile-next" style="margin-top:32px;">Mand Mobile Next for Vue3  <i class="icon-arrow-right-small"></i></a>
+        <a href="https://didi.github.io/mand-mobile-rn" style="margin-top:16px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>
+        `
     },
     {
       title: '用户体验',
@@ -125,7 +128,10 @@ export default {
         // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'
         content: MfeAnimation0,
       },
-      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
+      others: `
+        <a href="https://mand-mobile.github.io/mand-mobile-next" style="margin-top:32px;">Mand Mobile Next for Vue3  <i class="icon-arrow-right-small"></i></a>
+        <a href="https://didi.github.io/mand-mobile-rn" style="margin-top:16px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>
+        `
     },
     {
       title: 'User Experience',

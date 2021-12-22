@@ -125,7 +125,7 @@
                     :key="`home-box-block-${homeBlockIndex}-button-${homeBlockButtonIndex}`"
                     :data-index="3 + homeBlockButtonIndex"
                   >
-                    <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>  
+                    <component v-if="homeBlockButton.slots" :is="homeBlockButton.slots" :ref="`block-button-handler-slots-${homeBlockIndex}`"></component>
                   </div>
                 </template>
               </template>
@@ -139,10 +139,10 @@
             :key="`home-others-${homeBlockIndex}-3`"
           >
             <template v-if="typeof homeBlock.others === 'string'">
-              <div v-html="homeBlock.others"></div>
+              <div style="display: flex; flex-direction: column;" v-html="homeBlock.others"></div>
             </template>
             <template v-else>
-              <component :is="homeBlock.others" :ref="`block-other-slots-${homeBlockIndex}`"></component>  
+              <component :is="homeBlock.others" :ref="`block-other-slots-${homeBlockIndex}`"></component>
             </template>
           </div>
         </transition-group>
@@ -431,7 +431,7 @@ export default {
       height auto !important
       margin-bottom 1rem
       .home-decorate
-        display none 
+        display none
       .home-animation
         position static !important
         .home-animation-content
