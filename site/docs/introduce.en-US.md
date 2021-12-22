@@ -10,21 +10,21 @@ title: Mand Mobile
 
     40+ practical components can meet the basic needs of the mobile development, especially for financial scenarios.
 
-* <b>Unified visual specification</b> 
+* <b>Unified visual specification</b>
 
     Designed and maintained by designers of DiDi Finance Department to ensure a high\-level visual consistency within and among projects.
 
-* <b>Strictly controlled Bundle volume </b> 
+* <b>Strictly controlled Bundle volume </b>
 
     Provide on-demand loading capabilities and flexible use, avoid the import of useless code, and exporting `es`, `umd` formats and `px`, `vh/vw` two style units
 
-* <b>Flexible style theme</b> 
+* <b>Flexible style theme</b>
 
     UI style is configurable, flexible and easy to adapt to different design styles.
 
-* <b>Support TypeScript</b> 
+* <b>Support TypeScript</b>
 
-* <b>Support server-side rendering</b> 
+* <b>Support server-side rendering</b>
 
 #### Version
 
@@ -63,7 +63,7 @@ Please read our <a href="#/en-US/docs/development">Development Guide</a> first. 
 
 #### Community
 
-If you have problems during use, you can scan the QR code below to join the official group for help and it's expected that you share your personal experience to help others.  
+If you have problems during use, you can scan the QR code below to join the official group for help and it's expected that you share your personal experience to help others.
 
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/tuDKFjM2at1640157275725.png" alt="Mand Mobile Community" width="200"/>
 
