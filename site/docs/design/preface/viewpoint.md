@@ -4,7 +4,7 @@ title: 设计价值观
 
 <style>
 .viewpoint-item {width: 996px;height: 145px;border-radius: 8px;background-color: #FAFDFF;border: solid 1px #EDF6FF;margin-top: 40px;padding: 0 40px;display: flex;align-items: center;}
-.viewpoint-item-icon {margin-right: 60px;}
+.viewpoint-item-icon {width: 55px;margin-right: 60px;}
 .viewpoint-intro {display: flex;height: 55px;flex-direction: column;}
 .viewpoint-intro-title {font-size: 20px;color: #1D2A36;}
 .viewpoint-intro-text {font-size: 14px;color: #5E6D82;}
