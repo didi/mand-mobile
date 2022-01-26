@@ -135,12 +135,16 @@ module.exports = {
           text: '直观简单',
           markdown: resolve('site/docs/design/principle/intuition.md'),
         }, {
+          name: 'clear-controllable',
+          text: '清晰可控',
+          markdown: resolve('site/docs/design/principle/clear-controllable.md'),
+        }, {
           name: 'security',
-          text: '安全可控',
+          text: '安全感知',
           markdown: resolve('site/docs/design/principle/security.md'),
         }, {
           name: 'professional',
-          text: '体贴专业',
+          text: '态度专业',
           markdown: resolve('site/docs/design/principle/professional.md'),
         }],
       }, {
@@ -263,12 +267,16 @@ module.exports = {
           text: 'Intuitive and simple',
           markdown: resolve('site/docs/design/principle/intuition.en-US.md'),
         }, {
+          name: 'clear-controllable',
+          text: 'Clear and controllable',
+          markdown: resolve('site/docs/design/principle/clear-controllable.en-US.md'),
+        }, {
           name: 'security',
-          text: 'Safe and controllable',
+          text: 'Security perception',
           markdown: resolve('site/docs/design/principle/security.en-US.md'),
         }, {
           name: 'professional',
-          text: 'Thoughtful and professional',
+          text: 'Professional attitude',
           markdown: resolve('site/docs/design/principle/professional.en-US.md'),
         }],
       }, {

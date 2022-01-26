@@ -3,17 +3,17 @@ title: 设计价值观
 ---
 
 <style>
-.viewpoint-item {width: 996px;height: 145px;border-radius: 8px;background-color: #FAFDFF;border: solid 1px #EDF6FF;margin-top: 40px;padding: 0 40px;display: flex;align-items: center;}
-.viewpoint-item-icon {width: 55px;margin-right: 60px;}
+.viewpoint-item {width: 996px;height: 128px;border-radius: 8px;background-color: #FAFDFF;border: solid 1px #EDF6FF;margin-top: 40px;padding: 0 40px;display: flex;align-items: center;}
+.viewpoint-item-icon {width: 80px;margin-right: 60px;}
 .viewpoint-intro {display: flex;height: 55px;flex-direction: column;}
-.viewpoint-intro-title {font-size: 20px;color: #1D2A36;}
-.viewpoint-intro-text {font-size: 14px;color: #5E6D82;}
+.viewpoint-intro-title {font-size: 20px;line-height:20px; margin-bottom: 10px;color: #1D2A36;font-weight: bold;}
+.viewpoint-intro-text {font-size: 14px; line-height: 14px;color: #5E6D82;}
 </style>
 
 <div class="viewpoint-container">
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/jf5GM02nlq1643021725360.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/9DWaGIdBMX1643190639714.png" />
     </div>
     <div class="viewpoint-item-intro">
       <div class="viewpoint-intro-title">目标</div>
@@ -22,7 +22,7 @@ title: 设计价值观
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/sitVvkW1vH1643021728193.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/gmiERfISUE1643190639730.png" />
     </div>
     <div class="viewpoint-item-intro">
       <div class="viewpoint-intro-title">推崇</div>
@@ -31,7 +31,7 @@ title: 设计价值观
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FJ33XWWsCR1643021733624.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/dXT7QFSA3Q1643190639878.png" />
     </div>
     <div class="viewpoint-item-intro">
       <div class="viewpoint-intro-title">倡导</div>
@@ -40,7 +40,7 @@ title: 设计价值观
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FLxWpW4vkb1643021736278.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Hf0EGJR9sc1643190639890.png" />
     </div>
     <div class="viewpoint-item-intro">
       <div class="viewpoint-intro-title">主张</div>
@@ -49,7 +49,7 @@ title: 设计价值观
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Q1pvoifLXw1643021739320.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/QUoX8r0bBp1643190640044.png" />
     </div>
     <div class="viewpoint-item-intro">
       <div class="viewpoint-intro-title">抵制</div>

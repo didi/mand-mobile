@@ -23,7 +23,6 @@ title: 体贴专业
 
 对于资金流转、业务办理，需要通过合理的进度节点设计，清晰的向用户传达时间概念，避免用户焦虑。
 
-
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
