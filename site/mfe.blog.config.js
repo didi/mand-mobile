@@ -116,6 +116,18 @@ module.exports = {
       text: '设计',
       src: '/zh-CN/design/principle/intuition',
       menu: [{
+        name: 'MandDesign',
+        text: 'Mand Design',
+        menu: [{
+          name: 'introduce',
+          text: 'FD+介绍',
+          markdown: resolve('site/docs/design/preface/introduce.md')
+        }, {
+          name: 'viewpoint',
+          text: '设计价值观',
+          markdown: resolve('site/docs/design/preface/viewpoint.md')
+        }]
+      }, {
         name: 'principle',
         text: '原则',
         menu: [{
@@ -232,6 +244,18 @@ module.exports = {
       text: 'Design',
       src: '/en-US/design/principle/intuition',
       menu: [{
+        name: 'MandDesign',
+        text: 'Mand Design',
+        menu: [{
+          name: 'introduce',
+          text: 'FD+introduction',
+          markdown: resolve('site/docs/design/preface/introduce.en-US.md')
+        }, {
+          name: 'viewpoint',
+          text: 'Design values',
+          markdown: resolve('site/docs/design/preface/viewpoint.en-US.md')
+        }]
+      }, {
         name: 'principle',
         text: 'Principle',
         menu: [{
