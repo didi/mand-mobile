@@ -255,7 +255,7 @@ module.exports = {
           text: 'Design values',
           markdown: resolve('site/docs/design/preface/viewpoint.en-US.md')
         }]
-      },{
+      }, {
         name: 'principle',
         text: 'Principle',
         menu: [{
