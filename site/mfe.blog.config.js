@@ -158,6 +158,14 @@ module.exports = {
           name: 'font',
           text: '字体',
           markdown: resolve('site/docs/design/vision/font.md'),
+        }, {
+          name: 'icon',
+          text: '图标',
+          markdown: resolve('site/docs/design/vision/icon.md'),
+        }, {
+          name: 'layer',
+          text: '层级',
+          markdown: resolve('site/docs/design/vision/layer.md'),
         }],
       }, {
         name: 'other',
@@ -286,6 +294,14 @@ module.exports = {
           name: 'font',
           text: 'Font',
           markdown: resolve('site/docs/design/vision/font.en-US.md'),
+        }, {
+          name: 'icon',
+          text: 'Icon',
+          markdown: resolve('site/docs/design/vision/icon.en-US.md'),
+        }, {
+          name: 'layer',
+          text: 'Layer',
+          markdown: resolve('site/docs/design/vision/layer.en-US.md'),
         }],
       }, {
         name: 'other',
