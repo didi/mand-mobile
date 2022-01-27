@@ -146,6 +146,10 @@ module.exports = {
           name: 'professional',
           text: '态度专业',
           markdown: resolve('site/docs/design/principle/professional.md'),
+        }, {
+          name: 'attitude',
+          text: '态度专业',
+          markdown: resolve('site/docs/design/principle/attitude.md'),
         }],
       }, {
         name: 'vision',
@@ -286,6 +290,11 @@ module.exports = {
           name: 'professional',
           text: 'Professional attitude',
           markdown: resolve('site/docs/design/principle/professional.en-US.md'),
+        },
+        {
+          name: 'attitude',
+          text: 'Thoughtful and attitude',
+          markdown: resolve('site/docs/design/principle/attitude.en-US.md'),
         }],
       }, {
         name: 'vision',
