@@ -28,7 +28,7 @@ title: FD+介绍
 <img class="qr-code" src="https://pt-starimg.didistatic.com/static/starimg/img/ofygINx3GX1643105614635.png" alt="QQ群二维码" width="166"/>
 </div>
 
-<div class="fl">
+<div class="fl" style="margin-bottom: 60px;">
 
 #### 关注公众号
 关注**曼哈顿Fin Design+**公众号了解更多我们的故事。

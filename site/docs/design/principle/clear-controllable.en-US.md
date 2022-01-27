@@ -5,7 +5,9 @@ title: Clear and controllable
 The user should be given the right to know and independent control. The user can clearly know the results of the action to be carried out, and can understand the current position and free return in operation.
 
 <style>
+h4 { margin-top: 60px !important; }
 .doc-cutline-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}
+.doc-cutline-wrapper:last-child { margin-bottom: 60px; }
 .doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:40px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px}
 .doc-cutline:after{position:absolute;bottom:-32px;left:0;font-size:12px;font-weight:500}
 .doc-cutline.do{margin-right:40px;border-bottom:solid 4px #2F86F6}

@@ -28,7 +28,7 @@ We welcome contributions of any kind, any suggestions or comments, please send u
 <img class="qr-code" src="https://pt-starimg.didistatic.com/static/starimg/img/ofygINx3GX1643105614635.png" alt="QQ group qr code" width="166"/>
 </div>
 
-<div class="fl">
+<div class="fl" style="margin-bottom: 60px;">
 
 #### Follow WeChat Official Accounts
 Follow **Manhattan Fin Design+** WeChat Official Accounts to learn more about our stories.

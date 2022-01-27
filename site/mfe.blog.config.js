@@ -143,10 +143,6 @@ module.exports = {
           text: '安全感知',
           markdown: resolve('site/docs/design/principle/security.md'),
         }, {
-          name: 'professional',
-          text: '态度专业',
-          markdown: resolve('site/docs/design/principle/professional.md'),
-        }, {
           name: 'attitude',
           text: '态度专业',
           markdown: resolve('site/docs/design/principle/attitude.md'),
@@ -287,11 +283,6 @@ module.exports = {
           text: 'Security perception',
           markdown: resolve('site/docs/design/principle/security.en-US.md'),
         }, {
-          name: 'professional',
-          text: 'Professional attitude',
-          markdown: resolve('site/docs/design/principle/professional.en-US.md'),
-        },
-        {
           name: 'attitude',
           text: 'Thoughtful and attitude',
           markdown: resolve('site/docs/design/principle/attitude.en-US.md'),

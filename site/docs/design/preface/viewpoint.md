@@ -3,6 +3,7 @@ title: 设计价值观
 ---
 
 <style>
+.viewpoint-container { margin-bottom: 60px; }
 .viewpoint-item {width: 996px;height: 128px;border-radius: 8px;background-color: #FAFDFF;border: solid 1px #EDF6FF;margin-top: 40px;padding: 0 40px;display: flex;align-items: center;}
 .viewpoint-item-icon {width: 80px;margin-right: 60px;}
 .viewpoint-intro {display: flex;height: 55px;flex-direction: column;}
