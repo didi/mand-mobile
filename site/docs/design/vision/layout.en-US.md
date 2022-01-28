@@ -20,9 +20,10 @@ margin-top: -15px;display:inline-flex;margin-bottom:42px;-webkit-box-sizing:bord
 .layout-last {margin-bottom: -8px;}
 </style>
 
-In order to minimize the cost of communication and adaptation, the unified design drawing board size of didi financial design team is 750 * 1624;
-
+<p style="margin-bottom: 48px;">
+In order to minimize the cost of communication and adaptation, the unified design drawing board size of didi financial design team is 750 * 1624; <br/>
 The cardinality of the grid is 4. Take "4" as a step to adjust the spacing and size of elements, which means that any padding, margin and sizing will be a multiple of 4
+</p>
 
 #### Page fence datum
 
