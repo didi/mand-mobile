@@ -3,7 +3,7 @@ title: Color
 ---
 
 <style>
-.color-list{float:left;width:100%;margin-bottom:50px;margin-top: -20px;}
+.color-list{float:left;width:100%;margin-bottom:20px;margin-top: -16px;}
 .color-list.inline{float:left;width:auto;margin-bottom:50px}
 .color-title{float:left;width:100%;font-size:14px;color:#111A34}
 .color-item{float:left;width:140px;min-height:148px;margin-top:16px;margin-right:20px;margin-bottom:20px;padding-bottom:20px;border:solid 1px #E4E5E7;border-radius:4px 4px 0 0;overflow:hidden}
@@ -17,6 +17,8 @@ title: Color
 </style>
 
 Man Mobile's official color palette is a set of default colors widely used in financial scenes. It includes theme color, function color and neutral color.
+
+<p style="margin-top: -6px;"></p>
 
 #### Color definition
 
@@ -65,7 +67,7 @@ Man Mobile's official color palette is a set of default colors widely used in fi
 
 HSB color model is used for color selection as a whole, and the hue consistent with the brand color is selected from the perspective of visual consistency. And expand each color by 10 color levels to enrich the color ladder and meet the needs of the scene
 
-<div class="doc-cutline-wrapper">
+<div class="doc-cutline-wrapper" style="margin-bottom: 20px;">
   <div class="doc-cutline do">
     <div class="doc-cutline-item">
       <img src="https://pt-starimg.didistatic.com/static/starimg/img/z2y6M85Kl11643257345112.png" style="max-height:410px;">
@@ -100,7 +102,7 @@ Choose a neutral color that favors the brand color and mix the brand color #198c
   </div>
   <div class="color-item">
     <div class="color-item-box large" style="background:#F8FBFF"></div>
-    <p class="color-item-text">#F8FBFF</p>
+    <p class="color-item-text">#F7FBFF</p>
     <p class="color-item-text">Background color</p>
   </div>
 </div>

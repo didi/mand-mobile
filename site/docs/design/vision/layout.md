@@ -20,9 +20,10 @@ margin-top: -15px;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertic
 .layout-last {margin-bottom: -8px;}
 </style>
 
-<div style="margin-bottom: 40px">从尽可能减少沟通与适配成本考虑，滴滴金融设计团队统一的设计画板尺寸为 750*1624；
+<p style="margin-bottom: 48px;">
+从尽可能减少沟通与适配成本考虑，滴滴金融设计团队统一的设计画板尺寸为 750*1624；<br/>
 栅格的基数为 4，以“4”为一个步进，来调整元素的间距及尺寸，这意味着任何padding、margin、sizing，都将是4的倍数。
-</div>
+</p>
 
 #### 页面栅栏基准
 
