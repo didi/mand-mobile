@@ -254,9 +254,9 @@ module.exports = {
     {
       name: 'design',
       text: 'Design',
-      src: '/en-US/design/principle/intuition',
+      src: '/en-US/design/mand-design/introduce',
       menu: [{
-        name: 'MandDesign',
+        name: 'mand-design',
         text: 'Mand Design',
         menu: [{
           name: 'introduce',
