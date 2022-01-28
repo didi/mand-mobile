@@ -1,8 +1,8 @@
 ---
-title: Intuitive and simple
+title: 清晰可控
 ---
 
-Just like the principle of "less is more" advocated by master Mies fandro, when designing the information and behavior processed by users, it should be simplified as much as possible, so as to reduce the burden on users.
+应赋予用户知情权与自主控制权，用户可以清晰地知道将要进行的动作会带来的结果，操作上可以理解当前的位置和自由的往返。
 
 <style>
 h4 { margin-top: 60px !important; }
@@ -22,53 +22,68 @@ h4 { margin-top: 60px !important; }
 }
 </style>
 
-#### Focus on single task
+#### 信息透明
 
-A page only focuses on one core task and provides a single operation button; If multiple operations are possible, the primary and secondary operations shall also be distinguished to avoid multiple operation buttons.
+金融场景涉及到各种协议签署，为方便用户理解，协议的展示应清晰简单，并需要用户主动授权。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item vertical" style="width: 300px;">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/bVh1mXPP9r1643188890070.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/1308n7PCET1643189771407.png">
     </div>
   </div>
   <div class="doc-cutline donot">
     <div class="doc-cutline-item vertical" style="width: 300px;">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/9R7BKLj8ak1643188890067.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/heBwyAI0eY1643189771378.png">
     </div>
   </div>
 </div>
 
-#### Simplified multi-level
+#### 进度清晰
 
-For complex information that needs to be layered, try to show only the first level information to users by default, and hide the other levels.
+当用户在进行复杂任务时，尽量告知用户当前任务进度和剩余需要完成的任务。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
     <div class="doc-cutline-item" style="width: 300px;">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/29KC3uQhEM1643188923160.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/spdlGlphym1643189799024.png">
     </div>
   </div>
   <div class="doc-cutline donot">
     <div class="doc-cutline-item" style="width: 300px;">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/TFoFbaVGHJ1643188923185.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/dIdjNT6c2i1643189799025.png">
     </div>
   </div>
 </div>
 
-#### What you see is what you get
-
-For the scanning and recognition function of bank cards, driving licenses and other certificates, the recognition results are compared with the corresponding certificate photos. Whether the recognition is correct or not is very intuitive and clear at a glance.
+对于资金流转、业务办理，需要通过合理进度节点或等待设计，清晰的向用户传达时间概念，避免用户焦虑。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
-    <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FfSJRAtAsN1545826131586.jpg">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/6hOAMmnvby1643189839058.png">
     </div>
   </div>
   <div class="doc-cutline donot">
-    <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/P1V5PxTfZJ1545826131541.jpg">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/hPTB2n5vQM1643189839196.png">
+    </div>
+  </div>
+</div>
+
+#### 让用户做主
+
+对于影响用户注意力或交易的操作，应允许用户对操作所产生的结果可进行撤销/修改，在源头和终点都给用户操作的权利。
+
+<div class="doc-cutline-wrapper">
+  <div class="doc-cutline do">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/45u8sLeEBr1643189884365.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/e5ru8rztDF1643189884274.png">
     </div>
   </div>
 </div>

@@ -3,7 +3,9 @@ title: 态度专业
 ---
 
 <style>
+h4 { margin-top: 60px !important; }
 .doc-cutline-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;}
+.doc-cutline-wrapper:last-child { margin-bottom: 60px; }
 .doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:40px 30px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px;max-width:45%}
 .doc-cutline:after{position:absolute;bottom:-32px;left:0;font-size:12px;font-weight:500}
 .doc-cutline.do{margin-right:40px;border-bottom:solid 4px #2F86F6}

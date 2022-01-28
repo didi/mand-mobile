@@ -1,10 +1,14 @@
 ---
-title: Safe and controllable
+title: Security perception
 ---
 
+Financial scenarios often involve users'personal information and financial contracts. To provide reliable and honest solutions, user information and asset security should be the core.
+
 <style>
+h4 { margin-top: 60px !important; }
 .doc-cutline-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}
-.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:20px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px;max-width:40%}
+.doc-cutline-wrapper:last-child { margin-bottom: 60px; }
+.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:40px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px;}
 .doc-cutline:after{position:absolute;bottom:-32px;left:0;font-size:12px;font-weight:500}
 .doc-cutline.do{margin-right:40px;border-bottom:solid 4px #2F86F6}
 .doc-cutline.do:after{content:"Do";color:#2F86F6}
@@ -19,27 +23,53 @@ title: Safe and controllable
 }
 </style>
 
-#### Data desensitization
+#### Privacy concerns
 
-In the process of displaying information such as name, ID number, bank card number, mobile phone number, etc., in order to avoid the leakage of personal privacy, a form of hidden anti-display is adopted. 
-
+Mobile phone name and ID number, bank card number and cell phone number are displayed in order to avoid the leakage of user privacy.
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
-    <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Y3ywMpuHs41545904053656.jpg" style="max-height:410px;">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/AwiUp20jNt1643190281247.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/6L6qaJIgqC1643190285976.png">
+    </div>
+  </div>
+</div>
+
+#### Safe handling
+
+When the user needs to fill in or upload personal information, the information processor should ensure the user's information security and truthfully tell how to protect the user's personal information, so that the user can have a sense of security.
+
+<div class="doc-cutline-wrapper">
+  <div class="doc-cutline do">
+    <div class="doc-cutline-item" style="width: 660px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/gRmfXSOEQr1643191228127.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/ASeEjfgAkR1643190314634.png">
     </div>
   </div>
 </div>
 
 #### Contract preservation
 
-The text contract of the agreement, contract, document, etc. involving the parties to the transaction provides the user with a save function, so that the user has a sense of reassurance for such transaction.
+The text contracts such as agreements, contracts and documents involving both parties of the transaction provide users with the function of saving, so that users can rest assured of such transactions.
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
-    <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FulGDLPs0K1545904142068.png" style="max-height:410px;">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/n2PjNKhV4W1643190155222.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/1B78BFQ86R1643190159394.png">
     </div>
   </div>
 </div>
