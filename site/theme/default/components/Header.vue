@@ -213,7 +213,7 @@ export default {
           margin-right 2px
           height 100%
         // font-family DINAlternate-Bold
-        
+
   .default-header-content
     display inline-block
     width 83%
@@ -248,16 +248,18 @@ export default {
             bottom 0
             left 30%
             width 40%
-            height 4px
-            background-color #2F86F6
+            height 5px
+            background-color #1641FF
+            border-radius 2.5px
           &:hover
             color #333
           &.router-link-active
-            color #2F86F6
+            color #1641FF
+            font-size 16px
             &:after
               display block
         i.dot
-          position absolute 
+          position absolute
           top 50%
           right 6px
           width 8px
@@ -281,7 +283,7 @@ export default {
       .operater-select
         i
           font-size 12px
-          color #2F86F6
+          color #1641FF
       &.default-header-lang a
         display inline-block
         width 100%
@@ -406,7 +408,7 @@ export default {
             bottom 0 !important
           &.router-link-active:after
             height 2px
-            background #2F86F6 !important
+            background #1641FF !important
     .default-header-aside .default-header-logo
       height 28px
       line-height 28px !important
@@ -420,7 +422,7 @@ export default {
     &.active .default-header-nav li.nav-item a
       color #666 !important
       &.router-link-active
-        color #2F86F6 !important
+        color #1641FF !important
     .default-header-operater
       display none
   .doc-content-top
