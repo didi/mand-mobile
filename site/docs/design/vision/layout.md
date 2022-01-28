@@ -15,9 +15,11 @@ margin-top: -15px;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertic
 @media (max-width:750px){.doc-cutline-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .doc-cutline{max-width:100%}
 .doc-cutline-min-width{min-width: auto}
+.doc-cutline:first-of-type{margin-right:0px}
 }
 .doc-content-paragraph h4{margin-top:20px}
 .layout-last {margin-bottom: -8px;}
+
 </style>
 
 <p style="margin-bottom: 48px;">
@@ -32,7 +34,7 @@ margin-top: -15px;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertic
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline doc-cutline-min-width">
     <div class="doc-cutline-item doc-cutline-item-padding">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/lmkDAXXHAj1643257416699.png" style="max-width: 340px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/lmkDAXXHAj1643257416699.png" style="max-width: 300px;">
     </div>
   </div>
   <div class="doc-cutline">&nbsp;</div>
@@ -43,7 +45,7 @@ margin-top: -15px;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertic
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline doc-cutline-min-width">
     <div class="doc-cutline-item doc-cutline-item-padding">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/zRhpemuXX81643257427184.png" style="max-width: 340px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/zRhpemuXX81643257427184.png" style="max-width: 300px;">
     </div>
   </div>
   <div class="doc-cutline">&nbsp;</div>
@@ -54,7 +56,7 @@ margin-top: -15px;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertic
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline doc-cutline-min-width">
     <div class="doc-cutline-item doc-cutline-item-padding">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/PF0LZjNYU31643257439081.png" style="max-width: 340px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/PF0LZjNYU31643257439081.png" style="max-width: 300px;">
     </div>
   </div>
   <div class="doc-cutline">&nbsp;</div>
@@ -66,7 +68,7 @@ margin-top: -15px;-webkit-box-flex:1;-ms-flex:1;flex:1;-webkit-box-orient:vertic
 <div class="doc-cutline-wrapper layout-last">
   <div class="doc-cutline doc-cutline-min-width">
     <div class="doc-cutline-item doc-cutline-item-padding">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/185k5HNIcF1643257447814.png" style="max-width: 340px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/185k5HNIcF1643257447814.png" style="max-width: 300px;">
     </div>
   </div>
   <div class="doc-cutline">&nbsp;</div>
