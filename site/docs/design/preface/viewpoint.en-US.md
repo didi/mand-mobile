@@ -4,11 +4,22 @@ title: Design values
 
 <style>
 .viewpoint-container { margin-bottom: 60px; }
-.viewpoint-item {width: 996px;height: 145px;border-radius: 8px;background-color: #FAFDFF;border: solid 1px #EDF6FF;margin-top: 40px;padding: 0 40px;display: flex;align-items: center;}
-.viewpoint-item-icon {width: 55px;margin-right: 60px;}
-.viewpoint-intro {display: flex;height: 55px;flex-direction: column;}
-.viewpoint-intro-title {font-size: 20px;color: #1D2A36;}
-.viewpoint-intro-text {font-size: 14px;color: #5E6D82;}
+.viewpoint-item {width: 996px;height: 128px;border-radius: 8px;background-color: #FAFDFF;border: solid 1px #EDF6FF;margin-top: 40px;padding: 0 40px;display: flex;align-items: center;}
+.viewpoint-item-icon {width: 80px;margin-right: 60px;}
+.viewpoint-intro {display: flex;height: 55px;flex-direction: column;flex: 1;}
+.viewpoint-intro-title {font-size: 20px;line-height:20px; margin-bottom: 10px;color: #1D2A36;font-weight: bold;}
+.viewpoint-intro-text {font-size: 14px; line-height: 14px;color: #5E6D82;}
+
+@media (max-width:750px) {
+  .viewpoint-item {
+    width: 80%;
+    height: auto;
+    padding: 20px 40px;
+  }
+  .viewpoint-intro {
+    height: auto;
+  }
+}
 </style>
 
 <div class="viewpoint-container">
