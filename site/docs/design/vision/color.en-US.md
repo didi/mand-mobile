@@ -102,7 +102,7 @@ Choose a neutral color that favors the brand color and mix the brand color #198c
   </div>
   <div class="color-item">
     <div class="color-item-box large" style="background:#F8FBFF"></div>
-    <p class="color-item-text">#F8FBFF</p>
+    <p class="color-item-text">#F7FBFF</p>
     <p class="color-item-text">Background color</p>
   </div>
 </div>

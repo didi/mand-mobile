@@ -103,7 +103,7 @@ Mand—Mobile官方色板是一套广泛适用于金融场景的默认配色。�
   </div>
   <div class="color-item">
     <div class="color-item-box large" style="background:#F8FBFF"></div>
-    <p class="color-item-text">#F8FBFF</p>
+    <p class="color-item-text">#F7FBFF</p>
     <p class="color-item-text">背景色</p>
   </div>
 </div>
