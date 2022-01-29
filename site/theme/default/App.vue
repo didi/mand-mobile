@@ -2,10 +2,11 @@
   <div class="mfe-blog-theme-default default-container" :class="{'is-home': isHome}" id="default-container">
     <mb-header :is-active="isHome" :logo-ads="logoAds"/>
     <div class="default-content">
-      <div class="default-content-sidebar">
+      <div
+        v-if="!noMenu"
+        class="default-content-sidebar">
         <mb-menu
           :class="{stricky: isAffixStricky}"
-          v-if="!noMenu"
           v-model="isMenuShow"
           :menu-ads="menuAds"
         />
@@ -162,11 +163,11 @@ export default {
   color #314659
   font-size 14px
   font-family Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif
-  &.is-home   
+  &.is-home
     .default-content
       padding 0
       .default-content-wrapper
-        overflow visible   
+        overflow visible
   .default-content
     min-height 800px
     padding 32px 0

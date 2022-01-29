@@ -357,7 +357,7 @@ module.exports = {
             src: 'https://github.com/mand-mobile/mand-mobile-template',
           },
           {
-            text: '调色板 <span>- 主题编辑工具</span>',
+            text: '调色板 - 主题编辑工具',
             src: 'https://mand-mobile.github.io/palette'
           },
           {
@@ -412,27 +412,27 @@ module.exports = {
         title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
           {
-            text: 'Chameleon <span>- 跨端解决方案</span>',
+            text: 'Chameleon - 跨端解决方案',
             src: 'https://cmljs.org/#/',
           },
           {
-            text: 'Cube UI <span>- Vue.js组件库</span>',
+            text: 'Cube UI - Vue.js组件库',
             src: 'https://didi.github.io/cube-ui',
           },
           {
-            text: 'Pile.js <span>- React组件库</span>',
+            text: 'Pile.js - React组件库',
             src: 'https://github.com/didi/pile.js',
           },
           {
-            text: 'MPX <span>- 增强型小程序框架</span>',
+            text: 'MPX - 增强型小程序框架',
             src: 'https://github.com/didi/mpx/',
           },
           {
-            text: 'DoraemonKit <span>- iOS开发助手</span>',
+            text: 'DoraemonKit - iOS开发助手',
             src: 'https://github.com/didi/doraemonKit/',
           },
           {
-            text: 'VirtualAPK <span>- Android插件化框架</span>',
+            text: 'VirtualAPK - Android插件化框架',
             src: 'https://didi.github.io/virtual-apk.html',
           }
         ],
@@ -455,7 +455,7 @@ module.exports = {
             src: 'https://github.com/mand-mobile/mand-mobile-template',
           },
           {
-            text: 'Palette <span>- Theme Editing Tool</span>',
+            text: 'Palette - Theme Editing Tool',
             src: 'https://mand-mobile.github.io/palette'
           },
           {
@@ -510,34 +510,34 @@ module.exports = {
         title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
           {
-            text: 'Chameleon <span>- Cross-end Framework</span>',
+            text: 'Chameleon - Cross-end Framework',
             src: 'https://cmljs.org/#/',
           },
           {
-            text: 'Cube UI <span>- Vue.js UI Lib</span>',
+            text: 'Cube UI - Vue.js UI Lib',
             src: 'https://didi.github.io/cube-ui',
           },
           {
-            text: 'Pile.js <span>- React Components</span>',
+            text: 'Pile.js - React Components',
             src: 'https://github.com/didi/pile.js',
           },
           {
-            text: 'MPX <span>- Enhanced Miniprogram Framework</span>',
+            text: 'MPX - Enhanced Miniprogram Framework',
             src: 'https://github.com/didi/mpx/',
           },
           {
-            text: 'VirtualAPK <span>- Android Plugin Framework</span>',
+            text: 'VirtualAPK - Android Plugin Framework',
             src: 'https://didi.github.io/virtual-apk.html',
           },
           {
-            text: 'DoraemonKit <span>- iOS Development Assistant</span>',
+            text: 'DoraemonKit - iOS Development Assistant',
             src: 'https://github.com/didi/doraemonKit/',
           }
         ],
       },
     ]
   },
-  copyRight: '2012-2019 Didi Chuxing. All Rights Reserved',
+  copyRight: '2012-2022 Didi Chuxing. All Rights Reserved',
   routePrefix: '/mand-mobile',
   // staticPrefix: '//manhattan.didistatic.com/static/manhattan/mand-mobile',
 }
