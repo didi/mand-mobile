@@ -64,10 +64,11 @@ title: 字体
 .font-size-img{max-width:80%!important;margin-top:32px!important}
 .font-weight-img{width:100%;height:100%;background-size:100% 100%;}
 .font-weight-list{margin-top:32px}
-.font-hight-img{width:1191px;height:409px;background-size:100% 100%;margin-top:32px;margin-bottom:24px}
+.font-hight-img{width:1191px;height:409px;background-size:cover;margin-top:32px;margin-bottom:24px;max-width:100%}
 @media (max-width:750px){.doc-font-list{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .doc-font-item{max-width:none!important;margin-right:0;margin-bottom:20px}
 .font-size-img{max-width:100%!important}
+.font-hight-img{height:280px}
 }
 .font-typeface-img{width:100%;height:100%;background-size:100% 100%;}
 </style>
@@ -97,4 +98,4 @@ title: 字体
 #### 行高
 
 在当字号越大的时候，行高就会越大，在大号文字的展示上信息的连贯明显得出现割裂。因此建议不同字号之间的间距都保持相同，通过逻辑得到这样一个公式：「 行高 = 字号 + n 」 N为4的倍数，推荐为8。
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/3n4NQTa8PZ1643185941412.png" class="font-hight-img">
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/bes4GgXj3D1643358533063.png" class="font-hight-img">

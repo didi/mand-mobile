@@ -64,10 +64,11 @@ Font is one of the most basic components of systematic interface design. It is t
 .font-size-img{max-width:80%!important;margin-top:32px!important}
 .font-weight-img{width:100%;height:100%;background-size:100% 100%;}
 .font-weight-list{margin-top:32px}
-.font-hight-img{width:1191px;height:409px;background-size:100% 100%;margin-top:32px;margin-bottom:24px}
+.font-hight-img{width:1191px;height:409px;background-size:cover;margin-top:32px;margin-bottom:24px;max-width:100%}
 @media (max-width:750px){.doc-font-list{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .doc-font-item{max-width:none!important;margin-right:0;margin-bottom:20px}
 .font-size-img{max-width:100%!important}
+.font-hight-img{height:280px}
 }
 .font-typeface-img{width:100%;height:100%;background-size:100% 100%;}
 </style>
@@ -98,4 +99,4 @@ In most cases, only the regular and Medium font weights appear in Chinese, and o
 #### Line height
 
 When the type is larger, the line height is larger, and the coherence of the message displayed in large text is obviously fragmented. Therefore, it is recommended to keep the same spacing between different font sizes. The logical formula is as follows: "Line height = font size + n", where n is a multiple of 4 and 8 is recommended.
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/3n4NQTa8PZ1643185941412.png" class="font-hight-img">
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/bes4GgXj3D1643358533063.png" class="font-hight-img">
