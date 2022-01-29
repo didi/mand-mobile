@@ -114,8 +114,20 @@ module.exports = {
     {
       name: 'design',
       text: '设计',
-      src: '/zh-CN/design/principle/intuition',
+      src: '/zh-CN/design/mand-design/introduce',
       menu: [{
+        name: 'mand-design',
+        text: 'Mand Design',
+        menu: [{
+          name: 'introduce',
+          text: 'FD+介绍',
+          markdown: resolve('site/docs/design/preface/introduce.md')
+        }, {
+          name: 'viewpoint',
+          text: '设计价值观',
+          markdown: resolve('site/docs/design/preface/viewpoint.md')
+        }]
+      }, {
         name: 'principle',
         text: '原则',
         menu: [{
@@ -123,13 +135,17 @@ module.exports = {
           text: '直观简单',
           markdown: resolve('site/docs/design/principle/intuition.md'),
         }, {
+          name: 'clear-controllable',
+          text: '清晰可控',
+          markdown: resolve('site/docs/design/principle/clear-controllable.md'),
+        }, {
           name: 'security',
-          text: '安全可控',
+          text: '安全感知',
           markdown: resolve('site/docs/design/principle/security.md'),
         }, {
-          name: 'professional',
-          text: '体贴专业',
-          markdown: resolve('site/docs/design/principle/professional.md'),
+          name: 'attitude',
+          text: '态度专业',
+          markdown: resolve('site/docs/design/principle/attitude.md'),
         }],
       }, {
         name: 'vision',
@@ -146,6 +162,14 @@ module.exports = {
           name: 'font',
           text: '字体',
           markdown: resolve('site/docs/design/vision/font.md'),
+        }, {
+          name: 'icon',
+          text: '图标',
+          markdown: resolve('site/docs/design/vision/icon.md'),
+        }, {
+          name: 'layer',
+          text: '层级',
+          markdown: resolve('site/docs/design/vision/layer.md'),
         }],
       }, {
         name: 'other',
@@ -230,8 +254,20 @@ module.exports = {
     {
       name: 'design',
       text: 'Design',
-      src: '/en-US/design/principle/intuition',
+      src: '/en-US/design/mand-design/introduce',
       menu: [{
+        name: 'mand-design',
+        text: 'Mand Design',
+        menu: [{
+          name: 'introduce',
+          text: 'FD+introduction',
+          markdown: resolve('site/docs/design/preface/introduce.en-US.md')
+        }, {
+          name: 'viewpoint',
+          text: 'Design values',
+          markdown: resolve('site/docs/design/preface/viewpoint.en-US.md')
+        }]
+      }, {
         name: 'principle',
         text: 'Principle',
         menu: [{
@@ -239,13 +275,17 @@ module.exports = {
           text: 'Intuitive and simple',
           markdown: resolve('site/docs/design/principle/intuition.en-US.md'),
         }, {
+          name: 'clear-controllable',
+          text: 'Clear and controllable',
+          markdown: resolve('site/docs/design/principle/clear-controllable.en-US.md'),
+        }, {
           name: 'security',
-          text: 'Safe and controllable',
+          text: 'Security perception',
           markdown: resolve('site/docs/design/principle/security.en-US.md'),
         }, {
-          name: 'professional',
-          text: 'Thoughtful and professional',
-          markdown: resolve('site/docs/design/principle/professional.en-US.md'),
+          name: 'attitude',
+          text: 'Thoughtful and attitude',
+          markdown: resolve('site/docs/design/principle/attitude.en-US.md'),
         }],
       }, {
         name: 'vision',
@@ -262,6 +302,14 @@ module.exports = {
           name: 'font',
           text: 'Font',
           markdown: resolve('site/docs/design/vision/font.en-US.md'),
+        }, {
+          name: 'icon',
+          text: 'Icon',
+          markdown: resolve('site/docs/design/vision/icon.en-US.md'),
+        }, {
+          name: 'layer',
+          text: 'Layer',
+          markdown: resolve('site/docs/design/vision/layer.en-US.md'),
         }],
       }, {
         name: 'other',
@@ -309,7 +357,7 @@ module.exports = {
             src: 'https://github.com/mand-mobile/mand-mobile-template',
           },
           {
-            text: '调色板 <span>- 主题编辑工具</span>',
+            text: '调色板 - 主题编辑工具',
             src: 'https://mand-mobile.github.io/palette'
           },
           {
@@ -364,27 +412,27 @@ module.exports = {
         title: '更多产品 <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
           {
-            text: 'Chameleon <span>- 跨端解决方案</span>',
+            text: 'Chameleon - 跨端解决方案',
             src: 'https://cmljs.org/#/',
           },
           {
-            text: 'Cube UI <span>- Vue.js组件库</span>',
+            text: 'Cube UI - Vue.js组件库',
             src: 'https://didi.github.io/cube-ui',
           },
           {
-            text: 'Pile.js <span>- React组件库</span>',
+            text: 'Pile.js - React组件库',
             src: 'https://github.com/didi/pile.js',
           },
           {
-            text: 'MPX <span>- 增强型小程序框架</span>',
+            text: 'MPX - 增强型小程序框架',
             src: 'https://github.com/didi/mpx/',
           },
           {
-            text: 'DoraemonKit <span>- iOS开发助手</span>',
+            text: 'DoraemonKit - iOS开发助手',
             src: 'https://github.com/didi/doraemonKit/',
           },
           {
-            text: 'VirtualAPK <span>- Android插件化框架</span>',
+            text: 'VirtualAPK - Android插件化框架',
             src: 'https://didi.github.io/virtual-apk.html',
           }
         ],
@@ -407,7 +455,7 @@ module.exports = {
             src: 'https://github.com/mand-mobile/mand-mobile-template',
           },
           {
-            text: 'Palette <span>- Theme Editing Tool</span>',
+            text: 'Palette - Theme Editing Tool',
             src: 'https://mand-mobile.github.io/palette'
           },
           {
@@ -462,34 +510,34 @@ module.exports = {
         title: 'More Products <a href="http://opensource.didiglobal.com" style="position:relative;top:3px;margin-left:5px;"><img height="16" src="//manhattan.didistatic.com/static/manhattan/mand/docs/didi-logo-white.png"/>',
         link: [
           {
-            text: 'Chameleon <span>- Cross-end Framework</span>',
+            text: 'Chameleon - Cross-end Framework',
             src: 'https://cmljs.org/#/',
           },
           {
-            text: 'Cube UI <span>- Vue.js UI Lib</span>',
+            text: 'Cube UI - Vue.js UI Lib',
             src: 'https://didi.github.io/cube-ui',
           },
           {
-            text: 'Pile.js <span>- React Components</span>',
+            text: 'Pile.js - React Components',
             src: 'https://github.com/didi/pile.js',
           },
           {
-            text: 'MPX <span>- Enhanced Miniprogram Framework</span>',
+            text: 'MPX - Enhanced Miniprogram Framework',
             src: 'https://github.com/didi/mpx/',
           },
           {
-            text: 'VirtualAPK <span>- Android Plugin Framework</span>',
+            text: 'VirtualAPK - Android Plugin Framework',
             src: 'https://didi.github.io/virtual-apk.html',
           },
           {
-            text: 'DoraemonKit <span>- iOS Development Assistant</span>',
+            text: 'DoraemonKit - iOS Development Assistant',
             src: 'https://github.com/didi/doraemonKit/',
           }
         ],
       },
     ]
   },
-  copyRight: '2012-2019 Didi Chuxing. All Rights Reserved',
+  copyRight: '2012-2022 Didi Chuxing. All Rights Reserved',
   routePrefix: '/mand-mobile',
   // staticPrefix: '//manhattan.didistatic.com/static/manhattan/mand-mobile',
 }

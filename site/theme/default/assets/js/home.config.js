@@ -1,8 +1,5 @@
 import MfeTable from '../../components/Table'
-import MfeGitStar from '../../components/GitStar'
-import MfeAnimation0 from '../../components/home/Animation0'
-import MfeAnimation1 from '../../components/home/Animation1'
-import MfeAnimation2 from '../../components/home/Animation2'
+// import MfeGitStar from '../../components/GitStar'
 
 const qrcodeTableView = {
   name: 'qrcodeTable',
@@ -18,14 +15,13 @@ const qrcodeTableView = {
 }
 
 export default {
-  'zh-CN': [
-    {
-      title: 'Mand Mobile <i>2</i>',
-      describe: '面向金融场景的Vue移动端UI组件库，丰富、灵活、实用，快速搭建优质的金融类产品，让复杂的金融场景变简单。',
+  'zh-CN': {
+    banner: {
+      describe: '打造面向金融场景的 Vue 移动端 UI 组件库，灵活快速、丰富实用；用于敏捷搭建差异化的金融类产品，力求让复杂场景变得简单，辅助用户认知提效。',
       buttons: [{
         type: 'link',
         text: '开始使用',
-        src: '/docs',
+        src: '/zh-CN/docs',
         theme: 'start'
       }, {
         type: 'handler',
@@ -35,77 +31,39 @@ export default {
         },
         theme: 'demo',
         slots: qrcodeTableView
-      }, {
+      }
+        // , {
         // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
-        type: 'other',
-        slots: MfeGitStar
-      }],
-      animations: {
-        bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
-        content: MfeAnimation0
-      },
-      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
+        //   type: 'other',
+        //   slots: MfeGitStar
+        // }
+      ],
     },
-    {
-      title: '用户体验',
-      describe: '基于「合理、好用」设计价值观，从交互操作、视觉抽象、图形可视等角度共同解决问题。 ',
-      buttons: [{
-        type: 'link',
-        text: '设计原则',
-        src: '/zh-CN/design/principle/intuition',
-        theme: 'demo'
-      }],
-      animations: {
-        bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.svg',
-        content: MfeAnimation1
-      },
-      decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-cirlce.svg'
-    },
-    {
-      title: '敏捷支持',
-      describe: '汲取最前沿技术，组件化轻量化实现，兼顾稳定和品质，努力实现金融场景的全覆盖。',
-      animations: [
-        {
-          icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-0.svg',
-          title: '丰富的组件',
-          describe: '40+的基础组件，覆盖金融场景',
-        },
-        {
-          icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-1.svg',
-          title: '极高的易用性',
-          describe: '组件均有详细说明文档、案例演示',
-        },
-        {
-          icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-2.svg',
-          title: '轻量的Bundle',
-          describe: '支持<a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a>自动化按需加载代码，减小bundle体积',
-        }
-      ]
-    },
-    {
-      title: '共享资源',
-      describe: '提供相关资源的下载，输出规范，助力快速搭建优质产品页面原型或高保真视觉稿。',
-      buttons: [{
-        type: 'link',
-        text: '设计资源',
-        src: '/zh-CN/design/',
-        theme: 'demo'
-      }],
-      animations: {
-        bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.svg',
-        content: MfeAnimation2
-      },
-      decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-rectangle.svg'
-    },
-  ],
-  'en-US': [
-    {
-      title: 'Mand Mobile <i>2</i>',
-      describe: 'A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios. Rich, flexible, practical, quickly build high-quality financial products, making complex financial scenarios easier.',
+    characteristics: [{
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/GDy7ZTZGXn1643289787881.png',
+      title: '组件丰富',
+      describe: '差异化类型几乎覆盖全类金融场景',
+    }, {
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/u9HAIk80M21643289787852.png',
+      title: '易用性高',
+      describe: '组件模组均配有详细文档和案例演示',
+    }, {
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/ETiQLn5fbL1643289787726.png',
+      title: '设计轻量',
+      describe: '扁平化设计为应用带来清爽简洁的美感',
+    }, {
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/6XkXESKFL51643289787721.png',
+      title: '更多期待',
+      describe: '未来会在数量和品质上持续迭代...',
+    }, ]
+  },
+  'en-US': {
+    banner: {
+      describe: 'Create a Vue mobile UI component library for financial scenarios, which is flexible, fast, rich and practical; it is used to agilely build differentiated financial products, and strives to simplify complex scenarios and assist users to improve their cognition and efficiency.',
       buttons: [{
         type: 'link',
         text: 'Get Started',
-        src: '/docs',
+        src: '/en-US/docs',
         theme: 'start'
       }, {
         type: 'handler',
@@ -115,70 +73,30 @@ export default {
         },
         theme: 'demo',
         slots: qrcodeTableView
-      }, {
+      }
+        // , {
         // htmls: '<a class="github-button" href="https://github.com/didi/mand-mobile" data-size="large" data-show-count="true" aria-label="Star didi/mand-mobile on GitHub">Star</a>'
-        type: 'other',
-        slots: MfeGitStar
-      }],
-      animations: {
-        bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.svg',
-        // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-0.png'
-        content: MfeAnimation0,
-      },
-      others: '<a href="https://didi.github.io/mand-mobile-rn" style="margin-top:32px;">Mand Mobile of React Native <i class="icon-arrow-right-small"></i></a>'
+        //   type: 'other',
+        //   slots: MfeGitStar
+        // }
+      ],
     },
-    {
-      title: 'User Experience',
-      describe: 'Based on the "reasonable and easy to use" design values, we will jointly solve problems from the perspective of interactive operation, visual abstraction, and graphic visualization.',
-      buttons: [{
-        type: 'link',
-        text: 'Principles',
-        src: '/en-US/design/principle/intuition',
-        theme: 'demo'
-      }],
-      animations: {
-        bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.svg',
-        // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-1.png'
-        content: MfeAnimation1,
-      },
-      decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-cirlce.svg'
-    },
-    {
-      title: 'Agile Support',
-      describe: 'Gain access to the most cutting-edge technologies, achieve lightweight components, balance stability and quality, and strive to achieve full coverage of financial scenarios.',
-      animations: [
-        {
-          icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-0.svg',
-          title: 'Rich components',
-          describe: '40+ basic components covering financial scenarios',
-        },
-        {
-          icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-1.svg',
-          title: 'Extremely easy to use',
-          describe: 'Components have detailed documentation and case demos',
-        },
-        {
-          icon: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-2-2.svg',
-          title: 'Lightweight Bundle',
-          describe: 'Support <a href="https://github.com/ant-design/babel-plugin-import" target="_blank">babel-plugin-import</a> automated on-demand loading of code to reduce the volume of bundles',
-        }
-      ]
-    },
-    {
-      title: 'Share Resource',
-      describe: 'Provides downloading and output of related resources to help quickly build high-quality product page prototypes or high-fidelity visuals.',
-      buttons: [{
-        type: 'link',
-        text: 'Resource',
-        src: '/en-US/design/',
-        theme: 'demo'
-      }],
-      animations: {
-        bg: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.svg',
-        // content: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-3.png'
-        content: MfeAnimation2,
-      },
-      decorate: '//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-home-rectangle.svg'
-    },
-  ]
+    characteristics: [{
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/GDy7ZTZGXn1643289787881.png',
+      title: 'Rich components',
+      describe: 'Different types cover almost all financial scenarios',
+    }, {
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/u9HAIk80M21643289787852.png',
+      title: 'Ease of use',
+      describe: 'Component modules are equipped with detailed documentation and case demonstrations',
+    }, {
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/ETiQLn5fbL1643289787726.png',
+      title: 'Lightweight design',
+      describe: 'Flat design brings a clean and simple aesthetic to the app',
+    }, {
+      icon: 'https://pt-starimg.didistatic.com/static/starimg/img/6XkXESKFL51643289787721.png',
+      title: 'More expectations',
+      describe: 'In the future, it will continue to iterate in terms of quantity and quality...',
+    }, ]
+  },
 }

@@ -10,21 +10,21 @@ title: Mand Mobile
 
    40+的实用组件，能够满足移动端开发的基本需求，尤其是对金融场景的需求进行了特别支持
 
-* <b>统一的视觉规范</b> 
+* <b>统一的视觉规范</b>
 
     由滴滴金融设计师设计并维护，保证了应用的项目内部、项目之间都能保持高度的视觉一致性
 
-* <b>适用于多场景的产生</b> 
+* <b>适用于多场景的产生</b>
 
     提供按需加载能力，使用灵活，避免引入无用代码，导出`es`，`umd`两种格式以及`px`, `vh/vw`两种样式单位
 
-* <b>灵活转换的样式主题</b> 
+* <b>灵活转换的样式主题</b>
 
     UI样式可配置，拓展灵活，轻松适应不同的设计风格
 
-* <b>支持TypeScript</b> 
+* <b>支持TypeScript</b>
 
-* <b>支持服务端渲染</b> 
+* <b>支持服务端渲染</b>
 
 #### 版本
 
@@ -63,6 +63,6 @@ title: Mand Mobile
 
 #### 社区互助
 
-如果您在使用的过程中碰到问题，可以扫描下方二维码加入官方群寻求帮助，同时期待您能够分享个人使用经验给予他人帮助。   
+如果您在使用的过程中碰到问题，可以扫描下方二维码加入官方群寻求帮助，同时期待您能够分享个人使用经验给予他人帮助。
 
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/tuDKFjM2at1640157275725.png" alt="Mand Mobile Community" width="200"/>

@@ -26,9 +26,6 @@
         Copyright &copy; <span v-html="copyRight"></span>
       </div>
     </div>
-    <div class="default-footer-bg">
-      <img src="//manhattan.didistatic.com/static/manhattan/mand/docs/mand-doc-footer-bg.svg" alt="">
-    </div>
   </div>
 </template>
 
@@ -60,39 +57,29 @@ export default {
 <style lang="stylus">
 .mfe-blog-theme-default-footer
   position relative
-  height 673px
+  height 390px
   -webkit-font-smoothing antialiased
+  background-color #000
   &.stricky
     .default-footer-container, .default-footer-copyright-container
       left 16.6%
 
-  .default-footer-bg
-    position absolute
-    top 0
-    bottom 0
-    left -2000px
-    overflow hidden
-    img
-      position relative
-      top -300px
-      height 250%
   .default-footer-copyright
     position absolute
     left 0
-    bottom 0
+    bottom 24px
     z-index 2
     width 100%
-    height 100px
-    line-height 100px
-    color rgba(255, 255, 255, .7)
-    border solid 1px rgba(255, 255, 255, .3)
+    height 20px
+    line-height 20px
+    color #D8D8D8
 
   .default-footer-container
     position relative
     z-index 2
     width 1280px
     margin 0 auto
-    padding-top 250px
+    padding-top 58px
     box-sizing border-box
     clearfix()
   .default-footer-copyright-container
@@ -103,13 +90,14 @@ export default {
   .default-footer-category
     float left
     width 18%
-    color #FFF
+    color #D8D8D8
     box-sizing border-box
     h1
       float left
       width 100%
-      margin-bottom 20px
-      font-size 18px
+      margin-bottom 24px
+      color #FFF
+      font-size 16px
       font-family AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif !important
       font-weight 600
       span
@@ -117,7 +105,7 @@ export default {
     li
       float left
       width 100%
-      margin-bottom 10px
+      margin-bottom 14px
       font-size 14px
       p
         float left
@@ -126,15 +114,16 @@ export default {
         margin-top 5px
         margin-right 10px
       a
-        color #FFF
+        color #D8D8D8
         text-decoration none
         transition color .3s
+        opacity .7
         -webkit-font-smoothing initial
         &:hover
-          color #DDD
+          color #FFF
+          opacity 1
       span
-        opacity .6
-        color #FFF
+        color #D8D8D8
         font-size 12px
 
 @media (max-width: 1400px)
@@ -145,7 +134,7 @@ export default {
     display block
     height auto !important
     padding .32rem 5% .32rem
-    background #007CFA
+    background #000
     .default-footer-container
       width 100% !important
       padding .32rem
@@ -157,12 +146,12 @@ export default {
       margin 0 0 .2rem
       h1
         margin-bottom .2rem
-        font-size 16px
+        font-size 18px
         a
           display none
       li
         margin-bottom .12rem
-        font-size 13px
+        font-size 14px
       &:first-child
         display none
     .default-footer-copyright

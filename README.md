@@ -1,4 +1,4 @@
-<p align="center"><img width="80" src="https://manhattan.didistatic.com/static/manhattan/mand/docs/mand-logo-black.svg" alt="LOGO"></p>
+<p align="center"><img width="80" src="https://pt-starimg.didistatic.com/static/starimg/img/BSHOVw2pyT1620726744938.png" alt="LOGO"></p>
 <h2 align="center">mand-mobile</h2> 
 <p align="center">A mobile UI toolkit, based on Vue.js 2, designed for financial scenarios</p>
 <p align="center">
@@ -104,14 +104,15 @@ Welcome to contribute by creating issues or sending pull requests. See [Contribu
 
 ## Community
 
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/KitzF6QlrR1543994331272.jpg" alt="Mand Mobile Community" width="200"/>
+<img src="https://pt-starimg.didistatic.com/static/starimg/img/tuDKFjM2at1640157275725.png" alt="Mand Mobile Community" width="200"/>
 
 ## License
 Mand Mobile is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file.
 
 ## Useful Links
 
-
-* [Chameleon](https://github.com/didi/chameleon) /kəˈmiːlɪən/: Unify all platforms(Web/Weex/Mini program) with MVVM. Focus on Write Once Run AnyWhere.
+* [Hummer](https://github.com/didi/Hummer) is a set of high-performance and highly available cross-terminal development framework, a set of code can support the development of Android and iOS applications at the same time. Now supports Vue/TypeScript/JavaScript, for front-end developers, there is always one suitable for you.
 
 * [DoraemonKit](https://github.com/didi/DoraemonKit) /'dɔ:ra:'emɔn/: A full-featured App (iOS & Android) development assistant. You deserve it.
+
+* [Chameleon](https://github.com/didi/chameleon) /kəˈmiːlɪən/: Unify all platforms(Web/Weex/Mini program) with MVVM. Focus on Write Once Run AnyWhere.
