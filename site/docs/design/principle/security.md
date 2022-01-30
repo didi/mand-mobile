@@ -1,10 +1,14 @@
 ---
-title: 安全可控
+title: 安全感知
 ---
 
+金融场景常涉及到用户的个人信息与金融契约，要以用户信息与资产安全为核心，提供可靠且诚实的解决方案。
+
 <style>
+h4 { margin-top: 60px !important; }
 .doc-cutline-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}
-.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:20px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px;max-width:40%}
+.doc-cutline-wrapper:last-child { margin-bottom: 60px; }
+.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:40px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px;}
 .doc-cutline:after{position:absolute;bottom:-32px;left:0;font-size:12px;font-weight:500}
 .doc-cutline.do{margin-right:40px;border-bottom:solid 4px #2F86F6}
 .doc-cutline.do:after{content:"Do";color:#2F86F6}
@@ -19,27 +23,53 @@ title: 安全可控
 }
 </style>
 
-#### 数据脱敏
+#### 关注隐私
 
-在对姓名、身份证号、银行卡号、手机号码等信息进行展示过程中，为了避免个人隐私的泄露，采用了隐藏反显的形式。
-
+在对用户姓名、身份证号、银行卡号、手机号码等信息进行展示过程中，为了避免用户个人隐私的泄露，应采用隐藏反显的形式。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
-    <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Y3ywMpuHs41545904053656.jpg" style="max-height:410px;">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/AwiUp20jNt1643190281247.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/6L6qaJIgqC1643190285976.png">
+    </div>
+  </div>
+</div>
+
+#### 安全处理
+
+当用户需要填写或上传个人信息时，信息处理者应保障用户的信息安全，并如实告知如何保护用户个人信息，让用户产生安全感。
+
+<div class="doc-cutline-wrapper">
+  <div class="doc-cutline do">
+    <div class="doc-cutline-item" style="width: 660px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/gRmfXSOEQr1643191228127.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/ASeEjfgAkR1643190314634.png">
     </div>
   </div>
 </div>
 
 #### 契约保存
 
-对涉及交易双方的协议、合同、文档等文本契约对用户提供保存功能，让用户对此类交易有放心感。
+对涉及交易双方的协议、合同、文档等文本契约为用户提供保存功能，让用户对此类交易足够放心。
 
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do">
-    <div class="doc-cutline-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FulGDLPs0K1545904142068.png" style="max-height:410px;">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/n2PjNKhV4W1643190155222.png">
+    </div>
+  </div>
+  <div class="doc-cutline donot">
+    <div class="doc-cutline-item" style="width: 300px;">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/1B78BFQ86R1643190159394.png">
     </div>
   </div>
 </div>

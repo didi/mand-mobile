@@ -32,7 +32,7 @@ export default {
     },
     inkLength: {
       type: Number,
-      default: 80,
+      default: 25,
     },
     immediate: Boolean,
   },

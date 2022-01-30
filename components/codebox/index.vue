@@ -43,7 +43,7 @@
         />
         <input
           v-else
-          type="text"
+          :type="inputType"
           :maxlength="maxlength"
           :value="code"
           readonly
@@ -56,9 +56,11 @@
     <form action="" v-show="system" @submit="$_onSubmit">
       <input
         :value="code"
-        :type="mask ? 'password' : 'text'"
+        :type="inputType"
         :maxlength="maxlength"
         @input="$_onInputChange"
+        @focus="$_nativeFocus"
+        @blur="$_nativeBlur"
         ref="input"
         class="md-codebox-input"
       />
@@ -129,6 +131,10 @@ export default {
     isView: {
       type: Boolean,
       default: false,
+    },
+    inputType: {
+      type: String,
+      default: 'tel',
     },
   },
   data() {
@@ -231,6 +237,12 @@ export default {
       if (this.system) {
         this.$refs.input.focus()
       }
+    },
+    $_nativeBlur() {
+      this.$emit('blur')
+    },
+    $_nativeFocus() {
+      this.$emit('focus')
     },
   },
 }

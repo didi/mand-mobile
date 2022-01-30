@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ToastOptions from './toast'
+import ToastOptions from './toast.vue'
 
 /**
  * Toast factory
@@ -135,7 +135,7 @@ Toast.failed = (content = '', duration = 3000, hasMask = false, parentNode = doc
  */
 Toast.loading = (content = '', duration = 0, hasMask = true, parentNode = document.body, square = false) => {
   return Toast({
-    icon: 'ring',
+    icon: 'spinner',
     iconSvg: true,
     content,
     duration,

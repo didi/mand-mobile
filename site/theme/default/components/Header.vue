@@ -213,7 +213,7 @@ export default {
           margin-right 2px
           height 100%
         // font-family DINAlternate-Bold
-        
+
   .default-header-content
     display inline-block
     width 83%
@@ -248,16 +248,18 @@ export default {
             bottom 0
             left 30%
             width 40%
-            height 4px
-            background-color #2F86F6
+            height 5px
+            background-color #1641FF
+            border-radius 2.5px
           &:hover
             color #333
           &.router-link-active
-            color #2F86F6
+            color #1641FF
+            font-size 16px
             &:after
               display block
         i.dot
-          position absolute 
+          position absolute
           top 50%
           right 6px
           width 8px
@@ -281,7 +283,7 @@ export default {
       .operater-select
         i
           font-size 12px
-          color #2F86F6
+          color #1641FF
       &.default-header-lang a
         display inline-block
         width 100%
@@ -300,6 +302,7 @@ export default {
       border-radius 0
       opacity .8
       box-sizing border-box
+      transition opacity .3s
       a
         display inline-block
         width 100%
@@ -309,7 +312,7 @@ export default {
         -webkit-filter invert(70%)
         filter invert(70%)
       &:hover
-        opacity .5
+        opacity .5 !important
 
   &.active
     height 100px
@@ -334,14 +337,15 @@ export default {
             bottom 20px
       .default-header-operater
         margin-top 35px
-        border-color #FFF
-        color #FFF
+        color #000
         opacity .8
+        border-color rgba(0, 0, 0, .3)
         &.default-header-github a
-          -webkit-filter invert(100%)
-          filter invert(100%)
+          background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABSlBMVEUAAACcnJybm5v///////+ioqK+vr7f39/////7+/upqamysrKenp6ampqmpqanp6eysrKenp7Pz8/g4ODh4eHq6uqkpKTw8PDy8vLPz8/Pz8+wsLCenp7///+goKCtra2np6f///+0tLSvr6////+ioqKampqwsLD///+urq69vb26urrBwcGcnJz///+kpKTMzMzIyMjBwcG1tbWbm5v////Q0NDMzMzExMTc3NzW1tbJycmfn5+rq6vCwsL////c3Nz////39/esrKyqqqrq6urd3d23t7eqqqqampr////6+vrV1dW6urqdnZ2jo6P19fXw8PCfn5/Dw8O3t7esrKz8/Pzt7e3S0tLIyMizs7OwsLDq6urFxcWlpaXm5ubg4ODOzs7AwMC9vb3y8vLd3d3Y2NjLy8unp6f39/fh4eHZ2dmpqamoqKizwaBNAAAASXRSTlMA+eoVA+ylUxAN0zn57unfy8SOgGJhYTszHg7Vjvn57u7s6urf1dXSy8vExLGxpY6NjY2AgH5+fn5zc3NzYmFTMx4e39/S0o0zVQOFuwAAAvJJREFUWMOV1ldX4lAQAOAJEVAQEVAUe++997Z1Eqp0RKXY1t39/68aMMmkcZPvbQ5nBnIzdwawwnsPPctBN8e5g8ueQy8Pjgxv+1DHtz0MNvWcjKIp30kPsHVHptDSVKQbGAZnsaPZQejkZhWZVm/A0lAf2tA3BBYGetGW3gEw0xVG28JdJvlr6MCasUIYHQkbnh8dGtCd/wQ6NKF5F9fK+2vWc9hBIl5Kym/zGlQr+OVNEIR0/QFNperpz4+zcrhC+lf9BkFSiKfaGXe5ZraRq7SiZFkUJCWUKV3dPYOyptAm1hvxqijI0rVsMyMIugIz8s2KoCIrMNACGPm6/5OoaLALlFEx2Z4Px6jKsQskUHUMEjp/7tgF8qgabc0/JN7YBZJISHNyC4l7doEaElsAsEjif6LAdk8SFgF4+pMeBRsyJCHJg5dxhIxj9MIBieKsVOMzHICHRBl7BZ5Jigf6SVSwV6BIUvohSK6rYI+IqiC4GWfI6CU3kF1QsVsgRXYEcGqQt1uATCwO3PQi2PSfPsI3VInOf8F3zWusOj/Efk0jlezl/9E00hGJ8s478Qi8SBRtFUhoLhOPRMJpJyMP4KNxTWC7Q5UPAHaQuGVfyCwSOwBwhdRDhrkWqCv4NI/U7d9O6ekKUvMgOdWv8KJl+msSNU7bqy3Q2kni03NOvtcvJk1dqCVQJ9ADLbtSkJQG4ot6FrkynU/VUuIWDXbl9e5SlkrcYsJm0YRL+eN8gS1lWqFi3jzUBShC6l55MR/xeTQIgSrmUjv5MWW2pF6NDxADws+pAyF9X2nE04LWO+pwftA4Z4zVDOqcg84mSl6tCjyh1hjoda2jJCu2msbYhKixbvZ3fay9nsrvxadMpmoYY9QYySeiHLlTHdYZFwULfpdlgQJ5f36wFAuRAhajPBSDTqIuWsC4D11RYBjZC5ACul4O7I0A28jZAlkRZJYvnMnpTL83f+oL/PjlB0f4y/2Npbnp8fHpuaWN/UseLHwAenKWqfPy+9oAAAAASUVORK5CYII=")
+          -webkit-filter invert(0%)
+          filter invert(0%)
         &.default-header-lang a
-          color #FFF
+          color #000
       .default-header-aside
         padding 0
       .default-header-search, .default-header-nav
@@ -406,7 +410,7 @@ export default {
             bottom 0 !important
           &.router-link-active:after
             height 2px
-            background #2F86F6 !important
+            background #1641FF !important
     .default-header-aside .default-header-logo
       height 28px
       line-height 28px !important
@@ -420,7 +424,7 @@ export default {
     &.active .default-header-nav li.nav-item a
       color #666 !important
       &.router-link-active
-        color #2F86F6 !important
+        color #1641FF !important
     .default-header-operater
       display none
   .doc-content-top
