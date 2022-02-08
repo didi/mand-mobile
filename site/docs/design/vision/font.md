@@ -64,13 +64,27 @@ title: 字体
 .font-size-img{max-width:80%!important;margin-top:32px!important}
 .font-weight-img{width:100%;height:100%;background-size:100% 100%;}
 .font-weight-list{margin-top:32px}
-.font-hight-img{width:1191px;height:409px;background-size:cover;margin-top:32px;margin-bottom:24px;max-width:100%}
 @media (max-width:750px){.doc-font-list{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .doc-font-item{max-width:none!important;margin-right:0;margin-bottom:20px}
 .font-size-img{max-width:100%!important}
 .font-hight-img{height:280px}
 }
 .font-typeface-img{width:100%;height:100%;background-size:100% 100%;}
+.font-table-content{margin-top:32px;margin-bottom:24px}
+.font-table{background-color:#fff!important;border:0.5px solid #E5E5E5;
+font-family:PingFangSC-Regular;font-size:14px!important;color:#31383F!important;
+letter-spacing:0;line-height:28px!important;}
+.doc-content-paragraph table td:first-child {width:55%;font-weight:normal!important;
+color: #31383F;font-family:none;}
+.table-first-tr{font-family:PingFangSC-Regular;font-size:14px;color:#91989F!important;
+letter-spacing:0;line-height:28px;}
+.first-td-speical{color: #91989F!important;}
+.first-td{font-family:none;font-size:14px;color:#31383F;
+letter-spacing:0;line-height:28px;}
+.table-tr td:not(:first-child){border-left:0.5px solid #E5E5E5!important;}
+.doc-content-paragraph table td{padding:5.5px 0 7px 20px}
+@media (max-width:750px){.doc-content-paragraph table td{padding:5.5px 0 7px 5px}}
+@media (max-width:750px){.font-weight-item:not(:last-child){margin-bottom:20px}}
 </style>
 
 #### 字号
@@ -98,4 +112,73 @@ title: 字体
 #### 行高
 
 在当字号越大的时候，行高就会越大，在大号文字的展示上信息的连贯明显得出现割裂。因此建议不同字号之间的间距都保持相同，通过逻辑得到这样一个公式：「 行高 = 字号 + n 」 N为4的倍数，推荐为8。
-<img src="https://pt-starimg.didistatic.com/static/starimg/img/bes4GgXj3D1643358533063.png" class="font-hight-img">
+<div class="font-table-content">
+  <table class="font-table" border="0" cellspacing="0" cellpadding="0">
+    <tr class="table-first-tr table-tr">
+      <td class="first-td-speical">尺寸</td>
+      <td>rem</td>
+      <td>行高</td>
+      <td>行高</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">12px</td>
+      <td>0.75</td>
+      <td>16</td>
+      <td>1.25</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">14px</td>
+      <td>0.875</td>
+      <td>20</td>
+      <td>1.25</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">16px</td>
+      <td>1</td>
+      <td>24</td>
+      <td>1.5</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">18px</td>
+      <td>1.125</td>
+      <td>26</td>
+      <td>1.625</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">20px</td>
+      <td>1.25</td>
+      <td>28</td>
+      <td>1.75</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">24px</td>
+      <td>1.5</td>
+      <td>32</td>
+      <td>2</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">24px</td>
+      <td>1.5</td>
+      <td>32</td>
+      <td>2</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">28px</td>
+      <td>1.75</td>
+      <td>36</td>
+      <td>2.25</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">32px</td>
+      <td>2</td>
+      <td>40</td>
+      <td>2.5</td>
+    </tr>
+    <tr class="table-tr">
+      <td class="first-td">36px</td>
+      <td>2.25</td>
+      <td>44</td>
+      <td>2.75</td>
+    </tr>
+  </table>
+</div>
