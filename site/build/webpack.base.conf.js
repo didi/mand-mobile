@@ -72,10 +72,12 @@ module.exports = {
       filename: 'index.html',
       // publicPath: '/mand-mobile/',
       publicPath: '/mand-mobile/',
+      host: 'github',
     })),
     new HtmlWebpackPlugin(Object.assign({}, htmlPluginOption, {
       filename: 'index.gitee.html',
       publicPath: '/docs/',
+      host: 'gitee',
     })),
   ]
 }
