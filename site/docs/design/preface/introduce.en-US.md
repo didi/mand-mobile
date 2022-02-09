@@ -17,7 +17,7 @@ title: FD+ introduce
 We pursue minimalist and warm design, but we are more concerned about the value presentation of design in financial business, an important part of which is how to improve the efficiency of production collaboration.
 With the expansion of Didi’s financial business line, the product lines are very different in form, with many branches and complex models. In the collaborative construction of design and R&D, sorting out and extracting stable and highly usable controls, components and pages has become a Our shared goal. We hope that through componentized solutions, standards can be quickly aligned, production costs can be reduced, and designers can better focus on the growth and innovative design experience beyond efficiency.
 
-<strong class="work-show">2022 Didi Financial Design Team Work Show</strong><a href="https://z.didi.cn/5mqnc" target="_blank">See</a>
+<strong class="work-show">2021 Didi Financial Design Team Work Show</strong><a href="https://z.didi.cn/5mqnc" target="_blank">See</a>
 
 <img class="fd-team" src="https://pt-starimg.didistatic.com/static/starimg/img/4PJN8s5DLq1643105615244.png" alt="FD+ team" width="943"/>
 
