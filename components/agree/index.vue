@@ -11,8 +11,10 @@
       ]"
       @click="$_onChange($event)">
       <div class="md-agree-icon-container">
-        <md-icon name="checked" :size="size"></md-icon>
-        <md-icon name="check" :size="size"></md-icon>
+        <slot name="icon" :checked="value">
+          <md-icon name="checked" :size="size"></md-icon>
+          <md-icon name="check" :size="size"></md-icon>
+        </slot>
       </div>
     </div>
     <div class="md-agree-content">
@@ -83,7 +85,7 @@ export default {
     position relative
     .md-icon
       display flex
-      width auto 
+      width auto
       height auto
       line-height 1
       will-change auto

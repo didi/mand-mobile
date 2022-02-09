@@ -3,6 +3,7 @@
     <md-codebox
       :mask="true"
       :maxlength="6"
+      inputType="password"
       v-model="code"
     />
   </div>

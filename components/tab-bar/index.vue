@@ -297,11 +297,12 @@ export default {
 
 .md-tab-bar-ink
   position absolute
-  bottom 0
+  bottom 10px
   left 0
   display block
   height tab-ink-height
   background-color tab-active-color
+  border-radius 2000px
   transition all 300ms
   &.is-disabled
     background-color tab-disabled-color
