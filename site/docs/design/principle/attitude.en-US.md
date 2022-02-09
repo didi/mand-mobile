@@ -15,7 +15,6 @@ h4 { margin-top: 60px !important; }
 .doc-cutline.donot:after{content:"Don't";color:#FF5257}
 .doc-cutline-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .doc-cutline-item.horizon img{width:100%}
-/* .doc-cutline-item.vertical img{width:auto;height:100%} */
 .attitude-item img{display: block;width:667px;background-size:cover}
 @media (max-width:750px){.doc-cutline-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .doc-cutline{max-width:100%}
