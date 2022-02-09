@@ -116,10 +116,10 @@ When the type is larger, the line height is larger, and the coherence of the mes
 <div class="font-table-content">
   <table class="font-table" border="0" cellspacing="0" cellpadding="0">
     <tr class="table-first-tr table-tr">
-      <td class="first-td-speical">尺寸</td>
+      <td class="first-td-speical">size</td>
       <td>rem</td>
-      <td>行高</td>
-      <td>行高</td>
+      <td>Row height</td>
+      <td>Row height</td>
     </tr>
     <tr class="table-tr">
       <td class="first-td">12px</td>
