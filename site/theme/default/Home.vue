@@ -88,18 +88,6 @@ export default {
   data () {
     return {
       qrcodeTableShow: false,
-      blockShow: [],
-    }
-  },
-
-  mounted() {
-    if ($(window).width() < 750) {
-      this.homeData.forEach((item, index) => {
-        this.$set(this.blockShow, index, true)
-      })
-    } else {
-      this.scrollBlockView()
-      this.container.bind('scroll', this.scrollBlockView)
     }
   },
 
@@ -116,24 +104,9 @@ export default {
     characteristicsData() {
       return this.homeData.characteristics
     },
-    container() {
-      return $('#default-container')
-    }
   },
 
   methods: {
-    scrollBlockView () {
-      const scrollTop = this.container.scrollTop()
-      const bottomOffset = scrollTop + this.container.height()
-      $('.home-box-block').each((index, item) => {
-        const hh = $(item).height()
-        // const topPos = index < 1 ? 0 : (index - 1) * hh  + hh/2 + 100
-        const bottomPos = index * hh  + hh/2 + 100
-        if (bottomOffset >= bottomPos) {
-          this.$set(this.blockShow, index, true)
-        }
-      })
-    },
     handlerButtonClick (handler, ref) {
       handler.call(this, ref)
     }
