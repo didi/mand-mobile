@@ -5,11 +5,12 @@ Avoid information dispersion, make information more focused, the overall use of 
 
 <style>
 .doc-content-paragraph h4{margin-top:60px}
-.layer-main{background-color:#F9FAFB;display:flex;align-items:center;justify-content:center;max-width:100%;padding:60px 0}
-.layer-half{background-color:#F9FAFB;display:flex;align-items:center;justify-content:center;max-width:100%;padding:60px 0}
-.layer-img{max-height:350px;background-size:cover;max-width:80%!important}
+.layer-item h4{margin-top:60px}
+.layer-item{padding:60px 0;background-color:#F9FAFB;width:816px;display:flex;justify-content:center}
+.layer-img{max-height:350px;background-size:cover;margin-left:-59px}
 .last-layer-img{margin-bottom:36px}
 .pre-img{margin-bottom:60px}
+@media (max-width:750px){.layer-img{margin-left:10px;width:80%;height:80%;background-size:cover;}.layer-item{width:100%}}
 </style>
 
 #### Shadow
@@ -22,13 +23,13 @@ On the basis of ensuring financial security and reliability, the expression of y
 
 #### Master card, master button
 
-<div class="layer-main doc-content-paragraph pre-img">
-  <img src="https://pt-starimg.didistatic.com/static/starimg/img/aLKIJLLXOT1643189958497.png" class="layer-img">
+<div class="layer-item pre-img">
+  <img src="https://pt-starimg.didistatic.com/static/starimg/img/aL2YDKG34K1644306010789.png" class="layer-img">
 </div>
 
 #### A floating layer
 
-<div class="layer-half last-layer-img doc-content-paragraph">
+<div class="layer-item last-layer-img">
   <img src="https://pt-starimg.didistatic.com/static/starimg/img/CONWG6LXs71643189958385.png" class="layer-img">
 </div>
 

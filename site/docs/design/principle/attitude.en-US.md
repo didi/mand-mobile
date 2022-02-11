@@ -6,7 +6,7 @@ title: Professional and attitude
 h4 { margin-top: 60px !important; }
 .doc-cutline-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;}
 .doc-cutline-wrapper:last-child { margin-bottom: 60px; }
-.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:40px 30px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:320px;max-width:100%}
+.doc-cutline{position:relative;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;margin-bottom:42px;padding:40px 30px;background:#F9FAFB;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;min-height:220px;max-width:100%}
 .attitude-last{max-width:45%}
 .doc-cutline:after{position:absolute;bottom:-32px;left:0;font-size:12px;font-weight:500}
 .doc-cutline.do{margin-right:40px;border-bottom:solid 4px #2F86F6}
@@ -15,15 +15,15 @@ h4 { margin-top: 60px !important; }
 .doc-cutline.donot:after{content:"Don't";color:#FF5257}
 .doc-cutline-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .doc-cutline-item.horizon img{width:100%}
-.doc-cutline-item.vertical img{width:auto;height:100%}
-.attitude-item img{display: block;}
-@media (max-width:750px){.doc-cutline-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
-.doc-cutline{max-width:100%}
-.doc-cutline.do{margin-right:0}
-.attitude-last{max-width:100%}
-}
+.attitude-item img{display: block;width:667px;background-size:cover}
+.special-img{width:440px!important;background-size:cover}
 .doc-content-paragraph h4{margin-top:40px}
 .attitude-last {margin-bottom: 14px;}
+@media (max-width:750px){.doc-cutline-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.doc-cutline{max-width:100%}
+.doc-cutline.do{margin-right:0;padding:10px!important}
+.attitude-last{max-width:100%}
+}
 </style>
 
 Finance is a serious and experienced industry. In terms of design attitude, we should grasp the principles of moderation, objectivity and neutrality, and reflect industry standards and business expertise
@@ -36,7 +36,7 @@ Financial products have their own industry standard forms. They should be design
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do" style="padding: 36px 40px;">
     <div class="doc-cutline-item attitude-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/bYrxMv1dLo1643256889799.png">
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/PJMafnzgcO1644396012789.png">
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@ The difference of product form is the external manifestation of business differe
 <div class="doc-cutline-wrapper">
   <div class="doc-cutline do" style="padding: 50px 60px;">
     <div class="doc-cutline-item attitude-item">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/JEnklVFvI81643257076799.png">
+      <img class="special-img" src="https://pt-starimg.didistatic.com/static/starimg/img/JEnklVFvI81643257076799.png">
     </div>
   </div>
 </div>

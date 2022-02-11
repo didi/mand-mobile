@@ -12,12 +12,21 @@ title: Design values
 
 @media (max-width:750px) {
   .viewpoint-item {
-    width: 80%;
+    width: 77%;
     height: auto;
     padding: 20px 40px;
   }
   .viewpoint-intro {
     height: auto;
+  }
+  .viewpoint-item-icon {
+    margin-right: 15px
+  }
+  .viewpoint-intro-text {
+    line-height: 24px
+  }
+  .doc-content-paragraph p{
+    margin-bottom: 0px!important
   }
 }
 </style>
@@ -25,47 +34,47 @@ title: Design values
 <div class="viewpoint-container">
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/jf5GM02nlq1643021725360.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/9DWaGIdBMX1643190639714.png" />
     </div>
     <div class="viewpoint-intro">
       <div class="viewpoint-intro-title">The target</div>
-      <div class="viewpoint-intro-text">To become an experience designer deeply integrated and bound with the business, and effectively help the business realize data growth and experience jump by maximizing the design value.</div>
+      <p class="viewpoint-intro-text">To become an experience designer deeply integrated and bound with the business, and effectively help the business realize data growth and experience jump by maximizing the design value.</p>
     </div>
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/sitVvkW1vH1643021728193.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/gmiERfISUE1643190639730.png" />
     </div>
     <div class="viewpoint-intro">
       <div class="viewpoint-intro-title">To promote</div>
-      <div class="viewpoint-intro-text">I have a sense of ownership, responsibility and responsibility, and regard business and team affairs as my own business.</div>
+      <p class="viewpoint-intro-text">I have a sense of ownership, responsibility and responsibility, and regard business and team affairs as my own business.</p>
     </div>
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FJ33XWWsCR1643021733624.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/dXT7QFSA3Q1643190639878.png" />
     </div>
     <div class="viewpoint-intro">
       <div class="viewpoint-intro-title">advocate</div>
-      <div class="viewpoint-intro-text">Breaking boundary awareness, deep integration, proactive step forward, efficient collaboration.</div>
+      <p class="viewpoint-intro-text">Breaking boundary awareness, deep integration, proactive step forward, efficient collaboration.</p>
     </div>
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/FLxWpW4vkb1643021736278.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Hf0EGJR9sc1643190639890.png" />
     </div>
     <div class="viewpoint-intro">
       <div class="viewpoint-intro-title">claim</div>
-      <div class="viewpoint-intro-text">Have the right values, in the face of conflict, deal with the situation as it is, and actively solve.</div>
+      <p class="viewpoint-intro-text">Have the right values, in the face of conflict, deal with the situation as it is, and actively solve.</p>
     </div>
   </div>
   <div class="viewpoint-item">
     <div class="viewpoint-item-icon">
-      <img src="https://pt-starimg.didistatic.com/static/starimg/img/Q1pvoifLXw1643021739320.png" />
+      <img src="https://pt-starimg.didistatic.com/static/starimg/img/QUoX8r0bBp1643190640044.png" />
     </div>
     <div class="viewpoint-intro">
       <div class="viewpoint-intro-title">boycott</div>
-      <div class="viewpoint-intro-text">Passing the buck, taking sides, spreading negative information among the team.</div>
+      <p class="viewpoint-intro-text">Passing the buck, taking sides, spreading negative information among the team.</p>
     </div>
   </div>
 </div>
