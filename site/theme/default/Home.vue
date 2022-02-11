@@ -3,7 +3,7 @@
     <div class="home-box">
       <section class="home-box-block home-banner" v-if="bannerData">
         <div class="home-animation">
-          <img src="https://pt-starimg.didistatic.com/static/starimg/img/prV2yF1lkM1643288677013.png" alt="滴滴金融">
+          <home-pictorial />
         </div>
         <div class="home-text">
           <img class="home-title" src="https://s3-gzpu.didistatic.com/common/mand-mobile/docs/MandMobile.svg" alt="Mand Mobile" />
@@ -76,13 +76,15 @@
 
 <script>
 import CharacteristicCard from './components/home/CharacteristicCard'
+import HomePictorial from './components/home/HomePictorial'
 import homeConfig from './assets/js/home.config'
 
 export default {
   name: 'mfe-blog-theme-default-home',
 
   components: {
-    CharacteristicCard
+    CharacteristicCard,
+    HomePictorial
   },
 
   data () {
@@ -139,7 +141,7 @@ export default {
         width 520px
 
         .home-title
-          height 56px
+          width 501px
 
         .home-describe
           margin 50px 0
@@ -183,9 +185,6 @@ export default {
         top 70px
         right -62px
 
-        img
-          width 745px
-
       &.home-characteristic
         display flex
         flex-wrap wrap
@@ -195,18 +194,23 @@ export default {
           margin-bottom 30px
 
 
-// @media (max-width: 1400px)
-//   .home-box
-//     width 1080px !important
-// @media (max-width: 1000px)
-//   .default-content
-//     .default-content-wrapper
-//       margin-top 0px
-//       .home-box
-//         width 100% !important
-//         padding 0 .32rem
-//         box-sizing border-box
+@media (max-width: 1440px)
+  .mfe-blog-theme-default-home
+    .home-box
+      width 1000px
+
+      .home-box-block
+        .home-text
+          width 450px
+
+          .home-title
+            width 450px
+
 @media (max-width: 750px)
+  // default root font size in mobile device
+  html
+    font-size 50px
+
   .mfe-blog-theme-default-home
     margin-top 0
     padding 0 .4rem
@@ -221,9 +225,6 @@ export default {
       .home-animation
         position static !important
         margin-top 1.4rem
-        img
-          width 100% !important
-          height auto !important
 
       .home-text
         position relative !important
@@ -233,7 +234,7 @@ export default {
         margin-top .4rem
         text-align center
         .home-title
-          height .48rem !important
+          width 4.28rem !important
         .home-describe
           margin .54rem 0 !important
           font-size .28rem !important
