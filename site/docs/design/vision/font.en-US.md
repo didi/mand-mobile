@@ -113,6 +113,7 @@ In most cases, only the regular and Medium font weights appear in Chinese, and o
 #### Line height
 
 When the type is larger, the line height is larger, and the coherence of the message displayed in large text is obviously fragmented. Therefore, it is recommended to keep the same spacing between different font sizes. The logical formula is as follows: "Line height = font size + n", where n is a multiple of 4 and 8 is recommended.
+
 <div class="font-table-content">
   <table class="font-table" border="0" cellspacing="0" cellpadding="0">
     <tr class="table-first-tr table-tr">

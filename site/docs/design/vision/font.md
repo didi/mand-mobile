@@ -112,6 +112,7 @@ letter-spacing:0;line-height:28px;}
 #### 行高
 
 在当字号越大的时候，行高就会越大，在大号文字的展示上信息的连贯明显得出现割裂。因此建议不同字号之间的间距都保持相同，通过逻辑得到这样一个公式：「 行高 = 字号 + n 」 N为4的倍数，推荐为8。
+
 <div class="font-table-content">
   <table class="font-table" border="0" cellspacing="0" cellpadding="0">
     <tr class="table-first-tr table-tr">

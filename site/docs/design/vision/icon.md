@@ -8,8 +8,7 @@ Icon 作为UI构成中重要的元素，一定程度上影响UI界面整体呈�
 .icon-img{background-size:100% 100%!important;margin-top:16px;width:248px;height:214px;max-width:70%}
 .last-icon-img{margin-bottom:24px}
 .icon-item{background-color:#F9FAFB;padding:65px 0;display:flex;align-items:center;justify-content:center;width:700px;max-width:100%}
-.special-img{max-width:65%}
-</style>
+.special-img{max-width:65%}</style>
 
 #### 图标风格
 
