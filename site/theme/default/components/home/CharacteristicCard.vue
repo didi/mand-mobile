@@ -48,7 +48,7 @@ export default {
     width 120px
     height 120px
     margin-right 33px
-    transition transform .7s
+    transition transform .6s cubic-bezier(.34,1.56,.64,1)
 
   .characteristic-title
     height 35px

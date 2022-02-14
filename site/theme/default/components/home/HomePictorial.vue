@@ -7,6 +7,11 @@
           <img src="../../assets/images/home/pictorial/list.png" alt="Icon list" />
         </div>
       </div>
+      <div class="pic mr-king">
+        <div class="hover-wrap">
+          <img src="../../assets/images/home/pictorial/mr-king.png" alt="Mr King" />
+        </div>
+      </div>
       <div
         v-for="icon, i in icons"
         :key="i"
@@ -14,11 +19,6 @@
       >
         <div class="hover-wrap">
           <img :src="icon" alt="icon" />
-        </div>
-      </div>
-      <div class="pic mr-king">
-        <div class="hover-wrap">
-          <img src="../../assets/images/home/pictorial/mr-king.png" alt="Mr King" />
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@ export default {
         animation mrKing  1s ease-in-out 1 forwards, fadeIn 1s ease-in-out 1 forwards
 
         .hover-wrap
-          hover-scale: 1.2
+          hover-scale: 1.05
 
           img
             width 100%
@@ -101,7 +101,7 @@ export default {
         animation list 0.7s ease-in-out 0s forwards
 
         .hover-wrap
-          hover-scale: 1.2
+          hover-scale: 1.05
 
           img
             width 100%
