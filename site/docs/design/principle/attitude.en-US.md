@@ -16,14 +16,14 @@ h4 { margin-top: 60px !important; }
 .doc-cutline-item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .doc-cutline-item.horizon img{width:100%}
 .attitude-item img{display: block;width:667px;background-size:cover}
+.special-img{width:440px!important;background-size:cover}
+.doc-content-paragraph h4{margin-top:40px}
+.attitude-last {margin-bottom: 14px;}
 @media (max-width:750px){.doc-cutline-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .doc-cutline{max-width:100%}
 .doc-cutline.do{margin-right:0;padding:10px!important}
 .attitude-last{max-width:100%}
 }
-.special-img{width:440px!important;background-size:cover}
-.doc-content-paragraph h4{margin-top:40px}
-.attitude-last {margin-bottom: 14px;}
 </style>
 
 Finance is a serious and experienced industry. In terms of design attitude, we should grasp the principles of moderation, objectivity and neutrality, and reflect industry standards and business expertise

@@ -7,11 +7,10 @@ Avoid information dispersion, make information more focused, the overall use of 
 .doc-content-paragraph h4{margin-top:60px}
 .layer-item h4{margin-top:60px}
 .layer-item{padding:60px 0;background-color:#F9FAFB;width:816px;display:flex;justify-content:center}
-@media (max-width:750px){.layer-item{width:100%}}
 .layer-img{max-height:350px;background-size:cover;margin-left:-59px}
-@media (max-width:750px){.layer-img{margin-left:10px;width:80%;height:80%;background-size:cover;}}
 .last-layer-img{margin-bottom:36px}
 .pre-img{margin-bottom:60px}
+@media (max-width:750px){.layer-img{margin-left:10px;width:80%;height:80%;background-size:cover;}.layer-item{width:100%}}
 </style>
 
 #### Shadow

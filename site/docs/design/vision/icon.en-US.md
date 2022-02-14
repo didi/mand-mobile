@@ -49,5 +49,3 @@ Lines should preferably be tilted parallel to 45° auxiliary lines in the grid, 
 <div class="icon-item">
   <img src="https://pt-starimg.didistatic.com/static/starimg/img/yeENJWIw4E1644305038385.png" class="icon-img last-icon-img special-img">
 </div>
-
-
