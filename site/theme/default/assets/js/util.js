@@ -85,7 +85,7 @@ export function debouce (fn, delay = 0) {
   return function () {
     // @ts-ignore
     let context = this
-    
+
     if (timer) {
       clearTimeout(timer)
     }
@@ -111,3 +111,17 @@ export function throttle (fn, interval = 0) {
   }
 }
 
+/**
+ * 获取首页路径
+ *
+ * @returns 首页路径
+ */
+export function getHomePath() {
+  const homePathMap = {
+    github: '/mand-mobile',
+    gitee: '/docs/index.gitee.html'
+  }
+  const HOST = window.__MAND_DATA__ && window.__MAND_DATA__.host || 'github'
+
+  return homePathMap[HOST]
+}

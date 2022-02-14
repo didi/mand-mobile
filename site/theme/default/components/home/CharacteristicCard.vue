@@ -28,8 +28,8 @@ export default {
 .characteristic-card
   display flex
   align-items center
-  width 590px
-  height 210px
+  width 588px
+  height 212px
   padding 0 46px
   background-color: rgba(255,255,255,.8)
   border 2px solid #FFF
@@ -40,23 +40,40 @@ export default {
   &:hover
     background-color: #FFF
 
+    img
+      transform scale(1.1)
+
+
   img
     width 120px
     height 120px
     margin-right 33px
+    transition transform .6s cubic-bezier(.34,1.56,.64,1)
 
   .characteristic-title
     height 35px
-    margin-bottom 34px
+    margin-bottom 29px
     line-height 35px
-    font-size 30px
+    font-size 26px
     font-weight normal
     color #061A33
 
   .characteristic-describe
-    font-size 20px
+    font-size 18px
     line-height 23px
     color #061A33
+
+@media (max-width: 1440px)
+  .characteristic-card
+    width 480px
+    height 176px
+    margin-right 18px
+
+    img
+      width 104px
+      height 104px
+
+
 
 @media (max-width: 750px)
   .characteristic-card

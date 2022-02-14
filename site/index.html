@@ -12,13 +12,18 @@
     <link rel="icon" href="<%= htmlWebpackPlugin.options.logo %>" type="image/x-icon">
     <link rel="stylesheet" href="//manhattan.didistatic.com/static/manhattan/mand/pace.css">
     <link rel="stylesheet" href="//manhattan.didistatic.com/static/manhattan/icon-font/mfe.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" /> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
     <style>
     *{margin:0;padding:0;-webkit-touch-callout:none;list-style:none;}
     html{touch-action: manipulation;background:#fff;min-width:320px;overflow-x:hidden;}
     body{overflow-x:hidden;}
     html,body{height:100%;}
     </style>
+    <script>
+      window.__MAND_DATA__={
+        host: '<%= htmlWebpackPlugin.options.host %>'
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>
