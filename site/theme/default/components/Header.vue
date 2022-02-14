@@ -2,7 +2,7 @@
   <div class="mfe-blog-theme-default-header" :class="{active: isActive}">
     <div class="default-header-container">
       <div class="default-header-aside">
-        <a class="default-header-logo" href="/mand-mobile">
+        <a class="default-header-logo" :href="homePath">
           <img class="logo-img" :src="logo" alt="logo">
           <p>
             <span class="name" v-html="title"></span>
@@ -72,7 +72,7 @@
 import mandMobileInfo from 'mand-mobile/package.json'
 import MfeTable from './Table'
 import MfeSearch from './Search'
-import { localStore } from '../assets/js/util'
+import { localStore, getHomePath } from '../assets/js/util'
 // import algoliasearch from 'algoliasearch'
 
 export default {
@@ -100,6 +100,7 @@ export default {
     return {
       title: window.mbConfig.title,
       logo: window.mbConfig.logo,
+      homePath: getHomePath(),
       versionTableShow: false,
       versionData: [{
         text: 'v1.x',
