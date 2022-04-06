@@ -4,7 +4,8 @@
   </div>
 </template>
 
-<script>import {Toast, Button} from 'mand-mobile'
+<script>
+import {Toast, Button} from 'mand-mobile'
 
 export default {
   name: 'toast-demo',
@@ -17,8 +18,9 @@ export default {
   },
   methods: {
     showSucceedToast() {
-      Toast.succeed('操作成功')
+      Toast.succeed('还没有绑卡，请前往绑卡')
     },
   },
 }
-</script>
+
+</script>
