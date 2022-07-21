@@ -17,7 +17,8 @@
             class="md-tab-bar-item"
             :class="{
               'is-active': currentName === item.name,
-              'is-disabled': !!item.disabled
+              'is-disabled': !!item.disabled,
+              'more-than-five': items.length > 5 && index === 0
             }"
             v-for="(item, index) in items"
             :key="item.name"
@@ -294,14 +295,17 @@ export default {
     color tab-active-color
   &.is-disabled
     color tab-disabled-color
-
+.more-than-five
+  padding 0
+  margin-right tab-item-gap
 .md-tab-bar-ink
   position absolute
-  bottom 0
+  bottom 10px
   left 0
   display block
   height tab-ink-height
   background-color tab-active-color
+  border-radius 2000px
   transition all 300ms
   &.is-disabled
     background-color tab-disabled-color

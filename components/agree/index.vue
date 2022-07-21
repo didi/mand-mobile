@@ -11,8 +11,16 @@
       ]"
       @click="$_onChange($event)">
       <div class="md-agree-icon-container">
-        <md-icon name="checked" :size="size"></md-icon>
-        <md-icon name="check" :size="size"></md-icon>
+        <slot name="icon" :checked="value">
+          <span v-if="iconType === 'square'">
+            <md-icon name="square-checked" :size="size"></md-icon>
+            <md-icon name="square-check" :size="size"></md-icon>
+          </span>
+          <span v-else>
+            <md-icon name="checked" :size="size"></md-icon>
+            <md-icon name="check" :size="size"></md-icon>
+          </span>
+        </slot>
       </div>
     </div>
     <div class="md-agree-content">
@@ -41,6 +49,10 @@ export default {
     size: {
       type: String,
       default: 'md',
+    },
+    iconType: {
+      type: String,
+      default: 'circle',
     },
   },
 
@@ -83,24 +95,24 @@ export default {
     position relative
     .md-icon
       display flex
-      width auto 
+      width auto
       height auto
       line-height 1
       will-change auto
-      &.md-icon-checked
+      &.md-icon-checked,&.md-icon-square-checked
         position absolute
         top 0
         left 0
         transform scale(0.6)
         color transparent
         transition all .3s ease-in-out-quint
-      &.md-icon-check
+      &.md-icon-check,&.md-icon-square-check
         color agree-fill
   &.checked .md-agree-icon-container
-    .md-icon-checked
+    .md-icon-checked,.md-icon-square-checked
       transform scale(1)
       color agree-fill
-    .md-icon-check
+    .md-icon-check,.md-icon-square-check
       opacity 0.8
 
 .md-agree-content

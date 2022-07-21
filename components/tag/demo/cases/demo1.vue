@@ -8,6 +8,14 @@
       font-weight="normal"
       font-color="#FF5B60"
     >逾期23天</md-tag>
+    <md-tag
+      size="large"
+      shape="fillet"
+      type="ghost"
+      fill-color="rgba(255, 91, 96, .1)"
+      font-weight="normal"
+      font-color="#FF5B60"
+    >逾期23天</md-tag>
   </div>
 </template>
 
