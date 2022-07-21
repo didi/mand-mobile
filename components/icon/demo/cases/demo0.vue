@@ -30,6 +30,8 @@ export default {
   data() {
     return {
       iconList: [
+        'square-checked',
+        'square-check',
         'rectangle',
         'right',
         'wrong',

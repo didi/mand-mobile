@@ -1556,6 +1556,34 @@
       "setIdx": 0,
       "setId": 4,
       "iconIdx": 53
+    },
+    {
+      "icon": {
+        "paths": [
+          "M854.624 214.624l-45.248-45.248-297.376 297.376-297.376-297.376-45.248 45.248 297.376 297.376-297.376 297.376 45.248 45.248 297.376-297.376 297.376 297.376 45.248-45.248-297.376-297.376z"
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": ["square-checked"],
+        "defaultCode": 59030,
+        "grid": 16,
+        "attrs": [],
+        "colorPermutations": {
+          "21822122812552552551": [],
+          "25525525516572931": []
+        }
+      },
+      "properties": {
+        "id": 4,
+        "order": 120,
+        "ligatures": "square-checked",
+        "prevSize": 32,
+        "code": 59030,
+        "name": "square-checked"
+      },
+      "setIdx": 0,
+      "setId": 4,
+      "iconIdx": 54
     }
   ],
   "height": 1024,
