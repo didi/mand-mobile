@@ -219,7 +219,10 @@ export default {
   content "\e634"
 .md-icon-close:before
   content "\e68c"
-
+.md-icon-square-check:before
+  content "\e695"
+.md-icon-square-checked:before
+  content "\e696"
 @font-face
   font-family Mand-Mobile-Icon
   font-style normal
