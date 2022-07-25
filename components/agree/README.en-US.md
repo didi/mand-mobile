@@ -24,7 +24,7 @@ Vue.component(Agree.name, Agree)
 | v-model | checked | Boolean | `false` |-|
 | disabled | - | Boolean | `false` |-|
 | size | size of icon | String | `md` | refer to `Icon` for optional values |
-
+| iconType | select Icon | String | `circle` | optional value `circle` or `square` |
 #### Agree Instance Events
 
 ##### @change(name, checked)
