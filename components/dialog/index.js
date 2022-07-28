@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import {t} from '../_locale'
-import Dialog from './dialog.vue'
+import Dialog from './dialog'
 
 /* istanbul ignore next */
 const noop = function() {}

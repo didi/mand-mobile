@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import TipOptions from './tip.vue'
+import TipOptions from './tip'
 import {randomId} from '../_util'
 const Tip = Vue.extend(TipOptions)
 

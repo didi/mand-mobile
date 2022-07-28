@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ActionSheet from './action-sheet.vue'
+import ActionSheet from './action-sheet'
 
 const noop = function() {}
 
