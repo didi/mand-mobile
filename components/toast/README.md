@@ -24,7 +24,7 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 
 #### Toast Static Methods
 
-##### Toast({content, icon, iconSvg, duration, position, hasMask, parentNode})
+##### Toast({content, icon, iconSvg, duration, position, hasMask, parentNode, square})
 显示自定义提示
 
 |属性 | 说明 | 类型 | 默认值|备注|
@@ -36,8 +36,9 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | position | 展示位置 | String | `center` | `top/center/bottom` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` | - |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|- |
+| square | 使用方形样式 | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
 
-##### Toast.info(content, duration, hasMask, parentNode)
+##### Toast.info(content, duration, hasMask, parentNode, square)
 显示纯文本提示
 
 |属性 | 说明 | 类型 | 默认值|
@@ -46,8 +47,9 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body` |
+| square | 使用方形样式 | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
 
-##### Toast.succeed(content, duration, hasMask, parentNode)
+##### Toast.succeed(content, duration, hasMask, parentNode, square)
 显示成功提示
 
 |属性 | 说明 | 类型 | 默认值|
@@ -56,8 +58,9 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body` |
+| square | 使用方形样式 | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
 
-##### Toast.failed(content, duration, hasMask, parentNode)
+##### Toast.failed(content, duration, hasMask, parentNode, square)
 显示失败提示
 
 |属性 | 说明 | 类型 | 默认值|
@@ -66,8 +69,9 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|
+| square | 使用方形样式 | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
 
-##### Toast.loading(content, duration, hasMask, parentNode)
+##### Toast.loading(content, duration, hasMask, parentNode, square)
 显示载入提示
 
 |属性 | 说明 | 类型 | 默认值|
@@ -76,11 +80,12 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `0` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `true` |
 | parentNode | 组件挂载节点 | HTMLElement | `document.body`|
+| square | 使用方形样式 | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
 
 ##### Toast.hide()
 隐藏提示
 
-#### Toast.component Props 
+#### Toast Props
 
 <sup class="version-after">2.3.0+</sup>
 
@@ -92,14 +97,17 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 | duration | 显示多少毫秒后自动消失, 若为`0`则一直显示 | Number | `3000` | - |
 | position | 展示位置 | String | `center` | `top/center/bottom` |
 | hasMask | 是否显示透明遮罩, 以此防止用户点击 | Boolean | `false` | - |
+| square | 使用方形样式 | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
 
+#### Toast Slots
+#### default
 ```html
 <md-toast>
   <md-activity-indicator>loading...</md-activity-indicator>
 </md-toast>
 ```
 
-#### Toast.component Methods
+#### Toast Methods
 
 <sup class="version-after">2.3.0+</sup>
 
@@ -109,7 +117,7 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 ##### hide()
 隐藏提示
 
-#### Toast.component Events
+#### Toast Events
 
 <sup class="version-after">2.3.0+</sup>
 
