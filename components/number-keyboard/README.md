@@ -28,6 +28,7 @@ Vue.component(NumberKeyboard.name, NumberKeyboard)
 |is-hide-confirm|确认时自动隐藏键盘|Boolean|`true`| -|
 |text-render|自定义指定按键的值|Function(value: string): string|-|可替换键`0,1,...9,.`|
 |ok-text|键盘确认键文案|String|`确认`|-|
+|disabled|禁用键盘|Boolean|`false`|-|
 
 #### NumberKeyboard Slots
 
