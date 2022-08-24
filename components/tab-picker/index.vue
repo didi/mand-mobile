@@ -19,6 +19,14 @@
         <md-icon name="close" size="lg" slot="cancel" />
       </md-popup-title-bar>
       <div class="md-tab-picker-content">
+          <div class="md-tab-picker-content-quick" v-if="showQuickBlock">
+            <p class="md-tab-picker-content-quick-subtitle">{{extrasData.subtitle}}</p>
+            <div class="md-tab-picker-content-quick-list">
+              <div class="quick-list-item" v-for="item in extrasData.list" :key="item.value" @click="$_onQuickItemClick(item)">
+                <md-icon v-if="item.icon" :name="item.icon" :size="item.size||'sm'"  :color="item.color||'#4280EB'"/>{{item.label}}
+              </div>
+            </div>
+          </div>
           <md-tabs
             v-model="currentTab"
             :key="tabsTmpKey"
@@ -97,6 +105,10 @@ export default {
       type: String,
       default: t('md.tab_picker.choose'),
     },
+    extrasData: {
+      type: Object,
+      default: () => ({}),
+    },
 
     // Mixin Props
     // value: {
@@ -124,6 +136,7 @@ export default {
       currentTab: '',
       oldCurrentTab: '',
       tabsTmpKey: Date.now(),
+      quickSelectdIgnore: false,
     }
   },
 
@@ -162,6 +175,10 @@ export default {
     },
     hasSlot() {
       return !!this.$scopedSlots.default
+    },
+    // 是否展示快速选择区域
+    showQuickBlock() {
+      return !(this.defaultValue.length || this.selected.length)
     },
   },
 
@@ -202,6 +219,9 @@ export default {
       }, 100)
     },
     $_onSelectPaneItem(value, index) {
+      if (this.quickSelectdIgnore) {
+        return
+      }
       this.selected.splice(index, this.selected.length - index, value)
       this.$nextTick(() => {
         const nextPane = this.panes[index + 1]
@@ -227,6 +247,41 @@ export default {
         }
       })
     },
+    /**
+     * @description 快速选择子项点击事件
+     * @param {item: object} 点击选择的当前子项
+     * @return {void}
+    */
+    $_onQuickItemClick(item) {
+      const {options} = this.data
+      this.selected = this.getPathValuesByChild(options, data => data.value === item.value)
+      // 忽略快速选择项设置选中时的事件
+      this.quickSelectdIgnore = true
+
+      this.$nextTick(() => {
+        const selectedLastIndex = this.selected.length - 1
+        const panesLastIndex = this.panes.length - 1
+        // 当前选中的面板
+        const currentPane = this.panes[selectedLastIndex]
+        // 请选择的面板
+        const nextPane = this.panes[panesLastIndex]
+
+        this.$emit('select', {
+          index: selectedLastIndex,
+          value: currentPane.value,
+          option: currentPane,
+        })
+
+        if (nextPane.value !== undefined) {
+          this.$emit('change', {
+            values: this.getSelectedValues(),
+            options: this.getSelectedOptions(),
+          })
+          this.hideTabPicker()
+        }
+        this.quickSelectdIgnore = false
+      })
+    },
     // MARK: public methods
     getSelectedValues() {
       return this.selected
@@ -240,6 +295,33 @@ export default {
     },
     hideTabPicker() {
       this.$emit('input', false)
+    },
+    /**
+     * @description 根据子节点条件获取所有父节点路径值
+     * @param {treeData: object} 树形结构所有数据源
+     * @param {func: Function} 查找的子节点满足的条件方法
+     * @return {Array} 该子节点上层父节点路径数组，实例：['value1', 'value2', 'value3']
+    */
+    getPathValuesByChild(treeData, func, path = []) {
+      if (!treeData) {
+        return []
+      }
+
+      for (const index in treeData) {
+        path.push(treeData[index].value)
+        if (func(treeData[index])) {
+          return path
+        }
+        // 如果还有子节点，继续查找
+        if (treeData[index].children) {
+          const pathValues = this.getPathValuesByChild(treeData[index].children.options, func, path)
+          if (pathValues.length) {
+            return pathValues
+          }
+        }
+        path.pop()
+      }
+      return []
     },
   },
 }
@@ -278,6 +360,23 @@ export default {
     width 90px !important
 .md-tab-picker-content
   background-color tab-picker-bg
+  &-quick
+    padding 40px tab-picker-h-gap 40px tab-picker-h-gap
+    &-subtitle
+      font-size 28px;
+      color  #858B9C;
+    &-list
+      display flex
+      flex-wrap wrap
+      align-content space-between
+      justify-content flex-start
+      .quick-list-item
+        margin-top 32px
+        flex 0 1 auto
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+        flex-basis 19.6%
   .md-radio-item.is-selected
     .md-cell-item-body .md-cell-item-title
       color radio-color

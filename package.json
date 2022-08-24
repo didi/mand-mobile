@@ -49,6 +49,7 @@
     "build:webpack:components": "cross-env NODE_ENV=production gulp build --gulpfile gulpfile.js && node build/webpack/build-style-entry",
     "codecov": "codecov",
     "test": "MAND_ENV=test jest --no-cache --runInBand --verbose --silent",
+    "test-one": "MAND_ENV=test jest ./components/tab-picker/test/index.spec.js  --no-cache --runInBand --verbose --silent=false",
     "test:lib": "MAND_ENV=test TEST_TYPE=lib jest --no-cache --runInBand --verbose --silent",
     "test:lib-vw": "MAND_ENV=test TEST_TYPE=lib-vw jest --no-cache --runInBand --verbose --silent"
   },

@@ -22,24 +22,19 @@ describe('TabPicker - Operation', () => {
     expect(wrapper.vm.currentTab).toBe('province')
 
     const eventSpy = sinon.spy(wrapper.vm, '$emit')
+
     const item0 = wrapper
-      .find({
-        name: 'province',
-        class: 'md-radio-item',
-      })
+      .find('.md-tab-pane')
       .findAll('.md-radio-item')
       .at(0)
-
     item0.trigger('click')
+
     setTimeout(() => {
       expect(wrapper.vm.panes.length).toBe(2)
       expect(wrapper.vm.currentTab).toBe('block')
-
       const item1 = wrapper
-        .find({
-          name: 'block',
-          class: 'md-radio-item',
-        })
+        .findAll('.md-tab-pane')
+        .at(1)
         .findAll('.md-radio-item')
         .at(0)
       item1.trigger('click')

@@ -12,8 +12,9 @@
 
 <script>import createDemoModule from '../../../examples/create-demo-module'
 import Demo0 from './cases/demo0'
+import Demo1 from './cases/demo1'
 
 export default {
-  ...createDemoModule('tab-bar', [Demo0]),
+  ...createDemoModule('tab-bar', [Demo0, Demo1]),
 }
 </script>
