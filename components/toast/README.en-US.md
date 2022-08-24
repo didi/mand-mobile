@@ -34,7 +34,7 @@ Dynamically create a toast
 | position | display position | String | `center` | `top/center/bottom` |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking| Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
-| square | use square style | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
+| square <sup class="version-after">2.6.0+</sup> | use square style | Boolean | `false`|-|
 
 ##### Toast.info(content, duration, hasMask, parentNode, square)
 Dynamically create a text toast
@@ -45,7 +45,7 @@ Dynamically create a text toast
 | duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
-| square | use square style | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
+| square <sup class="version-after">2.6.0+</sup> | use square style | Boolean | `false`|-|
 
 ##### Toast.succeed(content, duration, hasMask, parentNode, square)
 Dynamically create a success toast
@@ -56,7 +56,7 @@ Dynamically create a success toast
 | duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
-| square | use square style | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
+| square <sup class="version-after">2.6.0+</sup> | use square style | Boolean | `false`|-|
 
 ##### Toast.failed(content, duration, hasMask, parentNode, square)
 Dynamically create a failed toast
@@ -67,7 +67,7 @@ Dynamically create a failed toast
 | duration |toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
-| square | use square style | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
+| square <sup class="version-after">2.6.0+</sup> | use square style | Boolean | `false`|-|
 
 ##### Toast.loading(content, duration, hasMask, parentNode, square)
 Dynamically create a loading toast
@@ -78,14 +78,12 @@ Dynamically create a loading toast
 | duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `0` | - |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking | Boolean | `false` | - |
 | parentNode | portal node of toast | HTMLElement | `document.body`| - |
-| square | use square style | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
+| square <sup class="version-after">2.6.0+</sup> | use square style | Boolean | `false`|-|
 
 ##### Toast.hide()
 Hide current toast
 
-#### Toast Props
-
-<sup class="version-after">2.3.0+</sup>
+#### Toast Props <sup class="version-after">2.3.0+</sup>
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
@@ -95,7 +93,7 @@ Hide current toast
 | duration | toast will be closed in milliseconds; if set duration as`0`, the toast will always be visible | Number | `3000` | - |
 | position | display position | String | `center` | `top/center/bottom` |
 | hasMask | whether to show a transparent mask, which will prevent users from clicking| Boolean | `false` | - |
-| square | use square style | Boolean | `false`| <sup class="version-after">2.6.0+</sup> |
+| square <sup class="version-after">2.6.0+</sup> | use square style | Boolean | `false`|-|
 
 #### Toast Slots
 #### default
@@ -105,9 +103,7 @@ Hide current toast
 </md-toast>
 ```
 
-#### Toast Methods
-
-<sup class="version-after">2.3.0+</sup>
+#### Toast Methods <sup class="version-after">2.3.0+</sup>
 
 ##### show()
 Show toast
@@ -115,9 +111,7 @@ Show toast
 ##### hide()
 Hide toast
 
-#### Toast Events
-
-<sup class="version-after">2.3.0+</sup>
+#### Toast Events <sup class="version-after">2.3.0+</sup>
 
 ##### @show()
 Toast show event
