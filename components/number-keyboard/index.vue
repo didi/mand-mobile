@@ -13,6 +13,7 @@
         :hide-dot="hideDot"
         :text-render="textRender"
         :disabled="disabled"
+        :duplicate-zero="duplicateZero"
         @enter="$_onEnter"
         @delete="$_onDelete"
         @confirm="$_onConfirm"
@@ -39,6 +40,7 @@
           :is-view="isView"
           :hide-dot="hideDot"
           :text-render="textRender"
+          :duplicate-zero="duplicateZero"
           :disabled="disabled"
           @enter="$_onEnter"
           @delete="$_onDelete"
@@ -94,6 +96,10 @@ export default {
     },
     textRender: {
       type: Function,
+    },
+    duplicateZero: {
+      type: Boolean,
+      default: false,
     },
   },
 
