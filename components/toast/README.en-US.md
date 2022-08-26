@@ -83,7 +83,8 @@ Dynamically create a loading toast
 ##### Toast.hide()
 Hide current toast
 
-#### Toast Props <sup class="version-after">2.3.0+</sup>
+#### Toast Props
+<sup class="version-after">2.3.0+</sup>
 
 | Props | Description | Type | Default | Note |
 |----|-----|------|------|------|
@@ -103,7 +104,8 @@ Hide current toast
 </md-toast>
 ```
 
-#### Toast Methods <sup class="version-after">2.3.0+</sup>
+#### Toast Methods
+<sup class="version-after">2.3.0+</sup>
 
 ##### show()
 Show toast
@@ -111,7 +113,8 @@ Show toast
 ##### hide()
 Hide toast
 
-#### Toast Events <sup class="version-after">2.3.0+</sup>
+#### Toast Events
+<sup class="version-after">2.3.0+</sup>
 
 ##### @show()
 Toast show event

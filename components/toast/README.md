@@ -85,7 +85,8 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 ##### Toast.hide()
 隐藏提示
 
-#### Toast Props <sup class="version-after">2.3.0+</sup>
+#### Toast Props
+<sup class="version-after">2.3.0+</sup>
 
 |属性 | 说明 | 类型 | 默认值|备注|
 |----|-----|------|------|------|
@@ -105,7 +106,8 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 </md-toast>
 ```
 
-#### Toast Methods <sup class="version-after">2.3.0+</sup>
+#### Toast Methods
+<sup class="version-after">2.3.0+</sup>
 
 ##### show()
 展示提示
@@ -113,7 +115,8 @@ Vue.component(Toast.component.name, Toast.component) // 组件引入
 ##### hide()
 隐藏提示
 
-#### Toast Events <sup class="version-after">2.3.0+</sup>
+#### Toast Events
+<sup class="version-after">2.3.0+</sup>
 
 ##### @show()
 提示展示事件
