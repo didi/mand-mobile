@@ -109,7 +109,7 @@ export default {
     flex-shrink 0
     color toast-color
   .md-icon + .md-toast-text
-    margin-left h-gap-xs
+    margin-left h-gap-sm
   .md-popup
     .md-popup-box
       width 540px
@@ -144,20 +144,28 @@ export default {
   background-color toast-fill
   box-sizing border-box
   overflow hidden
+  .md-toast-text
+    white-space nowrap
+    text-overflow: ellipsis
+    overflow hidden
   &.square
     display flex
     flex-direction column
-    width 300px
-    height 240px
-    padding 56px 60px
+    width 240px
+    min-height 232px
+    padding 54px 36px 48px 36px
+    border-radius toast-radius-medium
+    .md-toast-text
+      margin-left 0
+      line-height 40px
+      word-break break-all
+      white-space normal
+      display -webkit-box
+      -webkit-box-orient vertical
+      -webkit-line-clamp 2
     .md-icon
       margin-bottom 32px
-      width 60px
-      height 60px
-      font-size 60px
-
-.md-toast-text
-  white-space nowrap
-  text-overflow: ellipsis
-  overflow hidden
+      width 58px
+      height 58px
+      font-size 58px
 </style>

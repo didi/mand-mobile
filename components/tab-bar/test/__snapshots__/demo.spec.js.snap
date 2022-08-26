@@ -86,7 +86,7 @@ exports[`TabBar - Demo Scroll 1`] = `
         <!---->
         <div scroll-wrapper="" class="scroll-view-container">
           <!---->
-          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active">精选</a><a class="md-tab-bar-item">全部</a><a class="md-tab-bar-item">满减券</a><a class="md-tab-bar-item">立减券</a><a class="md-tab-bar-item">免息券</a><a class="md-tab-bar-item">校园专享</a><a class="md-tab-bar-item">夜间优惠</a><a class="md-tab-bar-item">红包</a></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
+          <div class="md-tab-bar-list" style="width:0px;"><a class="md-tab-bar-item is-active more-than-five">精选</a><a class="md-tab-bar-item">全部</a><a class="md-tab-bar-item">满减券</a><a class="md-tab-bar-item">立减券</a><a class="md-tab-bar-item">免息券</a><a class="md-tab-bar-item">校园专享</a><a class="md-tab-bar-item">夜间优惠</a><a class="md-tab-bar-item">红包</a></div> <span class="md-tab-bar-ink" style="width:0px;transform:translateX(0px);"></span>
           <!---->
         </div>
         <!---->

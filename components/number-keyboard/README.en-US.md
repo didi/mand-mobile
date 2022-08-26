@@ -28,6 +28,8 @@ Vue.component(NumberKeyboard.name, NumberKeyboard)
 |is-hide-confirm|automatically hide the keyboard when confirming|Boolean|`true`| -|
 |text-render|customize value of specified key|Function(value: string): string|-|replaceable key `0,1,...9,.`|
 |ok-text|text of confirmation key|String|`confirm`|-|
+|disabled <sup class="version-after">2.6.0+|to disable the keyboard|Boolean|`false`|-|
+|duplicate-zero <sup class="version-after">2.6.0+</sup>|show `00` key|Boolean|`false`|This props is valid only when `type` is `professional` |
 
 #### NumberKeyboard Slots
 

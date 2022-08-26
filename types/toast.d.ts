@@ -3,8 +3,9 @@ import { MandComponent } from './component'
 export type ToastOptions = {
   content: string
   duration?: number
-  parentNode?: Element,
+  parentNode?: Element
   hasMask?: boolean
+  square?: boolean
 }
 
 export type ToastConstructorOptions = {
@@ -14,10 +15,10 @@ export type ToastConstructorOptions = {
 
 export interface Toast {
   (options?: ToastConstructorOptions): void
-  info(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
-  succeed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
-  failed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
-  loading(content: string, duration?: number, hasMask?: boolean, parentNode?: Element): void
+  info(content: string, duration?: number, hasMask?: boolean, parentNode?: Element, square?: boolean): void
+  succeed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element, square?: boolean): void
+  failed(content: string, duration?: number, hasMask?: boolean, parentNode?: Element, square?: boolean): void
+  loading(content: string, duration?: number, hasMask?: boolean, parentNode?: Element, square?: boolean): void
   hide(): void
   component: MandComponent
 }

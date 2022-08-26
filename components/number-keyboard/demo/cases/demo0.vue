@@ -22,6 +22,22 @@
       @enter="onNumberEnter"
       @delete="onNumberDelete"
     ></md-number-keyboard>
+
+    <md-button @click="toggleKeyboard(3)">{{ isKeyBoardShow[3] ? '收起键盘' : '唤起键盘，00 按键' }}</md-button>
+    <md-number-keyboard
+      v-model="isKeyBoardShow[3]"
+      :duplicate-zero="true"
+      @enter="onNumberEnter"
+      @delete="onNumberDelete"
+    ></md-number-keyboard>
+
+    <md-button @click="toggleKeyboard(4)">{{ isKeyBoardShow[4] ? '收起键盘' : '唤起键盘，禁用键盘' }}</md-button>
+    <md-number-keyboard
+      v-model="isKeyBoardShow[4]"
+      :disabled="true"
+      @enter="onNumberEnter"
+      @delete="onNumberDelete"
+    ></md-number-keyboard>
     <div class="md-example-display" v-show="isKeyBoardShow" v-text="number"></div>
   </div>
 </template>
