@@ -23,11 +23,13 @@ Vue.component(TabPicker.name, TabPicker)
 |----|-----|------|------|------|
 |v-model|whether to show tabpicker or not|Boolean|`false`|-|
 |default-value|default values|Array|`[]`|-|
-|data|data source|Array|`[]`|refer to `Appendix` for data format|
+|data|data source|Object|`{}`|refer to `Appendix` for data format|
 |title|the title of tabpicker|String|-|-|
 |describe|the describe of tabpicker|String|-|-|
-|placeholder|default label for each tab pane|String|`请选择`|-|
+|placeholder|default label for each tab pane|String|`please select`|-|
 |mask-closable|if the popup will be closed when clicking on the mask|Boolean|`true`|-|
+|extrasData <sup class="version-after">2.6.1+</sup>|Note: Only default-value attributes are empty or no options are not selected. quickly select the area data source|Object|`{}`|refer to `Appendix` for data format|
+
 
 #### TabPicker Methods
 
@@ -100,6 +102,7 @@ Custom option item slot
 * Data format of cascaded data source
 
 ```javascript
+// property data
 {
   // unique key
   name: '',
@@ -122,5 +125,23 @@ Custom option item slot
       }
     }
   ]
+}
+
+// property extrasData
+{
+  subtitle: 'hot cities',  //quickly select zone title
+  list: [
+    {
+      value: 'pk',
+      label: 'beijing',
+      icon: 'location', // Quickly select the area data item icon type
+      size: 'sm',       // Quickly select the area data item icon size
+      color: 'blue',    // Quickly select the area data item icon color
+    },
+    {
+      value: 'cd',
+      label: 'chengdu',
+    }
+  ],
 }
 ```

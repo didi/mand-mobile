@@ -69,6 +69,7 @@ const extrasData = {
 export default {
   name: 'tab-bar-demo',
   title: '快速选择区',
+  titleEnUS: 'Quick block',
   /* DELETE */
   height: 550,
   /* DELETE */
