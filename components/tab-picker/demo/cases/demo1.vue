@@ -22,7 +22,6 @@
     />
   </div>
 </template>
-
 <script>import {Field, FieldItem, TabPicker} from 'mand-mobile'
 import data from 'mand-mobile/components/tab-picker/demo/data'
 
