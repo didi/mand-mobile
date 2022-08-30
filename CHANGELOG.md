@@ -16,10 +16,12 @@ toc: hidden
 
 - Feature
     - `Toast`
-      -  增加方形样式组件
+      - 增加方形样式组件
     - `NumberKeyboard`
       - 增加禁用键盘选项
       - 增加 `00` 按键选项
+    - `Agree`
+      - 增加方形勾选框
 
 ### 2.5.20
 
