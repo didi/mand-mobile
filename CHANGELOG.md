@@ -3,11 +3,31 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.6.0
+
+`2022-08-26`
+
+- Design
+  - 🍭金融设计规范更新
+    - 更新主题色，[详情](https://github.com/didi/mand-mobile/pull/755/files#diff-dafec5882d1f310bec1be2ca7fb586a99589509362a07d650e827813eee6136a)
+    - `Toast` 背景色由半透明改为不透明
+    - `Button` 圆角由 `4px` 修改为 `16px`
+    - `Icon` 更新图标整体视觉效果
+
+- Feature
+    - `Toast`
+      - 增加方形样式组件
+    - `NumberKeyboard`
+      - 增加禁用键盘选项
+      - 增加 `00` 按键选项
+    - `Agree`
+      - 增加方形勾选框
+
 ### 2.5.20
 
 `2021-07-22`
 
-- Feat
+- Feature
   - 添加更多的国际化支持
 
 ### 2.5.19
@@ -31,7 +51,7 @@ toc: hidden
 
 `2021-03-02`
 
-- Feat
+- Feature
   - 添加国际化支持
 
 ### 2.5.16
@@ -52,7 +72,7 @@ toc: hidden
 
 `2021-01-15`
 
-- Feat
+- Feature
   - `Dialog`使用静态方法时支持传入`transition`[#716](https://github.com/didi/mand-mobile/issues/716)
 - Fix
   - 修复`Tip`组件子组件属性为空时导致报错
@@ -62,7 +82,7 @@ toc: hidden
 
 `2020-09-17`
 
-- Feat
+- Feature
   - `TextareaItem`支持格式化[#699](https://github.com/didi/mand-mobile/issues/699)
 
 - Fix
@@ -97,7 +117,7 @@ toc: hidden
 
 `2020-03-26`
 
-- Feat
+- Feature
   - `CheckGroup`增加方法`toggleAll`用于全选/全不选和反选[#648](https://github.com/didi/mand-mobile/issues/648)
 
 - Fix
@@ -107,7 +127,7 @@ toc: hidden
 
 `2020-02-04`
 
-- Feat
+- Feature
   - `Captcha`增加属性`auto-send`，用于控制验证码弹窗第一次展示时是否自动触发`send`事件
   - `ResultPage`属性增加动态变更响应
 
@@ -123,7 +143,7 @@ toc: hidden
 
 `2019-12-26`
 
-- Feat
+- Feature
   - `Landscape`增加属性`transition`，用于自定义展示动效
 
 - Fix
@@ -150,7 +170,7 @@ toc: hidden
 
 `2019-11-02`
 
-- Feat
+- Feature
   - `ScrollView`增加方法`getOffsets`，用于获取当前滚动距离
 
 - Fix
@@ -163,7 +183,7 @@ toc: hidden
 
 `2019-10-11`
 
-- Feat
+- Feature
   - `TextareaItem`增加属性`clearable`[#589](https://github.com/didi/mand-mobile/issues/589)
 
 - Fix
@@ -174,7 +194,7 @@ toc: hidden
 
 `2019-09-20`
 
-- Feat
+- Feature
   - `Picker`和`DatePicker`增加属性`keep-index`，用于设置当列数据发生变更时，保持上次停留位置
 
 - Fix
@@ -186,7 +206,7 @@ toc: hidden
 
 `2019-09-04`
 
-- Feat
+- Feature
   - 增加部分全局[reset样式](https://github.com/didi/mand-mobile/pull/539/files)
   - 新增组件`Skeleton`
   - 新增组件`TextareaItem`

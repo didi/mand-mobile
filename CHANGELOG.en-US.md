@@ -2,12 +2,31 @@
 title: Change Log
 toc: hidden
 ---
+### 2.6.0
+
+`2022-08-26`
+
+- Design
+  - 🍭Financial design specification update,
+    - Update the theme color, [detail](https://github.com/didi/mand-mobile/pull/755/files#diff-dafec5882d1f310bec1be2ca7fb586a99589509362a07d650e827813eee6136a)
+    - `Toast` the background color was changed from translucent to opaque
+    - `Button` border radius changed from '4px' to '16px'
+    - `Icon` update the overall visual effect of the icon
+
+- Feature
+    - `Toast`
+      - Add a square style component
+    - `NumberKeyboard`
+      - Add option to disable keyboard
+      - Add `00` key
+    - `Agree`
+      - Add square check box
 
 ### 2.5.20
 
 `2021-07-22`
 
-- Feat
+- Feature
   - Add more i18n support in the project
 
 ### 2.5.19
@@ -31,7 +50,7 @@ toc: hidden
 
 `2021-03-02`
 
-- Feat
+- Feature
   - Add i18n support in the project
 
 ### 2.5.16
@@ -52,7 +71,7 @@ toc: hidden
 
 `2021-01-15`
 
-- Feat
+- Feature
   - `Dialog` supports passing in `transition` when using static methods[#716](https://github.com/didi/mand-mobile/issues/716)
 - Fix
   - Fix `Tip` error when no attributes in subcomponent
@@ -62,7 +81,7 @@ toc: hidden
 
 `2020-09-17`
 
-- Feat
+- Feature
   - `TextareaItem` support formation[#699](https://github.com/didi/mand-mobile/issues/699)
 
 - Fix
@@ -97,7 +116,7 @@ toc: hidden
 
 `2020-03-26`
 
-- Feat
+- Feature
   - `CheckGroup` adds method `toggleAll`, used to Select All or Deselect[#648](https://github.com/didi/mand-mobile/issues/648)
 
 - Fix
@@ -107,7 +126,7 @@ toc: hidden
 
 `2020-02-04`
 
-- Feat
+- Feature
   - `Captcha` add prop `auto-send`, used to control whether the `send` event is automatically triggered when the captcha popup is first displayed
   - `ResultPage` props add dynamic change response
 
@@ -123,7 +142,7 @@ toc: hidden
 
 `2019-12-26`
 
-- Feat
+- Feature
   - `Landscape` add prop `transition`, used to customize the display animation
 
 - Fix
@@ -150,7 +169,7 @@ toc: hidden
 
 `2019-11-02`
 
-- Feat
+- Feature
   - `ScrollView` adds method`getOffsets`, used to get scroll distance
 
 - Fix
@@ -163,7 +182,7 @@ toc: hidden
 
 `2019-10-11`
 
-- Feat
+- Feature
   - `TextareaItem` add prop `clearable`[#589](https://github.com/didi/mand-mobile/issues/589)
 
 - Fix
@@ -174,7 +193,7 @@ toc: hidden
 
 `2019-09-20`
 
-- Feat
+- Feature
   - `Picker` and `DatePicker` add prop `keep-index`, used to set the last stop position when the column data changes
 
 - Fix
@@ -186,7 +205,7 @@ toc: hidden
 
 `2019-09-04`
 
-- Feat
+- Feature
   - Add part of global [reset style](https://github.com/didi/mand-mobile/pull/539/files)
   - Add new component `Skeleton`
   - Add new component `TextareaItem`

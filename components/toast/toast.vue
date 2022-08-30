@@ -153,7 +153,7 @@ export default {
     flex-direction column
     width 240px
     min-height 232px
-    padding 48px 36px
+    padding 54px 36px 48px 36px
     border-radius toast-radius-medium
     .md-toast-text
       margin-left 0
@@ -165,7 +165,7 @@ export default {
       -webkit-line-clamp 2
     .md-icon
       margin-bottom 32px
-      width 60px
-      height 60px
-      font-size 60px
+      width 58px
+      height 58px
+      font-size 58px
 </style>

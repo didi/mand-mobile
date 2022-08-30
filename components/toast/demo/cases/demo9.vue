@@ -1,6 +1,6 @@
 <template>
   <div class="md-example-child md-example-child-toast md-example-child-toast-7">
-    <md-toast ref="toast" icon="ring" icon-svg content="方形 Toast 最多支持2行文字" square>
+    <md-toast ref="toast" icon="success" content="方形 Toast 最多支持2行文字" square>
     </md-toast>
     <md-button @click="showTextToast">方形Toast长文字</md-button>
   </div>
