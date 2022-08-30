@@ -24,7 +24,7 @@ Vue.component(Agree.name, Agree)
 |v-model|是否选中|Boolean|`false`|-|
 |disabled|是否禁用|Boolean|`false`|-|
 |size|按钮大小|String|`md`|可选值参考组件`Icon`|
-|iconType|选中图标|string|`circle`|可选值`circle` ｜ `square`|
+|icon-type <sup class="version-after">2.6.0+</sup>|选中图标|string|`circle`|可选值`circle` ｜ `square`|
 
 #### Agree Events
 
