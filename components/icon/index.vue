@@ -78,7 +78,7 @@ export default {
     -webkit-font-smoothing antialiased
     -moz-osx-font-smoothing grayscale
     &.xss
-      font-size icon-size-xss
+      font-size icon-size-xxs
     &.xs
       font-size icon-size-xs
     &.sm
@@ -92,18 +92,21 @@ export default {
       z-index 2
 
   &.icon-svg
-    width 1em
-    vertical-height(1em)
     &.xss
-      font-size icon-size-xss
+      width icon-size-xxs
+      vertical-height(icon-size-xxs)
     &.xs
-      font-size icon-size-xs
+      width icon-size-xs
+      vertical-height(icon-size-xs)
     &.sm
-      font-size icon-size-sm
+      width icon-size-sm
+      vertical-height(icon-size-sm)
     &.md
-      font-size icon-size-md
+      width icon-size-md
+      vertical-height(icon-size-md)
     &.lg
-      font-size icon-size-lg
+      width icon-size-lg
+      vertical-height(icon-size-lg)
 
 // name
 .md-icon-arrow:before
