@@ -92,12 +92,11 @@ export default {
       z-index 2
 
   &.icon-svg
-    width 1em
-    vertical-height(1em)
     width 1em !important
+    vertical-height(1em !important)
+    &.xss
       font-size icon-size-xss
     &.xs
-    vertical-height(1em !important)
       font-size icon-size-xs
     &.sm
       font-size icon-size-sm
