@@ -94,9 +94,10 @@ export default {
   &.icon-svg
     width 1em
     vertical-height(1em)
-    &.xss
+    width 1em !important
       font-size icon-size-xss
     &.xs
+    vertical-height(1em !important)
       font-size icon-size-xs
     &.sm
       font-size icon-size-sm
