@@ -23,11 +23,12 @@ Vue.component(TabPicker.name, TabPicker)
 |----|-----|------|------|------|
 |v-model|控制显示或隐藏|Boolean|`false`| -|
 |default-value|默认值|Array|`[]`|-|
-|data|数据源|Array|`[]`|数据格式参考`附录`|
+|data|数据源|Object|`{}`|数据格式参考`附录`|
 |title|弹窗标题|String|-|-|
 |describe|弹窗描述文本|String|-|-|
 |placeholder|默认提示文本|String|`请选择`|-|
 |mask-closable|点击蒙层是否可关闭弹出层|Boolean|`true`|-|
+|extrasData <sup class="version-after">2.6.1+</sup>|注：仅default-value属性为空或者未选择任何选项时展示，快速选择区数据源|Object|`{}`|数据格式参考`附录`|
 
 
 #### TabPicker 实例方法
@@ -101,6 +102,7 @@ Vue.component(TabPicker.name, TabPicker)
 * 级联数据源数据格式
 
 ```javascript
+// property data
 {
   // 唯一键名
   name: '',
@@ -123,5 +125,23 @@ Vue.component(TabPicker.name, TabPicker)
       }
     }
   ]
+}
+
+// property extrasData
+{
+  subtitle: '热点城市',  //快速选择区标题
+  list: [
+    {
+      value: 'pk',
+      label: '北京',
+      icon: 'location', // 快速选择区数据项 icon 类型
+      size: 'sm',       // 快速选择区数据项 icon 大小
+      color: 'blue',    // 快速选择区数据项 icon 颜色
+    },
+    {
+      value: 'cd',
+      label: '成都市',
+    }
+  ],
 }
 ```
