@@ -7,7 +7,7 @@ toc: hidden
 `2022-08-26`
 
 - Design
-  - 🍭Financial design specification update,
+  - 🍭Financial design specification update
     - Update the theme color, [detail](https://github.com/didi/mand-mobile/pull/755/files#diff-dafec5882d1f310bec1be2ca7fb586a99589509362a07d650e827813eee6136a)
     - `Toast` the background color was changed from translucent to opaque
     - `Button` border radius changed from '4px' to '16px'
