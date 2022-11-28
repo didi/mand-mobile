@@ -1,10 +1,13 @@
 <template>
   <div
     class="md-check-base-box"
-    :class="{
+    :class="[
+      iconPosition,
+      {
       'is-disabled': disabled,
-      'is-checked': isChecked
-    }"
+      'is-checked': isChecked,
+      }
+    ]"
   >
     <slot></slot>
     <md-tag
@@ -13,7 +16,7 @@
       shape="quarter"
       type="fill"
     >
-      <md-icon name="right"></md-icon>
+      <md-icon name="right" size="xs"></md-icon>
     </md-tag>
   </div>
 </template>
@@ -40,6 +43,10 @@ export default {
     isChecked: {
       type: Boolean,
       default: false,
+    },
+    iconPosition: {
+      type: String,
+      default: 'rt',
     },
   },
 }
@@ -74,4 +81,12 @@ export default {
     right 0
     .quarter-bg
       background-color checkbox-active-color
+
+  &.lt
+    .md-tag
+      left 0
+      .quarter-content
+        left 0
+      .quarter-bg
+        left -100%
 </style>

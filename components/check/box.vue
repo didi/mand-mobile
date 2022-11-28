@@ -4,6 +4,7 @@
     :label="label"
     :is-checked="isChecked"
     :disabled="disabled"
+    :icon-position="iconPosition"
     @click.native="$_onClick"
   >
     <slot>{{label}}</slot>
@@ -33,6 +34,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    iconPosition: {
+      type: String,
+      default: 'rt',
     },
   },
 
@@ -88,10 +93,13 @@ export default {
   border 1px solid checkbox-border-color
   border-radius checkbox-border-radius
   box-sizing border-box
+  background-color checkbox-background-color
   overflow hidden
   &.is-checked
     color checkbox-active-color
     border-color checkbox-active-border-color
+    background-color checkbox-active-background-color
+    font-weight bold
     &.is-disabled
       color checkbox-active-color
       border-color checkbox-active-border-color
@@ -99,6 +107,7 @@ export default {
   &.is-disabled
     color checkbox-disabled-color
     border-color checkbox-disabled-color
+    background-color checkbox-disabled-background-color
 
   .md-tag
     position absolute

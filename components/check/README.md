@@ -40,6 +40,7 @@ Vue.component(CheckList.name, CheckList)
 |name|唯一键值|any|`true`|当选中时，双向绑定的值|
 |v-model|选中的值|any|`false`|-|
 |disabled|是否禁用选择|Boolean|`false`|-|
+|icon-position<sup class="version-after">2.6.1+</sup>|选中项角标位置|String|`rt`|`rt` 右上，`lt` 左上|
 
 ---
 

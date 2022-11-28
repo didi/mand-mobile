@@ -4,6 +4,7 @@
     :label="label"
     :is-checked="isChecked"
     :disabled="disabled"
+    :icon-position="iconPosition"
     @click.native="$_onClick"
   >
     <slot>{{label}}</slot>
@@ -33,6 +34,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    iconPosition: {
+      type: String,
+      default: 'rt',
     },
   },
 
