@@ -90,7 +90,7 @@ export default {
     .md-tag
       left 0
       .quarter-content
-        left 0
+        left -10%
       .quarter-bg
         left -100%
 </style>
