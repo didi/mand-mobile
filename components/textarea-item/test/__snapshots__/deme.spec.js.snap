@@ -26,7 +26,9 @@ exports[`TextareaItem - Demo Basic 1`] = `
           <!---->
           <div class="md-field-item-control"><textarea maxlength="" placeholder="输入出现删除图标" rows="1" class="md-textarea-item__textarea"></textarea> </div>
           <div class="md-field-item-right">
-            <div class="md-textarea-item__clear" style="display:none;"><i class="md-icon icon-font md-icon-clear clear md" style="color:;"></i></div>
+            <div class="md-textarea-item__clear" style="display:none;"><svg class="md-icon icon-svg md-icon-clear md" style="fill:;">
+                <use xlink:href="#clear"></use>
+              </svg></div>
             <!---->
           </div>
         </div>

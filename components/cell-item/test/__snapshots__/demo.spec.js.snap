@@ -25,7 +25,9 @@ exports[`CellItem - Demo Basic 1`] = `
           </div>
           <div class="md-cell-item-right">
 
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -85,7 +87,9 @@ exports[`CellItem - Demo Content List 1`] = `
           </div>
           <div class="md-cell-item-right">
             附加文案
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -98,7 +102,9 @@ exports[`CellItem - Demo Content List 1`] = `
           </div>
           <div class="md-cell-item-right">
             附加文案
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -111,7 +117,9 @@ exports[`CellItem - Demo Content List 1`] = `
           </div>
           <div class="md-cell-item-right">
             禁用的项目
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -124,7 +132,9 @@ exports[`CellItem - Demo Content List 1`] = `
           </div>
           <div class="md-cell-item-right">
 
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <div class="md-cell-item-children">
           <p style="font-size:0.24rem;color:#858B9C;">
@@ -152,7 +162,9 @@ exports[`CellItem - Demo Simple List 1`] = `
           </div>
           <div class="md-cell-item-right">
             可用8000.34
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -209,7 +221,9 @@ exports[`CellItem - Demo Simple List 1`] = `
           </div>
           <div class="md-cell-item-right">
             可用8000.34
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -224,7 +238,9 @@ exports[`CellItem - Demo Simple List 1`] = `
           </div>
           <div class="md-cell-item-right">
             可用8000.34
-            <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+            <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>

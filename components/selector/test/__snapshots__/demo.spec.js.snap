@@ -11,7 +11,9 @@ exports[`Selector - Demo Check mode 1`] = `
           <div class="md-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -125,7 +127,9 @@ exports[`Selector - Demo Confirmed mode 1`] = `
           <div class="md-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -239,7 +243,9 @@ exports[`Selector - Demo Custom options 1`] = `
           <div class="md-field-item-control">
             <!---->
           </div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -382,7 +388,9 @@ exports[`Selector - Demo Multi mode 1`] = `
         <div class="md-field-item-content"><label class="md-field-item-title">多选模式</label>
           <!---->
           <div class="md-field-item-control">1</div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -493,7 +501,9 @@ exports[`Selector - Demo No need to confirm 1`] = `
         <div class="md-field-item-content"><label class="md-field-item-title">普通模式</label>
           <!---->
           <div class="md-field-item-control">选项二</div>
-          <div class="md-field-item-right"> <i class="md-icon icon-font md-icon-arrow arrow md" style="color:;"></i></div>
+          <div class="md-field-item-right"> <svg class="md-icon icon-svg md-icon-arrow md" style="fill:;">
+              <use xlink:href="#arrow"></use>
+            </svg></div>
         </div>
         <!---->
       </div>
@@ -511,7 +521,9 @@ exports[`Selector - Demo No need to confirm 1`] = `
             <!---->
           </div>
           <!---->
-          <div class="title-bar-right md-popup-close"><i class="md-icon icon-font md-icon-close close lg" style="color:;"></i></div>
+          <div class="title-bar-right md-popup-close"><svg class="md-icon icon-svg md-icon-close lg" style="fill:;">
+              <use xlink:href="#close"></use>
+            </svg></div>
         </div>
         <div class="md-selector-container">
           <div class="md-scroll-view" style="max-height:320px;min-height:auto;">
