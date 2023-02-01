@@ -28,13 +28,13 @@ Vue.component(Icon.name, Icon)
 |name|图标名称|String|-|-|
 |size|图标大小|String|`md`|`xs`, `sm`, `md`, `lg`|
 |color|图标颜色|String|`currentColor`|-|
-|svg|使用svg图标|Boolean|`false`|-|
+|svg|使用svg图标|Boolean|`false` `true`<sup class="version-after">2.6.1+</sup>|因 Apple [锁定模式](https://support.apple.com/zh-cn/HT212650)中，无法加载网页字体，故2.6.1起默认使用 SVG 图标，设为 `false` 时使用 iconfont|
 
 ### 附录
 
 #### 自定义svg图标
 
-自定义svg图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
+自定义svg图标需使用<a href="https://github.com/kisenka/svg-sprite-loader" target="_blank">svg-sprite-loader</a>，svg文件名即图标名称
 
 1. 安装依赖
 
@@ -88,9 +88,9 @@ export default {
 
 #### 引入本地字体文件
 
-> 注意：webpack配置[url-loader](https://github.com/webpack-contrib/url-loader)需要包含mand-mobile 
+> 注意：webpack配置[url-loader](https://github.com/webpack-contrib/url-loader)需要包含mand-mobile
 
-* 重置css中的图标字体  
+* 重置css中的图标字体
 
 ```css
 @font-face{
@@ -99,7 +99,7 @@ export default {
   font-weight: 400;
   src: url(~mand-mobile/components/icon/iconfont.woff) format("woff"),url(~mand-mobile/components/icon/iconfont.woff) format("truetype")
 }
-``` 
+```
 
 * 自定义主题时重置stylus变量
 
