@@ -5,11 +5,11 @@
       <p>spinner</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="success-color" size="lg" svg></md-icon>
+      <md-icon name="success-color" size="lg"></md-icon>
       <p>success-color</p>
     </div>
     <div class="md-example-item-s">
-      <md-icon name="warn-color" size="lg" svg></md-icon>
+      <md-icon name="warn-color" size="lg"></md-icon>
       <p>warn-color</p>
     </div>
   </div>
