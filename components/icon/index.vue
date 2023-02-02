@@ -1,6 +1,6 @@
 <template>
   <svg
-    v-if="svg || isInnerSvg"
+    v-if="svg"
     class="md-icon icon-svg"
     :class="[`md-icon-${name}`, size]"
     :style="{fill: color}"
@@ -18,7 +18,6 @@
 </template>
 
 <script>import loadSprite from './load-spirte'
-import defaultSvg from './default-svg-list'
 
 export default {
   name: 'md-icon',
@@ -38,18 +37,12 @@ export default {
     },
     svg: {
       type: Boolean,
-      default: false,
+      default: true,
     },
   },
 
   mounted() {
     loadSprite()
-  },
-
-  computed: {
-    isInnerSvg() {
-      return !!defaultSvg[this.name]
-    },
   },
 }
 </script>

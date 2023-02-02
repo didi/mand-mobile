@@ -95,9 +95,6 @@ export default {
     position relative
     .md-icon
       display flex
-      width auto
-      height auto
-      line-height 1
       will-change auto
       &.md-icon-checked,&.md-icon-square-checked
         position absolute

@@ -8,6 +8,7 @@
       <md-icon
         :name="icon.split('/')[0]"
         size="lg"
+        :svg="false"
       ></md-icon>
       <p>{{ icon }}</p>
     </div>
@@ -19,8 +20,8 @@
 export default {
   name: 'icon-demo',
   /* DELETE */
-  title: '字体图标',
-  titleEnUS: 'Icon Font',
+  title: '字体图标 & SVG 图标',
+  titleEnUS: 'Icon Font & SVG icon',
   align: 'center',
   background: '#fff',
   /* DELETE */

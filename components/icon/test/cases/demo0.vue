@@ -8,6 +8,7 @@
       <md-icon
         :name="icon.split('/')[0]"
         size="lg"
+        :svg="false"
       ></md-icon>
       <p>{{ icon }}</p>
     </div>

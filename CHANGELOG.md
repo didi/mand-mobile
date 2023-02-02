@@ -3,6 +3,20 @@ title: 更新日志
 toc: hidden
 ---
 
+### 2.6.1
+
+`2022-02-02`
+
+- Design
+  - 🍭金融设计规范更新
+    - `CheckBox` 更新字体颜色、边框、背景色颜色
+
+- Feature
+    - `Check`、`Radio`
+      - `CheckBox`、`RadioBox` 增加选中角标位置选项
+    - `Icon`
+      - 默认使用 SVG 格式，在 Apple [锁定模式](https://support.apple.com/zh-cn/HT212650)中，无法使用网页字体
+
 ### 2.6.0
 
 `2022-08-26`

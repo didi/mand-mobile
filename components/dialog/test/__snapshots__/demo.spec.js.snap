@@ -37,7 +37,9 @@ exports[`Dialog - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
         <div class="md-dialog-content">
-          <div class="md-dialog-body"><a role="button" class="md-dialog-close"><i class="md-icon icon-font md-icon-close close md" style="color:;"></i></a>
+          <div class="md-dialog-body"><a role="button" class="md-dialog-close"><svg class="md-icon icon-svg md-icon-close md" style="fill:;">
+                <use xlink:href="#close"></use>
+              </svg></a>
             <!---->
             <h2 class="md-dialog-title">窗口标题</h2>
             人生的刺，就在这里，留恋着不肯快走的，偏是你所不留恋的东西。
@@ -58,7 +60,9 @@ exports[`Dialog - Demo Basic 1`] = `
       <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
       <div name="md-fade" class="md-popup-box md-fade" style="display:none;">
         <div class="md-dialog-content">
-          <div class="md-dialog-body"><a role="button" class="md-dialog-close"><i class="md-icon icon-font md-icon-close close md" style="color:;"></i></a>
+          <div class="md-dialog-body"><a role="button" class="md-dialog-close"><svg class="md-icon icon-svg md-icon-close md" style="fill:;">
+                <use xlink:href="#close"></use>
+              </svg></a>
             <div class="md-dialog-icon"><i class="md-icon icon-font md-icon-location location md" style="color:;"></i></div>
             <!---->
             围在城里的人想逃出来，城外的人想冲进去，对婚姻也罢，职业也罢，人生的愿望大都如此。
@@ -104,7 +108,9 @@ exports[`Dialog - Demo Basic 1`] = `
             <!---->
             每个人都有属于自己的一片森林，也许我们 从来不曾去过，但它一直在那里，总会在那里。迷失的人迷失了，相逢的人会再相逢。
           </div>
-          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn"><i class="md-icon icon-font md-dialog-btn-icon md-icon-search search md" style="color:;"></i>
+          <footer class="md-dialog-actions"><a role="button" class="md-dialog-btn"><svg class="md-icon icon-svg md-dialog-btn-icon md-icon-search md" style="fill:;">
+                <use xlink:href="#search"></use>
+              </svg>
               开始搜索
             </a></footer>
         </div>

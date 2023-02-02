@@ -28,7 +28,7 @@ Custom svg icons and import local font file, please refer to <a href="javascript
 |name|icon name|String|-|-|
 |size|icon size|String|`md`|`xs`, `sm`, `md`, `lg`|
 |color|icon color|String|`currentColor`|this color value is set as the value of `fill` on the `svg` icon|
-|svg|use svg icon|Boolean|`false`|-|
+|svg|use svg icon|Boolean|`false` `true`<sup class="version-after">2.6.1+</sup>|Due to the inability to load web fonts in Apple [Lockdown Mode](https://support.apple.com/en-us/HT212650), the SVG icon is used by default since 2.6.1, and iconfont is used when set to `false`|
 
 ### Appendix
 
@@ -90,7 +90,7 @@ export default {
 
 > Note: webpack [url-loader](https://github.com/webpack-contrib/url-loader) configuration needs to include mand-mobile
 
-* Reset icon fonts in css  
+* Reset icon fonts in css
 
 ```css
 @font-face{
@@ -99,7 +99,7 @@ export default {
   font-weight: 400;
   src: url(~mand-mobile/components/icon/iconfont.woff) format("woff"),url(~mand-mobile/components/icon/iconfont.woff) format("truetype")
 }
-``` 
+```
 
 * Reset stylus variable when customizing theme
 

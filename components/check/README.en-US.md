@@ -42,6 +42,7 @@ Vue.component(CheckList.name, CheckList)
 |name|unique name|any|`true`|-|
 |v-model|selected name|any|`false`|-|
 |disabled|whether disable selection or not|Boolean|`false`|-|
+|icon-position<sup class="version-after">2.6.1+</sup>|icon position of checked options|String|`rt`|`rt` right top, `lt` left top|
 
 ---
 

@@ -225,6 +225,7 @@ exports[`DatePicker - Demo Date & Time selection 1`] = `
               <li class="column-item" style="height: 45px; line-height: 45px;">2040年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2041年</li>
               <li class="column-item" style="height: 45px; line-height: 45px;">2042年</li>
+              <li class="column-item" style="height: 45px; line-height: 45px;">2043年</li>
             </ul>
           </div>
           <div class="md-picker-column-item">
