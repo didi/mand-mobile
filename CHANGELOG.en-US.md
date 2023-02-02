@@ -4,7 +4,7 @@ toc: hidden
 ---
 ### 2.6.1
 
-`2022-02-02`
+`2023-02-02`
 
 - Design
   - 🍭 Financial design specification update
