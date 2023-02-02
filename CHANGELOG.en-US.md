@@ -2,12 +2,26 @@
 title: Change Log
 toc: hidden
 ---
+### 2.6.1
+
+`2022-02-02`
+
+- Design
+  - 🍭 Financial design specification update
+    - `CheckBox` Updated font color, border color, background color
+
+- Feature
+    - `Check`、`Radio`
+      - `CheckBox`、`RadioBox` added the option to select corner position
+    - `Icon`
+      - By default, using SVG format in Apple [Lockdown Mode](https://support.apple.com/zh-cn/HT212650), could not use web fonts
+
 ### 2.6.0
 
 `2022-08-26`
 
 - Design
-  - 🍭Financial design specification update
+  - 🍭 Financial design specification update
     - Update the theme color, [detail](https://github.com/didi/mand-mobile/pull/755/files#diff-dafec5882d1f310bec1be2ca7fb586a99589509362a07d650e827813eee6136a)
     - `Toast` the background color was changed from translucent to opaque
     - `Button` border radius changed from '4px' to '16px'
