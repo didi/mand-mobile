@@ -3,7 +3,10 @@
     class="md-popup-title-bar"
     :class="[
       `title-align-${titleAlign}`,
-      ...{large: !!describe, 'large-radius': largeRadius}
+      {
+        large: !!describe,
+        'large-radius': largeRadius
+      }
     ]"
     @touchmove="$_preventScroll"
   >
@@ -74,7 +77,8 @@
   </div>
 </template>
 
-<script>import titleBarMixin from './mixins/title-bar'
+<script>
+import titleBarMixin from './mixins/title-bar'
 import Icon from '../icon'
 
 export default {
@@ -130,7 +134,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus" scoped>
 .md-popup-title-bar
