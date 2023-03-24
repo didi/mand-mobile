@@ -5,7 +5,7 @@ export default {
     },
     captcha: {
       sendCaptcha: '发送验证码',
-      countdown: '{$1}秒后重发',
+      countdown: '{$1}s 后重发',
     },
     cashier: {
       payCash: '\u652f\u4ed8\u91d1\u989d\u0028\u5143\u0029',
