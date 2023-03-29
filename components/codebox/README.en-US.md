@@ -30,6 +30,7 @@ Vue.component(Codebox.name, Codebox)
 | disorder| whether to use random keyboard layout or not | Boolean | `false` |
 | system | whether to use system keyboard or simulated keyboard | Boolean | `false` |
 | is-view | whether to show as inline element or append to the body | Boolean |`false`|
+| is-error-style | Whether to display an error style | Boolean | `false` |
 
 #### Codebox Methods
 

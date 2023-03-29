@@ -33,7 +33,9 @@ Vue.component(Captcha.name, Captcha)
 | count | counter duration, set as `0` to hide resend button | Number | `60` |
 | count-normal-text |text of send verification code button |String| `发送验证码` |
 | count-active-text |text of send verification code button in countdown state|String| `{$1}秒后重发` |
-
+| type | Type of the captcha component mode |String| dialog |
+| disable-send | Whether the send verification button is disabled | Boolean | false |
+| subtitle | subtitle | String | '' |
 
 
 #### Captcha Methods

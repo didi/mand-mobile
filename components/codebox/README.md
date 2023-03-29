@@ -32,6 +32,7 @@ Vue.component(Codebox.name, Codebox)
 |disorder|数字键盘是否乱序|Boolean|`false`|
 |system|是否使用系统默认键盘|Boolean|`false`|
 |is-view|是否内嵌在页面内展示，否则以弹层形式|Boolean|`false`|
+|is-error-style|是否展示错误样式|Boolean|`false`|
 
 #### Codebox Methods
 
