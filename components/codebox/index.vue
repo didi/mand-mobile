@@ -15,7 +15,8 @@
           :class="[
             'md-codebox-box',
             (i === code.length + 1) && focused && 'is-active',
-            code.charAt(i-1) !== '' && 'is-filled'
+            code.charAt(i-1) !== '' && 'is-filled',
+            isErrorStyle && 'is-error'
           ]"
         >
           <template v-if="code.charAt(i-1)">
@@ -81,7 +82,8 @@
   </div>
 </template>
 
-<script>import NumberKeyboard from '../number-keyboard'
+<script>
+import NumberKeyboard from '../number-keyboard'
 
 export default {
   name: 'md-codebox',
@@ -135,6 +137,10 @@ export default {
     inputType: {
       type: String,
       default: 'tel',
+    },
+    isErrorStyle: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -246,7 +252,8 @@ export default {
     },
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-codebox-wrapper
@@ -289,9 +296,12 @@ export default {
     margin-left 0
   &:last-child
     margin-right 0
-  &.is-active, &.is-filled
+  &.is-filled
     border-color codebox-border-active-color
-
+  &.is-active
+    hairline(bottom, color-text-base)
+  &.is-error
+    hairline(bottom, color-text-error)
 .md-codebox-blink
   display block
   if tab-height is a 'unit'

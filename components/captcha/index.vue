@@ -1,6 +1,6 @@
 <template>
-  <div class="md-captcha" v-show="isView || value || visible">
-    <template v-if="isView">
+  <div class="md-captcha" v-show="isInline || value || visible">
+    <template v-if="isInline">
       <div class="md-captcha-content">
         <h2 class="md-captcha-title" v-if="title" v-text="title"></h2>
         <div class="md-captcha-message">
@@ -33,7 +33,67 @@
         </footer>
       </md-codebox>
     </template>
-    <template v-else>
+    <template v-if="type === 'halfScreen'">
+      <md-popup
+        :value="value"
+        :hasMask="true"
+        position="bottom"
+        :maskClosable="false"
+        @input="$_onInput"
+        @show="$_onShow"
+        @hide="$_onHide"
+      >
+        <div class="md-captcha-half-container">
+          <md-popup-title-bar
+            only-close
+            large-radius
+            :title="title"
+            :describe="subtitle"
+            title-align="left"
+            @cancel="close"
+          ></md-popup-title-bar>
+          <div class="md-captcha-half-content">
+            <slot></slot>
+          </div>
+          <md-codebox
+            ref="codebox"
+            v-model="code"
+            :maxlength="maxlength"
+            :system="system"
+            :mask="mask"
+            @submit="$_onSubmit"
+            :disabled="disableSend"
+            :closable="false"
+            :isView="true"
+            :justify="true"
+            :autofocus="false"
+            :input-type="inputType"
+            :isErrorStyle="isShowErrorStyle"
+          >
+            <footer
+              class="md-captcha-footer"
+              :class="{ halfStyle: isKeyboard }"
+            >
+              <div
+                class="md-captcha-error"
+                v-if="errorMsg"
+                v-text="errorMsg"
+              ></div>
+              <div class="md-captcha-brief" v-else v-text="brief"></div>
+              <button
+                class="md-captcha-btn"
+                :class="[disableSend && 'is-disabled-send']"
+                v-if="count"
+                v-text="countBtnText"
+                :disabled="this.isCounting"
+                @click="$_onResend"
+              ></button>
+            </footer>
+          </md-codebox>
+        </div>
+      </md-popup>
+    </template>
+    <template v-if="type === 'dialog'">
       <md-dialog
         :value="value"
         :closable="true"
@@ -78,7 +138,10 @@
   </div>
 </template>
 
-<script>import Dialog from '../dialog'
+<script>
+import Dialog from '../dialog'
+import Popup from "../popup";
+import PopupTitlebar from "../popup/title-bar";
 import Codebox from '../codebox'
 import Button from '../button'
 import {mdDocument} from '../_util'
@@ -89,6 +152,8 @@ export default {
 
   components: {
     [Dialog.name]: Dialog,
+    [Popup.name]: Popup,
+    [PopupTitlebar.name]: PopupTitlebar,
     [Codebox.name]: Codebox,
     [Button.name]: Button,
   },
@@ -96,6 +161,9 @@ export default {
   props: {
     title: {
       type: String,
+    },
+    subtitle: {
+      type: String
     },
     brief: {
       type: String,
@@ -144,10 +212,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    type: {
+      type: String,
+      default: "dialog"
+    },
     inputType: {
       type: String,
       default: 'tel',
     },
+    disableSend: {
+      type: Boolean,
+      default: false
+    }
   },
 
   data() {
@@ -158,7 +234,9 @@ export default {
       isCounting: false,
       firstShown: false,
       countBtnText: this.countNormalText,
-    }
+      isKeyboard: false,
+      originHeight: 0
+    };
   },
 
   watch: {
@@ -177,19 +255,36 @@ export default {
       }
     },
   },
-
+  computed: {
+    isInline() {
+      return this.isView || this.type === "inline";
+    },
+    isShowErrorStyle() {
+      return this.errorMsg !== "" && !this.disableSend;
+    }
+  },
   mounted() {
-    if (this.appendTo && !this.isView) {
+    // Andriod 键盘收起：Andriod 键盘弹起或收起页面高度会发生变化，以此为依据获知键盘收起
+    if (this.judgeDeviceType().isAndroid && this.type === "halfScreen") {
+      // 记录初始高度
+      this.originHeight =
+        document.documentElement.clientHeight || document.body.clientHeight;
+      window.addEventListener("resize", this.listenResize, false);
+    }
+    if (this.appendTo && !this.isInline) {
       this.appendTo.appendChild(this.$el)
     }
-    if (this.value || this.isView) {
+    if (this.value || this.isInline) {
       this.firstShown = true
       this.$_emitSend()
     }
   },
 
   beforeDestroy() {
-    if (this.appendTo && !this.isView) {
+    if (this.judgeDeviceType().isAndroid && this.type === "halfScreen") {
+      window.removeEventListener("resize", this.listenResize);
+    }
+    if (this.appendTo && !this.isInline) {
       this.appendTo.removeChild(this.$el)
     }
   },
@@ -222,6 +317,26 @@ export default {
       this.autoSend && this.$_onResend()
     },
     // MARK: public methods
+    listenResize() {
+      let resizeHeight =
+        document.documentElement.clientHeight || document.body.clientHeight;
+      if (this.originHeight < resizeHeight) {
+        this.isKeyboard = false;
+      } else {
+        this.isKeyboard = true;
+      }
+      this.originHeight = resizeHeight;
+    },
+    // 判断设备类型
+    judgeDeviceType() {
+      let ua = window.navigator.userAgent.toLocaleLowerCase();
+      let isIOS = /iphone|ipad|ipod/.test(ua);
+      let isAndroid = /android/.test(ua);
+      return {
+        isIOS: isIOS,
+        isAndroid: isAndroid
+      };
+    },
     countdown() {
       if (!this.count) {
         return
@@ -252,9 +367,13 @@ export default {
         // this.code = ''
       })
     },
+    close() {
+      this.$emit("input", false)
+    }
   },
 }
-</script>
+
+</script>
 
 <style lang="stylus">
 .md-captcha
@@ -308,4 +427,44 @@ export default {
   background none
   &:disabled
     color color-text-disabled
+// 半屏样式
+.md-captcha-half-container
+  background-color #fff
+  border-radius 40px 40px 0 0
+  .md-popup-title-bar
+    height auto !important
+    margin-bottom 24px
+    .title-bar-title
+      .title
+        font-weight bold
+        line-height 56px
+      p.describe
+        font-size 24px !important
+        color #91989F !important
+        line-height 33px !important
+        margin-top: 4px !important
+  .md-captcha-half-content
+    padding 0px 40px
+  .md-codebox-wrapper
+    .md-codebox
+      padding 75px 40px 0px
+      margin 0px
+    .md-captcha-footer
+      padding 32px 40px 745px
+      margin 0px
+      &.halfStyle
+        padding-bottom 40px
+      .md-captcha-btn
+        padding 5px 16px
+        background-color color-primary
+        border-radius radius-medium
+        color color-text-base-inverse
+        &:disabled
+          color #61686F
+          background none
+          border-radius inherit
+          padding 10px 0px
+        &.is-disabled-send
+          background rgba(145,152,159,0.1)
+          color #61686F
 </style>
