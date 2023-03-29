@@ -34,7 +34,7 @@ Vue.component(Captcha.name, Captcha)
 | count-normal-text |text of send verification code button |String| `发送验证码` |
 | count-active-text |text of send verification code button in countdown state|String| `{$1}秒后重发` |
 | type | Type of the captcha component mode |String| dialog |
-| disableSend | Whether the send verification button is disabled | Boolean | false |
+| disable-send | Whether the send verification button is disabled | Boolean | false |
 | subtitle | subtitle | String | '' |
 
 
