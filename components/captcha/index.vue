@@ -138,10 +138,9 @@
   </div>
 </template>
 
-<script>
-import Dialog from '../dialog'
-import Popup from "../popup";
-import PopupTitlebar from "../popup/title-bar";
+<script>import Dialog from '../dialog'
+import Popup from '../popup'
+import PopupTitlebar from '../popup/title-bar'
 import Codebox from '../codebox'
 import Button from '../button'
 import {mdDocument} from '../_util'
@@ -163,7 +162,7 @@ export default {
       type: String,
     },
     subtitle: {
-      type: String
+      type: String,
     },
     brief: {
       type: String,
@@ -214,7 +213,7 @@ export default {
     },
     type: {
       type: String,
-      default: "dialog"
+      default: 'dialog',
     },
     inputType: {
       type: String,
@@ -222,8 +221,8 @@ export default {
     },
     disableSend: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
@@ -235,8 +234,8 @@ export default {
       firstShown: false,
       countBtnText: this.countNormalText,
       isKeyboard: false,
-      originHeight: 0
-    };
+      originHeight: 0,
+    }
   },
 
   watch: {
@@ -257,19 +256,18 @@ export default {
   },
   computed: {
     isInline() {
-      return this.isView || this.type === "inline";
+      return this.isView || this.type === 'inline'
     },
     isShowErrorStyle() {
-      return this.errorMsg !== "" && !this.disableSend;
-    }
+      return this.errorMsg !== '' && !this.disableSend
+    },
   },
   mounted() {
     // Andriod 键盘收起：Andriod 键盘弹起或收起页面高度会发生变化，以此为依据获知键盘收起
-    if (this.judgeDeviceType().isAndroid && this.type === "halfScreen") {
+    if (this.judgeDeviceType().isAndroid && this.type === 'halfScreen') {
       // 记录初始高度
-      this.originHeight =
-        document.documentElement.clientHeight || document.body.clientHeight;
-      window.addEventListener("resize", this.listenResize, false);
+      this.originHeight = document.documentElement.clientHeight || document.body.clientHeight
+      window.addEventListener('resize', this.listenResize, false)
     }
     if (this.appendTo && !this.isInline) {
       this.appendTo.appendChild(this.$el)
@@ -281,8 +279,8 @@ export default {
   },
 
   beforeDestroy() {
-    if (this.judgeDeviceType().isAndroid && this.type === "halfScreen") {
-      window.removeEventListener("resize", this.listenResize);
+    if (this.judgeDeviceType().isAndroid && this.type === 'halfScreen') {
+      window.removeEventListener('resize', this.listenResize)
     }
     if (this.appendTo && !this.isInline) {
       this.appendTo.removeChild(this.$el)
@@ -318,24 +316,23 @@ export default {
     },
     // MARK: public methods
     listenResize() {
-      let resizeHeight =
-        document.documentElement.clientHeight || document.body.clientHeight;
+      let resizeHeight = document.documentElement.clientHeight || document.body.clientHeight
       if (this.originHeight < resizeHeight) {
-        this.isKeyboard = false;
+        this.isKeyboard = false
       } else {
-        this.isKeyboard = true;
+        this.isKeyboard = true
       }
-      this.originHeight = resizeHeight;
+      this.originHeight = resizeHeight
     },
     // 判断设备类型
     judgeDeviceType() {
-      let ua = window.navigator.userAgent.toLocaleLowerCase();
-      let isIOS = /iphone|ipad|ipod/.test(ua);
-      let isAndroid = /android/.test(ua);
+      let ua = window.navigator.userAgent.toLocaleLowerCase()
+      let isIOS = /iphone|ipad|ipod/.test(ua)
+      let isAndroid = /android/.test(ua)
       return {
         isIOS: isIOS,
-        isAndroid: isAndroid
-      };
+        isAndroid: isAndroid,
+      }
     },
     countdown() {
       if (!this.count) {
@@ -368,12 +365,11 @@ export default {
       })
     },
     close() {
-      this.$emit("input", false)
-    }
+      this.$emit('input', false)
+    },
   },
 }
-
-</script>
+</script>
 
 <style lang="stylus">
 .md-captcha

@@ -2,6 +2,18 @@
 title: Change Log
 toc: hidden
 ---
+### 2.6.2
+
+`2023-08-24`
+
+- Feature
+    - `NumberKeyboard`
+      - `professional` type keyboard `text-render` replacement key increased `0, 00`
+
+- Fix
+  - `Icon`
+    - Fixed the default size error in SVG format
+
 ### 2.6.1
 
 `2022-02-02`

@@ -63,22 +63,12 @@
   </div>
 </template>
 
-<script>
-import {
-  Button,
-  Toast,
-  Captcha,
-  InputItem,
-  Field,
-  FieldItem,
-  Switch,
-  Dialog
-} from "mand-mobile";
+<script>import {Button, Toast, Captcha, InputItem, Field, FieldItem, Switch, Dialog} from 'mand-mobile'
 export default {
-  name: "captcha-demo",
+  name: 'captcha-demo',
   /* DELETE */
-  title: "半屏自定义",
-  titleEnUS: "Customize",
+  title: '半屏自定义',
+  titleEnUS: 'Customize',
   height: 650,
   /* DELETE */
   components: {
@@ -88,19 +78,18 @@ export default {
     [Field.name]: Field,
     [FieldItem.name]: FieldItem,
     [Switch.name]: Switch,
-    [Dialog.name]: Dialog
+    [Dialog.name]: Dialog,
   },
   data() {
     return {
       show: false,
-      appendTo:
-        document.querySelector(".doc-demo-box-priview") || document.body,
+      appendTo: document.querySelector('.doc-demo-box-priview') || document.body,
       title: '输入短信验证码 完成验证',
       subtitle: '用于核验信息有效性及确定本人操作',
       content: '验证码已发送至 186****5407',
       countNormalText: '发送验证码',
       limit: true,
-      maxlength: "4",
+      maxlength: '4',
       mask: false,
       system: true,
       useSendTimes: 3,
@@ -111,30 +100,30 @@ export default {
         btns: [
           {
             text: '我知道了',
-            handler: this.onConfirm
-          }
-        ]
-      }
-    };
+            handler: this.onConfirm,
+          },
+        ],
+      },
+    }
   },
   methods: {
     next() {
-      this.show = true;
+      this.show = true
     },
     submit(val) {
-      const max = parseFloat(this.maxlength);
+      const max = parseFloat(this.maxlength)
       setTimeout(() => {
         if (!this.limit || max < 0 || val.length === max) {
-          if (val !== "1234") {
-            this.$refs.captcha.setError("验证码错误，请重新输入");
+          if (val !== '1234') {
+            this.$refs.captcha.setError('验证码错误，请重新输入')
           } else {
-            this.show = false;
+            this.show = false
             Toast({
-              content: `你输入了${val}`
-            });
+              content: `你输入了${val}`,
+            })
           }
         }
-      }, 300);
+      }, 300)
     },
     onSend(cb) {
       // -------- 发送验证码成功 -------
@@ -142,35 +131,35 @@ export default {
       if (this.sendTimes === 0) {
         this.countNormalText = '重新发送'
       }
-      this.sendTimes += 1;
+      this.sendTimes += 1
       if (this.sendTimes > this.useSendTimes) {
         this.disableSend = true
-        this.$refs.captcha.setError("发送次数已用完，请一小时后再试");
+        this.$refs.captcha.setError('发送次数已用完，请一小时后再试')
         return
       }
       const difference = this.useSendTimes - this.sendTimes
-      if(this.sendTimes > 1 && difference !== 0) {
+      if (this.sendTimes > 1 && difference !== 0) {
         Toast({
-          content: `您还可以重发${difference}次`
-        });
+          content: `您还可以重发${difference}次`,
+        })
       }
       // 倒计时开始
       cb()
-      console.log("click resend button.");
+      console.log('click resend button.')
     },
     onShow() {},
     onHide() {
       // this.show = false;
     },
     hintHandle() {
-      this.dialogConfig.open = true;
+      this.dialogConfig.open = true
     },
     onConfirm() {
-      this.dialogConfig.open = false;
-    }
-  }
-};
-</script>
+      this.dialogConfig.open = false
+    },
+  },
+}
+</script>
 
 <style lang="stylus">
 .md-example-child-captcha
