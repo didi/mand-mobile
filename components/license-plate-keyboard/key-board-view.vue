@@ -1,9 +1,9 @@
 <template>
-  <div class="mixed-key-container">
+  <div class="md-mixed-key-board">
     <div
       v-for="(item, index) in mixedKeyboard"
       :key="index"
-      class="mixed-key-item"
+      class="md-mixed-key-board-item"
       :class="{disabled: item.disabled}"
     >
       <template v-if="item.type">
@@ -15,8 +15,8 @@
             disabled: item.disabled
           }"
         >
-          <img v-if="item.imgUrl" :src="item.imgUrl"/>
-          <div v-if="item.text">{{ item.text }}</div>
+          <img v-if="item.type === 'delete'" src="./assets/close.png"/>
+          <div v-if="item.type === 'confirm' && item.text">{{ item.text }}</div>
         </div>
       </template>
       <template v-else>
@@ -32,7 +32,7 @@
 </template>
 
 <script>export default {
-  name: 'mixed-key-board',
+  name: 'md-mixed-key-board',
 
   components: {},
 
@@ -64,12 +64,12 @@
 }
 </script>
 
-<style lang="stylus" scoped>
-.mixed-key-container {
+<style lang="stylus">
+.md-mixed-key-board {
   padding: 32px 0px;
   display: flex;
   flex-wrap: wrap;
-  .mixed-key-item {
+  .md-mixed-key-board-item {
     >div{
       display: flex;
       align-items: center;

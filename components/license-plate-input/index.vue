@@ -1,9 +1,9 @@
 <template>
-  <div class="input-widget">
+  <div class="md-license-plate-input">
     <div
       v-for="(item, index) in keyArray"
       :key="index"
-      class="input-item"
+      class="md-license-plate-input-item"
       :class="{
         'active': selectedIndex === index,
         'animation': selectedIndex === index && !item
@@ -13,14 +13,14 @@
       <!-- 非新能源键位 -->
       <div
         v-if="index !== keyArray.length-1"
-        class="input-item_content"
+        class="md-license-plate-input-item_content"
       >
         {{ item }}
       </div>
       <!-- 新能源键位 -->
       <div
         v-else
-        class="input-item_content"
+        class="md-license-plate-input-item_content"
       >
         <div v-if="item">{{ item }}</div>
         <div v-else class="emptyValue">
@@ -33,7 +33,7 @@
 </template>
 
 <script>export default {
-  name: 'license-plate-input',
+  name: 'md-license-plate-input',
 
   components: {},
 
@@ -62,10 +62,10 @@
 }
 </script>
 
-<style lang="stylus" scoped>
-.input-widget{
+<style lang="stylus">
+.md-license-plate-input{
   display: flex;
-  .input-item{
+  .md-license-plate-input-item{
     width: 64px;
     height: 94px;
     background: #F4F8FF;
@@ -101,7 +101,7 @@
       }
     }
   }
-  >.input-item:nth-child(2){
+  >.md-license-plate-input-item:nth-child(2){
     margin-right: 28px;
     position: relative;
     &::after{
@@ -116,7 +116,7 @@
       transform: translate(-50%, -50%);
     }
   }
-  >.input-item:last-child{
+  >.md-license-plate-input-item:last-child{
     margin-right: 0px;
     background: #E8FBE7;
     border: 1px solid rgba(203,242,201,1);
@@ -124,10 +124,10 @@
     font-size: 16px;
     color: #61686F;
   }
-  .input-item.active{
+  .md-license-plate-input-item.active{
     border-color: rgba(25,140,255,1);
   }
-  .input-item.active.animation{
+  .md-license-plate-input-item.active.animation{
     animation keyboard-cursor 1s step-start 2s
   }
 

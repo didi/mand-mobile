@@ -1,5 +1,5 @@
 <template>
-  <div class="keyboard-container">
+  <div class="md-license-plate-keyboard">
     <div v-if="keyboardType === 1">
       <shortcut-view
         :shortcuts="shortcuts"
@@ -21,7 +21,7 @@
 import shortcutView from './short-cut-view.vue'
 
 export default {
-  name: 'license-plate-keyboard',
+  name: 'md-license-plate-keyboard',
 
   components: {
     keyboardView,

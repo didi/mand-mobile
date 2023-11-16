@@ -1,8 +1,8 @@
 <template>
-  <div class="license-plate-container">
+  <div class="md-license-plate">
     <div v-if="modeShow === 'division'">
       <div
-        class="input-container division"
+        class="md-license-plate-input-container division"
         :id="inputViewId"
       >
         <license-plate-input
@@ -13,7 +13,7 @@
       </div>
       <div
         v-if="showDivisionKeyboard"
-        class="keyboard-container division"
+        class="md-license-plate-keyboard-container division"
         :id="keyboardViewId"
       >
         <license-plate-keyboard
@@ -40,14 +40,14 @@
           @cancel="$_onHide"
         ></md-popup-title-bar>
         <div class="md-popup-content">
-          <div class="input-container popUp">
+          <div class="md-license-plate-input-container popUp">
             <license-plate-input
               :keyArray="keyArray"
               :selectedIndex="dyCurrentIndex"
               @keyMapping="keyMapping"
             />
           </div>
-          <div class="keyboard-container popUp">
+          <div class="md-license-plate-keyboard-container popUp">
             <license-plate-keyboard
               :keyboard="dyKeyboard"
               @enter="$_onEnter"
@@ -336,7 +336,6 @@ export default {
         // 删除键
         letterData.splice(19, 0, {
           type: 'delete',
-          imgUrl: require('./assets/close.png'),
           disabled: false,
         })
         // 确定键
@@ -452,23 +451,25 @@ export default {
 </script>
 
 
-<style lang="stylus" scoped>
-.keyboard-container {
-  width: 100%;
-  background: #D9E0E7;
-  &.division {
-    padding-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: env(safe-area-inset-bottom);
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    z-index: 99999;
+<style lang="stylus">
+.md-license-plate {
+  .md-license-plate-keyboard-container {
+    width: 100%;
+    background: #D9E0E7;
+    &.division {
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+      position: fixed;
+      bottom: 0px;
+      left: 0px;
+      z-index: 99999;
+    }
   }
-}
-.input-container{
-  &.popUp{
-    background: #fff;
-    padding: 20px 40px 40px;
+  .md-license-plate-input-container{
+    &.popUp{
+      background: #fff;
+      padding: 20px 40px 40px;
+    }
   }
 }
 </style>
