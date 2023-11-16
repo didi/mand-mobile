@@ -1,18 +1,18 @@
 <template>
   <div class="input-widget">
     <div
-      v-for="(item, index) in valueArray"
+      v-for="(item, index) in keyArray"
       :key="index"
       class="input-item"
       :class="{
         'active': selectedIndex === index,
         'animation': selectedIndex === index && !item
       }"
-      @click="inputClick(index)"
+      @click="keyMapping(index)"
     >
       <!-- 非新能源键位 -->
       <div
-        v-if="index !== valueArray.length-1"
+        v-if="index !== keyArray.length-1"
         class="input-item_content"
       >
         {{ item }}
@@ -38,7 +38,7 @@
   components: {},
 
   props: {
-    valueArray: {
+    keyArray: {
       type: Array,
       default: () => {
         return []
@@ -55,8 +55,8 @@
   },
 
   methods: {
-    inputClick(index) {
-      this.$emit('inputClick', index)
+    keyMapping(index) {
+      this.$emit('keyMapping', index)
     },
   },
 }

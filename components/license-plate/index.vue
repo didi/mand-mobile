@@ -6,9 +6,9 @@
         :id="inputViewId"
       >
         <license-plate-input
-          :valueArray="valueArray"
+          :keyArray="keyArray"
           :selectedIndex="dyCurrentIndex"
-          @inputClick="inputClick"
+          @keyMapping="keyMapping"
         />
       </div>
       <div
@@ -18,9 +18,9 @@
       >
         <license-plate-keyboard
           :keyboard="dyKeyboard"
-          @keyClick="$_onKeyClick"
-          @deleteClick="$_onDeleteClick"
-          @confirmClick="$_onConfirm"
+          @enter="$_onEnter"
+          @delete="$_onDelete"
+          @confirm="$_onConfirm"
         />
       </div>
     </div>
@@ -42,17 +42,17 @@
         <div class="md-popup-content">
           <div class="input-container popUp">
             <license-plate-input
-              :valueArray="valueArray"
+              :keyArray="keyArray"
               :selectedIndex="dyCurrentIndex"
-              @inputClick="inputClick"
+              @keyMapping="keyMapping"
             />
           </div>
           <div class="keyboard-container popUp">
             <license-plate-keyboard
               :keyboard="dyKeyboard"
-              @keyClick="$_onKeyClick"
-              @deleteClick="$_onDeleteClick"
-              @confirmClick="$_onConfirm"
+              @enter="$_onEnter"
+              @delete="$_onDelete"
+              @confirm="$_onConfirm"
             />
           </div>
         </div>
@@ -302,7 +302,7 @@ export default {
         },
       ],
       // 用户输入的车牌数据
-      valueArray: (this.defaultValue && this.defaultValue.split('')) || ['', '', '', '', '', '', '', ''],
+      keyArray: (this.defaultValue && this.defaultValue.split('')) || ['', '', '', '', '', '', '', ''],
       selectedIndex: 0, // 当前用户输入框已选中的序号
       showDivisionKeyboard: false,
       inputViewId: unique() + '_divisionInput',
@@ -376,7 +376,7 @@ export default {
   },
 
   methods: {
-    inputClick(index) {
+    keyMapping(index) {
       // 展示键盘
       if (!this.showDivisionKeyboard) {
         this.showDivisionKeyboard = true
@@ -384,7 +384,7 @@ export default {
         this.$emit('sdKeyboard')
       }
       // 顺序填写，不可无序点击
-      if (!this.valueArray[index + 1] && !this.valueArray[index - 1]) {
+      if (!this.keyArray[index + 1] && !this.keyArray[index - 1]) {
         return
       }
       this.selectedIndex = index
@@ -394,21 +394,21 @@ export default {
       this.$emit('hide')
     },
     // 键入事件
-    $_onKeyClick(value) {
+    $_onEnter(value) {
       // 重置键位值
-      this.$set(this.valueArray, this.selectedIndex, value)
+      this.$set(this.keyArray, this.selectedIndex, value)
 
       // 点击的是最后一个键位值，掩藏键盘，自动执行确认事件
-      if (this.selectedIndex === this.valueArray.length - 1) {
+      if (this.selectedIndex === this.keyArray.length - 1) {
         this.$_onConfirm()
       } else {
         this.selectedIndex = this.selectedIndex + 1
       }
     },
     // 删除事件
-    $_onDeleteClick() {
+    $_onDelete() {
       // 清空当前键位值
-      this.$set(this.valueArray, this.selectedIndex, '')
+      this.$set(this.keyArray, this.selectedIndex, '')
 
       // 当前键位是第一个键位，隐藏分离键盘
       if (this.selectedIndex <= 0) {
@@ -424,7 +424,7 @@ export default {
       if (this.modeShow === 'division') {
         this.hideDivisionKeyboard()
       }
-      this.$emit('confirm', this.valueArray.join(''))
+      this.$emit('confirm', this.keyArray.join(''))
     },
     // 隐藏分离键盘
     hideDivisionKeyboard(e) {

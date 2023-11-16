@@ -3,15 +3,15 @@
     <div v-if="keyboardType === 1">
       <shortcut-view
         :shortcuts="shortcuts"
-        @keyClick="keyClick"
+        @enter="$_onEnter"
       />
     </div>
     <div v-else>
       <keyboard-view
         :mixedKeyboard="mixedKeyboard"
-        @keyClick="keyClick"
-        @deleteClick="deleteClick"
-        @confirmClick="confirmClick"
+        @enter="$_onEnter"
+        @delete="$_onDelete"
+        @confirm="$_onConfirm"
       />
     </div>
   </div>
@@ -55,14 +55,14 @@ export default {
   },
 
   methods: {
-    keyClick(value) {
-      this.$emit('keyClick', value)
+    $_onEnter(value) {
+      this.$emit('enter', value)
     },
-    deleteClick() {
-      this.$emit('deleteClick')
+    $_onDelete() {
+      this.$emit('delete')
     },
-    confirmClick() {
-      this.$emit('confirmClick')
+    $_onConfirm() {
+      this.$emit('confirm')
     },
   },
 }

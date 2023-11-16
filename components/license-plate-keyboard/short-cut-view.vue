@@ -4,7 +4,7 @@
       v-for="(item, index) in shortcuts"
       :key="index"
       class="shortcut-item"
-      v-tap="{ methods: keyClick }"
+      v-tap="{ methods: $_onEnter }"
     >{{ item }}</div>
   </div>
 </template>
@@ -29,8 +29,8 @@
   },
 
   methods: {
-    keyClick(value) {
-      this.$emit('keyClick', value)
+    $_onEnter(value) {
+      this.$emit('enter', value)
     },
   },
 }

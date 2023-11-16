@@ -11,7 +11,7 @@
           :class="item.type"
           v-tap="{
             methods:
-              item.type === 'delete' ? deleteClick : confirmClick,
+              item.type === 'delete' ? $_onDelete : $_onConfirm,
             disabled: item.disabled
           }"
         >
@@ -22,7 +22,7 @@
       <template v-else>
         <div
           v-tap="{
-            methods: keyClick,
+            methods: $_onEnter,
             disabled: item.disabled
           }"
         >{{ item.value }}</div>
@@ -51,14 +51,14 @@
   },
 
   methods: {
-    keyClick(value) {
-      this.$emit('keyClick', value)
+    $_onEnter(value) {
+      this.$emit('enter', value)
     },
-    deleteClick() {
-      this.$emit('deleteClick')
+    $_onDelete() {
+      this.$emit('delete')
     },
-    confirmClick() {
-      this.$emit('confirmClick')
+    $_onConfirm() {
+      this.$emit('confirm')
     },
   },
 }
