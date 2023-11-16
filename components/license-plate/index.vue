@@ -352,7 +352,7 @@ export default {
         if (this.selectedIndex === 1) {
           numbers = this.numbers.map(item => {
             return {
-              ...item,
+              value: item.value,
               disabled: true,
             }
           })
