@@ -1,16 +1,16 @@
 <template>
-  <div class="shortcut-container">
+  <div class="md-shortcut-row">
     <div
       v-for="(item, index) in shortcuts"
       :key="index"
-      class="shortcut-item"
+      class="md-shortcut-row-item"
       v-tap="{ methods: $_onEnter }"
     >{{ item }}</div>
   </div>
 </template>
 
 <script>export default {
-  name: 'shortcut-row',
+  name: 'md-shortcut-row',
 
   components: {},
 
@@ -36,12 +36,12 @@
 }
 </script>
 
-<style lang="stylus" scoped>
-.shortcut-container {
+<style lang="stylus">
+.md-shortcut-row {
   padding: 32px 10px;
   display: flex;
   flex-wrap: wrap;
-  .shortcut-item {
+  .md-shortcut-row-item {
     display: flex;
     align-items: center;
     justify-content: center;
