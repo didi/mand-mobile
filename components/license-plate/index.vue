@@ -336,7 +336,6 @@ export default {
         // 删除键
         letterData.splice(19, 0, {
           type: 'delete',
-          imgUrl: require('./assets/close.png'),
           disabled: false,
         })
         // 确定键

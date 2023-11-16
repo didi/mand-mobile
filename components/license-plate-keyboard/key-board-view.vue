@@ -15,8 +15,8 @@
             disabled: item.disabled
           }"
         >
-          <img v-if="item.imgUrl" :src="item.imgUrl"/>
-          <div v-if="item.text">{{ item.text }}</div>
+          <img v-if="item.type === 'delete'" src="./assets/close.png"/>
+          <div v-if="item.type === 'confirm' && item.text">{{ item.text }}</div>
         </div>
       </template>
       <template v-else>
