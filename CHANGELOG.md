@@ -5,11 +5,13 @@ toc: hidden
 
 ### 2.6.2
 
-`2023-08-24`
+`2023-11-16`
 
 - Feature
     - `NumberKeyboard`
       - `professional` 类型键盘 `text-render`替换键增加 `0, 00`
+    - `LicensePlate`
+      - 新增车牌号键盘组件
 - Fix
   - `Icon`
     - 修复 SVG 格式下，默认尺寸错误的问题

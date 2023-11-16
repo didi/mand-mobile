@@ -2,13 +2,16 @@
 title: Change Log
 toc: hidden
 ---
+
 ### 2.6.2
 
-`2023-08-24`
+`2023-10-11`
 
 - Feature
     - `NumberKeyboard`
       - `professional` type keyboard `text-render` replacement key increased `0, 00`
+    - `LicensePlate`
+      - New license plate keyboard component
 
 - Fix
   - `Icon`
