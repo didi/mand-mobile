@@ -5,7 +5,7 @@
         class="md-license-plate-input-container division"
         :id="inputViewId"
       >
-        <license-plate-input
+        <md-license-plate-input
           :keyArray="keyArray"
           :selectedIndex="dyCurrentIndex"
           @keyMapping="keyMapping"
@@ -16,7 +16,7 @@
         class="md-license-plate-keyboard-container division"
         :id="keyboardViewId"
       >
-        <license-plate-keyboard
+        <md-license-plate-keyboard
           :keyboard="dyKeyboard"
           @enter="$_onEnter"
           @delete="$_onDelete"
@@ -41,14 +41,14 @@
         ></md-popup-title-bar>
         <div class="md-popup-content">
           <div class="md-license-plate-input-container popUp">
-            <license-plate-input
+            <md-license-plate-input
               :keyArray="keyArray"
               :selectedIndex="dyCurrentIndex"
               @keyMapping="keyMapping"
             />
           </div>
           <div class="md-license-plate-keyboard-container popUp">
-            <license-plate-keyboard
+            <md-license-plate-keyboard
               :keyboard="dyKeyboard"
               @enter="$_onEnter"
               @delete="$_onDelete"
@@ -61,8 +61,8 @@
   </div>
 </template>
 
-<script>import licensePlateKeyboard from '../license-plate-keyboard'
-import licensePlateInput from '../license-plate-input'
+<script>import LicensePlateKeyboard from '../license-plate-keyboard'
+import LicensePlateInput from '../license-plate-input'
 import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import {directiveInit, queryCurParentNode, unique} from './util'
@@ -71,8 +71,8 @@ export default {
   name: 'md-license-plate',
 
   components: {
-    licensePlateKeyboard,
-    licensePlateInput,
+    [LicensePlateKeyboard.name]: LicensePlateKeyboard,
+    [LicensePlateInput.name]: LicensePlateInput,
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
   },
