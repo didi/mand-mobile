@@ -452,14 +452,17 @@ export default {
     defaultValue: {
       handler(newVal) {
         if (newVal !== '') {
-          const defaultValueArray =
-            this.defaultValue.split('').length > 8
-              ? this.defaultValue.split('').splice(0, 8)
-              : this.defaultValue.split('')
+          const defaultValueArray = this.defaultValue.split('')
           const keyArrayCopy = JSON.parse(JSON.stringify(this.keyArray))
-          defaultValueArray.forEach((item, index) => {
-            keyArrayCopy[index] = item
+
+          keyArrayCopy.forEach((item, index) => {
+            if (defaultValueArray[index]) {
+              keyArrayCopy[index] = defaultValueArray[index]
+            } else {
+              keyArrayCopy[index] = ''
+            }
           })
+
           this.keyArray = keyArrayCopy
         }
       },
