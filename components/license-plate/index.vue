@@ -302,7 +302,7 @@ export default {
         },
       ],
       // 用户输入的车牌数据
-      keyArray: (this.defaultValue && this.defaultValue.split('')) || ['', '', '', '', '', '', '', ''],
+      keyArray: ['', '', '', '', '', '', '', ''],
       selectedIndex: 0, // 当前用户输入框已选中的序号
       showDivisionKeyboard: false,
       inputViewId: unique() + '_divisionInput',
@@ -383,7 +383,7 @@ export default {
         this.$emit('sdKeyboard')
       }
       // 顺序填写，不可无序点击
-      if (!this.keyArray[index + 1] && !this.keyArray[index - 1]) {
+      if (!this.keyArray[index + 1] && !this.keyArray[index - 1] && index > 0) {
         return
       }
       this.selectedIndex = index
@@ -434,7 +434,7 @@ export default {
       if (this.showDivisionKeyboard && !isKeyboard) {
         this.showDivisionKeyboard = false
         // 抛出隐藏分离键盘事件
-        this.$emit('hdKeyboard')
+        this.$emit('hdKeyboard', this.keyArray.join(''))
       }
     },
   },
@@ -446,6 +446,25 @@ export default {
 
   beforeDestroy() {
     this.modeShow === 'division' && document.removeEventListener('click', this.hideDivisionKeyboard)
+  },
+
+  watch: {
+    defaultValue: {
+      handler(newVal) {
+        if (newVal !== '') {
+          const defaultValueArray =
+            this.defaultValue.split('').length > 8
+              ? this.defaultValue.split('').splice(0, 8)
+              : this.defaultValue.split('')
+          const keyArrayCopy = JSON.parse(JSON.stringify(this.keyArray))
+          defaultValueArray.forEach((item, index) => {
+            keyArrayCopy[index] = item
+          })
+          this.keyArray = keyArrayCopy
+        }
+      },
+      immediate: true,
+    },
   },
 }
 </script>

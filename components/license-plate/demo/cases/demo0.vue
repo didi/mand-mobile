@@ -1,6 +1,6 @@
 <template>
   <div>
-    <md-license-plate :stackViewBody="'#licensePlateContainer'"></md-license-plate>
+    <md-license-plate :defaultValue="defaultValue"></md-license-plate>
   </div>
 </template>
 
@@ -12,7 +12,14 @@ export default {
     [LicensePlate.name]: LicensePlate,
   },
   data() {
-    return {}
+    return {
+      defaultValue: '',
+    }
+  },
+  mounted() {
+    // setTimeout(()=>{
+    //   this.defaultValue = '2333'
+    // },3000)
   },
   methods: {},
 }

@@ -17,8 +17,8 @@
   </div>
 </template>
 
-<script>import keyboardView from './key-board-view.vue'
-import shortcutView from './short-cut-view.vue'
+<script>import keyboardView from './key-board-view'
+import shortcutView from './short-cut-view'
 
 export default {
   name: 'md-license-plate-keyboard',

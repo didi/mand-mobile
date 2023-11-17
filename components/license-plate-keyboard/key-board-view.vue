@@ -15,7 +15,6 @@
             disabled: item.disabled
           }"
         >
-          <img v-if="item.type === 'delete'" src="./assets/close.png"/>
           <div v-if="item.type === 'confirm' && item.text">{{ item.text }}</div>
         </div>
       </template>
@@ -85,10 +84,9 @@
       font-weight: 400;
       margin: 0px 0px 10px 10px;
       &.delete{
-        img{
-          width: 40px;
-          height: 40px;
-        }
+        background: url(../_style/images/license-keyboard-del.png) center no-repeat;
+        background-color: #FFFFFF;
+        background-size: 40px 40px;
       }
       &.confirm{
         width: 212px;
