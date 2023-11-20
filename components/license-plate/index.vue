@@ -5,7 +5,7 @@
         class="md-license-plate-input-container division"
         :id="inputViewId"
       >
-        <license-plate-input
+        <md-license-plate-input
           :keyArray="keyArray"
           :selectedIndex="dyCurrentIndex"
           @keyMapping="keyMapping"
@@ -16,7 +16,7 @@
         class="md-license-plate-keyboard-container division"
         :id="keyboardViewId"
       >
-        <license-plate-keyboard
+        <md-license-plate-keyboard
           :keyboard="dyKeyboard"
           @enter="$_onEnter"
           @delete="$_onDelete"
@@ -41,14 +41,14 @@
         ></md-popup-title-bar>
         <div class="md-popup-content">
           <div class="md-license-plate-input-container popUp">
-            <license-plate-input
+            <md-license-plate-input
               :keyArray="keyArray"
               :selectedIndex="dyCurrentIndex"
               @keyMapping="keyMapping"
             />
           </div>
           <div class="md-license-plate-keyboard-container popUp">
-            <license-plate-keyboard
+            <md-license-plate-keyboard
               :keyboard="dyKeyboard"
               @enter="$_onEnter"
               @delete="$_onDelete"
@@ -61,8 +61,8 @@
   </div>
 </template>
 
-<script>import licensePlateKeyboard from '../license-plate-keyboard'
-import licensePlateInput from '../license-plate-input'
+<script>import LicensePlateKeyboard from '../license-plate-keyboard'
+import LicensePlateInput from '../license-plate-input'
 import Popup from '../popup'
 import PopupTitlebar from '../popup/title-bar'
 import {directiveInit, queryCurParentNode, unique} from './util'
@@ -71,8 +71,8 @@ export default {
   name: 'md-license-plate',
 
   components: {
-    licensePlateKeyboard,
-    licensePlateInput,
+    [LicensePlateKeyboard.name]: LicensePlateKeyboard,
+    [LicensePlateInput.name]: LicensePlateInput,
     [Popup.name]: Popup,
     [PopupTitlebar.name]: PopupTitlebar,
   },
@@ -302,7 +302,7 @@ export default {
         },
       ],
       // 用户输入的车牌数据
-      keyArray: (this.defaultValue && this.defaultValue.split('')) || ['', '', '', '', '', '', '', ''],
+      keyArray: ['', '', '', '', '', '', '', ''],
       selectedIndex: 0, // 当前用户输入框已选中的序号
       showDivisionKeyboard: false,
       inputViewId: unique() + '_divisionInput',
@@ -367,6 +367,16 @@ export default {
         keyboardType,
       }
     },
+    // 健值为null特殊处理
+    keyArrayCopy() {
+      return this.keyArray.map(item => {
+        if (item) {
+          return item
+        } else {
+          return ' '
+        }
+      })
+    },
   },
 
   created() {
@@ -380,10 +390,10 @@ export default {
       if (!this.showDivisionKeyboard) {
         this.showDivisionKeyboard = true
         // 抛出展示分离键盘事件
-        this.$emit('sdKeyboard')
+        this.$emit('sdKeyboard', this.keyboardViewId)
       }
       // 顺序填写，不可无序点击
-      if (!this.keyArray[index + 1] && !this.keyArray[index - 1]) {
+      if (!this.keyArray[index + 1] && !this.keyArray[index - 1] && index > 0) {
         return
       }
       this.selectedIndex = index
@@ -423,7 +433,7 @@ export default {
       if (this.modeShow === 'division') {
         this.hideDivisionKeyboard()
       }
-      this.$emit('confirm', this.keyArray.join(''))
+      this.$emit('confirm', this.keyArrayCopy.join(''))
     },
     // 隐藏分离键盘
     hideDivisionKeyboard(e) {
@@ -434,7 +444,7 @@ export default {
       if (this.showDivisionKeyboard && !isKeyboard) {
         this.showDivisionKeyboard = false
         // 抛出隐藏分离键盘事件
-        this.$emit('hdKeyboard')
+        this.$emit('hdKeyboard', this.keyArrayCopy.join(''))
       }
     },
   },
@@ -446,6 +456,28 @@ export default {
 
   beforeDestroy() {
     this.modeShow === 'division' && document.removeEventListener('click', this.hideDivisionKeyboard)
+  },
+
+  watch: {
+    defaultValue: {
+      handler(newVal) {
+        if (newVal !== '') {
+          const defaultValueArray = this.defaultValue.split('')
+          const keyArrayCopy = JSON.parse(JSON.stringify(this.keyArray))
+
+          keyArrayCopy.forEach((item, index) => {
+            if (defaultValueArray[index]) {
+              keyArrayCopy[index] = defaultValueArray[index]
+            } else {
+              keyArrayCopy[index] = ''
+            }
+          })
+
+          this.keyArray = keyArrayCopy
+        }
+      },
+      immediate: true,
+    },
   },
 }
 </script>

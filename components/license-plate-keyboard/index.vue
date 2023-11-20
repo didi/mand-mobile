@@ -1,13 +1,13 @@
 <template>
   <div class="md-license-plate-keyboard">
     <div v-if="keyboardType === 1">
-      <shortcut-view
+      <md-shortcut-row
         :shortcuts="shortcuts"
         @enter="$_onEnter"
       />
     </div>
     <div v-else>
-      <keyboard-view
+      <md-mixed-key-board
         :mixedKeyboard="mixedKeyboard"
         @enter="$_onEnter"
         @delete="$_onDelete"
@@ -17,15 +17,15 @@
   </div>
 </template>
 
-<script>import keyboardView from './key-board-view.vue'
-import shortcutView from './short-cut-view.vue'
+<script>import MixedKeyBoard from './mixed-key-board'
+import ShortcutRow from './short-cut-row'
 
 export default {
   name: 'md-license-plate-keyboard',
 
   components: {
-    keyboardView,
-    shortcutView,
+    [MixedKeyBoard.name]: MixedKeyBoard,
+    [ShortcutRow.name]: ShortcutRow,
   },
 
   props: {
