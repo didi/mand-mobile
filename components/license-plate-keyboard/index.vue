@@ -17,8 +17,8 @@
   </div>
 </template>
 
-<script>import MixedKeyBoard from './key-board-view'
-import ShortcutRow from './short-cut-view'
+<script>import MixedKeyBoard from './mixed-key-board'
+import ShortcutRow from './short-cut-row'
 
 export default {
   name: 'md-license-plate-keyboard',
