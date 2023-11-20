@@ -22,11 +22,8 @@
         v-else
         class="md-license-plate-input-item_content"
       >
-        <div v-if="item">{{ item }}</div>
-        <div v-else class="emptyValue">
-          <div>+</div>
-          <div class="emptyValue_text">新能源</div>
-        </div>
+        <div v-if="item && item !== ' '">{{ item }}</div>
+        <div v-else class="emptyValue"></div>
       </div>
     </div>
   </div>
@@ -85,19 +82,8 @@
       .emptyValue{
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #12BB42;
-        font-size: 36px;
-        line-height: 36px;
-        &_text{
-          color: #61686F;
-          font-size: 16px;
-          line-height: 16px;
-          margin-top: 10px;
-        }
+        background: url(../_style/images/new-energy.png) center no-repeat;
+        background-size: 49px 51px;
       }
     }
   }
