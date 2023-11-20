@@ -78,7 +78,7 @@
       background: #FFFFFF;
       box-shadow: 0px 2px 0px 0px rgba(159,159,159,0.5);
       border-radius: 10px;
-      font-family: PingFangSC-Regular;
+      font-family: font-family-normal;
       font-size: 40px;
       color: #111A34;
       font-weight: 400;
