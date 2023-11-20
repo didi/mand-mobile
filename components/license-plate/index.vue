@@ -367,6 +367,16 @@ export default {
         keyboardType,
       }
     },
+    // 健值为null特殊处理
+    keyArrayCopy() {
+      return this.keyArray.map(item => {
+        if (item) {
+          return item
+        } else {
+          return ' '
+        }
+      })
+    },
   },
 
   created() {
@@ -380,7 +390,7 @@ export default {
       if (!this.showDivisionKeyboard) {
         this.showDivisionKeyboard = true
         // 抛出展示分离键盘事件
-        this.$emit('sdKeyboard')
+        this.$emit('sdKeyboard', this.keyboardViewId)
       }
       // 顺序填写，不可无序点击
       if (!this.keyArray[index + 1] && !this.keyArray[index - 1] && index > 0) {
@@ -423,7 +433,7 @@ export default {
       if (this.modeShow === 'division') {
         this.hideDivisionKeyboard()
       }
-      this.$emit('confirm', this.keyArray.join(''))
+      this.$emit('confirm', this.keyArrayCopy.join(''))
     },
     // 隐藏分离键盘
     hideDivisionKeyboard(e) {
@@ -434,7 +444,7 @@ export default {
       if (this.showDivisionKeyboard && !isKeyboard) {
         this.showDivisionKeyboard = false
         // 抛出隐藏分离键盘事件
-        this.$emit('hdKeyboard', this.keyArray.join(''))
+        this.$emit('hdKeyboard', this.keyArrayCopy.join(''))
       }
     },
   },
