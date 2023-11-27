@@ -392,10 +392,6 @@ export default {
         // 抛出展示分离键盘事件
         this.$emit('sdKeyboard', this.keyboardViewId)
       }
-      // 顺序填写，不可无序点击
-      if (!this.keyArray[index + 1] && !this.keyArray[index - 1] && index > 0) {
-        return
-      }
       this.selectedIndex = index
     },
     // 半弹层关闭事件
