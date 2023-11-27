@@ -254,6 +254,11 @@ export default {
       type: String,
       default: '',
     },
+    // 是否可无序点击
+    disorderClick: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -393,7 +398,7 @@ export default {
         this.$emit('sdKeyboard', this.keyboardViewId)
       }
       // 顺序填写，不可无序点击
-      if (!this.keyArray[index + 1] && !this.keyArray[index - 1] && index > 0) {
+      if (!this.disorderClick && !this.keyArray[index + 1] && !this.keyArray[index - 1] && index > 0) {
         return
       }
       this.selectedIndex = index
