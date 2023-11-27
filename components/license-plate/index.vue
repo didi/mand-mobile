@@ -254,7 +254,7 @@ export default {
       type: String,
       default: '',
     },
-    // 是否限制无序点击
+    // 是否可无序点击
     disorderClick: {
       type: Boolean,
       default: true,
