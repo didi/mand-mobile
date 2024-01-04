@@ -174,6 +174,7 @@ Dialog.alert = ({
  */
 Dialog.succeed = props => {
   props.icon = 'success-color'
+  props.iconSvg = true
   return Dialog.confirm(props)
 }
 
@@ -185,6 +186,7 @@ Dialog.succeed = props => {
  */
 Dialog.failed = props => {
   props.icon = 'warn-color'
+  props.iconSvg = true
   return Dialog.confirm(props)
 }
 
