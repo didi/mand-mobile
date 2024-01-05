@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landscape - Demo Basic 1`] = `
+<div>
+  <div class="license-plate-container">
+    <div>
+      <div id="ac4c8e71-e294-736d-a047-8c2b04c44585_divisionInput" class="input-container division">
+        <div class="input-widget">
+          <div class="input-item active animation">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+
+            </div>
+          </div>
+          <div class="input-item">
+            <div class="input-item_content">
+              <div class="emptyValue">
+                <div>+</div>
+                <div class="emptyValue_text">新能源</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+    <!---->
+  </div>
+</div>
+`;
