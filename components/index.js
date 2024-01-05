@@ -64,6 +64,7 @@ import Progress from './progress'
 import Ruler from './ruler'
 import TextareaItem from './textarea-item'
 import Skeleton from './skeleton'
+import LicensePlate from './license-plate'
 /* @init<%import ${componentNameUpper} from './${componentName}'%> */
 
 // Totally importing reminder
@@ -136,6 +137,7 @@ export const components = {
   Ruler,
   TextareaItem,
   Skeleton,
+  LicensePlate,
   /* @init<%${componentNameUpper},%> */
 }
 
@@ -231,6 +233,7 @@ export {
   Skeleton,
   setLocale,
   t,
+  LicensePlate,
   /* @init<%${componentNameUpper},%> */
 }
 

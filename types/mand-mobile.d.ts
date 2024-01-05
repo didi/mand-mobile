@@ -65,6 +65,7 @@ export class Transition extends MandComponent { }
 export class WaterMark extends MandComponent { }
 export class TextareaItem extends MandComponent { }
 export class Skeleton extends MandComponent { }
+export class LicensePlate extends MandComponent { }
 /* @init<%export class ${componentNameUpper} extends MandComponent { }%> */
 
 
