@@ -505,7 +505,9 @@ export default {
   .md-license-plate-input-container{
     &.popUp{
       background: #fff;
-      padding: 20px 40px 40px;
+      padding: 20px 40px 0px;
+      padding-bottom: constant(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
     }
   }
 }
