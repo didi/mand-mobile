@@ -511,6 +511,8 @@ export default {
   .md-popup-box.md-slide-up{
     padding-bottom: constant(safe-area-inset-bottom);
     padding-bottom: env(safe-area-inset-bottom);
+    border-radius: 40px 40px 0 0;
+    background: #fff;
   }
 }
 </style>
