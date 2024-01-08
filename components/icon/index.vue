@@ -1,6 +1,6 @@
 <template>
   <svg
-    v-if="svg || isSvgIcon"
+    v-if="svg"
     class="md-icon icon-svg"
     :class="[`md-icon-${name}`, size]"
     :style="{fill: color}"
@@ -18,7 +18,6 @@
 </template>
 
 <script>import loadSprite from './load-spirte'
-const svgIcon = ['spinner', 'success-color', 'warn-color']
 
 export default {
   name: 'md-icon',
@@ -40,12 +39,6 @@ export default {
       type: Boolean,
       default: true,
     },
-  },
-
-  data() {
-    return {
-      isSvgIcon: svgIcon.indexOf(this.name) !== -1,
-    }
   },
 
   mounted() {
