@@ -17,7 +17,7 @@ const instances = []
 const generate = function({
   title = '',
   icon = '',
-  iconSvg = false,
+  iconSvg = true,
   content = '',
   closable = false,
   transition = 'md-bounce',
@@ -75,7 +75,7 @@ const generate = function({
 Dialog.confirm = ({
   title = '',
   icon = '',
-  iconSvg = false,
+  iconSvg = true,
   content = '',
   cancelText = t('md.dialog.cancel'),
   cancelWarning = false,
@@ -131,7 +131,7 @@ Dialog.confirm = ({
 Dialog.alert = ({
   title = '',
   icon = '',
-  iconSvg = false,
+  iconSvg = true,
   content = '',
   confirmText = t('md.dialog.confirm'),
   closable = false,
@@ -174,7 +174,6 @@ Dialog.alert = ({
  */
 Dialog.succeed = props => {
   props.icon = 'success-color'
-  props.iconSvg = true
   return Dialog.confirm(props)
 }
 
@@ -186,7 +185,6 @@ Dialog.succeed = props => {
  */
 Dialog.failed = props => {
   props.icon = 'warn-color'
-  props.iconSvg = true
   return Dialog.confirm(props)
 }
 
