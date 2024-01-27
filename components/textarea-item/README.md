@@ -34,6 +34,8 @@ Vue.component(TextareaItem.name, TextareaItem)
 | rows                                              | 开始显示的行数                                   | String/Number | `'3'`   | -              |
 | error                                             | 是否显示错误, 如果有内容就认定是出错, 并显示出来 | String        | -       | -              |
 | formation <sup class="version-after">2.5.13+</sup> |表单文本格式化回调方法                         |Function(name, curValue, curPos): {value: curValue, range: curPos}|-|传入参数`name`为表单名称，`curValue`为表单值，`curPos`为表单光标当前所在位置<br/>返回参数`value`格式化值, `range`表单光标格式化后所在位置|
+| compositionable <sup class="version-after">2.6.1+</sup> | 是否开启文本输入处理，开启后输入确认才会触发 `change` 事件| Boolean       | `false` | -              |
+
 
 #### TextareaItem Slots
 
@@ -68,3 +70,9 @@ Vue.component(TextareaItem.name, TextareaItem)
 
 ##### @keydown(name, event)
 文本域按键释放事件
+
+##### @compositionstart(name, event)
+文本域开始输入汉字事件
+
+##### @compositionend(name, event)
+文本域确认/取消输入汉字事件
