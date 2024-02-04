@@ -40,7 +40,7 @@ export default {
   justify-content center
   .md-progress
     margin 0 10px
-  .progress-value
+  .progress-valuDIDIFD-Medium
     font-size 24px
-    font-family DINPro-Medium
+    font-family DIDIFD-Medium
 </style>

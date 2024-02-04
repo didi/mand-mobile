@@ -15,21 +15,21 @@
     <ul class="menu-list-0">
       <li class="menu-item-0" v-for="(item0, index0) in menu" :key="index0">
         <a :href="item0.link" v-if="item0.link" v-html="item0.text" target="_blank"></a>
-        <router-link 
+        <router-link
           v-else
           :to="`/${lang}/${nav}/${item0.name}`"
           :class="{disabled: !item0.src && !item0.markdown}"
           v-html="item0.text">
-        </router-link> 
+        </router-link>
         <ul class="menu-list-1" v-if="item0.menu">
           <li class="menu-item-1" v-for="(item1, index1) in item0.menu" :key="index1">
             <a :href="item1.link" v-if="item1.link" v-html="item1.text" target="_blank"></a>
-            <router-link 
+            <router-link
               v-else
               :to="`/${lang}/${nav}/${item0.name}/${item1.name}`"
               :class="{disabled: !item1.src && !item1.markdown}"
               v-html="item1.text">
-            </router-link> 
+            </router-link>
             <ul class="menu-list-2" v-if="item1.menu">
               <li class="menu-item-2" v-for="(item2, index2) in item1.menu" :key="index2">
                 <a :href="item2.link" v-if="item2.link" v-html="item2.text" target="_blank"></a>
@@ -38,7 +38,7 @@
                   :to="`/${lang}/${nav}/${item0.name}/${item1.name}/${item2.name}`"
                   :class="{disabled: !item2.src && !item2.markdown}"
                   v-html="item2.text">
-                </router-link> 
+                </router-link>
               </li>
             </ul>
           </li>
@@ -135,7 +135,7 @@ export default {
     float left
     width 100%
     font-size 14px
-    font-family DINAlternate-Bold, AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif
+    font-family DIDIFD-Medium, AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif
     color #314659
     text-decoration none
     transition all .3s

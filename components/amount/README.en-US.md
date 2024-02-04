@@ -15,7 +15,7 @@ Vue.component(Amount.name, Amount)
 
 ### Tips
 
-The font `DINPro-Medium` is used in the component for the case show only, if necessary, reset `font-family` of `.md-amount`.
+The font `DIDIFD-Medium` is used in the component for the case show only, if necessary, reset `font-family` of `.md-amount`.
 
 ### Code Examples
 <!-- DEMO -->

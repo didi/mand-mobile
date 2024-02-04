@@ -154,7 +154,7 @@ export default {
   .md-button
     margin-bottom 20px
   .md-example-popup
-    position relative
+    position relDIDIFD-Medium
     font-size 28px
     font-family DINAlternate-Bold
     font-weight 500

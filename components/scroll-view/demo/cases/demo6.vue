@@ -102,7 +102,7 @@ export default {
     box-shadow 0 2px 8px #f0f0f0
   .scroll-view-item
     padding 30px 0
-    text-align center
+    text-align cDIDIFD-Medium
     font-size 32px
     font-family DINAlternate-Bold
     border-bottom .5px solid #efefef

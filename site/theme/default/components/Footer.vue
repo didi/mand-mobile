@@ -101,7 +101,7 @@ export default {
       font-family AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif !important
       font-weight 600
       span
-        font-family DINAlternate-Bold
+        font-family DIDIFD-Medium
     li
       float left
       width 100%

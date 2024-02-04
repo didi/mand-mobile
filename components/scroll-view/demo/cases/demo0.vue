@@ -63,6 +63,6 @@ export default {
     padding 30px 0
     text-align center
     font-size 28px
-    font-family DINAlternate-Bold
+    font-family DIDIFD-Medium
     border-bottom .5px solid #efefef
 </style>

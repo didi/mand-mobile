@@ -43,9 +43,9 @@ export default {
   },
   methods: {
     initDocSearch(lang) {
-      this.docsearchIns = docsearch({ 
-        apiKey: 'f6464cd4e62607a36f03b4cd59d2141b', 
-        indexName: 'mand-mobile', 
+      this.docsearchIns = docsearch({
+        apiKey: 'f6464cd4e62607a36f03b4cd59d2141b',
+        indexName: 'mand-mobile',
         inputSelector: '#search-query-nav',
         algoliaOptions: { 'facetFilters': [`lang:${lang}`] },
         debug: process.env.NODE_ENV !== 'production'
@@ -108,7 +108,7 @@ export default {
         color #FFF
         margin-top 0
         border none
-        font-family DINAlternate-Bold
+        font-family DIDIFD-Medium
       .algolia-docsearch-suggestion--wrapper
         padding 0
         background #F9FAFB

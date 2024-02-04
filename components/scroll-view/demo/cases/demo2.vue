@@ -65,7 +65,7 @@ export default {
   background #FFF
   .scroll-view-item
     padding 30px 0
-    text-align center
+    text-align cDIDIFD-Medium
     font-size 28px
     font-family DINAlternate-Bold
     border-bottom .5px solid #efefef
