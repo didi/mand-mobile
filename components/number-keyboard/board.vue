@@ -16,13 +16,13 @@
           <md-number-key
             class="keyboard-number-item"
             v-if="!hideDot"
-            :value="duplicateZero ? '0' : dotText"
+            :value="duplicateZero ? zeroValue : dotText"
             @press="$_onNumberKeyClick"
           ></md-number-key>
           <md-number-key
             class="keyboard-number-item"
             :class="{'large-item': hideDot}"
-            :value="duplicateZero ? '00' : keyNumberList[9]"
+            :value="duplicateZero ? duplicateZeroValue : keyNumberList[9]"
             @press="$_onNumberKeyClick"
           ></md-number-key>
           <md-number-key
@@ -128,6 +128,12 @@ export default {
   computed: {
     dotText() {
       return this.textRender('.') || '.'
+    },
+    duplicateZeroValue() {
+      return this.textRender('00') || '00'
+    },
+    zeroValue() {
+      return this.textRender('0') || '0'
     },
   },
 

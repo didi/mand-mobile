@@ -63,6 +63,65 @@ exports[`Captcha - Demo Customize 1`] = `
 </div>
 `;
 
+exports[`Captcha - Demo HalfScreen 1`] = `
+<div class="md-example-child md-example-child-captcha-2">
+  <div class="md-captcha">
+    <!---->
+    <div class="md-popup with-mask bottom" style="display:none;">
+      <div name="md-mask-fade" class="md-popup-mask" style="display:none;"></div>
+      <div name="md-slide-up" class="md-popup-box md-slide-up" style="display:none;">
+        <div class="md-captcha-half-container">
+          <div class="md-popup-title-bar title-align-left large large-radius">
+            <!---->
+            <div class="title-bar-title">
+              <p class="title">输入短信验证码，完成验证</p>
+              <p class="describe">用于核验信息有效性</p>
+            </div>
+            <!---->
+            <div class="title-bar-right md-popup-close"><svg class="md-icon icon-svg md-icon-close lg" style="fill:;">
+                <use xlink:href="#close"></use>
+              </svg></div>
+          </div>
+          <div class="md-captcha-half-content">
+            <div class="soltDiv">验证码已发送至 186****5407</div>
+          </div>
+          <div class="md-codebox-wrapper">
+            <div class="md-codebox is-justify"><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span><span class="md-codebox-box"><!----> <!----></span></div>
+            <footer class="md-captcha-footer">
+              <div class="md-captcha-brief"></div> <button class="md-captcha-btn">发送验证码</button>
+            </footer>
+            <form action="" style="display:none;"><input type="tel" maxlength="4" value="" class="md-codebox-input"></form>
+            <div class="md-number-keyboard md-codebox-keyboard in-view">
+              <!---->
+              <div class="md-number-keyboard-container simple">
+                <div class="keyboard-number">
+                  <ul class="keyboard-number-list">
+                    <li class="keyboard-number-item"><span>1</span></li>
+                    <li class="keyboard-number-item"><span>2</span></li>
+                    <li class="keyboard-number-item"><span>3</span></li>
+                    <li class="keyboard-number-item"><span>4</span></li>
+                    <li class="keyboard-number-item"><span>5</span></li>
+                    <li class="keyboard-number-item"><span>6</span></li>
+                    <li class="keyboard-number-item"><span>7</span></li>
+                    <li class="keyboard-number-item"><span>8</span></li>
+                    <li class="keyboard-number-item"><span>9</span></li>
+                    <li class="keyboard-number-item no-bg"></li>
+                    <li class="keyboard-number-item"><span>0</span></li>
+                    <li class="keyboard-number-item no-bg delete"><span></span></li>
+                  </ul>
+                </div>
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Captcha - Demo Inline display 1`] = `
 <div class="md-example-child md-example-child-captcha-1">
   <div class="md-captcha">

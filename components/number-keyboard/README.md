@@ -26,7 +26,7 @@ Vue.component(NumberKeyboard.name, NumberKeyboard)
 |type|键盘类型|String|`professional`|`professional`有确认键和小数点常用于价格或金额输入，`simple`一般用于密码或验证码输入|
 |disorder|键盘数字键是否乱序|Boolean|`false`| -|
 |is-hide-confirm|确认时自动隐藏键盘|Boolean|`true`| -|
-|text-render|自定义指定按键的值|Function(value: string): string|-|可替换键`0,1,...9,.`|
+|text-render|自定义指定按键的值|Function(value: string): string|-|可替换键`1,...9,.`,`0,00`<sup class="version-after">2.6.2+</sup>|
 |ok-text|键盘确认键文案|String|`确认`|-|
 |disabled <sup class="version-after">2.6.0+</sup>|禁用键盘|Boolean|`false`|-|
 |duplicate-zero <sup class="version-after">2.6.0+</sup>|展示 `00` 按键|Boolean|`false`|仅 `type` 为 `professional`模式下生效|

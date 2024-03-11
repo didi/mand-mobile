@@ -34,6 +34,11 @@ Vue.component(Captcha.name, Captcha)
 |count|倒计时时长, 设置为0的时候不显示倒计时按钮|Number|`60`|
 |count-normal-text|发送验证码正常状态文字|String| `发送验证码` |
 |count-active-text|发送验证码及倒计时按钮文案配置项|String| `{$1}秒后重发` |
+|type|验证码组件模式类型|String| dialog |
+|disable-send|发送验证码按钮是否禁用|Boolean|false|
+|subtitle|副标题|String|''|
+
+
 
 #### Captcha Methods
 

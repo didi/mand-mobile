@@ -27,6 +27,7 @@
     <md-number-keyboard
       v-model="isKeyBoardShow[3]"
       :duplicate-zero="true"
+      :text-render="keyFormatter1"
       @enter="onNumberEnter"
       @delete="onNumberDelete"
     ></md-number-keyboard>
@@ -59,6 +60,18 @@ export default {
     keyFormatter(val) {
       if (val === '.') {
         return 'x'
+      }
+    },
+    keyFormatter1(val) {
+      console.log(val)
+      if (val === '0') {
+        return '.'
+      }
+      if (val === '00') {
+        return '0'
+      }
+      if (val === '.') {
+        return '-'
       }
     },
     onNumberEnter(val) {

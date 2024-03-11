@@ -50,7 +50,7 @@ export default {
       width 1000px
       .scroll-view-item
         flex 1
-        text-align center
+        text-align cDIDIFD-Medium
         font-size 28px
         font-family DINAlternate-Bold
         border-right .5px solid #efefef

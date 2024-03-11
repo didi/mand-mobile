@@ -3,7 +3,10 @@
     class="md-popup-title-bar"
     :class="[
       `title-align-${titleAlign}`,
-      ...{large: !!describe, 'large-radius': largeRadius}
+      {
+        large: !!describe,
+        'large-radius': largeRadius
+      }
     ]"
     @touchmove="$_preventScroll"
   >

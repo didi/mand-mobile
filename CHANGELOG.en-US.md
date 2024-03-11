@@ -2,6 +2,24 @@
 title: Change Log
 toc: hidden
 ---
+
+### 2.6.2
+
+`2024-03-11`
+
+- Design
+  - 🍭 Financial design specification update
+    - Update numbers using `DIDIFD-Medium` font first
+- Feature
+    - `NumberKeyboard`
+      - `professional` type keyboard `text-render` replacement key increased `0, 00`
+    - `LicensePlate`
+      - New license plate keyboard component
+
+- Fix
+  - `Icon`
+    - Fixed the default size error in SVG format
+
 ### 2.6.1
 
 `2023-02-02`
