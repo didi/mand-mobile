@@ -5,8 +5,11 @@ toc: hidden
 
 ### 2.6.2
 
-`2023-11-16`
+`2024-03-11`
 
+- Design
+  - 🍭金融设计规范更新
+    - 更新数字优先使用 `DIDIFD-Medium` 字体
 - Feature
     - `NumberKeyboard`
       - `professional` 类型键盘 `text-render`替换键增加 `0, 00`

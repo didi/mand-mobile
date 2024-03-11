@@ -5,8 +5,11 @@ toc: hidden
 
 ### 2.6.2
 
-`2023-10-11`
+`2024-03-11`
 
+- Design
+  - 🍭 Financial design specification update
+    - Update numbers using `DIDIFD-Medium` font first
 - Feature
     - `NumberKeyboard`
       - `professional` type keyboard `text-render` replacement key increased `0, 00`
