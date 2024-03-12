@@ -3,9 +3,9 @@ title: Change Log
 toc: hidden
 ---
 
-### 2.6.2
+### 2.7.0
 
-`2024-03-11`
+`2024-03-12`
 
 - Design
   - 🍭 Financial design specification update
