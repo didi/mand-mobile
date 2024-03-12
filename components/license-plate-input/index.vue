@@ -72,7 +72,7 @@
     &_content {
       width: 100%;
       height: 100%;
-      font-family: font-family-number;
+      font-family: font-family-normal;
       font-size: 40px;
       color: #111A34;
       letter-spacing: 0;
