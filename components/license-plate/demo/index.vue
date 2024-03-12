@@ -16,6 +16,3 @@ import Demo1 from './cases/demo1'
 
 export default {...createDemoModule('license-plate', [Demo0, Demo1])}
 </script>
-
-<style lang="stylus" scoped>
-</style>
