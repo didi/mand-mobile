@@ -200,7 +200,7 @@ export default {
         position relative
         color #333
         font-size 16px
-        font-family DIDIFD-Medium, AvenirNext-Medium,"Microsoft Yahei","Lato","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif  !important
+        font-family 'Helvetica Neue', AvenirNext-Medium,"Microsoft Yahei","Lato","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif  !important
         transition all .3s
       span.ads-text
         margin-top 3px

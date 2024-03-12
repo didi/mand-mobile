@@ -135,7 +135,7 @@ export default {
     float left
     width 100%
     font-size 14px
-    font-family DIDIFD-Medium, AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif
+    font-family 'Helvetica Neue', AvenirNext-Medium, "Microsoft Yahei", "Lato", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif
     color #314659
     text-decoration none
     transition all .3s
