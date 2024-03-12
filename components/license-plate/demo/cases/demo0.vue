@@ -24,6 +24,3 @@ export default {
   methods: {},
 }
 </script>
-
-<style lang="stylus" scoped>
-</style>

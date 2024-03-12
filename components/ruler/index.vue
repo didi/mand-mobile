@@ -356,7 +356,7 @@ export default {
   width 100%
   height 142px
   box-sizing border-box
-  font-family font-family-number
+  font-family font-family-normal
   .md-ruler-canvas
     width 100%
     height 60px

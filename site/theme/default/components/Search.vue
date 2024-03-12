@@ -108,7 +108,7 @@ export default {
         color #FFF
         margin-top 0
         border none
-        font-family DIDIFD-Medium
+        font-family 'Helvetica Neue'
       .algolia-docsearch-suggestion--wrapper
         padding 0
         background #F9FAFB

@@ -154,9 +154,9 @@ export default {
   .md-button
     margin-bottom 20px
   .md-example-popup
-    position relDIDIFD-Medium
+    position relative
     font-size 28px
-    font-family DINAlternate-Bold
+    font-family 'Helvetica Neue'
     font-weight 500
     box-sizing border-box
     text-align center

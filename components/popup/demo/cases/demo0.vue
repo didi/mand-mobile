@@ -102,7 +102,7 @@ export default {
   .md-example-popup
     position relative
     font-size 28px
-    font-family DIDIFD-Medium
+    font-family 'Helvetica Neue'
     font-weight 500
     box-sizing border-box
     text-align center

@@ -50,8 +50,8 @@ export default {
       width 1000px
       .scroll-view-item
         flex 1
-        text-align cDIDIFD-Medium
+        text-align center
         font-size 28px
-        font-family DINAlternate-Bold
+        font-family 'Helvetica Neue'
         border-right .5px solid #efefef
 </style>
