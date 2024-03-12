@@ -91,9 +91,9 @@ export default {
     z-index 2
   .scroll-view-category-title, .scroll-view-striky-title
     padding 10px 0
-    text-align cDIDIFD-Medium
+    text-align center
     font-size 32px
-    font-family DINAlternate-Bold
+    font-family 'Helvetica Neue'
     background-color #f0f0f0
   .scroll-view-item
     padding 30px 0

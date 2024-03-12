@@ -102,8 +102,8 @@ export default {
     box-shadow 0 2px 8px #f0f0f0
   .scroll-view-item
     padding 30px 0
-    text-align cDIDIFD-Medium
+    text-align center
     font-size 32px
-    font-family DINAlternate-Bold
+    font-family 'Helvetica Neue'
     border-bottom .5px solid #efefef
 </style>
