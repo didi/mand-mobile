@@ -109,7 +109,7 @@
     "css-loader": "^0.28.0",
     "cssnano": "^4.0.0",
     "cz-mand-mobile-changelog": "^1.0.2",
-    "dependency-tree": "^5.12.0",
+    "dependency-tree": "^9.0.0",
     "eslint": "^4.4.1",
     "eslint-config-aesir-mandatory": "0.0.3",
     "eslint-config-aesir-recommand": "^0.0.2",
