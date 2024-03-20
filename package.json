@@ -196,7 +196,7 @@
     "rollup-pluginutils": "^2.3.0",
     "selenium-server": "^3.0.1",
     "semver": "^5.4.1",
-    "shelljs": "^0.7.8",
+    "shelljs": "^0.8.5",
     "sinon": "^4.0.0",
     "sinon-chai": "^2.8.0",
     "stylus": "^0.54.5",
