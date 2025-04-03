@@ -37,5 +37,6 @@ hide Pop
 ##### @confirm()
 confirm
 
+### LicensePlate Slots
 #### content
-slot of content
+The content above the keyboard

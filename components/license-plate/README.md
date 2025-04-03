@@ -37,5 +37,6 @@ Vue.component(LicensePlate.name, LicensePlate)
 ##### @confirm()
 键盘确认事件
 
+### LicensePlate Slots
 #### content
-slot of content
+键盘上方内容

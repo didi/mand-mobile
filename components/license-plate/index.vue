@@ -16,6 +16,7 @@
         class="md-license-plate-keyboard-container division"
         :id="keyboardViewId"
       >
+        <slot name="content"></slot>
         <md-license-plate-keyboard
           :keyboard="dyKeyboard"
           @enter="$_onEnter"
