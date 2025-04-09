@@ -159,4 +159,25 @@ describe('TextareaItem - Operation', () => {
     clearBtn.trigger('click')
     expect(wrapper.vm.inputValue).toBe('')
   })
+
+  test('compositionable', () => {
+    wrapper = mount(TextareaItem, {
+      propsData: {
+        maxHeight: 300,
+        maxLength: 10,
+        autosize: true,
+        clearable: true,
+        value: 'abc',
+        compositionable: true,
+      },
+    })
+
+    const textarea = wrapper.vm.$refs.textarea
+
+    expect(wrapper.vm.getValue()).toBe('abc')
+    triggerEvent(textarea, 'compositionstart', 0, 0, '')
+    expect(wrapper.vm.getValue()).toBe('abc')
+    triggerEvent(textarea, 'compositionend', 0, 0, '结束输入')
+    expect(wrapper.vm.getValue()).toBe('abc结束输入')
+  })
 })

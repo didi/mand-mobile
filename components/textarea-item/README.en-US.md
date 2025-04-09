@@ -34,6 +34,8 @@ Vue.component(TextareaItem.name, TextareaItem)
 | rows                                              | rows                                            | String/Number | `'3'`   | -                  |
 | error                                             | error message                                   | String        | -       | -                  |
 |formation <sup class="version-after">2.5.13+</sup>  |input text formatting callback function|Function(name, curValue, curPos): {value: curValue, range: curPos}|-|passing parameter `name` is the name of input, `curValue` is input value, `curPos` is the current position of input cursor, and returned `value` is formatted value. `range` is the position of input cursor after formatting|
+| compositionable <sup class="version-after">2.6.1+</sup> | 
+Whether to enable text input processing, the `change` event will be triggered only after the input confirmation is enabled| Boolean       | `false` | -              |
 
 #### TextareaItem Slots
 
@@ -68,3 +70,9 @@ key press
 
 ##### @keydown(name, event)
 key release
+
+##### @compositionstart(name, event)
+Chinese input start
+
+##### @compositionend(name, event)
+Chinese input confirm or cancel

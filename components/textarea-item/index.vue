@@ -22,6 +22,8 @@
       @blur="$_onBlur"
       @keyup="$_onKeyup"
       @keydown="$_onKeydown"
+      @compositionstart="$_onCompositionstart"
+      @compositionend="$_onCompositionend"
     ></textarea>
     <slot name="footer"></slot>
     <template slot="right">
@@ -112,6 +114,10 @@ export default {
       type: Function,
       default: noop,
     },
+    compositionable: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -152,6 +158,10 @@ export default {
   },
   methods: {
     $_onInput(event) {
+      if (event.target.isNeedPrevent) {
+        return
+      }
+
       const formateValue = this.$_formateValue(event.target.value, getCursorsPosition(event.target))
 
       this.inputValue = formateValue.value
@@ -195,6 +205,21 @@ export default {
         this.$emit('blur')
       }, 100)
     },
+
+    $_onCompositionstart(event) {
+      if (this.compositionable) {
+        event.target.isNeedPrevent = true
+      }
+      this.$emit('compositionstart', event)
+    },
+
+    $_onCompositionend(event) {
+      if (this.compositionable) {
+        event.target.isNeedPrevent = false
+      }
+      this.$emit('compositionend', event)
+    },
+
     $_calcTextareaHeight(textarea) {
       // Triggers the textarea to repaint
       textarea.style.height = 'auto'
